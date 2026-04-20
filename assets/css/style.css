@@ -803,6 +803,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .footer-contact a { color: #d4a017; }
 .footer-contact a:hover { color: #e6b422; }
+.visitor-count {
+  font-size: 0.72rem;
+  color: #999;
+  margin: 6px 0 0;
+}
 .copyright {
   font-size: 0.75rem;
   margin-top: 6px;

@@ -103,5 +103,22 @@
     });
   })();
 </script>
+<script data-goatcounter="https://stmaryschurchnorway.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+(function() {
+  var el = document.getElementById('visitor-count');
+  if (!el) return;
+  var r = new XMLHttpRequest();
+  r.open('GET', 'https://stmaryschurchnorway.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json');
+  r.onload = function() {
+    if (r.status === 200) {
+      var data = JSON.parse(r.responseText);
+      el.textContent = 'Visitors: ' + data.count_unique;
+    }
+  };
+  r.send();
+})();
+</script>
 </body>
 </html>
