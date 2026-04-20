@@ -1,0 +1,27 @@
+title: "St. Mary's Malankara Syriac Orthodox Church"
+subtitle: "Oslo, Norway"
+description: "St. Mary's Malankara Syrian Orthodox Church, Oslo, Norway — founded in 2010. Join us for Holy Qurbana, Sunday School, and community events."
+email: stmaryschurchnorway@gmail.com
+address: "Eikeli Katolske Kirke, Veståsen 18, 1362 Oslo, Norway"
+facebook: "https://www.facebook.com/stmaryschurchnorway"
+instagram: "https://www.instagram.com/msoc_norway/"
+youtube: "https://www.youtube.com/@msoc_norway"
+baseurl: ""
+url: "https://stmaryschurchnorway.github.io"
+
+vicar: "Rev Fr. Eldhose Vattaparambil"
+vicar_email: "fr.eldhosevattaparambil@live.dk"
+secretary: "Mr. Riju Cherian"
+treasurer: "Mr. Binny Mathew"
+
+google_api_key: "AIzaSyCJZJJuEzE2X3fkHMiCNDdOTSlaqrQ1nZo"
+google_calendar_id: "stmaryschurchnorway@gmail.com"
+youtube_channel: "@msoc_norway"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile.lock
+  - README.md

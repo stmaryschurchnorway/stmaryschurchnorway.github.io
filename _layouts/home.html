@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+<!-- Daily Thought -->
+{% assign day = 'now' | date: '%j' | plus: 0 %}
+{% assign quote_index = day | modulo: site.data.quotes.size %}
+{% assign quote = site.data.quotes[quote_index] %}
+<section class="daily-quote">
+  <div class="container">
+    <div class="quote-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#d4a017"><path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z"/></svg></div>
+    <blockquote lang="ml">&#8220;{{ quote.text }}&#8221;</blockquote>
+    <cite lang="ml">&mdash; {{ quote.author }}</cite>
+  </div>
+</section>
+
+<!-- Welcome -->
+<section class="welcome">
+  <h2 class="section-title">Welcome</h2>
+  <div class="welcome-content">
+    <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="welcome-vicar">
+      <div class="vicar-photo-wrap">
+        <img src="{{ '/assets/img/members-1.jpg' | relative_url }}" alt="{{ site.vicar }}">
+      </div>
+      <div class="vicar-label">Vicar / President</div>
+      <div class="vicar-name">{{ site.vicar }}</div>
+    </a>
+    <div class="welcome-text">
+      <p>{{ page.welcome_text }}</p>
+      <a href="{{ '/the-church/' | relative_url }}" class="btn">Read More</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Past Events -->
+{% if site.posts.size > 0 %}
+<section class="news-section">
+  <div class="container">
+    <h2 class="section-title">Past Events</h2>
+    <div class="news-grid">
+      {% for post in site.posts limit:3 %}
+      <a href="{{ post.url | relative_url }}" class="news-card">
+        <span class="news-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <span class="news-read-more">Read more &rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Videos -->
+<section class="gallery-section">
+  <h2 class="section-title">Videos</h2>
+  <div class="gallery-grid" id="home-videos"></div>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="{{ '/gallery/' | relative_url }}" class="btn" style="background:#fff; color:#d4a017;">View All Videos</a>
+  </div>
+</section>
+
+<script>
+(function() {
+  var apiKey = '{{ site.google_api_key }}';
+  var container = document.getElementById('home-videos');
+  fetch('https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle={{ site.youtube_channel }}&key=' + apiKey)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.items || !data.items.length) return;
+      var plId = data.items[0].contentDetails.relatedPlaylists.uploads;
+      return fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + plId + '&maxResults=3&key=' + apiKey);
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.items || !data.items.length) return;
+      var html = '';
+      data.items.forEach(function(item) {
+        var vid = item.snippet.resourceId.videoId;
+        html += '<div class="gallery-item"><div class="video-wrap"><iframe src="https://www.youtube.com/embed/' + vid + '?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe></div></div>';
+      });
+      container.innerHTML = html;
+    })
+    .catch(function() {
+      container.innerHTML = '<p style="color:#fff;text-align:center;">Unable to load videos.</p>';
+    });
+})();
+</script>
+
+{{ content }}
