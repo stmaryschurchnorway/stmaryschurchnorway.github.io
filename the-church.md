@@ -13,7 +13,7 @@ Our liturgical tradition follows the West Syriac Rite, celebrated in a blend of 
 
 ## Our History
 
-St. Mary's Malankara Syrian Orthodox Church, Norway was founded in 2010. Rev Fr. Eldhose Vattaparambil came to Denmark in the year 2009 and to fulfil his desire to conduct Holy Qurbana in Scandinavia, the Catholicose H. B. Aboon Mor Baselius Thomas I, gave him permission to conduct Qurbana.
+St. Mary's Malankara Syriac Orthodox Church, Norway was founded in 2010. Rev Fr. Eldhose Vattaparambil came to Denmark in the year 2009 and to fulfil his desire to conduct Holy Qurbana in Scandinavia, the Catholicose H. B. Aboon Mor Baselius Thomas I, gave him permission to conduct Qurbana.
 
 The first Holy Qurbana of this church was conducted by Rev Fr. Eldhose Vattaparambil on 23-01-2010 at Våre Frue Kirke Church, Porsgrunn in southern Norway.
 
