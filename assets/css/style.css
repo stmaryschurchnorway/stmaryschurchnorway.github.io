@@ -1014,3 +1014,51 @@ img { max-width: 100%; height: auto; display: block; }
   .event-date { padding: 8px 4px; }
   .event-datenum { font-size: 1.0rem; }
 }
+
+/* === Rotating Daily Quote (slide-up + fade-in) === */
+.daily-quote {
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+.daily-quote .slides {
+  position: relative;
+  min-height: 120px;
+}
+.quote-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  pointer-events: none;
+}
+.quote-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.pause-chip {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 11px;
+  color: #a58117;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e8dfc7;
+  border-radius: 999px;
+  padding: 3px 10px;
+  opacity: 0;
+  transition: opacity 0.25s;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+.daily-quote.paused .pause-chip { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-slide { transition: none; }
+}

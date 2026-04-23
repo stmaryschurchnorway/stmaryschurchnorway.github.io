@@ -2,15 +2,19 @@
 layout: default
 ---
 
-<!-- Daily Thought -->
+<!-- Daily Thought (rotating) -->
 {% assign day = 'now' | date: '%j' | plus: 0 %}
-{% assign quote_index = day | modulo: site.data.quotes.size %}
-{% assign quote = site.data.quotes[quote_index] %}
-<section class="daily-quote">
-  <div class="container">
-    <div class="quote-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#d4a017"><path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z"/></svg></div>
-    <blockquote lang="ml">&#8220;{{ quote.text }}&#8221;</blockquote>
-    <cite lang="ml">&mdash; {{ quote.author }}</cite>
+{% assign active_index = day | modulo: site.data.quotes.size %}
+<section class="daily-quote" id="daily-quote">
+  <span class="pause-chip" aria-hidden="true">paused · hover to resume</span>
+  <div class="slides" aria-live="polite">
+    {% for q in site.data.quotes %}
+      <div class="quote-slide{% if forloop.index0 == active_index %} is-active{% endif %}" aria-hidden="{% if forloop.index0 == active_index %}false{% else %}true{% endif %}">
+        <div class="quote-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#d4a017"><path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z"/></svg></div>
+        <blockquote lang="ml">&#8220;{{ q.text }}&#8221;</blockquote>
+        <cite lang="ml">&mdash; {{ q.author }}</cite>
+      </div>
+    {% endfor %}
   </div>
 </section>
 
@@ -128,6 +132,79 @@ layout: default
     .catch(function() {
       container.innerHTML = '<p style="color:#fff;text-align:center;">Unable to load videos.</p>';
     });
+})();
+</script>
+
+<!-- Rotating daily quote -->
+<script>
+(function() {
+  var root = document.getElementById('daily-quote');
+  if (!root) return;
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.quote-slide'));
+  if (slides.length < 2) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var INTERVAL = 10000;
+  var current = 0;
+  for (var i = 0; i < slides.length; i++) {
+    if (slides[i].classList.contains('is-active')) { current = i; break; }
+  }
+
+  var timer = null;
+  var paused = false;
+
+  function advance() {
+    slides[current].classList.remove('is-active');
+    slides[current].setAttribute('aria-hidden', 'true');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+    slides[current].setAttribute('aria-hidden', 'false');
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(advance, INTERVAL);
+  }
+
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  function pause() {
+    if (paused) return;
+    paused = true;
+    root.classList.add('paused');
+    stop();
+  }
+
+  function resume() {
+    if (!paused) return;
+    paused = false;
+    root.classList.remove('paused');
+    start();
+  }
+
+  root.addEventListener('mouseenter', pause);
+  root.addEventListener('mouseleave', resume);
+  root.addEventListener('focusin', pause);
+  root.addEventListener('focusout', function(e) {
+    if (!e.relatedTarget || !root.contains(e.relatedTarget)) resume();
+  });
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      stop();
+    } else if (!paused) {
+      start();
+    }
+  });
+
+  if (root.matches(':hover')) {
+    paused = true;
+    root.classList.add('paused');
+  } else {
+    start();
+  }
 })();
 </script>
 
