@@ -8,7 +8,8 @@
   <link rel="apple-touch-icon" href="{{ '/assets/img/logo.png' | relative_url }}">
   {% seo %}
   {% feed_meta %}
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% include church-schema.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
@@ -66,7 +67,7 @@
     fetch(url).then(function(r) { return r.json(); }).then(function(data) {
       if (data.items && data.items.length > 0) {
         var ev = data.items[0];
-        var title = esc(ev.summary || 'Event');
+        var title = ev.summary || 'Event';
         var start = ev.start.dateTime || ev.start.date;
         var d = new Date(start);
         var opts = { weekday: 'short', month: 'short', day: 'numeric' };
@@ -74,8 +75,18 @@
         if (ev.start.dateTime) {
           dateStr += ' at ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
         }
-        el.innerHTML = '<span class="event-label">Upcoming:</span> ' + title + ' &mdash; ' + dateStr +
-          ' &nbsp;|&nbsp; <a href="/events/">View Calendar</a>';
+        while (el.firstChild) el.removeChild(el.firstChild);
+        var label = document.createElement('span');
+        label.className = 'event-label';
+        label.textContent = 'Upcoming:';
+        el.appendChild(label);
+        el.appendChild(document.createTextNode(' ' + title + ' \u2014 ' + dateStr + '  |  '));
+        var link = document.createElement('a');
+        link.href = 'https://calendar.google.com/calendar/embed?src=stmaryschurchnorway%40gmail.com&ctz=Europe%2FOslo';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'View Calendar';
+        el.appendChild(link);
       } else {
         el.textContent = 'No upcoming events';
       }

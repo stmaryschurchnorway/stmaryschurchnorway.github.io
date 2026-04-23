@@ -1,0 +1,50 @@
+{%- comment -%}
+Schema.org JSON-LD for the parish. Rendered once in <head> on every page
+(jekyll-seo-tag emits a separate WebSite schema; these complement, not duplicate).
+
+Data sources:
+  site.title, site.description, site.url, site.email, site.address
+  site.facebook, site.instagram, site.youtube
+  site.geo.latitude, site.geo.longitude
+  site.founding_date, site.languages, site.denomination, site.parent_organization
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Church", "ReligiousOrganization"],
+  "name": {{ site.title | jsonify }},
+  "alternateName": ["St. Mary's MSOC Oslo", "MSOC Norway"],
+  "description": {{ site.description | jsonify }},
+  "url": {{ site.url | append: site.baseurl | jsonify }},
+  "logo": {{ site.url | append: site.baseurl | append: "/assets/img/logo.png" | jsonify }},
+  "image": {{ site.url | append: site.baseurl | append: "/assets/img/logo.png" | jsonify }},
+  "email": {{ site.email | jsonify }},
+  "foundingDate": {{ site.founding_date | jsonify }},
+  "religion": {{ site.denomination | jsonify }},
+  "knowsLanguage": {{ site.languages | jsonify }},
+  "areaServed": ["Oslo", "Bærum", "Akershus", "Norway"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eikeli Katolske Kirke, Veståsen 18",
+    "addressLocality": "Hosle",
+    "addressRegion": "Akershus",
+    "postalCode": "1362",
+    "addressCountry": "NO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ site.geo.latitude }},
+    "longitude": {{ site.geo.longitude }}
+  },
+  "parentOrganization": {
+    "@type": "ReligiousOrganization",
+    "name": {{ site.parent_organization.name | jsonify }},
+    "url": {{ site.parent_organization.url | jsonify }}
+  },
+  "sameAs": [
+    {{ site.facebook | jsonify }},
+    {{ site.instagram | jsonify }},
+    {{ site.youtube | jsonify }}
+  ]
+}
+</script>

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Events
+title: "Holy Qurbana Schedule & Events"
 permalink: /events/
-description: "Upcoming events, calendar, and news from St. Mary's MSOC, Oslo."
+description: "Holy Qurbana schedule, feast days (Oshana, Perunnal), and upcoming events at St. Mary's Malankara Syriac Orthodox Church, Oslo. Subscribe to our Malayalam Orthodox parish calendar."
 ---
 
 <div class="events-intro">
@@ -12,18 +12,14 @@ description: "Upcoming events, calendar, and news from St. Mary's MSOC, Oslo."
   </div>
 </div>
 
-<h2 class="section-title">Upcoming Events</h2>
-
-<div class="calendar-wrap">
-  <iframe src="https://calendar.google.com/calendar/embed?src=stmaryschurchnorway%40gmail.com&ctz=Europe%2FOslo" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
+{% include upcoming-events.html id="events-upcoming" limit=5 paginate=true %}
 
 {% if site.posts.size > 0 %}
 <h2 class="section-title" style="margin-top:45px;">Past Events</h2>
 
-<div class="news-list" id="news-list">
+<div class="news-list" id="news-list" data-per-page="4">
   {% for post in site.posts %}
-  <a href="{{ post.url | relative_url }}" class="news-list-item" data-index="{{ forloop.index }}">
+  <a href="{{ post.url | relative_url }}" class="news-list-item">
     <span class="news-date">{{ post.date | date: "%b %d, %Y" }}</span>
     <h3>{{ post.title }}</h3>
     <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
@@ -36,42 +32,41 @@ description: "Upcoming events, calendar, and news from St. Mary's MSOC, Oslo."
 
 <script>
 (function() {
-  var perPage = 6;
-  var items = document.querySelectorAll('.news-list-item');
-  var pagination = document.getElementById('pagination');
+  var list = document.getElementById('news-list');
+  var nav = document.getElementById('pagination');
+  if (!list || !nav) return;
+  var perPage = parseInt(list.getAttribute('data-per-page'), 10) || 6;
+  var items = Array.prototype.slice.call(list.querySelectorAll('.news-list-item'));
+  if (items.length <= perPage) return;
   var totalPages = Math.ceil(items.length / perPage);
-  var currentPage = 1;
-
-  function showPage(page) {
-    currentPage = page;
+  function clear(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function show(page) {
     items.forEach(function(item, i) {
       item.style.display = (i >= (page - 1) * perPage && i < page * perPage) ? '' : 'none';
     });
-    renderPagination();
-    document.getElementById('news-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    renderNav(page);
+    if (page !== 1) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
-  function renderPagination() {
-    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-    var html = '';
-    if (currentPage > 1) {
-      html += '<button class="page-btn" data-page="' + (currentPage - 1) + '">&laquo; Prev</button>';
-    }
-    for (var i = 1; i <= totalPages; i++) {
-      html += '<button class="page-btn' + (i === currentPage ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
-    }
-    if (currentPage < totalPages) {
-      html += '<button class="page-btn" data-page="' + (currentPage + 1) + '">Next &raquo;</button>';
-    }
-    pagination.innerHTML = html;
-    pagination.querySelectorAll('.page-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        showPage(parseInt(this.getAttribute('data-page')));
-      });
+  function renderNav(currentPage) {
+    clear(nav);
+    var parts = [];
+    if (currentPage > 1) parts.push({ label: '« Prev', page: currentPage - 1 });
+    for (var i = 1; i <= totalPages; i++) parts.push({ label: String(i), page: i, active: i === currentPage });
+    if (currentPage < totalPages) parts.push({ label: 'Next »', page: currentPage + 1 });
+    parts.forEach(function(p) {
+      var btn = el('button', 'page-btn' + (p.active ? ' active' : ''), p.label);
+      btn.type = 'button';
+      btn.addEventListener('click', function() { show(p.page); });
+      nav.appendChild(btn);
     });
   }
-
-  if (items.length > 0) showPage(1);
+  show(1);
 })();
 </script>
 {% endif %}

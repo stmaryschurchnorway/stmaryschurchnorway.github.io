@@ -2,7 +2,7 @@
 layout: page
 title: Contact Us
 permalink: /contact/
-description: "Get in touch with St. Mary's Malankara Syrian Orthodox Church, Oslo, Norway."
+description: "Visit St. Mary's Malankara Syriac Orthodox Church at Eikeli Katolske Kirke, 1362 Hosle (greater Oslo area), Norway. Map, directions, email, and parish contacts."
 ---
 
 ## Our Location

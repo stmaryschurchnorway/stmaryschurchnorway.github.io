@@ -1,0 +1,201 @@
+{%- comment -%}
+Reusable Upcoming Events include — fetches Google Calendar events and renders
+a list of cards. Safe-by-construction: uses DOM APIs only (no innerHTML), and
+event descriptions are stripped of HTML via DOMParser before rendering.
+
+Parameters:
+  include.limit        (int)     max events per page. Default: 5
+  include.paginate     (bool)    show pagination controls. Default: false
+  include.link_to_all  (bool)    show "View All Events →" footer link. Default: false
+  include.id           (string)  unique container id (needed when used twice on a page). Default: "upcoming-events"
+  include.window_days  (int)     forward time window in days. Default: 90
+  include.show_heading (bool)    render "Upcoming Events" <h2>. Default: true
+  include.desc_chars   (int)     max description characters after HTML-strip. Default: 140
+{%- endcomment -%}
+{% assign limit = include.limit | default: 5 %}
+{% assign paginate = include.paginate | default: false %}
+{% assign link_to_all = include.link_to_all | default: false %}
+{% assign container_id = include.id | default: "upcoming-events" %}
+{% assign window_days = include.window_days | default: 90 %}
+{% assign show_heading = include.show_heading | default: true %}
+{% assign desc_chars = include.desc_chars | default: 140 %}
+
+<section class="upcoming-events-section">
+  {% if show_heading %}<h2 class="section-title">Upcoming Events</h2>{% endif %}
+  <div class="events-container" id="{{ container_id }}" role="status" aria-live="polite">
+    <p class="events-loading">Loading upcoming events&hellip;</p>
+  </div>
+  {% if paginate %}
+  <div class="pagination" id="{{ container_id }}-pagination"></div>
+  {% endif %}
+  {% if link_to_all %}
+  <div class="events-footer-link">
+    <a href="{{ '/events/' | relative_url }}" class="btn">View All Events &rarr;</a>
+  </div>
+  {% endif %}
+</section>
+
+<script>
+(function() {
+  var apiKey = {{ site.google_api_key | jsonify }};
+  var calId = {{ site.google_calendar_id | jsonify }};
+  var containerId = {{ container_id | jsonify }};
+  var limit = {{ limit }};
+  var paginate = {{ paginate }};
+  var windowDays = {{ window_days }};
+  var descChars = {{ desc_chars }};
+  var container = document.getElementById(containerId);
+  var paginationEl = document.getElementById(containerId + '-pagination');
+  if (!container) return;
+
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function clear(node) {
+    while (node && node.firstChild) node.removeChild(node.firstChild);
+  }
+
+  function safeHref(url) {
+    return /^https?:\/\//.test(url) ? url : '#';
+  }
+
+  // Convert Calendar's HTML description to safe plain text.
+  // DOMParser parses without running scripts or fetching resources. We extract
+  // textContent only — no parsed nodes are ever inserted into the live DOM.
+  function htmlToPlainText(html) {
+    if (!html) return '';
+    var doc = new DOMParser().parseFromString(String(html), 'text/html');
+    doc.querySelectorAll('br').forEach(function(br) { br.replaceWith('\n'); });
+    doc.querySelectorAll('p, div, li, h1, h2, h3, h4').forEach(function(n) {
+      n.insertAdjacentText('afterend', '\n');
+    });
+    var text = (doc.body && doc.body.textContent) || '';
+    return text.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function truncate(s, n) {
+    s = String(s || '');
+    if (s.length <= n) return s;
+    var cut = s.substring(0, n);
+    var lastBreak = Math.max(cut.lastIndexOf(' '), cut.lastIndexOf('\n'));
+    if (lastBreak > n - 40) cut = cut.substring(0, lastBreak);
+    return cut.trim() + '…';
+  }
+
+  function showEmpty() {
+    clear(container);
+    var p = el('p', 'events-empty', 'No upcoming events in the next ' + windowDays + ' days. ');
+    var a = el('a', null, 'Subscribe to our calendar');
+    a.href = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(calId);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    p.appendChild(a);
+    p.appendChild(document.createTextNode(' for updates.'));
+    container.appendChild(p);
+    clear(paginationEl);
+  }
+
+  function showFallback() {
+    clear(container);
+    var p = el('p', 'events-fallback', 'Upcoming events are temporarily unavailable. Please check our ');
+    var a = el('a', null, 'calendar');
+    a.href = '/events/';
+    p.appendChild(a);
+    p.appendChild(document.createTextNode(' for the latest schedule.'));
+    container.appendChild(p);
+    clear(paginationEl);
+  }
+
+  function buildCard(ev) {
+    var isAllDay = !ev.start.dateTime;
+    var startIso = ev.start.dateTime || ev.start.date;
+    var dt = new Date(startIso);
+    var dayName = dt.toLocaleDateString('en-US', { weekday: 'short' });
+    var dateStr = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    var timeStr = isAllDay ? '' : dt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+    var card = document.createElement('a');
+    card.className = 'event-card';
+    card.href = safeHref(ev.htmlLink);
+    card.target = '_blank';
+    card.rel = 'noopener';
+
+    var dateBox = el('div', 'event-date');
+    dateBox.appendChild(el('span', 'event-day', dayName));
+    dateBox.appendChild(el('span', 'event-datenum', dateStr));
+    if (timeStr) dateBox.appendChild(el('span', 'event-time', timeStr));
+
+    var body = el('div', 'event-body');
+    body.appendChild(el('h3', 'event-title', ev.summary || 'Untitled Event'));
+    if (ev.location) body.appendChild(el('div', 'event-venue', ev.location));
+    var descText = htmlToPlainText(ev.description);
+    if (descText) body.appendChild(el('p', 'event-description', truncate(descText, descChars)));
+
+    card.appendChild(dateBox);
+    card.appendChild(body);
+    card.appendChild(el('span', 'event-add-cal', '+ Add to Calendar'));
+    return card;
+  }
+
+  function renderCards(events) {
+    clear(container);
+    events.forEach(function(ev) { container.appendChild(buildCard(ev)); });
+  }
+
+  function renderPagination(totalPages, currentPage, onClick) {
+    if (!paginationEl) return;
+    clear(paginationEl);
+    if (totalPages <= 1) return;
+    var parts = [];
+    if (currentPage > 1) parts.push({ label: '« Prev', page: currentPage - 1 });
+    for (var i = 1; i <= totalPages; i++) parts.push({ label: String(i), page: i, active: i === currentPage });
+    if (currentPage < totalPages) parts.push({ label: 'Next »', page: currentPage + 1 });
+    parts.forEach(function(p) {
+      var btn = el('button', 'page-btn' + (p.active ? ' active' : ''), p.label);
+      btn.type = 'button';
+      btn.addEventListener('click', function() { onClick(p.page); });
+      paginationEl.appendChild(btn);
+    });
+  }
+
+  function runPaginated(events) {
+    var perPage = limit;
+    var totalPages = Math.ceil(events.length / perPage);
+    function show(page) {
+      var start = (page - 1) * perPage;
+      renderCards(events.slice(start, start + perPage));
+      renderPagination(totalPages, page, show);
+      if (page !== 1) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    show(1);
+  }
+
+  var now = new Date();
+  var end = new Date(now.getTime() + windowDays * 24 * 60 * 60 * 1000);
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/' +
+    encodeURIComponent(calId) + '/events?key=' + encodeURIComponent(apiKey) +
+    '&timeMin=' + encodeURIComponent(now.toISOString()) +
+    '&timeMax=' + encodeURIComponent(end.toISOString()) +
+    '&singleEvents=true&orderBy=startTime&maxResults=50';
+
+  fetch(url)
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(data) {
+      var events = (data.items || []).filter(function(ev) { return !ev.recurringEventId; });
+      if (events.length === 0) { showEmpty(); return; }
+      if (paginate) { runPaginated(events); }
+      else { renderCards(events.slice(0, limit)); }
+    })
+    .catch(function(err) {
+      console.error('Upcoming events fetch failed:', err);
+      showFallback();
+    });
+})();
+</script>

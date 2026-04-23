@@ -5,3 +5,6 @@ _site/
 vendor/
 Gemfile.lock
 .DS_Store
+.playwright-mcp/
+docs/superpowers/
+/*.png

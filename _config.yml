@@ -1,13 +1,25 @@
 title: "St. Mary's Malankara Syriac Orthodox Church"
 subtitle: "Oslo, Norway"
-description: "St. Mary's Malankara Syrian Orthodox Church, Oslo, Norway — founded in 2010. Join us for Holy Qurbana, Sunday School, and community events."
+description: "Malayalam-speaking Malankara Syriac Orthodox parish in Oslo, Norway. Holy Qurbana, Oshana, Perunnal feasts, and Sunday School — serving the Malayali Orthodox community in Scandinavia since 2010."
 email: stmaryschurchnorway@gmail.com
 address: "Eikeli Katolske Kirke, Veståsen 18, 1362 Oslo, Norway"
 facebook: "https://www.facebook.com/stmaryschurchnorway"
 instagram: "https://www.instagram.com/msoc_norway/"
 youtube: "https://www.youtube.com/@msoc_norway"
 baseurl: ""
-url: "https://stmaryschurchnorway.github.io"
+url: "https://www.stmarysmsoc.no"
+
+# Structured-data fields consumed by _includes/church-schema.html.
+# Verify lat/lng on Google Maps — current values are approximate for 1362 Hosle.
+geo:
+  latitude: 59.9240
+  longitude: 10.5630
+founding_date: "2010"
+languages: ["en", "ml", "no"]
+denomination: "Oriental Orthodox Christianity"
+parent_organization:
+  name: "Malankara Syriac Orthodox Church — European Diocese"
+  url: "https://msoc-europe.com/"
 
 vicar: "Rev Fr. Eldhose Vattaparambil"
 vicar_email: "fr.eldhosevattaparambil@live.dk"
@@ -21,6 +33,7 @@ youtube_channel: "@msoc_norway"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile.lock
