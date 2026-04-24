@@ -906,8 +906,8 @@ img { max-width: 100%; height: auto; display: block; }
   .welcome { padding: 25px 12px; }
   .welcome-content { flex-direction: column; }
   .welcome-vicar { flex: none; padding: 16px 16px 8px; }
-  .vicar-photo-wrap { width: 120px; }
-  .vicar-photo-wrap img { height: 140px; }
+  .vicar-photo-wrap { width: 120px; height: 120px; }
+  .vicar-photo-wrap img { height: 100%; }
   .welcome-text { padding: 22px; }
   .section-title { font-size: 1.35rem; }
   .hierarchy-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -947,8 +947,8 @@ img { max-width: 100%; height: auto; display: block; }
   .gallery-grid { grid-template-columns: 1fr; }
   .video-gallery-grid { grid-template-columns: 1fr; gap: 16px; }
   .contact-map iframe { height: 240px; }
-  .vicar-photo-wrap { width: 110px; }
-  .vicar-photo-wrap img { height: 130px; }
+  .vicar-photo-wrap { width: 110px; height: 110px; }
+  .vicar-photo-wrap img { height: 100%; }
   .calendar-wrap iframe { min-height: 320px; }
   .back-to-top { bottom: 20px; right: 20px; width: 38px; height: 38px; font-size: 1.1rem; }
 }
