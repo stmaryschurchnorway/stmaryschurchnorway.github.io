@@ -24,7 +24,7 @@ layout: default
   <div class="welcome-content">
     <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="welcome-vicar">
       <div class="vicar-photo-wrap">
-        <img src="{{ '/assets/img/members-1.jpg' | relative_url }}" alt="{{ site.vicar }}">
+        <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="{{ site.vicar }}">
       </div>
       <div class="vicar-label">Vicar / President</div>
       <div class="vicar-name">{{ site.vicar }}</div>
@@ -38,14 +38,17 @@ layout: default
 
 
 <!-- Upcoming Events -->
-{% include upcoming-events.html id="home-upcoming" limit=3 link_to_all=true paginate=false %}
+{% include upcoming-events.html id="home-upcoming" limit=3 link_to_all=false paginate=false %}
 
-<!-- Past Events -->
+<!-- Past Events (from Google Calendar) -->
+{% include past-events.html id="home-past-events" limit=3 window_days=90 link_to_all=true %}
+
+<!-- Latest News (from _posts/) -->
 {% if site.posts.size > 0 %}
 <section class="news-section">
   <div class="container">
-    <h2 class="section-title">Past Events</h2>
-    <div class="news-grid" id="past-events-grid" data-per-page="3">
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-grid" id="latest-news-grid" data-per-page="3">
       {% for post in site.posts %}
       <a href="{{ post.url | relative_url }}" class="news-card">
         <span class="news-date">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -55,11 +58,11 @@ layout: default
       </a>
       {% endfor %}
     </div>
-    <div class="pagination" id="past-events-pagination"></div>
+    <div class="pagination" id="latest-news-pagination"></div>
     <script>
     (function() {
-      var grid = document.getElementById('past-events-grid');
-      var nav = document.getElementById('past-events-pagination');
+      var grid = document.getElementById('latest-news-grid');
+      var nav = document.getElementById('latest-news-pagination');
       if (!grid || !nav) return;
       var perPage = parseInt(grid.getAttribute('data-per-page'), 10) || 6;
       var cards = Array.prototype.slice.call(grid.querySelectorAll('.news-card'));

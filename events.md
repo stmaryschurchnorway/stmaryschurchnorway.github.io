@@ -14,8 +14,10 @@ description: "Holy Qurbana schedule, feast days (Oshana, Perunnal), and upcoming
 
 {% include upcoming-events.html id="events-upcoming" limit=5 paginate=true %}
 
+{% include past-events.html id="events-past" limit=6 window_days=90 paginate=true %}
+
 {% if site.posts.size > 0 %}
-<h2 class="section-title" style="margin-top:45px;">Past Events</h2>
+<h2 class="section-title" style="margin-top:45px;">Latest News</h2>
 
 <div class="news-list" id="news-list" data-per-page="4">
   {% for post in site.posts %}

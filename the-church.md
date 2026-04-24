@@ -33,22 +33,22 @@ We cordially invite you to come and participate in our liturgical services.
 
 <div class="hierarchy-grid">
   <div class="hierarchy-card">
-    <img src="{{ '/assets/img/hierarchy/h1.jpg' | relative_url }}" alt="H.H. Moran Mor Ignatius Aphrem II">
+    <img src="{{ '/assets/img/hierarchy/moran-mor.png' | relative_url }}" alt="H.H. Moran Mor Ignatius Aphrem II">
     <h3>Our Patriarch</h3>
     <p>H.H. Moran Mor Ignatius Aphrem II</p>
   </div>
   <div class="hierarchy-card">
-    <img src="{{ '/assets/img/hierarchy/h2.jpg' | relative_url }}" alt="H.B. Aboon Mor Baselios Joseph">
+    <img src="{{ '/assets/img/hierarchy/baselios.png' | relative_url }}" alt="H.B. Aboon Mor Baselios Joseph">
     <h3>Our Catholicose</h3>
     <p>H.B. Aboon Mor Baselios Joseph</p>
   </div>
   <a href="https://www.instagram.com/theophilose_kuriakose/" target="_blank" rel="noopener" class="hierarchy-card">
-    <img src="{{ '/assets/img/hierarchy/h3.jpg' | relative_url }}" alt="H.E. Kuriakose Mor Theophilos">
+    <img src="{{ '/assets/img/hierarchy/kuriakose.png' | relative_url }}" alt="H.E. Kuriakose Mor Theophilos">
     <h3>Patriarchal Vicar</h3>
     <p>H.E. Kuriakose Mor Theophilos</p>
   </a>
   <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="hierarchy-card">
-    <img src="{{ '/assets/img/hierarchy/h4.jpg' | relative_url }}" alt="Rev Fr. Eldhose Vattaparambil">
+    <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="Rev Fr. Eldhose Vattaparambil">
     <h3>Vicar</h3>
     <p>Rev Fr. Eldhose Vattaparambil</p>
   </a>

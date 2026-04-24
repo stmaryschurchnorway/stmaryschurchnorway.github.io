@@ -23,14 +23,14 @@ description: "Visit St. Mary's Malankara Syriac Orthodox Church at Eikeli Katols
 
 <div class="hierarchy-grid">
   <div class="hierarchy-card">
-    <img src="{{ '/assets/img/hierarchy/h4.jpg' | relative_url }}" alt="Rev Fr. Eldhose Vattaparambil">
+    <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="Rev Fr. Eldhose Vattaparambil">
     <h3>Vicar & President</h3>
     <p>Rev Fr. Eldhose Vattaparambil</p>
     <p class="contact-detail">{{ site.vicar_email }}</p>
     <p class="contact-detail"><img src="{{ '/assets/img/phone-vicar.svg' | relative_url }}" alt="Phone" class="phone-img"></p>
   </div>
   <div class="hierarchy-card">
-    <img src="{{ '/assets/img/members/riju.jpg' | relative_url }}" alt="Riju Cherian">
+    <img src="{{ '/assets/img/members/riju.png' | relative_url }}" alt="Riju Cherian">
     <h3>Secretary</h3>
     <p>Mr. Riju Cherian</p>
   </div>
