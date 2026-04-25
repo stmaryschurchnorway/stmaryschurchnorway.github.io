@@ -27,7 +27,6 @@ description: "Visit St. Mary's Malankara Syriac Orthodox Church at Eikeli Katols
     <h3>Vicar & President</h3>
     <p>Rev Fr. Eldhose Vattaparambil</p>
     <p class="contact-detail">{{ site.vicar_email }}</p>
-    <p class="contact-detail"><img src="{{ '/assets/img/phone-vicar.svg' | relative_url }}" alt="Phone" class="phone-img"></p>
   </div>
   <div class="hierarchy-card">
     <img src="{{ '/assets/img/members/riju.png' | relative_url }}" alt="Riju Cherian">
