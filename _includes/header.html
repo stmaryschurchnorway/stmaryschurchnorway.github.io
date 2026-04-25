@@ -31,7 +31,14 @@
     <div class="container">
       <ul class="nav-links">
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li><a href="{{ '/the-church/' | relative_url }}" {% if page.url == '/the-church/' %}class="active"{% endif %}>The Church</a></li>
+        <li class="nav-dropdown">
+          <a href="{{ '/the-church/' | relative_url }}" {% if page.url == '/the-church/' %}class="active"{% endif %}>The Church</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ '/the-church/' | relative_url }}">Our Faith & History</a></li>
+            <li><a href="{{ '/qurbana/' | relative_url }}">Our Liturgy</a></li>
+            <li><a href="{{ '/the-church/' | relative_url }}#our-hierarchy">Our Hierarchy</a></li>
+          </ul>
+        </li>
         <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Gallery</a></li>
         <li><a href="{{ '/events/' | relative_url }}" {% if page.url == '/events/' %}class="active"{% endif %}>Events</a></li>
         <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact Us</a></li>

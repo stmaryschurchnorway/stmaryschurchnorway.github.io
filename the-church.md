@@ -29,7 +29,7 @@ The Church celebrates its foundation day perunnal on 23rd January every year and
 
 We cordially invite you to come and participate in our liturgical services.
 
-## Hierarchy
+## Our Hierarchy {#our-hierarchy}
 
 <div class="hierarchy-grid">
   <div class="hierarchy-card">

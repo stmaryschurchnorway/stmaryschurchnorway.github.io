@@ -132,6 +132,51 @@ img { max-width: 100%; height: auto; display: block; }
   color: #fff;
 }
 
+/* === Dropdown Menu === */
+.nav-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  margin-top: 0;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu li {
+  margin: 0;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #2d2d2d;
+  background: transparent;
+  border-radius: 0;
+  font-weight: 500;
+  text-transform: none;
+  transition: background 0.2s;
+}
+.dropdown-menu a:hover {
+  background: #f5f1e8;
+  color: #d4a017;
+}
+
 /* === Hero Video === */
 .hero-video {
   background: #1a1a1a;
@@ -211,12 +256,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .vicar-label {
   display: inline-block;
-  border: 2px solid #d4a017;
+  background: transparent;
   color: #d4a017;
-  padding: 5px 20px;
+  border: 1px solid #d4a017;
+  padding: 4px 16px;
   border-radius: 25px;
   font-weight: 600;
-  font-size: 0.73rem;
+  font-size: 0.65rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -238,6 +284,31 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.92rem;
   color: #4a4a4a;
 }
+.welcome-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.welcome-buttons .btn {
+  padding: 8px 20px;
+  font-size: 0.75rem;
+  background: transparent;
+  color: #d4a017;
+  border: 1.5px solid #d4a017;
+}
+.welcome-buttons .btn:hover {
+  background: #faf5f0;
+  color: #d4a017;
+}
+.welcome-buttons .btn-secondary {
+  background: transparent;
+  color: #d4a017;
+  border: 1.5px solid #d4a017;
+}
+.welcome-buttons .btn-secondary:hover {
+  background: #faf5f0;
+  color: #d4a017;
+}
 .btn {
   display: inline-block;
   background: #d4a017;
@@ -251,6 +322,15 @@ img { max-width: 100%; height: auto; display: block; }
   transition: background 0.3s;
 }
 .btn:hover { background: #b8860b; }
+.btn-secondary {
+  background: #f5f1e8;
+  color: #d4a017;
+  border: 2px solid #d4a017;
+}
+.btn-secondary:hover {
+  background: #efe3c3;
+  color: #d4a017;
+}
 
 /* === Gallery Section === */
 .gallery-section {
@@ -909,6 +989,7 @@ img { max-width: 100%; height: auto; display: block; }
   .vicar-photo-wrap { width: 120px; height: 120px; }
   .vicar-photo-wrap img { height: 100%; }
   .welcome-text { padding: 22px; }
+  .welcome-buttons { flex-direction: column; }
   .section-title { font-size: 1.35rem; }
   .hierarchy-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .hierarchy-card img { width: 100px; height: 100px; }

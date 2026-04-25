@@ -31,11 +31,14 @@ layout: default
     </a>
     <div class="welcome-text">
       <p>{{ page.welcome_text }}</p>
-      <a href="{{ '/the-church/' | relative_url }}" class="btn">Read More</a>
+      <div class="welcome-buttons">
+        <a href="{{ '/the-church/' | relative_url }}" class="btn">Our Church</a>
+        <a href="{{ '/the-church/' | relative_url }}#our-hierarchy" class="btn">Our Hierarchy</a>
+        <a href="{{ '/qurbana/' | relative_url }}" class="btn btn-secondary">Our Liturgy</a>
+      </div>
     </div>
   </div>
 </section>
-
 
 <!-- Upcoming Events -->
 {% include upcoming-events.html id="home-upcoming" limit=3 link_to_all=false paginate=false %}

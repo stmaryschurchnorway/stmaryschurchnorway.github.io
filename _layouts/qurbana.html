@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/img/logo.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/logo.png' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
+  {% include church-schema.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ '/assets/css/qurbana.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% include header.html %}
+
+<main>
+  <div class="container">
+    {{ content }}
+  </div>
+</main>
+
+{% include footer.html %}
+
+<button class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" id="lightbox-img" alt="Full size image">
+</div>
+
+<script>
+  (function() {
+    var btn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  (function() {
+    var el = document.getElementById('next-event');
+    if (!el) return;
+    var apiKey = '{{ site.google_api_key }}';
+    var calId = '{{ site.google_calendar_id }}';
+    var now = new Date().toISOString();
+    var url = 'https://www.googleapis.com/calendar/v3/calendars/' +
+      encodeURIComponent(calId) +
+      '/events?key=' + apiKey +
+      '&timeMin=' + encodeURIComponent(now) +
+      '&maxResults=1&singleEvents=true&orderBy=startTime';
+
+    fetch(url).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.items && data.items.length > 0) {
+        var ev = data.items[0];
+        var title = ev.summary || 'Event';
+        var start = ev.start.dateTime || ev.start.date;
+        var d = new Date(start);
+        var opts = { weekday: 'short', month: 'short', day: 'numeric' };
+        var dateStr = d.toLocaleDateString('en-US', opts);
+        if (ev.start.dateTime) {
+          dateStr += ' at ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+        while (el.firstChild) el.removeChild(el.firstChild);
+        var label = document.createElement('span');
+        label.className = 'event-label';
+        label.textContent = 'Upcoming:';
+        el.appendChild(label);
+        el.appendChild(document.createTextNode(' ' + title + ' — ' + dateStr + '  |  '));
+        var link = document.createElement('a');
+        link.href = 'https://calendar.google.com/calendar/embed?src=stmaryschurchnorway%40gmail.com&ctz=Europe%2FOslo';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'View Calendar';
+        el.appendChild(link);
+      } else {
+        el.textContent = 'No upcoming events';
+      }
+    }).catch(function() {
+      el.textContent = 'Welcome to St. Mary’s MSOC, Oslo';
+    });
+  })();
+
+  (function() {
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    document.querySelectorAll('.lightbox-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        img.src = this.href;
+        box.classList.add('open');
+      });
+    });
+    box.addEventListener('click', function(e) {
+      if (e.target !== img) {
+        box.classList.remove('open');
+        img.src = '';
+      }
+    });
+  })();
+</script>
+<script data-goatcounter="https://stmaryschurchnorway.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+(function() {
+  var el = document.getElementById('visitor-count');
+  if (!el) return;
+  var r = new XMLHttpRequest();
+  r.open('GET', 'https://stmaryschurchnorway.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json');
+  r.onload = function() {
+    if (r.status === 200) {
+      var data = JSON.parse(r.responseText);
+      el.textContent = 'Visitors: ' + data.count_unique;
+    }
+  };
+  r.send();
+})();
+</script>
+</body>
+</html>
