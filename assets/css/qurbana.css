@@ -45,15 +45,15 @@
   box-shadow: none !important;
   max-width: none !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 .carousel-card:fullscreen .image-placeholder,
 .carousel-card:-webkit-full-screen .image-placeholder,
 .carousel-card:-moz-full-screen .image-placeholder,
 .carousel-card:-ms-fullscreen .image-placeholder {
-  flex: 1 !important;
+  flex: 0 0 55vh !important;
   aspect-ratio: auto !important;
-  min-height: 50vh !important;
   max-width: none !important;
 }
 
@@ -61,11 +61,11 @@
 .carousel-card:-webkit-full-screen .carousel-content,
 .carousel-card:-moz-full-screen .carousel-content,
 .carousel-card:-ms-fullscreen .carousel-content {
-  flex: 0 !important;
-  max-height: 50vh !important;
+  flex: 1 !important;
   overflow-y: auto !important;
   padding: 20px 25px !important;
   width: 100% !important;
+  height: 45vh !important;
 }
 
 .image-placeholder {
