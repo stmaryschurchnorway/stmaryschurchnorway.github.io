@@ -67,9 +67,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+  height: 60px;
+  background: #000;
   z-index: 5;
+  pointer-events: none;
 }
 
 #youtubeContainer::after {
@@ -78,9 +79,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  height: 70px;
+  background: #000;
   z-index: 5;
+  pointer-events: none;
 }
 
 #placeholderText {
