@@ -74,35 +74,51 @@
 }
 
 .carousel-content {
-  padding: 25px 30px;
+  padding: 0;
   text-align: center;
+}
+
+.controls-header {
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-text {
+  flex: 1;
+  padding: 0 8px;
 }
 
 .stage-counter {
   font-size: 11px;
   color: #999;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
 }
 
 .stage-title {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin: 4px 0 0 0;
   line-height: 1.2;
 }
+
 
 .malayalam-section {
   background: #fafaf8;
   padding: 12px 15px;
   border-radius: 0;
-  margin-bottom: 20px;
+  margin: 20px 25px 20px 25px;
   border-left: 4px solid #d4a017;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
@@ -155,15 +171,11 @@
   font-size: 14px;
   color: #666;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin: 0 25px 20px 25px;
 }
 
 .controls {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 25px;
+  display: none;
 }
 
 .icon-btn {
@@ -180,6 +192,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -190,20 +203,13 @@
   transform: scale(0.9);
 }
 
-.pause-btn {
-  background: #95a5a6;
-}
-
-.pause-btn:hover {
-  background: #7f8c8d;
-}
-
 .progress-dots {
   display: flex;
   gap: 8px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 0 25px 25px 25px;
 }
 
 .dot {
@@ -227,13 +233,28 @@
 
 /* Responsive */
 @media (max-width: 600px) {
-  .carousel-content {
-    padding: 20px;
+  .controls-header {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .header-text {
+    padding: 0 6px;
   }
 
   .stage-title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: 2px;
+  }
+
+  .stage-counter {
+    font-size: 10px;
+  }
+
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
 
   .malayalam-text {
@@ -243,6 +264,7 @@
   .malayalam-section {
     padding: 10px 12px;
     gap: 10px;
+    margin: 15px 20px;
   }
 
   .audio-button {
@@ -253,11 +275,10 @@
 
   .stage-description {
     font-size: 14px;
+    margin: 0 20px 15px 20px;
   }
 
-  .icon-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  .progress-dots {
+    padding: 0 20px 20px 20px;
   }
 }

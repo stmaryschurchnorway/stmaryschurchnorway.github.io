@@ -12,8 +12,14 @@
     <script defer src="https://www.youtube.com/iframe_api"></script>
 
     <div class="carousel-content">
-      <div class="stage-counter" id="stageCounter">INTRODUCTION</div>
-      <h2 class="stage-title" id="stageTitle">Holy Qurbana</h2>
+      <div class="controls-header">
+        <button class="icon-btn" id="prevBtn" title="Previous stage">←</button>
+        <div class="header-text">
+          <div class="stage-counter" id="stageCounter">INTRODUCTION</div>
+          <h2 class="stage-title" id="stageTitle">Holy Qurbana</h2>
+        </div>
+        <button class="icon-btn" id="nextBtn" title="Next stage">→</button>
+      </div>
 
       <div class="malayalam-section" id="malayalamSection">
         <div class="malayalam-content">
@@ -24,14 +30,8 @@
       </div>
 
       <p class="stage-description" id="stageDescription">
-        An interactive journey through the six stages of the Eucharistic service. Click the speaker icon to hear Malayalam pronunciation. Use the arrow buttons to navigate, or click any dot below to jump to a stage.
+        An interactive journey through the sacred stages of the Eucharistic service. Click the speaker icon to hear Malayalam pronunciation, or use the arrow buttons to navigate between stages.
       </p>
-
-      <div class="controls">
-        <button class="icon-btn" id="prevBtn" title="Previous stage">←</button>
-        <button class="icon-btn pause-btn" id="pauseBtn" title="Pause">⏸</button>
-        <button class="icon-btn" id="nextBtn" title="Next stage">→</button>
-      </div>
 
       <div class="progress-dots" id="progressDots"></div>
     </div>
@@ -57,7 +57,6 @@
   const progressBar = carousel.querySelector('#progressBar');
   const audioBtn = carousel.querySelector('#audioBtn');
   const prevBtn = carousel.querySelector('#prevBtn');
-  const pauseBtn = carousel.querySelector('#pauseBtn');
   const nextBtn = carousel.querySelector('#nextBtn');
   const dotsContainer = carousel.querySelector('#progressDots');
 
@@ -196,26 +195,13 @@
     window.speechSynthesis.speak(utterance);
   }
 
-  function togglePause() {
-    isPaused = !isPaused;
-    pauseBtn.textContent = isPaused ? '▶' : '⏸';
-    if (isPaused) {
-      clearTimeout(autoAdvanceTimer);
-    } else {
-      resetAutoAdvance();
-    }
-  }
-
   function resetAutoAdvance() {
     clearTimeout(autoAdvanceTimer);
-    if (!isPaused) {
-      autoAdvanceTimer = setTimeout(nextStage, ADVANCE_INTERVAL);
-    }
+    autoAdvanceTimer = setTimeout(nextStage, ADVANCE_INTERVAL);
   }
 
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);
-  pauseBtn.addEventListener('click', togglePause);
   audioBtn.addEventListener('click', playAudio);
 
   createDots();
@@ -225,7 +211,7 @@
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       clearTimeout(autoAdvanceTimer);
-    } else if (!isPaused) {
+    } else {
       resetAutoAdvance();
     }
   });
