@@ -133,6 +133,33 @@
         },
         'onStateChange': function(event) {
           if (event.data === YT.PlayerState.ENDED) {
+            nextStage();
+          }
+        }
+      },
+      playerVars: {
+        'rel': 0,
+        'modestbranding': 1,
+        'autoplay': 1,
+        'controls': 0
+      }
+    });
+  }
+
+  function initializePlayer(videoId) {
+    var playerDiv = document.getElementById('youtubePlayer');
+    if (!playerDiv) return;
+
+    var player = new YT.Player('youtubePlayer', {
+      width: '100%',
+      height: '100%',
+      videoId: videoId,
+      events: {
+        'onReady': function(event) {
+          event.target.playVideo();
+        },
+        'onStateChange': function(event) {
+          if (event.data === YT.PlayerState.ENDED) {
             if (!isPaused) {
               nextStage();
             }
