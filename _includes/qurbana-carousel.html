@@ -176,6 +176,9 @@
         'onStateChange': function(event) {
           if (event.data === YT.PlayerState.PLAYING) {
             resetProgressBar();
+            resumeProgressBar();
+          } else if (event.data === YT.PlayerState.PAUSED) {
+            pauseProgressBar();
           } else if (event.data === YT.PlayerState.ENDED) {
             nextStage();
           }
@@ -211,6 +214,16 @@
     }
 
     progressBar.style.animation = isPaused ? 'none' : ('qurbanaFill ' + duration + ' linear forwards');
+  }
+
+  function pauseProgressBar() {
+    isPaused = true;
+    progressBar.style.animationPlayState = 'paused';
+  }
+
+  function resumeProgressBar() {
+    isPaused = false;
+    progressBar.style.animationPlayState = 'running';
   }
 
   function goToStage(index) {
