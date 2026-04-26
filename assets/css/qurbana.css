@@ -7,15 +7,14 @@
   padding: 0 20px;
 }
 
-.qurbana-intro h1 {
-  font-size: 28px;
+.qurbana-intro h2 {
+  font-size: 18px;
   color: #d4a017;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   line-height: 1.4;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
-  font-family: Georgia, serif;
 }
 
 @keyframes qurbanaFill {
