@@ -7,6 +7,7 @@
     <div class="image-placeholder" id="videoPlaceholder">
       <div id="youtubeContainer"></div>
       <span id="placeholderText">Video coming soon</span>
+      <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
       <div class="progress-bar" id="progressBar"></div>
     </div>
     <script defer src="https://www.youtube.com/iframe_api"></script>
@@ -58,6 +59,7 @@
   const audioBtn = carousel.querySelector('#audioBtn');
   const prevBtn = carousel.querySelector('#prevBtn');
   const nextBtn = carousel.querySelector('#nextBtn');
+  const fullscreenBtn = carousel.querySelector('#fullscreenBtn');
   const dotsContainer = carousel.querySelector('#progressDots');
 
   function createDots() {
@@ -200,8 +202,24 @@
     autoAdvanceTimer = setTimeout(nextStage, ADVANCE_INTERVAL);
   }
 
+  function toggleFullscreen() {
+    var carouselCard = carousel.querySelector('.carousel-card');
+    if (!carouselCard) return;
+
+    if (!document.fullscreenElement) {
+      carouselCard.requestFullscreen().catch(function(err) {
+        console.error('Error requesting fullscreen:', err);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);
+  fullscreenBtn.addEventListener('click', toggleFullscreen);
   audioBtn.addEventListener('click', playAudio);
 
   createDots();

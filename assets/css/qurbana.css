@@ -64,6 +64,33 @@
   z-index: 1;
 }
 
+.fullscreen-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.fullscreen-btn:active {
+  transform: scale(0.95);
+}
+
 .progress-bar {
   position: absolute;
   bottom: 0;
