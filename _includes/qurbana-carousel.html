@@ -170,6 +170,8 @@
       videoId: videoId,
       events: {
         'onReady': function(event) {
+          window.currentPlayer = event.target;
+          resetProgressBar();
           event.target.playVideo();
         },
         'onStateChange': function(event) {
@@ -192,7 +194,22 @@
   function resetProgressBar() {
     progressBar.style.animation = 'none';
     void progressBar.offsetWidth;
-    progressBar.style.animation = isPaused ? 'none' : 'qurbanaFill 20s linear forwards';
+
+    var stage = stages[currentStage];
+    var duration = '20s';
+
+    if (stage.youtube_id && window.currentPlayer) {
+      try {
+        var videoDuration = window.currentPlayer.getDuration();
+        if (videoDuration > 0) {
+          duration = videoDuration + 's';
+        }
+      } catch (e) {
+        // Fall back to 20s if we can't get duration
+      }
+    }
+
+    progressBar.style.animation = isPaused ? 'none' : ('qurbanaFill ' + duration + ' linear forwards');
   }
 
   function goToStage(index) {
