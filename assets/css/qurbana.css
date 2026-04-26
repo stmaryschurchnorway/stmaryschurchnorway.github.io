@@ -2,7 +2,7 @@
 
 .qurbana-intro {
   max-width: 700px;
-  margin: 30px auto 40px;
+  margin: 15px auto 10px;
   text-align: center;
   padding: 0 20px;
 }
@@ -22,9 +22,14 @@
   to { width: 100%; }
 }
 
+@keyframes bounceRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+
 .qurbana-carousel {
   max-width: 700px;
-  margin: 20px auto 40px;
+  margin: 5px auto 20px;
 }
 
 .carousel-card {
@@ -316,6 +321,10 @@
 
 .icon-btn:active {
   transform: scale(0.9);
+}
+
+#nextBtn.bounce {
+  animation: bounceRight 1.5s ease-in-out infinite;
 }
 
 .progress-dots {

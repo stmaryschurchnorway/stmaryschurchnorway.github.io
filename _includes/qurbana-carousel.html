@@ -60,7 +60,7 @@
   const progressBar = carousel.querySelector('#progressBar');
   const audioBtn = carousel.querySelector('#audioBtn');
   const prevBtn = carousel.querySelector('#prevBtn');
-  const nextBtn = carousel.querySelector('#nextBtn');
+  let nextBtn = carousel.querySelector('#nextBtn');
   const fullscreenBtn = carousel.querySelector('#fullscreenBtn');
   const dotsContainer = carousel.querySelector('#progressDots');
 
@@ -105,6 +105,7 @@
     var imagePlaceholder = document.getElementById('videoPlaceholder');
 
     if (stage.is_intro) {
+      nextBtn.classList.add('bounce');
       container.innerHTML = '';
       placeholder.style.display = 'none';
       imagePlaceholder.style.backgroundImage = 'url(/assets/img/qurbana-intro.png)';
@@ -121,14 +122,8 @@
       imagePlaceholder.appendChild(overlay);
 
       imagePlaceholder.onclick = function() {
-        clearTimeout(introAutoTimer);
         nextStage();
       };
-
-      clearTimeout(introAutoTimer);
-      introAutoTimer = setTimeout(function() {
-        nextStage();
-      }, INTRO_AUTO_ADVANCE);
     } else if (stage.youtube_id && stage.youtube_id.trim()) {
       var videoId = stage.youtube_id.trim();
       container.innerHTML = '<div id="youtubePlayer"></div>';
@@ -136,6 +131,7 @@
       imagePlaceholder.style.backgroundImage = 'none';
       imagePlaceholder.style.cursor = 'default';
       imagePlaceholder.onclick = null;
+      nextBtn.classList.remove('bounce');
 
       if (imagePlaceholder.querySelector('.intro-overlay')) {
         imagePlaceholder.querySelector('.intro-overlay').remove();
@@ -154,6 +150,7 @@
       imagePlaceholder.style.backgroundImage = 'none';
       imagePlaceholder.style.cursor = 'default';
       imagePlaceholder.onclick = null;
+      nextBtn.classList.remove('bounce');
       if (imagePlaceholder.querySelector('.intro-overlay')) {
         imagePlaceholder.querySelector('.intro-overlay').remove();
       }
@@ -177,10 +174,11 @@
           if (event.data === YT.PlayerState.PLAYING) {
             resetProgressBar();
             resumeProgressBar();
+            nextBtn.classList.remove('bounce');
           } else if (event.data === YT.PlayerState.PAUSED) {
             pauseProgressBar();
           } else if (event.data === YT.PlayerState.ENDED) {
-            nextStage();
+            nextBtn.classList.add('bounce');
           }
         }
       },
@@ -235,19 +233,11 @@
   function nextStage() {
     currentStage = (currentStage + 1) % stages.length;
     updateDisplay();
-    if (stages[currentStage].is_intro) {
-      resetAutoAdvance();
-    } else {
-      clearTimeout(autoAdvanceTimer);
-    }
   }
 
   function prevStage() {
     currentStage = (currentStage - 1 + stages.length) % stages.length;
     updateDisplay();
-    if (stages[currentStage].is_intro) {
-      resetAutoAdvance();
-    }
   }
 
   function playAudio() {
@@ -337,20 +327,5 @@
 
   createDots();
   updateDisplay();
-  if (stages[currentStage].is_intro) {
-    resetAutoAdvance();
-  } else {
-    clearTimeout(autoAdvanceTimer);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      clearTimeout(autoAdvanceTimer);
-    } else {
-      if (stages[currentStage].is_intro) {
-        resetAutoAdvance();
-      }
-    }
-  });
 })();
 </script>
