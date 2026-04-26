@@ -171,11 +171,12 @@
       events: {
         'onReady': function(event) {
           window.currentPlayer = event.target;
-          resetProgressBar();
           event.target.playVideo();
         },
         'onStateChange': function(event) {
-          if (event.data === YT.PlayerState.ENDED) {
+          if (event.data === YT.PlayerState.PLAYING) {
+            resetProgressBar();
+          } else if (event.data === YT.PlayerState.ENDED) {
             nextStage();
           }
         }
