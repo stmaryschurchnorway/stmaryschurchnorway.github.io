@@ -113,13 +113,10 @@
       imagePlaceholder.style.backgroundPosition = 'center';
       imagePlaceholder.style.cursor = 'pointer';
 
-      var overlay = document.createElement('div');
-      overlay.className = 'intro-overlay';
-      overlay.innerHTML = '<p>Click to begin interactive journey</p>';
-      if (imagePlaceholder.querySelector('.intro-overlay')) {
-        imagePlaceholder.querySelector('.intro-overlay').remove();
+      var overlay = document.querySelector('.intro-overlay');
+      if (overlay) {
+        overlay.remove();
       }
-      imagePlaceholder.appendChild(overlay);
 
       imagePlaceholder.onclick = function() {
         nextStage();
