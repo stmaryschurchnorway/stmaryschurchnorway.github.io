@@ -218,6 +218,40 @@
     }
   }
 
+  function updateFullscreenStyles() {
+    var carouselCard = carousel.querySelector('.carousel-card');
+    var imagePlaceholder = carousel.querySelector('.image-placeholder');
+    var carouselContent = carousel.querySelector('.carousel-content');
+
+    var isFullscreen = document.fullscreenElement === carouselCard ||
+                      document.webkitFullscreenElement === carouselCard ||
+                      document.mozFullScreenElement === carouselCard ||
+                      document.msFullscreenElement === carouselCard;
+
+    if (isFullscreen) {
+      imagePlaceholder.style.height = '75vh';
+      imagePlaceholder.style.flex = '0 0 75vh';
+      carouselContent.style.height = 'calc(100vh - 75vh)';
+      carouselContent.style.display = 'flex';
+      carouselContent.style.flexDirection = 'column';
+      carouselContent.style.overflowY = 'auto';
+      carouselContent.style.flex = '1';
+    } else {
+      imagePlaceholder.style.height = '';
+      imagePlaceholder.style.flex = '';
+      carouselContent.style.height = '';
+      carouselContent.style.display = '';
+      carouselContent.style.flexDirection = '';
+      carouselContent.style.overflowY = '';
+      carouselContent.style.flex = '';
+    }
+  }
+
+  document.addEventListener('fullscreenchange', updateFullscreenStyles);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenStyles);
+  document.addEventListener('mozfullscreenchange', updateFullscreenStyles);
+  document.addEventListener('MSFullscreenChange', updateFullscreenStyles);
+
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);
   fullscreenBtn.addEventListener('click', toggleFullscreen);

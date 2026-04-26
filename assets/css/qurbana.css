@@ -65,7 +65,37 @@
   overflow-y: auto !important;
   padding: 20px 25px !important;
   width: 100% !important;
-  height: 45vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.carousel-card:fullscreen .controls-header,
+.carousel-card:-webkit-full-screen .controls-header,
+.carousel-card:-moz-full-screen .controls-header,
+.carousel-card:-ms-fullscreen .controls-header {
+  flex-shrink: 0 !important;
+}
+
+.carousel-card:fullscreen .malayalam-section,
+.carousel-card:-webkit-full-screen .malayalam-section,
+.carousel-card:-moz-full-screen .malayalam-section,
+.carousel-card:-ms-fullscreen .malayalam-section {
+  flex-shrink: 0 !important;
+}
+
+.carousel-card:fullscreen .stage-description,
+.carousel-card:-webkit-full-screen .stage-description,
+.carousel-card:-moz-full-screen .stage-description,
+.carousel-card:-ms-fullscreen .stage-description {
+  flex-shrink: 0 !important;
+}
+
+.carousel-card:fullscreen .progress-dots,
+.carousel-card:-webkit-full-screen .progress-dots,
+.carousel-card:-moz-full-screen .progress-dots,
+.carousel-card:-ms-fullscreen .progress-dots {
+  flex-shrink: 0 !important;
 }
 
 .image-placeholder {
