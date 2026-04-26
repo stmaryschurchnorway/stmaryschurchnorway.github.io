@@ -45,7 +45,9 @@
   let currentStage = 0;
   let isPaused = false;
   let autoAdvanceTimer = null;
+  let introAutoTimer = null;
   const ADVANCE_INTERVAL = 20000;
+  const INTRO_AUTO_ADVANCE = 10000;
 
   const carousel = document.getElementById('qurbanaCarousel');
   if (!carousel) return;
@@ -100,11 +102,44 @@
   function loadVideo(stage) {
     var container = document.getElementById('youtubeContainer');
     var placeholder = document.getElementById('placeholderText');
+    var imagePlaceholder = document.getElementById('videoPlaceholder');
 
-    if (stage.youtube_id && stage.youtube_id.trim()) {
+    if (stage.is_intro) {
+      container.innerHTML = '';
+      placeholder.style.display = 'none';
+      imagePlaceholder.style.backgroundImage = 'url(/assets/img/qurbana-intro.png)';
+      imagePlaceholder.style.backgroundSize = 'cover';
+      imagePlaceholder.style.backgroundPosition = 'center';
+      imagePlaceholder.style.cursor = 'pointer';
+
+      var overlay = document.createElement('div');
+      overlay.className = 'intro-overlay';
+      overlay.innerHTML = '<p>Click to begin interactive journey</p>';
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
+      imagePlaceholder.appendChild(overlay);
+
+      imagePlaceholder.onclick = function() {
+        clearTimeout(introAutoTimer);
+        nextStage();
+      };
+
+      clearTimeout(introAutoTimer);
+      introAutoTimer = setTimeout(function() {
+        nextStage();
+      }, INTRO_AUTO_ADVANCE);
+    } else if (stage.youtube_id && stage.youtube_id.trim()) {
       var videoId = stage.youtube_id.trim();
       container.innerHTML = '<div id="youtubePlayer"></div>';
       placeholder.style.display = 'none';
+      imagePlaceholder.style.backgroundImage = 'none';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
 
       if (window.YT && window.YT.Player) {
         initializePlayer(videoId);
@@ -116,6 +151,12 @@
     } else {
       container.innerHTML = '';
       placeholder.style.display = 'block';
+      imagePlaceholder.style.backgroundImage = 'none';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
     }
   }
 
@@ -163,13 +204,19 @@
   function nextStage() {
     currentStage = (currentStage + 1) % stages.length;
     updateDisplay();
-    resetAutoAdvance();
+    if (stages[currentStage].is_intro) {
+      resetAutoAdvance();
+    } else {
+      clearTimeout(autoAdvanceTimer);
+    }
   }
 
   function prevStage() {
     currentStage = (currentStage - 1 + stages.length) % stages.length;
     updateDisplay();
-    resetAutoAdvance();
+    if (stages[currentStage].is_intro) {
+      resetAutoAdvance();
+    }
   }
 
   function playAudio() {
@@ -259,13 +306,19 @@
 
   createDots();
   updateDisplay();
-  resetAutoAdvance();
+  if (stages[currentStage].is_intro) {
+    resetAutoAdvance();
+  } else {
+    clearTimeout(autoAdvanceTimer);
+  }
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       clearTimeout(autoAdvanceTimer);
     } else {
-      resetAutoAdvance();
+      if (stages[currentStage].is_intro) {
+        resetAutoAdvance();
+      }
     }
   });
 })();
