@@ -392,6 +392,168 @@
   background: #d4a017;
 }
 
+/* Phase Tabs (Breadcrumbs) */
+.phase-tabs {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  background: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
+
+.phase-tab {
+  flex: 1;
+  padding: 14px 12px;
+  cursor: pointer;
+  background: #f0f0f0;
+  color: #666;
+  border: none;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.phase-tab:last-child {
+  border-right: none;
+}
+
+.phase-tab:hover {
+  background: #e8e8e8;
+}
+
+.phase-tab.active {
+  background: #d4a017;
+  color: white;
+}
+
+.phase-tab-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.phase-tab-malayalam {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* Phase Info */
+.phase-info {
+  padding: 14px 16px;
+  background: #fafaf8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.phase-info-section {
+  margin: 0;
+}
+
+.phase-info-label {
+  font-size: 11px;
+  color: #d4a017;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.phase-info-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.phase-info-desc {
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0 0 0;
+}
+
+/* Sub-stages Panel */
+.substages-panel {
+  padding: 15px 25px;
+  background: #fafaf8;
+  border-top: 2px solid #d4a017;
+}
+
+.substages-label {
+  font-size: 11px;
+  color: #d4a017;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.substages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.substage-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.substage-item:hover {
+  border-color: #d4a017;
+  background: #fafaf8;
+}
+
+.substage-item.expanded {
+  border: 2px solid #d4a017;
+  background: white;
+}
+
+.substage-header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+}
+
+.substage-title {
+  flex: 1;
+}
+
+.substage-toggle {
+  color: #999;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.substage-item.expanded .substage-toggle {
+  transform: rotate(180deg);
+  color: #d4a017;
+}
+
+.substage-content {
+  display: none;
+}
+
+.substage-item.expanded .substage-content {
+  display: block;
+}
+
+.substage-details {
+  background: #fafaf8;
+  border-top: 1px solid #d4a017;
+  padding: 12px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .controls-header {
@@ -441,5 +603,54 @@
 
   .progress-dots {
     padding: 0 20px 20px 20px;
+  }
+
+  /* Phase tabs on mobile */
+  .phase-tab {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .phase-tab-title {
+    margin-bottom: 1px;
+  }
+
+  .phase-tab-malayalam {
+    font-size: 9px;
+  }
+
+  /* Phase info on mobile */
+  .phase-info {
+    padding: 10px 12px;
+  }
+
+  .phase-info-label {
+    font-size: 10px;
+  }
+
+  .phase-info-title {
+    font-size: 14px;
+  }
+
+  .phase-info-desc {
+    font-size: 11px;
+  }
+
+  /* Sub-stages on mobile */
+  .substages-panel {
+    padding: 12px 20px;
+  }
+
+  .substages-label {
+    font-size: 10px;
+  }
+
+  .substage-header {
+    padding: 10px;
+  }
+
+  .substage-details {
+    padding: 10px;
+    font-size: 12px;
   }
 }
