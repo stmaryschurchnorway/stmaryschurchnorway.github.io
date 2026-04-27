@@ -10,15 +10,12 @@
   <div class="qurbana-intro-heading">
     <h2>Holy Qurbana</h2>
     <p class="qurbana-intro-description">
-      The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith.
+      The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith. The liturgy is divided into three major phases: the Preparation (performed behind the curtain), the Public Celebration (proclamation of Scripture), and the Anaphora (consecration and communion).
     </p>
   </div>
 
   <!-- Phase tabs always visible -->
   <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
-
-  <!-- Phase info section -->
-  <div class="phase-info" id="phaseInfo"><!-- Rendered by JavaScript --></div>
 
   <!-- Carousel card -->
   <div class="carousel-card">
@@ -148,7 +145,6 @@ window.backToLanding = backToLanding;
   const fullscreenBtn = carousel.querySelector('#fullscreenBtn');
   const dotsContainer = carousel.querySelector('#progressDots');
   const phaseTabs = carousel.querySelector('#phaseTabs');
-  const phaseInfo = carousel.querySelector('#phaseInfo');
   const substagesPanel = carousel.querySelector('#substagesPanel');
 
   function getPhaseStartIndex(phaseIdx) {
@@ -189,19 +185,6 @@ window.backToLanding = backToLanding;
   }
 
   // Task 5: Phase Info Display
-  function renderPhaseInfo() {
-    const phase = phases[currentPhaseIdx];
-    const stageInPhase = getStageInPhase(currentStageIdx);
-    const totalInPhase = phase.stages.length;
-
-    phaseInfo.innerHTML = `
-      <div class="phase-info-section">
-        <h3 class="phase-info-title">${phase.title}</h3>
-        <p class="phase-info-desc">${phase.malayalam} · <strong>${totalInPhase} stage${totalInPhase !== 1 ? 's' : ''}</strong></p>
-      </div>
-    `;
-  }
-
   // Task 9: Update createDots
   function createDots() {
     while (dotsContainer.firstChild) {
@@ -224,9 +207,8 @@ window.backToLanding = backToLanding;
 
   // Task 7: Update Display Function
   function updateDisplay() {
-    // Show carousel content and phase info
+    // Show carousel content
     carouselContent.style.display = 'block';
-    phaseInfo.style.display = 'block';
 
     const stage = stages[currentStageIdx];
     const stageInPhase = getStageInPhase(currentStageIdx);
@@ -252,7 +234,6 @@ window.backToLanding = backToLanding;
       dot.classList.toggle('active', i === (currentStageIdx - getPhaseStartIndex(currentPhaseIdx)));
     });
 
-    renderPhaseInfo();
     renderSubstagesPanel();
 
     loadVideo(stage);
