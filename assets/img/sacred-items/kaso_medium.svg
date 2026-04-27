@@ -1,0 +1,37 @@
+<svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 30 L110 30 Q106 66 70 70 Q34 66 30 30 Z" fill="#D4AF37" stroke="#5A4A3A" stroke-width="1.5"/>
+  <path d="M70 30 L110 30 Q106 66 70 70 Z" fill="#9C7B22" opacity="0.35"/>
+  <rect x="30" y="27" width="80" height="5" fill="#9C7B22" stroke="#5A4A3A" stroke-width="1.5"/>
+  <g fill="#FBF7E8">
+    <circle cx="36" cy="29.5" r="1.1"/><circle cx="44" cy="29.5" r="1.1"/>
+    <circle cx="52" cy="29.5" r="1.1"/><circle cx="60" cy="29.5" r="1.1"/>
+    <circle cx="68" cy="29.5" r="1.1"/><circle cx="76" cy="29.5" r="1.1"/>
+    <circle cx="84" cy="29.5" r="1.1"/><circle cx="92" cy="29.5" r="1.1"/>
+    <circle cx="100" cy="29.5" r="1.1"/>
+  </g>
+  <g fill="#8B1E2D">
+    <path d="M67.5 38 L72.5 38 L72.5 56 L67.5 56 Z"/>
+    <path d="M59 46 L81 46 L81 50 L59 50 Z"/>
+    <circle cx="70" cy="36" r="2.6"/><circle cx="66" cy="38" r="1.8"/><circle cx="74" cy="38" r="1.8"/>
+    <circle cx="70" cy="58" r="2.6"/><circle cx="66" cy="56" r="1.8"/><circle cx="74" cy="56" r="1.8"/>
+    <circle cx="57" cy="48" r="2.6"/><circle cx="59" cy="44" r="1.8"/><circle cx="59" cy="52" r="1.8"/>
+    <circle cx="83" cy="48" r="2.6"/><circle cx="81" cy="44" r="1.8"/><circle cx="81" cy="52" r="1.8"/>
+  </g>
+  <circle cx="70" cy="48" r="2.2" fill="#D4AF37"/>
+  <line x1="34" y1="61" x2="106" y2="61" stroke="#5A4A3A" stroke-width="0.8"/>
+  <g fill="#8B1E2D">
+    <circle cx="40" cy="64" r="1.3"/><circle cx="50" cy="64" r="1.3"/>
+    <circle cx="60" cy="64" r="1.3"/><circle cx="80" cy="64" r="1.3"/>
+    <circle cx="90" cy="64" r="1.3"/><circle cx="100" cy="64" r="1.3"/>
+  </g>
+  <rect x="64" y="70" width="12" height="20" fill="#D4AF37" stroke="#5A4A3A" stroke-width="1.5"/>
+  <ellipse cx="70" cy="82" rx="12" ry="5.5" fill="#D4AF37" stroke="#5A4A3A" stroke-width="1.5"/>
+  <line x1="59" y1="82" x2="81" y2="82" stroke="#8B1E2D" stroke-width="1"/>
+  <path d="M38 110 Q70 100 102 110 L106 118 L34 118 Z" fill="#D4AF37" stroke="#5A4A3A" stroke-width="1.5"/>
+  <g fill="none" stroke="#8B1E2D" stroke-width="1.4" stroke-linecap="round">
+    <path d="M44 109 Q49 102 54 109"/><path d="M56 109 Q62 100 68 109"/>
+    <path d="M70 109 Q70 99 70 99 Q70 99 70 109"/>
+    <path d="M70 109 Q76 100 82 109"/><path d="M84 109 Q90 102 96 109"/>
+  </g>
+  <line x1="38" y1="115" x2="102" y2="115" stroke="#8B1E2D" stroke-width="0.8" opacity="0.6"/>
+</svg>

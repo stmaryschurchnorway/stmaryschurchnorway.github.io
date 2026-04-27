@@ -1,13 +1,45 @@
-<div class="qurbana-intro">
-  <h2>Sacred stages of the Eucharistic service</h2>
-</div>
+<div class="qurbana-carousel hidden" id="qurbanaCarousel">
+  <!-- Back to liturgies button -->
+  <div class="carousel-back-nav" id="backToLiturgies" style="display:none;">
+    <button class="back-to-liturgies-btn" onclick="backToLanding()">
+      <span aria-hidden="true">←</span> Back to Liturgies
+    </button>
+  </div>
 
-<div class="qurbana-carousel" id="qurbanaCarousel">
+  <!-- Carousel heading -->
+  <div class="qurbana-intro-heading">
+    <h2>Sacred stages of the Eucharistic service</h2>
+  </div>
+
+  <!-- Phase tabs always visible -->
   <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
 
+  <!-- Phase info section -->
   <div class="phase-info" id="phaseInfo"><!-- Rendered by JavaScript --></div>
 
+  <!-- Carousel card with intro content initially shown -->
   <div class="carousel-card">
+    <!-- Intro Panel (shown first inside carousel) -->
+    <div id="introPanel" class="intro-panel-card">
+      <div class="intro-content-card">
+        <img src="/assets/img/qurbana-liturgy.png" alt="Holy Qurbana Liturgy" class="intro-image-card">
+        <h1 class="intro-title-card" id="introTitle">Holy Qurbana</h1>
+        <div class="intro-malayalam-card">
+          <div class="intro-malayalam-content">
+            <div class="intro-malayalam-text-card" id="introMalayalam">വിശുദ്ധ കുർബാന</div>
+            <div class="intro-transliteration-card" id="introTransliteration">Pronunciation: Vi-shud-dha Kur-ba-na</div>
+          </div>
+          <button class="intro-audio-btn-card" id="introAudioBtn" title="Listen to pronunciation">🔊</button>
+        </div>
+        <p class="intro-description-card" id="introDescription">
+          The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith.
+        </p>
+        <button class="intro-start-btn-card" id="introStartBtn">Start Interactive Journey →</button>
+      </div>
+    </div>
+
+    <!-- Carousel content (shown after intro) -->
+    <div id="carouselContent" style="display:none;">
     <div class="image-placeholder" id="videoPlaceholder">
       <div id="youtubeContainer"></div>
       <span id="placeholderText">Video coming soon</span>
@@ -42,12 +74,61 @@
 
       <div class="progress-dots" id="progressDots"></div>
     </div>
+    </div>
   </div>
 </div>
 
 <script>
+// View toggle functionality
+function showLiturgy(liturgyId) {
+  const landing = document.getElementById('liturgyLanding');
+  const carousel = document.getElementById('qurbanaCarousel');
+  const backBtn = document.getElementById('backToLiturgies');
+
+  if (landing) landing.classList.add('hidden');
+  if (carousel) carousel.classList.remove('hidden');
+  if (backBtn) backBtn.style.display = 'block';
+
+  if (carousel) {
+    carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function backToLanding() {
+  const landing = document.getElementById('liturgyLanding');
+  const carousel = document.getElementById('qurbanaCarousel');
+  const backBtn = document.getElementById('backToLiturgies');
+
+  if (landing) landing.classList.remove('hidden');
+  if (carousel) carousel.classList.add('hidden');
+  if (backBtn) backBtn.style.display = 'none';
+
+  if (typeof currentPhaseIdx !== 'undefined' && currentPhaseIdx !== 0) {
+    switchPhase(0);
+  }
+
+  if (landing) {
+    landing.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+window.showLiturgy = showLiturgy;
+window.backToLanding = backToLanding;
+
 (function() {
-  const phases = {{ page.phases | jsonify }};
+  const pagesPhases = {{ page.phases | jsonify }};
+
+  // Add Intro as the first phase
+  const phases = [
+    {
+      phase_id: "intro",
+      title: "Holy Qurbana",
+      malayalam: "വിശുദ്ധ കുർബാന",
+      description: "Introduction to the Holy Qurbana",
+      stages: []
+    },
+    ...pagesPhases
+  ];
 
   // Flatten phases into stages array and create phaseMap
   const stages = [];
@@ -131,9 +212,8 @@
 
     phaseInfo.innerHTML = `
       <div class="phase-info-section">
-        <div class="phase-info-label">Current Section</div>
         <h3 class="phase-info-title">${phase.title}</h3>
-        <p class="phase-info-desc">${phase.malayalam} · <strong>${totalInPhase} stage${totalInPhase !== 1 ? 's' : ''}</strong> in this section</p>
+        <p class="phase-info-desc">${phase.malayalam} · <strong>${totalInPhase} stage${totalInPhase !== 1 ? 's' : ''}</strong></p>
       </div>
     `;
   }
@@ -160,13 +240,36 @@
 
   // Task 7: Update Display Function
   function updateDisplay() {
+    // Check if we're in the intro phase
+    if (currentPhaseIdx === 0) {
+      // Show intro panel, hide carousel content and phase info
+      introPanel.style.display = 'flex';
+      carouselContent.style.display = 'none';
+      phaseInfo.style.display = 'none';
+      return;
+    }
+
+    // Hide intro panel, show carousel content and phase info
+    introPanel.style.display = 'none';
+    carouselContent.style.display = 'block';
+    phaseInfo.style.display = 'block';
+
     const stage = stages[currentStageIdx];
     const stageInPhase = getStageInPhase(currentStageIdx);
     const totalInPhase = phases[currentPhaseIdx].stages.length;
 
     stageCounterEl.textContent = 'STAGE ' + stageInPhase + ' OF ' + totalInPhase;
 
-    stageTitleEl.textContent = stage.title;
+    // Check if this stage has hymns in its substages
+    let hymnIcon = '';
+    if (stage.substages && stage.substages.length > 0) {
+      const hasHymn = stage.substages.some(sub => sub.hymn);
+      if (hasHymn) {
+        hymnIcon = ' 🎵';
+      }
+    }
+
+    stageTitleEl.innerHTML = stage.title + hymnIcon;
     malayalamEl.textContent = stage.malayalam;
     transliterationEl.textContent = stage.transliteration;
     descriptionEl.textContent = stage.description;
@@ -305,6 +408,18 @@
     if (currentStageIdx < phaseEndIdx) {
       currentStageIdx++;
       updateDisplay();
+    } else if (currentPhaseIdx < phases.length - 1) {
+      // At last stage of current phase, move to next phase
+      currentPhaseIdx++;
+      currentStageIdx = getPhaseStartIndex(currentPhaseIdx);
+      updateDisplay();
+      renderPhaseTabs();
+    } else {
+      // At last stage of last phase, loop back to intro
+      currentPhaseIdx = 0;
+      currentStageIdx = 0;
+      updateDisplay();
+      renderPhaseTabs();
     }
   }
 
@@ -314,6 +429,13 @@
     if (currentStageIdx > phaseStartIdx) {
       currentStageIdx--;
       updateDisplay();
+    } else if (currentPhaseIdx > 1) {
+      // At first stage of current phase, move to previous phase
+      currentPhaseIdx--;
+      const prevPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+      currentStageIdx = prevPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+      updateDisplay();
+      renderPhaseTabs();
     }
   }
 
@@ -343,6 +465,29 @@
     window.speechSynthesis.speak(utterance);
   }
 
+  function playHymnAudio(hymnName) {
+    if (!window.speechSynthesis) {
+      console.error('Speech Synthesis not supported');
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(hymnName);
+    utterance.lang = 'en';
+    utterance.rate = 0.7;
+    utterance.pitch = 1.2;
+    utterance.volume = 1;
+
+    utterance.onerror = function(event) {
+      console.error('Hymn audio error:', event);
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.playHymnAudio = playHymnAudio;
+
   function resetAutoAdvance() {
     clearTimeout(autoAdvanceTimer);
     autoAdvanceTimer = setTimeout(nextStage, ADVANCE_INTERVAL);
@@ -363,7 +508,7 @@
 
     const panelLabel = document.createElement('div');
     panelLabel.className = 'substages-label';
-    panelLabel.textContent = 'Sub-stages (click to expand)';
+    panelLabel.textContent = 'Sub-Stages';
     substagesPanel.appendChild(panelLabel);
 
     const substagesContainer = document.createElement('div');
@@ -376,18 +521,182 @@
 
       const header = document.createElement('div');
       header.className = 'substage-header';
-      header.textContent = substage.title + ' ▼';
+
+      const titleSpan = document.createElement('span');
+      titleSpan.textContent = substage.title;
+      header.appendChild(titleSpan);
+
+      const arrowSpan = document.createElement('span');
+      arrowSpan.className = 'substage-toggle';
+      arrowSpan.textContent = ' ▼';
+      header.appendChild(arrowSpan);
+
       header.addEventListener('click', () => toggleSubstage(substageItem, idx));
 
       substageItem.appendChild(header);
 
       const content = document.createElement('div');
       content.className = 'substage-content';
+
+      // Map item names to emoji icons
+      const itemIcons = {
+        'Hamnikho (Stole)': '👔',
+        'Phayno (Cope)': '🧥',
+        'Pilaso (Paten)': '🍽️',
+        'Kaso (Chalice)': '🏆',
+        'Tablitho (Altar Stone)': '⬜',
+        'Shushepo (The Great Veil)': '⛳',
+        'Lahmo (Sacred Bread)': '🍞',
+        'Mazgogo (Sacred Wine)': '🍷',
+        'Censer (Dhoopakutty)': '🪔',
+        'Incense': '💨',
+        'Marvahtho (Fans)': '🪶',
+        'Bells': '🔔',
+        'The Chalice (Kaso)': '🏆',
+        'The Paten (Pilaso)': '🍽️',
+        'Bread & Wine': '🍞',
+        'The Consecrated Bread (Body of Christ)': '🍞',
+        'The Consecrated Wine (Blood of Christ)': '🍷',
+        'Tharvodo (The Spoon)': '🥄',
+        'Holy Spirit': '🕊️',
+      };
+
+      let itemsHTML = '';
+      if (substage.sacred_items && substage.sacred_items.length > 0) {
+        itemsHTML = `
+          <div style="margin-top:14px;">
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">Sacred Items Used</strong>
+            <div class="sacred-items-grid" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;">
+              ${substage.sacred_items.map(item => {
+                return `
+                  <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;padding:16px 12px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
+                       onclick="toggleSacredItem(this)">
+                    <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
+                      ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100px;height:100px;object-fit:contain;margin-bottom:12px;flex-shrink:0;">` : ''}
+                      <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
+                      ${item.malayalam ? `<div style="font-size:13px;color:#a85555;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
+                    </div>
+
+                    <!-- Expanded content (hidden by default) -->
+                    <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
+                      <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
+                        <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
+                        ${item.expanded_meaning || item.meaning}
+                      </div>
+                      ${item.historical_context ? `
+                        <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
+                          <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Historical Context:</strong>
+                          ${item.historical_context}
+                        </div>
+                      ` : ''}
+                      ${item.biblical_reference ? `
+                        <div style="font-size:11px;color:#666;line-height:1.6;">
+                          <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Biblical Reference:</strong>
+                          ${item.biblical_reference}
+                        </div>
+                      ` : ''}
+                    </div>
+
+                    <!-- Expand indicator -->
+                    <div class="sacred-item-toggle" style="margin-top:8px;font-size:12px;color:#999;transition:transform 0.3s ease;">
+                      <span>▼</span>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      let hymnHTML = '';
+      if (substage.hymn) {
+        hymnHTML = `
+          <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn:</strong>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+            <span style="font-size:13px;color:#666;">${substage.hymn}</span>
+            <button style="background:#d4a017;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
+                    onmouseover="this.style.background='#c4920c'"
+                    onmouseout="this.style.background='#d4a017'"
+                    onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
+              🔊 Play
+            </button>
+          </div>
+        `;
+      }
+
+      // Build sections dynamically based on available data
+      let sectionsHTML = '';
+
+      // Symbolism
+      if (substage.symbolism) {
+        sectionsHTML += `<div><strong>Symbolism:</strong> ${substage.symbolism}</div>`;
+      }
+
+      // Action
+      if (substage.action) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Action:</strong> ${substage.action}</div>`;
+      }
+
+      // Significance / Meaning and Significance
+      if (substage.significance) {
+        const significanceLabel = substage.meaning_and_significance ? 'Meaning and Significance:' : 'Significance:';
+        sectionsHTML += `<div style="margin-top:8px;"><strong>${significanceLabel}</strong> ${substage.significance}</div>`;
+      }
+
+      // Theological Meaning
+      if (substage.theological_meaning) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Theological Meaning:</strong> ${substage.theological_meaning}</div>`;
+      }
+
+      // Liturgical Context
+      if (substage.liturgical_context) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Liturgical Context:</strong> ${substage.liturgical_context}</div>`;
+      }
+
+      // Ritual Gesture
+      if (substage.ritual_gesture) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Ritual Gesture:</strong> ${substage.ritual_gesture}</div>`;
+      }
+
+      // Biblical Reference / Biblical Remembrance
+      if (substage.biblical_reference) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Reference:</strong> ${substage.biblical_reference}</div>`;
+      }
+      if (substage.biblical_remembrance) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Remembrance:</strong> ${substage.biblical_remembrance}</div>`;
+      }
+
+      // Spiritual Message
+      if (substage.spiritual_message) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Message:</strong> ${substage.spiritual_message}</div>`;
+      }
+
+      // Faith Response
+      if (substage.faith_response) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Faith Response:</strong> ${substage.faith_response}</div>`;
+      }
+
+      // Spiritual Effects
+      if (substage.spiritual_effects) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Effects:</strong> ${substage.spiritual_effects}</div>`;
+      }
+
+      // Discipline and Preparation
+      if (substage.discipline_preparation) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Discipline and Preparation:</strong> ${substage.discipline_preparation}</div>`;
+      }
+
+      // Life Application
+      if (substage.life_application) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Life Application:</strong> ${substage.life_application}</div>`;
+      }
+
       content.innerHTML = `
         <div class="substage-details">
-          <div><strong>Significance:</strong> ${substage.significance || 'TBD'}</div>
-          <div style="margin-top:8px;"><strong>Ritual gesture:</strong> ${substage.ritual_gesture || 'TBD'}</div>
-          <div style="margin-top:8px;"><strong>Spiritual meaning:</strong> ${substage.spiritual_meaning || 'TBD'}</div>
+          ${sectionsHTML}
+          ${hymnHTML}
+          ${itemsHTML}
         </div>
       `;
       substageItem.appendChild(content);
@@ -402,6 +711,34 @@
     element.classList.toggle('collapsed');
     element.classList.toggle('expanded');
   }
+
+  // Toggle sacred item expansion
+  function toggleSacredItem(element) {
+    const wasExpanded = element.classList.contains('expanded');
+
+    // Collapse all other sacred items in the same container
+    const container = element.closest('.sacred-items-grid');
+    if (container) {
+      container.querySelectorAll('.sacred-item.expanded').forEach(item => {
+        if (item !== element) {
+          item.classList.remove('expanded');
+          item.classList.add('collapsed');
+        }
+      });
+    }
+
+    // Toggle current item
+    if (wasExpanded) {
+      element.classList.remove('expanded');
+      element.classList.add('collapsed');
+    } else {
+      element.classList.remove('collapsed');
+      element.classList.add('expanded');
+    }
+  }
+
+  // Make function globally accessible
+  window.toggleSacredItem = toggleSacredItem;
 
   function toggleFullscreen() {
     var carouselCard = carousel.querySelector('.carousel-card');
@@ -462,6 +799,49 @@
   document.addEventListener('webkitfullscreenchange', updateFullscreenStyles);
   document.addEventListener('mozfullscreenchange', updateFullscreenStyles);
   document.addEventListener('MSFullscreenChange', updateFullscreenStyles);
+
+  // Setup intro section (integrated into carousel)
+  const introPanel = document.getElementById('introPanel');
+  const carouselContent = document.getElementById('carouselContent');
+  const introStartBtn = document.getElementById('introStartBtn');
+  const introAudioBtn = document.getElementById('introAudioBtn');
+  const introTitle = document.getElementById('introTitle');
+  const introMalayalam = document.getElementById('introMalayalam');
+  const introTransliteration = document.getElementById('introTransliteration');
+  const introDescription = document.getElementById('introDescription');
+
+  const intro = {{ page.intro | jsonify }};
+
+  if (intro && intro.title) {
+    introTitle.textContent = intro.title;
+    introMalayalam.textContent = intro.malayalam;
+    introTransliteration.textContent = intro.transliteration;
+    introDescription.textContent = intro.description;
+  }
+
+  function playIntroAudio() {
+    if (!window.speechSynthesis) {
+      console.error('Speech Synthesis not supported');
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(intro.malayalam || 'വിശുദ്ധ കുർബാന');
+    utterance.lang = 'ml';
+    utterance.rate = 0.8;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startJourney() {
+    // Switch to first real phase (Preparation Rites, index 1)
+    switchPhase(1);
+  }
+
+  introStartBtn.addEventListener('click', startJourney);
+  introAudioBtn.addEventListener('click', playIntroAudio);
 
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);

@@ -1,13 +1,233 @@
 /* Qurbana Carousel */
 
-.qurbana-intro {
+/* === Liturgy Landing View === */
+.liturgy-landing {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.liturgy-intro-section {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.liturgy-intro-section h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.8rem;
+  color: #d4a017;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.liturgy-intro-section p {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Liturgy Grid */
+.liturgy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Liturgy Card */
+.liturgy-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+}
+
+.liturgy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.liturgy-card-image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f1eb 0%, #ebe4da 100%);
+}
+
+.liturgy-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.liturgy-card:hover .liturgy-card-image img {
+  transform: scale(1.05);
+}
+
+.liturgy-card-content {
+  padding: 16px;
+}
+
+.liturgy-card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.liturgy-card-malayalam {
+  background: #fafaf8;
+  padding: 8px;
+  border-left: 3px solid #d4a017;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.liturgy-card-malayalam .malayalam-text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a85555;
+  font-family: 'Meera', 'Noto Sans Malayalam', serif;
+  margin-bottom: 2px;
+}
+
+.liturgy-card-malayalam .transliteration {
+  display: block;
+  font-size: 0.7rem;
+  color: #888;
+  font-style: italic;
+}
+
+.liturgy-card-description {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.liturgy-card-btn {
+  background: #d4a017;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  letter-spacing: 0.3px;
+}
+
+.liturgy-card-btn:hover {
+  background: #c4920c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.3);
+}
+
+.liturgy-card-btn:active {
+  transform: translateY(0);
+}
+
+/* Hide/show states */
+.liturgy-landing.hidden {
+  display: none;
+}
+
+.qurbana-carousel.hidden {
+  display: none;
+}
+
+/* Back to Liturgies Button */
+.carousel-back-nav {
+  max-width: 700px;
+  margin: 8px auto 5px;
+  padding: 0 20px;
+}
+
+.back-to-liturgies-btn {
+  background: transparent;
+  color: #999;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.back-to-liturgies-btn:hover {
+  color: #d4a017;
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.05);
+}
+
+.back-to-liturgies-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .liturgy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .liturgy-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .liturgy-intro-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .carousel-back-nav {
+    margin: 10px auto 8px;
+    padding: 0 15px;
+  }
+
+  .back-to-liturgies-btn {
+    padding: 6px 16px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .liturgy-intro-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .liturgy-intro-section p {
+    font-size: 0.9rem;
+  }
+
+  .liturgy-card-title {
+    font-size: 0.95rem;
+  }
+}
+
+.qurbana-intro-heading {
   max-width: 700px;
   margin: 15px auto 10px;
   text-align: center;
   padding: 0 20px;
 }
 
-.qurbana-intro h2 {
+.qurbana-intro-heading h2 {
   font-size: 18px;
   color: #d4a017;
   font-weight: 600;
@@ -15,6 +235,148 @@
   line-height: 1.4;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+}
+
+/* Intro Section (integrated into carousel card) */
+.intro-panel-card {
+  padding: 40px 25px;
+  text-align: center;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-content-card {
+  max-width: 600px;
+}
+
+.intro-image-card {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.intro-title-card {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 15px 0;
+  letter-spacing: 0.5px;
+}
+
+.intro-malayalam-card {
+  margin: 8px 0 12px 0;
+  padding: 10px 12px;
+  background: #fafaf8;
+  border-left: 4px solid #d4a017;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.intro-malayalam-content {
+  flex: 1;
+}
+
+.intro-malayalam-text-card {
+  font-size: 16px;
+  font-weight: 600;
+  color: #a85555;
+  margin-bottom: 2px;
+  font-family: 'Meera', 'Noto Sans Malayalam', serif;
+  line-height: 1.2;
+}
+
+.intro-transliteration-card {
+  font-size: 10px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.intro-audio-btn-card {
+  background: #d4a017;
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-audio-btn-card:hover {
+  background: #b8860b;
+}
+
+.intro-audio-btn-card:active {
+  transform: scale(0.95);
+}
+
+.intro-description-card {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 25px 0 30px 0;
+}
+
+.intro-journey-info-card {
+  text-align: left;
+  background: #f5f1eb;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 30px 0;
+}
+
+.intro-journey-info-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.intro-journey-info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.intro-journey-info-card li {
+  font-size: 13px;
+  color: #666;
+  padding: 6px 0;
+  line-height: 1.5;
+}
+
+.intro-start-btn-card {
+  background: #d4a017;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+.intro-start-btn-card:hover {
+  background: #c4920c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 160, 23, 0.3);
 }
 
 @keyframes qurbanaFill {
@@ -25,6 +387,11 @@
 @keyframes bounceRight {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(8px); }
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .qurbana-carousel {
@@ -325,10 +692,16 @@
 }
 
 .stage-description {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
-  margin: 0 25px 20px 25px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 25px 18px 25px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #fffbf0 0%, #faf6ed 100%);
+  border-left: 4px solid #d4a017;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(212, 160, 23, 0.1);
+  font-weight: 500;
 }
 
 .controls {
@@ -484,7 +857,7 @@
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .substages-container {
@@ -499,6 +872,11 @@
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+.substage-item.collapsed {
+  background: #fffbf0;
+  border: 2px solid #d4a017;
 }
 
 .substage-item:hover {
@@ -519,6 +897,11 @@
   cursor: pointer;
   font-weight: 600;
   color: #333;
+  user-select: none;
+}
+
+.substage-item.collapsed .substage-header {
+  color: #a85555;
 }
 
 .substage-title {
@@ -530,6 +913,12 @@
   font-size: 14px;
   margin-left: 10px;
   transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.substage-item.collapsed .substage-toggle {
+  animation: bounceDown 1.5s infinite;
+  color: #d4a017;
 }
 
 .substage-item.expanded .substage-toggle {
@@ -548,14 +937,104 @@
 .substage-details {
   background: #fafaf8;
   border-top: 1px solid #d4a017;
-  padding: 12px;
+  padding: 16px;
   font-size: 13px;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.substage-details > div > strong {
+  display: block;
+  color: #333;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d4a017;
+  letter-spacing: 0.3px;
+}
+
+.substage-details > div > strong:first-of-type {
+  margin-top: 0;
+}
+
+.substage-details > div > strong:nth-of-type(1)::before {
+  content: "📋 ";
+}
+
+.substage-details > div > strong:nth-of-type(2)::before {
+  content: "🙏 ";
+}
+
+/* === Sacred Items Expandable Cards === */
+
+/* Sacred item base */
+.sacred-item {
+  transition: all 0.3s ease !important;
+  position: relative;
+}
+
+/* Collapsed state */
+.sacred-item.collapsed {
+  background: white !important;
+  border-color: #f0f0f0 !important;
+  box-shadow: none !important;
+}
+
+.sacred-item.collapsed:hover {
+  background: #fffbf0 !important;
+  border-color: #d4a017 !important;
+  box-shadow: 0 2px 8px rgba(212, 160, 23, 0.15) !important;
+}
+
+/* Expanded state */
+.sacred-item.expanded {
+  background: white !important;
+  border-color: #d4a017 !important;
+  box-shadow: 0 4px 16px rgba(212, 160, 23, 0.2) !important;
+  min-width: 280px !important;
+  max-width: 100%;
+}
+
+/* Content visibility */
+.sacred-item.collapsed .sacred-item-details {
+  display: none !important;
+}
+
+.sacred-item.expanded .sacred-item-details {
+  display: block !important;
+}
+
+/* Toggle arrow */
+.sacred-item-toggle {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.sacred-item.collapsed .sacred-item-toggle {
+  transform: rotate(0deg);
+  animation: bounceDown 1.5s infinite;
+  color: #d4a017;
+}
+
+.sacred-item.expanded .sacred-item-toggle {
+  transform: rotate(180deg);
+  color: #d4a017;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
+  .qurbana-intro-heading {
+    margin: 10px auto 8px;
+    padding: 0 15px;
+  }
+
+  .qurbana-intro-heading h2 {
+    font-size: 16px;
+  }
+
   .controls-header {
     padding: 10px 12px;
     gap: 6px;
@@ -598,7 +1077,8 @@
 
   .stage-description {
     font-size: 14px;
-    margin: 0 20px 15px 20px;
+    margin: 0 15px 15px 15px;
+    padding: 14px 16px;
   }
 
   .progress-dots {
@@ -652,5 +1132,76 @@
   .substage-details {
     padding: 10px;
     font-size: 12px;
+  }
+
+  /* Intro section on mobile (integrated into carousel card) */
+  .intro-panel-card {
+    padding: 20px 15px;
+    min-height: auto;
+  }
+
+  .intro-content-card {
+    max-width: 100%;
+  }
+
+  .intro-image-card {
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+
+  .intro-title-card {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .intro-malayalam-card {
+    margin: 20px 0 30px 0;
+    padding: 15px;
+  }
+
+  .intro-malayalam-text-card {
+    font-size: 24px;
+  }
+
+  .intro-transliteration-card {
+    font-size: 11px;
+  }
+
+  .intro-audio-btn-card {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .intro-description-card {
+    font-size: 14px;
+    margin: 20px 0 25px 0;
+  }
+
+  .intro-journey-info-card {
+    padding: 15px;
+    margin: 25px 0;
+  }
+
+  .intro-journey-info-card p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .intro-journey-info-card li {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .intro-start-btn-card {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Sacred items responsive: Expanded items take full width on mobile */
+@media (max-width: 640px) {
+  .sacred-item.expanded {
+    min-width: 100% !important;
   }
 }

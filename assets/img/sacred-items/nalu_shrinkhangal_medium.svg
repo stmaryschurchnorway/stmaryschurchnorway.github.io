@@ -1,0 +1,44 @@
+<svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="70" cy="18" rx="14" ry="6" fill="none" stroke="#5A4A3A" stroke-width="2.5"/>
+  <ellipse cx="70" cy="18" rx="11" ry="4.5" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+  <g stroke="#5A4A3A" stroke-width="1.2" fill="none">
+    <line x1="50" y1="24" x2="42" y2="120"/>
+    <line x1="63" y1="24" x2="60" y2="120"/>
+    <line x1="77" y1="24" x2="80" y2="120"/>
+    <line x1="90" y1="24" x2="98" y2="120"/>
+  </g>
+  <g fill="#D4AF37" stroke="#5A4A3A" stroke-width="0.8">
+    <ellipse cx="48.5" cy="32" rx="2.5" ry="3"/>
+    <ellipse cx="47.5" cy="44" rx="2.5" ry="3"/>
+    <ellipse cx="46.5" cy="56" rx="2.5" ry="3"/>
+    <ellipse cx="45.5" cy="68" rx="2.5" ry="3"/>
+    <ellipse cx="44.5" cy="80" rx="2.5" ry="3"/>
+    <ellipse cx="43.5" cy="92" rx="2.5" ry="3"/>
+    <ellipse cx="42.5" cy="104" rx="2.5" ry="3"/>
+    <ellipse cx="42" cy="116" rx="2.5" ry="3"/>
+    <ellipse cx="62.5" cy="32" rx="2.5" ry="3"/>
+    <ellipse cx="62" cy="44" rx="2.5" ry="3"/>
+    <ellipse cx="61.5" cy="56" rx="2.5" ry="3"/>
+    <ellipse cx="61.2" cy="68" rx="2.5" ry="3"/>
+    <ellipse cx="61" cy="80" rx="2.5" ry="3"/>
+    <ellipse cx="60.5" cy="92" rx="2.5" ry="3"/>
+    <ellipse cx="60.2" cy="104" rx="2.5" ry="3"/>
+    <ellipse cx="60" cy="116" rx="2.5" ry="3"/>
+    <ellipse cx="77.5" cy="32" rx="2.5" ry="3"/>
+    <ellipse cx="78" cy="44" rx="2.5" ry="3"/>
+    <ellipse cx="78.5" cy="56" rx="2.5" ry="3"/>
+    <ellipse cx="78.8" cy="68" rx="2.5" ry="3"/>
+    <ellipse cx="79" cy="80" rx="2.5" ry="3"/>
+    <ellipse cx="79.5" cy="92" rx="2.5" ry="3"/>
+    <ellipse cx="79.8" cy="104" rx="2.5" ry="3"/>
+    <ellipse cx="80" cy="116" rx="2.5" ry="3"/>
+    <ellipse cx="91.5" cy="32" rx="2.5" ry="3"/>
+    <ellipse cx="92.5" cy="44" rx="2.5" ry="3"/>
+    <ellipse cx="93.5" cy="56" rx="2.5" ry="3"/>
+    <ellipse cx="94.5" cy="68" rx="2.5" ry="3"/>
+    <ellipse cx="95.5" cy="80" rx="2.5" ry="3"/>
+    <ellipse cx="96.5" cy="92" rx="2.5" ry="3"/>
+    <ellipse cx="97.5" cy="104" rx="2.5" ry="3"/>
+    <ellipse cx="98" cy="116" rx="2.5" ry="3"/>
+  </g>
+</svg>

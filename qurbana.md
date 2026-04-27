@@ -1,8 +1,16 @@
 ---
 layout: qurbana
-title: Holy Qurbana
+title: Our Liturgy
 permalink: /qurbana/
-description: "An interactive walkthrough of the Holy Qurbana (Eucharistic service) in the Malankara Syriac Orthodox tradition. Learn the stages of the liturgy with Malayalam pronunciation and audio guides."
+description: "Explore the sacred liturgies of the Malankara Syriac Orthodox Church. Experience an interactive journey through the Holy Qurbana (Eucharistic service) with Malayalam pronunciation and detailed theological insights."
+
+liturgies:
+  - id: "holy-qurbana"
+    title: "Holy Qurbana"
+    malayalam: "വിശുദ്ധ കുർബാന"
+    transliteration: "Vi-shud-dha Kur-ba-na"
+    description: "The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. Experience an interactive journey through 15 stages of this sacred ancient liturgy."
+    image: "/assets/img/qurbana-liturgy.png"
 
 intro:
   title: "Holy Qurbana"
@@ -13,17 +21,63 @@ intro:
 
 phases:
   - phase_id: "preparation"
-    title: "Preparation Rites"
-    malayalam: "തുയബ"
-    description: "Sacred preparation by the priest vesting and arranging the sanctuary, establishing the spiritual foundation for the holy service that follows."
+    title: "The Preparation (Tuyobo)"
+    malayalam: "ഓരുക ശിശ്രുശ"
+    description: "The Hidden Life of Christ - This part is performed silently behind the curtain before the public celebration begins. The closed curtain represents the period before Christ was revealed to the world—His hidden life."
     stages:
-      - title: "Thooyobo"
-        malayalam: "ഒരുക്ക ശുശ്രൂഷ"
-        transliteration: "Pronunciation: Orukkha Shushrusha"
-        description: "The Preparation Rites where the priest vests and prepares the sanctuary for the sacred service. The celebrant arranges bread and wine in cross formation, remembers the faithful and departed, then covers vessels with a veil before censing concludes this phase. The priest dons liturgical vestments symbolizing spiritual readiness. This preparatory stage sets the sacred context and invokes God's blessing on the upcoming offering, paralleling Christ's preparation for His redemptive sacrifice."
-        audioPhrase: "Thooyobo, the preparation rites and vesting of the priest"
+      - title: "The Preparation (Tuyobo)"
+        malayalam: "ഓരുക ശിശ്രുശ"
+        transliteration: "Pronunciation: O-ru-ka Shish-ru-sha"
+        description: "The Hidden Life of Christ - This sacred preparation is performed silently behind the curtain before the public celebration begins. The closed curtain symbolizes the period before Christ was revealed to the world. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the veil—all representing Christ's hidden life and ultimate sacrifice."
+        audioPhrase: "Tuyobo, the preparation of the priest and elements"
         youtube_id: "bi3CkIN0kY8"
-        substages: []
+        substages:
+          - title: "The Vesting of the Priest"
+            significance: "The priest puts on sacred vestments, symbolizing putting on Christ and the 'Armor of God' needed for spiritual struggle."
+            theological_meaning: "The priest ceases to be an individual and becomes a 'Living Icon' of Christ, the Eternal High Priest."
+            biblical_remembrance: "During this preparatory stage, the Church remembers priestly figures of the Old Testament: Melchizedek, the King-priest of Salem who offered bread and wine prefiguring the Eucharist (Genesis 14:18), representing Christ as the eternal High Priest; and Aaron, the first High Priest of Israel, representing the established priesthood and sacrificial worship in the Old Covenant."
+            ritual_gesture: "The priest washes his hands, symbolizing purity, then dons the sacred vestments in a deliberate, meditative manner, preparing spiritually and physically for the sacred office."
+            sacred_items:
+              - name: "Hamnikho (Stole)"
+                malayalam: "ഹാംനിഖോ"
+                meaning: "Represents the breastplate of righteousness"
+                image: "/assets/img/sacred-items/hamnikho_medium.svg"
+              - name: "Phayno (Cope)"
+                malayalam: "ഫായ്നോ"
+                meaning: "The outermost garment representing the 'Armor of God'"
+                image: "/assets/img/sacred-items/phayno_medium.svg"
+          - title: "Preparation of the Elements"
+            significance: "Bread (Lahmo/Hamira) and Wine (Mazgogo) are arranged on the altar (Madbaha), recalling the preparation of the Passover and signifying readiness for the Holy Sacrifice. The priest arranges these sacred elements in a cross formation, remembering the names of the sick, the departed, and the faithful."
+            ritual_gesture: "The elements are arranged in cross formation on the altar; the priest pauses in prayer to remember the faithful living and departed; the vessels are positioned with reverence."
+            sacred_items:
+              - name: "Lahmo (Sacred Bread)"
+                malayalam: "ലാഹ്മോ"
+                meaning: "Represents Christ's body, broken for our salvation"
+                image: "/assets/img/sacred-items/lahmo_medium.svg"
+              - name: "Mazgogo (Sacred Wine)"
+                malayalam: "മാസ്ഗോഗോ"
+                meaning: "Represents Christ's blood, shed for the redemption of humanity"
+                image: "/assets/img/sacred-items/mazgogo_medium.svg"
+              - name: "Pilaso (Paten)"
+                malayalam: "പിലാസോ"
+                meaning: "Represents the Manger of Bethlehem where Christ was born"
+                image: "/assets/img/sacred-items/pilaso_medium.svg"
+              - name: "Kaso (Chalice)"
+                malayalam: "കാസോ"
+                meaning: "Represents the Tomb of Joseph of Arimathea where Christ was buried"
+                image: "/assets/img/sacred-items/kaso_medium.svg"
+              - name: "Tablitho (Altar Stone)"
+                malayalam: "താബ്ലിതോ"
+                meaning: "The consecrated wooden tablet upon which vessels rest; represents the Cross"
+                image: "/assets/img/sacred-items/tablitho_medium.svg"
+          - title: "The Shushepo (Veil)"
+            significance: "The sacred vessels are covered with a white veil, symbolizing Christ's burial and representing divine mysteries hidden from human understanding. This sacred covering emphasizes that the Eucharistic mystery transcends human comprehension and can only be grasped through faith."
+            ritual_gesture: "The white veil is drawn over the prepared elements with reverence and solemnity, completing the hidden preparation phase."
+            sacred_items:
+              - name: "Shushepo (The Great Veil)"
+                malayalam: "ശുശേപോ"
+                meaning: "White veil symbolizing the hiddenness of Divine Mystery and Christ's burial shroud"
+                image: "/assets/img/sacred-items/shushepo_medium.svg"
 
   - phase_id: "public-celebration"
     title: "Public Celebration"
@@ -35,28 +89,86 @@ phases:
         transliteration: "Pronunciation: Parasya-maya Adya-bhagam"
         description: "The procession and initial prayers begin the public celebration of the liturgy, establishing the sacred space and community participation in the divine service. This stage prepares the faithful for the proclamation of Scripture and sets the spiritual tone for the Eucharistic celebration."
         audioPhrase: "Public celebration, beginning of the sacred service"
-        substages: []
+        substages:
+          - title: "The Solemn Entrance"
+            hymn: "Velivu Niranjoreesho (By Thy Light)"
+            significance: "A procession around the Altar with the censer, during which the hymn 'Velivu Niranjoreesho' (By Thy Light) or 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
+            ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
+            sacred_items:
+              - name: "Dhoopakutty (Censer)"
+                malayalam: "ധൂപകുട്ടി"
+                meaning: "Burns fragrant incense, symbolizing prayers rising to heaven"
+                image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
+              - name: "Vasnam (Incense)"
+                malayalam: "വാസ്നം"
+                meaning: "Represents the prayers of the faithful rising before God's throne"
+                image: "/assets/img/sacred-items/vasnam_medium.svg"
 
       - title: "Reading of the Scriptures"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "വേദപുസ്തകപാരായണം"
+        transliteration: "Pronunciation: Vedhapusthaka-parayana"
         description: "Scripture is proclaimed through readings from the Epistles and Gospels, presenting the 'life-giving proclamation' of Christ's teachings and redemptive work. These readings from Sacred Scripture educate and sanctify the faithful, preparing their hearts and minds for the sacred mystery of the Eucharist. The congregation responds with faith and affirmation of orthodox belief."
         audioPhrase: "Reading of the Scriptures"
-        substages: []
+        substages:
+          - title: "Ministry of the Word (Epistles & Gospel)"
+            significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah' or 'Bhoovilashesham.' The sermon follows, mirroring Christ's teaching in the synagogues."
+            ritual_gesture: "The deacon reads the Epistles from the lectern while the congregation listens in reverent silence. The Gospel is proclaimed by the priest with great solemnity. Bells are rung and fans are fluttered during the Gospel reading."
+            sacred_items:
+              - name: "Marvahtho (Fans)"
+                malayalam: "മാർവാഹ്തോ"
+                meaning: "Fluttered during readings, representing the Seraphim surrounding the Word of God"
+                image: "/assets/img/sacred-items/marvahtho_medium.svg"
+              - name: "Mani (Bells)"
+                malayalam: "മണി"
+                meaning: "Rung to honor the proclamation of the Gospel and alert the faithful"
+                image: "/assets/img/sacred-items/mani_medium.svg"
 
       - title: "Promiun-Sedra and Blessing of the Censor"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
         audioPhrase: "Promiun-Sedra and blessing of incense"
-        substages: []
+        substages:
+          - title: "The Trisagion (Thrice Holy)"
+            hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam)"
+            significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.' This uniquely Orthodox affirmation distinguishes Chalcedonian from non-Chalcedonian Christology."
+            ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
+            sacred_items:
+              - name: "None required"
+                meaning: "The focus is on the voice and unified proclamation of faith"
+          - title: "Promiun-Sedra & Blessing of the Censer"
+            significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
+            ritual_gesture: "The priest intones the Sedra prayers with hands raised. The censer is blessed with careful hand movements. The congregation recites the Nicene Creed standing, affirming the 'Church of the Apostles.'"
+            sacred_items:
+              - name: "Dhoopakutty (Censer)"
+                malayalam: "ധൂപകുട്ടി"
+                meaning: "Burned to symbolize prayers rising to heaven"
+                image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
+              - name: "Nalu Shrinkhangal (4 Chains)"
+                malayalam: "നാലു ശൃഖ്ങ്ങൾ"
+                meaning: "One for the Father, one for the Holy Spirit, and two for the Son (representing His two natures: Divine and Human)"
+                image: "/assets/img/sacred-items/nalu_shrinkhangal_medium.svg"
+              - name: "Pandhrandhu Manikkal (12 Bells)"
+                malayalam: "പന്ത്രണ്ട് മണികൾ"
+                meaning: "Represent the 12 Apostles proclaiming the Gospel of Christ to the world"
+                image: "/assets/img/sacred-items/pandhrandhu_manikkal_medium.svg"
+              - name: "Vasnam (Incense)"
+                malayalam: "വാസ്നം"
+                meaning: "Represents Christ's fragrant offering and sacrifice on the Cross"
+                image: "/assets/img/sacred-items/vasnam_medium.svg"
 
       - title: "The Nicene Creed"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
         audioPhrase: "The Nicene Creed"
-        substages: []
+        substages:
+          - title: "The Recitation of the Nicene Creed"
+            significance: "The whole congregation stands together, united in the apostolic faith. They recite the Nicene Creed regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed, formulated at the Council of Nicaea, guards the mystery of the Incarnation and prepares believers to participate in the sacred Eucharistic mystery."
+            ritual_gesture: "The faithful stand with reverence, often with hands folded or raised, voicing the creed in unison. This corporate recitation creates a moment of powerful unity among believers across centuries and cultures."
+            sacred_items:
+              - name: "The Creed itself"
+                meaning: "The words that express apostolic faith and unite all Orthodox believers in doctrine"
 
   - phase_id: "anaphora"
     title: "Anaphora"
@@ -68,70 +180,213 @@ phases:
         transliteration: "Pronunciation: [To be added]"
         description: "Congregants exchange the Kiss of Peace, symbolizing reconciliation and unity in the faith before the Eucharistic prayer. The celebrant then unveils the covered vessels, symbolizing the revelation of 'life-giving and heavenly mysteries.' This moment represents the movement from preparation to the sacred transformation, from earthly celebration to celestial communion."
         audioPhrase: "Kiss of Peace and lifting of the veil"
-        substages: []
+        substages:
+          - title: "Reconciliation & The Kiss of Peace"
+            hymn: "Anyonyam Slomo Nalkin (Peace be unto us)"
+            significance: "The Kiss of Peace is one of the most ancient and profound gestures of Christian worship. It expresses reconciliation, forgiveness, and unity among the faithful before approaching the Holy Mysteries."
+            theological_meaning: "It represents reconciliation with both God and neighbour before offering sacrifice (Matthew 5:23–24). It is a visible expression of the unity of the Body of Christ, where all divisions are healed in love."
+            liturgical_context: "Peace flows from the altar (Christ) to the priest, from the priest to the deacon, and then to the congregation, symbolizing that peace originates in Christ and is shared throughout the Church."
+            spiritual_message: "The faithful are reminded that no offering is acceptable without forgiveness and peace within the community."
+            ritual_gesture: "The priest greets the deacon with 'The peace of the Lord be with you,' and the peace is exchanged throughout the congregation with embraces or hand gestures, moving from the altar toward the people."
+            sacred_items:
+              - name: "None required"
+                meaning: "The exchange itself is the sacred action; it carries the peace of Christ"
+          - title: "Lifting of the Shushepo (The Great Veil)"
+            action: "The veil covering the Holy Mysteries is lifted and gently waved."
+            significance: "This solemn act symbolizes the Resurrection of Christ and the revelation of divine mysteries to the Church."
+            theological_meaning: "The lifting of the veil represents the rolling away of the stone from Christ's tomb. It signifies that death, darkness, and separation have been conquered by the Resurrection. It also represents the opening of heaven to humanity through Christ's victory."
+            spiritual_message: "The faithful are reminded that God's mysteries, once hidden, are now revealed in Christ and made accessible through the Holy Eucharist."
+            ritual_gesture: "The priest reverently lifts the veil with both hands in a smooth, deliberate motion, then allows it to flutter gently—a gesture reminiscent of Christ emerging from the tomb."
+            sacred_items:
+              - name: "Shushepo (The Great Veil)"
+                malayalam: "ശുശേപോ"
+                meaning: "Symbolizes the stone covering Christ's tomb; its removal represents the Resurrection"
+                image: "/assets/img/sacred-items/shushepo_medium.svg"
 
       - title: "Introductory Dialogue"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue invites the faithful to ascend spiritually with the priest into heavenly worship, preparing for the Eucharistic prayer of thanksgiving."
         audioPhrase: "Introductory Dialogue"
-        substages: []
+        substages:
+          - title: "The Sacred Dialogue"
+            significance: "This ancient dialogue, unchanged since the early Church, invites the faithful to ascend spiritually with the priest into heavenly worship. The priest begins: 'Lift up your hearts.' The people respond: 'We lift them up unto the Lord.' The priest continues: 'Let us give thanks to the Lord our God.' The people affirm: 'It is meet and right.' This mutual exchange signifies the unity of the earthly and heavenly Church as both participate in one eternal Liturgy."
+            ritual_gesture: "The priest stands before the altar with arms raised, speaking with solemnity. The congregation responds in unison, with some standing with arms slightly raised in a gesture of lifting up the heart and mind to heaven."
+            sacred_items:
+              - name: "None required"
+                meaning: "The words themselves carry the sacred power; they are an ancient apostolic tradition"
 
       - title: "Words of Institution"
         malayalam: "സ്ഥാപന വാക്യങ്ങൾ"
         transliteration: "Pronunciation: Sthapana-vakhyangal"
         description: "The priest solemnly recounts the words and actions of Christ at the Last Supper: 'Take, eat. This is My Body... Drink ye all of it. This is My Blood of the New Covenant.' Through this proclamation, the Church commemorates Christ's redemptive act and enters into mystical union with His sacrifice."
         audioPhrase: "Words of Institution"
-        substages: []
+        substages:
+          - title: "The Eucharistic Prayer & Institution"
+            significance: "This is the sacred moment in which the Church commemorates and mystically participates in the Last Supper of our Lord."
+            theological_meaning: "Christ Himself is the true celebrant of the Eucharist through the priest. The words spoken are not merely historical recollection but a living re-presentation of the mystery of salvation. The bread and wine are set apart as the Body and Blood of Christ in sacramental reality."
+            spiritual_message: "The faithful are called to recognize the living presence of Christ in the Holy Mysteries and to approach with reverence and faith."
+            ritual_gesture: "The priest stands with reverence, speaking slowly and clearly the words 'With His holy hands...' (Thante Thrikkai...). At the crucial moment, he makes the sign of the cross over the elements with his hand, a gesture that communicates the sacrificial love of Christ crucified."
+            sacred_items:
+              - name: "Lahmo (Sacred Bread)"
+                malayalam: "ലാഹ്മോ"
+                meaning: "About to become the Body of Christ through the invocation of the Holy Spirit"
+                image: "/assets/img/sacred-items/lahmo_medium.svg"
+              - name: "Mazgogo (Sacred Wine)"
+                malayalam: "മാസ്ഗോഗോ"
+                meaning: "About to become the Blood of Christ through the invocation of the Holy Spirit"
+                image: "/assets/img/sacred-items/mazgogo_medium.svg"
 
       - title: "Anamnesis"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The Anamnesis is the Church's solemn commemoration of the Salvific works of Christ—His passion, death, resurrection, and anticipated second coming. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship."
         audioPhrase: "Anamnesis, commemoration of Christ's salvific works"
-        substages: []
+        substages:
+          - title: "Memorial of Christ's Redemptive Works"
+            significance: "The priest proclaims the great acts of salvation: Christ's passion on the Cross, His burial in the tomb, His glorious resurrection on the third day, His ascension to heaven, and His anticipated return in glory to judge the living and the dead. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship. The past becomes present, and the future is anticipated as faith."
+            ritual_gesture: "The priest stands with reverence, often with arms extended slightly as if embracing all of history—past, present, and future—in the remembrance. The voice carries solemnity and conviction."
+            sacred_items:
+              - name: "None required"
+                meaning: "The remembrance itself is the sacred action; all of history is held in this moment"
 
       - title: "Invocation of the Holy Spirit (Epiclesis)"
         malayalam: "പരിശുദ്ധാത്മാവിന്റെ എഴുന്നള്ളത്ത്"
         transliteration: "Pronunciation: Parishuddhaathmavinte Ezunnathathu"
         description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
         audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
-        substages: []
+        substages:
+          - title: "Epiclesis - The Invocation of the Holy Spirit"
+            hymn: "Adiyangalodu Utharam Arulename (Answer us, O Lord)"
+            significance: "The Epiclesis is the most solemn invocation of the Holy Spirit upon the offered gifts."
+            theological_meaning: "The priest stretches his hands over the bread and wine, symbolizing the descent of the Holy Spirit. The Holy Spirit sanctifies, perfects, and transforms the gifts into the Body and Blood of Christ. It reflects the work of the Spirit at creation and at Pentecost, continuing God's sanctifying presence in the Church."
+            spiritual_message: "The faithful are reminded that it is God Himself who accomplishes the mystery of the Eucharist, not human power, but divine grace."
+            ritual_gesture: "The priest stands facing the altar with both arms raised and extended over the elements in a gesture reminiscent of a dove's wings. His hands flutter slightly as he invokes the Holy Spirit. The congregation may also raise their hands in intercession and wonder at this mystery."
+            sacred_items:
+              - name: "Lahmo (Sacred Bread)"
+                malayalam: "ലാഹ്മോ"
+                meaning: "About to be transformed into the Body of Christ through the Holy Spirit's power"
+                image: "/assets/img/sacred-items/lahmo_medium.svg"
+              - name: "Mazgogo (Sacred Wine)"
+                malayalam: "മാസ്ഗോഗോ"
+                meaning: "About to be transformed into the Blood of Christ through the Holy Spirit's power"
+                image: "/assets/img/sacred-items/mazgogo_medium.svg"
+              - name: "Parishuddhathmav (Holy Spirit)"
+                malayalam: "പരിശുദ്ധാത്മാവ്"
+                meaning: "The divine power that accomplishes the transformation, making the impossible possible"
 
       - title: "Intercessions (Tubden)"
         malayalam: "മദ്ധ്യസ്ഥ പ്രാർത്ഥനകൾ"
         transliteration: "Pronunciation: Maddhyastha-prathanangal"
         description: "After the consecration, the priest offers prayers of intercession for the entire Church—petitioning God's blessings for living and deceased church members. These prayers remember the Theotokos (Mother of God), the prophets, apostles, martyrs, and all the faithful, binding the earthly and heavenly Church in communion. The whole communion of saints joins in the offering before God's throne."
         audioPhrase: "Intercessions, prayers for the Church, saints, and departed"
-        substages: []
+        substages:
+          - title: "The Great Intercessions (Tubden)"
+            hymn: "Yachikkendum Samayamitha (In the time of need)"
+            significance: "The hymn 'Yachikkendum Samayamitha' (In the time of need...) accompanies this section. The priest offers six canonical prayers (canons) of intercession: for living Spiritual Fathers (the Catholicose and Bishops), for living Faithful Brethren, for living Rulers and Authorities, for the Mother of God (St. Mary) and all Saints, for the Departed Fathers and Doctors of the Church, and for all the General Departed Faithful. Through these prayers, the earthly Church enters into communion with the heavenly Church, and the Consecrated Gifts are presented before God's throne as an offering for the whole world."
+            ritual_gesture: "The priest stands facing the altar, often with hands clasped or extended in supplication. His voice carries earnestness and care for those being prayed for. The congregation may kneel or bow slightly during these prayers, especially at the mention of the departed."
+            sacred_items:
+              - name: "Consecrated Body & Blood"
+                malayalam: "പരിശുദ്ധമായ ശരീരവും രക്തവും"
+                meaning: "Presented as the perfect offering for the intercessions of the Church"
+              - name: "Communion of Saints"
+                malayalam: "പരിശുദ്ധരുടെ സംഘാടനം"
+                meaning: "All those being remembered—living and departed—are present in this moment of grace"
 
       - title: "Fraction"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The consecrated bread is solemnly broken through prayers evoking Christ's passion, death, and resurrection as the 'living bread' sacrificed for salvation. This sacred action visibly demonstrates the breaking of Christ's body for the salvation of the world and the unity of believers in His body, the Church."
         audioPhrase: "Fraction, breaking of the sacred bread"
-        substages: []
+        substages:
+          - title: "Fraction & Commixture"
+            hymn: "Anpudayone Nin Vathil (O Merciful One, at Your throne)"
+            significance: "The curtain closes before the altar—a symbolic 'darkness' representing Christ's passion and death on the Cross. The hymn 'Anpudayone Nin Vathil' (O Merciful One, at Your throne we beseech...) is sung as the priest breaks the consecrated Bread and mixes it with the Wine. This action is not merely symbolic; it visibly demonstrates the breaking of Christ's body for the salvation of the world and signifies the unity of believers in His body, the Church. The mixing of the Body and Blood symbolizes the inseparability of Christ's saving work."
+            ritual_gesture: "The priest approaches the altar solemnly. With hands that have been sanctified by the Holy Spirit, he breaks the Bread into smaller portions and mixes them with the Wine. The action is reverent and deliberate, each movement carrying theological weight. The congregation watches in silent reverence, contemplating the mystery of Christ's self-giving love."
+            sacred_items:
+              - name: "Lahmo (Body of Christ)"
+                malayalam: "ലാഹ്മോ"
+                meaning: "Broken as Christ's body was broken for our salvation"
+                image: "/assets/img/sacred-items/lahmo_medium.svg"
+              - name: "Mazgogo (Blood of Christ)"
+                malayalam: "മാസ്ഗോഗോ"
+                meaning: "Mixed with the Bread to show the union of Christ's body and blood in His redemptive sacrifice"
+                image: "/assets/img/sacred-items/mazgogo_medium.svg"
 
       - title: "The Lord's Prayer"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The priest leads the congregation in the Lord's Prayer, traditionally interpreting 'Give us this day our daily bread' as eucharistic supplication. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them to receive the Body and Blood of Christ with proper devotion and spiritual readiness."
         audioPhrase: "The Lord's Prayer"
-        substages: []
+        substages:
+          - title: "The Lord's Prayer Before Communion"
+            significance: "The priest leads the congregation in reciting the prayer that Jesus Himself taught. The phrase 'Give us this day our daily bread' takes on profound meaning in this context—interpreted as a petition for the Bread of Heaven, the Body of Christ. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them spiritually and mentally to receive the Mysteries with proper devotion, faith, and readiness of heart."
+            ritual_gesture: "The priest and congregation pray together, often with hands folded or slightly open in a gesture of receiving. There is a sense of humility and need as believers acknowledge their dependence on God for spiritual nourishment."
+            sacred_items:
+              - name: "None required"
+                meaning: "The prayer itself carries the grace and power Christ invested in it"
 
       - title: "Holy Things to the Holy"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
         description: "The sacred proclamation 'Holy things for the holy' serves as both an invitation and a solemn warning about the sacredness of the mysteries about to be received. This declaration emphasizes that participation in the Eucharist requires spiritual purity, reverence, and faith in the transformative power of this sacred sacrament."
         audioPhrase: "Holy things to the holy"
-        substages: []
+        substages:
+          - title: "Elevation & The Proclamation of Holiness"
+            hymn: "Vishudhiyum (Syriac: Kandishal)"
+            action: "The priest elevates the Holy Mysteries, proclaiming the sanctified Gifts."
+            significance: "This moment is a solemn proclamation that the Holy Gifts—now consecrated as the Body and Blood of Christ—are offered to the faithful in holiness and reverence."
+            theological_meaning: "The phrase 'Holy Things to the Holy' expresses that the Eucharist is to be received by those who are spiritually prepared through repentance, faith, and reconciliation. It reflects the vision of heavenly worship where only the purified partake in divine glory. It echoes the call to holiness required to approach the mysteries of God."
+            spiritual_message: "The elevation reminds the faithful of Christ's Ascension into heaven and His glorified presence. It is an invitation to examine oneself and approach the Holy Communion with fear of God, faith, and love."
+            faith_response: "The congregation responds with reverence, acknowledging both the greatness of the Mystery and their unworthiness without God's grace."
+            ritual_gesture: "The priest stands before the altar facing the congregation, holding the Chalice and Paten at shoulder or eye level, displaying them reverently to those gathered. The congregation bows or kneels in profound reverence as they behold the sacred mysteries elevated before them."
+            sacred_items:
+              - name: "Kaso (Chalice)"
+                malayalam: "കാസോ"
+                meaning: "Elevated to show that the Blood of Christ is offered for the salvation of all"
+                image: "/assets/img/sacred-items/kaso_medium.svg"
+              - name: "Pilaso (Paten)"
+                malayalam: "പിലാസോ"
+                meaning: "Elevated to show that the Body of Christ is the source of eternal life"
+                image: "/assets/img/sacred-items/pilaso_medium.svg"
 
       - title: "Holy Communion and Thanksgiving"
         malayalam: "കുർബാന അനുഭവം"
         transliteration: "Pronunciation: Qurbana-anubhavam"
         description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him. The service concludes with thanksgiving prayers and doxologies expressing gratitude for access to God's 'heavenly table,' and the final blessing, celebrating the completion of the divine mystery and believers' restored divine union."
         audioPhrase: "Holy Communion and Thanksgiving"
-        substages: []
+        substages:
+          - title: "Holy Communion of the Faithful"
+            action: "The faithful receive the Body and Blood of Christ in reverence."
+            significance: "Holy Communion is the most intimate moment of participation in the life of Christ, where the faithful are united with Him sacramentally."
+            theological_meaning: "It is the real participation in the Body and Blood of Christ, strengthening the Church as one Body. It is the fulfillment of Christ's promise: 'He who eats My Flesh and drinks My Blood has eternal life.' It is both a remembrance of Christ's sacrifice and a living encounter with the risen Lord."
+            spiritual_effects: "Forgiveness of sins (for the repentant), Healing of soul and body, Strengthening of faith and unity, Foretaste of the Heavenly Kingdom"
+            discipline_preparation: "The faithful approach with fasting, prayer, repentance, and reconciliation, receiving the Mysteries with awe and love."
+            ritual_gesture: "The faithful approach the altar with reverence, often crossing their hands or standing with hands cupped to receive the Bread. The priest then offers the chalice to drink. Each person receives with an attitude of profound gratitude and awe, aware that they are receiving not mere bread and wine, but the transformed Body and Blood of Christ."
+            sacred_items:
+              - name: "Lahmo (Body of Christ)"
+                malayalam: "ലാഹ്മോ"
+                meaning: "Consumed for eternal life and union with Christ"
+                image: "/assets/img/sacred-items/lahmo_medium.svg"
+              - name: "Mazgogo (Blood of Christ)"
+                malayalam: "മാസ്ഗോഗോ"
+                meaning: "Consumed for the forgiveness of sins and restoration of divine life"
+                image: "/assets/img/sacred-items/mazgogo_medium.svg"
+              - name: "Tharvodo (Spoon)"
+                malayalam: "തർവോദോ"
+                meaning: "Used to distribute the Bread and Wine to the faithful; represents the tongs used by the angels in the Temple"
+                image: "/assets/img/sacred-items/tharvodo_medium.svg"
+          - title: "Final Blessing & Dismissal (Huthomo)"
+            action: "The priest gives the final blessing and dismisses the congregation."
+            significance: "The Dismissal marks the completion of the Holy Qurbana and the sending forth of the faithful into the world as witnesses of Christ."
+            theological_meaning: "The liturgy does not end within the church walls; it continues in daily life. The faithful are called to become 'living liturgy,' carrying Christ into the world. It reflects the mission of the Church rooted in the Great Commission."
+            spiritual_message: "The word 'Huthomo' signifies sealing or completion, indicating that the mysteries received must now be lived out. The blessing of peace ('Go in peace') empowers the faithful for Christian witness."
+            life_application: "The faithful depart not as they came, but transformed—called to love, serve, forgive, and proclaim Christ in their daily lives."
+            ritual_gesture: "The priest faces the congregation with hands raised or making the sign of the cross in blessing. The congregation receives the blessing with bows or signs of the cross, and then departs in peace to live out the graces received."
+            sacred_items:
+              - name: "None required"
+                meaning: "The blessing itself is the final grace; the faithful carry the Mysteries within them"
 ---
 
+{% include liturgy-landing.html %}
 {% include qurbana-carousel.html %}

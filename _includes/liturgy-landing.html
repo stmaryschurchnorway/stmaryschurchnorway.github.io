@@ -1,0 +1,27 @@
+<div class="liturgy-landing" id="liturgyLanding">
+  <div class="liturgy-intro-section">
+    <h2>Explore Our Sacred Liturgies</h2>
+    <p>Journey through the ancient traditions and sacred rituals that form the heart of our worship</p>
+  </div>
+
+  <div class="liturgy-grid">
+    {% for liturgy in page.liturgies %}
+    <div class="liturgy-card" onclick="showLiturgy('{{ liturgy.id }}')">
+      <div class="liturgy-card-image">
+        <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy">
+      </div>
+      <div class="liturgy-card-content">
+        <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
+        <div class="liturgy-card-malayalam">
+          <span class="malayalam-text">{{ liturgy.malayalam }}</span>
+          <span class="transliteration">{{ liturgy.transliteration }}</span>
+        </div>
+        <p class="liturgy-card-description">{{ liturgy.description }}</p>
+        <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
+          Explore Journey <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
