@@ -270,26 +270,23 @@
 
   function toggleFullscreen() {
     var carouselCard = carousel.querySelector('.carousel-card');
-    if (!carouselCard) {
-      console.log('Carousel card not found');
-      return;
-    }
+    if (!carouselCard) return;
 
-    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-    console.log('Fullscreen button clicked. Current fullscreen:', isFullscreen);
+    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || carouselCard.classList.contains('custom-fullscreen');
 
     if (!isFullscreen) {
       var req = carouselCard.requestFullscreen || carouselCard.webkitRequestFullscreen || carouselCard.mozRequestFullScreen || carouselCard.msRequestFullscreen;
-      console.log('Available fullscreen method:', req ? 'yes' : 'no');
 
       if (req) {
         req.call(carouselCard).catch(function(err) {
-          console.error('Error requesting fullscreen:', err.message);
+          console.log('Native fullscreen not available, using custom fullscreen');
+          carouselCard.classList.add('custom-fullscreen');
         });
       } else {
-        console.error('No fullscreen API available on this device');
+        carouselCard.classList.add('custom-fullscreen');
       }
     } else {
+      carouselCard.classList.remove('custom-fullscreen');
       var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
       if (exit) {
         exit.call(document);
