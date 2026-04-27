@@ -63,13 +63,6 @@ phases:
     malayalam: "അനാഫുറ"
     description: "The Eucharistic prayer and sacred mysteries are offered and consecrated through the invocation of the Holy Spirit, culminating in communion with the Body and Blood of Christ."
     stages:
-      - title: "Offering of the Holy Qurbana"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
-        description: "The priest performs ritual hand-washing symbolizing spiritual purification, then offers the sacrifice with commemorative prayers. The bread and wine are ceremonially placed on the altar. During this stage, the priest offers the gifts for the living and departed, interceding for the Church, the saints, and those who have gone before us. The elements are positioned with reverence, symbolizing the offering of the whole church—past, present, and future—before God's altar."
-        audioPhrase: "Offering of the Holy Qurbana"
-        substages: []
-
       - title: "Kiss of Peace and Lifting of the Veil"
         malayalam: "[Malayalam placeholder]"
         transliteration: "Pronunciation: [To be added]"
