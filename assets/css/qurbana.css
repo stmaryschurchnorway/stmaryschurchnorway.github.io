@@ -80,7 +80,7 @@
 }
 
 .carousel-card.custom-fullscreen {
-  width: 100vw !important;
+  width: 100% !important;
   height: 100vh !important;
   display: flex !important;
   flex-direction: column !important;
@@ -93,6 +93,7 @@
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
+  right: 0 !important;
   z-index: 9999 !important;
 }
 
@@ -100,6 +101,17 @@
   flex: 0 0 55vh !important;
   aspect-ratio: auto !important;
   max-width: none !important;
+  width: 100% !important;
+}
+
+.carousel-card.custom-fullscreen .carousel-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding: 20px 25px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
 }
 
 .carousel-card:fullscreen .controls-header,
