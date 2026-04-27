@@ -13,8 +13,11 @@
       <div class="liturgy-card-content">
         <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
         <div class="liturgy-card-malayalam">
-          <span class="malayalam-text">{{ liturgy.malayalam }}</span>
-          <span class="transliteration">{{ liturgy.transliteration }}</span>
+          <div class="malayalam-content">
+            <span class="malayalam-text">{{ liturgy.malayalam }}</span>
+            <span class="transliteration">{{ liturgy.transliteration }}</span>
+          </div>
+          <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation">🔊</button>
         </div>
         <p class="liturgy-card-description">{{ liturgy.description }}</p>
         <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
@@ -25,3 +28,27 @@
     {% endfor %}
   </div>
 </div>
+
+<script>
+  function playLiturgyAudio(malayalamText) {
+    if (!window.speechSynthesis) {
+      console.error('Speech Synthesis not supported');
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(malayalamText);
+    utterance.lang = 'ml';
+    utterance.rate = 0.8;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    utterance.onerror = function(event) {
+      console.error('Audio playback error:', event);
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.playLiturgyAudio = playLiturgyAudio;
+</script>

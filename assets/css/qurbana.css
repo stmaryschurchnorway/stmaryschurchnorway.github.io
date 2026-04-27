@@ -88,6 +88,14 @@
   border-left: 3px solid #d4a017;
   border-radius: 3px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.liturgy-card-malayalam .malayalam-content {
+  flex: 1;
 }
 
 .liturgy-card-malayalam .malayalam-text {
@@ -104,6 +112,31 @@
   font-size: 0.7rem;
   color: #888;
   font-style: italic;
+}
+
+.liturgy-audio-btn {
+  background: #d4a017;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liturgy-audio-btn:hover {
+  background: #c4920c;
+  transform: scale(1.1);
+}
+
+.liturgy-audio-btn:active {
+  transform: scale(0.95);
 }
 
 .liturgy-card-description {
