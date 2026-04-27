@@ -3,6 +3,10 @@
 </div>
 
 <div class="qurbana-carousel" id="qurbanaCarousel">
+  <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
+
+  <div class="phase-info" id="phaseInfo"><!-- Rendered by JavaScript --></div>
+
   <div class="carousel-card">
     <div class="image-placeholder" id="videoPlaceholder">
       <div id="youtubeContainer"></div>
@@ -33,6 +37,8 @@
       <p class="stage-description" id="stageDescription">
         An interactive journey through the sacred stages of the Eucharistic service. Click the speaker icon to hear Malayalam pronunciation, or use the arrow buttons to navigate between stages.
       </p>
+
+      <div class="substages-panel" id="substagesPanel"><!-- Rendered by JavaScript --></div>
 
       <div class="progress-dots" id="progressDots"></div>
     </div>
@@ -84,7 +90,7 @@
       stageCounterEl.textContent = 'INTRODUCTION';
     } else {
       var stageNum = currentStage;
-      stageCounterEl.textContent = 'STAGE ' + stageNum + ' OF 10';
+      stageCounterEl.textContent = 'STAGE ' + stageNum + ' OF 16';
     }
     stageTitleEl.textContent = stage.title;
     malayalamEl.textContent = stage.malayalam;
