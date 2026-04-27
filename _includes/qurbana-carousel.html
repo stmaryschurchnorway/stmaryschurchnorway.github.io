@@ -272,13 +272,19 @@
     var carouselCard = carousel.querySelector('.carousel-card');
     if (!carouselCard) return;
 
-    if (!document.fullscreenElement) {
-      carouselCard.requestFullscreen().catch(function(err) {
-        console.error('Error requesting fullscreen:', err);
-      });
+    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+
+    if (!isFullscreen) {
+      var req = carouselCard.requestFullscreen || carouselCard.webkitRequestFullscreen || carouselCard.mozRequestFullScreen || carouselCard.msRequestFullscreen;
+      if (req) {
+        req.call(carouselCard).catch(function(err) {
+          console.error('Error requesting fullscreen:', err);
+        });
+      }
     } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
+      var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+      if (exit) {
+        exit.call(document);
       }
     }
   }
