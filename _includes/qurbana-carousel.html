@@ -47,8 +47,21 @@
 
 <script>
 (function() {
-  const stages = {{ page.stages | jsonify }};
+  const phases = {{ page.phases | jsonify }};
+
+  // Flatten phases into stages array and create phaseMap
+  const stages = [];
+  const phaseMap = {};
+  phases.forEach((phase, phaseIdx) => {
+    phase.stages.forEach(stage => {
+      phaseMap[stages.length] = { phaseIdx: phaseIdx };
+      stages.push(stage);
+    });
+  });
+
   let currentStage = 0;
+  let currentPhaseIdx = 0;
+  let currentStageIdx = 0;
   let isPaused = false;
   let autoAdvanceTimer = null;
   let introAutoTimer = null;
@@ -69,6 +82,23 @@
   let nextBtn = carousel.querySelector('#nextBtn');
   const fullscreenBtn = carousel.querySelector('#fullscreenBtn');
   const dotsContainer = carousel.querySelector('#progressDots');
+  const phaseTabs = carousel.querySelector('#phaseTabs');
+  const phaseInfo = carousel.querySelector('#phaseInfo');
+  const substagesPanel = carousel.querySelector('#substagesPanel');
+
+  function getPhaseStartIndex(phaseIdx) {
+    let index = 0;
+    for (let i = 0; i < phaseIdx; i++) {
+      index += phases[i].stages.length;
+    }
+    return index;
+  }
+
+  function getStageInPhase(globalIdx) {
+    const phaseInfo = phaseMap[globalIdx];
+    if (!phaseInfo) return 1;
+    return globalIdx - getPhaseStartIndex(phaseInfo.phaseIdx) + 1;
+  }
 
   function createDots() {
     while (dotsContainer.firstChild) {
