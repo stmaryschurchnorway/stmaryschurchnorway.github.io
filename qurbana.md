@@ -118,7 +118,7 @@ phases:
         audioPhrase: "Reading of the Scriptures"
         substages:
           - title: "Ministry of the Word (Epistles & Gospel)"
-            significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah' or 'Bhoovilashesham.' The sermon follows, mirroring Christ's teaching in the synagogues."
+            significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
             ritual_gesture: "The deacon reads the Epistles from the lectern while the congregation listens in reverent silence. The Gospel is proclaimed by the priest with great solemnity. Bells are rung and fans are fluttered during the Gospel reading."
             sacred_items:
               - name: "Marvahtho (Fans)"
