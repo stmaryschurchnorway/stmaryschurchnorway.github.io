@@ -22,12 +22,12 @@ intro:
 phases:
   - phase_id: "preparation"
     title: "The Preparation (Tuyobo)"
-    malayalam: "ഓരുക ശിശ്രുശ"
+    malayalam: "ഒരുക്ക ശുശ്രൂഷ"
     description: "The Hidden Life of Christ - This part is performed silently behind the curtain before the public celebration begins. The closed curtain represents the period before Christ was revealed to the world—His hidden life."
     stages:
       - title: "The Preparation (Tuyobo)"
-        malayalam: "ഓരുക ശിശ്രുശ"
-        transliteration: "Pronunciation: O-ru-ka Shish-ru-sha"
+        malayalam: "ഒരുക്ക ശുശ്രൂഷ"
+        transliteration: "Pronunciation: O-ruk-ka Shush-ru-sha"
         description: "The Hidden Life of Christ - This sacred preparation is performed silently behind the curtain before the public celebration begins. The closed curtain symbolizes the period before Christ was revealed to the world. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the veil—all representing Christ's hidden life and ultimate sacrifice."
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
         youtube_id: "bi3CkIN0kY8"
