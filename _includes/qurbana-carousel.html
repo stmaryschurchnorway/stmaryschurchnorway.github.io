@@ -410,6 +410,15 @@ window.backToLanding = backToLanding;
       return;
     }
 
+    // Use actual audio file for Public Celebration / Pre-anaphora
+    if (stage.malayalam === 'പരസ്യമായ ആദ്യഭാഗം') {
+      const audio = new Audio('/assets/audio/parasyam-adhya-bhagam.m4a');
+      audio.play().catch(error => {
+        console.error('Audio playback error:', error);
+      });
+      return;
+    }
+
     // Fallback to speech synthesis for other texts
     if (!window.speechSynthesis) {
       console.error('Speech Synthesis not supported');
