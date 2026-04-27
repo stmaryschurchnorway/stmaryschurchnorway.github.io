@@ -401,6 +401,15 @@ window.backToLanding = backToLanding;
       return;
     }
 
+    // Use actual audio file for Preparation (Oruka Shushrusha)
+    if (stage.malayalam === 'ഒരുക്ക ശുശ്രൂഷ') {
+      const audio = new Audio('/assets/audio/oruka-shushrusha.m4a');
+      audio.play().catch(error => {
+        console.error('Audio playback error:', error);
+      });
+      return;
+    }
+
     // Fallback to speech synthesis for other texts
     if (!window.speechSynthesis) {
       console.error('Speech Synthesis not supported');

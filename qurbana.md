@@ -105,7 +105,7 @@ phases:
                 image: "/assets/img/sacred-items/vasnam_medium.svg"
           - title: "The Trisagion (Thrice Holy)"
             hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam)"
-            significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.' This uniquely Orthodox affirmation distinguishes Chalcedonian from non-Chalcedonian Christology."
+            significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.'"
             ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
             sacred_items:
               - name: "None required"
