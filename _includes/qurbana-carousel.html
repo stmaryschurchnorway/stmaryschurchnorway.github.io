@@ -100,36 +100,83 @@
     return globalIdx - getPhaseStartIndex(phaseInfo.phaseIdx) + 1;
   }
 
+  // Task 4: Phase Tab Rendering and Switching
+  function renderPhaseTabs() {
+    phaseTabs.innerHTML = '';
+    phases.forEach((phase, idx) => {
+      const tab = document.createElement('button');
+      tab.className = 'phase-tab' + (idx === currentPhaseIdx ? ' active' : '');
+      tab.setAttribute('data-phase-idx', idx);
+      tab.innerHTML = `
+        <div class="phase-tab-title">${phase.title}</div>
+        <div class="phase-tab-malayalam">${phase.malayalam}</div>
+      `;
+      tab.addEventListener('click', () => switchPhase(idx));
+      phaseTabs.appendChild(tab);
+    });
+  }
+
+  function switchPhase(phaseIdx) {
+    currentPhaseIdx = phaseIdx;
+    currentStageIdx = getPhaseStartIndex(phaseIdx);
+    updateDisplay();
+    renderPhaseTabs();
+  }
+
+  // Task 5: Phase Info Display
+  function renderPhaseInfo() {
+    const phase = phases[currentPhaseIdx];
+    const stageInPhase = getStageInPhase(currentStageIdx);
+    const totalInPhase = phase.stages.length;
+
+    phaseInfo.innerHTML = `
+      <div class="phase-info-section">
+        <div class="phase-info-label">Current Section</div>
+        <h3 class="phase-info-title">${phase.title}</h3>
+        <p class="phase-info-desc">${phase.malayalam} · <strong>${totalInPhase} stage${totalInPhase !== 1 ? 's' : ''}</strong> in this section</p>
+      </div>
+    `;
+  }
+
+  // Task 9: Update createDots
   function createDots() {
     while (dotsContainer.firstChild) {
       dotsContainer.removeChild(dotsContainer.firstChild);
     }
-    stages.forEach((_, i) => {
+
+    const phase = phases[currentPhaseIdx];
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+
+    phase.stages.forEach((_, i) => {
+      const globalIdx = phaseStartIdx + i;
       const dot = document.createElement('button');
-      dot.className = 'dot' + (i === currentStage ? ' active' : '');
-      dot.setAttribute('data-stage', i);
-      dot.setAttribute('title', stages[i].title);
-      dot.addEventListener('click', () => goToStage(i));
+      dot.className = 'dot' + (globalIdx === currentStageIdx ? ' active' : '');
+      dot.setAttribute('data-stage', globalIdx);
+      dot.setAttribute('title', phase.stages[i].title);
+      dot.addEventListener('click', () => goToStage(globalIdx));
       dotsContainer.appendChild(dot);
     });
   }
 
+  // Task 7: Update Display Function
   function updateDisplay() {
-    const stage = stages[currentStage];
-    if (stage.is_intro) {
-      stageCounterEl.textContent = 'INTRODUCTION';
-    } else {
-      var stageNum = currentStage;
-      stageCounterEl.textContent = 'STAGE ' + stageNum + ' OF 16';
-    }
+    const stage = stages[currentStageIdx];
+    const stageInPhase = getStageInPhase(currentStageIdx);
+    const totalInPhase = phases[currentPhaseIdx].stages.length;
+
+    stageCounterEl.textContent = 'STAGE ' + stageInPhase + ' OF ' + totalInPhase;
+
     stageTitleEl.textContent = stage.title;
     malayalamEl.textContent = stage.malayalam;
     transliterationEl.textContent = stage.transliteration;
     descriptionEl.textContent = stage.description;
 
     carousel.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentStage);
+      dot.classList.toggle('active', i === (currentStageIdx - getPhaseStartIndex(currentPhaseIdx)));
     });
+
+    renderPhaseInfo();
+    renderSubstagesPanel();
 
     loadVideo(stage);
     resetProgressBar();
@@ -140,24 +187,7 @@
     var placeholder = document.getElementById('placeholderText');
     var imagePlaceholder = document.getElementById('videoPlaceholder');
 
-    if (stage.is_intro) {
-      nextBtn.classList.add('bounce');
-      container.innerHTML = '';
-      placeholder.style.display = 'none';
-      imagePlaceholder.style.backgroundImage = 'url(/assets/img/qurbana-intro.png)';
-      imagePlaceholder.style.backgroundSize = 'cover';
-      imagePlaceholder.style.backgroundPosition = 'center';
-      imagePlaceholder.style.cursor = 'pointer';
-
-      var overlay = document.querySelector('.intro-overlay');
-      if (overlay) {
-        overlay.remove();
-      }
-
-      imagePlaceholder.onclick = function() {
-        nextStage();
-      };
-    } else if (stage.youtube_id && stage.youtube_id.trim()) {
+    if (stage.youtube_id && stage.youtube_id.trim()) {
       var videoId = stage.youtube_id.trim();
       container.innerHTML = '<div id="youtubePlayer"></div>';
       placeholder.style.display = 'none';
@@ -230,7 +260,7 @@
     progressBar.style.animation = 'none';
     void progressBar.offsetWidth;
 
-    var stage = stages[currentStage];
+    var stage = stages[currentStageIdx];
     var duration = '20s';
 
     if (stage.youtube_id && window.currentPlayer) {
@@ -257,24 +287,38 @@
     progressBar.style.animationPlayState = 'running';
   }
 
+  // Task 6: Navigation Boundaries
   function goToStage(index) {
-    currentStage = index;
-    updateDisplay();
-    if (!isPaused) resetAutoAdvance();
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    const phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+
+    if (index >= phaseStartIdx && index <= phaseEndIdx) {
+      currentStageIdx = index;
+      updateDisplay();
+    }
   }
 
   function nextStage() {
-    currentStage = (currentStage + 1) % stages.length;
-    updateDisplay();
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    const phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+
+    if (currentStageIdx < phaseEndIdx) {
+      currentStageIdx++;
+      updateDisplay();
+    }
   }
 
   function prevStage() {
-    currentStage = (currentStage - 1 + stages.length) % stages.length;
-    updateDisplay();
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+
+    if (currentStageIdx > phaseStartIdx) {
+      currentStageIdx--;
+      updateDisplay();
+    }
   }
 
   function playAudio() {
-    const stage = stages[currentStage];
+    const stage = stages[currentStageIdx];
     if (!window.speechSynthesis) {
       console.error('Speech Synthesis not supported');
       return;
@@ -302,6 +346,61 @@
   function resetAutoAdvance() {
     clearTimeout(autoAdvanceTimer);
     autoAdvanceTimer = setTimeout(nextStage, ADVANCE_INTERVAL);
+  }
+
+  // Task 8: Sub-stages Panel Rendering
+  function renderSubstagesPanel() {
+    const stage = stages[currentStageIdx];
+
+    substagesPanel.innerHTML = '';
+
+    if (!stage.substages || stage.substages.length === 0) {
+      substagesPanel.style.display = 'none';
+      return;
+    }
+
+    substagesPanel.style.display = 'block';
+
+    const panelLabel = document.createElement('div');
+    panelLabel.className = 'substages-label';
+    panelLabel.textContent = 'Sub-stages (click to expand)';
+    substagesPanel.appendChild(panelLabel);
+
+    const substagesContainer = document.createElement('div');
+    substagesContainer.className = 'substages-container';
+
+    stage.substages.forEach((substage, idx) => {
+      const substageItem = document.createElement('div');
+      substageItem.className = 'substage-item collapsed';
+      substageItem.setAttribute('data-substage-idx', idx);
+
+      const header = document.createElement('div');
+      header.className = 'substage-header';
+      header.textContent = substage.title + ' ▼';
+      header.addEventListener('click', () => toggleSubstage(substageItem, idx));
+
+      substageItem.appendChild(header);
+
+      const content = document.createElement('div');
+      content.className = 'substage-content';
+      content.innerHTML = `
+        <div class="substage-details">
+          <div><strong>Significance:</strong> ${substage.significance || 'TBD'}</div>
+          <div style="margin-top:8px;"><strong>Ritual gesture:</strong> ${substage.ritual_gesture || 'TBD'}</div>
+          <div style="margin-top:8px;"><strong>Spiritual meaning:</strong> ${substage.spiritual_meaning || 'TBD'}</div>
+        </div>
+      `;
+      substageItem.appendChild(content);
+
+      substagesContainer.appendChild(substageItem);
+    });
+
+    substagesPanel.appendChild(substagesContainer);
+  }
+
+  function toggleSubstage(element, idx) {
+    element.classList.toggle('collapsed');
+    element.classList.toggle('expanded');
   }
 
   function toggleFullscreen() {
@@ -369,6 +468,7 @@
   fullscreenBtn.addEventListener('click', toggleFullscreen);
   audioBtn.addEventListener('click', playAudio);
 
+  renderPhaseTabs();
   createDots();
   updateDisplay();
 })();
