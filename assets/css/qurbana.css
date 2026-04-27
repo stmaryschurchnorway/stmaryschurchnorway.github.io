@@ -238,6 +238,25 @@
     padding: 6px 16px;
     font-size: 0.78rem;
   }
+
+  .liturgy-card-malayalam {
+    flex-wrap: nowrap;
+    padding: 6px;
+  }
+
+  .liturgy-card-malayalam .malayalam-text {
+    font-size: 0.82rem;
+  }
+
+  .liturgy-card-malayalam .transliteration {
+    font-size: 0.65rem;
+  }
+
+  .liturgy-audio-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
