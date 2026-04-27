@@ -91,16 +91,16 @@ phases:
         audioPhrase: "Public celebration, beginning of the sacred service"
         substages:
           - title: "The Solemn Entrance"
-            hymn: "Velivu Niranjoreesho (By Thy Light)"
-            significance: "A procession around the Altar with the censer, during which the hymn 'Velivu Niranjoreesho' (By Thy Light) or 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
+            hymn: "Nin Mathavu"
+            significance: "A procession around the Altar with the censer, during which 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
             ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
             sacred_items:
               - name: "Dhoopakutty (Censer)"
-                malayalam: "ധൂപകുട്ടി"
+                malayalam: "ധൂപക്കുറ്റി"
                 meaning: "Burns fragrant incense, symbolizing prayers rising to heaven"
                 image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
-              - name: "Vasnam (Incense)"
-                malayalam: "വാസ്നം"
+              - name: "Dhoopam (Incense)"
+                malayalam: "ധൂപം"
                 meaning: "Represents the prayers of the faithful rising before God's throne"
                 image: "/assets/img/sacred-items/vasnam_medium.svg"
 
@@ -141,7 +141,7 @@ phases:
             ritual_gesture: "The priest intones the Sedra prayers with hands raised. The censer is blessed with careful hand movements. The congregation recites the Nicene Creed standing, affirming the 'Church of the Apostles.'"
             sacred_items:
               - name: "Dhoopakutty (Censer)"
-                malayalam: "ധൂപകുട്ടി"
+                malayalam: "ധൂപക്കുറ്റി"
                 meaning: "Burned to symbolize prayers rising to heaven"
                 image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
               - name: "Nalu Shrinkhangal (4 Chains)"
@@ -152,8 +152,8 @@ phases:
                 malayalam: "പന്ത്രണ്ട് മണികൾ"
                 meaning: "Represent the 12 Apostles proclaiming the Gospel of Christ to the world"
                 image: "/assets/img/sacred-items/pandhrandhu_manikkal_medium.svg"
-              - name: "Vasnam (Incense)"
-                malayalam: "വാസ്നം"
+              - name: "Dhoopam (Incense)"
+                malayalam: "ധൂപം"
                 meaning: "Represents Christ's fragrant offering and sacrifice on the Cross"
                 image: "/assets/img/sacred-items/vasnam_medium.svg"
 
