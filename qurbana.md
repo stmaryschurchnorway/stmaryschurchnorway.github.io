@@ -131,8 +131,8 @@ phases:
                 image: "/assets/img/sacred-items/mani_medium.svg"
 
       - title: "Promiun-Sedra and Blessing of the Censor"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്"
+        transliteration: "Pronunciation: Pro-mi-yon Se-dra : Dhoo-pak-kut-ty Va-zha-vu"
         description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
         audioPhrase: "Promiun-Sedra and blessing of incense"
         substages:
@@ -158,8 +158,8 @@ phases:
                 image: "/assets/img/sacred-items/vasnam_medium.svg"
 
       - title: "The Nicene Creed"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "വിശ്വാസപ്രമാണം"
+        transliteration: "Pronunciation: Vish-wa-sa Pra-ma-nam"
         description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
         audioPhrase: "The Nicene Creed"
         substages:
@@ -176,8 +176,8 @@ phases:
     description: "The Eucharistic prayer and sacred mysteries are offered and consecrated through the invocation of the Holy Spirit, culminating in communion with the Body and Blood of Christ."
     stages:
       - title: "Kiss of Peace and Lifting of the Veil"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം"
+        transliteration: "Pronunciation: Sa-maa-dha-na Chum-ba-nam Sho-shap-pa A-gho-sham"
         description: "Congregants exchange the Kiss of Peace, symbolizing reconciliation and unity in the faith before the Eucharistic prayer. The celebrant then unveils the covered vessels, symbolizing the revelation of 'life-giving and heavenly mysteries.' This moment represents the movement from preparation to the sacred transformation, from earthly celebration to celestial communion."
         audioPhrase: "Kiss of Peace and lifting of the veil"
         substages:
@@ -204,10 +204,7 @@ phases:
                 image: "/assets/img/sacred-items/shushepo_medium.svg"
 
       - title: "Introductory Dialogue"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
         description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue invites the faithful to ascend spiritually with the priest into heavenly worship, preparing for the Eucharistic prayer of thanksgiving."
-        audioPhrase: "Introductory Dialogue"
         substages:
           - title: "The Sacred Dialogue"
             significance: "This ancient dialogue, unchanged since the early Church, invites the faithful to ascend spiritually with the priest into heavenly worship. The priest begins: 'Lift up your hearts.' The people respond: 'We lift them up unto the Lord.' The priest continues: 'Let us give thanks to the Lord our God.' The people affirm: 'It is meet and right.' This mutual exchange signifies the unity of the earthly and heavenly Church as both participate in one eternal Liturgy."
@@ -238,8 +235,8 @@ phases:
                 image: "/assets/img/sacred-items/mazgogo_medium.svg"
 
       - title: "Anamnesis"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "ഓർമ്മപ്രാർത്ഥനയും കൃതജ്ഞതയും"
+        transliteration: "Pronunciation: Or-mma-prar-tha-na-yum Kru-ta-jnya-ta-yum"
         description: "The Anamnesis is the Church's solemn commemoration of the Salvific works of Christ—His passion, death, resurrection, and anticipated second coming. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship."
         audioPhrase: "Anamnesis, commemoration of Christ's salvific works"
         substages:
@@ -294,8 +291,8 @@ phases:
                 meaning: "All those being remembered—living and departed—are present in this moment of grace"
 
       - title: "Fraction"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "ഖണ്ഡിപ്പിന്റെ ശുശ്രൂഷ"
+        transliteration: "Pronunciation: Khan-dip-pin-te Shush-ru-sha"
         description: "The consecrated bread is solemnly broken through prayers evoking Christ's passion, death, and resurrection as the 'living bread' sacrificed for salvation. This sacred action visibly demonstrates the breaking of Christ's body for the salvation of the world and the unity of believers in His body, the Church."
         audioPhrase: "Fraction, breaking of the sacred bread"
         substages:
@@ -314,8 +311,8 @@ phases:
                 image: "/assets/img/sacred-items/mazgogo_medium.svg"
 
       - title: "The Lord's Prayer"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "മോരനായ പ്രാർത്ഥന"
+        transliteration: "Pronunciation: Mo-ra-na-ya Prar-tha-na"
         description: "The priest leads the congregation in the Lord's Prayer, traditionally interpreting 'Give us this day our daily bread' as eucharistic supplication. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them to receive the Body and Blood of Christ with proper devotion and spiritual readiness."
         audioPhrase: "The Lord's Prayer"
         substages:
@@ -327,8 +324,8 @@ phases:
                 meaning: "The prayer itself carries the grace and power Christ invested in it"
 
       - title: "Holy Things to the Holy"
-        malayalam: "[Malayalam placeholder]"
-        transliteration: "Pronunciation: [To be added]"
+        malayalam: "രഹസ്യങ്ങളുടെ ആഘോഷം"
+        transliteration: "Pronunciation: Ra-has-yang-ga-lu-de A-gho-sham"
         description: "The sacred proclamation 'Holy things for the holy' serves as both an invitation and a solemn warning about the sacredness of the mysteries about to be received. This declaration emphasizes that participation in the Eucharist requires spiritual purity, reverence, and faith in the transformative power of this sacred sacrament."
         audioPhrase: "Holy things to the holy"
         substages:
@@ -351,8 +348,8 @@ phases:
                 image: "/assets/img/sacred-items/pilaso_medium.svg"
 
       - title: "Holy Communion and Thanksgiving"
-        malayalam: "കുർബാന അനുഭവം"
-        transliteration: "Pronunciation: Qurbana-anubhavam"
+        malayalam: "കുർബാന അനുഭവം : കൃതജ്ഞത"
+        transliteration: "Pronunciation: Qurbana-anubhavam : Kru-ta-jnya-ta"
         description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him. The service concludes with thanksgiving prayers and doxologies expressing gratitude for access to God's 'heavenly table,' and the final blessing, celebrating the completion of the divine mystery and believers' restored divine union."
         audioPhrase: "Holy Communion and Thanksgiving"
         substages:
