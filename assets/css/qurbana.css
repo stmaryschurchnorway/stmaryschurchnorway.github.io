@@ -729,15 +729,15 @@
 }
 
 .audio-button {
-  background: #d4a017;
-  color: white;
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 4px;
-  font-size: 20px;
+  background: transparent;
+  color: #d4a017;
+  border: 2px solid #d4a017;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -745,7 +745,9 @@
 }
 
 .audio-button:hover {
-  background: #b8860b;
+  background: #d4a017;
+  color: white;
+  transform: scale(1.1);
 }
 
 .audio-button:active {
@@ -1136,9 +1138,9 @@
   }
 
   .audio-button {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 
   .stage-description {
