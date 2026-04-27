@@ -98,10 +98,11 @@
 }
 
 .carousel-card.custom-fullscreen .image-placeholder {
-  flex: 0 0 70vh !important;
+  flex: 1 !important;
   aspect-ratio: auto !important;
   max-width: none !important;
   width: 100% !important;
+  overflow: hidden !important;
 }
 
 .carousel-card.custom-fullscreen .carousel-content {
