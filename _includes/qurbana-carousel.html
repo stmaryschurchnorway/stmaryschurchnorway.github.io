@@ -392,6 +392,17 @@ window.backToLanding = backToLanding;
 
   function playAudio() {
     const stage = stages[currentStageIdx];
+
+    // Use actual audio file for Holy Qurbana
+    if (stage.malayalam === 'വിശുദ്ധ കുർബാന') {
+      const audio = new Audio('/assets/audio/vishudha-kurbana.m4a');
+      audio.play().catch(error => {
+        console.error('Audio playback error:', error);
+      });
+      return;
+    }
+
+    // Fallback to speech synthesis for other texts
     if (!window.speechSynthesis) {
       console.error('Speech Synthesis not supported');
       return;
