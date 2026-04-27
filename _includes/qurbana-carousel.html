@@ -97,19 +97,8 @@ window.showLiturgy = showLiturgy;
 window.backToLanding = backToLanding;
 
 (function() {
-  const pagesPhases = {{ page.phases | jsonify }};
-
-  // Add Intro as the first phase
-  const phases = [
-    {
-      phase_id: "intro",
-      title: "Holy Qurbana",
-      malayalam: "വിശുദ്ധ കുർബാന",
-      description: "Introduction to the Holy Qurbana",
-      stages: []
-    },
-    ...pagesPhases
-  ];
+  // Load phases directly from page data (no intro phase)
+  const phases = {{ page.phases | jsonify }};
 
   // Flatten phases into stages array and create phaseMap
   const stages = [];
