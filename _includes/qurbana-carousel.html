@@ -8,7 +8,10 @@
 
   <!-- Carousel heading -->
   <div class="qurbana-intro-heading">
-    <h2>Sacred stages of the Eucharistic service</h2>
+    <h2>Holy Qurbana</h2>
+    <p class="qurbana-intro-description">
+      The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith.
+    </p>
   </div>
 
   <!-- Phase tabs always visible -->
@@ -17,29 +20,10 @@
   <!-- Phase info section -->
   <div class="phase-info" id="phaseInfo"><!-- Rendered by JavaScript --></div>
 
-  <!-- Carousel card with intro content initially shown -->
+  <!-- Carousel card -->
   <div class="carousel-card">
-    <!-- Intro Panel (shown first inside carousel) -->
-    <div id="introPanel" class="intro-panel-card">
-      <div class="intro-content-card">
-        <img src="/assets/img/qurbana-liturgy.png" alt="Holy Qurbana Liturgy" class="intro-image-card">
-        <h1 class="intro-title-card" id="introTitle">Holy Qurbana</h1>
-        <div class="intro-malayalam-card">
-          <div class="intro-malayalam-content">
-            <div class="intro-malayalam-text-card" id="introMalayalam">വിശുദ്ധ കുർബാന</div>
-            <div class="intro-transliteration-card" id="introTransliteration">Pronunciation: Vi-shud-dha Kur-ba-na</div>
-          </div>
-          <button class="intro-audio-btn-card" id="introAudioBtn" title="Listen to pronunciation">🔊</button>
-        </div>
-        <p class="intro-description-card" id="introDescription">
-          The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith.
-        </p>
-        <button class="intro-start-btn-card" id="introStartBtn">Start Interactive Journey →</button>
-      </div>
-    </div>
-
-    <!-- Carousel content (shown after intro) -->
-    <div id="carouselContent" style="display:none;">
+    <!-- Carousel content -->
+    <div id="carouselContent">
     <div class="image-placeholder" id="videoPlaceholder">
       <div id="youtubeContainer"></div>
       <span id="placeholderText">Video coming soon</span>
@@ -141,8 +125,8 @@ window.backToLanding = backToLanding;
   });
 
   let currentStage = 0;
-  let currentPhaseIdx = 0;
-  let currentStageIdx = 0;
+  let currentPhaseIdx = 0;  // Start at first phase (Preparation)
+  let currentStageIdx = 0;  // Start at first stage
   let isPaused = false;
   let autoAdvanceTimer = null;
   let introAutoTimer = null;
@@ -240,17 +224,7 @@ window.backToLanding = backToLanding;
 
   // Task 7: Update Display Function
   function updateDisplay() {
-    // Check if we're in the intro phase
-    if (currentPhaseIdx === 0) {
-      // Show intro panel, hide carousel content and phase info
-      introPanel.style.display = 'flex';
-      carouselContent.style.display = 'none';
-      phaseInfo.style.display = 'none';
-      return;
-    }
-
-    // Hide intro panel, show carousel content and phase info
-    introPanel.style.display = 'none';
+    // Show carousel content and phase info
     carouselContent.style.display = 'block';
     phaseInfo.style.display = 'block';
 
@@ -800,48 +774,8 @@ window.backToLanding = backToLanding;
   document.addEventListener('mozfullscreenchange', updateFullscreenStyles);
   document.addEventListener('MSFullscreenChange', updateFullscreenStyles);
 
-  // Setup intro section (integrated into carousel)
-  const introPanel = document.getElementById('introPanel');
+  // Setup carousel content
   const carouselContent = document.getElementById('carouselContent');
-  const introStartBtn = document.getElementById('introStartBtn');
-  const introAudioBtn = document.getElementById('introAudioBtn');
-  const introTitle = document.getElementById('introTitle');
-  const introMalayalam = document.getElementById('introMalayalam');
-  const introTransliteration = document.getElementById('introTransliteration');
-  const introDescription = document.getElementById('introDescription');
-
-  const intro = {{ page.intro | jsonify }};
-
-  if (intro && intro.title) {
-    introTitle.textContent = intro.title;
-    introMalayalam.textContent = intro.malayalam;
-    introTransliteration.textContent = intro.transliteration;
-    introDescription.textContent = intro.description;
-  }
-
-  function playIntroAudio() {
-    if (!window.speechSynthesis) {
-      console.error('Speech Synthesis not supported');
-      return;
-    }
-
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(intro.malayalam || 'വിശുദ്ധ കുർബാന');
-    utterance.lang = 'ml';
-    utterance.rate = 0.8;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-
-    window.speechSynthesis.speak(utterance);
-  }
-
-  function startJourney() {
-    // Switch to first real phase (Preparation Rites, index 1)
-    switchPhase(1);
-  }
-
-  introStartBtn.addEventListener('click', startJourney);
-  introAudioBtn.addEventListener('click', playIntroAudio);
 
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);
