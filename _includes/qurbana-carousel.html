@@ -270,16 +270,24 @@
 
   function toggleFullscreen() {
     var carouselCard = carousel.querySelector('.carousel-card');
-    if (!carouselCard) return;
+    if (!carouselCard) {
+      console.log('Carousel card not found');
+      return;
+    }
 
     var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    console.log('Fullscreen button clicked. Current fullscreen:', isFullscreen);
 
     if (!isFullscreen) {
       var req = carouselCard.requestFullscreen || carouselCard.webkitRequestFullscreen || carouselCard.mozRequestFullScreen || carouselCard.msRequestFullscreen;
+      console.log('Available fullscreen method:', req ? 'yes' : 'no');
+
       if (req) {
         req.call(carouselCard).catch(function(err) {
-          console.error('Error requesting fullscreen:', err);
+          console.error('Error requesting fullscreen:', err.message);
         });
+      } else {
+        console.error('No fullscreen API available on this device');
       }
     } else {
       var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
