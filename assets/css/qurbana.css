@@ -115,9 +115,9 @@
 }
 
 .liturgy-audio-btn {
-  background: #d4a017;
-  color: white;
-  border: none;
+  background: transparent;
+  color: #d4a017;
+  border: 2px solid #d4a017;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -131,7 +131,8 @@
 }
 
 .liturgy-audio-btn:hover {
-  background: #c4920c;
+  background: #d4a017;
+  color: white;
   transform: scale(1.1);
 }
 
