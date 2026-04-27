@@ -103,6 +103,13 @@ phases:
                 malayalam: "ധൂപം"
                 meaning: "Represents the prayers of the faithful rising before God's throne"
                 image: "/assets/img/sacred-items/vasnam_medium.svg"
+          - title: "The Trisagion (Thrice Holy)"
+            hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam)"
+            significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.' This uniquely Orthodox affirmation distinguishes Chalcedonian from non-Chalcedonian Christology."
+            ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
+            sacred_items:
+              - name: "None required"
+                meaning: "The focus is on the voice and unified proclamation of faith"
 
       - title: "Reading of the Scriptures"
         malayalam: "വേദപുസ്തകപാരായണം"
@@ -129,13 +136,6 @@ phases:
         description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
         audioPhrase: "Promiun-Sedra and blessing of incense"
         substages:
-          - title: "The Trisagion (Thrice Holy)"
-            hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam)"
-            significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.' This uniquely Orthodox affirmation distinguishes Chalcedonian from non-Chalcedonian Christology."
-            ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
-            sacred_items:
-              - name: "None required"
-                meaning: "The focus is on the voice and unified proclamation of faith"
           - title: "Promiun-Sedra & Blessing of the Censer"
             significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
             ritual_gesture: "The priest intones the Sedra prayers with hands raised. The censer is blessed with careful hand movements. The congregation recites the Nicene Creed standing, affirming the 'Church of the Apostles.'"

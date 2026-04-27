@@ -278,7 +278,6 @@ window.backToLanding = backToLanding;
       events: {
         'onReady': function(event) {
           window.currentPlayer = event.target;
-          event.target.playVideo();
         },
         'onStateChange': function(event) {
           if (event.data === YT.PlayerState.PLAYING) {
@@ -295,7 +294,7 @@ window.backToLanding = backToLanding;
       playerVars: {
         'rel': 0,
         'modestbranding': 1,
-        'autoplay': 1,
+        'autoplay': 0,
         'controls': 0,
         'iv_load_policy': 3
       }
