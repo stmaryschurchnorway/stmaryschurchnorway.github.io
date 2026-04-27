@@ -359,7 +359,7 @@ window.backToLanding = backToLanding;
       updateDisplay();
       renderPhaseTabs();
     } else {
-      // At last stage of last phase, loop back to intro
+      // At last stage of last phase, loop back to first phase
       currentPhaseIdx = 0;
       currentStageIdx = 0;
       updateDisplay();
@@ -373,11 +373,18 @@ window.backToLanding = backToLanding;
     if (currentStageIdx > phaseStartIdx) {
       currentStageIdx--;
       updateDisplay();
-    } else if (currentPhaseIdx > 1) {
+    } else if (currentPhaseIdx > 0) {
       // At first stage of current phase, move to previous phase
       currentPhaseIdx--;
       const prevPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
       currentStageIdx = prevPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+      updateDisplay();
+      renderPhaseTabs();
+    } else {
+      // At first stage of first phase, loop back to last stage of last phase
+      currentPhaseIdx = phases.length - 1;
+      const lastPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+      currentStageIdx = lastPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
       updateDisplay();
       renderPhaseTabs();
     }
