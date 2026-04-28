@@ -656,8 +656,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 20;
+  z-index: 100;
   transition: background 0.3s ease;
+  pointer-events: auto;
 }
 
 .fullscreen-btn:hover {
