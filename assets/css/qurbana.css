@@ -544,6 +544,24 @@
   min-height: 0 !important;
 }
 
+/* Ensure phase tabs are visible in custom fullscreen */
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
+  display: flex !important;
+  flex: none !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Ensure carousel card is properly sized in custom fullscreen */
+.carousel-fullscreen-wrapper.custom-fullscreen .carousel-card {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
 .carousel-card:fullscreen .controls-header,
 .carousel-card:-webkit-full-screen .controls-header,
 .carousel-card:-moz-full-screen .controls-header,
