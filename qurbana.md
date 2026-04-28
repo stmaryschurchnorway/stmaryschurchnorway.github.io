@@ -166,6 +166,7 @@ phases:
         transliteration: "Pronunciation: Vish-wa-sa Pra-ma-nam"
         description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
         audioPhrase: "The Nicene Creed"
+        image: "/assets/img/nicene-creed.png"
         substages:
           - title: "The Recitation of the Nicene Creed"
             significance: "The whole congregation stands together, united in the apostolic faith. They recite the Nicene Creed regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed, formulated at the Council of Nicaea, guards the mystery of the Incarnation and prepares believers to participate in the sacred Eucharistic mystery."
