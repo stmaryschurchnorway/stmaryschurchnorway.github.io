@@ -89,6 +89,7 @@ phases:
         transliteration: "Pronunciation: Parasya-maya Adya-bhagam"
         description: "The procession and initial prayers begin the public celebration of the liturgy, establishing the sacred space and community participation in the divine service. This stage prepares the faithful for the proclamation of Scripture and sets the spiritual tone for the Eucharistic celebration."
         audioPhrase: "Public celebration, beginning of the sacred service"
+        youtube_id: "GVt6kFB541s"
         substages:
           - title: "The Solemn Entrance"
             hymn: "Nin Mathavu"
