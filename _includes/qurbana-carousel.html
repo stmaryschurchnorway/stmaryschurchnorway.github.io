@@ -254,6 +254,19 @@ window.backToLanding = backToLanding;
           initializePlayer(videoId);
         };
       }
+    } else if (stage.image && stage.image.trim()) {
+      // Display static image
+      container.innerHTML = '';
+      placeholder.style.display = 'none';
+      imagePlaceholder.style.backgroundImage = 'url(' + stage.image + ')';
+      imagePlaceholder.style.backgroundSize = 'cover';
+      imagePlaceholder.style.backgroundPosition = 'center';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+      nextBtn.classList.remove('bounce');
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
     } else {
       container.innerHTML = '';
       placeholder.style.display = 'block';
