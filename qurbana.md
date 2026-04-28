@@ -93,6 +93,7 @@ phases:
         substages:
           - title: "The Solemn Entrance"
             hymn: "Nin Mathavu"
+            hymn_audio: "/assets/audio/hymns/nin-mathavu.m4a"
             significance: "A procession around the Altar with the censer, during which 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
             ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
             sacred_items:
@@ -117,6 +118,7 @@ phases:
         transliteration: "Pronunciation: Vedhapusthaka-parayana"
         description: "Scripture is proclaimed through readings from the Epistles and Gospels, presenting the 'life-giving proclamation' of Christ's teachings and redemptive work. These readings from Sacred Scripture educate and sanctify the faithful, preparing their hearts and minds for the sacred mystery of the Eucharist. The congregation responds with faith and affirmation of orthodox belief."
         audioPhrase: "Reading of the Scriptures"
+        image: "/assets/img/reading-scriptures.png"
         substages:
           - title: "Ministry of the Word (Epistles & Gospel)"
             significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."

@@ -14,17 +14,19 @@
     </p>
   </div>
 
-  <!-- Phase tabs always visible -->
-  <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
+  <!-- Fullscreen wrapper -->
+  <div class="carousel-fullscreen-wrapper" id="carouselFullscreenWrapper">
+    <!-- Phase tabs always visible -->
+    <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
 
-  <!-- Carousel card -->
-  <div class="carousel-card">
+    <!-- Carousel card -->
+    <div class="carousel-card">
     <!-- Carousel content -->
     <div id="carouselContent">
     <div class="image-placeholder" id="videoPlaceholder">
       <div id="youtubeContainer"></div>
       <span id="placeholderText">Video coming soon</span>
-      <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+      <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⤢</button>
       <div class="progress-bar" id="progressBar"></div>
     </div>
     <script defer src="https://www.youtube.com/iframe_api"></script>
@@ -57,6 +59,7 @@
     </div>
     </div>
   </div>
+  </div><!-- Close carousel-fullscreen-wrapper -->
 </div>
 
 <script>
@@ -709,18 +712,31 @@ window.backToLanding = backToLanding;
 
       let hymnHTML = '';
       if (substage.hymn) {
-        hymnHTML = `
-          <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn:</strong>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
-            <span style="font-size:13px;color:#666;">${substage.hymn}</span>
-            <button style="background:#d4a017;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
-                    onmouseover="this.style.background='#c4920c'"
-                    onmouseout="this.style.background='#d4a017'"
-                    onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
-              🔊 Play
-            </button>
-          </div>
-        `;
+        if (substage.hymn_audio) {
+          const audioType = substage.hymn_audio.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+          hymnHTML = `
+            <div class="hymn-section" style="margin-top:14px;">
+              <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
+              <audio controls style="width:100%;margin-top:8px;border-radius:4px;">
+                <source src="${substage.hymn_audio}" type="${audioType}">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          `;
+        } else {
+          hymnHTML = `
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn:</strong>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+              <span style="font-size:13px;color:#666;">${substage.hymn}</span>
+              <button style="background:#d4a017;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
+                      onmouseover="this.style.background='#c4920c'"
+                      onmouseout="this.style.background='#d4a017'"
+                      onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
+                🔊 Play
+              </button>
+            </div>
+          `;
+        }
       }
 
       // Build sections dynamically based on available data
@@ -839,24 +855,24 @@ window.backToLanding = backToLanding;
   window.toggleSacredItem = toggleSacredItem;
 
   function toggleFullscreen() {
-    var carouselCard = carousel.querySelector('.carousel-card');
-    if (!carouselCard) return;
+    var fullscreenWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
+    if (!fullscreenWrapper) return;
 
-    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || carouselCard.classList.contains('custom-fullscreen');
+    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || fullscreenWrapper.classList.contains('custom-fullscreen');
 
     if (!isFullscreen) {
-      var req = carouselCard.requestFullscreen || carouselCard.webkitRequestFullscreen || carouselCard.mozRequestFullScreen || carouselCard.msRequestFullscreen;
+      var req = fullscreenWrapper.requestFullscreen || fullscreenWrapper.webkitRequestFullscreen || fullscreenWrapper.mozRequestFullScreen || fullscreenWrapper.msRequestFullscreen;
 
       if (req) {
-        req.call(carouselCard).catch(function(err) {
+        req.call(fullscreenWrapper).catch(function(err) {
           console.log('Native fullscreen not available, using custom fullscreen');
-          carouselCard.classList.add('custom-fullscreen');
+          fullscreenWrapper.classList.add('custom-fullscreen');
         });
       } else {
-        carouselCard.classList.add('custom-fullscreen');
+        fullscreenWrapper.classList.add('custom-fullscreen');
       }
     } else {
-      carouselCard.classList.remove('custom-fullscreen');
+      fullscreenWrapper.classList.remove('custom-fullscreen');
       var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
       if (exit) {
         exit.call(document);
@@ -865,14 +881,14 @@ window.backToLanding = backToLanding;
   }
 
   function updateFullscreenStyles() {
-    var carouselCard = carousel.querySelector('.carousel-card');
+    var fullscreenWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
     var imagePlaceholder = carousel.querySelector('.image-placeholder');
     var carouselContent = carousel.querySelector('.carousel-content');
 
-    var isFullscreen = document.fullscreenElement === carouselCard ||
-                      document.webkitFullscreenElement === carouselCard ||
-                      document.mozFullScreenElement === carouselCard ||
-                      document.msFullscreenElement === carouselCard;
+    var isFullscreen = document.fullscreenElement === fullscreenWrapper ||
+                      document.webkitFullscreenElement === fullscreenWrapper ||
+                      document.mozFullScreenElement === fullscreenWrapper ||
+                      document.msFullscreenElement === fullscreenWrapper;
 
     if (isFullscreen) {
       imagePlaceholder.style.height = '75vh';
