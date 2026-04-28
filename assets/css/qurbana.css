@@ -527,7 +527,7 @@
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .image-placeholder {
-  flex: 1 !important;
+  flex: 0 0 40vh !important;
   aspect-ratio: auto !important;
   max-width: none !important;
   width: 100% !important;
