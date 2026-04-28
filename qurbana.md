@@ -138,6 +138,7 @@ phases:
         transliteration: "Pronunciation: Pro-mi-yon Se-dra : Dhoo-pak-kut-ty Va-zha-vu"
         description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
         audioPhrase: "Promiun-Sedra and blessing of incense"
+        image: "/assets/img/sedra-blessing.png"
         substages:
           - title: "Promiun-Sedra & Blessing of the Censer"
             significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
