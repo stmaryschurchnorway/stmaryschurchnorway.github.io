@@ -562,6 +562,15 @@
   overflow: hidden !important;
 }
 
+/* Ensure carouselContent is flex container in custom fullscreen */
+.carousel-fullscreen-wrapper.custom-fullscreen #carouselContent {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
 .carousel-card:fullscreen .controls-header,
 .carousel-card:-webkit-full-screen .controls-header,
 .carousel-card:-moz-full-screen .controls-header,
