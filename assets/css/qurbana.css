@@ -1229,13 +1229,13 @@
   }
 
   .phase-card-subparts {
-    gap: 8px;
-    padding: 8px 18px 0 18px;
+    gap: 6px;
+    padding: 6px 12px 0 12px;
   }
 
   .phase-card-subpart {
-    font-size: 10px;
-    padding: 4px 0;
+    font-size: 9px;
+    padding: 2px 0;
   }
 
   .controls-header {
