@@ -553,14 +553,20 @@
   min-height: 0 !important;
 }
 
-/* Hide phase tabs and intro statement in fullscreen mode */
-.carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs,
+/* Make phase tabs sticky in fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement,
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  background: white !important;
+  flex: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide phase connector in fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-connector {
   display: none !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  visibility: hidden !important;
 }
 
 /* Ensure carousel card is properly sized in custom fullscreen */
