@@ -1165,6 +1165,7 @@ window.backToLanding = backToLanding;
 
     var introHeading = carousel.querySelector('.qurbana-intro-heading');
     var backNav = carousel.querySelector('.carousel-back-nav');
+    var html = document.documentElement;
 
     if (!isFullscreen) {
       var req = fullscreenWrapper.requestFullscreen || fullscreenWrapper.webkitRequestFullscreen || fullscreenWrapper.mozRequestFullScreen || fullscreenWrapper.msRequestFullscreen;
@@ -1175,16 +1176,19 @@ window.backToLanding = backToLanding;
           fullscreenWrapper.classList.add('custom-fullscreen');
           if (introHeading) introHeading.style.display = 'none';
           if (backNav) backNav.style.display = 'none';
+          html.style.overflow = 'hidden';
         });
       } else {
         fullscreenWrapper.classList.add('custom-fullscreen');
         if (introHeading) introHeading.style.display = 'none';
         if (backNav) backNav.style.display = 'none';
+        html.style.overflow = 'hidden';
       }
     } else {
       fullscreenWrapper.classList.remove('custom-fullscreen');
       if (introHeading) introHeading.style.display = '';
       if (backNav) backNav.style.display = '';
+      html.style.overflow = '';
       var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
       if (exit) {
         exit.call(document);
