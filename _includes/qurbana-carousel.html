@@ -10,14 +10,56 @@
   <div class="qurbana-intro-heading">
     <h2>Holy Qurbana</h2>
     <p class="qurbana-intro-description">
-      The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith. The liturgy is divided into three major phases: the Preparation (performed behind the curtain), the Public Celebration (proclamation of Scripture), and the Anaphora (consecration and communion).
+      The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith.
     </p>
+    <p class="qurbana-intro-description">
+      Holy Qurbana was instituted by our Lord Jesus Christ before His crucifixion. In Greek it is known as <em>Eucharist</em> &mdash; Thanksgiving &mdash; and is also called the <em>Sacrament of Sacraments</em>.
+    </p>
+
+    <div class="qurbana-learn-more">
+      <button type="button" class="qurbana-learn-more-label" onclick="this.parentElement.classList.toggle('open')">
+        Learn More About Holy Qurbana <span class="qurbana-learn-more-arrow">&#9660;</span>
+      </button>
+
+      <div class="qurbana-learn-more-content">
+        <div class="intro-accordion" onclick="this.classList.toggle('open')">
+          <div class="intro-accordion-header">
+            <span class="intro-accordion-title">Why we face East</span>
+            <span class="intro-accordion-arrow">&#9660;</span>
+          </div>
+          <div class="intro-accordion-body">
+            <p>In all Orthodox Churches, both priest and congregation face East during the Holy Qurbana.</p>
+            <blockquote class="intro-biblical">"For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be." &mdash; St. Matthew 24:27</blockquote>
+            <p>When we celebrate the Eucharist, the whole congregation faces toward God, hoping for His second coming from the East.</p>
+          </div>
+        </div>
+
+        <div class="intro-accordion" onclick="this.classList.toggle('open')">
+          <div class="intro-accordion-header">
+            <span class="intro-accordion-title">The word "Qurbana"</span>
+            <span class="intro-accordion-arrow">&#9660;</span>
+          </div>
+          <div class="intro-accordion-body">
+            <p>The word comes from two Syriac roots:</p>
+            <ul>
+              <li><span class="intro-malayalam">കുർബോനോ</span> <em>Kurbono</em> &mdash; offering object (അർപ്പിത വസ്തു)</li>
+              <li><span class="intro-malayalam">കൂറോബോ</span> <em>Kurobo</em> &mdash; offering (കാഴ്ച)</li>
+            </ul>
+            <p>In the eastern Syriac tradition, <em>Qurbana</em> means: <strong>Kazcha</strong> (offering), <strong>Bali</strong> (sacrifice), <strong>Dhaivathinu Nalkapettathu</strong> (offered to God). The Syriac word <em>Kareb</em> means: offered, a sacrifice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Fullscreen wrapper -->
   <div class="carousel-fullscreen-wrapper" id="carouselFullscreenWrapper">
     <!-- Phase tabs always visible -->
+    <p class="phase-intro-statement">Celebrated in Three Parts</p>
     <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
+
+    <!-- Visual connector from active phase to carousel -->
+    <div class="phase-connector" id="phaseConnector"></div>
 
     <!-- Carousel card -->
     <div class="carousel-card">
@@ -107,15 +149,27 @@ window.backToLanding = backToLanding;
   const stages = [];
   const phaseMap = {};
   phases.forEach((phase, phaseIdx) => {
-    phase.stages.forEach(stage => {
-      phaseMap[stages.length] = { phaseIdx: phaseIdx };
-      stages.push(stage);
-    });
+    if (phase.subparts) {
+      // Phase has subparts
+      phase.subparts.forEach((subpart, subpartIdx) => {
+        subpart.stages.forEach(stage => {
+          phaseMap[stages.length] = { phaseIdx: phaseIdx, subpartIdx: subpartIdx };
+          stages.push(stage);
+        });
+      });
+    } else {
+      // Phase has direct stages (no subparts)
+      phase.stages.forEach(stage => {
+        phaseMap[stages.length] = { phaseIdx: phaseIdx };
+        stages.push(stage);
+      });
+    }
   });
 
   let currentStage = 0;
   let currentPhaseIdx = 0;  // Start at first phase (Preparation)
   let currentStageIdx = 0;  // Start at first stage
+  let currentSubpartIdx = 0;  // Start at first subpart (if phase has subparts)
   let isPaused = false;
   let autoAdvanceTimer = null;
   let introAutoTimer = null;
@@ -139,10 +193,30 @@ window.backToLanding = backToLanding;
   const phaseTabs = carousel.querySelector('#phaseTabs');
   const substagesPanel = carousel.querySelector('#substagesPanel');
 
+  function hasSubparts(phaseIdx) {
+    return phases[phaseIdx].subparts && phases[phaseIdx].subparts.length > 0;
+  }
+
   function getPhaseStartIndex(phaseIdx) {
     let index = 0;
     for (let i = 0; i < phaseIdx; i++) {
-      index += phases[i].stages.length;
+      if (hasSubparts(i)) {
+        phases[i].subparts.forEach(subpart => {
+          index += subpart.stages.length;
+        });
+      } else {
+        index += phases[i].stages.length;
+      }
+    }
+    return index;
+  }
+
+  function getSubpartStartIndex(phaseIdx, subpartIdx) {
+    let index = getPhaseStartIndex(phaseIdx);
+    if (hasSubparts(phaseIdx)) {
+      for (let i = 0; i < subpartIdx; i++) {
+        index += phases[phaseIdx].subparts[i].stages.length;
+      }
     }
     return index;
   }
@@ -155,43 +229,190 @@ window.backToLanding = backToLanding;
 
   // Task 4: Phase Tab Rendering and Switching
   function renderPhaseTabs() {
-    phaseTabs.innerHTML = '';
+    while (phaseTabs.firstChild) {
+      phaseTabs.removeChild(phaseTabs.firstChild);
+    }
     phases.forEach((phase, idx) => {
       const tab = document.createElement('button');
-      tab.className = 'phase-tab' + (idx === currentPhaseIdx ? ' active' : '');
+      tab.className = 'phase-card' + (idx === currentPhaseIdx ? ' active' : '');
+      tab.setAttribute('type', 'button');
       tab.setAttribute('data-phase-idx', idx);
-      tab.innerHTML = `
-        <div class="phase-tab-title">${phase.title}</div>
-        <div class="phase-tab-malayalam">${phase.malayalam}</div>
-      `;
+
+      const num = document.createElement('div');
+      num.className = 'phase-card-num';
+      num.textContent = 'PART ' + (idx + 1);
+      tab.appendChild(num);
+
+      const title = document.createElement('div');
+      title.className = 'phase-card-title';
+      title.textContent = phase.title;
+      tab.appendChild(title);
+
+      const mal = document.createElement('div');
+      mal.className = 'phase-card-malayalam';
+      mal.textContent = phase.malayalam;
+      tab.appendChild(mal);
+
+      const desc = document.createElement('div');
+      desc.className = 'phase-card-desc';
+      desc.textContent = phase.card_description || '';
+      tab.appendChild(desc);
+
+      // Add subparts as nested tabs if phase has subparts
+      if (hasSubparts(idx)) {
+        const subpartsContainer = document.createElement('div');
+        subpartsContainer.className = 'phase-card-subparts';
+
+        phase.subparts.forEach((subpart, subIdx) => {
+          const subTab = document.createElement('button');
+          subTab.className = 'phase-card-subpart' + (idx === currentPhaseIdx && subIdx === currentSubpartIdx ? ' active' : '');
+          subTab.setAttribute('type', 'button');
+          subTab.setAttribute('title', subpart.title);
+          subTab.textContent = subpart.title;
+          subTab.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Only allow subpart switching if Part 2 is already active
+            if (currentPhaseIdx === idx) {
+              switchSubpart(subIdx);
+            }
+          });
+          subpartsContainer.appendChild(subTab);
+        });
+
+        tab.appendChild(subpartsContainer);
+      }
+
       tab.addEventListener('click', () => switchPhase(idx));
       phaseTabs.appendChild(tab);
     });
   }
 
+  function renderSubpartToggle() {
+    const container = carousel.querySelector('#subpartToggleContainer');
+    if (!container) return;
+
+    // Clear existing content
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+
+    // Only show if current phase has subparts
+    if (!hasSubparts(currentPhaseIdx)) {
+      container.style.display = 'none';
+      return;
+    }
+
+    container.style.display = 'block';
+
+    // Create pill toggle wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'subpart-pill-toggle';
+
+    const phase = phases[currentPhaseIdx];
+    phase.subparts.forEach((subpart, idx) => {
+      const pill = document.createElement('button');
+      pill.className = 'subpart-pill' + (idx === currentSubpartIdx ? ' active' : '');
+      pill.setAttribute('type', 'button');
+      pill.setAttribute('data-subpart-idx', idx);
+      pill.textContent = subpart.title;
+      pill.addEventListener('click', () => switchSubpart(idx));
+      wrapper.appendChild(pill);
+    });
+
+    container.appendChild(wrapper);
+  }
+
   function switchPhase(phaseIdx) {
+    // Only reset subpart index if actually changing phases
+    if (currentPhaseIdx !== phaseIdx) {
+      currentSubpartIdx = 0;  // Reset to first subpart only when switching to a different phase
+    }
     currentPhaseIdx = phaseIdx;
-    currentStageIdx = getPhaseStartIndex(phaseIdx);
+    if (hasSubparts(phaseIdx)) {
+      currentStageIdx = getSubpartStartIndex(phaseIdx, currentSubpartIdx);
+    } else {
+      currentStageIdx = getPhaseStartIndex(phaseIdx);
+    }
     updateDisplay();
     renderPhaseTabs();
+    updateSubpartActive();
+    updatePhaseConnector();
+  }
+
+  function switchSubpart(subpartIdx) {
+    currentSubpartIdx = subpartIdx;
+    currentStageIdx = getSubpartStartIndex(currentPhaseIdx, subpartIdx);
+    createDots();  // Regenerate dots for new subpart
+    updateDisplay();
+    updateSubpartActive();
+  }
+
+  function updateSubpartActive() {
+    // Update active state on subpart buttons in phase card
+    const subpartButtons = carousel.querySelectorAll('.phase-card-subpart');
+    subpartButtons.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === currentSubpartIdx);
+    });
+  }
+
+  function updateCarouselCardBorder() {
+    // Update carousel card borders to match active phase
+    const carouselCard = carousel.querySelector('.carousel-card');
+    const activePhaseCard = carousel.querySelector('.phase-card.active');
+    if (!carouselCard) return;
+
+    // Color scheme for each phase - all uniform gold
+    const phaseColors = [
+      '#d4a017', // Phase 1: gold
+      '#d4a017', // Phase 2: gold
+      '#d4a017'  // Phase 3: gold (uniform with others)
+    ];
+
+    const borderColor = phaseColors[currentPhaseIdx] || '#d4a017';
+
+    // Update carousel card borders
+    carouselCard.style.borderLeftColor = borderColor;
+    carouselCard.style.borderRightColor = borderColor;
+    carouselCard.style.borderBottomColor = borderColor;
+
+    // Update active phase card borders
+    if (activePhaseCard) {
+      activePhaseCard.style.borderLeftColor = borderColor;
+      activePhaseCard.style.borderRightColor = borderColor;
+    }
+  }
+
+  function updatePhaseConnector() {
+    // Connector line removed - no visual line between phase and carousel
   }
 
   // Task 5: Phase Info Display
-  // Task 9: Update createDots
+  // Task 9: Update createDots (with subpart awareness)
   function createDots() {
     while (dotsContainer.firstChild) {
       dotsContainer.removeChild(dotsContainer.firstChild);
     }
 
     const phase = phases[currentPhaseIdx];
-    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    let stagesForDots = [];
+    let startIdx = 0;
 
-    phase.stages.forEach((_, i) => {
-      const globalIdx = phaseStartIdx + i;
+    if (hasSubparts(currentPhaseIdx)) {
+      // Show dots only for stages in current subpart
+      stagesForDots = phase.subparts[currentSubpartIdx].stages;
+      startIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+    } else {
+      // Show dots for all stages in phase
+      stagesForDots = phase.stages;
+      startIdx = getPhaseStartIndex(currentPhaseIdx);
+    }
+
+    stagesForDots.forEach((stage, i) => {
+      const globalIdx = startIdx + i;
       const dot = document.createElement('button');
       dot.className = 'dot' + (globalIdx === currentStageIdx ? ' active' : '');
       dot.setAttribute('data-stage', globalIdx);
-      dot.setAttribute('title', phase.stages[i].title);
+      dot.setAttribute('title', stage.title);
       dot.addEventListener('click', () => goToStage(globalIdx));
       dotsContainer.appendChild(dot);
     });
@@ -202,9 +423,21 @@ window.backToLanding = backToLanding;
     // Show carousel content
     carouselContent.style.display = 'block';
 
+    // Update carousel card border color based on active phase
+    updateCarouselCardBorder();
+
     const stage = stages[currentStageIdx];
-    const stageInPhase = getStageInPhase(currentStageIdx);
-    const totalInPhase = phases[currentPhaseIdx].stages.length;
+
+    let stageInPhase, totalInPhase;
+    if (hasSubparts(currentPhaseIdx)) {
+      const subpart = phases[currentPhaseIdx].subparts[currentSubpartIdx];
+      const subpartStartIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+      stageInPhase = currentStageIdx - subpartStartIdx + 1;
+      totalInPhase = subpart.stages.length;
+    } else {
+      stageInPhase = getStageInPhase(currentStageIdx);
+      totalInPhase = phases[currentPhaseIdx].stages.length;
+    }
 
     stageCounterEl.textContent = 'STAGE ' + stageInPhase + ' OF ' + totalInPhase;
 
@@ -223,7 +456,10 @@ window.backToLanding = backToLanding;
     descriptionEl.textContent = stage.description;
 
     carousel.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === (currentStageIdx - getPhaseStartIndex(currentPhaseIdx)));
+      const startIdx = hasSubparts(currentPhaseIdx)
+        ? getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx)
+        : getPhaseStartIndex(currentPhaseIdx);
+      dot.classList.toggle('active', i === (currentStageIdx - startIdx));
     });
 
     renderSubstagesPanel();
@@ -347,59 +583,132 @@ window.backToLanding = backToLanding;
     progressBar.style.animationPlayState = 'running';
   }
 
-  // Task 6: Navigation Boundaries
+  // Task 6: Navigation Boundaries (with subpart awareness)
   function goToStage(index) {
     const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
-    const phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    let phaseEndIdx;
+
+    if (hasSubparts(currentPhaseIdx)) {
+      const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+      const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+      phaseEndIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+    } else {
+      phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    }
 
     if (index >= phaseStartIdx && index <= phaseEndIdx) {
       currentStageIdx = index;
+      // Update currentSubpartIdx if phase has subparts
+      if (hasSubparts(currentPhaseIdx)) {
+        const phaseInfo = phaseMap[index];
+        const oldSubpartIdx = currentSubpartIdx;
+        currentSubpartIdx = phaseInfo.subpartIdx || 0;
+        // If subpart changed, update the active subpart button
+        if (oldSubpartIdx !== currentSubpartIdx) {
+          updateSubpartActive();
+        }
+      }
       updateDisplay();
     }
   }
 
   function nextStage() {
     const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
-    const phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    let phaseEndIdx, subpartEndIdx;
 
-    if (currentStageIdx < phaseEndIdx) {
+    if (hasSubparts(currentPhaseIdx)) {
+      const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+      const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+      phaseEndIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+      subpartEndIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx) + phases[currentPhaseIdx].subparts[currentSubpartIdx].stages.length - 1;
+    } else {
+      phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    }
+
+    if (currentStageIdx < (subpartEndIdx !== undefined ? subpartEndIdx : phaseEndIdx)) {
       currentStageIdx++;
       updateDisplay();
+    } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx < phases[currentPhaseIdx].subparts.length - 1) {
+      // At last stage of current subpart, move to next subpart within same phase
+      currentSubpartIdx++;
+      currentStageIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+      createDots();
+      updateDisplay();
+      updateSubpartActive();
     } else if (currentPhaseIdx < phases.length - 1) {
       // At last stage of current phase, move to next phase
       currentPhaseIdx++;
+      currentSubpartIdx = 0;
       currentStageIdx = getPhaseStartIndex(currentPhaseIdx);
+      createDots();
       updateDisplay();
       renderPhaseTabs();
+      updateSubpartActive();
     } else {
       // At last stage of last phase, loop back to first phase
       currentPhaseIdx = 0;
+      currentSubpartIdx = 0;
       currentStageIdx = 0;
+      createDots();
       updateDisplay();
       renderPhaseTabs();
+      updateSubpartActive();
     }
   }
 
   function prevStage() {
     const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    let subpartStartIdx;
 
-    if (currentStageIdx > phaseStartIdx) {
+    if (hasSubparts(currentPhaseIdx)) {
+      subpartStartIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+    }
+
+    if (currentStageIdx > (subpartStartIdx !== undefined ? subpartStartIdx : phaseStartIdx)) {
       currentStageIdx--;
       updateDisplay();
+    } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx > 0) {
+      // At first stage of current subpart, move to previous subpart within same phase
+      currentSubpartIdx--;
+      const prevSubpartStages = phases[currentPhaseIdx].subparts[currentSubpartIdx].stages.length;
+      currentStageIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx) + prevSubpartStages - 1;
+      createDots();
+      updateDisplay();
+      updateSubpartActive();
     } else if (currentPhaseIdx > 0) {
       // At first stage of current phase, move to previous phase
       currentPhaseIdx--;
-      const prevPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
-      currentStageIdx = prevPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+      currentSubpartIdx = 0;
+
+      if (hasSubparts(currentPhaseIdx)) {
+        const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+        const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+        currentStageIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+        currentSubpartIdx = lastSubpartIdx;
+      } else {
+        currentStageIdx = getPhaseStartIndex(currentPhaseIdx) + phases[currentPhaseIdx].stages.length - 1;
+      }
+      createDots();
       updateDisplay();
       renderPhaseTabs();
+      updateSubpartActive();
     } else {
       // At first stage of first phase, loop back to last stage of last phase
       currentPhaseIdx = phases.length - 1;
       const lastPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
-      currentStageIdx = lastPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+
+      if (hasSubparts(currentPhaseIdx)) {
+        const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+        const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+        currentStageIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+        currentSubpartIdx = lastSubpartIdx;
+      } else {
+        currentStageIdx = lastPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+      }
+      createDots();
       updateDisplay();
       renderPhaseTabs();
+      updateSubpartActive();
     }
   }
 
@@ -922,8 +1231,13 @@ window.backToLanding = backToLanding;
   fullscreenBtn.addEventListener('click', toggleFullscreen);
   audioBtn.addEventListener('click', playAudio);
 
+  // Update connector on window resize
+  window.addEventListener('resize', updatePhaseConnector);
+
   renderPhaseTabs();
+  renderSubpartToggle();
   createDots();
   updateDisplay();
+  updatePhaseConnector();
 })();
 </script>
