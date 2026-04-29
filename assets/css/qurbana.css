@@ -562,6 +562,13 @@
   z-index: 10 !important;
 }
 
+/* Hide phase tabs on mobile in fullscreen */
+@media (max-width: 600px) {
+  .carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
+    display: none !important;
+  }
+}
+
 /* Ensure carousel card is properly sized in custom fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .carousel-card {
   flex: 1 !important;
