@@ -964,7 +964,7 @@
   gap: 16px;
   margin-top: 14px;
   border-top: 1px solid #f0f0f0;
-  padding-top: 12px;
+  padding: 12px 12px 0 12px;
   justify-content: center;
 }
 
@@ -1228,6 +1228,7 @@
 
   .phase-card-subparts {
     gap: 8px;
+    padding: 8px 8px 0 8px;
   }
 
   .phase-card-subpart {
