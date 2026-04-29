@@ -553,20 +553,10 @@
   min-height: 0 !important;
 }
 
-/* Ensure phase tabs are visible in custom fullscreen */
-.carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
-  display: flex !important;
-  flex: none !important;
-  flex-shrink: 0 !important;
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-/* Hide phase tabs on mobile in fullscreen */
-@media (max-width: 600px) {
-  .carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
-    display: none !important;
-  }
+/* Hide phase tabs and intro statement in fullscreen mode */
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs,
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement {
+  display: none !important;
 }
 
 /* Ensure carousel card is properly sized in custom fullscreen */
