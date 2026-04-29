@@ -569,19 +569,19 @@
 
 /* Ensure carousel card is properly sized in custom fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .carousel-card {
+  flex: 1 !important;
   display: flex !important;
   flex-direction: column !important;
-  min-height: 0 !important;
+  min-height: auto !important;
   overflow: visible !important;
   margin-top: 110px !important;
 }
 
 /* Ensure carouselContent is flex container in custom fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen #carouselContent {
-  flex: 1 !important;
   display: flex !important;
   flex-direction: column !important;
-  min-height: 0 !important;
+  min-height: auto !important;
   overflow: visible !important;
 }
 
