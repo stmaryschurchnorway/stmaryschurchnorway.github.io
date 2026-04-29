@@ -271,10 +271,9 @@ window.backToLanding = backToLanding;
           subTab.textContent = subpart.title;
           subTab.addEventListener('click', (e) => {
             e.stopPropagation();
-            // Only allow subpart switching if Part 2 is already active
-            if (currentPhaseIdx === idx) {
-              switchSubpart(subIdx);
-            }
+            // Activate the phase and switch to this subpart
+            switchPhase(idx);
+            switchSubpart(subIdx);
           });
           subpartsContainer.appendChild(subTab);
         });
