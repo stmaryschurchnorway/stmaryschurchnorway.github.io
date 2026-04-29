@@ -882,6 +882,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin: 0 0 5px 0;
+  width: 100%;
 }
 .phase-card {
   background: white;
@@ -894,6 +895,7 @@
   cursor: pointer;
   transition: all 0.25s ease;
   font-family: inherit;
+  min-width: 0;
 }
 .phase-card::before {
   content: '';
