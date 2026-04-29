@@ -224,7 +224,7 @@ phases:
         transliteration: "Pronunciation: Sthapana-vakhyangal"
         description: "The priest solemnly recounts the words and actions of Christ at the Last Supper: 'Take, eat. This is My Body... Drink ye all of it. This is My Blood of the New Covenant.' Through this proclamation, the Church commemorates Christ's redemptive act and enters into mystical union with His sacrifice."
         audioPhrase: "Words of Institution"
-        image: "/assets/img/words-of-institution.png"
+        image: "/assets/img/words-of-institution-v3.png"
         substages:
           - title: "The Eucharistic Prayer & Institution"
             significance: "This is the sacred moment in which the Church commemorates and mystically participates in the Last Supper of our Lord."
