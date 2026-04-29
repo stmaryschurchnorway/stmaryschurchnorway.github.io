@@ -253,11 +253,6 @@ window.backToLanding = backToLanding;
       mal.textContent = phase.malayalam;
       tab.appendChild(mal);
 
-      const desc = document.createElement('div');
-      desc.className = 'phase-card-desc';
-      desc.textContent = phase.card_description || '';
-      tab.appendChild(desc);
-
       // Add subparts as nested tabs if phase has subparts
       if (hasSubparts(idx)) {
         const subpartsContainer = document.createElement('div');
