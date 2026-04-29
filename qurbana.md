@@ -30,7 +30,7 @@ phases:
         transliteration: "Pronunciation: O-ruk-ka Shush-ru-sha"
         description: "The Hidden Life of Christ - This sacred preparation is performed silently behind the curtain before the public celebration begins. The closed curtain symbolizes the period before Christ was revealed to the world. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the veil—all representing Christ's hidden life and ultimate sacrifice."
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
-        image: "/assets/img/preparation-stage.png"
+        image: "/assets/img/tuyobo-v3.png"
         substages:
           - title: "The Vesting of the Priest"
             significance: "The priest puts on sacred vestments, symbolizing putting on Christ and the 'Armor of God' needed for spiritual struggle."
@@ -260,7 +260,7 @@ phases:
         transliteration: "Pronunciation: Parishuddhaathmavinte Ezunnathathu"
         description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
         audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
-        image: "/assets/img/epiclesis.png"
+        image: "/assets/img/epiclesis-v2.png"
         substages:
           - title: "Epiclesis - The Invocation of the Holy Spirit"
             hymn: "Adiyangalodu Utharam Arulename (Answer us, O Lord)"
