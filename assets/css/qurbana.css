@@ -533,25 +533,6 @@
   z-index: 9999 !important;
 }
 
-.carousel-fullscreen-wrapper.custom-fullscreen .image-placeholder {
-  flex: 2 0 0 !important;
-  aspect-ratio: auto !important;
-  max-width: none !important;
-  width: 100% !important;
-  overflow: hidden !important;
-  min-height: 200px !important;
-}
-
-.carousel-fullscreen-wrapper.custom-fullscreen .carousel-content {
-  flex: 3 0 0 !important;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding: 20px 25px !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 0 !important;
-}
 
 /* Make phase tabs sticky in fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement,
