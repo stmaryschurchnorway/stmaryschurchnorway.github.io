@@ -138,7 +138,7 @@ phases:
         transliteration: "Pronunciation: Pro-mi-yon Se-dra : Dhoo-pak-kut-ty Va-zha-vu"
         description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
         audioPhrase: "Promiun-Sedra and blessing of incense"
-        image: "/assets/img/sedra-blessing.png"
+        image: "/assets/img/sedra-blessing-v2.png"
         substages:
           - title: "Promiun-Sedra & Blessing of the Censer"
             significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
@@ -224,7 +224,7 @@ phases:
         transliteration: "Pronunciation: Sthapana-vakhyangal"
         description: "The priest solemnly recounts the words and actions of Christ at the Last Supper: 'Take, eat. This is My Body... Drink ye all of it. This is My Blood of the New Covenant.' Through this proclamation, the Church commemorates Christ's redemptive act and enters into mystical union with His sacrifice."
         audioPhrase: "Words of Institution"
-        image: "/assets/img/words-of-institution-v3.png"
+        image: "/assets/img/words-of-institution-v4.png"
         substages:
           - title: "The Eucharistic Prayer & Institution"
             significance: "This is the sacred moment in which the Church commemorates and mystically participates in the Last Supper of our Lord."
@@ -246,6 +246,7 @@ phases:
         transliteration: "Pronunciation: Or-mma-prar-tha-na-yum Kru-ta-jnya-ta-yum"
         description: "The Anamnesis is the Church's solemn commemoration of the Salvific works of Christ—His passion, death, resurrection, and anticipated second coming. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship."
         audioPhrase: "Anamnesis, commemoration of Christ's salvific works"
+        image: "/assets/img/anamnesis.png"
         substages:
           - title: "Memorial of Christ's Redemptive Works"
             significance: "The priest proclaims the great acts of salvation: Christ's passion on the Cross, His burial in the tomb, His glorious resurrection on the third day, His ascension to heaven, and His anticipated return in glory to judge the living and the dead. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship. The past becomes present, and the future is anticipated as faith."
