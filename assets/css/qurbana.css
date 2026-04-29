@@ -555,8 +555,12 @@
 
 /* Hide phase tabs and intro statement in fullscreen mode */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs,
-.carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement {
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement,
+.carousel-fullscreen-wrapper.custom-fullscreen .phase-connector {
   display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
 }
 
 /* Ensure carousel card is properly sized in custom fullscreen */
