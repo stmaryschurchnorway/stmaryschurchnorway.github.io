@@ -887,7 +887,7 @@
   background: white;
   border: 1px solid #eee;
   border-radius: 8px;
-  padding: 18px;
+  padding: 12px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -933,14 +933,14 @@
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #333;
-  margin: 6px 0;
+  margin: 3px 0;
   font-weight: 600;
 }
 .phase-card-malayalam {
   font-family: 'Noto Sans Malayalam', serif;
   color: #a85555;
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .phase-card-desc {
   font-size: 12px;
