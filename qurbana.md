@@ -185,6 +185,7 @@ phases:
         transliteration: "Pronunciation: Sa-maa-dha-na Chum-ba-nam Sho-shap-pa A-gho-sham"
         description: "Congregants exchange the Kiss of Peace, symbolizing reconciliation and unity in the faith before the Eucharistic prayer. The celebrant then unveils the covered vessels, symbolizing the revelation of 'life-giving and heavenly mysteries.' This moment represents the movement from preparation to the sacred transformation, from earthly celebration to celestial communion."
         audioPhrase: "Kiss of Peace and lifting of the veil"
+        image: "/assets/img/kiss-of-peace.png"
         substages:
           - title: "Reconciliation & The Kiss of Peace"
             hymn: "Anyonyam Slomo Nalkin (Peace be unto us)"
