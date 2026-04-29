@@ -667,7 +667,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 20;
   transition: background 0.3s ease;
   pointer-events: auto;
 }
