@@ -260,6 +260,7 @@ phases:
         transliteration: "Pronunciation: Parishuddhaathmavinte Ezunnathathu"
         description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
         audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
+        image: "/assets/img/epiclesis.png"
         substages:
           - title: "Epiclesis - The Invocation of the Holy Spirit"
             hymn: "Adiyangalodu Utharam Arulename (Answer us, O Lord)"
