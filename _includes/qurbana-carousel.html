@@ -542,16 +542,8 @@ window.backToLanding = backToLanding;
 
     targetItem.classList.add('item-highlight');
 
-    var carouselWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
-
-    console.log('carouselWrapper found:', !!carouselWrapper);
-    if (carouselWrapper) {
-      var targetRect = targetItem.getBoundingClientRect();
-      var wrapperRect = carouselWrapper.getBoundingClientRect();
-      var scrollPosition = carouselWrapper.scrollTop + (targetRect.top - wrapperRect.top) - 100;
-      console.log('Scrolling to position:', scrollPosition);
-      carouselWrapper.scrollTop = Math.max(0, scrollPosition);
-    }
+    console.log('Calling scrollIntoView');
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     setTimeout(function() {
       targetItem.classList.remove('item-highlight');
