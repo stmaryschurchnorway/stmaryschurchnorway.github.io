@@ -457,6 +457,88 @@ window.backToLanding = backToLanding;
     resetProgressBar();
   }
 
+  function renderHotspots(stage) {
+    var container = document.getElementById('youtubeContainer');
+    var existingHotspots = container.querySelector('.hotspots-layer');
+    if (existingHotspots) {
+      existingHotspots.remove();
+    }
+
+    if (!stage.hotspots || stage.hotspots.length === 0) {
+      return;
+    }
+
+    var hotspotsLayer = document.createElement('div');
+    hotspotsLayer.className = 'hotspots-layer';
+    hotspotsLayer.style.position = 'absolute';
+    hotspotsLayer.style.top = '0';
+    hotspotsLayer.style.left = '0';
+    hotspotsLayer.style.width = '100%';
+    hotspotsLayer.style.height = '100%';
+    hotspotsLayer.style.pointerEvents = 'none';
+
+    stage.hotspots.forEach(function(hotspot) {
+      var hotspotEl = document.createElement('div');
+      hotspotEl.className = 'hotspot';
+      hotspotEl.setAttribute('data-item', hotspot.item);
+      hotspotEl.style.position = 'absolute';
+      hotspotEl.style.width = (hotspot.radius * 2) + 'px';
+      hotspotEl.style.height = (hotspot.radius * 2) + 'px';
+      hotspotEl.style.left = (hotspot.x - hotspot.radius) + 'px';
+      hotspotEl.style.top = (hotspot.y - hotspot.radius) + 'px';
+      hotspotEl.style.pointerEvents = 'auto';
+
+      var tooltip = document.createElement('div');
+      tooltip.className = 'hotspot-tooltip';
+      tooltip.textContent = hotspot.item;
+      hotspotEl.appendChild(tooltip);
+
+      hotspotEl.addEventListener('click', function(e) {
+        e.stopPropagation();
+        scrollToSacredItem(hotspot.item);
+      });
+
+      hotspotsLayer.appendChild(hotspotEl);
+    });
+
+    container.style.position = 'relative';
+    container.appendChild(hotspotsLayer);
+  }
+
+  function scrollToSacredItem(itemName) {
+    var substagesPanel = carousel.querySelector('#substagesPanel');
+    if (!substagesPanel) return;
+
+    var items = substagesPanel.querySelectorAll('.sacred-item');
+    var targetItem = null;
+
+    items.forEach(function(item) {
+      var nameEl = item.querySelector('.sacred-item-summary strong');
+      if (nameEl && nameEl.textContent === itemName) {
+        targetItem = item;
+      }
+    });
+
+    if (!targetItem) return;
+
+    document.querySelectorAll('.sacred-item').forEach(function(el) {
+      el.classList.remove('item-highlight');
+    });
+
+    targetItem.classList.add('item-highlight');
+
+    var carouselContent = carousel.querySelector('.carousel-content');
+    if (carouselContent) {
+      var scrollContainer = carouselContent.closest('.carousel-fullscreen-wrapper') || carouselContent.parentElement.parentElement;
+      var scrollTop = targetItem.offsetTop - substagesPanel.offsetTop - 100;
+      scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop + scrollTop);
+    }
+
+    setTimeout(function() {
+      targetItem.classList.remove('item-highlight');
+    }, 1500);
+  }
+
   function loadVideo(stage) {
     var container = document.getElementById('youtubeContainer');
     var placeholder = document.getElementById('placeholderText');
@@ -493,6 +575,7 @@ window.backToLanding = backToLanding;
       if (imagePlaceholder.querySelector('.intro-overlay')) {
         imagePlaceholder.querySelector('.intro-overlay').remove();
       }
+      renderHotspots(stage);
     } else {
       container.innerHTML = '';
       placeholder.style.display = 'block';
