@@ -32,6 +32,11 @@ phases:
         description: "The Hidden Life of Christ - This sacred preparation is performed silently behind the curtain before the public celebration begins. The closed curtain symbolizes the period before Christ was revealed to the world. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the veil—all representing Christ's hidden life and ultimate sacrifice."
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
         image: "/assets/img/tuyobo-v3.png"
+        hotspots:
+          - item: "Shushepo (The Great Veil)"
+            x: 320
+            y: 200
+            radius: 50
         substages:
           - title: "The Vesting of the Priest"
             significance: "The priest puts on sacred vestments, symbolizing putting on Christ and the 'Armor of God' needed for spiritual struggle."
