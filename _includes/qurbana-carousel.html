@@ -542,12 +542,13 @@ window.backToLanding = backToLanding;
 
     targetItem.classList.add('item-highlight');
 
-    var imagePlaceholder = carousel.querySelector('#videoPlaceholder');
     var carouselWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
 
     console.log('carouselWrapper found:', !!carouselWrapper);
     if (carouselWrapper) {
-      var scrollPosition = targetItem.offsetTop - imagePlaceholder.offsetHeight - 50;
+      var targetRect = targetItem.getBoundingClientRect();
+      var wrapperRect = carouselWrapper.getBoundingClientRect();
+      var scrollPosition = carouselWrapper.scrollTop + (targetRect.top - wrapperRect.top) - 100;
       console.log('Scrolling to position:', scrollPosition);
       carouselWrapper.scrollTop = Math.max(0, scrollPosition);
     }
