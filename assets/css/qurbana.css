@@ -719,56 +719,6 @@
   line-height: 1.2;
 }
 
-.hymn-icon {
-  cursor: pointer;
-  margin-left: 4px;
-  transition: all 0.2s ease;
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: #d4a017;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1;
-}
-
-.hymn-icon:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-.hymn-icon.playing {
-  animation: hymn-pulse 0.6s ease-in-out infinite;
-  background: #d4a017;
-  color: white;
-  border: 1px solid #d4a017;
-  padding: 4px 8px;
-}
-
-.hymn-icon.playing:hover {
-  background: #e8c547;
-  border-color: #e8c547;
-  box-shadow: 0 2px 8px rgba(212, 160, 23, 0.3);
-}
-
-@keyframes hymn-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
-.subpart-indicator {
-  display: block;
-  color: #999;
-  font-size: 11px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.subpart-indicator:empty {
-  display: none;
-}
 
 .malayalam-section {
   background: #fafaf8;
@@ -924,7 +874,7 @@
   background: white;
   border: 1px solid #eee;
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -971,7 +921,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #333;
-  margin: 8px 0 3px 0;
+  margin: 3px 0;
   font-weight: 600;
 }
 .phase-card-malayalam {
@@ -1009,7 +959,7 @@
 .phase-card-subpart {
   background: transparent;
   border: none;
-  color: #888;
+  color: #ccc;
   padding: 8px 0;
   font-size: 14px;
   font-weight: 600;
@@ -1021,7 +971,7 @@
 }
 
 .phase-card.active .phase-card-subpart {
-  color: #555;
+  color: #999;
   cursor: pointer;
 }
 

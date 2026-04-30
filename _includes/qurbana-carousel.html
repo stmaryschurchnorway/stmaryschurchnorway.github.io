@@ -77,7 +77,6 @@
       <div class="controls-header">
         <button class="icon-btn" id="prevBtn" title="Previous stage">←</button>
         <div class="header-text">
-          <span class="subpart-indicator" id="subpartIndicator"></span>
           <div class="stage-counter" id="stageCounter">INTRODUCTION</div>
           <h2 class="stage-title" id="stageTitle">Holy Qurbana</h2>
         </div>
@@ -99,9 +98,6 @@
       <div class="substages-panel" id="substagesPanel"><!-- Rendered by JavaScript --></div>
 
       <div class="progress-dots" id="progressDots"></div>
-
-      <!-- Hidden audio player -->
-      <audio id="hymnAudio" style="display: none;" preload="none" crossOrigin="anonymous"></audio>
     </div>
     </div>
   </div>
@@ -185,7 +181,6 @@ window.backToLanding = backToLanding;
 
   const stageCounterEl = carousel.querySelector('#stageCounter');
   const stageTitleEl = carousel.querySelector('#stageTitle');
-  const subpartIndicatorEl = carousel.querySelector('#subpartIndicator');
   const malayalamEl = carousel.querySelector('#malayalamText');
   const transliterationEl = carousel.querySelector('#transliteration');
   const descriptionEl = carousel.querySelector('#stageDescription');
@@ -444,30 +439,7 @@ window.backToLanding = backToLanding;
       }
     }
 
-    // Remove subpart name from title (everything after /)
-    const titleOnly = stage.title.split(' / ')[0];
-
-    // Create hymn icon with click handler if hymn exists
-    let hymnHTML = hymnIcon;
-    if (hymnIcon && stage.substages) {
-      const hymnSubstage = stage.substages.find(sub => sub.hymn && sub.hymn_audio);
-      if (hymnSubstage) {
-        hymnHTML = '<span class="hymn-icon" onclick="playHymn(\'' + hymnSubstage.hymn_audio + '\', this)" title="Click to play hymn" data-play="🎵" data-stop="■">🎵</span>';
-      }
-    }
-
-    stageTitleEl.innerHTML = titleOnly + hymnHTML;
-
-    // Update subpart indicator
-    let subpartName = '';
-    if (hasSubparts(currentPhaseIdx)) {
-      const subpart = phases[currentPhaseIdx].subparts[currentSubpartIdx];
-      if (subpart) {
-        subpartName = subpart.title;
-      }
-    }
-    subpartIndicatorEl.textContent = subpartName;
-
+    stageTitleEl.innerHTML = stage.title + hymnIcon;
     malayalamEl.textContent = stage.malayalam;
     transliterationEl.textContent = stage.transliteration;
     descriptionEl.textContent = stage.description;
@@ -1496,88 +1468,5 @@ window.backToLanding = backToLanding;
   createDots();
   updateDisplay();
   updatePhaseConnector();
-
-  // Global hymn player using DOM element
-  const hymnAudio = document.getElementById('hymnAudio');
-  window.playHymn = function(hymnUrl, iconElement) {
-    const playSymbol = iconElement.getAttribute('data-play');
-    const stopSymbol = iconElement.getAttribute('data-stop');
-
-    // Stop if already playing
-    if (!hymnAudio.paused) {
-      hymnAudio.pause();
-      hymnAudio.currentTime = 0;
-      iconElement.classList.remove('playing');
-      iconElement.textContent = playSymbol;
-      return;
-    }
-
-    // Stop any other playing icon
-    const oldIcon = document.querySelector('.hymn-icon.playing');
-    if (oldIcon && oldIcon !== iconElement) {
-      oldIcon.classList.remove('playing');
-      oldIcon.textContent = oldIcon.getAttribute('data-play');
-    }
-
-    // Reset audio state completely
-    hymnAudio.pause();
-    hymnAudio.currentTime = 0;
-
-    console.log('Playing hymn:', hymnUrl);
-
-    iconElement.classList.add('playing');
-    iconElement.textContent = stopSymbol;
-
-    // Handle end of audio
-    hymnAudio.onended = function() {
-      console.log('Audio ended');
-      iconElement.classList.remove('playing');
-      iconElement.textContent = playSymbol;
-    };
-
-    // Handle errors
-    hymnAudio.onerror = function(e) {
-      console.error('Error loading audio:', hymnUrl, e);
-      iconElement.classList.remove('playing');
-      iconElement.textContent = playSymbol;
-    };
-
-    // Handle abort
-    hymnAudio.onabort = function() {
-      console.log('Audio loading aborted');
-      iconElement.classList.remove('playing');
-      iconElement.textContent = playSymbol;
-    };
-
-    // Set source
-    hymnAudio.src = hymnUrl;
-
-    // Setup play attempt function
-    const attemptPlay = function() {
-      const playPromise = hymnAudio.play();
-      if (playPromise) {
-        playPromise.catch(function(error) {
-          console.error('Playback error:', error);
-          iconElement.classList.remove('playing');
-          iconElement.textContent = playSymbol;
-        });
-      }
-    };
-
-    // Small delay to ensure src is set and browser has started loading
-    setTimeout(function() {
-      // If audio is already partially loaded, play immediately
-      if (hymnAudio.readyState >= hymnAudio.HAVE_CURRENT_DATA) {
-        console.log('Audio ready, playing now');
-        attemptPlay();
-      } else {
-        // Wait for canplay event
-        console.log('Waiting for audio to load...');
-        hymnAudio.addEventListener('canplay', attemptPlay, { once: true });
-        // Timeout fallback - try anyway after 300ms
-        setTimeout(attemptPlay, 300);
-      }
-    }, 10);
-  };
 })();
 </script>

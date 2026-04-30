@@ -103,7 +103,7 @@ phases:
             substages:
               - title: "The Solemn Entrance"
                 hymn: "Nin Mathavu"
-                hymn_audio: "/assets/audio/hymns/nin-mathavu.mp3"
+                hymn_audio: "/assets/audio/hymns/nin-mathavu.m4a"
                 significance: "A procession around the Altar with the censer, during which 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
                 ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
                 sacred_items:

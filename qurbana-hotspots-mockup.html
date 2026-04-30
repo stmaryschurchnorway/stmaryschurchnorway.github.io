@@ -6,7 +6,7 @@ sitemap: false
 
 <style>
 .mockup-container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 30px auto;
   padding: 20px;
 }
@@ -16,480 +16,314 @@ sitemap: false
   font-size: 1.8rem;
   color: #d4a017;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .mockup-description {
   color: #666;
   margin-bottom: 30px;
-  text-align: center;
   line-height: 1.6;
 }
 
-.designs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.design-card {
-  border: 2px solid #d4a017;
+.example-section {
+  margin-bottom: 50px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
   border-radius: 8px;
-  overflow: hidden;
-  background: white;
-}
-
-.design-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-image: url('/assets/img/tuyobo-v3.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 0.9rem;
-  overflow: hidden;
-}
-
-.design-label {
-  padding: 15px;
   background: #fafaf8;
-  border-top: 1px solid #e0e0e0;
 }
 
-.design-label h3 {
-  margin: 0 0 8px 0;
-  color: #333;
-  font-size: 1.1rem;
+.example-title {
   font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
-.design-label p {
-  margin: 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.5;
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.hotspot-demo {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #d4a017;
-  border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.mockup-image {
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(135deg, #d4a017 0%, #a85555 100%);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
+  background: transparent;
 }
 
-.hotspot-demo:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+.hotspot:hover {
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.15);
+  transform: scale(1.1);
 }
 
-.hotspot-demo::after {
-  content: '';
+.hotspot-tooltip {
   position: absolute;
-  inset: 0;
-  border-radius: 50%;
-}
-
-/* Option 1: Current Design */
-.option1 .hotspot-demo {
-  border-width: 0.8px;
-  opacity: 0.7;
-  animation: pulse-subtle 2.5s ease-in-out infinite;
-}
-
-.option1 .hotspot-demo:hover {
-  opacity: 1;
-  border-width: 1.2px;
-}
-
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 0.95; }
-}
-
-/* Option 2: Bold Glow */
-.option2 .hotspot-demo {
-  background: rgba(212, 160, 23, 0.2);
-  border-width: 1.5px;
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.7);
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.option2 .hotspot-demo:hover {
-  box-shadow: 0 0 20px rgba(212, 160, 23, 1);
-  background: rgba(212, 160, 23, 0.3);
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(212, 160, 23, 0.5); }
-  50% { box-shadow: 0 0 16px rgba(212, 160, 23, 0.9); }
-}
-
-/* Option 3: Dot with Pulse Ring */
-.option3 .hotspot-demo {
-  border-width: 0;
-  background: #d4a017;
-  width: 12px;
-  height: 12px;
-}
-
-.option3 .hotspot-demo::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border: 1px solid #d4a017;
-  border-radius: 50%;
-  animation: expand-pulse 2s ease-out infinite;
-}
-
-@keyframes expand-pulse {
-  0% {
-    inset: -6px;
-    opacity: 1;
-  }
-  100% {
-    inset: -16px;
-    opacity: 0;
-  }
-}
-
-.option3 .hotspot-demo:hover {
-  width: 16px;
-  height: 16px;
-}
-
-/* Option 4: Gradient Fill */
-.option4 .hotspot-demo {
-  background: conic-gradient(from 0deg, #d4a017, #e6b84d, #d4a017);
-  border-width: 1px;
-  opacity: 0.6;
-  animation: rotate-gradient 4s linear infinite;
-}
-
-.option4 .hotspot-demo:hover {
-  opacity: 1;
-}
-
-@keyframes rotate-gradient {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Option 5: Concentric Rings */
-.option5 .hotspot-demo {
-  border-width: 1.5px;
-  background: none;
-}
-
-.option5 .hotspot-demo::before,
-.option5 .hotspot-demo::after {
-  content: '';
-  position: absolute;
-  border: 1px solid #d4a017;
-  border-radius: 50%;
-}
-
-.option5 .hotspot-demo::before {
-  inset: -12px;
-  animation: pulse-ring1 3s ease-out infinite;
-}
-
-.option5 .hotspot-demo::after {
-  inset: -24px;
-  animation: pulse-ring2 3s ease-out infinite;
-  animation-delay: 0.5s;
-}
-
-@keyframes pulse-ring1 {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.3);
-  }
-}
-
-@keyframes pulse-ring2 {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.3);
-  }
-}
-
-/* Option 6: Icon with Label */
-.option6 .hotspot-demo {
-  width: auto;
-  height: auto;
-  padding: 6px 10px;
   background: #d4a017;
   color: white;
-  border-radius: 20px;
-  border: none;
-  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
-  animation: bounce-label 2s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
 }
 
-.option6 .hotspot-demo::after {
-  content: '🎯';
-  margin-right: 4px;
+.hotspot:hover .hotspot-tooltip {
+  opacity: 1;
 }
 
-@keyframes bounce-label {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-8px); }
-}
-
-/* Option 7: Minimal Dot */
-.option7 .hotspot-demo {
-  width: 8px;
-  height: 8px;
-  border: 1px solid #d4a017;
-  background: #d4a017;
-  box-shadow: none;
-  animation: fade-pulse 2s ease-in-out infinite;
-}
-
-.option7 .hotspot-demo:hover {
-  width: 14px;
-  height: 14px;
-  box-shadow: 0 0 8px rgba(212, 160, 23, 0.8);
-}
-
-@keyframes fade-pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.voting-section {
-  background: #f5f1eb;
-  padding: 25px;
-  border-radius: 8px;
-  margin-top: 40px;
-  border: 2px solid #d4a017;
-}
-
-.voting-section h3 {
-  margin: 0 0 15px 0;
-  color: #333;
-  font-size: 1.3rem;
-}
-
-.vote-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.vote-btn {
-  padding: 10px;
-  border: 2px solid #d4a017;
-  background: white;
-  color: #d4a017;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s;
-  text-align: center;
-}
-
-.vote-btn:hover {
-  background: #d4a017;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.pros-cons {
+.sacred-items-demo {
   margin-top: 20px;
   padding: 15px;
   background: white;
   border-radius: 6px;
-  display: none;
+  border-left: 4px solid #d4a017;
 }
 
-.pros-cons.show {
-  display: block;
+.sacred-item-demo {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-.pros-cons strong {
-  color: #d4a017;
+.sacred-item-demo:last-child {
+  border-bottom: none;
 }
 
-.pros {
-  color: #28a745;
-  margin-bottom: 8px;
+.item-emoji {
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
 }
 
-.cons {
-  color: #dc3545;
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.item-meaning {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.item-scroll-btn {
+  background: #d4a017;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.item-scroll-btn:hover {
+  background: #c4920c;
+  transform: translateY(-2px);
+}
+
+.item-highlight {
+  background: #fff9e6;
+  border-left-color: #d4a017;
+  animation: highlight-pulse 0.6s ease-out;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    background: #fffacd;
+  }
+  100% {
+    background: #fff9e6;
+  }
+}
+
+.code-example {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.note {
+  background: #f0f8ff;
+  border-left: 4px solid #0066cc;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #333;
 }
 </style>
 
 <div class="mockup-container">
-  <h1 class="mockup-title">Hotspot Design Options</h1>
+  <h1 class="mockup-title">Qurbana Hotspots Feature</h1>
 
   <p class="mockup-description">
-    Click on each option to see it in action. Hover over the hotspots to see the interaction.
-    Vote for your favorite at the bottom!
+    Click on the hotspots (golden circles) in the image below. When you hover, the hotspot highlights. Click it to scroll to the corresponding sacred item in the list below.
   </p>
 
-  <div class="designs-grid">
-    <!-- Option 1 -->
-    <div class="design-card option1">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('1')"></div>
-      </div>
-      <div class="design-label">
-        <h3>Option 1: Thin Outline</h3>
-        <p>Subtle 0.8px stroke with gentle pulse. Elegant tooltip on hover.</p>
+  <!-- EXAMPLE 1: CHALICE AND PATEN -->
+  <div class="example-section">
+    <div class="example-title">Example 1: Altar Items Stage</div>
+
+    <div class="image-container">
+      <div class="mockup-image" style="width: 400px; height: 300px;">
+        Stage Image
+        <div class="hotspot" style="width: 80px; height: 80px; top: 80px; left: 100px;" onclick="scrollToItem(this, 'chalice')">
+          <div class="hotspot-tooltip">🏆 Chalice</div>
+        </div>
+        <div class="hotspot" style="width: 70px; height: 70px; top: 100px; left: 240px;" onclick="scrollToItem(this, 'paten')">
+          <div class="hotspot-tooltip">🍽️ Paten</div>
+        </div>
       </div>
     </div>
 
-    <!-- Option 2 -->
-    <div class="design-card option2">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('2')"></div>
+    <div class="sacred-items-demo">
+      <div class="example-title" style="margin-bottom: 0;">Sacred Items</div>
+
+      <div class="sacred-item-demo" id="chalice">
+        <div class="item-emoji">🏆</div>
+        <div class="item-info">
+          <div class="item-name">The Chalice (Kaso)</div>
+          <div class="item-meaning">Holds the consecrated wine representing the Blood of Christ</div>
+        </div>
+        <button class="item-scroll-btn">Details ▼</button>
       </div>
-      <div class="design-label">
-        <h3>Option 2: Bold Glow</h3>
-        <p>Filled circle with golden glow. Very noticeable and discoverable.</p>
+
+      <div class="sacred-item-demo" id="paten">
+        <div class="item-emoji">🍽️</div>
+        <div class="item-info">
+          <div class="item-name">The Paten (Pilaso)</div>
+          <div class="item-meaning">Holds the consecrated bread representing the Body of Christ</div>
+        </div>
+        <button class="item-scroll-btn">Details ▼</button>
+      </div>
+
+      <div class="sacred-item-demo">
+        <div class="item-emoji">⬜</div>
+        <div class="item-info">
+          <div class="item-name">Tablitho (Altar Stone)</div>
+          <div class="item-meaning">Ancient stone representing the table of the Last Supper</div>
+        </div>
+        <button class="item-scroll-btn">Details ▼</button>
       </div>
     </div>
 
-    <!-- Option 3 -->
-    <div class="design-card option3">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('3')"></div>
-      </div>
-      <div class="design-label">
-        <h3>Option 3: Dot & Pulse</h3>
-        <p>Small golden dot with expanding ring pulse. Compact and eye-catching.</p>
+    <div class="code-example">
+<pre>hotspots:
+  - item: "Chalice"
+    x: 140
+    y: 120
+    radius: 40
+  - item: "Paten"
+    x: 275
+    y: 135
+    radius: 35</pre>
+    </div>
+  </div>
+
+  <!-- EXAMPLE 2: VESTMENTS -->
+  <div class="example-section">
+    <div class="example-title">Example 2: Priest Vestments Stage</div>
+
+    <div class="image-container">
+      <div class="mockup-image" style="width: 400px; height: 300px;">
+        Stage Image
+        <div class="hotspot" style="width: 60px; height: 60px; top: 50px; left: 170px;" onclick="scrollToItem(this, 'hamnikho')">
+          <div class="hotspot-tooltip">👔 Stole</div>
+        </div>
+        <div class="hotspot" style="width: 90px; height: 90px; top: 100px; left: 155px;" onclick="scrollToItem(this, 'phayno')">
+          <div class="hotspot-tooltip">🧥 Cope</div>
+        </div>
       </div>
     </div>
 
-    <!-- Option 4 -->
-    <div class="design-card option4">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('4')"></div>
-      </div>
-      <div class="design-label">
-        <h3>Option 4: Gradient Spin</h3>
-        <p>Rotating gradient fill. Modern and sophisticated animation.</p>
-      </div>
-    </div>
+    <div class="sacred-items-demo">
+      <div class="example-title" style="margin-bottom: 0;">Sacred Items</div>
 
-    <!-- Option 5 -->
-    <div class="design-card option5">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('5')"></div>
+      <div class="sacred-item-demo" id="hamnikho">
+        <div class="item-emoji">👔</div>
+        <div class="item-info">
+          <div class="item-name">Hamnikho (Stole)</div>
+          <div class="item-meaning">Symbol of the yoke of Christ and the priest's authority</div>
+        </div>
+        <button class="item-scroll-btn">Details ▼</button>
       </div>
-      <div class="design-label">
-        <h3>Option 5: Concentric Rings</h3>
-        <p>Multiple expanding rings. Strong visual draw with premium feel.</p>
-      </div>
-    </div>
 
-    <!-- Option 6 -->
-    <div class="design-card option6">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('6')"></div>
-      </div>
-      <div class="design-label">
-        <h3>Option 6: Icon & Label</h3>
-        <p>Text label with bouncing animation. Most explicit and direct.</p>
-      </div>
-    </div>
-
-    <!-- Option 7 -->
-    <div class="design-card option7">
-      <div class="design-image">
-        <div class="hotspot-demo" onclick="showPros('7')"></div>
-      </div>
-      <div class="design-label">
-        <h3>Option 7: Minimal Dot</h3>
-        <p>Tiny solid dot that grows on hover. Understated and clean.</p>
+      <div class="sacred-item-demo" id="phayno">
+        <div class="item-emoji">🧥</div>
+        <div class="item-info">
+          <div class="item-name">Phayno (Cope)</div>
+          <div class="item-meaning">Elaborate vestment symbolizing the glory of Christ</div>
+        </div>
+        <button class="item-scroll-btn">Details ▼</button>
       </div>
     </div>
   </div>
 
-  <!-- Voting Section -->
-  <div class="voting-section">
-    <h3>Which design do you prefer?</h3>
-    <div class="vote-options">
-      <button class="vote-btn" onclick="vote('1')">Option 1</button>
-      <button class="vote-btn" onclick="vote('2')">Option 2</button>
-      <button class="vote-btn" onclick="vote('3')">Option 3</button>
-      <button class="vote-btn" onclick="vote('4')">Option 4</button>
-      <button class="vote-btn" onclick="vote('5')">Option 5</button>
-      <button class="vote-btn" onclick="vote('6')">Option 6</button>
-      <button class="vote-btn" onclick="vote('7')">Option 7</button>
-    </div>
-
-    <div class="pros-cons" id="pros1">
-      <div class="pros"><strong>✓ Pros:</strong> Elegant, minimal, professional. Subtle pulse draws attention without being intrusive.</div>
-      <div class="cons"><strong>✗ Cons:</strong> May be too subtle for some users. Requires hovering to see tooltip.</div>
-    </div>
-
-    <div class="pros-cons" id="pros2">
-      <div class="pros"><strong>✓ Pros:</strong> Very noticeable. Clear that something is clickable. Strong visual hierarchy.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Might be too busy on image-heavy pages. Glowing effect can be distracting.</div>
-    </div>
-
-    <div class="pros-cons" id="pros3">
-      <div class="pros"><strong>✓ Pros:</strong> Compact yet eye-catching. Expanding ring is smooth and refined. Great balance.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Small dot might be hard to see on certain background colors.</div>
-    </div>
-
-    <div class="pros-cons" id="pros4">
-      <div class="pros"><strong>✓ Pros:</strong> Modern and unique. Sophisticated animation. Stands out elegantly.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Continuous rotation might be distracting. More CPU intensive animation.</div>
-    </div>
-
-    <div class="pros-cons" id="pros5">
-      <div class="pros"><strong>✓ Pros:</strong> Premium feel. Multiple rings create strong visual emphasis. Very discoverable.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Can feel busy. Takes up more screen space. Animation complexity.</div>
-    </div>
-
-    <div class="pros-cons" id="pros6">
-      <div class="pros"><strong>✓ Pros:</strong> Most explicit - no guessing it's clickable. Always shows item name. Very clear affordance.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Takes up space. Bouncing animation might be annoying. Less elegant.</div>
-    </div>
-
-    <div class="pros-cons" id="pros7">
-      <div class="pros"><strong>✓ Pros:</strong> Extremely minimal. Clean and unobtrusive. Fast to render. Perfect for subtle design.</div>
-      <div class="cons"><strong>✗ Cons:</strong> Might be too subtle. Very small, easy to miss. Requires precise clicking.</div>
-    </div>
+  <div class="note">
+    <strong>How it works:</strong>
+    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+      <li>Hover over the golden circles on the image to see item names</li>
+      <li>Click any hotspot to highlight and scroll to that sacred item below</li>
+      <li>Coordinates are defined in YAML as x, y (center point) and radius</li>
+      <li>Simple to maintain—no visual editor needed, just add coordinates to YAML</li>
+    </ul>
   </div>
 </div>
 
 <script>
-function vote(option) {
-  const prosDivId = 'pros' + option;
-  const prosDivs = document.querySelectorAll('.pros-cons');
-  prosDivs.forEach(div => div.classList.remove('show'));
-  document.getElementById(prosDivId).classList.add('show');
-}
+function scrollToItem(element, itemId) {
+  const item = document.getElementById(itemId);
+  if (!item) return;
 
-function showPros(option) {
-  vote(option);
+  // Remove highlight from all items
+  document.querySelectorAll('.sacred-item-demo').forEach(el => {
+    el.classList.remove('item-highlight');
+  });
+
+  // Add highlight to clicked item
+  item.classList.add('item-highlight');
+
+  // Smooth scroll to item
+  item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // Remove highlight after animation
+  setTimeout(() => {
+    item.classList.remove('item-highlight');
+  }, 1500);
 }
 </script>
