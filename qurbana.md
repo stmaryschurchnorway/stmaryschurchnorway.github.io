@@ -224,6 +224,7 @@ phases:
 
           - title: "Introductory Dialogue"
             description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue invites the faithful to ascend spiritually with the priest into heavenly worship, preparing for the Eucharistic prayer of thanksgiving."
+            image: "/assets/img/introductory-dialogue.png"
             substages:
               - title: "The Sacred Dialogue"
                 significance: "This ancient dialogue, unchanged since the early Church, invites the faithful to ascend spiritually with the priest into heavenly worship. The priest begins: 'Lift up your hearts.' The people respond: 'We lift them up unto the Lord.' The priest continues: 'Let us give thanks to the Lord our God.' The people affirm: 'It is meet and right.' This mutual exchange signifies the unity of the earthly and heavenly Church as both participate in one eternal Liturgy."
