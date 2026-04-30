@@ -352,12 +352,12 @@ window.backToLanding = backToLanding;
 
     // Color scheme for each phase - all uniform gold
     const phaseColors = [
-      '#d4a017', // Phase 1: gold
-      '#d4a017', // Phase 2: gold
-      '#d4a017'  // Phase 3: gold (uniform with others)
+      '#e8c547', // Phase 1: gold
+      '#e8c547', // Phase 2: gold
+      '#e8c547'  // Phase 3: gold (uniform with others)
     ];
 
-    const borderColor = phaseColors[currentPhaseIdx] || '#d4a017';
+    const borderColor = phaseColors[currentPhaseIdx] || '#e8c547';
 
     // Update carousel card borders
     carouselCard.style.borderLeftColor = borderColor;
@@ -487,25 +487,67 @@ window.backToLanding = backToLanding;
       var style = document.createElement('style');
       style.id = 'hotspot-styles';
       style.textContent = `
-        @keyframes hotspot-subtle-pulse {
-          0%, 100% {
-            opacity: 0.7;
+        @keyframes hotspot-pulse-ring {
+          0% {
+            r: 0.8;
+            opacity: 1;
+            stroke-width: 0.2;
           }
           50% {
-            opacity: 0.95;
+            opacity: 0.8;
+          }
+          100% {
+            r: 3;
+            opacity: 0;
+            stroke-width: 0.05;
+          }
+        }
+        @keyframes hotspot-dot-pulse {
+          0% {
+            opacity: 1;
+            r: 0.8;
+            fill: #ffffff;
+          }
+          25% {
+            fill: #e8c547;
+          }
+          50% {
+            opacity: 0.8;
+            r: 1;
+            fill: #d4a017;
+          }
+          75% {
+            fill: #e8c547;
+          }
+          100% {
+            opacity: 1;
+            r: 0.8;
+            fill: #ffffff;
           }
         }
         .hotspot-circle {
-          animation: hotspot-subtle-pulse 2.5s ease-in-out infinite;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
+          fill: #e8c547;
+          stroke: none;
+          cursor: pointer;
+          animation: hotspot-dot-pulse 2s ease-in-out infinite;
+          filter: drop-shadow(0 0 1px rgba(212, 160, 23, 0.6));
+          pointer-events: none;
+        }
+        .hotspot-ring {
+          animation: hotspot-pulse-ring 1.2s ease-out infinite;
           fill: none;
           stroke: #d4a017;
-          stroke-width: 0.8;
-          opacity: 0.7;
+          stroke-width: 0.2;
+          opacity: 1;
+          pointer-events: none;
         }
         .hotspot-circle:hover {
-          opacity: 1;
-          stroke-width: 1.2;
+          filter: brightness(1.5) drop-shadow(0 0 2px rgba(212, 160, 23, 0.9));
+          animation: none;
+        }
+        .hotspot-circle:hover ~ .hotspot-ring {
+          filter: brightness(1.3);
         }
       `;
       document.head.appendChild(style);
@@ -522,58 +564,63 @@ window.backToLanding = backToLanding;
       var cy = (hotspot.y <= 1) ? (hotspot.y * 100) : hotspot.y;
       var r = (hotspot.radius <= 1) ? (hotspot.radius * 100) : hotspot.radius;
 
-      // Create thin outline circle (minimal, elegant)
+      // Create invisible larger hit area (for nearby mouse activation)
+      var hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      hitArea.setAttribute('cx', cx);
+      hitArea.setAttribute('cy', cy);
+      hitArea.setAttribute('r', 3.5);
+      hitArea.setAttribute('fill', 'rgba(0,0,0,0.01)');
+      hitArea.setAttribute('cursor', 'pointer');
+      hitArea.setAttribute('pointer-events', 'auto');
+      hitArea.style.cursor = 'pointer';
+
+      // Create small filled dot (Variation 2: Small dot)
       var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       circle.setAttribute('cx', cx);
       circle.setAttribute('cy', cy);
-      circle.setAttribute('r', r);
+      circle.setAttribute('r', 0.8);
       circle.setAttribute('class', 'hotspot-circle');
 
-      // Create tooltip background box
-      var tooltipBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      tooltipBg.setAttribute('x', cx - 20);
-      tooltipBg.setAttribute('y', cy - r - 12);
-      tooltipBg.setAttribute('width', '40');
-      tooltipBg.setAttribute('height', '8');
-      tooltipBg.setAttribute('rx', '1.5');
-      tooltipBg.setAttribute('fill', '#d4a017');
-      tooltipBg.setAttribute('opacity', '0');
-      tooltipBg.setAttribute('transition', 'opacity 0.3s ease');
-      tooltipBg.setAttribute('pointer-events', 'none');
+      // Create expanding ring (Variation 2: Fast pulse ring)
+      var ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      ring.setAttribute('cx', cx);
+      ring.setAttribute('cy', cy);
+      ring.setAttribute('r', 0.8);
+      ring.setAttribute('class', 'hotspot-ring');
 
-      // Create tooltip text (hidden by default)
+      // Create tooltip text (no background, subtle)
       var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
       text.setAttribute('x', cx);
-      text.setAttribute('y', cy - r - 6);
+      text.setAttribute('y', cy - 2);
       text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('font-size', '2');
+      text.setAttribute('font-size', '1.4');
       text.setAttribute('fill', 'white');
-      text.setAttribute('font-weight', '600');
+      text.setAttribute('font-weight', '500');
       text.setAttribute('opacity', '0');
       text.setAttribute('pointer-events', 'none');
-      text.setAttribute('transition', 'opacity 0.3s ease');
+      text.setAttribute('transition', 'opacity 0.2s ease');
+      text.setAttribute('filter', 'drop-shadow(0 0 1px rgba(0, 0, 0, 0.8))');
       text.textContent = hotspot.item;
 
+      g.appendChild(hitArea);
       g.appendChild(circle);
-      g.appendChild(tooltipBg);
+      g.appendChild(ring);
       g.appendChild(text);
 
-      // Add hover effects
-      g.addEventListener('mouseenter', function() {
-        tooltipBg.setAttribute('opacity', '1');
+      // Add hover effects to hit area
+      hitArea.addEventListener('mouseenter', function() {
         text.setAttribute('opacity', '1');
-      });
+      }, { passive: true });
 
-      g.addEventListener('mouseleave', function() {
-        tooltipBg.setAttribute('opacity', '0');
+      hitArea.addEventListener('mouseleave', function() {
         text.setAttribute('opacity', '0');
-      });
+      }, { passive: true });
 
-      // Add click handler
-      g.addEventListener('click', function(e) {
+      // Add click handler to hit area
+      hitArea.addEventListener('click', function(e) {
         e.stopPropagation();
         scrollToSacredItem(hotspot.item);
-      });
+      }, { passive: false });
 
       svg.appendChild(g);
     });
@@ -1144,7 +1191,7 @@ window.backToLanding = backToLanding;
       if (substage.sacred_items && substage.sacred_items.length > 0) {
         itemsHTML = `
           <div style="margin-top:14px;">
-            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">Sacred Items Used</strong>
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">Sacred Items Used</strong>
             <div class="sacred-items-grid" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;">
               ${substage.sacred_items.map(item => {
                 return `
@@ -1153,24 +1200,24 @@ window.backToLanding = backToLanding;
                     <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
                       ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100px;height:100px;object-fit:contain;margin-bottom:12px;flex-shrink:0;">` : ''}
                       <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
-                      ${item.malayalam ? `<div style="font-size:13px;color:#a85555;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
+                      ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
                     </div>
 
                     <!-- Expanded content (hidden by default) -->
                     <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
                       <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
-                        <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
+                        <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
                         ${item.expanded_meaning || item.meaning}
                       </div>
                       ${item.historical_context ? `
                         <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
-                          <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Historical Context:</strong>
+                          <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Historical Context:</strong>
                           ${item.historical_context}
                         </div>
                       ` : ''}
                       ${item.biblical_reference ? `
                         <div style="font-size:11px;color:#666;line-height:1.6;">
-                          <strong style="display:block;color:#d4a017;margin-bottom:6px;font-size:11.5px;">Biblical Reference:</strong>
+                          <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Biblical Reference:</strong>
                           ${item.biblical_reference}
                         </div>
                       ` : ''}
@@ -1194,7 +1241,7 @@ window.backToLanding = backToLanding;
           const audioType = substage.hymn_audio.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
           hymnHTML = `
             <div class="hymn-section" style="margin-top:14px;">
-              <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
+              <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
               <audio controls style="width:100%;margin-top:8px;border-radius:4px;">
                 <source src="${substage.hymn_audio}" type="${audioType}">
                 Your browser does not support the audio element.
@@ -1203,12 +1250,12 @@ window.backToLanding = backToLanding;
           `;
         } else {
           hymnHTML = `
-            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #d4a017;letter-spacing:0.3px;">🎵 Hymn:</strong>
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn:</strong>
             <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
               <span style="font-size:13px;color:#666;">${substage.hymn}</span>
-              <button style="background:#d4a017;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
+              <button style="background:#e8c547;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
                       onmouseover="this.style.background='#c4920c'"
-                      onmouseout="this.style.background='#d4a017'"
+                      onmouseout="this.style.background='#e8c547'"
                       onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
                 🔊 Play
               </button>

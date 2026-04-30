@@ -34,8 +34,8 @@ phases:
         image: "/assets/img/tuyobo-v3.png"
         hotspots:
           - item: "Shushepo (The Great Veil)"
-            x: 62.95
-            y: 69.45
+            x: 64.45
+            y: 56.85
             radius: 10.17
         substages:
           - title: "The Vesting of the Priest"
@@ -149,6 +149,11 @@ phases:
             description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
             audioPhrase: "Promiun-Sedra and blessing of incense"
             image: "/assets/img/sedra-blessing-v2.png"
+            hotspots:
+              - item: "Dhoopakutty (Censer)"
+                x: 51.8
+                y: 50.1
+                radius: 8
             substages:
               - title: "Promiun-Sedra & Blessing of the Censer"
                 significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
