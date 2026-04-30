@@ -99,6 +99,9 @@
       <div class="substages-panel" id="substagesPanel"><!-- Rendered by JavaScript --></div>
 
       <div class="progress-dots" id="progressDots"></div>
+
+      <!-- Hidden audio player for hymn playback -->
+      <audio id="hymnAudio" style="display: none;"></audio>
     </div>
     </div>
   </div>
@@ -435,9 +438,9 @@ window.backToLanding = backToLanding;
     // Check if this stage has hymns in its substages
     let hymnIcon = '';
     if (stage.substages && stage.substages.length > 0) {
-      const hasHymn = stage.substages.some(sub => sub.hymn);
-      if (hasHymn) {
-        hymnIcon = ' 🎵';
+      const hymnSubstage = stage.substages.find(sub => sub.hymn_audio);
+      if (hymnSubstage) {
+        hymnIcon = ' <span class="hymn-icon" onclick="playHymn(\'' + hymnSubstage.hymn_audio + '\', this)" title="Click to play hymn" data-play="🎵" data-stop="■">🎵</span>';
       }
     }
 
@@ -1483,5 +1486,47 @@ window.backToLanding = backToLanding;
   createDots();
   updateDisplay();
   updatePhaseConnector();
+
+  // Hymn audio player
+  const hymnAudio = document.getElementById('hymnAudio');
+  window.playHymn = function(hymnUrl, iconElement) {
+    const playSymbol = iconElement.getAttribute('data-play');
+    const stopSymbol = iconElement.getAttribute('data-stop');
+
+    // Stop if already playing
+    if (!hymnAudio.paused) {
+      hymnAudio.pause();
+      hymnAudio.currentTime = 0;
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+      return;
+    }
+
+    // Stop any other playing icon
+    const oldIcon = document.querySelector('.hymn-icon.playing');
+    if (oldIcon && oldIcon !== iconElement) {
+      oldIcon.classList.remove('playing');
+      oldIcon.textContent = oldIcon.getAttribute('data-play');
+    }
+
+    // Reset audio state
+    hymnAudio.pause();
+    hymnAudio.currentTime = 0;
+
+    // Set source and play
+    hymnAudio.src = hymnUrl;
+    hymnAudio.play().catch(function(error) {
+      console.log('Playback error:', error);
+    });
+
+    iconElement.classList.add('playing');
+    iconElement.textContent = stopSymbol;
+
+    // Handle end of audio
+    hymnAudio.onended = function() {
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+    };
+  };
 })();
 </script>

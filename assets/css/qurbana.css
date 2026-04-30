@@ -729,6 +729,24 @@
   line-height: 1.2;
 }
 
+.hymn-icon {
+  cursor: pointer;
+  color: #d4a017;
+  font-weight: 600;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+}
+
+.hymn-icon:hover {
+  filter: brightness(1.2);
+}
+
+.hymn-icon.playing {
+  background: #d4a017;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
 
 .malayalam-section {
   background: #fafaf8;
