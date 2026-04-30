@@ -458,7 +458,6 @@ window.backToLanding = backToLanding;
   }
 
   function renderHotspots(stage) {
-    console.log('renderHotspots called', stage);
     var container = document.getElementById('youtubeContainer');
     var existingHotspots = container.querySelector('.hotspots-layer');
     if (existingHotspots) {
@@ -466,11 +465,8 @@ window.backToLanding = backToLanding;
     }
 
     if (!stage.hotspots || stage.hotspots.length === 0) {
-      console.log('No hotspots for this stage');
       return;
     }
-
-    console.log('Creating hotspots:', stage.hotspots);
 
     var hotspotsLayer = document.createElement('div');
     hotspotsLayer.className = 'hotspots-layer';
@@ -499,7 +495,6 @@ window.backToLanding = backToLanding;
 
       hotspotEl.addEventListener('click', function(e) {
         e.stopPropagation();
-        console.log('Hotspot clicked:', hotspot.item);
         scrollToSacredItem(hotspot.item);
       });
 
@@ -511,48 +506,30 @@ window.backToLanding = backToLanding;
   }
 
   function scrollToSacredItem(itemName) {
-    console.log('scrollToSacredItem called with:', itemName);
     var substagesPanel = carousel.querySelector('#substagesPanel');
-    console.log('substagesPanel found:', !!substagesPanel);
     if (!substagesPanel) return;
 
     var items = substagesPanel.querySelectorAll('.sacred-item');
-    console.log('Found sacred items:', items.length);
     var targetItem = null;
 
-    items.forEach(function(item, idx) {
+    items.forEach(function(item) {
       var nameEl = item.querySelector('.sacred-item-summary strong');
-      var displayName = nameEl ? nameEl.textContent.trim() : 'NO NAME';
-      console.log('Item', idx, ':', displayName);
       if (nameEl && nameEl.textContent.trim() === itemName.trim()) {
-        console.log('MATCH FOUND!');
         targetItem = item;
       }
     });
 
-    if (!targetItem) {
-      console.warn('Sacred item not found:', itemName);
-      return;
-    }
-
-    console.log('Highlighting item and scrolling');
-    console.log('targetItem parent classes:', targetItem.parentElement.className);
-    console.log('targetItem display:', window.getComputedStyle(targetItem).display);
-    console.log('targetItem offsetHeight:', targetItem.offsetHeight);
+    if (!targetItem) return;
 
     // Find and expand the parent substage if needed
     var parentSubstage = targetItem.closest('.substage-item');
-    if (parentSubstage) {
-      console.log('Found parent substage, expanding if collapsed');
-      if (parentSubstage.classList.contains('collapsed')) {
-        parentSubstage.classList.remove('collapsed');
-        parentSubstage.classList.add('expanded');
-      }
+    if (parentSubstage && parentSubstage.classList.contains('collapsed')) {
+      parentSubstage.classList.remove('collapsed');
+      parentSubstage.classList.add('expanded');
     }
 
     // Expand the sacred item if it's collapsed
     if (targetItem.classList.contains('collapsed')) {
-      console.log('Sacred item is collapsed, expanding it');
       targetItem.classList.remove('collapsed');
       targetItem.classList.add('expanded');
     }
@@ -561,17 +538,10 @@ window.backToLanding = backToLanding;
       el.classList.remove('item-highlight');
     });
 
-    console.log('Adding highlight class to targetItem');
     targetItem.classList.add('item-highlight');
-    console.log('Classes after adding highlight:', targetItem.className);
-
-    console.log('Calling scrollIntoView');
     targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    console.log('After scrollIntoView, carousel-fullscreen-wrapper scrollTop:', carousel.querySelector('.carousel-fullscreen-wrapper').scrollTop);
-
     setTimeout(function() {
-      console.log('Removing highlight after timeout');
       targetItem.classList.remove('item-highlight');
     }, 4000);
   }
