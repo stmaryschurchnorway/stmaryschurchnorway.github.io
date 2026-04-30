@@ -318,6 +318,7 @@ phases:
             transliteration: "Pronunciation: Maddhyastha-prathanangal"
             description: "After the consecration, the priest offers prayers of intercession for the entire Church—petitioning God's blessings for living and deceased church members. These prayers remember the Theotokos (Mother of God), the prophets, apostles, martyrs, and all the faithful, binding the earthly and heavenly Church in communion. The whole communion of saints joins in the offering before God's throne."
             audioPhrase: "Intercessions, prayers for the Church, saints, and departed"
+            image: "/assets/img/tubden.png"
             substages:
               - title: "The Great Intercessions (Tubden)"
                 hymn: "Yachikkendum Samayamitha (In the time of need)"
