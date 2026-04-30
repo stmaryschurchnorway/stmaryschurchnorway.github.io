@@ -550,6 +550,13 @@ window.backToLanding = backToLanding;
       }
     }
 
+    // Expand the sacred item if it's collapsed
+    if (targetItem.classList.contains('collapsed')) {
+      console.log('Sacred item is collapsed, expanding it');
+      targetItem.classList.remove('collapsed');
+      targetItem.classList.add('expanded');
+    }
+
     document.querySelectorAll('.sacred-item').forEach(function(el) {
       el.classList.remove('item-highlight');
     });
@@ -566,7 +573,7 @@ window.backToLanding = backToLanding;
     setTimeout(function() {
       console.log('Removing highlight after timeout');
       targetItem.classList.remove('item-highlight');
-    }, 3000);
+    }, 4000);
   }
 
   function loadVideo(stage) {

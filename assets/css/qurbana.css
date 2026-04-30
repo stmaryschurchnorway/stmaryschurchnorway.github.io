@@ -1545,17 +1545,30 @@
 }
 
 .item-highlight {
-  background: #fff3cd !important;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff9e6 50%, #fffaf0 100%) !important;
   border: 3px solid #d4a017 !important;
-  box-shadow: 0 0 20px rgba(212, 160, 23, 0.8), inset 0 0 15px rgba(212, 160, 23, 0.3) !important;
-  animation: highlight-pulse 2s ease-in-out !important;
+  box-shadow: 0 0 30px rgba(212, 160, 23, 0.9), inset 0 0 20px rgba(212, 160, 23, 0.3) !important;
+  animation: highlight-pulse 2.5s ease-in-out infinite !important;
+  position: relative !important;
 }
 
 @keyframes highlight-pulse {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(212, 160, 23, 0.5), inset 0 0 5px rgba(212, 160, 23, 0.1) !important;
+  0% {
+    background: linear-gradient(135deg, #fffaf0 0%, #fff9e6 50%, #fffaf0 100%) !important;
+    box-shadow: 0 0 10px rgba(212, 160, 23, 0.6), inset 0 0 10px rgba(212, 160, 23, 0.2) !important;
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.8), inset 0 0 15px rgba(212, 160, 23, 0.3) !important;
   }
   50% {
-    box-shadow: 0 0 25px rgba(212, 160, 23, 1), inset 0 0 15px rgba(212, 160, 23, 0.4) !important;
+    background: linear-gradient(135deg, #fffbf5 0%, #fff3cd 50%, #fffbf5 100%) !important;
+    box-shadow: 0 0 40px rgba(212, 160, 23, 1), inset 0 0 25px rgba(212, 160, 23, 0.4) !important;
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.8), inset 0 0 15px rgba(212, 160, 23, 0.3) !important;
+  }
+  100% {
+    background: linear-gradient(135deg, #fffaf0 0%, #fff9e6 50%, #fffaf0 100%) !important;
+    box-shadow: 0 0 10px rgba(212, 160, 23, 0.6), inset 0 0 10px rgba(212, 160, 23, 0.2) !important;
   }
 }
