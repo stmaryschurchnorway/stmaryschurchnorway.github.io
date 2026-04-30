@@ -34,9 +34,9 @@ phases:
         image: "/assets/img/tuyobo-v3.png"
         hotspots:
           - item: "Shushepo (The Great Veil)"
-            x: 0.6295
-            y: 0.6945
-            radius: 0.1017
+            x: 62.95
+            y: 69.45
+            radius: 10.17
         substages:
           - title: "The Vesting of the Priest"
             significance: "The priest puts on sacred vestments, symbolizing putting on Christ and the 'Armor of God' needed for spiritual struggle."
