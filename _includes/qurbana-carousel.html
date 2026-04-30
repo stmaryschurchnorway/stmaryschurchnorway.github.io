@@ -514,12 +514,15 @@ window.backToLanding = backToLanding;
 
     items.forEach(function(item) {
       var nameEl = item.querySelector('.sacred-item-summary strong');
-      if (nameEl && nameEl.textContent === itemName) {
+      if (nameEl && nameEl.textContent.trim() === itemName.trim()) {
         targetItem = item;
       }
     });
 
-    if (!targetItem) return;
+    if (!targetItem) {
+      console.warn('Sacred item not found:', itemName);
+      return;
+    }
 
     document.querySelectorAll('.sacred-item').forEach(function(el) {
       el.classList.remove('item-highlight');
@@ -527,11 +530,12 @@ window.backToLanding = backToLanding;
 
     targetItem.classList.add('item-highlight');
 
-    var carouselContent = carousel.querySelector('.carousel-content');
-    if (carouselContent) {
-      var scrollContainer = carouselContent.closest('.carousel-fullscreen-wrapper') || carouselContent.parentElement.parentElement;
-      var scrollTop = targetItem.offsetTop - substagesPanel.offsetTop - 100;
-      scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop + scrollTop);
+    var imagePlaceholder = carousel.querySelector('#videoPlaceholder');
+    var carouselWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
+
+    if (carouselWrapper) {
+      var scrollPosition = targetItem.offsetTop - imagePlaceholder.offsetHeight - 50;
+      carouselWrapper.scrollTop = Math.max(0, scrollPosition);
     }
 
     setTimeout(function() {
