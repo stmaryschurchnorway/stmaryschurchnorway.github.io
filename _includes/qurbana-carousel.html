@@ -479,8 +479,11 @@ window.backToLanding = backToLanding;
 
     // Get the actual image dimensions for responsive scaling
     var img = container.querySelector('img');
-    var imageWidth = img ? img.offsetWidth : 600;
-    var imageHeight = img ? img.offsetHeight : 400;
+    var imagePlaceholder = container.closest('#videoPlaceholder') || container.parentElement;
+    var imageWidth = imagePlaceholder ? imagePlaceholder.offsetWidth : 600;
+    var imageHeight = imagePlaceholder ? imagePlaceholder.offsetHeight : 400;
+
+    console.log('Rendering hotspots - Container:', imageWidth, 'x', imageHeight);
 
     stage.hotspots.forEach(function(hotspot) {
       var hotspotEl = document.createElement('div');
@@ -489,9 +492,12 @@ window.backToLanding = backToLanding;
       hotspotEl.style.position = 'absolute';
 
       // Calculate actual pixels from percentages or use absolute values
-      var xPixels = hotspot.x > 1 ? hotspot.x : (hotspot.x * imageWidth);
-      var yPixels = hotspot.y > 1 ? hotspot.y : (hotspot.y * imageHeight);
-      var radiusPixels = hotspot.radius > 1 ? hotspot.radius : (hotspot.radius * Math.min(imageWidth, imageHeight));
+      // If value is between 0-1, treat as percentage; if > 1, treat as pixels
+      var xPixels = (hotspot.x <= 1) ? (hotspot.x * imageWidth) : hotspot.x;
+      var yPixels = (hotspot.y <= 1) ? (hotspot.y * imageHeight) : hotspot.y;
+      var radiusPixels = (hotspot.radius <= 1) ? (hotspot.radius * Math.min(imageWidth, imageHeight)) : hotspot.radius;
+
+      console.log('Hotspot:', hotspot.item, 'Position:', xPixels, yPixels, 'Radius:', radiusPixels);
 
       hotspotEl.style.width = (radiusPixels * 2) + 'px';
       hotspotEl.style.height = (radiusPixels * 2) + 'px';
