@@ -459,73 +459,92 @@ window.backToLanding = backToLanding;
 
   function renderHotspots(stage) {
     var container = document.getElementById('youtubeContainer');
-    var existingHotspots = container.querySelector('.hotspots-layer');
-    if (existingHotspots) {
-      existingHotspots.remove();
+    var existingSvg = container.querySelector('svg.hotspots-svg');
+    if (existingSvg) {
+      existingSvg.remove();
     }
 
     if (!stage.hotspots || stage.hotspots.length === 0) {
       return;
     }
 
-    var hotspotsLayer = document.createElement('div');
-    hotspotsLayer.className = 'hotspots-layer';
-    hotspotsLayer.style.position = 'absolute';
-    hotspotsLayer.style.top = '0';
-    hotspotsLayer.style.left = '0';
-    hotspotsLayer.style.width = '100%';
-    hotspotsLayer.style.height = '100%';
-    hotspotsLayer.style.pointerEvents = 'none';
+    // Create SVG overlay that scales with the image
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'hotspots-svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.style.position = 'absolute';
+    svg.style.top = '0';
+    svg.style.left = '0';
+    svg.style.width = '100%';
+    svg.style.height = '100%';
+    svg.style.pointerEvents = 'none';
 
-    // Get the actual image dimensions for responsive scaling
-    var img = container.querySelector('img');
-    var imageWidth = img ? img.offsetWidth : container.offsetWidth;
-    var imageHeight = img ? img.offsetHeight : container.offsetHeight;
-
-    // Fallback to computed dimensions if offsets are 0
-    if (imageWidth === 0 || imageHeight === 0) {
-      var rect = container.getBoundingClientRect();
-      imageWidth = rect.width || 600;
-      imageHeight = rect.height || 400;
-    }
-
-    console.log('Rendering hotspots - Image:', imageWidth, 'x', imageHeight);
+    console.log('Rendering SVG hotspots for:', stage.title);
 
     stage.hotspots.forEach(function(hotspot) {
-      var hotspotEl = document.createElement('div');
-      hotspotEl.className = 'hotspot';
-      hotspotEl.setAttribute('data-item', hotspot.item);
-      hotspotEl.style.position = 'absolute';
+      // Create group for tooltip and circle
+      var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.style.cursor = 'pointer';
+      g.style.pointerEvents = 'auto';
 
-      // Calculate actual pixels from percentages or use absolute values
-      // If value is between 0-1, treat as percentage; if > 1, treat as pixels
-      var xPixels = (hotspot.x <= 1) ? (hotspot.x * imageWidth) : hotspot.x;
-      var yPixels = (hotspot.y <= 1) ? (hotspot.y * imageHeight) : hotspot.y;
-      var radiusPixels = (hotspot.radius <= 1) ? (hotspot.radius * Math.min(imageWidth, imageHeight)) : hotspot.radius;
+      // Convert coordinates: treat values 0-1 as percentages (0-100)
+      var cx = (hotspot.x <= 1) ? (hotspot.x * 100) : hotspot.x;
+      var cy = (hotspot.y <= 1) ? (hotspot.y * 100) : hotspot.y;
+      var r = (hotspot.radius <= 1) ? (hotspot.radius * 100) : hotspot.radius;
 
-      console.log('Hotspot:', hotspot.item, 'Position:', xPixels, yPixels, 'Radius:', radiusPixels);
+      // Create circle
+      var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', cx);
+      circle.setAttribute('cy', cy);
+      circle.setAttribute('r', r);
+      circle.setAttribute('class', 'hotspot-circle');
+      circle.setAttribute('fill', 'rgba(212, 160, 23, 0.1)');
+      circle.setAttribute('stroke', 'rgba(212, 160, 23, 0)');
+      circle.setAttribute('stroke-width', '0.5');
 
-      hotspotEl.style.width = (radiusPixels * 2) + 'px';
-      hotspotEl.style.height = (radiusPixels * 2) + 'px';
-      hotspotEl.style.left = (xPixels - radiusPixels) + 'px';
-      hotspotEl.style.top = (yPixels - radiusPixels) + 'px';
-      hotspotEl.style.pointerEvents = 'auto';
+      // Create tooltip text
+      var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('class', 'hotspot-text');
+      text.setAttribute('x', cx);
+      text.setAttribute('y', cy - r - 3);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('font-size', '2');
+      text.setAttribute('fill', '#d4a017');
+      text.setAttribute('font-weight', '600');
+      text.setAttribute('opacity', '0');
+      text.setAttribute('pointer-events', 'none');
+      text.textContent = hotspot.item;
 
-      var tooltip = document.createElement('div');
-      tooltip.className = 'hotspot-tooltip';
-      tooltip.textContent = hotspot.item;
-      hotspotEl.appendChild(tooltip);
+      g.appendChild(circle);
+      g.appendChild(text);
 
-      hotspotEl.addEventListener('click', function(e) {
+      // Add hover effects
+      g.addEventListener('mouseenter', function() {
+        circle.setAttribute('stroke', '#d4a017');
+        circle.setAttribute('stroke-width', '1.5');
+        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.15)');
+        text.setAttribute('opacity', '1');
+      });
+
+      g.addEventListener('mouseleave', function() {
+        circle.setAttribute('stroke', 'rgba(212, 160, 23, 0)');
+        circle.setAttribute('stroke-width', '0.5');
+        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.1)');
+        text.setAttribute('opacity', '0');
+      });
+
+      // Add click handler
+      g.addEventListener('click', function(e) {
         e.stopPropagation();
         scrollToSacredItem(hotspot.item);
       });
 
-      hotspotsLayer.appendChild(hotspotEl);
+      svg.appendChild(g);
     });
 
     container.style.position = 'relative';
-    container.appendChild(hotspotsLayer);
+    container.appendChild(svg);
   }
 
   function scrollToSacredItem(itemName) {
