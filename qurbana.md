@@ -395,6 +395,7 @@ phases:
             transliteration: "Pronunciation: Qurbana-anubhavam"
             description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him."
             audioPhrase: "Holy Communion of the faithful"
+            image: "/assets/img/holy-communion.png"
             substages:
               - title: "Holy Communion of the Faithful"
                 action: "The faithful receive the Body and Blood of Christ in reverence."
