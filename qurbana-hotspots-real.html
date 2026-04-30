@@ -1,0 +1,415 @@
+---
+permalink: /qurbana-hotspots-real/
+layout: default
+sitemap: false
+---
+
+<style>
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.carousel-demo {
+  max-width: 800px;
+  margin: 20px auto;
+  border: 2px solid #d4a017;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-header {
+  background: #f5f1eb;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.carousel-content-wrapper {
+  height: 600px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  position: relative;
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.image-content {
+  position: relative;
+  width: 100%;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+}
+
+.hotspot:hover {
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.15);
+  transform: scale(1.1);
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.3);
+}
+
+.hotspot-tooltip {
+  position: absolute;
+  background: #d4a017;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+
+.hotspot:hover .hotspot-tooltip {
+  opacity: 1;
+}
+
+.carousel-info {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.stage-counter {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.stage-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.malayalam-section {
+  background: #fafaf8;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #a85555;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.substages-label {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.sacred-item {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sacred-item:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.sacred-item.highlight {
+  background: #fff9e6;
+  border-color: #d4a017;
+  animation: highlight-glow 0.6s ease-out;
+}
+
+@keyframes highlight-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.4);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+.item-header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.item-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.item-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.item-malayalam {
+  font-size: 0.85rem;
+  color: #a85555;
+  font-family: 'Meera', 'Noto Sans Malayalam', serif;
+}
+
+.item-meaning {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.instruction {
+  background: #f0f8ff;
+  border-left: 4px solid #0066cc;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<div style="max-width: 900px; margin: 30px auto; padding: 20px;">
+  <h1 style="font-family: 'Lora', Georgia, serif; font-size: 1.8rem; color: #d4a017; margin-bottom: 10px;">Hotspots Feature with Real Content</h1>
+
+  <div class="instruction">
+    <strong>Try this:</strong> Click the golden circles on the stage image below. Each hotspot shows a sacred item name on hover, and clicking it highlights and scrolls to the actual sacred item with its real name, Malayalam text, and meaning from your data.
+  </div>
+
+  <!-- CAROUSEL DEMO -->
+  <div class="carousel-demo">
+    <div class="carousel-header">STAGE 11 OF 24 · Public Celebration (Anaphora)</div>
+
+    <div class="carousel-content-wrapper" id="carouselScroll">
+      <!-- IMAGE SECTION -->
+      <div class="image-section">
+        <div class="image-content">
+          <img src="/assets/img/words-of-institution-v4.png" alt="Words of Institution stage">
+
+          <!-- Hotspots positioned on the real image -->
+          <div class="hotspot" style="width: 70px; height: 70px; top: 35%; left: 25%; cursor: pointer;" onclick="scrollToItem('kaso', event)">
+            <div class="hotspot-tooltip">🏆 Kaso</div>
+          </div>
+          <div class="hotspot" style="width: 70px; height: 70px; top: 45%; left: 50%; cursor: pointer;" onclick="scrollToItem('lahmo', event)">
+            <div class="hotspot-tooltip">🍞 Lahmo</div>
+          </div>
+          <div class="hotspot" style="width: 70px; height: 70px; top: 55%; left: 70%; cursor: pointer;" onclick="scrollToItem('mazgogo', event)">
+            <div class="hotspot-tooltip">🍷 Mazgogo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAROUSEL INFO SECTION -->
+      <div class="carousel-info">
+        <div class="stage-counter">STAGE 11 OF 24</div>
+        <div class="stage-title">Words of Institution</div>
+
+        <div class="malayalam-section">
+          സ്ഥാപന വാക്യങ്ങൾ (Sthapana Vakhyangal)
+        </div>
+
+        <div class="description">
+          The priest pronounces the sacred words spoken by Christ at the Last Supper: "This is my Body" and "This is my Blood." These words effect the consecration of the bread and wine, transforming them into the mystical Body and Blood of Christ.
+        </div>
+
+        <!-- SUBSTAGES / SACRED ITEMS SECTION -->
+        <div>
+          <div class="substages-label">Sacred Items Used</div>
+
+          <div class="sacred-item" id="kaso" onclick="highlightItem('kaso')">
+            <div class="item-header">
+              <div class="item-icon">
+                <img src="/assets/img/sacred-items/kaso_medium.svg" alt="Chalice">
+              </div>
+              <div class="item-text">
+                <div class="item-title">Kaso (Chalice)</div>
+                <div class="item-malayalam">കാസോ</div>
+                <div class="item-meaning">Represents the Tomb of Joseph of Arimathea where Christ was buried</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sacred-item" id="lahmo" onclick="highlightItem('lahmo')">
+            <div class="item-header">
+              <div class="item-icon">
+                <img src="/assets/img/sacred-items/lahmo_medium.svg" alt="Sacred Bread">
+              </div>
+              <div class="item-text">
+                <div class="item-title">Lahmo (Sacred Bread)</div>
+                <div class="item-malayalam">ലാഹ്മോ</div>
+                <div class="item-meaning">Represents Christ's body, broken for our salvation</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sacred-item" id="mazgogo" onclick="highlightItem('mazgogo')">
+            <div class="item-header">
+              <div class="item-icon">
+                <img src="/assets/img/sacred-items/mazgogo_medium.svg" alt="Sacred Wine">
+              </div>
+              <div class="item-text">
+                <div class="item-title">Mazgogo (Sacred Wine)</div>
+                <div class="item-malayalam">മാസ്ഗോഗോ</div>
+                <div class="item-meaning">Represents Christ's blood, shed for the redemption of humanity</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sacred-item" id="pilaso" onclick="highlightItem('pilaso')">
+            <div class="item-header">
+              <div class="item-icon">
+                <img src="/assets/img/sacred-items/pilaso_medium.svg" alt="Paten">
+              </div>
+              <div class="item-text">
+                <div class="item-title">Pilaso (Paten)</div>
+                <div class="item-malayalam">പിലാസോ</div>
+                <div class="item-meaning">Represents the Manger of Bethlehem where Christ was born</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sacred-item" id="tablitho" onclick="highlightItem('tablitho')">
+            <div class="item-header">
+              <div class="item-icon">
+                <img src="/assets/img/sacred-items/tablitho_medium.svg" alt="Altar Stone">
+              </div>
+              <div class="item-text">
+                <div class="item-title">Tablitho (Altar Stone)</div>
+                <div class="item-malayalam">താബ്ലിതോ</div>
+                <div class="item-meaning">The consecrated wooden tablet upon which vessels rest; represents the Cross</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+    <h2 style="font-size: 1.1rem; color: #333; margin-bottom: 15px;">Implementation Details</h2>
+
+    <p><strong>What's happening here:</strong></p>
+    <ul style="color: #666; line-height: 1.8;">
+      <li>✓ Real stage image from your repo (words-of-institution-v4.png)</li>
+      <li>✓ Real sacred item icons (from sacred-items SVG folder)</li>
+      <li>✓ Real item names, Malayalam, and meanings from your qurbana.md</li>
+      <li>✓ Hotspots positioned on the image—click them to navigate</li>
+      <li>✓ Smooth scroll to sacred item with highlight animation</li>
+    </ul>
+
+    <p style="margin-top: 15px; color: #666;"><strong>To add this to a stage in your YAML:</strong></p>
+    <pre style="background: white; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; overflow-x: auto;">hotspots:
+  - item: "Kaso (Chalice)"
+    x: 200
+    y: 140
+    radius: 35
+  - item: "Lahmo (Sacred Bread)"
+    x: 400
+    y: 180
+    radius: 35
+  - item: "Mazgogo (Sacred Wine)"
+    x: 560
+    y: 220
+    radius: 35</pre>
+  </div>
+</div>
+
+<script>
+function scrollToItem(itemId, event) {
+  event.stopPropagation();
+  const scrollContainer = document.getElementById('carouselScroll');
+  const item = document.getElementById(itemId);
+
+  if (!item) return;
+
+  // Remove highlight from all items
+  document.querySelectorAll('.sacred-item').forEach(el => {
+    el.classList.remove('highlight');
+  });
+
+  // Add highlight to clicked item
+  item.classList.add('highlight');
+
+  // Calculate scroll position
+  const itemTop = item.offsetTop;
+  const scrollPosition = itemTop - 100;
+
+  // Smooth scroll
+  scrollContainer.scrollTo({
+    top: scrollPosition,
+    behavior: 'smooth'
+  });
+
+  // Remove highlight after animation
+  setTimeout(() => {
+    item.classList.remove('highlight');
+  }, 1500);
+}
+
+function highlightItem(itemId) {
+  const item = document.getElementById(itemId);
+  if (!item.classList.contains('highlight')) {
+    document.querySelectorAll('.sacred-item').forEach(el => {
+      el.classList.remove('highlight');
+    });
+    item.classList.add('highlight');
+    setTimeout(() => item.classList.remove('highlight'), 1500);
+  }
+}
+</script>
