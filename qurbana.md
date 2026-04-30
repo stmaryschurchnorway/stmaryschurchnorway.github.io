@@ -278,6 +278,15 @@ phases:
             description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
             audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
             image: "/assets/img/epiclesis-v2.png"
+            hotspots:
+              - item: "Lahmo (Sacred Bread)"
+                x: 200
+                y: 180
+                radius: 40
+              - item: "Mazgogo (Sacred Wine)"
+                x: 380
+                y: 180
+                radius: 40
             substages:
               - title: "Epiclesis - The Invocation of the Holy Spirit"
                 hymn: "Adiyangalodu Utharam Arulename (Answer us, O Lord)"
