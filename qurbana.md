@@ -357,6 +357,7 @@ phases:
             transliteration: "Pronunciation: Mo-ra-na-ya Prar-tha-na"
             description: "The priest leads the congregation in the Lord's Prayer, traditionally interpreting 'Give us this day our daily bread' as eucharistic supplication. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them to receive the Body and Blood of Christ with proper devotion and spiritual readiness."
             audioPhrase: "The Lord's Prayer"
+            image: "/assets/img/lords-prayer.png"
             substages:
               - title: "The Lord's Prayer Before Communion"
                 significance: "The priest leads the congregation in reciting the prayer that Jesus Himself taught. The phrase 'Give us this day our daily bread' takes on profound meaning in this context—interpreted as a petition for the Bread of Heaven, the Body of Christ. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them spiritually and mentally to receive the Mysteries with proper devotion, faith, and readiness of heart."
