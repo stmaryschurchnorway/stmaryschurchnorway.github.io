@@ -390,11 +390,11 @@ phases:
                     meaning: "Elevated to show that the Body of Christ is the source of eternal life"
                     image: "/assets/img/sacred-items/pilaso_medium.svg"
 
-          - title: "Holy Communion and Thanksgiving"
-            malayalam: "കുർബാന അനുഭവം : കൃതജ്ഞത"
-            transliteration: "Pronunciation: Qurbana-anubhavam : Kru-ta-jnya-ta"
-            description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him. The service concludes with thanksgiving prayers and doxologies expressing gratitude for access to God's 'heavenly table,' and the final blessing, celebrating the completion of the divine mystery and believers' restored divine union."
-            audioPhrase: "Holy Communion and Thanksgiving"
+          - title: "Holy Communion"
+            malayalam: "കുർബാന അനുഭവം"
+            transliteration: "Pronunciation: Qurbana-anubhavam"
+            description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him."
+            audioPhrase: "Holy Communion of the faithful"
             substages:
               - title: "Holy Communion of the Faithful"
                 action: "The faithful receive the Body and Blood of Christ in reverence."
@@ -416,16 +416,6 @@ phases:
                     malayalam: "തർവോദോ"
                     meaning: "Used to distribute the Bread and Wine to the faithful; represents the tongs used by the angels in the Temple"
                     image: "/assets/img/sacred-items/tharvodo_medium.svg"
-              - title: "Final Blessing & Dismissal (Huthomo)"
-                action: "The priest gives the final blessing and dismisses the congregation."
-                significance: "The Dismissal marks the completion of the Holy Qurbana and the sending forth of the faithful into the world as witnesses of Christ."
-                theological_meaning: "The liturgy does not end within the church walls; it continues in daily life. The faithful are called to become 'living liturgy,' carrying Christ into the world. It reflects the mission of the Church rooted in the Great Commission."
-                spiritual_message: "The word 'Huthomo' signifies sealing or completion, indicating that the mysteries received must now be lived out. The blessing of peace ('Go in peace') empowers the faithful for Christian witness."
-                life_application: "The faithful depart not as they came, but transformed—called to love, serve, forgive, and proclaim Christ in their daily lives."
-                ritual_gesture: "The priest faces the congregation with hands raised or making the sign of the cross in blessing. The congregation receives the blessing with bows or signs of the cross, and then departs in peace to live out the graces received."
-                sacred_items:
-                  - name: "None required"
-                    meaning: "The blessing itself is the final grace; the faithful carry the Mysteries within them"
 
   - phase_id: "post-communion"
     title: "Post-Communion Service"
