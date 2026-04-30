@@ -554,7 +554,9 @@ window.backToLanding = backToLanding;
       el.classList.remove('item-highlight');
     });
 
+    console.log('Adding highlight class to targetItem');
     targetItem.classList.add('item-highlight');
+    console.log('Classes after adding highlight:', targetItem.className);
 
     console.log('Calling scrollIntoView');
     targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -562,8 +564,9 @@ window.backToLanding = backToLanding;
     console.log('After scrollIntoView, carousel-fullscreen-wrapper scrollTop:', carousel.querySelector('.carousel-fullscreen-wrapper').scrollTop);
 
     setTimeout(function() {
+      console.log('Removing highlight after timeout');
       targetItem.classList.remove('item-highlight');
-    }, 2000);
+    }, 3000);
   }
 
   function loadVideo(stage) {
