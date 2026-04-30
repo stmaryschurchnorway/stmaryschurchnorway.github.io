@@ -429,6 +429,7 @@ phases:
         transliteration: "Pronunciation: Samapani Shush-ru-sha"
         description: "The Post-Communion Service concludes the Holy Qurbana with prayers of thanksgiving, hymns, and final blessings. The faithful are reminded of the grace they have received and are sent forth into the world as living witnesses of Christ."
         audioPhrase: "Post-Communion Service, closing prayers and blessing"
+        image: "/assets/img/post-communion-service.png"
         substages:
           - title: "Thanksgiving Prayers and Hymns"
             hymn: "May I serve you now and always in thy eternal and heavenly Kingdom"
