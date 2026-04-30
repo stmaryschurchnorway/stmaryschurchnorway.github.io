@@ -479,11 +479,17 @@ window.backToLanding = backToLanding;
 
     // Get the actual image dimensions for responsive scaling
     var img = container.querySelector('img');
-    var imagePlaceholder = container.closest('#videoPlaceholder') || container.parentElement;
-    var imageWidth = imagePlaceholder ? imagePlaceholder.offsetWidth : 600;
-    var imageHeight = imagePlaceholder ? imagePlaceholder.offsetHeight : 400;
+    var imageWidth = img ? img.offsetWidth : container.offsetWidth;
+    var imageHeight = img ? img.offsetHeight : container.offsetHeight;
 
-    console.log('Rendering hotspots - Container:', imageWidth, 'x', imageHeight);
+    // Fallback to computed dimensions if offsets are 0
+    if (imageWidth === 0 || imageHeight === 0) {
+      var rect = container.getBoundingClientRect();
+      imageWidth = rect.width || 600;
+      imageHeight = rect.height || 400;
+    }
+
+    console.log('Rendering hotspots - Image:', imageWidth, 'x', imageHeight);
 
     stage.hotspots.forEach(function(hotspot) {
       var hotspotEl = document.createElement('div');
@@ -599,7 +605,20 @@ window.backToLanding = backToLanding;
       if (imagePlaceholder.querySelector('.intro-overlay')) {
         imagePlaceholder.querySelector('.intro-overlay').remove();
       }
-      renderHotspots(stage);
+
+      // Wait for image to load before rendering hotspots
+      var img = container.querySelector('img');
+      if (img) {
+        if (img.complete) {
+          // Image already cached/loaded
+          renderHotspots(stage);
+        } else {
+          // Wait for image to load
+          img.onload = function() {
+            renderHotspots(stage);
+          };
+        }
+      }
     } else {
       container.innerHTML = '';
       placeholder.style.display = 'block';
