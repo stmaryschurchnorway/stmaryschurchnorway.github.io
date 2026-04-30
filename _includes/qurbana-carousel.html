@@ -458,6 +458,7 @@ window.backToLanding = backToLanding;
   }
 
   function renderHotspots(stage) {
+    console.log('renderHotspots called', stage);
     var container = document.getElementById('youtubeContainer');
     var existingHotspots = container.querySelector('.hotspots-layer');
     if (existingHotspots) {
@@ -465,8 +466,11 @@ window.backToLanding = backToLanding;
     }
 
     if (!stage.hotspots || stage.hotspots.length === 0) {
+      console.log('No hotspots for this stage');
       return;
     }
+
+    console.log('Creating hotspots:', stage.hotspots);
 
     var hotspotsLayer = document.createElement('div');
     hotspotsLayer.className = 'hotspots-layer';
@@ -495,6 +499,7 @@ window.backToLanding = backToLanding;
 
       hotspotEl.addEventListener('click', function(e) {
         e.stopPropagation();
+        console.log('Hotspot clicked:', hotspot.item);
         scrollToSacredItem(hotspot.item);
       });
 
