@@ -482,6 +482,33 @@ window.backToLanding = backToLanding;
 
     console.log('Rendering SVG hotspots for:', stage.title);
 
+    // Add style element for animations if not already present
+    if (!document.getElementById('hotspot-styles')) {
+      var style = document.createElement('style');
+      style.id = 'hotspot-styles';
+      style.textContent = `
+        @keyframes hotspot-pulse {
+          0%, 100% {
+            r: ${stage.hotspots[0]?.radius || 10};
+            opacity: 0.6;
+          }
+          50% {
+            r: ${(stage.hotspots[0]?.radius || 10) * 1.3};
+            opacity: 0.3;
+          }
+        }
+        .hotspot-pulse {
+          animation: hotspot-pulse 2s ease-in-out infinite;
+          fill: rgba(212, 160, 23, 0.3);
+          filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.6));
+        }
+        .hotspot-circle {
+          transition: all 0.3s ease;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     stage.hotspots.forEach(function(hotspot) {
       // Create group for tooltip and circle
       var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -493,44 +520,56 @@ window.backToLanding = backToLanding;
       var cy = (hotspot.y <= 1) ? (hotspot.y * 100) : hotspot.y;
       var r = (hotspot.radius <= 1) ? (hotspot.radius * 100) : hotspot.radius;
 
-      // Create circle
+      // Create pulsing background circle
+      var pulseCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      pulseCircle.setAttribute('cx', cx);
+      pulseCircle.setAttribute('cy', cy);
+      pulseCircle.setAttribute('r', r);
+      pulseCircle.setAttribute('class', 'hotspot-pulse');
+      pulseCircle.setAttribute('fill', 'rgba(212, 160, 23, 0.3)');
+
+      // Create main circle (visible, clickable)
       var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       circle.setAttribute('cx', cx);
       circle.setAttribute('cy', cy);
       circle.setAttribute('r', r);
       circle.setAttribute('class', 'hotspot-circle');
-      circle.setAttribute('fill', 'rgba(212, 160, 23, 0.1)');
-      circle.setAttribute('stroke', 'rgba(212, 160, 23, 0)');
-      circle.setAttribute('stroke-width', '0.5');
+      circle.setAttribute('fill', 'rgba(212, 160, 23, 0.2)');
+      circle.setAttribute('stroke', '#d4a017');
+      circle.setAttribute('stroke-width', '1.2');
+      circle.setAttribute('filter', 'drop-shadow(0 0 4px rgba(212, 160, 23, 0.8))');
 
-      // Create tooltip text
+      // Create tooltip text (hidden by default)
       var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      text.setAttribute('class', 'hotspot-text');
       text.setAttribute('x', cx);
-      text.setAttribute('y', cy - r - 3);
+      text.setAttribute('y', cy - r - 5);
       text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('font-size', '2');
+      text.setAttribute('font-size', '2.5');
       text.setAttribute('fill', '#d4a017');
-      text.setAttribute('font-weight', '600');
+      text.setAttribute('font-weight', '700');
       text.setAttribute('opacity', '0');
       text.setAttribute('pointer-events', 'none');
+      text.setAttribute('stroke', 'white');
+      text.setAttribute('stroke-width', '0.3');
+      text.setAttribute('paint-order', 'stroke');
       text.textContent = hotspot.item;
 
+      g.appendChild(pulseCircle);
       g.appendChild(circle);
       g.appendChild(text);
 
       // Add hover effects
       g.addEventListener('mouseenter', function() {
-        circle.setAttribute('stroke', '#d4a017');
-        circle.setAttribute('stroke-width', '1.5');
-        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.15)');
+        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.35)');
+        circle.setAttribute('stroke-width', '2');
+        circle.setAttribute('filter', 'drop-shadow(0 0 8px rgba(212, 160, 23, 1))');
         text.setAttribute('opacity', '1');
       });
 
       g.addEventListener('mouseleave', function() {
-        circle.setAttribute('stroke', 'rgba(212, 160, 23, 0)');
-        circle.setAttribute('stroke-width', '0.5');
-        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.1)');
+        circle.setAttribute('fill', 'rgba(212, 160, 23, 0.2)');
+        circle.setAttribute('stroke-width', '1.2');
+        circle.setAttribute('filter', 'drop-shadow(0 0 4px rgba(212, 160, 23, 0.8))');
         text.setAttribute('opacity', '0');
       });
 
