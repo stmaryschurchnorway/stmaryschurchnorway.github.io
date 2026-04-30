@@ -370,6 +370,7 @@ phases:
             transliteration: "Pronunciation: Ra-has-yang-ga-lu-de A-gho-sham"
             description: "The sacred proclamation 'Holy things for the holy' serves as both an invitation and a solemn warning about the sacredness of the mysteries about to be received. This declaration emphasizes that participation in the Eucharist requires spiritual purity, reverence, and faith in the transformative power of this sacred sacrament."
             audioPhrase: "Holy things to the holy"
+            image: "/assets/img/holy-things-to-the-holy.png"
             substages:
               - title: "Elevation & The Proclamation of Holiness"
                 hymn: "Vishudhiyum (Syriac: Kandishal)"
