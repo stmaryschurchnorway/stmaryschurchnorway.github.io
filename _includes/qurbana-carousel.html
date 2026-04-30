@@ -536,6 +536,10 @@ window.backToLanding = backToLanding;
     }
 
     console.log('Highlighting item and scrolling');
+    console.log('targetItem parent classes:', targetItem.parentElement.className);
+    console.log('targetItem display:', window.getComputedStyle(targetItem).display);
+    console.log('targetItem offsetHeight:', targetItem.offsetHeight);
+
     document.querySelectorAll('.sacred-item').forEach(function(el) {
       el.classList.remove('item-highlight');
     });
@@ -544,6 +548,8 @@ window.backToLanding = backToLanding;
 
     console.log('Calling scrollIntoView');
     targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    console.log('After scrollIntoView, carousel-fullscreen-wrapper scrollTop:', carousel.querySelector('.carousel-fullscreen-wrapper').scrollTop);
 
     setTimeout(function() {
       targetItem.classList.remove('item-highlight');
