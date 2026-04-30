@@ -581,7 +581,8 @@
   flex-direction: column !important;
   min-height: auto !important;
   overflow: visible !important;
-  margin-top: 110px !important;
+  margin-top: 0 !important;
+  padding-top: 130px !important;
 }
 
 /* Ensure carouselContent is flex container in custom fullscreen */
@@ -593,12 +594,16 @@
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .image-placeholder {
-  flex: none !important;
+  flex: 0 0 55vh !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .carousel-content {
-  flex: none !important;
-  overflow: visible !important;
+  flex: 1 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 20px 25px !important;
 }
 
 .image-placeholder {
