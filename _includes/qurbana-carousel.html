@@ -477,15 +477,26 @@ window.backToLanding = backToLanding;
     hotspotsLayer.style.height = '100%';
     hotspotsLayer.style.pointerEvents = 'none';
 
+    // Get the actual image dimensions for responsive scaling
+    var img = container.querySelector('img');
+    var imageWidth = img ? img.offsetWidth : 600;
+    var imageHeight = img ? img.offsetHeight : 400;
+
     stage.hotspots.forEach(function(hotspot) {
       var hotspotEl = document.createElement('div');
       hotspotEl.className = 'hotspot';
       hotspotEl.setAttribute('data-item', hotspot.item);
       hotspotEl.style.position = 'absolute';
-      hotspotEl.style.width = (hotspot.radius * 2) + 'px';
-      hotspotEl.style.height = (hotspot.radius * 2) + 'px';
-      hotspotEl.style.left = (hotspot.x - hotspot.radius) + 'px';
-      hotspotEl.style.top = (hotspot.y - hotspot.radius) + 'px';
+
+      // Calculate actual pixels from percentages or use absolute values
+      var xPixels = hotspot.x > 1 ? hotspot.x : (hotspot.x * imageWidth);
+      var yPixels = hotspot.y > 1 ? hotspot.y : (hotspot.y * imageHeight);
+      var radiusPixels = hotspot.radius > 1 ? hotspot.radius : (hotspot.radius * Math.min(imageWidth, imageHeight));
+
+      hotspotEl.style.width = (radiusPixels * 2) + 'px';
+      hotspotEl.style.height = (radiusPixels * 2) + 'px';
+      hotspotEl.style.left = (xPixels - radiusPixels) + 'px';
+      hotspotEl.style.top = (yPixels - radiusPixels) + 'px';
       hotspotEl.style.pointerEvents = 'auto';
 
       var tooltip = document.createElement('div');
