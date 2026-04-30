@@ -540,6 +540,16 @@ window.backToLanding = backToLanding;
     console.log('targetItem display:', window.getComputedStyle(targetItem).display);
     console.log('targetItem offsetHeight:', targetItem.offsetHeight);
 
+    // Find and expand the parent substage if needed
+    var parentSubstage = targetItem.closest('.substage-item');
+    if (parentSubstage) {
+      console.log('Found parent substage, expanding if collapsed');
+      if (parentSubstage.classList.contains('collapsed')) {
+        parentSubstage.classList.remove('collapsed');
+        parentSubstage.classList.add('expanded');
+      }
+    }
+
     document.querySelectorAll('.sacred-item').forEach(function(el) {
       el.classList.remove('item-highlight');
     });
