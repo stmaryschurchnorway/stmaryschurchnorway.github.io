@@ -823,7 +823,7 @@ window.backToLanding = backToLanding;
       }
     } else if (stage.image && stage.image.trim()) {
       // Display static image
-      container.innerHTML = '<img src="' + stage.image + '" style="width:100%;height:100%;object-fit:cover;" alt="Stage image">';
+      container.innerHTML = '<img src="' + stage.image + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" alt="Stage image">';
       placeholder.style.display = 'none';
       imagePlaceholder.style.backgroundImage = 'none';
       imagePlaceholder.style.cursor = 'default';
@@ -1019,139 +1019,32 @@ window.backToLanding = backToLanding;
     }
   }
 
+  const audioMap = {
+    'വിശുദ്ധ കുർബാന': '/assets/audio/vishudha-kurbana.m4a',
+    'ഒരുക്ക ശുശ്രൂഷ': '/assets/audio/oruka-shushrusha.m4a',
+    'പരസ്യമായ ആദ്യഭാഗം': '/assets/audio/parasyam-adhya-bhagam.m4a',
+    'വേദപുസ്തകപാരായണം': '/assets/audio/vedhapusthaka-parayana.m4a',
+    'പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്': '/assets/audio/promiyon-sedra.m4a',
+    'വിശ്വാസപ്രമാണം': '/assets/audio/vishwasa-pramanam.m4a',
+    'സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം': '/assets/audio/shoshappa.m4a',
+    'സ്ഥാപന വാക്യങ്ങൾ': '/assets/audio/sthapana-vakhyangal.m4a',
+    'ഓർമ്മപ്രാർത്ഥനയും കൃതജ്ഞതയും': '/assets/audio/ormma-prarthana-krutajnyata.m4a',
+    'പരിശുദ്ധാത്മാവിന്റെ എഴുന്നള്ളത്ത്': '/assets/audio/parishuddhaathmavinte-ezunnathathu.m4a',
+    'മദ്ധ്യസ്ഥ പ്രാർത്ഥനകൾ': '/assets/audio/maddhyastha-prathanangal.m4a',
+    'ഖണ്ഡിപ്പിന്റെ ശുശ്രൂഷ': '/assets/audio/khandippu-shushrusha.m4a',
+    'മോരനായ പ്രാർത്ഥന': '/assets/audio/moranaya-prarthana.m4a',
+    'രഹസ്യങ്ങളുടെ ആഘോഷം': '/assets/audio/rahasyangalude-aghosham.m4a',
+    'കുർബാന അനുഭവം : കൃതജ്ഞത': '/assets/audio/qurbana-anubhavam.m4a',
+    'സമാപനി ശുശ്രൂഷ': '/assets/audio/samapani-shushrusha.m4a'
+  };
+
   function playAudio() {
     const stage = stages[currentStageIdx];
+    const audioFile = audioMap[stage.malayalam];
 
-    // Use actual audio file for Holy Qurbana
-    if (stage.malayalam === 'വിശുദ്ധ കുർബാന') {
-      const audio = new Audio('/assets/audio/vishudha-kurbana.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Preparation (Oruka Shushrusha)
-    if (stage.malayalam === 'ഒരുക്ക ശുശ്രൂഷ') {
-      const audio = new Audio('/assets/audio/oruka-shushrusha.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Public Celebration / Pre-anaphora
-    if (stage.malayalam === 'പരസ്യമായ ആദ്യഭാഗം') {
-      const audio = new Audio('/assets/audio/parasyam-adhya-bhagam.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Reading of the Scriptures
-    if (stage.malayalam === 'വേദപുസ്തകപാരായണം') {
-      const audio = new Audio('/assets/audio/vedhapusthaka-parayana.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Promiun-Sedra
-    if (stage.malayalam === 'പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്') {
-      const audio = new Audio('/assets/audio/promiyon-sedra.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for The Nicene Creed
-    if (stage.malayalam === 'വിശ്വാസപ്രമാണം') {
-      const audio = new Audio('/assets/audio/vishwasa-pramanam.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Kiss of Peace
-    if (stage.malayalam === 'സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം') {
-      const audio = new Audio('/assets/audio/shoshappa.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Words of Institution
-    if (stage.malayalam === 'സ്ഥാപന വാക്യങ്ങൾ') {
-      const audio = new Audio('/assets/audio/sthapana-vakhyangal.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Anamnesis
-    if (stage.malayalam === 'ഓർമ്മപ്രാർത്ഥനയും കൃതജ്ഞതയും') {
-      const audio = new Audio('/assets/audio/ormma-prarthana-krutajnyata.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Invocation of the Holy Spirit (Epiclesis)
-    if (stage.malayalam === 'പരിശുദ്ധാത്മാവിന്റെ എഴുന്നള്ളത്ത്') {
-      const audio = new Audio('/assets/audio/parishuddhaathmavinte-ezunnathathu.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Intercessions (Tubden)
-    if (stage.malayalam === 'മദ്ധ്യസ്ഥ പ്രാർത്ഥനകൾ') {
-      const audio = new Audio('/assets/audio/maddhyastha-prathanangal.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Fraction
-    if (stage.malayalam === 'ഖണ്ഡിപ്പിന്റെ ശുശ്രൂഷ') {
-      const audio = new Audio('/assets/audio/khandippu-shushrusha.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for The Lord's Prayer
-    if (stage.malayalam === 'മോരനായ പ്രാർത്ഥന') {
-      const audio = new Audio('/assets/audio/moranaya-prarthana.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Holy Things to the Holy
-    if (stage.malayalam === 'രഹസ്യങ്ങളുടെ ആഘോഷം') {
-      const audio = new Audio('/assets/audio/rahasyangalude-aghosham.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
-    }
-
-    // Use actual audio file for Holy Communion and Thanksgiving
-    if (stage.malayalam === 'കുർബാന അനുഭവം : കൃതജ്ഞത') {
-      const audio = new Audio('/assets/audio/qurbana-anubhavam.m4a');
-      audio.play().catch(error => {
+    if (audioFile) {
+      var audio = new Audio(audioFile);
+      audio.play().catch(function(error) {
         console.error('Audio playback error:', error);
       });
       return;
@@ -1289,7 +1182,7 @@ window.backToLanding = backToLanding;
                   <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;padding:16px 12px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
                        onclick="toggleSacredItem(this)">
                     <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
-                      ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100px;height:100px;object-fit:contain;margin-bottom:12px;flex-shrink:0;">` : ''}
+                      ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="width:100px;height:100px;object-fit:contain;margin-bottom:12px;flex-shrink:0;">` : ''}
                       <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
                       ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
                     </div>

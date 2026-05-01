@@ -31,7 +31,7 @@ phases:
         transliteration: "Pronunciation: O-ruk-ka Shush-ru-sha"
         description: "The Hidden Life of Christ - This sacred preparation is performed silently behind the curtain before the public celebration begins. The closed curtain symbolizes the period before Christ was revealed to the world. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the veil—all representing Christ's hidden life and ultimate sacrifice."
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
-        image: "/assets/img/tuyobo-v3.png"
+        image: "/assets/img/tuyobo-v3.jpg"
         hotspots:
           - item: "Shushepo (The Great Veil)"
             x: 64.45
@@ -128,7 +128,7 @@ phases:
             transliteration: "Pronunciation: Vedhapusthaka-parayana"
             description: "Scripture is proclaimed through readings from the Epistles and Gospels, presenting the 'life-giving proclamation' of Christ's teachings and redemptive work. These readings from Sacred Scripture educate and sanctify the faithful, preparing their hearts and minds for the sacred mystery of the Eucharist. The congregation responds with faith and affirmation of orthodox belief."
             audioPhrase: "Reading of the Scriptures"
-            image: "/assets/img/reading-scriptures.png"
+            image: "/assets/img/reading-scriptures.jpg"
             substages:
               - title: "Ministry of the Word (Epistles & Gospel)"
                 significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
@@ -148,7 +148,7 @@ phases:
             transliteration: "Pronunciation: Pro-mi-yon Se-dra : Dhoo-pak-kut-ty Va-zha-vu"
             description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
             audioPhrase: "Promiun-Sedra and blessing of incense"
-            image: "/assets/img/sedra-blessing-v2.png"
+            image: "/assets/img/sedra-blessing-v2.jpg"
             hotspots:
               - item: "Dhoopakutty (Censer)"
                 x: 51.8
@@ -181,7 +181,7 @@ phases:
             transliteration: "Pronunciation: Vish-wa-sa Pra-ma-nam"
             description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
             audioPhrase: "The Nicene Creed"
-            image: "/assets/img/nicene-creed.png"
+            image: "/assets/img/nicene-creed.jpg"
             substages:
               - title: "The Recitation of the Nicene Creed"
                 significance: "The whole congregation stands together, united in the apostolic faith. They recite the Nicene Creed regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed, formulated at the Council of Nicaea, guards the mystery of the Incarnation and prepares believers to participate in the sacred Eucharistic mystery."
@@ -198,7 +198,7 @@ phases:
             transliteration: "Pronunciation: Sa-maa-dha-na Chum-ba-nam Sho-shap-pa A-gho-sham"
             description: "Congregants exchange the Kiss of Peace, symbolizing reconciliation and unity in the faith before the Eucharistic prayer. The celebrant then unveils the covered vessels, symbolizing the revelation of 'life-giving and heavenly mysteries.' This moment represents the movement from preparation to the sacred transformation, from earthly celebration to celestial communion."
             audioPhrase: "Kiss of Peace and lifting of the veil"
-            image: "/assets/img/kiss-of-peace.png"
+            image: "/assets/img/kiss-of-peace.jpg"
             substages:
               - title: "Reconciliation & The Kiss of Peace"
                 hymn: "Anyonyam Slomo Nalkin (Peace be unto us)"
@@ -224,7 +224,7 @@ phases:
 
           - title: "Introductory Dialogue"
             description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue invites the faithful to ascend spiritually with the priest into heavenly worship, preparing for the Eucharistic prayer of thanksgiving."
-            image: "/assets/img/introductory-dialogue.png"
+            image: "/assets/img/introductory-dialogue.jpg"
             substages:
               - title: "The Sacred Dialogue"
                 significance: "This ancient dialogue, unchanged since the early Church, invites the faithful to ascend spiritually with the priest into heavenly worship. The priest begins: 'Lift up your hearts.' The people respond: 'We lift them up unto the Lord.' The priest continues: 'Let us give thanks to the Lord our God.' The people affirm: 'It is meet and right.' This mutual exchange signifies the unity of the earthly and heavenly Church as both participate in one eternal Liturgy."
@@ -238,7 +238,7 @@ phases:
             transliteration: "Pronunciation: Sthapana-vakhyangal"
             description: "The priest solemnly recounts the words and actions of Christ at the Last Supper: 'Take, eat. This is My Body... Drink ye all of it. This is My Blood of the New Covenant.' Through this proclamation, the Church commemorates Christ's redemptive act and enters into mystical union with His sacrifice."
             audioPhrase: "Words of Institution"
-            image: "/assets/img/words-of-institution-v4.png"
+            image: "/assets/img/words-of-institution-v4.jpg"
             hotspots:
               - item: "Lahmo (Sacred Bread)"
                 x: 180
@@ -269,7 +269,7 @@ phases:
             transliteration: "Pronunciation: Or-mma-prar-tha-na-yum Kru-ta-jnya-ta-yum"
             description: "The Anamnesis is the Church's solemn commemoration of the Salvific works of Christ—His passion, death, resurrection, and anticipated second coming. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship."
             audioPhrase: "Anamnesis, commemoration of Christ's salvific works"
-            image: "/assets/img/anamnesis.png"
+            image: "/assets/img/anamnesis.jpg"
             substages:
               - title: "Memorial of Christ's Redemptive Works"
                 significance: "The priest proclaims the great acts of salvation: Christ's passion on the Cross, His burial in the tomb, His glorious resurrection on the third day, His ascension to heaven, and His anticipated return in glory to judge the living and the dead. Through this sacred remembrance, the Church mystically enters into Christ's redemptive mystery, bringing all of time and eternity into the present moment of worship. The past becomes present, and the future is anticipated as faith."
@@ -283,7 +283,7 @@ phases:
             transliteration: "Pronunciation: Parishuddhaathmavinte Ezunnathathu"
             description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
             audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
-            image: "/assets/img/epiclesis-v2.png"
+            image: "/assets/img/epiclesis-v2.jpg"
             hotspots:
               - item: "Lahmo (Sacred Bread)"
                 x: 200
@@ -318,7 +318,7 @@ phases:
             transliteration: "Pronunciation: Maddhyastha-prathanangal"
             description: "After the consecration, the priest offers prayers of intercession for the entire Church—petitioning God's blessings for living and deceased church members. These prayers remember the Theotokos (Mother of God), the prophets, apostles, martyrs, and all the faithful, binding the earthly and heavenly Church in communion. The whole communion of saints joins in the offering before God's throne."
             audioPhrase: "Intercessions, prayers for the Church, saints, and departed"
-            image: "/assets/img/tubden.png"
+            image: "/assets/img/tubden.jpg"
             substages:
               - title: "The Great Intercessions (Tubden)"
                 hymn: "Yachikkendum Samayamitha (In the time of need)"
@@ -357,7 +357,7 @@ phases:
             transliteration: "Pronunciation: Mo-ra-na-ya Prar-tha-na"
             description: "The priest leads the congregation in the Lord's Prayer, traditionally interpreting 'Give us this day our daily bread' as eucharistic supplication. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them to receive the Body and Blood of Christ with proper devotion and spiritual readiness."
             audioPhrase: "The Lord's Prayer"
-            image: "/assets/img/lords-prayer.png"
+            image: "/assets/img/lords-prayer.jpg"
             substages:
               - title: "The Lord's Prayer Before Communion"
                 significance: "The priest leads the congregation in reciting the prayer that Jesus Himself taught. The phrase 'Give us this day our daily bread' takes on profound meaning in this context—interpreted as a petition for the Bread of Heaven, the Body of Christ. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them spiritually and mentally to receive the Mysteries with proper devotion, faith, and readiness of heart."
@@ -371,7 +371,7 @@ phases:
             transliteration: "Pronunciation: Ra-has-yang-ga-lu-de A-gho-sham"
             description: "The sacred proclamation 'Holy things for the holy' serves as both an invitation and a solemn warning about the sacredness of the mysteries about to be received. This declaration emphasizes that participation in the Eucharist requires spiritual purity, reverence, and faith in the transformative power of this sacred sacrament."
             audioPhrase: "Holy things to the holy"
-            image: "/assets/img/holy-things-to-the-holy.png"
+            image: "/assets/img/holy-things-to-the-holy.jpg"
             substages:
               - title: "Elevation & The Proclamation of Holiness"
                 hymn: "Vishudhiyum (Syriac: Kandishal)"
@@ -396,7 +396,7 @@ phases:
             transliteration: "Pronunciation: Qurbana-anubhavam"
             description: "The congregation receives the Body and Blood of Christ—first the priest, then the faithful—experiencing mystical communion and spiritual transformation. Believers participate in Christ's body and blood, establishing unity with Him and in Him."
             audioPhrase: "Holy Communion of the faithful"
-            image: "/assets/img/holy-communion.png"
+            image: "/assets/img/holy-communion.jpg"
             substages:
               - title: "Holy Communion of the Faithful"
                 action: "The faithful receive the Body and Blood of Christ in reverence."
@@ -430,7 +430,7 @@ phases:
         transliteration: "Pronunciation: Samapani Shush-ru-sha"
         description: "The Post-Communion Service concludes the Holy Qurbana with prayers of thanksgiving, hymns, and final blessings. The faithful are reminded of the grace they have received and are sent forth into the world as living witnesses of Christ."
         audioPhrase: "Post-Communion Service, closing prayers and blessing"
-        image: "/assets/img/post-communion-service.png"
+        image: "/assets/img/post-communion-service.jpg"
         substages:
           - title: "Thanksgiving Prayers and Hymns"
             hymn: "May I serve you now and always in thy eternal and heavenly Kingdom"

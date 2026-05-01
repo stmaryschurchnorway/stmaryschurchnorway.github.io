@@ -38,3 +38,14 @@ plugins:
 exclude:
   - Gemfile.lock
   - README.md
+  - AUDIO_SETUP.md
+  - "*.demo.html"
+  - church-enhancement-demo.html
+  - qurbana-carousel-enhanced-demo.html
+  - qurbana-enhanced-stages-examples.html
+  - qurbana-expanded-readability-demo.html
+  - qurbana-hotspots-mockup.html
+  - qurbana-hotspots-option3-variations.html
+  - qurbana-hotspots-real.html
+  - qurbana-hotspots-realistic.html
+  - docs/
