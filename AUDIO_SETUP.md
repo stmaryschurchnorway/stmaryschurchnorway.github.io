@@ -67,7 +67,7 @@ Generate MP3 files for each stage and place them in `/assets/audio/` with these 
 
 ## Testing
 
-1. Navigate to the Qurbana page: `/qurbana/`
+1. Navigate to the Liturgy page: `/liturgy/`
 2. Click the speaker button (🔊) on any stage
 3. If the MP3 file exists, it will play the recorded audio
 4. If the file is not found, it falls back to browser text-to-speech

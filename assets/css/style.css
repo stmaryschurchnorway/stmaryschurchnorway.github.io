@@ -76,10 +76,10 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 12px;
   flex-shrink: 0;
 }
-.logo img { height: 52px; width: auto; }
+.logo img { height: 72px; width: auto; }
 .logo-title {
   font-family: 'Lora', Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   color: #d4a017;
   font-weight: 700;
   display: block;
@@ -87,9 +87,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .logo-subtitle {
   font-family: 'Lora', Georgia, serif;
-  font-size: 0.88rem;
+  font-size: 1.05rem;
   color: #b08a10;
   line-height: 1.3;
+}
+.logo-diocese {
+  display: block;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.65rem;
+  color: #b08a10;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+.logo-see {
+  display: block;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.65rem;
+  color: #b08a10;
+  line-height: 1.4;
 }
 
 /* === Social Links === */
@@ -526,6 +541,16 @@ img { max-width: 100%; height: auto; display: block; }
 .hierarchy-social-link:hover {
   color: #8B1E2D;
   text-decoration: underline;
+}
+.welcome-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  transition: border-color 0.2s, color 0.2s;
+}
+.welcome-link:hover {
+  color: #8B1E2D;
+  border-bottom-color: #8B1E2D;
 }
 
 /* === Gallery Page Grid (Videos) === */

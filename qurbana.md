@@ -1,7 +1,7 @@
 ---
 layout: qurbana
 title: Our Liturgy
-permalink: /qurbana/
+permalink: /liturgy/
 description: "Explore the sacred liturgies of the Malankara Syriac Orthodox Church. Experience an interactive journey through the Holy Qurbana (Eucharistic service) with Malayalam pronunciation and detailed theological insights."
 extra_css:
   - /assets/css/qurbana.css
