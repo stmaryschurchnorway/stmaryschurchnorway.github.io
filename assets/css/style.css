@@ -1053,12 +1053,8 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 0.72rem;
   }
   .logo-diocese, .logo-see {
-    grid-column: 1 / 4;
-    font-size: 0.55rem;
-    color: #b08a10;
+    display: none;
   }
-  .logo-diocese { grid-row: 3; }
-  .logo-see { grid-row: 4; }
   .social-links {
     grid-column: 3;
     grid-row: 2;
