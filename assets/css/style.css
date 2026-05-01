@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-padding-top: 120px; }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif, 'Noto Sans Malayalam';
   font-size: 15px;
   color: #2d2d2d;
   line-height: 1.65;
@@ -322,6 +322,24 @@ img { max-width: 100%; height: auto; display: block; }
   transition: background 0.3s;
 }
 .btn:hover { background: #b8860b; }
+.qurbana-cta-btn {
+  display: inline-block;
+  background: transparent;
+  color: #d4a017;
+  padding: 2px 8px;
+  border: 1px solid #d4a017;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+.qurbana-cta-btn:hover {
+  background: #d4a017;
+  color: #fff;
+}
 .btn-secondary {
   background: #f5f1e8;
   color: #d4a017;

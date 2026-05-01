@@ -720,13 +720,14 @@
   margin-bottom: 4px;
 }
 
-.stage-title {
+h2.stage-title {
   font-family: 'Lora', Georgia, serif;
-  font-size: 0.45rem;
+  font-size: 18px;
   font-weight: 700;
   color: #d4a017;
   margin: 4px 0 0 0;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .hymn-icon {
@@ -817,10 +818,6 @@
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(212, 160, 23, 0.1);
   font-weight: 500;
-}
-
-.controls {
-  display: none;
 }
 
 .icon-btn {
@@ -1285,14 +1282,33 @@
     padding: 12px;
   }
 
+  .phase-tabs {
+    gap: 6px;
+  }
+
+  .phase-card {
+    padding: 8px 4px;
+  }
+
+  .phase-card-num {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .phase-card-title {
+    font-size: 11px;
+    margin: 2px 0;
+    word-break: break-word;
+  }
+
   .phase-card-subparts {
     flex-direction: column;
-    gap: 6px;
-    padding: 6px 12px 0 12px;
+    gap: 4px;
+    padding: 4px 4px 0 4px;
   }
 
   .phase-card-subpart {
-    font-size: 9px;
+    font-size: 8px;
     padding: 2px 0;
   }
 
@@ -1305,8 +1321,8 @@
     padding: 0 6px;
   }
 
-  .stage-title {
-    font-size: 16px;
+  h2.stage-title {
+    font-size: 14px;
     margin-top: 2px;
   }
 
@@ -1581,10 +1597,6 @@
   text-align: left;
 }
 
-.qurbana-church-structure-expanded .qurbana-expanded-section p {
-  font-size: 0.9rem;
-}
-
 .qurbana-expanded-section p:last-of-type {
   margin-bottom: 0;
 }
@@ -1620,18 +1632,6 @@
   margin-right: 8px;
 }
 
-.intro-biblical {
-  margin: 14px 0;
-  padding: 14px;
-  background: white;
-  border-left: 4px solid #d4a017;
-  border-radius: 3px;
-  font-style: italic;
-  color: #555;
-  text-align: left;
-  font-size: 0.93rem;
-  line-height: 1.6;
-}
 .intro-accordion {
   background: #fffbf0;
   border: 2px solid #d4a017;
@@ -1780,106 +1780,8 @@
   }
 }
 
-/* Bouncing arrow animation */
-@keyframes bounce-arrow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-.qurbana-expand-arrow-icon {
-  animation: bounce-arrow 2s infinite ease-in-out;
-}
-
-/* Church structure expandable section */
-.qurbana-church-structure-expanded {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.qurbana-church-structure-expanded.expanded {
-  max-height: 3000px;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 8px;
-}
-
-.qurbana-church-structure-expanded .qurbana-expanded-section {
-  margin: 0;
-  padding: 24px;
-  border: none;
-  border-radius: 8px;
-}
-
-.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(1) {
-  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
-}
-
-.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(2) {
-  background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
-}
-
-.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(3) {
-  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
-}
-
-.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(4) {
-  background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
-}
-
-/* Veil section - full width, special styling */
-.qurbana-veil-section {
-  grid-column: 1 / -1;
-  margin: 8px 0 0 0;
-  padding: 24px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%);
-  border-left: 4px solid #d4a017;
-}
-
-.qurbana-expanded-subtitle {
-  font-size: 0.85rem;
-  color: #999;
-  margin: 0 0 1px 0;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.1;
-}
-
-.qurbana-subtitle-note {
-  font-size: 0.85rem;
-  color: #d4a017;
-  margin: 0 0 10px 0;
-  font-weight: 500;
-  text-transform: capitalize;
-  letter-spacing: 0.3px;
-  line-height: 1.1;
-}
-
 /* Expanded content responsive */
-@media (max-width: 1200px) {
-  .qurbana-church-structure-expanded {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 1024px) {
-  .qurbana-church-structure-expanded {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .qurbana-learn-more-expanded {
     grid-template-columns: 1fr;
     max-width: 100%;
@@ -1888,11 +1790,6 @@
 
 @media (max-width: 800px) {
   .qurbana-learn-more-expanded {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-
-  .qurbana-church-structure-expanded {
     grid-template-columns: 1fr;
     max-width: 100%;
   }

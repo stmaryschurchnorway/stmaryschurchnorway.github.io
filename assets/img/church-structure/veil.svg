@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <!-- Curtain rod -->
+  <line x1="15" y1="10" x2="185" y2="10" stroke="#d4a017" stroke-width="3" stroke-linecap="round"/>
+  <!-- Rod finials -->
+  <circle cx="15" cy="10" r="4" fill="#d4a017"/>
+  <circle cx="185" cy="10" r="4" fill="#d4a017"/>
+  <!-- Curtain fabric (draped, slightly open in center) -->
+  <path d="M20 10 Q30 20 28 35 Q26 50 30 65 Q34 80 28 95 Q26 105 30 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <path d="M40 10 Q50 18 48 30 Q46 45 50 60 Q54 75 48 90 Q46 102 50 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <path d="M60 10 Q68 16 66 28 Q64 40 68 55 Q72 70 66 85 Q64 98 70 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <!-- Left curtain fill -->
+  <path d="M20 10 Q30 20 28 35 Q26 50 30 65 Q34 80 28 95 Q26 105 30 115 L70 115 Q64 98 66 85 Q72 70 68 55 Q64 40 66 28 Q68 16 60 10 Z" fill="#8B1E2D" opacity="0.15"/>
+  <!-- Right curtain (mirrored) -->
+  <path d="M180 10 Q170 20 172 35 Q174 50 170 65 Q166 80 172 95 Q174 105 170 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <path d="M160 10 Q150 18 152 30 Q154 45 150 60 Q146 75 152 90 Q154 102 150 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <path d="M140 10 Q132 16 134 28 Q136 40 132 55 Q128 70 134 85 Q136 98 130 115" stroke="#8B1E2D" stroke-width="1.5" fill="none"/>
+  <!-- Right curtain fill -->
+  <path d="M180 10 Q170 20 172 35 Q174 50 170 65 Q166 80 172 95 Q174 105 170 115 L130 115 Q136 98 134 85 Q128 70 132 55 Q136 40 134 28 Q132 16 140 10 Z" fill="#8B1E2D" opacity="0.15"/>
+  <!-- Orthodox cross in center opening -->
+  <g transform="translate(100, 50)">
+    <!-- Vertical beam -->
+    <line x1="0" y1="-18" x2="0" y2="22" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Top crossbar -->
+    <line x1="-6" y1="-10" x2="6" y2="-10" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Main crossbar -->
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Bottom slanted bar -->
+    <line x1="-7" y1="14" x2="7" y2="10" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Light rays from center -->
+  <g opacity="0.2" stroke="#d4a017" stroke-width="1">
+    <line x1="80" y1="40" x2="72" y2="30"/>
+    <line x1="120" y1="40" x2="128" y2="30"/>
+    <line x1="80" y1="65" x2="72" y2="75"/>
+    <line x1="120" y1="65" x2="128" y2="75"/>
+  </g>
+</svg>

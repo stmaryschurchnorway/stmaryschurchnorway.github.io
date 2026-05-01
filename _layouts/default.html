@@ -10,6 +10,10 @@
   {% feed_meta %}
   {% include church-schema.html %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  {% for css in page.extra_css %}<link rel="stylesheet" href="{{ css | relative_url }}?v={{ site.time | date: '%s' }}">
+  {% endfor %}
+  {% for url in page.preconnect %}<link rel="preconnect" href="{{ url }}">
+  {% endfor %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googleapis.com">
@@ -45,13 +49,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
-
-  // HTML escape helper
-  function esc(s) {
-    var d = document.createElement('div');
-    d.textContent = s;
-    return d.innerHTML;
-  }
 
   // Fetch next event from Google Calendar
   (function() {

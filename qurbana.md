@@ -3,6 +3,10 @@ layout: qurbana
 title: Our Liturgy
 permalink: /qurbana/
 description: "Explore the sacred liturgies of the Malankara Syriac Orthodox Church. Experience an interactive journey through the Holy Qurbana (Eucharistic service) with Malayalam pronunciation and detailed theological insights."
+extra_css:
+  - /assets/css/qurbana.css
+preconnect:
+  - https://www.youtube.com
 
 liturgies:
   - id: "holy-qurbana"
@@ -142,6 +146,10 @@ phases:
                     malayalam: "മണി"
                     meaning: "Rung to honor the proclamation of the Gospel and alert the faithful"
                     image: "/assets/img/sacred-items/mani_medium.svg"
+                  - name: "Momsho (Candles)"
+                    malayalam: "മോംശോ"
+                    meaning: "Lit during the Gospel reading, representing Christ as the Light of the World illuminating the faithful through His Word"
+                    image: "/assets/img/sacred-items/momsho_medium.svg"
 
           - title: "Promiun-Sedra and Blessing of the Censor"
             malayalam: "പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്"

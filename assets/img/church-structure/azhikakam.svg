@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <!-- Railing -->
+  <line x1="20" y1="95" x2="180" y2="95" stroke="#d4a017" stroke-width="2"/>
+  <line x1="20" y1="95" x2="20" y2="75" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+  <line x1="180" y1="95" x2="180" y2="75" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="95" x2="60" y2="80" stroke="#d4a017" stroke-width="1.5"/>
+  <line x1="100" y1="95" x2="100" y2="80" stroke="#d4a017" stroke-width="1.5"/>
+  <line x1="140" y1="95" x2="140" y2="80" stroke="#d4a017" stroke-width="1.5"/>
+  <line x1="20" y1="80" x2="180" y2="80" stroke="#d4a017" stroke-width="1.5"/>
+  <!-- Deacon 1 (with stole/orarion — diagonal sash) -->
+  <g transform="translate(65, 20)">
+    <circle cx="0" cy="0" r="6" fill="#8B1E2D"/>
+    <line x1="0" y1="6" x2="0" y2="28" stroke="#8B1E2D" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="14" x2="-8" y2="22" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="14" x2="8" y2="22" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="28" x2="-6" y2="42" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="28" x2="6" y2="42" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Orarion (stole) — diagonal sash -->
+    <line x1="-5" y1="8" x2="5" y2="28" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Deacon 2 -->
+  <g transform="translate(135, 20)">
+    <circle cx="0" cy="0" r="6" fill="#8B1E2D"/>
+    <line x1="0" y1="6" x2="0" y2="28" stroke="#8B1E2D" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="14" x2="-8" y2="22" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="14" x2="8" y2="22" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="28" x2="-6" y2="42" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="28" x2="6" y2="42" stroke="#8B1E2D" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Orarion (stole) -->
+    <line x1="5" y1="8" x2="-5" y2="28" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Censer between deacons -->
+  <g transform="translate(100, 35)" opacity="0.6">
+    <ellipse cx="0" cy="8" rx="4" ry="5" fill="none" stroke="#d4a017" stroke-width="1.5"/>
+    <line x1="0" y1="3" x2="0" y2="-5" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Smoke wisps -->
+    <path d="M-2,-8 Q0,-14 2,-8" stroke="#d4a017" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M0,-12 Q3,-18 0,-22" stroke="#d4a017" stroke-width="1" fill="none" opacity="0.3"/>
+  </g>
+</svg>

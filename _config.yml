@@ -3,6 +3,7 @@ subtitle: "Oslo, Norway"
 description: "Malayalam-speaking Malankara Syriac Orthodox parish in Oslo, Norway. Holy Qurbana, Oshana, Perunnal feasts, and Sunday School — serving the Malayali Orthodox community in Scandinavia since 2010."
 email: stmaryschurchnorway@gmail.com
 address: "Eikeli Katolske Kirke, Veståsen 18, 1362 Oslo, Norway"
+# "Chruch" is the actual Facebook page URL (intentional — matches Facebook's registered name)
 facebook: "https://www.facebook.com/StMarysChruchNorway"
 instagram: "https://www.instagram.com/msoc_norway/"
 youtube: "https://www.youtube.com/@msoc_norway"
@@ -40,12 +41,4 @@ exclude:
   - README.md
   - AUDIO_SETUP.md
   - "*.demo.html"
-  - church-enhancement-demo.html
-  - qurbana-carousel-enhanced-demo.html
-  - qurbana-enhanced-stages-examples.html
-  - qurbana-expanded-readability-demo.html
-  - qurbana-hotspots-mockup.html
-  - qurbana-hotspots-option3-variations.html
-  - qurbana-hotspots-real.html
-  - qurbana-hotspots-realistic.html
   - docs/

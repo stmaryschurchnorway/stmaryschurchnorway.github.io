@@ -17,7 +17,7 @@ description: "Visit St. Mary's Malankara Syriac Orthodox Church at Eikeli Katols
 
 &#9742; <img src="{{ '/assets/img/phone-committee.svg' | relative_url }}" alt="Phone" class="phone-img" style="vertical-align:middle;">
 
-## Board of Trustees
+## Board of Trustees {#board-of-trustees}
 
 ### Executive Leadership
 

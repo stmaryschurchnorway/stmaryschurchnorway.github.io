@@ -1,0 +1,26 @@
+<svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Candle flame -->
+  <path d="M70 18 Q65 28 66 34 Q66 40 70 42 Q74 40 74 34 Q75 28 70 18 Z" fill="#D4AF37" opacity="0.9"/>
+  <path d="M70 24 Q68 30 68.5 34 Q69 38 70 39 Q71 38 71.5 34 Q72 30 70 24 Z" fill="#FBF7E8" opacity="0.8"/>
+  <!-- Flame glow -->
+  <ellipse cx="70" cy="36" rx="8" ry="6" fill="#D4AF37" opacity="0.12"/>
+  <!-- Wick -->
+  <line x1="70" y1="38" x2="70" y2="44" stroke="#5A4A3A" stroke-width="1.2"/>
+  <!-- Candle body -->
+  <rect x="62" y="44" width="16" height="50" rx="1" fill="#FBF7E8" stroke="#D4AF37" stroke-width="1.5"/>
+  <!-- Drip marks -->
+  <path d="M62 54 Q60 58 62 60" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <path d="M78 62 Q80 66 78 68" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <!-- Cross on candle -->
+  <g fill="none" stroke="#8B1E2D" stroke-width="1.5">
+    <line x1="70" y1="58" x2="70" y2="72"/>
+    <line x1="65" y1="63" x2="75" y2="63"/>
+  </g>
+  <!-- Candle holder base -->
+  <rect x="58" y="94" width="24" height="6" rx="1" fill="#9C7B22" stroke="#5A4A3A" stroke-width="1.2"/>
+  <!-- Holder stem -->
+  <rect x="66" y="100" width="8" height="10" fill="#9C7B22" stroke="#5A4A3A" stroke-width="1"/>
+  <!-- Holder foot -->
+  <ellipse cx="70" cy="112" rx="16" ry="5" fill="#D4AF37" stroke="#5A4A3A" stroke-width="1.2"/>
+  <ellipse cx="70" cy="110" rx="16" ry="5" fill="#9C7B22" stroke="#5A4A3A" stroke-width="1.2"/>
+</svg>
