@@ -31,6 +31,10 @@ google_api_key: "AIzaSyCJZJJuEzE2X3fkHMiCNDdOTSlaqrQ1nZo"
 google_calendar_id: "stmaryschurchnorway@gmail.com"
 youtube_channel: "@msoc_norway"
 
+gallery_playlists:
+  - PLE4-jFq3KYtYRv9X5-K571hyPd9sfTvcs
+  - PLE4-jFq3KYtaTesFKsh4DZhd5KNTsk9Hs
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

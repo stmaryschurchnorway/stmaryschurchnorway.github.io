@@ -30,11 +30,11 @@ layout: default
       <div class="vicar-name">{{ site.vicar }}</div>
     </a>
     <div class="welcome-text">
+      <p class="welcome-tagline">A Malayalam-speaking Orthodox parish in Scandinavia since 2010</p>
       <p>{{ page.welcome_text }}</p>
       <div class="welcome-buttons">
+        <a href="{{ '/liturgy/' | relative_url }}" class="btn btn-primary">Our Liturgy</a>
         <a href="{{ '/the-church/' | relative_url }}" class="btn">Our Church</a>
-        <a href="{{ '/the-church/' | relative_url }}#our-hierarchy" class="btn">Our Hierarchy</a>
-        <a href="{{ '/liturgy/' | relative_url }}" class="btn btn-secondary">Our Liturgy</a>
       </div>
     </div>
   </div>
@@ -43,8 +43,6 @@ layout: default
 <!-- Upcoming Events -->
 {% include upcoming-events.html id="home-upcoming" limit=3 link_to_all=false paginate=false %}
 
-<!-- Past Events (from Google Calendar) -->
-{% include past-events.html id="home-past-events" limit=3 window_days=90 link_to_all=true %}
 
 <!-- Latest News (from _posts/) -->
 {% if site.posts.size > 0 %}
@@ -107,7 +105,7 @@ layout: default
 
 <!-- Videos -->
 <section class="gallery-section">
-  <h2 class="section-title">Videos</h2>
+  <h2 class="section-title">Lent Series 2026</h2>
   <div class="gallery-grid" id="home-videos"></div>
   <div style="text-align:center; margin-top:20px;">
     <a href="{{ '/gallery/' | relative_url }}" class="btn" style="background:#fff; color:#d4a017;">View All Videos</a>
@@ -118,25 +116,32 @@ layout: default
 (function() {
   var apiKey = '{{ site.google_api_key }}';
   var container = document.getElementById('home-videos');
-  fetch('https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle={{ site.youtube_channel }}&key=' + apiKey)
+  var plId = 'PLE4-jFq3KYtYRv9X5-K571hyPd9sfTvcs';
+  fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + plId + '&maxResults=3&key=' + apiKey)
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (!data.items || !data.items.length) return;
-      var plId = data.items[0].contentDetails.relatedPlaylists.uploads;
-      return fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + plId + '&maxResults=3&key=' + apiKey);
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data.items || !data.items.length) return;
-      var html = '';
+      while (container.firstChild) container.removeChild(container.firstChild);
       data.items.forEach(function(item) {
         var vid = item.snippet.resourceId.videoId;
-        html += '<div class="gallery-item"><div class="video-wrap"><iframe src="https://www.youtube.com/embed/' + vid + '?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe></div></div>';
+        var div = document.createElement('div');
+        div.className = 'gallery-item';
+        var wrap = document.createElement('div');
+        wrap.className = 'video-wrap';
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + encodeURIComponent(vid) + '?rel=0&modestbranding=1';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        wrap.appendChild(iframe);
+        div.appendChild(wrap);
+        container.appendChild(div);
       });
-      container.innerHTML = html;
     })
     .catch(function() {
-      container.innerHTML = '<p style="color:#fff;text-align:center;">Unable to load videos.</p>';
+      var p = document.createElement('p');
+      p.style.cssText = 'color:#fff;text-align:center;';
+      p.textContent = 'Unable to load videos.';
+      container.appendChild(p);
     });
 })();
 </script>
