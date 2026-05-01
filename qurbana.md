@@ -1,7 +1,7 @@
 ---
 layout: qurbana
-title: Our Liturgy
-permalink: /liturgy/
+title: Holy Qurbana
+permalink: /qurbana/
 description: "Explore the sacred liturgies of the Malankara Syriac Orthodox Church. Experience an interactive journey through the Holy Qurbana (Eucharistic service) with Malayalam pronunciation and detailed theological insights."
 extra_css:
   - /assets/css/qurbana.css
@@ -466,5 +466,4 @@ phases:
                 meaning: "The final blessing is the grace of Christ extending through His priest to the congregation, a blessing that transcends time and prepares the faithful for eternity"
 ---
 
-{% include liturgy-landing.html %}
 {% include qurbana-carousel.html %}

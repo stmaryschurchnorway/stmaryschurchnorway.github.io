@@ -9,7 +9,7 @@ description: "Faith, history, and parish hierarchy of St. Mary's Malankara Syria
 
 St. Mary's Malankara Syriac Orthodox Church, Oslo, is a Christian congregation belonging to the <a href="https://syriacpatriarchate.org/" target="_blank" rel="noopener"><em>Universal Syriac Orthodox Church</em></a> and is under the <a href="https://msoc-europe.com/" target="_blank" rel="noopener"><em>Malankara Syriac Orthodox Church</em></a> (MSOC) European diocese. The Church upholds the faith, traditions, and doctrines of the Universal Syriac Orthodox Church and maintains allegiance to the *Patriarch of Antioch and All the East* as the supreme spiritual head and is under the *Patriarchal Vicar of the European diocese*.
 
-The Malankara Syriac Orthodox Church traces its origins to the apostolic mission of *St. Thomas the Apostle* in India in *AD 52*. As one of the oldest Christian communities in the world, our liturgical tradition follows the *West Syriac Rite*, with scripture rooted in the <a href="https://www.peshittabible.org/" target="_blank" rel="noopener"><em>Peshitta</em></a> (the Syriac Bible), celebrated in a blend of Syriac, Malayalam, and the local language. The *Holy Qurbana* (Eucharist) is at the heart of our spiritual life. <a href="/liturgy/#holy-qurbana" class="qurbana-cta-btn">Learn more about the Holy Qurbana ☦&#xFE0E;</a>
+The Malankara Syriac Orthodox Church traces its origins to the apostolic mission of *St. Thomas the Apostle* in India in *AD 52*. As one of the oldest Christian communities in the world, our liturgical tradition follows the *West Syriac Rite*, with scripture rooted in the <a href="https://www.peshittabible.org/" target="_blank" rel="noopener"><em>Peshitta</em></a> (the Syriac Bible), celebrated in a blend of Syriac, Malayalam, and the local language. The *Holy Qurbana* (Eucharist) is at the heart of our spiritual life. <a href="/qurbana/" class="qurbana-cta-btn">Learn more about the Holy Qurbana ☦&#xFE0E;</a>
 
 ## Our Mission {#our-mission}
 
@@ -37,7 +37,7 @@ The church conducts *Sunday School*, *Vanitha Samajam*, bi-weekly prayer meeting
 
 The Church celebrates its *foundation day perunnal* on *23rd January* every year and it also celebrates the *Feast of Assumption* (*Vangippu Perunnal*) on *15th August* with a Rasa.
 
-We cordially invite you to come and participate in our liturgical services. <a href="/liturgy/#holy-qurbana" class="qurbana-cta-btn">Learn more about our Liturgy ☦&#xFE0E;</a>
+We cordially invite you to come and participate in our liturgical services. <a href="/qurbana/" class="qurbana-cta-btn">Learn more about our Liturgy ☦&#xFE0E;</a>
 
 ## Our Hierarchy {#our-hierarchy}
 

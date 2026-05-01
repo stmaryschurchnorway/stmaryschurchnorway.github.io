@@ -94,17 +94,17 @@ img { max-width: 100%; height: auto; display: block; }
 .logo-diocese {
   display: block;
   font-family: 'Lora', Georgia, serif;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #b08a10;
-  line-height: 1.4;
-  margin-top: 3px;
+  line-height: 1.2;
+  margin-top: 1px;
 }
 .logo-see {
   display: block;
   font-family: 'Lora', Georgia, serif;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #b08a10;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 /* === Social Links === */

@@ -1,9 +1,9 @@
-<div class="qurbana-carousel hidden" id="qurbanaCarousel">
+<div class="qurbana-carousel" id="qurbanaCarousel">
   <!-- Back to liturgies button -->
-  <div class="carousel-back-nav" id="backToLiturgies" style="display:none;">
-    <button class="back-to-liturgies-btn" onclick="backToLanding()">
+  <div class="carousel-back-nav" id="backToLiturgies">
+    <a href="{{ '/liturgy/' | relative_url }}" class="back-to-liturgies-btn">
       <span aria-hidden="true">←</span> Back to Liturgies
-    </button>
+    </a>
   </div>
 
   <!-- Carousel heading -->
@@ -150,46 +150,6 @@
 </div>
 
 <script>
-// View toggle functionality
-function showLiturgy(liturgyId) {
-  const landing = document.getElementById('liturgyLanding');
-  const carousel = document.getElementById('qurbanaCarousel');
-  const backBtn = document.getElementById('backToLiturgies');
-
-  if (landing) landing.classList.add('hidden');
-  if (carousel) carousel.classList.remove('hidden');
-  if (backBtn) backBtn.style.display = 'block';
-
-  if (carousel) {
-    carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-
-function backToLanding() {
-  const landing = document.getElementById('liturgyLanding');
-  const carousel = document.getElementById('qurbanaCarousel');
-  const backBtn = document.getElementById('backToLiturgies');
-
-  if (landing) landing.classList.remove('hidden');
-  if (carousel) carousel.classList.add('hidden');
-  if (backBtn) backBtn.style.display = 'none';
-
-  if (typeof currentPhaseIdx !== 'undefined' && currentPhaseIdx !== 0) {
-    switchPhase(0);
-  }
-
-  if (landing) {
-    landing.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-
-window.showLiturgy = showLiturgy;
-window.backToLanding = backToLanding;
-
-if (window.location.hash === '#holy-qurbana') {
-  showLiturgy('qurbana');
-}
-
 (function() {
   // Load phases directly from page data (no intro phase)
   const phases = {{ page.phases | jsonify }};
