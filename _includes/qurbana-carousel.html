@@ -1288,81 +1288,42 @@ if (window.location.hash === '#holy-qurbana') {
   // Make function globally accessible
   window.toggleSacredItem = toggleSacredItem;
 
+  var fullscreenParent = null;
+  var fullscreenNextSibling = null;
+
   function toggleFullscreen() {
-    var fullscreenWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
+    var fullscreenWrapper = document.getElementById('carouselFullscreenWrapper');
     if (!fullscreenWrapper) return;
 
-    var isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || fullscreenWrapper.classList.contains('custom-fullscreen');
-
-    var introHeading = carousel.querySelector('.qurbana-intro-heading');
-    var backNav = carousel.querySelector('.carousel-back-nav');
+    var isFullscreen = fullscreenWrapper.classList.contains('custom-fullscreen');
     var html = document.documentElement;
     var body = document.body;
 
     if (!isFullscreen) {
-      var req = fullscreenWrapper.requestFullscreen || fullscreenWrapper.webkitRequestFullscreen || fullscreenWrapper.mozRequestFullScreen || fullscreenWrapper.msRequestFullscreen;
-
-      if (req) {
-        req.call(fullscreenWrapper).catch(function(err) {
-          fullscreenWrapper.classList.add('custom-fullscreen');
-          if (introHeading) introHeading.style.display = 'none';
-          if (backNav) backNav.style.display = 'none';
-          html.style.overflow = 'hidden';
-          body.style.overflow = 'hidden';
-        });
-      } else {
-        fullscreenWrapper.classList.add('custom-fullscreen');
-        if (introHeading) introHeading.style.display = 'none';
-        if (backNav) backNav.style.display = 'none';
-        html.style.overflow = 'hidden';
-        body.style.overflow = 'hidden';
-      }
+      fullscreenParent = fullscreenWrapper.parentNode;
+      fullscreenNextSibling = fullscreenWrapper.nextSibling;
+      body.appendChild(fullscreenWrapper);
+      fullscreenWrapper.classList.add('custom-fullscreen');
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+      fullscreenWrapper.scrollTop = 0;
     } else {
       fullscreenWrapper.classList.remove('custom-fullscreen');
-      if (introHeading) introHeading.style.display = '';
-      if (backNav) backNav.style.display = '';
+      if (fullscreenParent) {
+        fullscreenParent.insertBefore(fullscreenWrapper, fullscreenNextSibling);
+      }
       html.style.overflow = '';
       body.style.overflow = '';
-      var exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
-      if (exit) {
-        exit.call(document);
-      }
     }
   }
 
-  function updateFullscreenStyles() {
-    var fullscreenWrapper = carousel.querySelector('.carousel-fullscreen-wrapper');
-    var imagePlaceholder = carousel.querySelector('.image-placeholder');
-    var carouselContent = carousel.querySelector('.carousel-content');
-
-    var isFullscreen = document.fullscreenElement === fullscreenWrapper ||
-                      document.webkitFullscreenElement === fullscreenWrapper ||
-                      document.mozFullScreenElement === fullscreenWrapper ||
-                      document.msFullscreenElement === fullscreenWrapper;
-
-    if (isFullscreen) {
-      imagePlaceholder.style.height = '75vh';
-      imagePlaceholder.style.flex = '0 0 75vh';
-      carouselContent.style.height = 'calc(100vh - 75vh)';
-      carouselContent.style.display = 'flex';
-      carouselContent.style.flexDirection = 'column';
-      carouselContent.style.overflowY = 'auto';
-      carouselContent.style.flex = '1';
-    } else {
-      imagePlaceholder.style.height = '';
-      imagePlaceholder.style.flex = '';
-      carouselContent.style.height = '';
-      carouselContent.style.display = '';
-      carouselContent.style.flexDirection = '';
-      carouselContent.style.overflowY = '';
-      carouselContent.style.flex = '';
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var wrapper = document.querySelector('.carousel-fullscreen-wrapper.custom-fullscreen');
+      if (wrapper) toggleFullscreen();
     }
-  }
+  });
 
-  document.addEventListener('fullscreenchange', updateFullscreenStyles);
-  document.addEventListener('webkitfullscreenchange', updateFullscreenStyles);
-  document.addEventListener('mozfullscreenchange', updateFullscreenStyles);
-  document.addEventListener('MSFullscreenChange', updateFullscreenStyles);
 
   // Setup carousel content
   const carouselContent = document.getElementById('carouselContent');

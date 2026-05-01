@@ -472,134 +472,80 @@
   transition: border-color 0.3s ease;
 }
 
-.carousel-fullscreen-wrapper:fullscreen,
-.carousel-fullscreen-wrapper:-webkit-full-screen,
-.carousel-fullscreen-wrapper:-moz-full-screen,
-.carousel-fullscreen-wrapper:-ms-fullscreen {
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  border-radius: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  z-index: 999999 !important;
-}
-
-.carousel-card:fullscreen .image-placeholder,
-.carousel-card:-webkit-full-screen .image-placeholder,
-.carousel-card:-moz-full-screen .image-placeholder,
-.carousel-card:-ms-fullscreen .image-placeholder {
-  flex: 0 0 55vh !important;
-  aspect-ratio: auto !important;
-  max-width: none !important;
-}
-
-.carousel-card:fullscreen .carousel-content,
-.carousel-card:-webkit-full-screen .carousel-content,
-.carousel-card:-moz-full-screen .carousel-content,
-.carousel-card:-ms-fullscreen .carousel-content,
-.carousel-fullscreen-wrapper.custom-fullscreen .carousel-content {
-  flex: 1 !important;
-  overflow-y: auto !important;
-  padding: 20px 25px !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 0 !important;
-}
 
 .carousel-fullscreen-wrapper.custom-fullscreen {
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  border-radius: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
   z-index: 999999 !important;
+  background: #fff !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
 
-
-/* Position tabs fixed at top in fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-intro-statement {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 10001 !important;
-  background: black !important;
-  padding: 8px 0 !important;
-  width: 100% !important;
-  margin: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+  background: #1a1a1a;
+  padding: 6px 0;
+  margin: 0;
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-tabs {
-  position: fixed !important;
-  top: 26px !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 10000 !important;
-  background: white !important;
-  padding: 8px 20px !important;
-  width: 100% !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  position: sticky;
+  top: 28px;
+  z-index: 10000;
+  background: #fff;
+  padding: 8px 0;
+  margin: 0 auto;
+  max-width: 900px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
 }
 
-/* Hide phase connector in fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .phase-connector {
   display: none !important;
 }
 
-/* Ensure carousel card is properly sized in custom fullscreen */
 .carousel-fullscreen-wrapper.custom-fullscreen .carousel-card {
-  flex: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: auto !important;
-  overflow: visible !important;
-  margin-top: 0 !important;
-  padding-top: 130px !important;
-}
-
-/* Ensure carouselContent is flex container in custom fullscreen */
-.carousel-fullscreen-wrapper.custom-fullscreen #carouselContent {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: auto !important;
-  overflow: visible !important;
+  border: 1px solid #e8e0cc !important;
+  border-top: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  border-radius: 0 0 6px 6px !important;
+  margin: 0 auto !important;
+  max-width: 900px;
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .image-placeholder {
-  flex: 0 0 55vh !important;
   width: 100% !important;
   margin: 0 !important;
+  aspect-ratio: 16 / 9;
 }
 
 .carousel-fullscreen-wrapper.custom-fullscreen .carousel-content {
-  flex: 1 !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  padding: 20px 25px !important;
+  padding: 16px 30px !important;
+}
+
+.carousel-fullscreen-wrapper.custom-fullscreen .fullscreen-btn {
+  position: fixed;
+  top: 6px;
+  right: 12px;
+  z-index: 10002;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 18px;
 }
 
 .image-placeholder {
