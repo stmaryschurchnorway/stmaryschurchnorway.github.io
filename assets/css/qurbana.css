@@ -1590,11 +1590,11 @@
 }
 
 .qurbana-church-structure-journey {
-  display: block;
+  display: none;
 }
 
-.qurbana-church-structure-journey.collapsed {
-  display: none;
+.qurbana-church-structure-journey.expanded {
+  display: block;
 }
 
 .qurbana-expanded-list {

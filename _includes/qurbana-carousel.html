@@ -40,7 +40,7 @@
 
     <p class="qurbana-intro-description" style="margin-top: 8px;">
       This sacred liturgy unfolds within the physical space of the church, where every architectural element carries deep spiritual significance.
-      <button type="button" class="qurbana-expand-arrow" onclick="document.querySelector('.qurbana-church-structure-journey').classList.toggle('collapsed')" title="Learn more about church structure">
+      <button type="button" class="qurbana-expand-arrow" onclick="document.querySelector('.qurbana-church-structure-journey').classList.toggle('expanded')" title="Learn more about church structure">
         <span style="font-size: 0.75rem; font-weight: 500;">Learn more</span> <span class="qurbana-expand-arrow-icon">▼</span>
       </button>
     </p>
@@ -1581,10 +1581,10 @@ window.backToLanding = backToLanding;
     }
 
     // Collapse church structure if scrolled past
-    if (churchStructure && !churchStructure.classList.contains('collapsed')) {
+    if (churchStructure && churchStructure.classList.contains('expanded')) {
       var rect = churchStructure.getBoundingClientRect();
       if (rect.top < -800) {
-        churchStructure.classList.add('collapsed');
+        churchStructure.classList.remove('expanded');
       }
     }
   });
