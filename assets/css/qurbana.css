@@ -282,11 +282,12 @@
 }
 
 .qurbana-intro-heading h2 {
-  font-size: 24px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.8rem;
   color: #d4a017;
   font-weight: 700;
   margin: 0 0 12px 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.5px;
 }
 
 .qurbana-intro-description {
@@ -441,11 +442,6 @@
   background: #c4920c;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(212, 160, 23, 0.3);
-}
-
-@keyframes qurbanaFill {
-  from { width: 0%; }
-  to { width: 100%; }
 }
 
 @keyframes bounceRight {
@@ -685,15 +681,6 @@
   transform: scale(0.95);
 }
 
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background: #d4a017;
-  width: 0;
-}
-
 .carousel-content {
   padding: 0;
   text-align: center;
@@ -734,9 +721,10 @@
 }
 
 .stage-title {
-  font-size: 18px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.45rem;
   font-weight: 700;
-  color: #333;
+  color: #d4a017;
   margin: 4px 0 0 0;
   line-height: 1.2;
 }
@@ -895,13 +883,12 @@
 /* === Phase cards (visual roadmap + tab navigation) === */
 .phase-intro-statement {
   text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #d4a017;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 36px 0 14px 0;
+  letter-spacing: 1px;
+  margin: 40px 0 24px 0;
 }
 .phase-tabs {
   display: grid;
@@ -1254,6 +1241,50 @@
     font-size: 14px;
   }
 
+  .qurbana-intro-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .qurbana-learn-more-expanded {
+    padding: 0 15px;
+  }
+
+  .qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
+    max-height: 2000px;
+    padding: 15px 15px;
+    margin-top: 15px;
+  }
+
+  .qurbana-expanded-section {
+    margin: 16px 0 0 0;
+    padding: 16px;
+  }
+
+  .qurbana-expanded-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .qurbana-expanded-section p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .qurbana-expanded-list {
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+
+  .qurbana-expanded-list li {
+    margin-bottom: 6px;
+  }
+
+  .intro-biblical {
+    margin: 12px 0;
+    padding: 12px;
+  }
+
   .phase-card-subparts {
     flex-direction: column;
     gap: 6px;
@@ -1427,12 +1458,8 @@
 }
 
 /* === Intro accordion (Learn more section) === */
-.qurbana-learn-more {
-  max-width: 760px;
-  margin: 26px auto 0 auto;
-  text-align: center;
-}
-.qurbana-learn-more-label {
+
+.qurbana-intro-button {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   color: #d4a017;
@@ -1448,26 +1475,162 @@
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
-.qurbana-learn-more-label:hover {
+
+.qurbana-intro-button:hover {
   border-color: #d4a017;
   background: #fffbf0;
 }
+
+.qurbana-expand-arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #d4a017;
+  vertical-align: baseline;
+  transition: transform 0.3s ease;
+  display: inline;
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.qurbana-expand-arrow:hover {
+  opacity: 0.7;
+}
+
+.qurbana-expand-arrow-icon {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-left: 2px;
+  animation: bounce-arrow 2s infinite ease-in-out;
+  vertical-align: -0.125em;
+  position: relative;
+  top: 1px;
+}
+
+.qurbana-intro-heading.expanded .qurbana-expand-arrow-icon {
+  transform: rotate(180deg);
+}
+
 .qurbana-learn-more-arrow {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 10px;
 }
-.qurbana-learn-more.open .qurbana-learn-more-arrow {
+
+.qurbana-learn-more-expanded {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
+  max-height: 2000px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.qurbana-intro-heading .qurbana-intro-button .qurbana-learn-more-arrow {
+  transform: rotate(0deg);
+}
+
+.qurbana-intro-heading.expanded .qurbana-intro-button .qurbana-learn-more-arrow {
   transform: rotate(180deg);
 }
-.qurbana-learn-more-content {
-  display: none;
-  margin-top: 14px;
+
+.qurbana-expanded-section {
+  margin: 0;
+  padding: 24px;
+  border: none;
+  border-radius: 8px;
+}
+
+.qurbana-expanded-section:nth-child(1) {
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
+}
+
+.qurbana-expanded-section:nth-child(2) {
+  background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
+}
+
+.qurbana-expanded-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.25rem;
+  color: #d4a017;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.5px;
   text-align: left;
 }
-.qurbana-learn-more.open .qurbana-learn-more-content {
+
+.qurbana-expanded-section p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section p {
+  font-size: 0.9rem;
+}
+
+.qurbana-expanded-section p:last-of-type {
+  margin-bottom: 0;
+}
+
+.qurbana-church-structure-journey {
+  display: none;
+}
+
+.qurbana-church-structure-journey.expanded {
   display: block;
+}
+
+.qurbana-expanded-list {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 12px 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.qurbana-expanded-list li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.qurbana-expanded-list li:before {
+  content: "◆ ";
+  color: #d4a017;
+  font-size: 0.6rem;
+  margin-right: 8px;
+}
+
+.intro-biblical {
+  margin: 14px 0;
+  padding: 14px;
+  background: white;
+  border-left: 4px solid #d4a017;
+  border-radius: 3px;
+  font-style: italic;
+  color: #555;
+  text-align: left;
+  font-size: 0.93rem;
+  line-height: 1.6;
 }
 .intro-accordion {
   background: #fffbf0;
@@ -1614,5 +1777,127 @@
   100% {
     background: linear-gradient(135deg, #fffaf0 0%, #fff9e6 50%, #fffaf0 100%) !important;
     box-shadow: 0 0 10px rgba(212, 160, 23, 0.6), inset 0 0 10px rgba(212, 160, 23, 0.2) !important;
+  }
+}
+
+/* Bouncing arrow animation */
+@keyframes bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.qurbana-expand-arrow-icon {
+  animation: bounce-arrow 2s infinite ease-in-out;
+}
+
+/* Church structure expandable section */
+.qurbana-church-structure-expanded {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.qurbana-church-structure-expanded.expanded {
+  max-height: 3000px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section {
+  margin: 0;
+  padding: 24px;
+  border: none;
+  border-radius: 8px;
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(1) {
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(2) {
+  background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(3) {
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
+}
+
+.qurbana-church-structure-expanded .qurbana-expanded-section:nth-child(4) {
+  background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
+}
+
+/* Veil section - full width, special styling */
+.qurbana-veil-section {
+  grid-column: 1 / -1;
+  margin: 8px 0 0 0;
+  padding: 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%);
+  border-left: 4px solid #d4a017;
+}
+
+.qurbana-expanded-subtitle {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0 0 1px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.qurbana-subtitle-note {
+  font-size: 0.85rem;
+  color: #d4a017;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+/* Expanded content responsive */
+@media (max-width: 1200px) {
+  .qurbana-church-structure-expanded {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .qurbana-church-structure-expanded {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .qurbana-learn-more-expanded {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .qurbana-learn-more-expanded {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .qurbana-church-structure-expanded {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .qurbana-expanded-section:nth-child(2) {
+    background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
   }
 }

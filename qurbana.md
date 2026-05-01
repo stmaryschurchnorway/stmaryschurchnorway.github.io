@@ -9,7 +9,7 @@ liturgies:
     title: "Holy Qurbana"
     malayalam: "വിശുദ്ധ കുർബാന"
     transliteration: "Vi-shud-dha Kur-ba-na"
-    description: "The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. Experience an interactive journey through 15 stages of this sacred ancient liturgy."
+    description: "The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. Experience an interactive journey through 16 stages of this sacred ancient liturgy."
     image: "/assets/img/qurbana-liturgy.png"
 
 intro:

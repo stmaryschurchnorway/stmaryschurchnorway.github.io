@@ -14,43 +14,118 @@
     </p>
     <p class="qurbana-intro-description">
       Holy Qurbana was instituted by our Lord Jesus Christ before His crucifixion. In Greek it is known as <em>Eucharist</em> &mdash; Thanksgiving &mdash; and is also called the <em>Sacrament of Sacraments</em>.
+      <button type="button" class="qurbana-expand-arrow" onclick="document.querySelector('.qurbana-intro-heading').classList.toggle('expanded')" title="Learn more">
+        <span style="font-size: 0.75rem; font-weight: 500;">Learn more</span> <span class="qurbana-expand-arrow-icon">▼</span>
+      </button>
     </p>
 
-    <div class="qurbana-learn-more">
-      <button type="button" class="qurbana-learn-more-label" onclick="this.parentElement.classList.toggle('open')">
-        Learn More About Holy Qurbana <span class="qurbana-learn-more-arrow">&#9660;</span>
-      </button>
+    <div class="qurbana-learn-more-expanded">
+      <div class="qurbana-expanded-section">
+        <h3 class="qurbana-expanded-title">The word "Qurbana"</h3>
+        <p>The word comes from two Syriac roots:</p>
+        <ul class="qurbana-expanded-list">
+          <li><span class="intro-malayalam">കുർബോനോ</span> <em>Kurbono</em> &mdash; offering object (അർപ്പിത വസ്തു)</li>
+          <li><span class="intro-malayalam">കൂറോബോ</span> <em>Kurobo</em> &mdash; offering (കാഴ്ച)</li>
+        </ul>
+        <p>In the eastern Syriac tradition, <em>Qurbana</em> means: <strong>Kazcha</strong> (offering), <strong>Bali</strong> (sacrifice), <strong>Dhaivathinu Nalkapettathu</strong> (offered to God). The Syriac word <em>Kareb</em> means: offered, a sacrifice.</p>
+      </div>
 
-      <div class="qurbana-learn-more-content">
-        <div class="intro-accordion" onclick="this.classList.toggle('open')">
-          <div class="intro-accordion-header">
-            <span class="intro-accordion-title">Why we face East</span>
-            <span class="intro-accordion-arrow">&#9660;</span>
-          </div>
-          <div class="intro-accordion-body">
-            <p>In all Orthodox Churches, both priest and congregation face East during the Holy Qurbana.</p>
-            <blockquote class="intro-biblical">"For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be." &mdash; St. Matthew 24:27</blockquote>
-            <p>When we celebrate the Eucharist, the whole congregation faces toward God, hoping for His second coming from the East.</p>
+      <div class="qurbana-expanded-section">
+        <h3 class="qurbana-expanded-title">Why we face East</h3>
+        <p>In all Orthodox Churches, both priest and congregation face East during the Holy Qurbana.</p>
+        <blockquote class="intro-biblical">"For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be." &mdash; St. Matthew 24:27</blockquote>
+        <p>When we celebrate the Eucharist, the whole congregation faces toward God, hoping for His second coming from the East.</p>
+      </div>
+    </div>
+
+    <p class="qurbana-intro-description" style="margin-top: 8px;">
+      This sacred liturgy unfolds within the physical space of the church, where every architectural element carries deep spiritual significance.
+      <button type="button" class="qurbana-expand-arrow" onclick="document.querySelector('.qurbana-church-structure-journey').classList.toggle('expanded')" title="Learn more about church structure">
+        <span style="font-size: 0.75rem; font-weight: 500;">Learn more</span> <span class="qurbana-expand-arrow-icon">▼</span>
+      </button>
+    </p>
+
+    <div class="qurbana-church-structure-journey" style="max-width: 500px; margin: 16px auto;">
+      <!-- ENTRANCE MARKER -->
+      <div style="text-align: center; margin-bottom: 14px;">
+        <span style="display: inline-block; font-size: 20px; transform: scaleY(-1); filter: sepia(100%) hue-rotate(30deg) brightness(1.2) saturate(1.5);">👣</span>
+        <div style="color: #d4a017; font-weight: 600; font-size: 13px; margin-top: 4px;">ENTRANCE</div>
+      </div>
+
+      <!-- CARD 1: Poomukham -->
+      <div style="background: white; border-top: 2px solid #d4a017; border-radius: 2px; margin-bottom: 10px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div style="width: 30px; height: 30px; background: #d4a017; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; margin-top: 2px;">1</div>
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 1px 0; color: #d4a017; font-weight: 600; font-size: 14px;">Poomukham</h4>
+            <small style="color: #999; font-size: 11px; display: block; margin-bottom: 6px;">Portico/Narthex — Place for Gentiles — West</small>
+            <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.5;">The entrance vestibule or porch area of the church. This space serves as a transition from the secular world into the sacred space.</p>
           </div>
         </div>
+      </div>
 
-        <div class="intro-accordion" onclick="this.classList.toggle('open')">
-          <div class="intro-accordion-header">
-            <span class="intro-accordion-title">The word "Qurbana"</span>
-            <span class="intro-accordion-arrow">&#9660;</span>
+      <div style="text-align: center; margin: 8px 0; color: #d4a017; font-size: 16px;">↓</div>
+
+      <!-- CARD 2: Haikala -->
+      <div style="background: white; border-top: 2px solid #d4a017; border-radius: 2px; margin-bottom: 10px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div style="width: 30px; height: 30px; background: #d4a017; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; margin-top: 2px;">2</div>
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 1px 0; color: #d4a017; font-weight: 600; font-size: 14px;">Haikala</h4>
+            <small style="color: #999; font-size: 11px; display: block; margin-bottom: 6px;">Nave — Main Hall for Congregation — West-Central</small>
+            <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.5;">The main body of the church where the congregation stands during worship. It represents the earth and the assembly of the faithful.</p>
           </div>
-          <div class="intro-accordion-body">
-            <p>The word comes from two Syriac roots:</p>
-            <ul>
-              <li><span class="intro-malayalam">കുർബോനോ</span> <em>Kurbono</em> &mdash; offering object (അർപ്പിത വസ്തു)</li>
-              <li><span class="intro-malayalam">കൂറോബോ</span> <em>Kurobo</em> &mdash; offering (കാഴ്ച)</li>
-            </ul>
-            <p>In the eastern Syriac tradition, <em>Qurbana</em> means: <strong>Kazcha</strong> (offering), <strong>Bali</strong> (sacrifice), <strong>Dhaivathinu Nalkapettathu</strong> (offered to God). The Syriac word <em>Kareb</em> means: offered, a sacrifice.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 8px 0; color: #d4a017; font-size: 16px;">↓</div>
+
+      <!-- CARD 3: Azhikakam -->
+      <div style="background: white; border-top: 2px solid #d4a017; border-radius: 2px; margin-bottom: 10px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div style="width: 30px; height: 30px; background: #d4a017; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; margin-top: 2px;">3</div>
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 1px 0; color: #d4a017; font-weight: 600; font-size: 14px;">Azhikakam</h4>
+            <small style="color: #999; font-size: 11px; display: block; margin-bottom: 6px;">Place Inside the Rails — Holy Place — Central</small>
+            <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.5;">The area between the Madbaha and the Haikala, within the sanctuary rails. This is a sacred space reserved for ordained clergy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 8px 0; color: #d4a017; font-size: 16px;">↓</div>
+
+      <!-- THE VEIL CARD -->
+      <div style="background: white; border-top: 2px solid #d4a017; border-radius: 2px; margin-bottom: 10px; padding: 12px; box-shadow: 0 2px 5px rgba(212, 160, 23, 0.1);">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div style="flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 28px; height: 32px; background: #f5f5f5; border: 2px solid #d4a017; border-radius: 1px; position: relative; display: flex; align-items: center; justify-content: center;">
+              <div style="color: #8B1E2D; font-size: 18px; font-weight: bold;">✚</div>
+              <div style="position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; background: #d4a017; border-radius: 1px;"></div>
+            </div>
+          </div>
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 1px 0; color: #d4a017; font-weight: 700; font-size: 14px;">The Veil (Altar Curtain)</h4>
+            <small style="color: #d4a017; font-size: 11px; display: block; margin-bottom: 6px; font-weight: 500;">Separates Heaven from Earth</small>
+            <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.5;">The veil separates the Madbaha from the Haikala, signifying the sky which separates Heaven from Earth. Drawn open and closed at solemn moments during the liturgy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 8px 0; color: #d4a017; font-size: 16px;">↓</div>
+
+      <!-- CARD 4: Madbaha -->
+      <div style="background: white; border-top: 2px solid #d4a017; border-radius: 2px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div style="width: 30px; height: 30px; background: #d4a017; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; margin-top: 2px;">4</div>
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 1px 0; color: #d4a017; font-weight: 600; font-size: 14px;">Madbaha</h4>
+            <small style="color: #999; font-size: 11px; display: block; margin-bottom: 6px;">Holy Sanctuary — Holy of Holies — East</small>
+            <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.5;">The most sacred part of the church, located at the eastern end. It represents heaven and the presence of God, containing the Altar (Thronos)—the throne of God.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
 
   <!-- Fullscreen wrapper -->
   <div class="carousel-fullscreen-wrapper" id="carouselFullscreenWrapper">
@@ -69,7 +144,6 @@
       <div id="youtubeContainer"></div>
       <span id="placeholderText">Video coming soon</span>
       <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⤢</button>
-      <div class="progress-bar" id="progressBar"></div>
     </div>
     <script defer src="https://www.youtube.com/iframe_api"></script>
 
@@ -189,7 +263,6 @@ window.backToLanding = backToLanding;
   const malayalamEl = carousel.querySelector('#malayalamText');
   const transliterationEl = carousel.querySelector('#transliteration');
   const descriptionEl = carousel.querySelector('#stageDescription');
-  const progressBar = carousel.querySelector('#progressBar');
   const audioBtn = carousel.querySelector('#audioBtn');
   const prevBtn = carousel.querySelector('#prevBtn');
   let nextBtn = carousel.querySelector('#nextBtn');
@@ -316,12 +389,48 @@ window.backToLanding = backToLanding;
     container.appendChild(wrapper);
   }
 
+  function preloadPhaseImages(phaseIdx) {
+    // Preload all images for stages in this phase
+    const phase = phases[phaseIdx];
+    if (!phase) return;
+
+    var imagesToPreload = [];
+
+    if (phase.subparts) {
+      phase.subparts.forEach(function(subpart) {
+        if (subpart.stages) {
+          subpart.stages.forEach(function(stage) {
+            if (stage.image && stage.image.trim()) {
+              imagesToPreload.push(stage.image);
+            }
+          });
+        }
+      });
+    } else if (phase.stages) {
+      phase.stages.forEach(function(stage) {
+        if (stage.image && stage.image.trim()) {
+          imagesToPreload.push(stage.image);
+        }
+      });
+    }
+
+    // Preload images in background
+    imagesToPreload.forEach(function(imageUrl) {
+      var img = new Image();
+      img.src = imageUrl;
+    });
+  }
+
   function switchPhase(phaseIdx) {
     // Only reset subpart index if actually changing phases
     if (currentPhaseIdx !== phaseIdx) {
       currentSubpartIdx = 0;  // Reset to first subpart only when switching to a different phase
     }
     currentPhaseIdx = phaseIdx;
+
+    // Preload images for this phase
+    preloadPhaseImages(phaseIdx);
+
     if (hasSubparts(phaseIdx)) {
       currentStageIdx = getSubpartStartIndex(phaseIdx, currentSubpartIdx);
     } else {
@@ -472,7 +581,6 @@ window.backToLanding = backToLanding;
     renderSubstagesPanel();
 
     loadVideo(stage);
-    resetProgressBar();
   }
 
   function renderHotspots(stage) {
@@ -765,11 +873,7 @@ window.backToLanding = backToLanding;
         },
         'onStateChange': function(event) {
           if (event.data === YT.PlayerState.PLAYING) {
-            resetProgressBar();
-            resumeProgressBar();
             nextBtn.classList.remove('bounce');
-          } else if (event.data === YT.PlayerState.PAUSED) {
-            pauseProgressBar();
           } else if (event.data === YT.PlayerState.ENDED) {
             nextBtn.classList.add('bounce');
           }
@@ -785,37 +889,6 @@ window.backToLanding = backToLanding;
     });
   }
 
-
-  function resetProgressBar() {
-    progressBar.style.animation = 'none';
-    void progressBar.offsetWidth;
-
-    var stage = stages[currentStageIdx];
-    var duration = '20s';
-
-    if (stage.youtube_id && window.currentPlayer) {
-      try {
-        var videoDuration = window.currentPlayer.getDuration();
-        if (videoDuration > 0) {
-          duration = videoDuration + 's';
-        }
-      } catch (e) {
-        // Fall back to 20s if we can't get duration
-      }
-    }
-
-    progressBar.style.animation = isPaused ? 'none' : ('qurbanaFill ' + duration + ' linear forwards');
-  }
-
-  function pauseProgressBar() {
-    isPaused = true;
-    progressBar.style.animationPlayState = 'paused';
-  }
-
-  function resumeProgressBar() {
-    isPaused = false;
-    progressBar.style.animationPlayState = 'running';
-  }
 
   // Task 6: Navigation Boundaries (with subpart awareness)
   function goToStage(index) {
@@ -1490,6 +1563,31 @@ window.backToLanding = backToLanding;
   createDots();
   updateDisplay();
   updatePhaseConnector();
+
+  // Preload images for the initial phase
+  preloadPhaseImages(currentPhaseIdx);
+
+  // Auto-collapse expanded sections when scrolled out of view
+  var introHeading = document.querySelector('.qurbana-intro-heading');
+  var churchStructure = document.querySelector('.qurbana-church-structure-journey');
+
+  window.addEventListener('scroll', function() {
+    // Collapse intro heading if scrolled past
+    if (introHeading && introHeading.classList.contains('expanded')) {
+      var rect = introHeading.getBoundingClientRect();
+      if (rect.top < -800) {
+        introHeading.classList.remove('expanded');
+      }
+    }
+
+    // Collapse church structure if scrolled past
+    if (churchStructure && churchStructure.classList.contains('expanded')) {
+      var rect = churchStructure.getBoundingClientRect();
+      if (rect.top < -800) {
+        churchStructure.classList.remove('expanded');
+      }
+    }
+  });
 
   // Hymn audio player
   const hymnAudio = document.getElementById('hymnAudio');
