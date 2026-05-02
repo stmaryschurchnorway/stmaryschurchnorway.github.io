@@ -809,19 +809,25 @@ h2.stage-title {
 #prevBtnFooter,
 #nextBtnFooter {
   width: auto;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d4a017;
+  box-shadow: 0 2px 8px rgba(212, 160, 23, 0.3);
+  min-width: 160px;
 }
 
 #prevBtnFooter:hover,
 #nextBtnFooter:hover {
-  background: #b8860b;
+  background: #c4920c;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.5);
+  transform: translateY(-2px);
 }
 
 #prevBtnFooter:active,
 #nextBtnFooter:active {
-  transform: scale(0.95);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(212, 160, 23, 0.3);
 }
 
 .progress-dots {
