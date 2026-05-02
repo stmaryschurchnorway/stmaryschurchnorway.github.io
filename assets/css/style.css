@@ -1269,7 +1269,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: grid;
   grid-template-columns: 90px 1fr auto;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
   padding: 18px 22px;
   background: #fff;
   border-radius: 8px;
