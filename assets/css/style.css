@@ -91,6 +91,10 @@ img { max-width: 100%; height: auto; display: block; }
   color: #b08a10;
   line-height: 1.3;
 }
+.logo-estd {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
 .logo-diocese {
   display: block;
   font-family: 'Lora', Georgia, serif;
