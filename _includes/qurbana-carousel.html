@@ -1354,7 +1354,7 @@
 
   // Stop all hymn audio playback
   function stopAllAudio() {
-    document.querySelectorAll('.hymn-audio-player').forEach(function(p) {
+    document.querySelectorAll('.hymn-audio-player, audio').forEach(function(p) {
       if (!p.paused) { p.pause(); p.currentTime = 0; }
     });
     var playingIcon = document.querySelector('.hymn-icon.playing');
@@ -1363,6 +1363,17 @@
       playingIcon.textContent = playingIcon.getAttribute('data-play');
     }
   }
+
+  // When any audio starts playing, pause all others
+  document.addEventListener('play', function(e) {
+    if (e.target.tagName === 'AUDIO') {
+      document.querySelectorAll('audio').forEach(function(player) {
+        if (player !== e.target && !player.paused) {
+          player.pause();
+        }
+      });
+    }
+  }, true);
 
   window.playHymn = function(hymnUrl, iconElement) {
     var playSymbol = iconElement.getAttribute('data-play');
