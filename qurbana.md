@@ -38,9 +38,11 @@ phases:
         image: "/assets/img/tuyobo-v3.jpg"
         hotspots:
           - item: "Shushepo (The Great Veil)"
-            x: 64.45
-            y: 56.85
-            radius: 10.17
+            x: 62
+            y: 58
+            radius: 10
+            label_x: 72
+            label_y: 48
         substages:
           - title: "The Vesting of the Priest"
             significance: "The priest puts on sacred vestments, symbolizing putting on Christ and the 'Armor of God' needed for spiritual struggle."
@@ -171,6 +173,8 @@ phases:
                 x: 51.8
                 y: 50.1
                 radius: 8
+                label_x: 51.8
+                label_y: 58
             substages:
               - title: "Promiun-Sedra & Blessing of the Censer"
                 hymn: "Blessing of the Censer"
@@ -359,6 +363,20 @@ phases:
             transliteration: "Pronunciation: Khan-dip-pin-te Shush-ru-sha"
             description: "The consecrated bread is solemnly broken through prayers evoking Christ's passion, death, and resurrection as the 'living bread' sacrificed for salvation. This sacred action visibly demonstrates the breaking of Christ's body for the salvation of the world and the unity of believers in His body, the Church."
             audioPhrase: "Fraction, breaking of the sacred bread"
+            image: "/assets/img/fraction.jpg"
+            hotspots:
+              - item: "Lahmo (Sacred Bread)"
+                x: 55
+                y: 73
+                radius: 6
+                label_x: 65
+                label_y: 65
+              - item: "Mazgogo (Sacred Wine)"
+                x: 60
+                y: 59
+                radius: 8
+                label_x: 72
+                label_y: 51
             substages:
               - title: "Fraction & Commixture"
                 hymn: "Anpudayone Nin Vathil (O Merciful One, at Your throne)"

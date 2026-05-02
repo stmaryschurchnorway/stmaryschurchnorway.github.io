@@ -492,8 +492,10 @@
     }
     subpartIndicatorEl.textContent = subpartName;
 
-    malayalamEl.textContent = stage.malayalam;
-    transliterationEl.textContent = stage.transliteration;
+    malayalamEl.textContent = stage.malayalam || '';
+    transliterationEl.textContent = stage.transliteration || '';
+    var malayalamSection = carousel.querySelector('#malayalamSection');
+    malayalamSection.style.display = (stage.malayalam || stage.transliteration) ? '' : 'none';
     descriptionEl.textContent = stage.description;
 
     carousel.querySelectorAll('.dot').forEach((dot, i) => {
@@ -536,143 +538,118 @@
       var style = document.createElement('style');
       style.id = 'hotspot-styles';
       style.textContent = `
-        @keyframes hotspot-pulse-ring {
-          0% {
-            r: 0.8;
-            opacity: 1;
-            stroke-width: 0.2;
-          }
-          50% {
-            opacity: 0.8;
-          }
-          100% {
-            r: 3;
-            opacity: 0;
-            stroke-width: 0.05;
-          }
+        @keyframes hotspot-glow {
+          0%, 100% { filter: drop-shadow(0 0 2px rgba(232, 197, 71, 0.8)); }
+          50% { filter: drop-shadow(0 0 5px rgba(232, 197, 71, 1)); }
         }
-        @keyframes hotspot-dot-pulse {
-          0% {
-            opacity: 1;
-            r: 0.8;
-            fill: #ffffff;
-          }
-          25% {
-            fill: #e8c547;
-          }
-          50% {
-            opacity: 0.8;
-            r: 1;
-            fill: #d4a017;
-          }
-          75% {
-            fill: #e8c547;
-          }
-          100% {
-            opacity: 1;
-            r: 0.8;
-            fill: #ffffff;
-          }
+        @keyframes hotspot-label-in {
+          from { opacity: 0; transform: translateY(3px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        .hotspot-circle {
-          transition: all 0.2s ease;
+        .hotspot-dot {
           fill: #e8c547;
-          stroke: none;
+          stroke: #fff;
+          stroke-width: 0.3;
           cursor: pointer;
-          animation: hotspot-dot-pulse 2s ease-in-out infinite;
-          filter: drop-shadow(0 0 1px rgba(212, 160, 23, 0.6));
-          pointer-events: none;
+          pointer-events: auto;
+          animation: hotspot-glow 2s ease-in-out infinite;
         }
-        .hotspot-ring {
-          animation: hotspot-pulse-ring 1.2s ease-out infinite;
-          fill: none;
-          stroke: #d4a017;
-          stroke-width: 0.2;
+        .hotspot-dot:hover {
+          fill: #d4a017;
+          filter: drop-shadow(0 0 4px rgba(232, 197, 71, 1));
+        }
+        .hotspot-line {
+          stroke: #fff;
+          stroke-width: 0.15;
+          opacity: 0;
+          filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.5));
+          transition: opacity 0.3s ease;
+        }
+        .hotspot-label {
+          fill: #fff;
+          font-weight: 600;
+          pointer-events: auto;
+          cursor: pointer;
+          opacity: 0;
+          filter: drop-shadow(0 0 2px rgba(0,0,0,0.7)) drop-shadow(0 0 4px rgba(0,0,0,0.4));
+          transition: opacity 0.3s ease;
+        }
+        .hotspots-svg.show-labels .hotspot-line {
+          opacity: 0.9;
+        }
+        .hotspots-svg.show-labels .hotspot-label {
           opacity: 1;
-          pointer-events: none;
+          animation: hotspot-label-in 0.4s ease-out;
         }
-        .hotspot-circle:hover {
-          filter: brightness(1.5) drop-shadow(0 0 2px rgba(212, 160, 23, 0.9));
-          animation: none;
-        }
-        .hotspot-circle:hover ~ .hotspot-ring {
-          filter: brightness(1.3);
+        .hotspot-label:hover {
+          fill: #e8c547;
         }
       `;
       document.head.appendChild(style);
     }
 
     stage.hotspots.forEach(function(hotspot) {
-      // Create group for tooltip and circle
       var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.style.cursor = 'pointer';
       g.style.pointerEvents = 'auto';
 
-      // Convert coordinates: treat values 0-1 as percentages (0-100)
       var cx = (hotspot.x <= 1) ? (hotspot.x * 100) : hotspot.x;
       var cy = (hotspot.y <= 1) ? (hotspot.y * 100) : hotspot.y;
-      var r = (hotspot.radius <= 1) ? (hotspot.radius * 100) : hotspot.radius;
 
-      // Create invisible larger hit area (for nearby mouse activation)
-      var hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      hitArea.setAttribute('cx', cx);
-      hitArea.setAttribute('cy', cy);
-      hitArea.setAttribute('r', 3.5);
-      hitArea.setAttribute('fill', 'rgba(0,0,0,0.01)');
-      hitArea.setAttribute('cursor', 'pointer');
-      hitArea.setAttribute('pointer-events', 'auto');
-      hitArea.style.cursor = 'pointer';
+      // label_x/label_y: absolute position for the label (defaults: same x, 4 units above)
+      var labelX = hotspot.label_x !== undefined ? hotspot.label_x : cx;
+      var labelY = hotspot.label_y !== undefined ? hotspot.label_y : (cy - 4);
 
-      // Create small filled dot (Variation 2: Small dot)
-      var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', cx);
-      circle.setAttribute('cy', cy);
-      circle.setAttribute('r', 0.8);
-      circle.setAttribute('class', 'hotspot-circle');
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', cx);
+      line.setAttribute('y1', labelY < cy ? cy - 1 : cy + 1);
+      line.setAttribute('x2', labelX);
+      line.setAttribute('y2', labelY < cy ? labelY + 1.5 : labelY - 1);
+      line.setAttribute('class', 'hotspot-line');
 
-      // Create expanding ring (Variation 2: Fast pulse ring)
-      var ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      ring.setAttribute('cx', cx);
-      ring.setAttribute('cy', cy);
-      ring.setAttribute('r', 0.8);
-      ring.setAttribute('class', 'hotspot-ring');
+      var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      dot.setAttribute('cx', cx);
+      dot.setAttribute('cy', cy);
+      dot.setAttribute('r', 1);
+      dot.setAttribute('class', 'hotspot-dot');
 
-      // Create tooltip text (no background, subtle)
-      var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      text.setAttribute('x', cx);
-      text.setAttribute('y', cy - 2);
-      text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('font-size', '1.4');
-      text.setAttribute('fill', 'white');
-      text.setAttribute('font-weight', '500');
-      text.setAttribute('opacity', '0');
-      text.setAttribute('pointer-events', 'none');
-      text.setAttribute('transition', 'opacity 0.2s ease');
-      text.setAttribute('filter', 'drop-shadow(0 0 1px rgba(0, 0, 0, 0.8))');
-      text.textContent = hotspot.item;
+      // Anchor label left/right/middle depending on position relative to dot
+      var anchor = 'middle';
+      if (labelX > cx + 3) anchor = 'start';
+      else if (labelX < cx - 3) anchor = 'end';
 
-      g.appendChild(hitArea);
-      g.appendChild(circle);
-      g.appendChild(ring);
-      g.appendChild(text);
+      var label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      label.setAttribute('x', labelX);
+      label.setAttribute('y', labelY);
+      label.setAttribute('text-anchor', anchor);
+      label.setAttribute('font-size', '2');
+      label.setAttribute('class', 'hotspot-label');
+      label.textContent = hotspot.item;
 
-      // Add hover effects to hit area
-      hitArea.addEventListener('mouseenter', function() {
-        text.setAttribute('opacity', '1');
-      }, { passive: true });
+      g.appendChild(line);
+      g.appendChild(dot);
+      g.appendChild(label);
 
-      hitArea.addEventListener('mouseleave', function() {
-        text.setAttribute('opacity', '0');
-      }, { passive: true });
-
-      // Add click handler to hit area
-      hitArea.addEventListener('click', function(e) {
+      g.addEventListener('click', function(e) {
         e.stopPropagation();
         scrollToSacredItem(hotspot.item);
       }, { passive: false });
 
       svg.appendChild(g);
     });
+
+    // Show labels on hover over image container (attach only once)
+    if (!container.hasAttribute('data-hotspot-hover')) {
+      container.setAttribute('data-hotspot-hover', 'true');
+      container.addEventListener('mouseenter', function() {
+        var s = container.querySelector('.hotspots-svg');
+        if (s) s.classList.add('show-labels');
+      }, { passive: true });
+      container.addEventListener('mouseleave', function() {
+        var s = container.querySelector('.hotspots-svg');
+        if (s) s.classList.remove('show-labels');
+      }, { passive: true });
+    }
 
     container.style.position = 'relative';
     container.appendChild(svg);
