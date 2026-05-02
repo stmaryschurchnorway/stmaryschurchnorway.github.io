@@ -732,6 +732,7 @@ h2.stage-title {
   margin-bottom: 4px;
   font-family: 'Meera', 'Noto Sans Malayalam', serif;
   line-height: 1.3;
+  white-space: pre-line;
 }
 
 .transliteration {

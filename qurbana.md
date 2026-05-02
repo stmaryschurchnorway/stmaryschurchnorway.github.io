@@ -108,7 +108,7 @@ phases:
             youtube_id: "GVt6kFB541s"
             substages:
               - title: "The Solemn Entrance"
-                hymn: "Nin Mathavu Vishudhanmar (നിൻ മാതാവ് വിശുദ്ധന്മാർ)"
+                hymn: "Nin Mathavu Vishudhanmar (Your Mother and Saints) — നിൻ മാതാവ് വിശുദ്ധന്മാർ"
                 hymn_audio: "/assets/audio/hymns/nin-mathavu.mp3"
                 significance: "A procession around the Altar with the censer, during which 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
                 ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
@@ -122,7 +122,7 @@ phases:
                     meaning: "Represents the prayers of the faithful rising before God's throne"
                     image: "/assets/img/sacred-items/vasnam_medium.svg"
               - title: "The Trisagion (Thrice Holy)"
-                hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam: ദൈവമേ നീ പരിശുദ്ധനാകുന്നു)"
+                hymn: "Kadeeshath Aloho (Holy is God) — കാദീശാത് അലോഹോ"
                 hymn_audio: "/assets/audio/hymns/kadeeshath-aloho.mp3"
                 hymn_audio_label: "Malayalam Version"
                 hymn_audio_2: "/assets/audio/hymns/kadeeshath-aloho-syriac.mp3"
@@ -134,14 +134,14 @@ phases:
                     meaning: "The focus is on the voice and unified proclamation of faith"
 
           - title: "Reading of the Scriptures"
-            malayalam: "വേദപുസ്തകപാരായണം"
+            malayalam: "വേദപുസ്തക\nപാരായണം"
             transliteration: "Pronunciation: Vedhapusthaka-parayana"
             description: "Scripture is proclaimed through readings from the Epistles and Gospels, presenting the 'life-giving proclamation' of Christ's teachings and redemptive work. These readings from Sacred Scripture educate and sanctify the faithful, preparing their hearts and minds for the sacred mystery of the Eucharist. The congregation responds with faith and affirmation of orthodox belief."
             audioPhrase: "Reading of the Scriptures"
             image: "/assets/img/reading-scriptures.jpg"
             substages:
               - title: "Ministry of the Word (Epistles & Gospel)"
-                hymn: "Apostle Reading (Paulose Sleeha) & Gospel Reading (Halleluiah)"
+                hymn: "Sleeha Vayana & Suvishesha Parayana (Apostle & Gospel Reading) — ശ്ലീഹാ വായന & സുവിശേഷ പാരായണം"
                 hymn_audio: "/assets/audio/hymns/paulose-sleeha.mp3"
                 hymn_audio_label: "Paulose Sleeha"
                 hymn_audio_2: "/assets/audio/hymns/haleluy-haleluya-sthuthiyam-balikale.mp3"
@@ -177,7 +177,7 @@ phases:
                 label_y: 58
             substages:
               - title: "Promiun-Sedra & Blessing of the Censer"
-                hymn: "Blessing of the Censer"
+                hymn: "Dhoopakatty Vazhvu (Blessing of the Censer) — ധൂപക്കുറ്റി വാഴ്വ്"
                 hymn_audio: "/assets/audio/hymns/blessing-of-censer.mp3"
                 significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
                 ritual_gesture: "The priest intones the Sedra prayers with hands raised. The censer is blessed with careful hand movements. The congregation recites the Nicene Creed standing, affirming the 'Church of the Apostles.'"
@@ -207,7 +207,7 @@ phases:
             image: "/assets/img/nicene-creed.jpg"
             substages:
               - title: "The Recitation of the Nicene Creed"
-                hymn: "The Nicene Creed"
+                hymn: "Nikya Vishwasapramanam (The Nicene Creed) — നിഖ്യാ വിശ്വാസപ്രമാണം"
                 hymn_audio: "/assets/audio/hymns/nicene-creed.mp3"
                 significance: "The whole congregation stands together, united in the apostolic faith. They recite the Nicene Creed regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed, formulated at the Council of Nicaea, guards the mystery of the Incarnation and prepares believers to participate in the sacred Eucharistic mystery."
                 ritual_gesture: "The faithful stand with reverence, often with hands folded or raised, voicing the creed in unison. This corporate recitation creates a moment of powerful unity among believers across centuries and cultures."
@@ -226,7 +226,7 @@ phases:
             image: "/assets/img/kiss-of-peace.jpg"
             substages:
               - title: "Reconciliation & The Kiss of Peace"
-                hymn: "Anyonyam Slomo Nalkin (Peace be unto us)"
+                hymn: "Anyonyam Slomo Nalkin (Peace be unto us) — അന്യോന്യം സ്ലോമോ നൽകിൻ"
                 hymn_audio: "/assets/audio/hymns/anyonyam-slomo-nalkin.mp3"
                 significance: "The Kiss of Peace is one of the most ancient and profound gestures of Christian worship. It expresses reconciliation, forgiveness, and unity among the faithful before approaching the Holy Mysteries."
                 theological_meaning: "It represents reconciliation with both God and neighbour before offering sacrifice (Matthew 5:23–24). It is a visible expression of the unity of the Body of Christ, where all divisions are healed in love."
@@ -346,7 +346,7 @@ phases:
             image: "/assets/img/tubden.jpg"
             substages:
               - title: "The Great Intercessions (Tubden)"
-                hymn: "Yachikkendum Samayamitha (In the time of need)"
+                hymn: "Yachikkendum Samayamitha (In the time of need) — യാചിക്കേണ്ടും സമയമിത"
                 hymn_audio: "/assets/audio/hymns/yaachikendum-samayamitha.mp3"
                 significance: "The hymn 'Yachikkendum Samayamitha' (In the time of need...) accompanies this section. The priest offers six canonical prayers (canons) of intercession: for living Spiritual Fathers (the Catholicose and Bishops), for living Faithful Brethren, for living Rulers and Authorities, for the Mother of God (St. Mary) and all Saints, for the Departed Fathers and Doctors of the Church, and for all the General Departed Faithful. Through these prayers, the earthly Church enters into communion with the heavenly Church, and the Consecrated Gifts are presented before God's throne as an offering for the whole world."
                 ritual_gesture: "The priest stands facing the altar, often with hands clasped or extended in supplication. His voice carries earnestness and care for those being prayed for. The congregation may kneel or bow slightly during these prayers, especially at the mention of the departed."
@@ -379,7 +379,7 @@ phases:
                 label_y: 51
             substages:
               - title: "Fraction & Commixture"
-                hymn: "Anpudayone Nin Vathil (O Merciful One, at Your throne)"
+                hymn: "Anpudayone Nin Vathil (O Merciful One, at Your Door) — അൻപുടയോനേ നിൻ വാതിൽ"
                 hymn_audio: "/assets/audio/hymns/anpudayone-nin-vaathil.mp3"
                 significance: "The curtain closes before the altar—a symbolic 'darkness' representing Christ's passion and death on the Cross. The hymn 'Anpudayone Nin Vathil' (O Merciful One, at Your throne we beseech...) is sung as the priest breaks the consecrated Bread and mixes it with the Wine. This action is not merely symbolic; it visibly demonstrates the breaking of Christ's body for the salvation of the world and signifies the unity of believers in His body, the Church. The mixing of the Body and Blood symbolizes the inseparability of Christ's saving work."
                 ritual_gesture: "The priest approaches the altar solemnly. With hands that have been sanctified by the Holy Spirit, he breaks the Bread into smaller portions and mixes them with the Wine. The action is reverent and deliberate, each movement carrying theological weight. The congregation watches in silent reverence, contemplating the mystery of Christ's self-giving love."
@@ -401,7 +401,7 @@ phases:
             image: "/assets/img/lords-prayer.jpg"
             substages:
               - title: "The Lord's Prayer Before Communion"
-                hymn: "Swargasthanaya Njangalude Pithave (Our Father in Heaven)"
+                hymn: "Swargasthanaya Njangalude Pithave (Our Father in Heaven) — സ്വർഗ്ഗസ്ഥനായ ഞങ്ങളുടെ പിതാവേ"
                 hymn_audio: "/assets/audio/hymns/swargasthanaya-njangalude-pithave.mp3"
                 significance: "The priest leads the congregation in reciting the prayer that Jesus Himself taught. The phrase 'Give us this day our daily bread' takes on profound meaning in this context—interpreted as a petition for the Bread of Heaven, the Body of Christ. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them spiritually and mentally to receive the Mysteries with proper devotion, faith, and readiness of heart."
                 ritual_gesture: "The priest and congregation pray together, often with hands folded or slightly open in a gesture of receiving. There is a sense of humility and need as believers acknowledge their dependence on God for spiritual nourishment."
@@ -441,7 +441,7 @@ phases:
             image: "/assets/img/holy-communion.jpg"
             substages:
               - title: "Holy Communion of the Faithful"
-                hymn: "Udayonarul Chaithu (O Lamb of God, shed for us)"
+                hymn: "Udayonarul Chaithu (O Lamb of God, shed for us) — ഉടയോനരുൾ ചെയ്തു"
                 hymn_audio: "/assets/audio/hymns/udayonarul-chaithu.mp3"
                 action: "The faithful receive the Body and Blood of Christ in reverence."
                 significance: "Holy Communion is the most intimate moment of participation in the life of Christ, where the faithful are united with Him sacramentally."
@@ -477,7 +477,7 @@ phases:
         image: "/assets/img/post-communion-service.jpg"
         substages:
           - title: "Thanksgiving Prayers and Hymns"
-            hymn: "Kazhchayithil Karthave Nin (Lord, at Your feet we beseech)"
+            hymn: "Kazhchayithil Karthave Nin (Lord, at Your feet we beseech) — കാഴ്ചയിതിൽ കർത്താവേ നിൻ"
             hymn_audio: "/assets/audio/hymns/kazhchayithil-karthave.mp3"
             significance: "After receiving the sacred mysteries, the congregation joins in prayers of thanksgiving, expressing gratitude for the grace and gift of communion. The altar assistants and congregation sing hymns in celebration of Christ's redemptive work and the mysteries received. A beautiful prayer is sung: 'May I serve you now and always in thy eternal and heavenly Kingdom,' expressing the hope that the faithful will continue to serve God throughout eternity."
             ritual_gesture: "The priest and congregation stand together in gratitude, voices raised in hymns of praise. The atmosphere is one of joy and reverence, acknowledging the transformation that has occurred within them through participation in the Holy Eucharist. The singing fills the sanctuary with thanksgiving."

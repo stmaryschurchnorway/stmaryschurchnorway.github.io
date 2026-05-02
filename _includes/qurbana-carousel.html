@@ -200,6 +200,7 @@
   const dotsContainer = carousel.querySelector('#progressDots');
   const phaseTabs = carousel.querySelector('#phaseTabs');
   const substagesPanel = carousel.querySelector('#substagesPanel');
+  const malayalamSection = carousel.querySelector('#malayalamSection');
 
   function hasSubparts(phaseIdx) {
     return phases[phaseIdx].subparts && phases[phaseIdx].subparts.length > 0;
@@ -388,9 +389,8 @@
   }
 
   function updateCarouselCardBorder() {
-    // Update carousel card borders to match active phase
-    const carouselCard = carousel.querySelector('.carousel-card');
-    const activePhaseCard = carousel.querySelector('.phase-card.active');
+    const carouselCard = document.querySelector('.carousel-card');
+    const activePhaseCard = document.querySelector('.phase-card.active');
     if (!carouselCard) return;
 
     // Color scheme for each phase - all uniform gold
@@ -494,11 +494,10 @@
 
     malayalamEl.textContent = stage.malayalam || '';
     transliterationEl.textContent = stage.transliteration || '';
-    var malayalamSection = carousel.querySelector('#malayalamSection');
     malayalamSection.style.display = (stage.malayalam || stage.transliteration) ? '' : 'none';
     descriptionEl.textContent = stage.description;
 
-    carousel.querySelectorAll('.dot').forEach((dot, i) => {
+    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
       const startIdx = hasSubparts(currentPhaseIdx)
         ? getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx)
         : getPhaseStartIndex(currentPhaseIdx);
