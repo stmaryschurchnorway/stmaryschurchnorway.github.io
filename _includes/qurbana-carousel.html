@@ -1133,7 +1133,7 @@
           hymnHTML = `
             <div class="hymn-section" style="margin-top:14px;">
               <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
-              <audio id="hymnAudioPlayer" controls style="width:100%;margin-top:8px;border-radius:4px;">
+              <audio class="hymn-audio-player" controls style="width:100%;margin-top:8px;border-radius:4px;">
                 <source src="${substage.hymn_audio}" type="${audioType}">
                 Your browser does not support the audio element.
               </audio>
@@ -1352,19 +1352,11 @@
     }
   });
 
-  // Helper: find the visible hymn audio player in the substages panel
-  function getHymnPlayer() {
-    return document.getElementById('hymnAudioPlayer');
-  }
-
-  // Stop all audio playback
+  // Stop all hymn audio playback
   function stopAllAudio() {
-    var player = getHymnPlayer();
-    if (player && !player.paused) {
-      console.log('[Qurbana] Stopping audio playback');
-      player.pause();
-      player.currentTime = 0;
-    }
+    document.querySelectorAll('.hymn-audio-player').forEach(function(p) {
+      if (!p.paused) { p.pause(); p.currentTime = 0; }
+    });
     var playingIcon = document.querySelector('.hymn-icon.playing');
     if (playingIcon) {
       playingIcon.classList.remove('playing');
@@ -1378,19 +1370,8 @@
 
     console.log('[Qurbana] Play hymn requested:', hymnUrl);
 
-    // Expand the substage that contains the hymn audio so the player is visible
-    var substageItems = document.querySelectorAll('.substage-item');
-    substageItems.forEach(function(item) {
-      var audio = item.querySelector('#hymnAudioPlayer');
-      if (audio) {
-        if (!item.classList.contains('expanded')) {
-          item.classList.remove('collapsed');
-          item.classList.add('expanded');
-        }
-      }
-    });
-
-    var player = getHymnPlayer();
+    // Find the first hymn audio player in the substages panel
+    var player = document.querySelector('.hymn-audio-player');
     if (!player) {
       console.error('[Qurbana] No hymn audio player found');
       return;
@@ -1398,11 +1379,17 @@
 
     // If already playing, pause
     if (!player.paused) {
-      console.log('[Qurbana] Pausing currently playing audio');
       player.pause();
       iconElement.classList.remove('playing');
       iconElement.textContent = playSymbol;
       return;
+    }
+
+    // Expand the substage that contains this player
+    var parentItem = player.closest('.substage-item');
+    if (parentItem && !parentItem.classList.contains('expanded')) {
+      parentItem.classList.remove('collapsed');
+      parentItem.classList.add('expanded');
     }
 
     // Play
@@ -1418,7 +1405,6 @@
 
     // Keep icon in sync when audio ends or is paused via native controls
     player.onended = function() {
-      console.log('[Qurbana] Audio playback ended');
       iconElement.classList.remove('playing');
       iconElement.textContent = playSymbol;
     };
