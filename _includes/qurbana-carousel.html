@@ -828,6 +828,8 @@
     }
 
     if (index >= phaseStartIdx && index <= phaseEndIdx) {
+      console.log('[Qurbana] Navigating to stage', index);
+      stopAllAudio();
       currentStageIdx = index;
       // Update currentSubpartIdx if phase has subparts
       if (hasSubparts(currentPhaseIdx)) {
@@ -857,6 +859,8 @@
     }
 
     if (currentStageIdx < (subpartEndIdx !== undefined ? subpartEndIdx : phaseEndIdx)) {
+      console.log('[Qurbana] Next stage');
+      stopAllAudio();
       currentStageIdx++;
       updateDisplay();
     } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx < phases[currentPhaseIdx].subparts.length - 1) {
@@ -896,6 +900,8 @@
     }
 
     if (currentStageIdx > (subpartStartIdx !== undefined ? subpartStartIdx : phaseStartIdx)) {
+      console.log('[Qurbana] Previous stage');
+      stopAllAudio();
       currentStageIdx--;
       updateDisplay();
     } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx > 0) {
@@ -1337,12 +1343,30 @@
 
   // Hymn audio player
   const hymnAudio = document.getElementById('hymnAudio');
+
+  // Stop all audio playback
+  function stopAllAudio() {
+    if (hymnAudio && !hymnAudio.paused) {
+      console.log('[Qurbana] Stopping audio playback');
+      hymnAudio.pause();
+      hymnAudio.currentTime = 0;
+      const playingIcon = document.querySelector('.hymn-icon.playing');
+      if (playingIcon) {
+        playingIcon.classList.remove('playing');
+        playingIcon.textContent = playingIcon.getAttribute('data-play');
+      }
+    }
+  }
+
   window.playHymn = function(hymnUrl, iconElement) {
     const playSymbol = iconElement.getAttribute('data-play');
     const stopSymbol = iconElement.getAttribute('data-stop');
 
+    console.log('[Qurbana] Play hymn requested:', hymnUrl);
+
     // Stop if already playing
     if (!hymnAudio.paused) {
+      console.log('[Qurbana] Pausing currently playing audio');
       hymnAudio.pause();
       hymnAudio.currentTime = 0;
       iconElement.classList.remove('playing');
@@ -1353,6 +1377,7 @@
     // Stop any other playing icon
     const oldIcon = document.querySelector('.hymn-icon.playing');
     if (oldIcon && oldIcon !== iconElement) {
+      console.log('[Qurbana] Stopping previous hymn');
       oldIcon.classList.remove('playing');
       oldIcon.textContent = oldIcon.getAttribute('data-play');
     }
@@ -1363,8 +1388,10 @@
 
     // Set source and play
     hymnAudio.src = hymnUrl;
+    console.log('[Qurbana] Loading audio source:', hymnUrl);
+
     hymnAudio.play().catch(function(error) {
-      console.error('Playback error:', error);
+      console.error('[Qurbana] Playback error:', error);
     });
 
     iconElement.classList.add('playing');
@@ -1372,6 +1399,7 @@
 
     // Handle end of audio
     hymnAudio.onended = function() {
+      console.log('[Qurbana] Audio playback ended');
       iconElement.classList.remove('playing');
       iconElement.textContent = playSymbol;
     };
