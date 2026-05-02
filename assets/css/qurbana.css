@@ -656,6 +656,8 @@
 
 .header-text {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
   padding: 0 8px;
 }
 
@@ -1302,7 +1304,8 @@ h2.stage-title {
   }
 
   .header-text {
-    padding: 0 6px;
+    padding: 0 4px;
+    overflow: hidden;
   }
 
   h2.stage-title {
@@ -1310,11 +1313,11 @@ h2.stage-title {
     margin-top: 2px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     min-width: 0;
+    word-break: break-word;
   }
 
   .stage-counter {
