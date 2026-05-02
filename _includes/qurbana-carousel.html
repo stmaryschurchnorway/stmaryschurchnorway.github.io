@@ -147,8 +147,7 @@
         <button class="icon-btn" id="nextBtnFooter" title="Next stage" aria-label="Next stage">Next →</button>
       </div>
 
-      <!-- Hidden audio player for hymn playback -->
-      <audio id="hymnAudio" style="display: none;"></audio>
+      <!-- hymnAudio removed: playHymn() now drives the visible <audio> inside .hymn-section -->
     </div>
     </div>
   </div>
@@ -1120,13 +1119,25 @@
       if (substage.hymn) {
         if (substage.hymn_audio) {
           const audioType = substage.hymn_audio.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+          let secondAudioHTML = '';
+          if (substage.hymn_audio_2) {
+            const audioType2 = substage.hymn_audio_2.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+            const label2 = substage.hymn_audio_2_label || 'Version 2';
+            secondAudioHTML = `
+              <div style="margin-top:10px;font-size:12px;color:#888;font-weight:600;">${label2}</div>
+              <audio controls style="width:100%;margin-top:4px;border-radius:4px;">
+                <source src="${substage.hymn_audio_2}" type="${audioType2}">
+              </audio>
+            `;
+          }
           hymnHTML = `
             <div class="hymn-section" style="margin-top:14px;">
               <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
-              <audio controls style="width:100%;margin-top:8px;border-radius:4px;">
+              <audio id="hymnAudioPlayer" controls style="width:100%;margin-top:8px;border-radius:4px;">
                 <source src="${substage.hymn_audio}" type="${audioType}">
                 Your browser does not support the audio element.
               </audio>
+              ${secondAudioHTML}
             </div>
           `;
         } else {
@@ -1341,76 +1352,83 @@
     }
   });
 
-  // Hymn audio player
-  const hymnAudio = document.getElementById('hymnAudio');
+  // Helper: find the visible hymn audio player in the substages panel
+  function getHymnPlayer() {
+    return document.getElementById('hymnAudioPlayer');
+  }
 
   // Stop all audio playback
   function stopAllAudio() {
-    if (hymnAudio && !hymnAudio.paused) {
+    var player = getHymnPlayer();
+    if (player && !player.paused) {
       console.log('[Qurbana] Stopping audio playback');
-      hymnAudio.pause();
-      hymnAudio.currentTime = 0;
-      const playingIcon = document.querySelector('.hymn-icon.playing');
-      if (playingIcon) {
-        playingIcon.classList.remove('playing');
-        playingIcon.textContent = playingIcon.getAttribute('data-play');
-      }
+      player.pause();
+      player.currentTime = 0;
+    }
+    var playingIcon = document.querySelector('.hymn-icon.playing');
+    if (playingIcon) {
+      playingIcon.classList.remove('playing');
+      playingIcon.textContent = playingIcon.getAttribute('data-play');
     }
   }
 
   window.playHymn = function(hymnUrl, iconElement) {
-    const playSymbol = iconElement.getAttribute('data-play');
-    const stopSymbol = iconElement.getAttribute('data-stop');
+    var playSymbol = iconElement.getAttribute('data-play');
+    var stopSymbol = iconElement.getAttribute('data-stop');
 
     console.log('[Qurbana] Play hymn requested:', hymnUrl);
 
-    // Stop if already playing
-    if (!hymnAudio.paused) {
+    // Expand the substage that contains the hymn audio so the player is visible
+    var substageItems = document.querySelectorAll('.substage-item');
+    substageItems.forEach(function(item) {
+      var audio = item.querySelector('#hymnAudioPlayer');
+      if (audio) {
+        if (!item.classList.contains('expanded')) {
+          item.classList.remove('collapsed');
+          item.classList.add('expanded');
+        }
+      }
+    });
+
+    var player = getHymnPlayer();
+    if (!player) {
+      console.error('[Qurbana] No hymn audio player found');
+      return;
+    }
+
+    // If already playing, pause
+    if (!player.paused) {
       console.log('[Qurbana] Pausing currently playing audio');
-      hymnAudio.pause();
-      hymnAudio.currentTime = 0;
+      player.pause();
       iconElement.classList.remove('playing');
       iconElement.textContent = playSymbol;
       return;
     }
 
-    // Stop any other playing icon
-    const oldIcon = document.querySelector('.hymn-icon.playing');
-    if (oldIcon && oldIcon !== iconElement) {
-      console.log('[Qurbana] Stopping previous hymn');
-      oldIcon.classList.remove('playing');
-      oldIcon.textContent = oldIcon.getAttribute('data-play');
-    }
-
-    // Reset audio state
-    hymnAudio.pause();
-    hymnAudio.currentTime = 0;
-
-    // Set source and play
-    hymnAudio.src = hymnUrl;
-    console.log('[Qurbana] Loading audio source:', hymnUrl);
-
-    hymnAudio.onerror = function() {
-      console.error('[Qurbana] Audio load error:', {
-        src: hymnAudio.src,
-        error: hymnAudio.error,
-        errorCode: hymnAudio.error ? hymnAudio.error.code : 'unknown',
-        errorMessage: hymnAudio.error ? hymnAudio.error.message : 'unknown'
-      });
-    };
-
-    hymnAudio.play().catch(function(error) {
+    // Play
+    player.play().catch(function(error) {
       console.error('[Qurbana] Playback error:', error.name, error.message);
     });
 
     iconElement.classList.add('playing');
     iconElement.textContent = stopSymbol;
 
-    // Handle end of audio
-    hymnAudio.onended = function() {
+    // Scroll the player into view
+    player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Keep icon in sync when audio ends or is paused via native controls
+    player.onended = function() {
       console.log('[Qurbana] Audio playback ended');
       iconElement.classList.remove('playing');
       iconElement.textContent = playSymbol;
+    };
+    player.onpause = function() {
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+    };
+    player.onplay = function() {
+      iconElement.classList.add('playing');
+      iconElement.textContent = stopSymbol;
     };
   };
 })();

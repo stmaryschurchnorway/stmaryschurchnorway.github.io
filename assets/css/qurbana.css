@@ -1307,6 +1307,13 @@ h2.stage-title {
   h2.stage-title {
     font-size: 14px;
     margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 
   .stage-counter {
@@ -1315,6 +1322,11 @@ h2.stage-title {
 
   .subpart-indicator {
     font-size: 10px;
+  }
+
+  .hymn-icon {
+    flex-shrink: 0;
+    margin-left: 2px;
   }
 
   .icon-btn {

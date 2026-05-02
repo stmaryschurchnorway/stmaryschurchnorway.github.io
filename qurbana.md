@@ -106,7 +106,7 @@ phases:
             youtube_id: "GVt6kFB541s"
             substages:
               - title: "The Solemn Entrance"
-                hymn: "Nin Mathavu"
+                hymn: "Nin Mathavu Vishudhanmar (നിൻ മാതാവ് വിശുദ്ധന്മാർ)"
                 hymn_audio: "/assets/audio/hymns/nin-mathavu.mp3"
                 significance: "A procession around the Altar with the censer, during which 'Nin Mathavu' (Mar Severios Manitho) is sung. This symbolizes Christ entering His public ministry as the 'Light of the World.'"
                 ritual_gesture: "The priest and deacon process solemnly around the altar, the censer swinging to spread incense throughout the sanctuary."
@@ -122,6 +122,8 @@ phases:
               - title: "The Trisagion (Thrice Holy)"
                 hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam: ദൈവമേ നീ പരിശുദ്ധനാകുന്നു)"
                 hymn_audio: "/assets/audio/hymns/kadeeshath-aloho.mp3"
+                hymn_audio_2: "/assets/audio/hymns/kadeeshath-aloho-syriac.mp3"
+                hymn_audio_2_label: "Syriac Version"
                 significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.'"
                 ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
                 sacred_items:
@@ -138,6 +140,8 @@ phases:
               - title: "Ministry of the Word (Epistles & Gospel)"
                 hymn: "Apostle Reading (Paulose Sleeha) & Gospel Reading (Halleluiah)"
                 hymn_audio: "/assets/audio/hymns/paulose-sleeha.mp3"
+                hymn_audio_2: "/assets/audio/hymns/haleluy-haleluya-sthuthiyam-balikale.mp3"
+                hymn_audio_2_label: "Haleluy Haleluya Sthuthiyam Balikale"
                 significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
                 ritual_gesture: "The deacon reads the Epistles from the lectern while the congregation listens in reverent silence. The Gospel is proclaimed by the priest with great solemnity. Bells are rung and fans are fluttered during the Gospel reading."
                 sacred_items:
@@ -338,6 +342,7 @@ phases:
             substages:
               - title: "The Great Intercessions (Tubden)"
                 hymn: "Yachikkendum Samayamitha (In the time of need)"
+                hymn_audio: "/assets/audio/hymns/yaachikendum-samayamitha.mp3"
                 significance: "The hymn 'Yachikkendum Samayamitha' (In the time of need...) accompanies this section. The priest offers six canonical prayers (canons) of intercession: for living Spiritual Fathers (the Catholicose and Bishops), for living Faithful Brethren, for living Rulers and Authorities, for the Mother of God (St. Mary) and all Saints, for the Departed Fathers and Doctors of the Church, and for all the General Departed Faithful. Through these prayers, the earthly Church enters into communion with the heavenly Church, and the Consecrated Gifts are presented before God's throne as an offering for the whole world."
                 ritual_gesture: "The priest stands facing the altar, often with hands clasped or extended in supplication. His voice carries earnestness and care for those being prayed for. The congregation may kneel or bow slightly during these prayers, especially at the mention of the departed."
                 sacred_items:
@@ -356,6 +361,7 @@ phases:
             substages:
               - title: "Fraction & Commixture"
                 hymn: "Anpudayone Nin Vathil (O Merciful One, at Your throne)"
+                hymn_audio: "/assets/audio/hymns/anpudayone-nin-vaathil.mp3"
                 significance: "The curtain closes before the altar—a symbolic 'darkness' representing Christ's passion and death on the Cross. The hymn 'Anpudayone Nin Vathil' (O Merciful One, at Your throne we beseech...) is sung as the priest breaks the consecrated Bread and mixes it with the Wine. This action is not merely symbolic; it visibly demonstrates the breaking of Christ's body for the salvation of the world and signifies the unity of believers in His body, the Church. The mixing of the Body and Blood symbolizes the inseparability of Christ's saving work."
                 ritual_gesture: "The priest approaches the altar solemnly. With hands that have been sanctified by the Holy Spirit, he breaks the Bread into smaller portions and mixes them with the Wine. The action is reverent and deliberate, each movement carrying theological weight. The congregation watches in silent reverence, contemplating the mystery of Christ's self-giving love."
                 sacred_items:
@@ -376,6 +382,8 @@ phases:
             image: "/assets/img/lords-prayer.jpg"
             substages:
               - title: "The Lord's Prayer Before Communion"
+                hymn: "Swargasthanaya Njangalude Pithave (Our Father in Heaven)"
+                hymn_audio: "/assets/audio/hymns/swargasthanaya-njangalude-pithave.mp3"
                 significance: "The priest leads the congregation in reciting the prayer that Jesus Himself taught. The phrase 'Give us this day our daily bread' takes on profound meaning in this context—interpreted as a petition for the Bread of Heaven, the Body of Christ. This prayer, taught by Christ Himself, sanctifies the faithful and prepares them spiritually and mentally to receive the Mysteries with proper devotion, faith, and readiness of heart."
                 ritual_gesture: "The priest and congregation pray together, often with hands folded or slightly open in a gesture of receiving. There is a sense of humility and need as believers acknowledge their dependence on God for spiritual nourishment."
                 sacred_items:
@@ -415,6 +423,8 @@ phases:
             image: "/assets/img/holy-communion.jpg"
             substages:
               - title: "Holy Communion of the Faithful"
+                hymn: "Udayonarul Chaithu (O Lamb of God, shed for us)"
+                hymn_audio: "/assets/audio/hymns/udayonarul-chaithu.mp3"
                 action: "The faithful receive the Body and Blood of Christ in reverence."
                 significance: "Holy Communion is the most intimate moment of participation in the life of Christ, where the faithful are united with Him sacramentally."
                 theological_meaning: "It is the real participation in the Body and Blood of Christ, strengthening the Church as one Body. It is the fulfillment of Christ's promise: 'He who eats My Flesh and drinks My Blood has eternal life.' It is both a remembrance of Christ's sacrifice and a living encounter with the risen Lord."
@@ -449,7 +459,8 @@ phases:
         image: "/assets/img/post-communion-service.jpg"
         substages:
           - title: "Thanksgiving Prayers and Hymns"
-            hymn: "May I serve you now and always in thy eternal and heavenly Kingdom"
+            hymn: "Kazhchayithil Karthave Nin (Lord, at Your feet we beseech)"
+            hymn_audio: "/assets/audio/hymns/kazhchayithil-karthave.mp3"
             significance: "After receiving the sacred mysteries, the congregation joins in prayers of thanksgiving, expressing gratitude for the grace and gift of communion. The altar assistants and congregation sing hymns in celebration of Christ's redemptive work and the mysteries received. A beautiful prayer is sung: 'May I serve you now and always in thy eternal and heavenly Kingdom,' expressing the hope that the faithful will continue to serve God throughout eternity."
             ritual_gesture: "The priest and congregation stand together in gratitude, voices raised in hymns of praise. The atmosphere is one of joy and reverence, acknowledging the transformation that has occurred within them through participation in the Holy Eucharist. The singing fills the sanctuary with thanksgiving."
             sacred_items:
