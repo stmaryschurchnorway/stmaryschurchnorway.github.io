@@ -141,6 +141,12 @@
 
       <div class="progress-dots" id="progressDots"></div>
 
+      <!-- Bottom navigation controls -->
+      <div class="controls-footer">
+        <button class="icon-btn" id="prevBtnFooter" title="Previous stage" aria-label="Previous stage">← Previous</button>
+        <button class="icon-btn" id="nextBtnFooter" title="Next stage" aria-label="Next stage">Next →</button>
+      </div>
+
       <!-- Hidden audio player for hymn playback -->
       <audio id="hymnAudio" style="display: none;"></audio>
     </div>
@@ -1288,8 +1294,14 @@
   // Setup carousel content
   const carouselContent = document.getElementById('carouselContent');
 
+  // Get footer navigation buttons
+  const prevBtnFooter = carousel.querySelector('#prevBtnFooter');
+  const nextBtnFooter = carousel.querySelector('#nextBtnFooter');
+
   prevBtn.addEventListener('click', prevStage);
   nextBtn.addEventListener('click', nextStage);
+  prevBtnFooter.addEventListener('click', prevStage);
+  nextBtnFooter.addEventListener('click', nextStage);
   fullscreenBtn.addEventListener('click', toggleFullscreen);
   audioBtn.addEventListener('click', playAudio);
 
