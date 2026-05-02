@@ -135,6 +135,8 @@ phases:
             image: "/assets/img/reading-scriptures.jpg"
             substages:
               - title: "Ministry of the Word (Epistles & Gospel)"
+                hymn_audio_apostle: "/assets/audio/hymns/paulose-sleeha.mp3"
+                hymn_audio_gospel: "/assets/audio/hymns/haleluy-haleluya-sthuthiyam-balikale.mp3"
                 significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
                 ritual_gesture: "The deacon reads the Epistles from the lectern while the congregation listens in reverent silence. The Gospel is proclaimed by the priest with great solemnity. Bells are rung and fans are fluttered during the Gospel reading."
                 sacred_items:
@@ -157,6 +159,7 @@ phases:
             description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
             audioPhrase: "Promiun-Sedra and blessing of incense"
             image: "/assets/img/sedra-blessing-v2.jpg"
+            hymn_audio: "/assets/audio/hymns/blessing-of-censer.mp3"
             hotspots:
               - item: "Dhoopakutty (Censer)"
                 x: 51.8
@@ -189,6 +192,7 @@ phases:
             transliteration: "Pronunciation: Vish-wa-sa Pra-ma-nam"
             description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
             audioPhrase: "The Nicene Creed"
+            hymn_audio: "/assets/audio/hymns/nicene-creed.mp3"
             image: "/assets/img/nicene-creed.jpg"
             substages:
               - title: "The Recitation of the Nicene Creed"
@@ -210,6 +214,7 @@ phases:
             substages:
               - title: "Reconciliation & The Kiss of Peace"
                 hymn: "Anyonyam Slomo Nalkin (Peace be unto us)"
+                hymn_audio: "/assets/audio/hymns/anyonyam-slomo-nalkin.mp3"
                 significance: "The Kiss of Peace is one of the most ancient and profound gestures of Christian worship. It expresses reconciliation, forgiveness, and unity among the faithful before approaching the Holy Mysteries."
                 theological_meaning: "It represents reconciliation with both God and neighbour before offering sacrifice (Matthew 5:23–24). It is a visible expression of the unity of the Body of Christ, where all divisions are healed in love."
                 liturgical_context: "Peace flows from the altar (Christ) to the priest, from the priest to the deacon, and then to the congregation, symbolizing that peace originates in Christ and is shared throughout the Church."
