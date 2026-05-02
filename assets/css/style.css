@@ -1224,6 +1224,7 @@ img { max-width: 100%; height: auto; display: block; }
   .logo img { height: 32px; }
   .logo-title { font-size: 0.78rem; }
   .logo-subtitle { font-size: 0.65rem; }
+  .logo-estd { font-size: 0.55rem; }
   .nav-links a { padding: 4px 8px; font-size: 0.63rem; }
   .section-title { font-size: 1.1rem; }
   .hierarchy-card img { width: 85px; height: 85px; }
