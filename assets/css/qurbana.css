@@ -712,7 +712,7 @@ h2.stage-title {
   padding: 12px 15px;
   border-radius: 0;
   margin: 20px 25px 20px 25px;
-  border-left: 4px solid #d4a017;
+  border-left: 2px solid #e8d5a0;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -772,7 +772,7 @@ h2.stage-title {
   margin: 0 25px 18px 25px;
   padding: 16px 20px;
   background: linear-gradient(135deg, #fffbf0 0%, #faf6ed 100%);
-  border-left: 4px solid #d4a017;
+  border-left: 2px solid #e8d5a0;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(212, 160, 23, 0.1);
   font-weight: 500;
