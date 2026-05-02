@@ -1492,7 +1492,7 @@ h2.stage-title {
   transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 24px;
 }
 
 .qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
