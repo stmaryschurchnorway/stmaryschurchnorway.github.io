@@ -120,7 +120,7 @@ phases:
                     meaning: "Represents the prayers of the faithful rising before God's throne"
                     image: "/assets/img/sacred-items/vasnam_medium.svg"
               - title: "The Trisagion (Thrice Holy)"
-                hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam)"
+                hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam: ദൈവമേ നീ പരിശുദ്ധനാകുന്നു)"
                 hymn_audio: "/assets/audio/hymns/kadeeshath-aloho.mp3"
                 significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.'"
                 ritual_gesture: "The congregation stands and sings in unison, their voices joining with the heavenly choir. At the phrase about the Crucifixion, a slight bow may be made in reverence."
