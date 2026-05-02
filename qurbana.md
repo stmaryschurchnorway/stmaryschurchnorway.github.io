@@ -135,8 +135,8 @@ phases:
             image: "/assets/img/reading-scriptures.jpg"
             substages:
               - title: "Ministry of the Word (Epistles & Gospel)"
-                hymn_audio_apostle: "/assets/audio/hymns/paulose-sleeha.mp3"
-                hymn_audio_gospel: "/assets/audio/hymns/haleluy-haleluya-sthuthiyam-balikale.mp3"
+                hymn: "Apostle Reading (Paulose Sleeha) & Gospel Reading (Halleluiah)"
+                hymn_audio: "/assets/audio/hymns/paulose-sleeha.mp3"
                 significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
                 ritual_gesture: "The deacon reads the Epistles from the lectern while the congregation listens in reverent silence. The Gospel is proclaimed by the priest with great solemnity. Bells are rung and fans are fluttered during the Gospel reading."
                 sacred_items:
@@ -159,7 +159,6 @@ phases:
             description: "A series of prayers and meditations, the Promiun-Sedra, culminates in the blessing of the censor. Incense is blessed, symbolizing Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. This sacred preparation bridges the proclamation of Scripture and the Eucharistic prayer."
             audioPhrase: "Promiun-Sedra and blessing of incense"
             image: "/assets/img/sedra-blessing-v2.jpg"
-            hymn_audio: "/assets/audio/hymns/blessing-of-censer.mp3"
             hotspots:
               - item: "Dhoopakutty (Censer)"
                 x: 51.8
@@ -167,6 +166,8 @@ phases:
                 radius: 8
             substages:
               - title: "Promiun-Sedra & Blessing of the Censer"
+                hymn: "Blessing of the Censer"
+                hymn_audio: "/assets/audio/hymns/blessing-of-censer.mp3"
                 significance: "The priest leads a series of meditative prayers (Sedra). He then blesses the censer, which burns incense as a symbol of Christ's 'fragrant offering and sacrifice' and the prayers of the faithful rising to heaven. The censer's structure carries deep theological meaning: 4 chains (Father, Spirit, and two natures of the Son) and 12 bells (the 12 Apostles proclaiming the Gospel). The Nicene Creed concludes this section, with the congregation standing in unity."
                 ritual_gesture: "The priest intones the Sedra prayers with hands raised. The censer is blessed with careful hand movements. The congregation recites the Nicene Creed standing, affirming the 'Church of the Apostles.'"
                 sacred_items:
@@ -192,10 +193,11 @@ phases:
             transliteration: "Pronunciation: Vish-wa-sa Pra-ma-nam"
             description: "The congregation affirmatively proclaims the Nicene Creed, reciting the apostolic faith regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed unites the faithful in orthodox belief and prepares them to participate in the Eucharistic mystery."
             audioPhrase: "The Nicene Creed"
-            hymn_audio: "/assets/audio/hymns/nicene-creed.mp3"
             image: "/assets/img/nicene-creed.jpg"
             substages:
               - title: "The Recitation of the Nicene Creed"
+                hymn: "The Nicene Creed"
+                hymn_audio: "/assets/audio/hymns/nicene-creed.mp3"
                 significance: "The whole congregation stands together, united in the apostolic faith. They recite the Nicene Creed regarding the Trinity, the Church, baptism, and the resurrection of the dead. This ancient creed, formulated at the Council of Nicaea, guards the mystery of the Incarnation and prepares believers to participate in the sacred Eucharistic mystery."
                 ritual_gesture: "The faithful stand with reverence, often with hands folded or raised, voicing the creed in unison. This corporate recitation creates a moment of powerful unity among believers across centuries and cultures."
                 sacred_items:
