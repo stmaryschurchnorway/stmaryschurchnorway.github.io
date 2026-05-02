@@ -1132,7 +1132,7 @@ img { max-width: 100%; height: auto; display: block; }
    RESPONSIVE — Tablet (max 768px)
    ============================================ */
 @media (max-width: 768px) {
-  .hero-banner { height: 240px; }
+  .hero-banner { height: 180px; }
   .hero-title { font-size: 1.3rem; }
   .hero-subtitle { font-size: 0.8rem; }
   .join-us { padding: 36px 16px; }
@@ -1213,9 +1213,9 @@ img { max-width: 100%; height: auto; display: block; }
    RESPONSIVE — Small phones (max 480px)
    ============================================ */
 @media (max-width: 480px) {
-  .hero-banner { height: 200px; }
+  .hero-banner { height: 160px; }
   .hero-title { font-size: 1.1rem; }
-  .hero-overlay { padding: 24px 16px; }
+  .hero-overlay { padding: 16px 16px; }
   .top-bar { font-size: 0.65rem; }
   .logo img { height: 32px; }
   .logo-title { font-size: 0.78rem; }
