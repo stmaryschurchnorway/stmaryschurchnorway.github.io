@@ -1390,8 +1390,17 @@
     hymnAudio.src = hymnUrl;
     console.log('[Qurbana] Loading audio source:', hymnUrl);
 
+    hymnAudio.onerror = function() {
+      console.error('[Qurbana] Audio load error:', {
+        src: hymnAudio.src,
+        error: hymnAudio.error,
+        errorCode: hymnAudio.error ? hymnAudio.error.code : 'unknown',
+        errorMessage: hymnAudio.error ? hymnAudio.error.message : 'unknown'
+      });
+    };
+
     hymnAudio.play().catch(function(error) {
-      console.error('[Qurbana] Playback error:', error);
+      console.error('[Qurbana] Playback error:', error.name, error.message);
     });
 
     iconElement.classList.add('playing');
