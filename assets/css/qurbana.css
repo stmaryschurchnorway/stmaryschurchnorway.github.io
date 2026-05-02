@@ -812,16 +812,17 @@ h2.stage-title {
   padding: 8px 14px;
   font-size: 13px;
   font-weight: 500;
-  background: #f5f5f5;
-  color: #666;
-  border: 1px solid #ddd;
+  background: #fffef0;
+  color: #8B6F47;
+  border: 1px solid #e8c547;
   box-shadow: none;
 }
 
 #prevBtnFooter:hover,
 #nextBtnFooter:hover {
-  background: #e8e8e8;
-  color: #333;
+  background: #fef9e7;
+  color: #6B4F27;
+  border-color: #d4a017;
   box-shadow: none;
   transform: none;
 }
