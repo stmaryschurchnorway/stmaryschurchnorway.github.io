@@ -1356,8 +1356,13 @@ img { max-width: 100%; height: auto; display: block; }
     grid-template-columns: 72px 1fr;
     gap: 14px;
     padding: 14px 16px;
+    align-items: flex-start;
   }
-  .event-add-cal { display: none; }
+  .event-body { grid-column: 1 / -1; }
+  .event-add-cal {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
   .event-date { padding: 8px 4px; }
   .event-datenum { font-size: 1.0rem; }
 }
