@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <img src="{{ '/assets/img/reading-scriptures.jpg' | relative_url }}" alt="Holy Qurbana at St. Mary's Church" class="hero-img">
+  <div class="hero-overlay">
+    <h1 class="hero-title">St. Mary's Malankara Syriac Orthodox Church</h1>
+    <p class="hero-subtitle">Oslo, Norway</p>
+  </div>
+</section>
+
 <!-- Daily Thought (rotating) -->
 {% assign day = 'now' | date: '%j' | plus: 0 %}
 {% assign active_index = day | modulo: site.data.quotes.size %}
@@ -218,5 +227,17 @@ layout: default
   }
 })();
 </script>
+
+<!-- Join Us CTA -->
+<section class="join-us">
+  <div class="join-us-inner">
+    <h2>Join Us for Worship</h2>
+    <p>We celebrate the Holy Qurbana monthly at<br><strong>{{ site.address }}</strong></p>
+    <div class="join-us-buttons">
+      <a href="{{ '/events/' | relative_url }}" class="btn btn-join">View Schedule</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-join-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
 
 {{ content }}
