@@ -274,7 +274,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Welcome Section === */
 .welcome {
-  padding: 40px 20px;
+  padding: 25px 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -418,7 +418,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Gallery Section === */
 .gallery-section {
-  padding: 40px 20px;
+  padding: 25px 20px;
   background: linear-gradient(135deg, #d4a017 0%, #e6b422 50%, #d4a017 100%);
 }
 .gallery-section .section-title { color: #fff; }
@@ -772,7 +772,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === News Section === */
 .news-section {
-  padding: 40px 20px;
+  padding: 25px 20px;
   background: #fafafa;
 }
 .news-grid {
@@ -1065,7 +1065,7 @@ img { max-width: 100%; height: auto; display: block; }
 .site-footer {
   background: #2a2a2a;
   color: #bbb;
-  padding: 40px 20px;
+  padding: 25px 20px;
   font-size: 0.85rem;
 }
 .footer-inner {
@@ -1243,7 +1243,7 @@ img { max-width: 100%; height: auto; display: block; }
 .upcoming-events-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 25px 20px;
 }
 .events-container {
   display: grid;
@@ -1371,11 +1371,11 @@ img { max-width: 100%; height: auto; display: block; }
 .daily-quote {
   position: relative;
   overflow: hidden;
-  min-height: 90px;
+  min-height: 105px;
 }
 .daily-quote .slides {
   position: relative;
-  min-height: 70px;
+  min-height: 85px;
 }
 .quote-slide {
   position: absolute;

@@ -13,7 +13,7 @@ description: "Visit St. Mary's Malankara Syriac Orthodox Church at Eikeli Katols
 
 **{{ site.address }}**
 
-&#9993; [{{ site.email }}](mailto:{{ site.email }})
+&#9993; <a href="#" class="email-link" data-email="c3RtYXJ5c2NodXJjaG5vcndheUBnbWFpbC5jb20=" aria-label="Church email">Email us</a>
 
 &#9742; <img src="{{ '/assets/img/phone-committee.svg' | relative_url }}" alt="Phone" class="phone-img" style="vertical-align:middle;">
 

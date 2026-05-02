@@ -50,6 +50,20 @@
     });
   })();
 
+  // Decode obfuscated email links
+  (function() {
+    document.querySelectorAll('.email-link').forEach(function(link) {
+      var encoded = link.getAttribute('data-email');
+      if (encoded) {
+        var email = atob(encoded);
+        link.href = 'mailto:' + email;
+        if (!link.textContent || link.textContent === 'Email us') {
+          link.textContent = email;
+        }
+      }
+    });
+  })();
+
   // Fetch next event from Google Calendar
   (function() {
     var el = document.getElementById('next-event');
