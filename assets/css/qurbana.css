@@ -543,9 +543,10 @@
   top: 6px;
   right: 12px;
   z-index: 10002;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
+  background: rgba(255,255,255,0.9);
+  color: #333;
   font-size: 18px;
+  border: 1px solid #ddd;
 }
 
 .image-placeholder {
