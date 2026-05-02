@@ -317,7 +317,6 @@ phases:
                 radius: 40
             substages:
               - title: "Epiclesis - The Invocation of the Holy Spirit"
-                hymn: "Karthav Utharam Arulename (Answer us, O Lord)"
                 significance: "The Epiclesis is the most solemn invocation of the Holy Spirit upon the offered gifts."
                 theological_meaning: "The priest stretches his hands over the bread and wine, symbolizing the descent of the Holy Spirit. The Holy Spirit sanctifies, perfects, and transforms the gifts into the Body and Blood of Christ. It reflects the work of the Spirit at creation and at Pentecost, continuing God's sanctifying presence in the Church."
                 spiritual_message: "The faithful are reminded that it is God Himself who accomplishes the mystery of the Eucharist, not human power, but divine grace."
