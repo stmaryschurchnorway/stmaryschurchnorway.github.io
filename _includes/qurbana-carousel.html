@@ -1120,12 +1120,15 @@
         if (substage.hymn_audio) {
           const audioType = substage.hymn_audio.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
           let secondAudioHTML = '';
+          let firstLabel = '';
           if (substage.hymn_audio_2) {
             const audioType2 = substage.hymn_audio_2.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+            const label1 = substage.hymn_audio_label || 'Malayalam Version';
             const label2 = substage.hymn_audio_2_label || 'Version 2';
+            firstLabel = `<div style="margin-top:4px;font-size:12px;color:#888;font-weight:600;">${label1}</div>`;
             secondAudioHTML = `
-              <div style="margin-top:10px;font-size:12px;color:#888;font-weight:600;">${label2}</div>
-              <audio controls style="width:100%;margin-top:4px;border-radius:4px;">
+              <div style="margin-top:12px;font-size:12px;color:#888;font-weight:600;">${label2}</div>
+              <audio class="hymn-audio-player" controls style="width:100%;margin-top:4px;border-radius:4px;">
                 <source src="${substage.hymn_audio_2}" type="${audioType2}">
               </audio>
             `;
@@ -1133,7 +1136,8 @@
           hymnHTML = `
             <div class="hymn-section" style="margin-top:14px;">
               <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
-              <audio class="hymn-audio-player" controls style="width:100%;margin-top:8px;border-radius:4px;">
+              ${firstLabel}
+              <audio class="hymn-audio-player" controls style="width:100%;margin-top:4px;border-radius:4px;">
                 <source src="${substage.hymn_audio}" type="${audioType}">
                 Your browser does not support the audio element.
               </audio>

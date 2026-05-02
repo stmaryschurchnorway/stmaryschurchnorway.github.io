@@ -122,6 +122,7 @@ phases:
               - title: "The Trisagion (Thrice Holy)"
                 hymn: "Kadeeshath Aloho (Syriac) / Daivame Nee Parishudhanakunnu (Malayalam: ദൈവമേ നീ പരിശുദ്ധനാകുന്നു)"
                 hymn_audio: "/assets/audio/hymns/kadeeshath-aloho.mp3"
+                hymn_audio_label: "Malayalam Version"
                 hymn_audio_2: "/assets/audio/hymns/kadeeshath-aloho-syriac.mp3"
                 hymn_audio_2_label: "Syriac Version"
                 significance: "The congregation addresses Christ directly, proclaiming 'Holy, Holy, Holy' (Kadeeshath Aloho in Syriac / Daivame Nee Parishudhanakunnu in Malayalam), and affirms that the Immortal God suffered in the flesh by adding the phrase 'Who wast crucified for us.'"
@@ -140,6 +141,7 @@ phases:
               - title: "Ministry of the Word (Epistles & Gospel)"
                 hymn: "Apostle Reading (Paulose Sleeha) & Gospel Reading (Halleluiah)"
                 hymn_audio: "/assets/audio/hymns/paulose-sleeha.mp3"
+                hymn_audio_label: "Paulose Sleeha"
                 hymn_audio_2: "/assets/audio/hymns/haleluy-haleluya-sthuthiyam-balikale.mp3"
                 hymn_audio_2_label: "Haleluy Haleluya Sthuthiyam Balikale"
                 significance: "The Epistles (represented by 'Paulose Sleeha Dhanyan' - Blessed Apostle Paul) are read from the Acts or Epistles, representing the teachings of the Apostles. The Gospel is then proclaimed from the center of the Altar, preceded by 'Halleluiah.' The sermon follows, mirroring Christ's teaching in the synagogues."
@@ -315,7 +317,7 @@ phases:
                 radius: 40
             substages:
               - title: "Epiclesis - The Invocation of the Holy Spirit"
-                hymn: "Adiyangalodu Utharam Arulename (Answer us, O Lord)"
+                hymn: "Karthav Utharam Arulename (Answer us, O Lord)"
                 significance: "The Epiclesis is the most solemn invocation of the Holy Spirit upon the offered gifts."
                 theological_meaning: "The priest stretches his hands over the bread and wine, symbolizing the descent of the Holy Spirit. The Holy Spirit sanctifies, perfects, and transforms the gifts into the Body and Blood of Christ. It reflects the work of the Spirit at creation and at Pentecost, continuing God's sanctifying presence in the Church."
                 spiritual_message: "The faithful are reminded that it is God Himself who accomplishes the mystery of the Eucharist, not human power, but divine grace."
@@ -398,7 +400,6 @@ phases:
             image: "/assets/img/holy-things-to-the-holy.jpg"
             substages:
               - title: "Elevation & The Proclamation of Holiness"
-                hymn: "Vishudhiyum (Syriac: Kandishal)"
                 action: "The priest elevates the Holy Mysteries, proclaiming the sanctified Gifts."
                 significance: "This moment is a solemn proclamation that the Holy Gifts—now consecrated as the Body and Blood of Christ—are offered to the faithful in holiness and reverence."
                 theological_meaning: "The phrase 'Holy Things to the Holy' expresses that the Eucharist is to be received by those who are spiritually prepared through repentance, faith, and reconciliation. It reflects the vision of heavenly worship where only the purified partake in divine glory. It echoes the call to holiness required to approach the mysteries of God."
