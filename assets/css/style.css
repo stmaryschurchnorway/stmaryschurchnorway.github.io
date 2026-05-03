@@ -1343,38 +1343,25 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.55;
   white-space: pre-line;
 }
-.event-add-cal {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #fff;
-  background: #d4a017;
-  padding: 5px 8px;
-  border-radius: 20px;
-  white-space: nowrap;
-  transition: background 0.2s;
-  cursor: pointer;
-  grid-column: 3;
-  grid-row: 1;
-}
-.event-add-cal:hover {
-  background: #b88a0e;
-}
+.event-add-cal,
 .event-share-whatsapp {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
   background: #d4a017;
-  padding: 5px 12px;
+  padding: 5px 0;
   border-radius: 20px;
   white-space: nowrap;
   transition: background 0.2s;
   cursor: pointer;
   grid-column: 3;
-  grid-row: 2;
-  margin-top: 8px;
+  width: 160px;
+  text-align: center;
 }
+.event-add-cal { grid-row: 1; }
+.event-share-whatsapp { grid-row: 2; margin-top: 8px; }
+.event-add-cal:hover,
 .event-share-whatsapp:hover {
   background: #b88a0e;
 }
