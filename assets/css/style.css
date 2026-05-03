@@ -1272,7 +1272,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .event-card {
   display: grid;
-  grid-template-columns: 90px 1fr auto auto;
+  grid-template-columns: 90px 1fr auto;
   gap: 20px;
   align-items: flex-start;
   padding: 18px 22px;
@@ -1348,6 +1348,8 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
   transition: background 0.2s;
   cursor: pointer;
+  grid-column: 3;
+  grid-row: 1;
 }
 .event-add-cal:hover {
   background: #b88a0e;
@@ -1363,7 +1365,9 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
   transition: background 0.2s;
   cursor: pointer;
-  margin-left: 12px;
+  grid-column: 3;
+  grid-row: 2;
+  margin-top: 8px;
 }
 .event-share-whatsapp:hover {
   background: #b88a0e;
