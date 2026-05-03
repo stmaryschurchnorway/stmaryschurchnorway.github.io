@@ -1373,7 +1373,13 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 14px 16px;
     align-items: flex-start;
   }
-  .event-date { padding: 8px 4px; }
+  .event-date {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
   .event-body { grid-column: 1 / -1; }
   .event-actions {
     grid-column: 1 / -1;
