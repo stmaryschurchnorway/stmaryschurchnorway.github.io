@@ -368,6 +368,38 @@
     });
   }
 
+  const bibleBooks = {
+    'Gen': 'GEN', 'Ex': 'EXO', 'Lev': 'LEV', 'Num': 'NUM', 'Deut': 'DEU',
+    'Josh': 'JOS', 'Judg': 'JDG', 'Ruth': 'RUT', '1 Sam': '1SA', '2 Sam': '2SA',
+    '1 Kings': '1KI', '2 Kings': '2KI', '1 Chr': '1CH', '2 Chr': '2CH',
+    'Neh': 'NEH', 'Job': 'JOB', 'Psalm': 'PSA', 'Prov': 'PRO', 'Eccl': 'ECC',
+    'Isaiah': 'ISA', 'Jer': 'JER', 'Lam': 'LAM', 'Ezek': 'EZK', 'Dan': 'DAN',
+    'Hosea': 'HOS', 'Joel': 'JOL', 'Amos': 'AMO', 'Jonah': 'JON', 'Micah': 'MIC',
+    'Nahum': 'NAM', 'Hab': 'HAB', 'Zeph': 'ZEP', 'Hag': 'HAG', 'Zech': 'ZEC', 'Mal': 'MAL',
+    'Matthew': 'MAT', 'Mark': 'MRK', 'Luke': 'LUK', 'John': 'JHN', 'Acts': 'ACT',
+    'Rom': 'ROM', '1 Cor': '1CO', '2 Cor': '2CO', 'Gal': 'GAL', 'Eph': 'EPH',
+    'Phil': 'PHP', 'Col': 'COL', '1 Thess': '1TH', '2 Thess': '2TH',
+    '1 Tim': '1TI', '2 Tim': '2TI', 'Titus': 'TIT', 'Philem': 'PHM',
+    'Heb': 'HEB', 'James': 'JAS', '1 Pet': '1PE', '2 Pet': '2PE',
+    '1 John': '1JN', '2 John': '2JN', '3 John': '3JN', 'Jude': 'JUD', 'Rev': 'REV',
+    'Exodus': 'EXO', 'Genesis': 'GEN', 'Leviticus': 'LEV', 'Numbers': 'NUM',
+    'Deuteronomy': 'DEU', 'Ephesians': 'EPH', 'Philippians': 'PHP', 'Colossians': 'COL',
+    'Hebrews': 'HEB', 'Revelation': 'REV', 'Romans': 'ROM', 'Galatians': 'GAL',
+    'St. Matthew': 'MAT', 'St. Mark': 'MRK', 'St. Luke': 'LUK', 'St. John': 'JHN'
+  };
+  const biblePattern = new RegExp(
+    '\\((' + Object.keys(bibleBooks).sort((a,b) => b.length - a.length).join('|') + ')\\s+(\\d+):(\\d+(?:[–-]\\d+)?)\\)',
+    'g'
+  );
+  function linkBibleRefs(text) {
+    return text.replace(biblePattern, function(match, book, chapter, verses) {
+      const code = bibleBooks[book];
+      const v = verses.replace('–', '-');
+      const url = 'https://www.bible.com/bible/1693/' + code + '.' + chapter + '.' + v + '.MALOVBSI';
+      return '(<a href="' + url + '" target="_blank" rel="noopener" style="color:#8B1E2D;text-decoration:underline;">' + book + ' ' + chapter + ':' + verses + '</a>)';
+    });
+  }
+
   function switchPhase(phaseIdx) {
     // Only reset subpart index if actually changing phases
     if (currentPhaseIdx !== phaseIdx) {
@@ -511,7 +543,7 @@
     malayalamEl.textContent = stage.malayalam || '';
     transliterationEl.textContent = stage.transliteration || '';
     malayalamSection.style.display = (stage.malayalam || stage.transliteration) ? '' : 'none';
-    descriptionEl.textContent = stage.description;
+    descriptionEl.innerHTML = linkBibleRefs(stage.description || '');
 
     dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
       const startIdx = hasSubparts(currentPhaseIdx)
@@ -1063,7 +1095,7 @@
 
       const desc = document.createElement('div');
       desc.style.cssText = 'font-size:12px;color:#555;line-height:1.6;margin-bottom:14px;';
-      desc.textContent = info.description;
+      desc.innerHTML = linkBibleRefs(info.description || '');
       body.appendChild(desc);
 
       if (info.sacred_items && info.sacred_items.length > 0) {
@@ -1086,7 +1118,7 @@
             <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
               <div style="font-size:11px;color:#666;line-height:1.6;">
                 <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
-                ${item.meaning}
+                ${linkBibleRefs(item.meaning || '')}
               </div>
             </div>
             <div class="sacred-item-toggle" style="margin-top:8px;font-size:12px;color:#999;transition:transform 0.3s ease;">
@@ -1251,66 +1283,66 @@
 
       // Symbolism
       if (substage.symbolism) {
-        sectionsHTML += `<div><strong>Symbolism:</strong> ${substage.symbolism}</div>`;
+        sectionsHTML += `<div><strong>Symbolism:</strong> ${linkBibleRefs(substage.symbolism)}</div>`;
       }
 
       // Action
       if (substage.action) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Action:</strong> ${substage.action}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Action:</strong> ${linkBibleRefs(substage.action)}</div>`;
       }
 
       // Significance / Meaning and Significance
       if (substage.significance) {
         const significanceLabel = substage.meaning_and_significance ? 'Meaning and Significance:' : 'Significance:';
-        sectionsHTML += `<div style="margin-top:8px;"><strong>${significanceLabel}</strong> ${substage.significance}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>${significanceLabel}</strong> ${linkBibleRefs(substage.significance)}</div>`;
       }
 
       // Theological Meaning
       if (substage.theological_meaning) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Theological Meaning:</strong> ${substage.theological_meaning}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Theological Meaning:</strong> ${linkBibleRefs(substage.theological_meaning)}</div>`;
       }
 
       // Liturgical Context
       if (substage.liturgical_context) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Liturgical Context:</strong> ${substage.liturgical_context}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Liturgical Context:</strong> ${linkBibleRefs(substage.liturgical_context)}</div>`;
       }
 
       // Ritual Gesture
       if (substage.ritual_gesture) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Ritual Gesture:</strong> ${substage.ritual_gesture}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Ritual Gesture:</strong> ${linkBibleRefs(substage.ritual_gesture)}</div>`;
       }
 
       // Biblical Reference / Biblical Remembrance
       if (substage.biblical_reference) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Reference:</strong> ${substage.biblical_reference}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Reference:</strong> ${linkBibleRefs(substage.biblical_reference)}</div>`;
       }
       if (substage.biblical_remembrance) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Remembrance:</strong> ${substage.biblical_remembrance}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Remembrance:</strong> ${linkBibleRefs(substage.biblical_remembrance)}</div>`;
       }
 
       // Spiritual Message
       if (substage.spiritual_message) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Message:</strong> ${substage.spiritual_message}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Message:</strong> ${linkBibleRefs(substage.spiritual_message)}</div>`;
       }
 
       // Faith Response
       if (substage.faith_response) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Faith Response:</strong> ${substage.faith_response}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Faith Response:</strong> ${linkBibleRefs(substage.faith_response)}</div>`;
       }
 
       // Spiritual Effects
       if (substage.spiritual_effects) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Effects:</strong> ${substage.spiritual_effects}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Effects:</strong> ${linkBibleRefs(substage.spiritual_effects)}</div>`;
       }
 
       // Discipline and Preparation
       if (substage.discipline_preparation) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Discipline and Preparation:</strong> ${substage.discipline_preparation}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Discipline and Preparation:</strong> ${linkBibleRefs(substage.discipline_preparation)}</div>`;
       }
 
       // Life Application
       if (substage.life_application) {
-        sectionsHTML += `<div style="margin-top:8px;"><strong>Life Application:</strong> ${substage.life_application}</div>`;
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Life Application:</strong> ${linkBibleRefs(substage.life_application)}</div>`;
       }
 
       content.innerHTML = `

@@ -1162,6 +1162,10 @@ h2.stage-title {
   position: relative;
 }
 
+.sacred-item-summary img {
+  max-height: 120px !important;
+}
+
 /* Collapsed state */
 .sacred-item.collapsed {
   background: white !important;

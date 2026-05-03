@@ -27,13 +27,13 @@ phases:
   - phase_id: "preparation"
     title: "The Preparation (Tuyobo)"
     malayalam: "ഒരുക്ക ശുശ്രൂഷ"
-    description: "Tuyobo (preparation) symbolizes the 30 years of our Lord's hidden life. This part is performed entirely behind the veil, within the Madbaha (sanctuary). Preparation is needed for both the celebrant and the recipient, for the priest and the faithful alike."
+    description: "Tuyobo (preparation) symbolizes the 30 years of our Lord's hidden life. This part is performed entirely behind the veil, within the Madbaha (sanctuary). Preparation is needed for both the priest and the faithful."
     card_description: "Tuyobo — silent rites behind the curtain"
     stages:
       - title: "The Preparation (Tuyobo)"
         malayalam: "ഒരുക്ക ശുശ്രൂഷ"
         transliteration: "Pronunciation: O-ruk-ka Shush-ru-sha"
-        description: "Tuyobo means 'preparation.' This part symbolizes the 30 years of our Lord's hidden life before His public ministry, and is performed entirely behind the veil, within the Madbaha (sanctuary). Preparation is needed for both the celebrant and the recipient, for the priest and the faithful alike. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the Shushepo."
+        description: "Tuyobo means 'preparation.' This part symbolizes the 30 years of our Lord's hidden life before His public ministry, and is performed entirely behind the veil, within the Madbaha (sanctuary). Preparation is needed for both the priest and the faithful. During this phase, the priest vests in sacred garments, prepares the bread and wine, and covers the holy elements with the Shushepo."
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
         image: "/assets/img/tuyobo-v3.jpg"
         hotspots:
@@ -49,9 +49,11 @@ phases:
           sacred_items:
             - name: "Thronos (Altar Table)"
               malayalam: "ത്രോണോസ്"
+              image: "/assets/img/sacred-items/thronos_medium.png"
               meaning: "The table in the sanctuary upon which the Holy Qurbana is celebrated. Thronos means 'Throne' — the seat of the incarnate Word. It is the throne of God, and in English we call it Altar, as the Body and Blood of our Lord are offered as a sacrifice upon it."
             - name: "Wooden Cross"
               malayalam: "കുരിശ്"
+              image: "/assets/img/sacred-items/wooden_cross_medium.png"
               meaning: "Adorned by Oorara (Red stole). We use a wooden cross without crucifix or any writing, representing the resurrected and ascended Lord. The Orthodox Churches never use a crucifix because we emphasize the Resurrection. The cross is the symbol of Eternal Life: the top stands for love, the bottom for humility, the right for obedience, and the left for patience — it is the weapon to fight against evil."
             - name: "Chithola (Covering Sheet)"
               malayalam: "ചിതോല"
