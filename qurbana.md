@@ -72,15 +72,15 @@ phases:
                 image: "/assets/img/sacred-items/mazgogo_medium.svg"
               - name: "Pilaso (Paten)"
                 malayalam: "പിലാസോ"
-                meaning: "Represents the Manger of Bethlehem where Christ was born"
+                meaning: "A flat plate of sacrifice to keep the bread. Represents the Manger of Bethlehem where Christ was laid."
                 image: "/assets/img/sacred-items/pilaso_medium.svg"
               - name: "Kaso (Chalice)"
                 malayalam: "കാസോ"
-                meaning: "Represents the Tomb of Joseph of Arimathea where Christ was buried"
+                meaning: "A cup of sacrifice with a stand to handle, used to keep wine. Represents the Tomb of Joseph of Arimathea where Christ was buried."
                 image: "/assets/img/sacred-items/kaso_medium.svg"
               - name: "Tablitho (Altar Stone)"
                 malayalam: "താബ്ലിതോ"
-                meaning: "The consecrated wooden tablet upon which vessels rest; represents the Cross"
+                meaning: "A consecrated wooden slab (18×9 inches), preferably of jack wood, upon which the Paten and Chalice are placed. It is depicted as the tree of life in the Paradise of Eden. Silk coverings in red (God's Omnipresence), green (the world), and white (the Church) are spread upon it. Without the Tablitho, the Qurbana cannot be celebrated. Only one Qurbana may be celebrated on one Tablitho per day."
                 image: "/assets/img/sacred-items/tablitho_medium.svg"
           - title: "The Shushepo (Veil)"
             significance: "The sacred vessels are covered with a white veil, symbolizing Christ's burial and representing divine mysteries hidden from human understanding. This sacred covering emphasizes that the Eucharistic mystery transcends human comprehension and can only be grasped through faith."
@@ -88,7 +88,7 @@ phases:
             sacred_items:
               - name: "Shushepo (The Great Veil)"
                 malayalam: "ശുശേപോ"
-                meaning: "White veil symbolizing the hiddenness of Divine Mystery and Christ's burial shroud"
+                meaning: "A white cloth covering both the Chalice and Paten. It signifies the swaddling clothes of Baby Jesus (Luke 2:7), the seamless garment of our Lord (John 19:23), the light called Shekina over the mercy seat (Numbers 9:15), and the bright cloud at the Transfiguration (Matthew 17:5). When covered, one corner is folded up, signifying the transformation of the Old Testament to the New."
                 image: "/assets/img/sacred-items/shushepo_medium.svg"
 
   - phase_id: "public-celebration"
@@ -115,7 +115,7 @@ phases:
                 sacred_items:
                   - name: "Dhoopakutty (Censer)"
                     malayalam: "ധൂപക്കുറ്റി"
-                    meaning: "Burns fragrant incense, symbolizing prayers rising to heaven"
+                    meaning: "The vessel which brings forth the sweet smell of incense, representing the Church and the dedication of oneself to God (Eph 5:2). The lower cup represents the earth, the upper cup heaven. The chains represent the Holy Trinity — two for the Son's human and divine natures, one for the Father, one for the Holy Spirit. The 12 bells represent the 12 Apostles, and the 72 links the 72 evangelists. The charcoal represents sinners, fire the Holy Spirit, and frankincense good deeds (Rev 8:3-4)."
                     image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
                   - name: "Dhoopam (Incense)"
                     malayalam: "ധൂപം"
@@ -151,15 +151,15 @@ phases:
                 sacred_items:
                   - name: "Marvahtho (Fans)"
                     malayalam: "മാർവാഹ്തോ"
-                    meaning: "Fluttered during readings, representing the Seraphim surrounding the Word of God"
+                    meaning: "Two persons standing on both sides of the altar make a jingling, pleasing sound by shaking a round object on the top of a long stick. It represents the angels and the fluttering of their wings."
                     image: "/assets/img/sacred-items/marvahtho_medium.svg"
                   - name: "Mani (Bells)"
                     malayalam: "മണി"
-                    meaning: "Rung to honor the proclamation of the Gospel and alert the faithful"
+                    meaning: "Used by deacons to proclaim important occasions during the Qurbana, including: the Holy birth announcement at the start, the reading of the Gospel, the blessing of the Censer, the celebration of the Shushepo, the blessing of the bread, and the elevation of Paten and Chalice."
                     image: "/assets/img/sacred-items/mani_medium.svg"
                   - name: "Momsho (Candles)"
                     malayalam: "മോംശോ"
-                    meaning: "Lit during the Gospel reading, representing Christ as the Light of the World illuminating the faithful through His Word"
+                    meaning: "Candles are lighted on the altar (Matthew 5:14) — seven based on the golden lamp of the Jerusalem Temple, or twelve representing the Apostles. It reminds us of our Lord's words 'I am the light of the world' (John 1:8, 8:12). Like these candlesticks, our souls should be lighted brightly by the Holy Spirit."
                     image: "/assets/img/sacred-items/momsho_medium.svg"
 
           - title: "Promiun-Sedra and Blessing of the Censor"
@@ -184,7 +184,7 @@ phases:
                 sacred_items:
                   - name: "Dhoopakutty (Censer)"
                     malayalam: "ധൂപക്കുറ്റി"
-                    meaning: "Burned to symbolize prayers rising to heaven"
+                    meaning: "Blessed during the Sedra prayers, the censer's incense rises as a fragrant offering symbolizing Christ's sacrifice (Eph 5:2) and the prayers of the faithful ascending to God's throne (Rev 8:3-4)."
                     image: "/assets/img/sacred-items/dhoopakutty_medium.svg"
                   - name: "Nalu Shrinkhangal (4 Chains)"
                     malayalam: "നാലു ശൃഖ്ങ്ങൾ"
@@ -245,7 +245,7 @@ phases:
                 sacred_items:
                   - name: "Shushepo (The Great Veil)"
                     malayalam: "ശുശേപോ"
-                    meaning: "Symbolizes the stone covering Christ's tomb; its removal represents the Resurrection"
+                    meaning: "When lifted, the Shushepo's removal symbolizes the rolling away of the stone from Christ's tomb (Matthew 28:2). Its gentle fluttering represents Christ rising from the dead, revealing the divine mysteries once hidden and now made accessible through the Holy Eucharist."
                     image: "/assets/img/sacred-items/shushepo_medium.svg"
 
           - title: "Introductory Dialogue"
@@ -426,11 +426,11 @@ phases:
                 sacred_items:
                   - name: "Kaso (Chalice)"
                     malayalam: "കാസോ"
-                    meaning: "Elevated to show that the Blood of Christ is offered for the salvation of all"
+                    meaning: "Elevated before the congregation to display that the Blood of Christ, kept in the cup representing the Tomb of Joseph of Arimathea, is offered for the salvation and redemption of all humanity."
                     image: "/assets/img/sacred-items/kaso_medium.svg"
                   - name: "Pilaso (Paten)"
                     malayalam: "പിലാസോ"
-                    meaning: "Elevated to show that the Body of Christ is the source of eternal life"
+                    meaning: "Elevated before the congregation to display that the Body of Christ, placed upon the plate representing the Manger of Bethlehem, is the source of eternal life for all who partake."
                     image: "/assets/img/sacred-items/pilaso_medium.svg"
 
           - title: "Holy Communion"
@@ -460,7 +460,7 @@ phases:
                     image: "/assets/img/sacred-items/mazgogo_medium.svg"
                   - name: "Tharvodo (Spoon)"
                     malayalam: "തർവോദോ"
-                    meaning: "Used to distribute the Bread and Wine to the faithful; represents the tongs used by the angels in the Temple"
+                    meaning: "A sacred spoon used to take wine and pour it over the bread, and to distribute the Body and Blood of Christ to the faithful. It represents the tongs used by the Seraphim to take the burning coal from the altar and touch the lips of Isaiah (Isaiah 6:6-7), purifying and sanctifying those who receive."
                     image: "/assets/img/sacred-items/tharvodo_medium.svg"
 
   - phase_id: "post-communion"
