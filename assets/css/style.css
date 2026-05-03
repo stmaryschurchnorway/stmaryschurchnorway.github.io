@@ -1352,6 +1352,22 @@ img { max-width: 100%; height: auto; display: block; }
 .event-add-cal:hover {
   background: #b88a0e;
 }
+.event-share-whatsapp {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: #25d366;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: background 0.2s;
+  cursor: pointer;
+  margin-left: 12px;
+}
+.event-share-whatsapp:hover {
+  background: #20ba5a;
+}
 .events-footer-link {
   text-align: center;
   margin-top: 24px;
@@ -1367,6 +1383,12 @@ img { max-width: 100%; height: auto; display: block; }
   .event-add-cal {
     grid-column: 1 / -1;
     margin-top: 8px;
+    margin-left: 0;
+  }
+  .event-share-whatsapp {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    margin-left: 0;
   }
   .event-date { padding: 8px 4px; }
   .event-datenum { font-size: 1.0rem; }
