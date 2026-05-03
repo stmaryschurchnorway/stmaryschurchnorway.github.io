@@ -1180,9 +1180,10 @@ img { max-width: 100%; height: auto; display: block; }
     grid-column: 3;
     grid-row: 2;
     justify-self: end;
-    gap: 6px;
+    gap: 4px;
+    margin-right: 2px;
   }
-  .social-link svg { width: 16px; height: 16px; }
+  .social-link svg { width: 14px; height: 14px; }
   .nav-links { gap: 2px; padding: 5px 0; }
   .nav-links a { padding: 5px 10px; font-size: 0.68rem; }
   .welcome { padding: 25px 12px; }
