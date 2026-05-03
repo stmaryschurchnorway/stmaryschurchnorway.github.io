@@ -234,14 +234,14 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 340px;
+  height: 420px;
   overflow: hidden;
 }
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 35%;
 }
 .hero-overlay {
   position: absolute;
