@@ -130,13 +130,14 @@
           <div class="malayalam-text" id="malayalamText">വിശുദ്ധ കുർബാന</div>
           <div class="transliteration" id="transliteration">Pronunciation: Vi-shud-dha Kur-ba-na</div>
         </div>
-        <button class="audio-button" id="audioBtn" title="Listen to pronunciation" aria-label="Listen to pronunciation">🔊</button>
+        <button class="audio-button" id="audioBtn" title="Listen to pronunciation" aria-label="Listen to pronunciation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
       </div>
 
       <p class="stage-description" id="stageDescription">
         An interactive journey through the sacred stages of the Eucharistic service. Click the speaker icon to hear Malayalam pronunciation, or use the arrow buttons to navigate between stages.
       </p>
 
+      <div id="sanctuaryPanel" style="margin:0 25px 15px;"><!-- Rendered by JavaScript --></div>
       <div class="substages-panel" id="substagesPanel"><!-- Rendered by JavaScript --></div>
 
       <div class="progress-dots" id="progressDots"></div>
@@ -507,6 +508,11 @@
     renderSubstagesPanel();
 
     loadVideo(stage);
+
+    var fsWrapper = document.getElementById('carouselFullscreenWrapper');
+    if (fsWrapper && fsWrapper.classList.contains('custom-fullscreen')) {
+      fsWrapper.scrollTop = 0;
+    }
   }
 
   function renderHotspots(stage) {
@@ -1003,13 +1009,102 @@
     const stage = stages[currentStageIdx];
 
     substagesPanel.innerHTML = '';
+    var sanctuaryPanel = document.getElementById('sanctuaryPanel');
+    if (sanctuaryPanel) sanctuaryPanel.innerHTML = '';
 
-    if (!stage.substages || stage.substages.length === 0) {
+    const hasSanctuary = stage.sanctuary_info;
+    const hasVeil = stage.veil_info;
+    const hasSubstages = stage.substages && stage.substages.length > 0;
+
+    if (!hasSanctuary && !hasVeil && !hasSubstages) {
       substagesPanel.style.display = 'none';
       return;
     }
 
     substagesPanel.style.display = 'block';
+
+    function renderInfoSection(info, container) {
+      const section = document.createElement('div');
+      section.className = 'substage-item collapsed';
+      section.style.marginBottom = '8px';
+
+      const header = document.createElement('div');
+      header.className = 'substage-header';
+      header.innerHTML = `<span>${info.title}${info.malayalam ? ` <span style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;font-weight:500;margin-left:8px;">${info.malayalam}</span>` : ''}</span><span class="substage-toggle">▼</span>`;
+
+      const body = document.createElement('div');
+      body.className = 'substage-content';
+      body.style.cssText = 'display:none;padding:0 12px 12px;';
+
+      if (info.image) {
+        const img = document.createElement('img');
+        img.src = info.image;
+        img.alt = info.title;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.style.cssText = 'max-width:200px;display:block;margin:0 auto 12px;object-fit:contain;';
+        body.appendChild(img);
+      }
+
+      const desc = document.createElement('div');
+      desc.style.cssText = 'font-size:12px;color:#555;line-height:1.6;margin-bottom:14px;';
+      desc.textContent = info.description;
+      body.appendChild(desc);
+
+      if (info.sacred_items && info.sacred_items.length > 0) {
+        const itemsLabel = document.createElement('strong');
+        itemsLabel.style.cssText = 'display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;';
+        itemsLabel.textContent = 'Sacred Items';
+        body.appendChild(itemsLabel);
+
+        const grid = document.createElement('div');
+        grid.className = 'sacred-items-grid';
+        grid.style.cssText = 'display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;';
+        grid.innerHTML = info.sacred_items.map(item => `
+          <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
+               onclick="toggleSacredItem(this)">
+            <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
+              ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
+              <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
+              ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
+            </div>
+            <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
+              <div style="font-size:11px;color:#666;line-height:1.6;">
+                <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
+                ${item.meaning}
+              </div>
+            </div>
+            <div class="sacred-item-toggle" style="margin-top:8px;font-size:12px;color:#999;transition:transform 0.3s ease;">
+              <span>▼</span>
+            </div>
+          </div>
+        `).join('');
+        body.appendChild(grid);
+      }
+
+      header.addEventListener('click', function() {
+        const isOpen = section.classList.contains('expanded');
+        section.classList.toggle('collapsed', isOpen);
+        section.classList.toggle('expanded', !isOpen);
+        body.style.display = isOpen ? 'none' : 'block';
+      });
+
+      section.appendChild(header);
+      section.appendChild(body);
+      container.appendChild(section);
+    }
+
+    if (hasSanctuary || hasVeil) {
+      const infoLabel = document.createElement('div');
+      infoLabel.className = 'substages-label';
+      infoLabel.textContent = 'Sacred Space';
+      sanctuaryPanel.appendChild(infoLabel);
+
+      if (hasSanctuary) renderInfoSection(stage.sanctuary_info, sanctuaryPanel);
+      if (hasVeil) renderInfoSection(stage.veil_info, sanctuaryPanel);
+    }
+
+    if (!hasSubstages) return;
 
     const panelLabel = document.createElement('div');
     panelLabel.className = 'substages-label';
@@ -1051,10 +1146,10 @@
             <div class="sacred-items-grid" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;">
               ${substage.sacred_items.map(item => {
                 return `
-                  <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;padding:16px 12px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
+                  <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
                        onclick="toggleSacredItem(this)">
                     <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
-                      ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="width:100px;height:100px;object-fit:contain;margin-bottom:12px;flex-shrink:0;">` : ''}
+                      ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
                       <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
                       ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
                     </div>
@@ -1129,7 +1224,7 @@
                       onmouseover="this.style.background='#c4920c'"
                       onmouseout="this.style.background='#e8c547'"
                       onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
-                🔊 Play
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Play
               </button>
             </div>
           `;

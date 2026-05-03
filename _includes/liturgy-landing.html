@@ -17,7 +17,7 @@
             <span class="malayalam-text">{{ liturgy.malayalam }}</span>
             <span class="transliteration">{{ liturgy.transliteration }}</span>
           </div>
-          <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation">🔊</button>
+          <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
         </div>
         <p class="liturgy-card-description">{{ liturgy.description }}</p>
         <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">

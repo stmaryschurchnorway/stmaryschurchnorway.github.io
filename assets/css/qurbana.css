@@ -710,11 +710,12 @@ h2.stage-title {
 }
 
 .malayalam-section {
-  background: #fafaf8;
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f2ea 100%);
   padding: 12px 15px;
-  border-radius: 0;
+  border-radius: 6px;
   margin: 20px 25px 20px 25px;
   border-left: 2px solid #e8d5a0;
+  box-shadow: 0 2px 8px rgba(212, 160, 23, 0.1);
   display: flex;
   align-items: center;
   gap: 12px;
