@@ -1272,7 +1272,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .event-card {
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 90px 1fr auto auto;
   gap: 20px;
   align-items: flex-start;
   padding: 18px 22px;
@@ -1357,7 +1357,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
-  background: #25d366;
+  background: #d4a017;
   padding: 6px 14px;
   border-radius: 20px;
   white-space: nowrap;
@@ -1366,7 +1366,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-left: 12px;
 }
 .event-share-whatsapp:hover {
-  background: #20ba5a;
+  background: #b88a0e;
 }
 .events-footer-link {
   text-align: center;
