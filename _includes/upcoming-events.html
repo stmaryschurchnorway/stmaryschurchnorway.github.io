@@ -163,21 +163,20 @@ Parameters:
     var descText = htmlToPlainText(ev.description);
     if (descText) body.appendChild(el('p', 'event-description', truncate(descText, descChars)));
 
-    card.appendChild(dateBox);
-    card.appendChild(body);
-    card.appendChild(el('span', 'event-add-cal', '+ Add to Calendar'));
+    var actions = el('div', 'event-actions');
+    actions.appendChild(el('span', 'event-add-cal', '+ Add to Calendar'));
     var shareBtn = el('span', 'event-share-whatsapp', '↗ Share on WhatsApp');
-    shareBtn.style.cursor = 'pointer';
-    shareBtn.style.marginLeft = '12px';
     shareBtn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       var message = formatWhatsAppMessage(ev);
-      var encodedMessage = encodeURIComponent(message);
-      var whatsappUrl = 'https://wa.me/?text=' + encodedMessage;
-      window.open(whatsappUrl, '_blank', 'noopener');
+      window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank', 'noopener');
     });
-    card.appendChild(shareBtn);
+    actions.appendChild(shareBtn);
+
+    card.appendChild(dateBox);
+    card.appendChild(body);
+    card.appendChild(actions);
     return card;
   }
 

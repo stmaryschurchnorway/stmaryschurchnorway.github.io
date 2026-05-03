@@ -241,7 +241,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 55%;
 }
 .hero-overlay {
   position: absolute;
@@ -1296,8 +1296,6 @@ img { max-width: 100%; height: auto; display: block; }
   background: #faf6eb;
   border-radius: 6px;
   border-left: 3px solid #d4a017;
-  grid-column: 1;
-  grid-row: 1 / 3;
 }
 .event-day {
   font-size: 0.72rem;
@@ -1318,11 +1316,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: #666;
   margin-top: 2px;
 }
-.event-body {
-  min-width: 0;
-  grid-column: 2;
-  grid-row: 1 / 3;
-}
+.event-body { min-width: 0; }
 .event-title {
   font-family: 'Lora', Georgia, serif;
   font-size: 1.05rem;
@@ -1343,9 +1337,16 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.55;
   white-space: pre-line;
 }
+.event-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 160px;
+}
 .event-add-cal,
 .event-share-whatsapp {
-  display: inline-block;
+  display: block;
   font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
@@ -1355,14 +1356,8 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
   transition: background 0.2s;
   cursor: pointer;
-  grid-column: 3;
-  justify-self: end;
-  align-self: start;
-  width: 160px;
   text-align: center;
 }
-.event-add-cal { grid-row: 1; }
-.event-share-whatsapp { grid-row: 2; margin-top: 8px; }
 .event-add-cal:hover,
 .event-share-whatsapp:hover {
   background: #b88a0e;
@@ -1378,22 +1373,11 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 14px 16px;
     align-items: flex-start;
   }
-  .event-date {
-    grid-row: auto;
-    grid-column: auto;
-    padding: 8px 4px;
-  }
-  .event-body {
+  .event-date { padding: 8px 4px; }
+  .event-body { grid-column: 1 / -1; }
+  .event-actions {
     grid-column: 1 / -1;
-    grid-row: auto;
-  }
-  .event-add-cal,
-  .event-share-whatsapp {
-    grid-column: 1 / -1;
-    grid-row: auto;
     width: 100%;
-    margin-top: 8px;
-    justify-self: stretch;
   }
   .event-datenum { font-size: 1.0rem; }
 }
