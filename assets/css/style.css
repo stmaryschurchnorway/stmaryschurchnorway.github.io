@@ -1377,15 +1377,12 @@ img { max-width: 100%; height: auto; display: block; }
     align-items: flex-start;
   }
   .event-body { grid-column: 1 / -1; }
-  .event-add-cal {
-    grid-column: 1 / -1;
-    margin-top: 8px;
-    margin-left: 0;
-  }
+  .event-add-cal,
   .event-share-whatsapp {
     grid-column: 1 / -1;
+    grid-row: auto;
+    width: 100%;
     margin-top: 8px;
-    margin-left: 0;
   }
   .event-date { padding: 8px 4px; }
   .event-datenum { font-size: 1.0rem; }
