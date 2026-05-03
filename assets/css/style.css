@@ -1378,15 +1378,23 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 14px 16px;
     align-items: flex-start;
   }
-  .event-body { grid-column: 1 / -1; }
+  .event-date {
+    grid-row: auto;
+    grid-column: auto;
+    padding: 8px 4px;
+  }
+  .event-body {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
   .event-add-cal,
   .event-share-whatsapp {
     grid-column: 1 / -1;
     grid-row: auto;
     width: 100%;
     margin-top: 8px;
+    justify-self: stretch;
   }
-  .event-date { padding: 8px 4px; }
   .event-datenum { font-size: 1.0rem; }
 }
 
