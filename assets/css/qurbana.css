@@ -1270,6 +1270,10 @@ h2.stage-title {
     padding: 12px;
   }
 
+  .glossary-card {
+    white-space: normal;
+  }
+
   .phase-tabs {
     gap: 6px;
   }
@@ -1547,7 +1551,12 @@ h2.stage-title {
   transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 16px 40px;
+}
+
+.qurbana-expanded-section:nth-child(3) {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
 }
 
 .qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
@@ -1631,6 +1640,37 @@ h2.stage-title {
   color: #d4a017;
   font-size: 0.6rem;
   margin-right: 8px;
+}
+
+.qurbana-glossary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.glossary-card {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid rgba(212,160,23,0.25);
+  border-radius: 14px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.glossary-term {
+  font-weight: 600;
+  color: #5a3e1b;
+  font-size: 0.8rem;
+}
+
+.glossary-def {
+  color: #888;
+  font-size: 0.78rem;
+  font-style: italic;
 }
 
 .intro-accordion {
