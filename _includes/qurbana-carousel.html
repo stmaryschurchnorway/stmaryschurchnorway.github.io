@@ -709,19 +709,36 @@
 
   function scrollToSacredItem(itemName) {
     var substagesPanel = carousel.querySelector('#substagesPanel');
-    if (!substagesPanel) return;
+    if (!substagesPanel) {
+      console.error('scrollToSacredItem: substagesPanel not found');
+      return;
+    }
 
     var items = substagesPanel.querySelectorAll('.sacred-item');
     var targetItem = null;
 
     items.forEach(function(item) {
       var nameEl = item.querySelector('.sacred-item-summary strong');
-      if (nameEl && nameEl.textContent.trim() === itemName.trim()) {
-        targetItem = item;
+      if (nameEl) {
+        var elText = nameEl.textContent.trim();
+        var searchText = itemName.trim();
+        if (elText === searchText) {
+          targetItem = item;
+        }
       }
     });
 
-    if (!targetItem) return;
+    if (!targetItem) {
+      console.warn('scrollToSacredItem: No match found for "' + itemName + '"');
+      // List all found items for debugging
+      items.forEach(function(item) {
+        var nameEl = item.querySelector('.sacred-item-summary strong');
+        if (nameEl) {
+          console.log('  Found sacred-item: "' + nameEl.textContent.trim() + '"');
+        }
+      });
+      return;
+    }
 
     // Find and expand the parent substage if needed
     var parentSubstage = targetItem.closest('.substage-item');
