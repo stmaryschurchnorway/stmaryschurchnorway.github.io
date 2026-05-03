@@ -1356,6 +1356,8 @@ img { max-width: 100%; height: auto; display: block; }
   transition: background 0.2s;
   cursor: pointer;
   grid-column: 3;
+  justify-self: end;
+  align-self: start;
   width: 160px;
   text-align: center;
 }
