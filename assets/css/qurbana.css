@@ -1274,7 +1274,14 @@ h2.stage-title {
     padding: 12px;
   }
 
+  .qurbana-glossary {
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .glossary-card {
+    display: flex !important;
+    width: 100%;
     white-space: normal;
   }
 
