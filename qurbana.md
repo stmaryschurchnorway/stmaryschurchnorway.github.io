@@ -61,9 +61,11 @@ phases:
               meaning: "The white linen covering sheet that drapes the front of the altar. It represents the sheet in which the body of our Lord was wrapped for burial."
             - name: "Dergo (The Step)"
               malayalam: "ദെർഗോ"
+              image: "/assets/img/sacred-items/dergo_medium.png"
               meaning: "The step (½ inch broad, ½ inch high) in front of the throne, symbolizing the Seraphim who carry the heavenly throne. Only Bishops, Priests, and the Full Deacon are permitted to climb over this step. 'Above it stood the Seraphim, each one had six wings — one cried unto another and said Holy, Holy, Holy is the Lord of Hosts' (Isaiah 6:2)."
             - name: "Lectern (Pulpit)"
               malayalam: "പുൽപിറ്റ്"
+              image: "/assets/img/sacred-items/lectern_medium.png"
               meaning: "The book of the Gospels is placed upon a small lectern. The Gospel represents the spoken Word of our Lord. We honour the Altar first, where the incarnate Word dwells, and the second place of honour is given to the Lectern, which carries the spoken Word. Incense is offered according to this order of honour."
         veil_info:
           title: "The Veil (തിരശ്ശീല — Thirassheela)"
