@@ -169,6 +169,14 @@ Parameters:
     var shareBtn = el('span', 'event-share-whatsapp', 'Share on WhatsApp');
     shareBtn.style.cursor = 'pointer';
     shareBtn.style.marginLeft = '12px';
+    shareBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var message = formatWhatsAppMessage(ev);
+      var encodedMessage = encodeURIComponent(message);
+      var whatsappUrl = 'https://wa.me/?text=' + encodedMessage;
+      window.open(whatsappUrl, '_blank', 'noopener');
+    });
     card.appendChild(shareBtn);
     return card;
   }
