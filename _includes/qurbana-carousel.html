@@ -1725,6 +1725,19 @@
     }
   }
 
+  function handleKeyboardNavigation(e) {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal || !modal.classList.contains('open')) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      navigateSacredItemModal('next');
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      navigateSacredItemModal('prev');
+    }
+  }
+
   function setupSacredItemSwipeHandlers() {
     const modal = document.getElementById('sacredItemModal');
     if (!modal) return;
@@ -1732,6 +1745,10 @@
     modal.removeEventListener('touchend', handleTouchEnd);
     modal.addEventListener('touchstart', handleTouchStart);
     modal.addEventListener('touchend', handleTouchEnd);
+
+    // Add keyboard navigation
+    document.removeEventListener('keydown', handleKeyboardNavigation);
+    document.addEventListener('keydown', handleKeyboardNavigation);
 
     // Show swipe hints on mobile and hide after 3 seconds or on first swipe
     const isDesktop = window.innerWidth > 768;
