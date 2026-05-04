@@ -175,7 +175,10 @@
     <div class="sacred-item-modal-content">
       <div class="sacred-item-modal-image-section">
         <img id="modalSacredItemImage" class="sacred-item-modal-image" alt="" data-front="" data-back="" data-current="front">
-        <button id="modalFlipButton" class="sacred-item-modal-flip-btn" style="display:none;" onclick="flipModalSacredItemImage()" title="Flip to see back">⇄</button>
+        <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:8px;">
+          <button id="modalFlipButton" class="sacred-item-modal-flip-btn" style="display:none;" onclick="flipModalSacredItemImage()" title="Flip to see back">⇄</button>
+          <span id="modalViewLabel" style="font-size:13px; color:#666; font-weight:500;">Front View</span>
+        </div>
       </div>
       <div class="sacred-item-modal-details-section">
         <h3 id="modalSacredItemName" class="sacred-item-modal-name"></h3>
@@ -1502,6 +1505,7 @@
     const modal = document.getElementById('sacredItemModal');
     const modalImage = document.getElementById('modalSacredItemImage');
     const modalFlipBtn = document.getElementById('modalFlipButton');
+    const modalViewLabel = document.getElementById('modalViewLabel');
     const modalName = document.getElementById('modalSacredItemName');
     const modalMalayalam = document.getElementById('modalSacredItemMalayalam');
     const modalMeaning = document.getElementById('modalSacredItemMeaning');
@@ -1515,6 +1519,7 @@
     modalImage.setAttribute('data-front', frontImage);
     modalImage.setAttribute('data-back', backImage);
     modalImage.setAttribute('data-current', 'front');
+    if (modalViewLabel) modalViewLabel.textContent = 'Front View';
 
     if (backImage && backImage.trim() !== '') {
       modalFlipBtn.style.display = 'block';
@@ -1563,6 +1568,7 @@
     document.body.style.overflow = '';
 
     const modalImage = document.getElementById('modalSacredItemImage');
+    const modalViewLabel = document.getElementById('modalViewLabel');
     if (modalImage) {
       const frontImage = modalImage.getAttribute('data-front');
       if (frontImage) {
@@ -1570,10 +1576,12 @@
         modalImage.setAttribute('data-current', 'front');
       }
     }
+    if (modalViewLabel) modalViewLabel.textContent = 'Front View';
   }
 
   function flipModalSacredItemImage() {
     const img = document.getElementById('modalSacredItemImage');
+    const modalViewLabel = document.getElementById('modalViewLabel');
     if (!img) return;
 
     const backImg = img.getAttribute('data-back');
@@ -1585,9 +1593,11 @@
     if (current === 'back') {
       img.src = frontImg;
       img.setAttribute('data-current', 'front');
+      if (modalViewLabel) modalViewLabel.textContent = 'Front View';
     } else {
       img.src = backImg;
       img.setAttribute('data-current', 'back');
+      if (modalViewLabel) modalViewLabel.textContent = 'Back View';
     }
   }
 
