@@ -1591,12 +1591,16 @@
     modalImage.setAttribute('data-front', frontImage);
     modalImage.setAttribute('data-back', backImage);
     modalImage.setAttribute('data-current', 'front');
-    if (modalViewLabel) modalViewLabel.textContent = 'Front View';
 
     if (backImage && backImage.trim() !== '') {
       modalFlipBtn.style.display = 'block';
+      if (modalViewLabel) {
+        modalViewLabel.textContent = 'Front View';
+        modalViewLabel.style.display = 'block';
+      }
     } else {
       modalFlipBtn.style.display = 'none';
+      if (modalViewLabel) modalViewLabel.style.display = 'none';
     }
 
     modalName.textContent = name;
