@@ -8,7 +8,10 @@
     {% for liturgy in page.liturgies %}
     <div class="liturgy-card" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
       <div class="liturgy-card-image">
-        <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy">
+        <picture>
+          <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
+          <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="liturgy-card-content">
         <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>

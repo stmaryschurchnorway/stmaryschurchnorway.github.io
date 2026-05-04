@@ -127,7 +127,7 @@
       <span id="placeholderText">Video coming soon</span>
       <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen" aria-label="Toggle fullscreen">⤢</button>
     </div>
-    <script defer src="https://www.youtube.com/iframe_api"></script>
+    <!-- YouTube API loaded on demand by loadVideo() -->
 
     <div class="carousel-content">
       <div class="controls-header">
@@ -172,6 +172,41 @@
 
 <script>
 (function() {
+  // WebP support detection
+  var _supportsWebP = null;
+  function supportsWebP(cb) {
+    if (_supportsWebP !== null) return cb(_supportsWebP);
+    var img = new Image();
+    img.onload = function() { _supportsWebP = (img.width > 0 && img.height > 0); cb(_supportsWebP); };
+    img.onerror = function() { _supportsWebP = false; cb(false); };
+    img.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+  }
+  // Pre-detect on load
+  supportsWebP(function(){});
+
+  function toWebP(url) {
+    if (!_supportsWebP || !url) return url;
+    return url.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  }
+
+  // Lazy YouTube API loader
+  var ytApiLoaded = false;
+  var ytApiCallbacks = [];
+  function ensureYouTubeAPI(cb) {
+    if (window.YT && window.YT.Player) return cb();
+    ytApiCallbacks.push(cb);
+    if (!ytApiLoaded) {
+      ytApiLoaded = true;
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+      window.onYouTubeIframeAPIReady = function() {
+        ytApiCallbacks.forEach(function(fn) { fn(); });
+        ytApiCallbacks = [];
+      };
+    }
+  }
+
   // Load phases directly from page data (no intro phase)
   const phases = {{ page.phases | jsonify }};
 
@@ -361,10 +396,10 @@
       });
     }
 
-    // Preload images in background
+    // Preload images in background (use WebP if supported)
     imagesToPreload.forEach(function(imageUrl) {
       var img = new Image();
-      img.src = imageUrl;
+      img.src = toWebP(imageUrl);
     });
   }
 
@@ -783,16 +818,11 @@
         imagePlaceholder.querySelector('.intro-overlay').remove();
       }
 
-      if (window.YT && window.YT.Player) {
-        initializePlayer(videoId);
-      } else {
-        window.onYouTubeIframeAPIReady = function() {
-          initializePlayer(videoId);
-        };
-      }
+      ensureYouTubeAPI(function() { initializePlayer(videoId); });
     } else if (stage.image && stage.image.trim()) {
-      // Display static image
-      container.innerHTML = '<img src="' + stage.image + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" alt="' + (stage.title || 'Liturgy stage').replace(/"/g, '&quot;') + '">';
+      // Display static image (prefer WebP)
+      var imgSrc = toWebP(stage.image);
+      container.innerHTML = '<img src="' + imgSrc + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" alt="' + (stage.title || 'Liturgy stage').replace(/"/g, '&quot;') + '">';
       placeholder.style.display = 'none';
       imagePlaceholder.style.backgroundImage = 'none';
       imagePlaceholder.style.cursor = 'default';
@@ -1102,7 +1132,7 @@
 
       if (info.image) {
         const img = document.createElement('img');
-        img.src = info.image;
+        img.src = toWebP(info.image);
         img.alt = info.title;
         img.loading = 'lazy';
         img.decoding = 'async';
@@ -1128,7 +1158,7 @@
           <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
                onclick="toggleSacredItem(this)">
             <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
-              ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
+              ${item.image ? `<img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
               <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
               ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
             </div>
@@ -1213,7 +1243,7 @@
                   <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
                        onclick="toggleSacredItem(this)">
                     <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
-                      ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
+                      ${item.image ? `<img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
                       <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
                       ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
                     </div>
