@@ -296,7 +296,18 @@
           });
         }
 
-        // Add veil items
+        // Add veil item (special case - veil_info is not a sacred_items array)
+        if (stage.veil_info?.image && stage.veil_info?.title && !seenNames.has(stage.veil_info.title)) {
+          const veilItem = {
+            name: stage.veil_info.title,
+            image: stage.veil_info.image,
+            meaning: stage.veil_info.description || ''
+          };
+          allItems.push(veilItem);
+          seenNames.add(stage.veil_info.title);
+        }
+
+        // Add veil sacred items if they exist in an array
         if (stage.veil_info?.sacred_items) {
           stage.veil_info.sacred_items.forEach(item => {
             if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
@@ -1228,13 +1239,39 @@
       body.style.cssText = 'display:none;padding:0 12px 12px;';
 
       if (info.image) {
+        const imgContainer = document.createElement('div');
+        imgContainer.style.cssText = 'position:relative;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;';
+
         const img = document.createElement('img');
         img.src = toWebP(info.image);
         img.alt = info.title;
         img.loading = 'lazy';
         img.decoding = 'async';
-        img.style.cssText = 'max-width:200px;display:block;margin:0 auto 12px;object-fit:contain;';
-        body.appendChild(img);
+        img.style.cssText = 'max-width:200px;display:block;object-fit:contain;';
+        imgContainer.appendChild(img);
+
+        // Add zoom button for info images (Veil, Sanctuary, etc.)
+        if (info.title) {
+          const zoomBtn = document.createElement('button');
+          zoomBtn.style.cssText = 'position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);';
+          zoomBtn.textContent = '⤢';
+          zoomBtn.title = 'View fullscreen';
+          zoomBtn.setAttribute('data-item-name', info.title);
+          zoomBtn.onclick = function(event) {
+            const idx = window.allSacredItems.findIndex(i => i.name === info.title);
+            if (idx !== -1) {
+              openSacredItemModal(event, info.title, info.malayalam || '', toWebP(info.image), '', info.description || '', info.historical_context || '', info.biblical_reference || '', idx);
+            }
+            event.stopPropagation();
+          };
+          imgContainer.appendChild(zoomBtn);
+
+          // Show zoom button on hover
+          imgContainer.addEventListener('mouseenter', () => { zoomBtn.style.opacity = '1'; });
+          imgContainer.addEventListener('mouseleave', () => { zoomBtn.style.opacity = '0'; });
+        }
+
+        body.appendChild(imgContainer);
       }
 
       const desc = document.createElement('div');
