@@ -1055,7 +1055,7 @@ h2.stage-title {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.9);
-  z-index: 10000;
+  z-index: 10000000;
   align-items: center;
   justify-content: center;
   cursor: pointer;
