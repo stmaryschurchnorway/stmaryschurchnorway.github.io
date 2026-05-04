@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Control Text Alternatives</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #f5f1e8 0%, #eae5dc 100%);
+      padding: 40px 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #8B1E2D;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .option {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 2px solid #f0f0f0;
+      transition: all 0.2s;
+    }
+    .option:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      border-color: #d4a017;
+    }
+    .option h3 {
+      color: #8B1E2D;
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+    .demo-box {
+      background: #fafafa;
+      border: 2px dashed #d4a017;
+      border-radius: 4px;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: 15px;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      opacity: 0.4;
+    }
+    .control {
+      font-size: 14px;
+      font-weight: 500;
+      color: #d4a017;
+      margin: 10px 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .arrow {
+      font-size: 18px;
+      color: #d4a017;
+      margin: 0 5px;
+    }
+    .label {
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+    }
+    .pros {
+      background: #f0f9f0;
+      border-left: 3px solid #4CAF50;
+      padding: 10px 12px;
+      margin: 10px 0;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #2e7d32;
+      line-height: 1.5;
+    }
+    .cons {
+      background: #fef5f5;
+      border-left: 3px solid #f44336;
+      padding: 10px 12px;
+      margin: 10px 0;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #c62828;
+      line-height: 1.5;
+    }
+    .recommendation {
+      background: white;
+      border: 2px solid #d4a017;
+      border-radius: 8px;
+      padding: 25px;
+      margin-top: 40px;
+    }
+    .recommendation h2 {
+      color: #8B1E2D;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+    .rec-box {
+      background: #fff9f0;
+      border-left: 4px solid #d4a017;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Flip Control Text Alternatives</h1>
+    <p class="subtitle">Which label best communicates the interaction?</p>
+
+    <div class="options-grid">
+      <!-- OPTION 1: Current -->
+      <div class="option">
+        <h3>1. Current: Front/Back Labels</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control">Front <span class="arrow">⇄</span> Flip to Back</div>
+          <div class="label">Front View</div>
+        </div>
+        <div class="pros">✓ Explicit about what you're seeing<br/>✓ Clear what happens on click</div>
+        <div class="cons">✗ Verbose<br/>✗ Takes horizontal space</div>
+      </div>
+
+      <!-- OPTION 2: Minimal Arrow Only -->
+      <div class="option">
+        <h3>2. Minimal: Arrow Icon Only</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control" style="font-size: 20px;">⇄</div>
+          <div class="label">Front View</div>
+        </div>
+        <div class="pros">✓ Cleanest design<br/>✓ Universal symbol<br/>✓ Minimal text clutter</div>
+        <div class="cons">✗ Less explicit (needs hover tooltip)<br/>✗ Might confuse first-time users</div>
+      </div>
+
+      <!-- OPTION 3: Context Labels -->
+      <div class="option">
+        <h3>3. Context-Sensitive Labels</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control" style="margin: 5px 0;">
+            <span style="font-size: 12px; color: #999;">← Back</span> 
+            <span style="font-size: 16px; color: #d4a017; margin: 0 8px;">·</span> 
+            <span style="color: #d4a017;">Front</span>
+          </div>
+          <div class="label">Front View</div>
+        </div>
+        <div class="pros">✓ Shows current state and direction<br/>✓ Guides user intuitively<br/>✓ Compact</div>
+        <div class="cons">✗ Updates on click (slightly more code)<br/>✗ Dot divider might not be clear</div>
+      </div>
+
+      <!-- OPTION 4: Rotate/Spin -->
+      <div class="option">
+        <h3>4. Action-Focused: "Rotate"</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control"><span class="arrow">↻</span> Rotate</div>
+          <div class="label">Front View</div>
+        </div>
+        <div class="pros">✓ Clear action verb<br/>✓ "Rotate" is intuitive<br/>✓ Short & simple</div>
+        <div class="cons">✗ Less specific (could mean 3D rotation)<br/>✗ Rotation icon might confuse with refresh</div>
+      </div>
+
+      <!-- OPTION 5: View State -->
+      <div class="option">
+        <h3>5. State Display: "View: Front"</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control" style="font-size: 12px; color: #666;">
+            View: <span style="color: #d4a017; font-weight: 600;">Front</span>
+            <span class="arrow" style="margin: 0 5px;">⇄</span>
+          </div>
+          <div class="label">Click to switch</div>
+        </div>
+        <div class="pros">✓ Shows current state<br/>✓ Updates on click<br/>✓ Very clear</div>
+        <div class="cons">✗ Most verbose<br/>✗ Takes horizontal space<br/>✗ Feels formal/clinical</div>
+      </div>
+
+      <!-- OPTION 6: Just Icon with Divider -->
+      <div class="option">
+        <h3>6. Spacer: "Front | Back"</h3>
+        <div class="demo-box">
+          <div class="image-icon">👔</div>
+          <div class="control" style="font-size: 12px;">
+            Front <span style="color: #ccc; margin: 0 8px;">|</span> Back
+          </div>
+          <div class="label">Front View</div>
+        </div>
+        <div class="pros">✓ Shows both options at once<br/>✓ Compact<br/>✓ Like tab switches</div>
+        <div class="cons">✗ Doesn't show arrow/action<br/>✗ Less clear it's clickable<br/>✗ Looks more like a label</div>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <h2>Recommendation</h2>
+      <div class="rec-box">
+        <strong>Option 3 (Context-Sensitive Labels): "← Back · Front"</strong><br/>
+        This shows the user where they are (Front) and where they can go (← Back). It's compact, intuitive, and updates dynamically. When flipped, it becomes "Back · Front →" — always showing current state + direction.
+      </div>
+      <div class="rec-box" style="margin-top: 15px;">
+        <strong>Second choice: Option 2 (Arrow Only)</strong><br/>
+        If you want the absolute cleanest design and trust users will understand the flip icon (or add a tooltip on hover). Works great on mobile where space is limited.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

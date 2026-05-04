@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phayno Front/Back Demo — Option A</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #f5f1e8 0%, #eae5dc 100%);
+      padding: 40px 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .demo-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .demo-header h1 {
+      font-size: 28px;
+      color: #8B1E2D;
+      margin-bottom: 10px;
+    }
+    .demo-header p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    /* DATA STRUCTURE COLUMN */
+    .data-column {
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 25px;
+      font-family: 'Monaco', monospace;
+      font-size: 12px;
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    .data-column h3 {
+      color: #d4a017;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .code-line {
+      margin: 2px 0;
+    }
+    .key { color: #9cdcfe; }
+    .string { color: #ce9178; }
+    .comment { color: #6a9955; }
+
+    /* CAROUSEL DEMO COLUMN */
+    .carousel-demo {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .carousel-demo h3 {
+      color: #8B1E2D;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .item-display {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .item-name {
+      font-weight: 600;
+      color: #8B1E2D;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .item-malayalam {
+      color: #d4a017;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .image-container {
+      position: relative;
+      background: white;
+      border: 2px dashed #d4a017;
+      border-radius: 4px;
+      padding: 30px;
+      text-align: center;
+      margin: 15px 0;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .image-container.flipped {
+      background: #f5f0e8;
+    }
+
+    .image-placeholder {
+      font-size: 80px;
+      margin-bottom: 15px;
+      opacity: 0.5;
+    }
+    .view-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .flip-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .flip-arrow {
+      font-size: 16px;
+      color: #d4a017;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      font-weight: bold;
+    }
+    .flip-arrow:hover {
+      background: #d4a01720;
+      transform: scale(1.1);
+    }
+    .flip-text {
+      font-size: 12px;
+      color: #999;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .meaning {
+      font-size: 12px;
+      color: #666;
+      margin-top: 12px;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .notes {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 30px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #856404;
+      line-height: 1.6;
+    }
+    .notes h4 {
+      margin-bottom: 10px;
+      color: #7d6608;
+    }
+    .notes ul {
+      margin-left: 20px;
+    }
+    .notes li {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="demo-header">
+      <h1>Phayno Front/Back View — Option A Demo</h1>
+      <p>Interactive demo showing data structure and carousel rendering</p>
+    </div>
+
+    <div class="two-column">
+      <!-- DATA STRUCTURE -->
+      <div class="data-column">
+        <h3>← YAML Data Structure (qurbana.md)</h3>
+        <div class="code-line"><span class="comment">- name: "Phayno (Chasuble...)"</span></div>
+        <div class="code-line" style="margin-left: 10px;">
+          <span class="key">image</span><span class="string">: "/assets/img/sacred-items/phayno_medium.png"</span>
+        </div>
+        <div class="code-line" style="margin-left: 10px;">
+          <span class="key">back_image</span><span class="string">: "/assets/img/sacred-items/phayno_back_medium.png"</span>
+        </div>
+        <div class="code-line" style="margin-left: 10px;">
+          <span class="key">malayalam</span><span class="string">: "ഫായ്നോ"</span>
+        </div>
+        <div class="code-line" style="margin-left: 10px;">
+          <span class="key">meaning</span><span class="string">: "The robe of glory and..."</span>
+        </div>
+        <div class="code-line" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #444;">
+          <span class="comment">/* If back_image is present,</span>
+        </div>
+        <div class="code-line">
+          <span class="comment">   carousel shows flip arrow */</span>
+        </div>
+      </div>
+
+      <!-- CAROUSEL DEMO -->
+      <div class="carousel-demo">
+        <h3>→ CAROUSEL RENDERING (Interactive)</h3>
+        
+        <div class="item-display">
+          <div class="item-name">Phayno (Chasuble / Cope / Kappa / Phaino)</div>
+          <div class="item-malayalam">ഫായ്നോ</div>
+
+          <div id="imageContainer" class="image-container">
+            <div class="view-label" id="viewLabel">Front View</div>
+            <div class="image-placeholder">👔</div>
+          </div>
+
+          <div class="flip-control">
+            <span class="flip-text" id="flipStatus">Front</span>
+            <span class="flip-arrow" id="flipButton" onclick="toggleView()">⇄ Flip</span>
+            <span class="flip-text" id="nextView">to Back</span>
+          </div>
+
+          <div class="meaning">
+            The robe of glory and righteousness (Psalm 132:9-10; 1 Peter 2:9). The outermost garment representing the 'Armor of God.'
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <h4>Implementation Notes (Option A):</h4>
+      <ul>
+        <li><strong>Data change:</strong> Add optional <code>back_image</code> field to sacred_items</li>
+        <li><strong>Template change:</strong> Check if <code>back_image</code> exists; if yes, render flip arrow</li>
+        <li><strong>JavaScript:</strong> Toggle between <code>image</code> and <code>back_image</code> on click</li>
+        <li><strong>No breaking changes:</strong> Items without <code>back_image</code> work exactly as before</li>
+        <li><strong>Minimal code:</strong> Simple if/else check, ~10 lines of new JavaScript</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let isFlipped = false;
+
+    function toggleView() {
+      isFlipped = !isFlipped;
+      const container = document.getElementById('imageContainer');
+      const label = document.getElementById('viewLabel');
+      const status = document.getElementById('flipStatus');
+      const next = document.getElementById('nextView');
+
+      if (isFlipped) {
+        container.classList.add('flipped');
+        label.textContent = 'Back View';
+        status.textContent = 'Back';
+        next.textContent = 'to Front';
+      } else {
+        container.classList.remove('flipped');
+        label.textContent = 'Front View';
+        status.textContent = 'Front';
+        next.textContent = 'to Back';
+      }
+    }
+  </script>
+</body>
+</html>

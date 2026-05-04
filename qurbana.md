@@ -106,6 +106,7 @@ phases:
                 malayalam: "ഫായ്നോ"
                 meaning: "The robe of glory and righteousness (Psalm 132:9-10; 1 Peter 2:9). The outermost garment representing the 'Armor of God.'"
                 image: "/assets/img/sacred-items/phayno_medium.png"
+                back_image: "/assets/img/sacred-items/phayno_back_medium.png"
               - name: "Msone (Shoes)"
                 malayalam: "മ്സോനെ"
                 image: "/assets/img/sacred-items/msone_medium.png"

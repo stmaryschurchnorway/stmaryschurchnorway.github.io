@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structure Options for Front/Back Views</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Monaco', 'Courier New', monospace;
+      background: #1e1e1e;
+      padding: 40px 20px;
+      color: #e0e0e0;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #d4a017;
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-family: 'Inter', sans-serif;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .option {
+      background: #2d2d2d;
+      border: 2px solid #444;
+      border-radius: 8px;
+      padding: 25px;
+    }
+    .option.recommended {
+      border-color: #d4a017;
+      background: #2d2d2d;
+      box-shadow: 0 0 20px rgba(212, 160, 23, 0.2);
+    }
+    .option h2 {
+      color: #d4a017;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+    .option.recommended h2::after {
+      content: " ★ Recommended";
+      font-size: 12px;
+      color: #ffd700;
+      margin-left: 8px;
+    }
+    .code-block {
+      background: #1e1e1e;
+      border: 1px solid #3a3a3a;
+      border-radius: 4px;
+      padding: 15px;
+      margin: 15px 0;
+      overflow-x: auto;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+    .code-block code {
+      color: #ce9178;
+    }
+    .key { color: #9cdcfe; }
+    .value { color: #ce9178; }
+    .string { color: #ce9178; }
+    .comment { color: #6a9955; }
+    .pros, .cons {
+      font-family: 'Inter', sans-serif;
+      margin: 15px 0;
+      padding: 12px 15px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .pros {
+      background: rgba(76, 175, 80, 0.1);
+      border-left: 3px solid #4CAF50;
+      color: #81c784;
+    }
+    .cons {
+      background: rgba(244, 67, 54, 0.1);
+      border-left: 3px solid #f44336;
+      color: #ef5350;
+    }
+    .display-example {
+      margin-top: 20px;
+      padding: 20px;
+      background: #3a3a3a;
+      border-radius: 4px;
+      border: 1px solid #555;
+    }
+    .display-example h4 {
+      color: #d4a017;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .carousel-preview {
+      background: #1e1e1e;
+      border: 2px dashed #666;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin: 10px 0;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-placeholder {
+      font-size: 80px;
+      margin: 20px 0;
+      opacity: 0.4;
+    }
+    .flip-indicator {
+      color: #d4a017;
+      font-size: 12px;
+      margin-top: 10px;
+      font-family: 'Inter', sans-serif;
+    }
+    .usage-context {
+      margin-top: 30px;
+      background: #2d2d2d;
+      border: 1px solid #444;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+    .usage-context h3 {
+      color: #d4a017;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    .usage-item {
+      margin: 12px 0;
+      padding-left: 20px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .usage-item::before {
+      content: "→ ";
+      color: #d4a017;
+      margin-right: 8px;
+    }
+    @media (max-width: 1024px) {
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Data Structure Options: Front/Back Views</h1>
+
+    <div class="comparison">
+      <!-- OPTION A -->
+      <div class="option recommended">
+        <h2>Option A: Simple dual-field</h2>
+        
+        <div class="code-block"><pre><span class="comment">- name: "Phayno (Chasuble)"</span>
+<span class="key">  image</span>: <span class="value">"/assets/img/sacred-items/phayno_medium.png"</span>
+<span class="key">  back_image</span>: <span class="value">"/assets/img/sacred-items/phayno_back_medium.png"</span>
+<span class="key">  malayalam</span>: <span class="value">"ഫായ്നോ"</span>
+<span class="key">  meaning</span>: <span class="value">"The robe of glory..."</span></pre></div>
+
+        <div class="pros">
+          <strong>✓ Simple</strong> — Easy to understand, minimal new fields<br/>
+          <strong>✓ Minimal changes</strong> — Backward compatible, existing items unaffected<br/>
+          <strong>✓ Clear intent</strong> — Self-documenting: front vs back is obvious
+        </div>
+
+        <div class="cons">
+          <strong>✗ Limited</strong> — Hard to add 3rd view in future (would need back_image_2, etc.)<br/>
+          <strong>✗ No labels</strong> — Can't customize "back" label (could be "rear," "side view," etc.)
+        </div>
+
+        <div class="display-example">
+          <h4>How it renders in carousel:</h4>
+          <div class="carousel-preview">
+            <div class="image-placeholder">👔</div>
+            <div class="flip-indicator">← Front View | Click to flip →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION B -->
+      <div class="option">
+        <h2>Option B: Flexible images array</h2>
+        
+        <div class="code-block"><pre><span class="comment">- name: "Phayno (Chasuble)"</span>
+<span class="key">  images</span>:
+    - <span class="key">view</span>: <span class="value">"front"</span>
+      <span class="key">image</span>: <span class="value">"/assets/img/sacred-items/phayno_medium.png"</span>
+    - <span class="key">view</span>: <span class="value">"back"</span>
+      <span class="key">image</span>: <span class="value">"/assets/img/sacred-items/phayno_back_medium.png"</span>
+<span class="key">  malayalam</span>: <span class="value">"ഫായ്നോ"</span>
+<span class="key">  meaning</span>: <span class="value">"The robe of glory..."</span></pre></div>
+
+        <div class="pros">
+          <strong>✓ Future-proof</strong> — Easy to add 3rd, 4th view later<br/>
+          <strong>✓ Flexible labels</strong> — Can use any view name ("side," "detail," etc.)<br/>
+          <strong>✓ Scalable</strong> — Works for items with many views
+        </div>
+
+        <div class="cons">
+          <strong>✗ More complex</strong> — Nested structure, harder to read at a glance<br/>
+          <strong>✗ Refactoring needed</strong> — Existing single-image items need updating<br/>
+          <strong>✗ Breaking change</strong> — Frontend code must handle both old and new formats
+        </div>
+
+        <div class="display-example">
+          <h4>How it renders in carousel:</h4>
+          <div class="carousel-preview">
+            <div class="image-placeholder">👔</div>
+            <div class="flip-indicator">← Front View | Click to flip →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USAGE CONTEXT -->
+    <div class="usage-context">
+      <h3>Which items would benefit from front/back views?</h3>
+      <div class="usage-item"><strong>Vestments:</strong> Phayno (Chasuble), potentially others</div>
+      <div class="usage-item"><strong>Complex objects:</strong> Dhoopakutty (censer) — could show front assembly and internal detail</div>
+      <div class="usage-item"><strong>Future items:</strong> Any sacred item with multiple visual aspects</div>
+      <div class="usage-item" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #444;">
+        <strong>Recommendation:</strong> Start with <strong>Option A</strong> (simple dual-field). If/when you need 3+ views for multiple items, refactor to Option B. This follows YAGNI principle—don't over-engineer until you have concrete requirements.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
