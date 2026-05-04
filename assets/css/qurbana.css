@@ -1221,6 +1221,37 @@ h2.stage-title {
   }
 }
 
+.sacred-item-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  color: #8B1E2D;
+  border: none;
+  font-size: 48px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+  z-index: 10002;
+  display: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.sacred-item-nav-arrow.prev { left: 10px; }
+.sacred-item-nav-arrow.next { right: 10px; }
+
+.sacred-item-nav-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+@media (min-width: 769px) {
+  .sacred-item-nav-arrow { display: block; }
+}
+
 .substages-label {
   font-size: 11px;
   color: #d4a017;

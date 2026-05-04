@@ -171,7 +171,10 @@
 
   <!-- Sacred Item Zoom Modal -->
   <div class="sacred-item-modal" id="sacredItemModal">
+    <div id="sacredItemCounter" style="position:absolute;top:20px;left:20px;color:#fff;font-size:14px;font-weight:500;z-index:10002;background:rgba(0,0,0,0.6);padding:8px 12px;border-radius:6px;">Item <span id="currentItemNum">1</span> of <span id="totalItemsNum">1</span></div>
     <button class="sacred-item-modal-close" aria-label="Close" onclick="closeSacredItemModal()">&times;</button>
+    <button id="modalPrevArrow" class="sacred-item-nav-arrow prev" onclick="navigateSacredItemModal('prev')" aria-label="Previous item">‹</button>
+    <button id="modalNextArrow" class="sacred-item-nav-arrow next" onclick="navigateSacredItemModal('next')" aria-label="Next item">›</button>
     <div class="sacred-item-modal-content">
       <div class="sacred-item-modal-image-section">
         <img id="modalSacredItemImage" class="sacred-item-modal-image" alt="" data-front="" data-back="" data-current="front">
@@ -260,6 +263,62 @@
       });
     }
   });
+
+  // Build global index of all sacred items for navigation
+  function buildSacredItemsIndex() {
+    const allItems = [];
+    const seenNames = new Set();
+
+    phases.forEach((phase, phaseIdx) => {
+      const phaseName = phase.title || `Phase ${phaseIdx + 1}`;
+      const stagesInPhase = phase.subparts ?
+        phase.subparts.flatMap(s => s.stages) :
+        phase.stages;
+
+      stagesInPhase.forEach(stage => {
+        const stageName = stage.title || 'Unnamed Stage';
+
+        // Add sanctuary items
+        if (stage.sanctuary_info?.sacred_items) {
+          stage.sanctuary_info.sacred_items.forEach(item => {
+            if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+              allItems.push(item);
+              seenNames.add(item.name);
+            }
+          });
+        }
+
+        // Add veil items
+        if (stage.veil_info?.sacred_items) {
+          stage.veil_info.sacred_items.forEach(item => {
+            if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+              allItems.push(item);
+              seenNames.add(item.name);
+            }
+          });
+        }
+
+        // Add substage items
+        if (stage.substages) {
+          stage.substages.forEach(substage => {
+            if (substage.sacred_items) {
+              substage.sacred_items.forEach(item => {
+                if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+                  allItems.push(item);
+                  seenNames.add(item.name);
+                }
+              });
+            }
+          });
+        }
+      });
+    });
+
+    return allItems;
+  }
+
+  window.allSacredItems = buildSacredItemsIndex();
+  window.currentSacredItemIndex = 0;
 
   let currentPhaseIdx = 0;
   let currentStageIdx = 0;
@@ -1191,7 +1250,7 @@
               ${item.image ? `
                 <div style="position:relative;display:inline-block;margin-bottom:8px;">
                   <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;flex-shrink:0;">
-                  <button onclick="openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '', '${(item.meaning || '').replace(/'/g, "\\'")}', '', ''); event.stopPropagation();" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);" class="sacred-item-zoom-btn" title="View fullscreen">⤢</button>
+                  <button data-item-name="${item.name}" onclick="(function(btn){const idx = window.allSacredItems.findIndex(i => i.name === btn.dataset.itemName); if(idx !== -1) openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}', idx); event.stopPropagation();})(this);" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);" class="sacred-item-zoom-btn" title="View fullscreen">⤢</button>
                 </div>
               ` : ''}
               <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
@@ -1281,7 +1340,7 @@
                       ${item.image ? `
                         <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;flex-shrink:0;overflow:visible;width:100%;position:relative;">
                           <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;display:block;margin-bottom:6px;width:auto;height:auto;" class="sacred-item-image" data-front="${toWebP(item.image)}" ${item.back_image ? `data-back="${toWebP(item.back_image)}"` : ''}>
-                          <button onclick="openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.expanded_meaning || item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}'); event.stopPropagation();" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;" class="sacred-item-zoom-btn" title="View fullscreen" aria-label="View fullscreen">⤢</button>
+                          <button data-item-name="${item.name}" onclick="(function(btn){const idx = window.allSacredItems.findIndex(i => i.name === btn.dataset.itemName); if(idx !== -1) openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.expanded_meaning || item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}', idx); event.stopPropagation();})(this);" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;" class="sacred-item-zoom-btn" title="View fullscreen" aria-label="View fullscreen">⤢</button>
                           ${item.back_image ? `<button onclick="toggleSacredItemImage(event)" style="background:none;border:none;cursor:pointer;font-size:18px;line-height:1;color:#8B1E2D;padding:0;width:40px;height:40px;flex:0 0 40px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:bold;opacity:0.8;-webkit-tap-highlight-color:transparent;" title="Flip to see back" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.8';this.style.transform='scale(1)'" ontouchend="this.style.opacity='0.8';this.style.transform='scale(1)'">⇄</button>` : ''}
                         </div>
                       ` : ''}
@@ -1499,8 +1558,8 @@
   }
   window.toggleSacredItemImage = toggleSacredItemImage;
 
-  function openSacredItemModal(event, name, malayalam, frontImage, backImage, meaning, historicalContext, biblicalReference) {
-    event.stopPropagation();
+  function openSacredItemModal(event, name, malayalam, frontImage, backImage, meaning, historicalContext, biblicalReference, itemIndex) {
+    if (event) event.stopPropagation();
 
     const modal = document.getElementById('sacredItemModal');
     const modalImage = document.getElementById('modalSacredItemImage');
@@ -1513,6 +1572,11 @@
     const modalBiblical = document.getElementById('modalSacredItemBiblical');
 
     if (!modal) return;
+
+    // Set current item index if provided
+    if (itemIndex !== undefined) {
+      window.currentSacredItemIndex = parseInt(itemIndex);
+    }
 
     modalImage.src = frontImage;
     modalImage.alt = name;
@@ -1555,6 +1619,9 @@
     } else {
       modalBiblical.style.display = 'none';
     }
+
+    updateSacredItemCounter();
+    setupSacredItemSwipeHandlers();
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1601,9 +1668,68 @@
     }
   }
 
+  function updateSacredItemCounter() {
+    const totalItems = window.allSacredItems.length;
+    const currentNum = window.currentSacredItemIndex + 1;
+    const counterNum = document.getElementById('currentItemNum');
+    const totalNum = document.getElementById('totalItemsNum');
+    if (counterNum) counterNum.textContent = currentNum;
+    if (totalNum) totalNum.textContent = totalItems;
+  }
+
+  function navigateSacredItemModal(direction) {
+    const totalItems = window.allSacredItems.length;
+    if (totalItems === 0) return;
+
+    let newIndex = window.currentSacredItemIndex;
+    if (direction === 'next') {
+      newIndex = (newIndex + 1) % totalItems;
+    } else if (direction === 'prev') {
+      newIndex = (newIndex - 1 + totalItems) % totalItems;
+    }
+
+    const item = window.allSacredItems[newIndex];
+    const backImage = item.back_image ? toWebP(item.back_image) : '';
+    openSacredItemModal(null, item.name, item.malayalam || '', toWebP(item.image), backImage, item.meaning || '', item.historical_context || '', item.biblical_reference || '', newIndex);
+  }
+
+  let touchStartY = 0;
+  let isNavigating = false;
+
+  function handleTouchStart(e) {
+    touchStartY = e.touches[0].clientY;
+  }
+
+  function handleTouchEnd(e) {
+    if (isNavigating) return;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+    const threshold = 50;
+
+    if (Math.abs(deltaY) > threshold) {
+      isNavigating = true;
+      if (deltaY > 0) {
+        navigateSacredItemModal('next');
+      } else {
+        navigateSacredItemModal('prev');
+      }
+      setTimeout(() => { isNavigating = false; }, 200);
+    }
+  }
+
+  function setupSacredItemSwipeHandlers() {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal) return;
+    modal.removeEventListener('touchstart', handleTouchStart);
+    modal.removeEventListener('touchend', handleTouchEnd);
+    modal.addEventListener('touchstart', handleTouchStart);
+    modal.addEventListener('touchend', handleTouchEnd);
+  }
+
   window.openSacredItemModal = openSacredItemModal;
   window.closeSacredItemModal = closeSacredItemModal;
   window.flipModalSacredItemImage = flipModalSacredItemImage;
+  window.navigateSacredItemModal = navigateSacredItemModal;
 
   var fullscreenParent = null;
   var fullscreenNextSibling = null;
