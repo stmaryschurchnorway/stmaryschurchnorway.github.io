@@ -1061,6 +1061,7 @@ h2.stage-title {
   cursor: pointer;
   padding: 20px;
   overflow-y: auto;
+  overscroll-behavior: none;
 }
 
 .sacred-item-modal.open {
@@ -1278,16 +1279,18 @@ h2.stage-title {
 
 .swipe-arrow {
   font-size: 32px;
-  color: rgba(255,255,255,0.7);
+  color: #d4a017;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
   animation: swipe-bounce 2s infinite;
 }
 
 .swipe-text {
   font-size: 12px;
-  color: rgba(255,255,255,0.7);
+  color: #d4a017;
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
 .swipe-hint-down .swipe-arrow {
