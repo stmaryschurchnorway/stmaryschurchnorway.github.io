@@ -290,6 +290,13 @@
         if (stage.sanctuary_info?.sacred_items) {
           stage.sanctuary_info.sacred_items.forEach(item => {
             if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+              // Ensure malayalam property exists (extract from title if needed)
+              if (!item.malayalam) {
+                const malayalamMatch = item.name.match(/\(([^\—]*)\s*—/);
+                if (malayalamMatch) {
+                  item.malayalam = malayalamMatch[1].trim();
+                }
+              }
               allItems.push(item);
               seenNames.add(item.name);
             }
@@ -298,9 +305,17 @@
 
         // Add veil item (special case - veil_info is not a sacred_items array)
         if (stage.veil_info?.image && stage.veil_info?.title && !seenNames.has(stage.veil_info.title)) {
+          // Extract Malayalam text from title if present (format: "English (Malayalam — Transliteration)")
+          let malayalamText = '';
+          const malayalamMatch = stage.veil_info.title.match(/\(([^\—]*)\s*—/);
+          if (malayalamMatch) {
+            malayalamText = malayalamMatch[1].trim();
+          }
+
           const veilItem = {
             name: stage.veil_info.title,
             image: stage.veil_info.image,
+            malayalam: malayalamText,
             meaning: stage.veil_info.description || ''
           };
           allItems.push(veilItem);
@@ -1252,6 +1267,15 @@
 
         // Add zoom button for info images (Veil, Sanctuary, etc.)
         if (info.title) {
+          // Extract Malayalam from title if not already in info object
+          let malayalam = info.malayalam || '';
+          if (!malayalam) {
+            const malayalamMatch = info.title.match(/\(([^\—]*)\s*—/);
+            if (malayalamMatch) {
+              malayalam = malayalamMatch[1].trim();
+            }
+          }
+
           const zoomBtn = document.createElement('button');
           zoomBtn.style.cssText = 'position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);';
           zoomBtn.textContent = '⤢';
@@ -1260,7 +1284,7 @@
           zoomBtn.onclick = function(event) {
             const idx = window.allSacredItems.findIndex(i => i.name === info.title);
             if (idx !== -1) {
-              openSacredItemModal(event, info.title, info.malayalam || '', toWebP(info.image), '', info.description || '', info.historical_context || '', info.biblical_reference || '', idx);
+              openSacredItemModal(event, info.title, malayalam, toWebP(info.image), '', info.description || '', info.historical_context || '', info.biblical_reference || '', idx);
             }
             event.stopPropagation();
           };
