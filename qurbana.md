@@ -100,6 +100,7 @@ phases:
                 meaning: "The sword of the triumphant (Psalm 45:3) and the belt signifying truth (Ephesians 6:14). Jesus Christ wiped the disciples' feet with the towel He was girded with (John 13:4). 'Gird up thy loins now like a man' (Job 38:3)."
               - name: "Zende (Sleeves)"
                 malayalam: "സെന്ദേ"
+                image: "/assets/img/sacred-items/zende_medium.png"
                 meaning: "Two sleeves that make the hands instruments of righteousness and good works (Psalm 18:34-35)."
               - name: "Phayno (Chasuble)"
                 malayalam: "ഫായ്നോ"
