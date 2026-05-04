@@ -37,7 +37,7 @@ phases:
         audioPhrase: "Tuyobo, the preparation of the priest and elements"
         image: "/assets/img/tuyobo-v3.jpg"
         hotspots:
-          - item: "Shushepo / Sosappa (ശുശെപ്പോ)"
+          - item: "Shushepo / Sosappa (Great Veil)"
             x: 62
             y: 58
             radius: 10
@@ -51,7 +51,7 @@ phases:
               malayalam: "ത്രോണോസ്"
               image: "/assets/img/sacred-items/thronos_medium.png"
               meaning: "The table in the sanctuary upon which the Holy Qurbana is celebrated. Thronos means 'Throne' — the seat of the incarnate Word. It is the throne of God, and in English we call it Altar, as the Body and Blood of our Lord are offered as a sacrifice upon it."
-            - name: "Wooden Cross"
+            - name: "Wooden Cross (Kurisha)"
               malayalam: "കുരിശ്"
               image: "/assets/img/sacred-items/wooden_cross_medium.png"
               meaning: "Adorned by Oorara (Red stole). We use a wooden cross without crucifix or any writing, representing the resurrected and ascended Lord. The Orthodox Churches never use a crucifix because we emphasize the Resurrection. The cross is the symbol of Eternal Life: the top stands for love, the bottom for humility, the right for obedience, and the left for patience — it is the weapon to fight against evil."
@@ -158,7 +158,7 @@ phases:
             significance: "The sacred vessels are covered with the Shushepo, a white cloth symbolizing Christ's burial and representing divine mysteries hidden from human understanding. This sacred covering emphasizes that the Eucharistic mystery transcends human comprehension and can only be grasped through faith."
             ritual_gesture: "The Shushepo is drawn over the prepared elements with reverence and solemnity, completing the hidden preparation phase."
             sacred_items:
-              - name: "Shushepo / Sosappa (ശുശെപ്പോ)"
+              - name: "Shushepo / Sosappa (Great Veil)"
                 malayalam: "ശുശെപ്പോ"
                 meaning: "A white cloth covering both the Chalice and Paten. It signifies the swaddling clothes of Baby Jesus (Luke 2:7), the seamless garment of our Lord (John 19:23), the light called Shekina over the mercy seat (Numbers 9:15), and the bright cloud at the Transfiguration (Matthew 17:5). When covered, one corner is folded up, signifying the transformation of the Old Testament to the New."
                 image: "/assets/img/sacred-items/shushepo_medium.png"
@@ -326,7 +326,7 @@ phases:
                 spiritual_message: "The faithful are reminded that God's mysteries, once hidden, are now revealed in Christ and made accessible through the Holy Eucharist."
                 ritual_gesture: "The priest reverently lifts the veil with both hands in a smooth, deliberate motion, then allows it to flutter gently—a gesture reminiscent of Christ emerging from the tomb."
                 sacred_items:
-                  - name: "Shushepo / Sosappa"
+                  - name: "Shushepo / Sosappa (Great Veil)"
                     malayalam: "ശുശേപോ"
                     meaning: "When lifted, the Shushepo's removal symbolizes the rolling away of the stone from Christ's tomb (Matthew 28:2). Its gentle fluttering represents Christ rising from the dead, revealing the divine mysteries once hidden and now made accessible through the Holy Eucharist."
                     image: "/assets/img/sacred-items/shushepo_medium.png"
@@ -467,11 +467,11 @@ phases:
                 significance: "The curtain closes before the altar—a symbolic 'darkness' representing Christ's passion and death on the Cross. The hymn 'Anpudayone Nin Vathil' (O Merciful One, at Your throne we beseech...) is sung as the priest breaks the consecrated Bread and mixes it with the Wine. This action is not merely symbolic; it visibly demonstrates the breaking of Christ's body for the salvation of the world and signifies the unity of believers in His body, the Church. The mixing of the Body and Blood symbolizes the inseparability of Christ's saving work."
                 ritual_gesture: "The priest approaches the altar solemnly. With hands that have been sanctified by the Holy Spirit, he breaks the Bread into smaller portions and mixes them with the Wine. The action is reverent and deliberate, each movement carrying theological weight. The congregation watches in silent reverence, contemplating the mystery of Christ's self-giving love."
                 sacred_items:
-                  - name: "Lahmo (Body of Christ)"
+                  - name: "Lahmo (Sacred Bread)"
                     malayalam: "ലാഹ്മോ"
                     meaning: "Broken as Christ's body was broken for our salvation"
                     image: "/assets/img/sacred-items/lahmo_medium.png"
-                  - name: "Mazgogo (Blood of Christ)"
+                  - name: "Mazgogo (Sacred Wine)"
                     malayalam: "മാസ്ഗോഗോ"
                     meaning: "Mixed with the Bread to show the union of Christ's body and blood in His redemptive sacrifice"
                     image: "/assets/img/sacred-items/mazgogo_medium.png"
@@ -533,11 +533,11 @@ phases:
                 discipline_preparation: "The faithful approach with fasting, prayer, repentance, and reconciliation, receiving the Mysteries with awe and love."
                 ritual_gesture: "The faithful approach the altar with reverence, often crossing their hands or standing with hands cupped to receive the Bread. The priest then offers the chalice to drink. Each person receives with an attitude of profound gratitude and awe, aware that they are receiving not mere bread and wine, but the transformed Body and Blood of Christ."
                 sacred_items:
-                  - name: "Lahmo (Body of Christ)"
+                  - name: "Lahmo (Sacred Bread)"
                     malayalam: "ലാഹ്മോ"
                     meaning: "Consumed for eternal life and union with Christ"
                     image: "/assets/img/sacred-items/lahmo_medium.png"
-                  - name: "Mazgogo (Blood of Christ)"
+                  - name: "Mazgogo (Sacred Wine)"
                     malayalam: "മാസ്ഗോഗോ"
                     meaning: "Consumed for the forgiveness of sins and restoration of divine life"
                     image: "/assets/img/sacred-items/mazgogo_medium.png"
