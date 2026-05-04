@@ -175,6 +175,14 @@
     <button class="sacred-item-modal-close" aria-label="Close" onclick="closeSacredItemModal()">&times;</button>
     <button id="modalPrevArrow" class="sacred-item-nav-arrow prev" onclick="navigateSacredItemModal('prev')" aria-label="Previous item">‹</button>
     <button id="modalNextArrow" class="sacred-item-nav-arrow next" onclick="navigateSacredItemModal('next')" aria-label="Next item">›</button>
+    <div id="swipeHintTop" class="swipe-hint swipe-hint-up" aria-hidden="true">
+      <div class="swipe-arrow">↑</div>
+      <div class="swipe-text">Swipe up for next</div>
+    </div>
+    <div id="swipeHintBottom" class="swipe-hint swipe-hint-down" aria-hidden="true">
+      <div class="swipe-arrow">↓</div>
+      <div class="swipe-text">Swipe down for previous</div>
+    </div>
     <div class="sacred-item-modal-content">
       <div class="sacred-item-modal-image-section">
         <img id="modalSacredItemImage" class="sacred-item-modal-image" alt="" data-front="" data-back="" data-current="front">
@@ -1724,6 +1732,34 @@
     modal.removeEventListener('touchend', handleTouchEnd);
     modal.addEventListener('touchstart', handleTouchStart);
     modal.addEventListener('touchend', handleTouchEnd);
+
+    // Show swipe hints on mobile and hide after 3 seconds or on first swipe
+    const isDesktop = window.innerWidth > 768;
+    const swipeHintTop = document.getElementById('swipeHintTop');
+    const swipeHintBottom = document.getElementById('swipeHintBottom');
+
+    if (!isDesktop && swipeHintTop && swipeHintBottom) {
+      swipeHintTop.style.opacity = '1';
+      swipeHintBottom.style.opacity = '1';
+      swipeHintTop.style.transition = 'opacity 0.3s';
+      swipeHintBottom.style.transition = 'opacity 0.3s';
+
+      const hideHints = () => {
+        swipeHintTop.style.opacity = '0';
+        swipeHintBottom.style.opacity = '0';
+      };
+
+      // Hide after 3 seconds
+      const hintTimer = setTimeout(hideHints, 3000);
+
+      // Hide on first touch
+      const hideOnTouch = () => {
+        clearTimeout(hintTimer);
+        hideHints();
+        modal.removeEventListener('touchmove', hideOnTouch);
+      };
+      modal.addEventListener('touchmove', hideOnTouch);
+    }
   }
 
   window.openSacredItemModal = openSacredItemModal;
