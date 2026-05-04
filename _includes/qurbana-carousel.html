@@ -168,6 +168,33 @@
     </div>
   </div>
   </div><!-- Close carousel-fullscreen-wrapper -->
+
+  <!-- Sacred Item Zoom Modal -->
+  <div class="sacred-item-modal" id="sacredItemModal">
+    <button class="sacred-item-modal-close" aria-label="Close" onclick="closeSacredItemModal()">&times;</button>
+    <div class="sacred-item-modal-content">
+      <div class="sacred-item-modal-image-section">
+        <img id="modalSacredItemImage" class="sacred-item-modal-image" alt="" data-front="" data-back="" data-current="front">
+        <button id="modalFlipButton" class="sacred-item-modal-flip-btn" style="display:none;" onclick="flipModalSacredItemImage()" title="Flip to see back">⇄</button>
+      </div>
+      <div class="sacred-item-modal-details-section">
+        <h3 id="modalSacredItemName" class="sacred-item-modal-name"></h3>
+        <div id="modalSacredItemMalayalam" class="sacred-item-modal-malayalam"></div>
+        <div class="sacred-item-modal-theological">
+          <strong class="sacred-item-modal-section-title">Theological Significance:</strong>
+          <div id="modalSacredItemMeaning" class="sacred-item-modal-text"></div>
+        </div>
+        <div id="modalSacredItemHistorical" class="sacred-item-modal-historical" style="display:none;">
+          <strong class="sacred-item-modal-section-title">Historical Context:</strong>
+          <div class="sacred-item-modal-text"></div>
+        </div>
+        <div id="modalSacredItemBiblical" class="sacred-item-modal-biblical" style="display:none;">
+          <strong class="sacred-item-modal-section-title">Biblical Reference:</strong>
+          <div class="sacred-item-modal-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1158,7 +1185,12 @@
           <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
                onclick="toggleSacredItem(this)">
             <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
-              ${item.image ? `<img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;margin-bottom:8px;flex-shrink:0;">` : ''}
+              ${item.image ? `
+                <div style="position:relative;display:inline-block;margin-bottom:8px;">
+                  <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;flex-shrink:0;">
+                  <button onclick="openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '', '${(item.meaning || '').replace(/'/g, "\\'")}', '', ''); event.stopPropagation();" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);" class="sacred-item-zoom-btn" title="View fullscreen">⤢</button>
+                </div>
+              ` : ''}
               <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
               ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
             </div>
@@ -1244,8 +1276,9 @@
                        onclick="toggleSacredItem(this)">
                     <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
                       ${item.image ? `
-                        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;flex-shrink:0;overflow:visible;width:100%;">
+                        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;flex-shrink:0;overflow:visible;width:100%;position:relative;">
                           <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;display:block;margin-bottom:6px;width:auto;height:auto;" class="sacred-item-image" data-front="${toWebP(item.image)}" ${item.back_image ? `data-back="${toWebP(item.back_image)}"` : ''}>
+                          <button onclick="openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.expanded_meaning || item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}'); event.stopPropagation();" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;" class="sacred-item-zoom-btn" title="View fullscreen" aria-label="View fullscreen">⤢</button>
                           ${item.back_image ? `<button onclick="toggleSacredItemImage(event)" style="background:none;border:none;cursor:pointer;font-size:18px;line-height:1;color:#8B1E2D;padding:0;width:40px;height:40px;flex:0 0 40px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:bold;opacity:0.8;-webkit-tap-highlight-color:transparent;" title="Flip to see back" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.8';this.style.transform='scale(1)'" ontouchend="this.style.opacity='0.8';this.style.transform='scale(1)'">⇄</button>` : ''}
                         </div>
                       ` : ''}
@@ -1463,6 +1496,105 @@
   }
   window.toggleSacredItemImage = toggleSacredItemImage;
 
+  function openSacredItemModal(event, name, malayalam, frontImage, backImage, meaning, historicalContext, biblicalReference) {
+    event.stopPropagation();
+
+    const modal = document.getElementById('sacredItemModal');
+    const modalImage = document.getElementById('modalSacredItemImage');
+    const modalFlipBtn = document.getElementById('modalFlipButton');
+    const modalName = document.getElementById('modalSacredItemName');
+    const modalMalayalam = document.getElementById('modalSacredItemMalayalam');
+    const modalMeaning = document.getElementById('modalSacredItemMeaning');
+    const modalHistorical = document.getElementById('modalSacredItemHistorical');
+    const modalBiblical = document.getElementById('modalSacredItemBiblical');
+
+    if (!modal) return;
+
+    modalImage.src = frontImage;
+    modalImage.alt = name;
+    modalImage.setAttribute('data-front', frontImage);
+    modalImage.setAttribute('data-back', backImage);
+    modalImage.setAttribute('data-current', 'front');
+
+    if (backImage && backImage.trim() !== '') {
+      modalFlipBtn.style.display = 'block';
+    } else {
+      modalFlipBtn.style.display = 'none';
+    }
+
+    modalName.textContent = name;
+
+    if (malayalam && malayalam.trim() !== '') {
+      modalMalayalam.textContent = malayalam;
+      modalMalayalam.style.display = 'block';
+    } else {
+      modalMalayalam.style.display = 'none';
+    }
+
+    if (typeof linkBibleRefs === 'function') {
+      modalMeaning.innerHTML = linkBibleRefs(meaning);
+    } else {
+      modalMeaning.textContent = meaning;
+    }
+
+    if (historicalContext && historicalContext.trim() !== '') {
+      modalHistorical.querySelector('.sacred-item-modal-text').textContent = historicalContext;
+      modalHistorical.style.display = 'flex';
+    } else {
+      modalHistorical.style.display = 'none';
+    }
+
+    if (biblicalReference && biblicalReference.trim() !== '') {
+      modalBiblical.querySelector('.sacred-item-modal-text').textContent = biblicalReference;
+      modalBiblical.style.display = 'flex';
+    } else {
+      modalBiblical.style.display = 'none';
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSacredItemModal() {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal) return;
+
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+
+    const modalImage = document.getElementById('modalSacredItemImage');
+    if (modalImage) {
+      const frontImage = modalImage.getAttribute('data-front');
+      if (frontImage) {
+        modalImage.src = frontImage;
+        modalImage.setAttribute('data-current', 'front');
+      }
+    }
+  }
+
+  function flipModalSacredItemImage() {
+    const img = document.getElementById('modalSacredItemImage');
+    if (!img) return;
+
+    const backImg = img.getAttribute('data-back');
+    const frontImg = img.getAttribute('data-front');
+    const current = img.getAttribute('data-current');
+
+    if (!backImg) return;
+
+    if (current === 'back') {
+      img.src = frontImg;
+      img.setAttribute('data-current', 'front');
+    } else {
+      img.src = backImg;
+      img.setAttribute('data-current', 'back');
+    }
+  }
+
+  window.openSacredItemModal = openSacredItemModal;
+  window.closeSacredItemModal = closeSacredItemModal;
+  window.flipModalSacredItemImage = flipModalSacredItemImage;
+
   var fullscreenParent = null;
   var fullscreenNextSibling = null;
 
@@ -1494,11 +1626,24 @@
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      var wrapper = document.querySelector('.carousel-fullscreen-wrapper.custom-fullscreen');
-      if (wrapper) toggleFullscreen();
+      const sacredItemModal = document.getElementById('sacredItemModal');
+      if (sacredItemModal && sacredItemModal.classList.contains('open')) {
+        closeSacredItemModal();
+      } else {
+        var wrapper = document.querySelector('.carousel-fullscreen-wrapper.custom-fullscreen');
+        if (wrapper) toggleFullscreen();
+      }
     }
   });
 
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('sacredItemModal');
+    if (modal && modal.classList.contains('open')) {
+      if (e.target === modal) {
+        closeSacredItemModal();
+      }
+    }
+  });
 
   // Setup carousel content
   const carouselContent = document.getElementById('carouselContent');
