@@ -1102,8 +1102,8 @@ h2.stage-title {
 }
 
 .sacred-item-modal-flip-btn {
-  background: #8B1E2D;
-  color: white;
+  background: #f0f0f0;
+  color: #333;
   border: none;
   cursor: pointer;
   font-size: 24px;
@@ -1112,13 +1112,13 @@ h2.stage-title {
   border-radius: 6px;
   transition: all 0.2s;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(139, 30, 45, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sacred-item-modal-flip-btn:hover {
-  background: #6d1723;
+  background: #e0e0e0;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(139, 30, 45, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .sacred-item-modal-details-section {
