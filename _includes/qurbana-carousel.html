@@ -332,9 +332,10 @@
           });
         }
 
-        // Add substage items
-        if (stage.substages) {
-          stage.substages.forEach(substage => {
+        // Add substage items (handles both real substages and stages with detailed fields)
+        const effectiveSubstages = getEffectiveSubstages(stage);
+        if (effectiveSubstages.length > 0) {
+          effectiveSubstages.forEach(substage => {
             if (substage.sacred_items) {
               substage.sacred_items.forEach(item => {
                 if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
@@ -1221,6 +1222,26 @@
 
   window.playHymnAudio = playHymnAudio;
 
+  // Generic helper: Check if stage has detailed fields (ritual_action, theological_meaning, etc.)
+  function hasDetailedFields(stage) {
+    const detailedFields = [
+      'significance', 'ritual_action', 'priest_action_detail', 'theological_meaning',
+      'biblical_remembrance', 'spiritual_message', 'hymn_audio', 'sacred_items'
+    ];
+    return detailedFields.some(field => stage.hasOwnProperty(field) && stage[field]);
+  }
+
+  // Generic helper: Get effective substages (real substages OR stage with detailed fields)
+  function getEffectiveSubstages(stage) {
+    if (stage.substages && stage.substages.length > 0) {
+      return stage.substages;
+    }
+    if (hasDetailedFields(stage)) {
+      return [stage];
+    }
+    return [];
+  }
+
   // Task 8: Sub-stages Panel Rendering
   function renderSubstagesPanel() {
     const stage = stages[currentStageIdx];
@@ -1231,7 +1252,8 @@
 
     const hasSanctuary = stage.sanctuary_info;
     const hasVeil = stage.veil_info;
-    const hasSubstages = stage.substages && stage.substages.length > 0;
+    const effectiveSubstages = getEffectiveSubstages(stage);
+    const hasSubstages = effectiveSubstages.length > 0;
 
     if (!hasSanctuary && !hasVeil && !hasSubstages) {
       substagesPanel.style.display = 'none';
@@ -1371,7 +1393,7 @@
     const substagesContainer = document.createElement('div');
     substagesContainer.className = 'substages-container';
 
-    stage.substages.forEach((substage, idx) => {
+    effectiveSubstages.forEach((substage, idx) => {
       const substageItem = document.createElement('div');
       substageItem.className = 'substage-item collapsed';
       substageItem.setAttribute('data-substage-idx', idx);
@@ -1505,6 +1527,16 @@
       // Action
       if (substage.action) {
         sectionsHTML += `<div style="margin-top:8px;"><strong>Action:</strong> ${linkBibleRefs(substage.action)}</div>`;
+      }
+
+      // Priest Action Detail
+      if (substage.priest_action_detail) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Priest's Role:</strong> ${linkBibleRefs(substage.priest_action_detail)}</div>`;
+      }
+
+      // Ritual Action
+      if (substage.ritual_action) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Ritual Action:</strong> ${linkBibleRefs(substage.ritual_action)}</div>`;
       }
 
       // Significance / Meaning and Significance
