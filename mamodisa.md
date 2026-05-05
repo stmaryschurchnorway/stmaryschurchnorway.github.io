@@ -19,6 +19,7 @@ phases:
     malayalam: "ശിഷ്യത്വ ശുശ്രൂഷ"
     description: "Part I: The Preparation — Transition from the 'world' to the 'Kingdom'"
     card_description: "Liturgical location: Entrance of the Nave/Narthex"
+    image: "/assets/img/catechumens-stage.png"
     stages:
       - title: "Admonition and Admission"
         malayalam: "ഉദ്ബോധനവും പ്രവേശനവും"
@@ -265,22 +266,22 @@ The Holy Baptism (Mamodisa) is the foundational sacrament through which individu
     <div class="mamodisa-intro-pillar">
       <div class="mamodisa-intro-pillar-num">I</div>
       <div class="mamodisa-intro-pillar-label">Illumination</div>
-      <div class="mamodisa-intro-pillar-aka">Photismós · the newly illumined</div>
-      <div class="mamodisa-intro-pillar-desc">Enlightenment through faith — the candidate is led from darkness into the light of Christ</div>
+      <div class="mamodisa-intro-pillar-aka">Photismós · Manehronutho</div>
+      <div class="mamodisa-intro-pillar-desc">Enlightenment through faith — the candidate is led from darkness into the light of Christ (Hebrews 10:32)</div>
     </div>
     <div class="mamodisa-intro-divider"></div>
     <div class="mamodisa-intro-pillar">
       <div class="mamodisa-intro-pillar-num">II</div>
       <div class="mamodisa-intro-pillar-label">Adoption</div>
-      <div class="mamodisa-intro-pillar-aka">Huiothesía · sonship in Christ (Romans 8:15)</div>
-      <div class="mamodisa-intro-pillar-desc">Becoming God's beloved child and brother or sister of Jesus</div>
+      <div class="mamodisa-intro-pillar-aka">Huiothesía · Simath Bnayo (Romans 8:15)</div>
+      <div class="mamodisa-intro-pillar-desc">Becoming God's beloved child — "a bath of rebirth, gift of adoption as child of God"</div>
     </div>
     <div class="mamodisa-intro-divider"></div>
     <div class="mamodisa-intro-pillar">
       <div class="mamodisa-intro-pillar-num">III</div>
       <div class="mamodisa-intro-pillar-label">Regeneration</div>
-      <div class="mamodisa-intro-pillar-aka">Palingenesía · new birth (Titus 3:5)</div>
-      <div class="mamodisa-intro-pillar-desc">Spiritual rebirth and resurrection with Christ</div>
+      <div class="mamodisa-intro-pillar-aka">Palingenesía · Mawlodo d-men drish (Titus 3:5)</div>
+      <div class="mamodisa-intro-pillar-desc">Born again of water and the Holy Spirit — spiritual rebirth and resurrection with Christ</div>
     </div>
   </div>
 
