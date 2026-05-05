@@ -13,15 +13,6 @@
   margin: 0 auto 40px;
 }
 
-.liturgy-intro-section h1 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.8rem;
-  color: #d4a017;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  letter-spacing: 0.5px;
-}
-
 .liturgy-intro-section h2 {
   font-family: 'Lora', Georgia, serif;
   font-size: 1.8rem;
@@ -59,24 +50,6 @@
 .liturgy-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-.coming-soon-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #d4a017;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  z-index: 10;
-}
-
-.liturgy-card {
-  position: relative;
 }
 
 .liturgy-card-image {
@@ -204,7 +177,7 @@
   display: none;
 }
 
-.qurbana-carousel.hidden {
+.mamodisa-carousel.hidden {
   display: none;
 }
 
@@ -301,14 +274,14 @@
   }
 }
 
-.qurbana-intro-heading {
+.mamodisa-intro-heading {
   max-width: 800px;
   margin: 20px auto 20px;
   text-align: center;
   padding: 0 20px;
 }
 
-.qurbana-intro-heading h2 {
+.mamodisa-intro-heading h2 {
   font-family: 'Lora', Georgia, serif;
   font-size: 1.8rem;
   color: #d4a017;
@@ -317,7 +290,7 @@
   letter-spacing: 0.5px;
 }
 
-.qurbana-intro-description {
+.mamodisa-intro-description {
   font-size: 15px;
   color: #666;
   line-height: 1.7;
@@ -325,7 +298,7 @@
   max-width: 700px;
   text-align: left;
 }
-.qurbana-intro-description:last-of-type {
+.mamodisa-intro-description:last-of-type {
   margin-bottom: 0;
 }
 
@@ -481,7 +454,7 @@
   50% { transform: translateY(6px); }
 }
 
-.qurbana-carousel {
+.mamodisa-carousel {
   max-width: 700px;
   margin: 5px auto 20px;
 }
@@ -1529,36 +1502,36 @@ h2.stage-title {
 
 /* Responsive */
 @media (max-width: 600px) {
-  .qurbana-intro-heading {
+  .mamodisa-intro-heading {
     margin: 15px auto 15px;
     padding: 0 15px;
   }
 
-  .qurbana-intro-heading h2 {
+  .mamodisa-intro-heading h2 {
     font-size: 20px;
     margin-bottom: 10px;
   }
 
-  .qurbana-intro-description {
+  .mamodisa-intro-description {
     font-size: 14px;
   }
 
-  .qurbana-intro-button {
+  .mamodisa-intro-button {
     display: block;
     margin: 0 auto;
   }
 
-  .qurbana-learn-more-expanded {
+  .mamodisa-learn-more-expanded {
     padding: 0 15px;
   }
 
-  .qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
+  .mamodisa-intro-heading.expanded .mamodisa-learn-more-expanded {
     max-height: 2000px;
     padding: 15px 15px;
     margin-top: 15px;
   }
 
-  .qurbana-expanded-section {
+  .mamodisa-expanded-section {
     margin: 16px 0 0 0;
     padding: 16px;
     overflow: hidden;
@@ -1566,22 +1539,22 @@ h2.stage-title {
     max-width: 100%;
   }
 
-  .qurbana-expanded-title {
+  .mamodisa-expanded-title {
     font-size: 1rem;
     margin-bottom: 10px;
   }
 
-  .qurbana-expanded-section p {
+  .mamodisa-expanded-section p {
     font-size: 0.9rem;
     margin-bottom: 10px;
   }
 
-  .qurbana-expanded-list {
+  .mamodisa-expanded-list {
     font-size: 0.9rem;
     margin: 10px 0;
   }
 
-  .qurbana-expanded-list li {
+  .mamodisa-expanded-list li {
     margin-bottom: 6px;
   }
 
@@ -1590,7 +1563,7 @@ h2.stage-title {
     padding: 12px;
   }
 
-  .qurbana-glossary {
+  .mamodisa-glossary {
     flex-direction: column;
     gap: 8px;
     max-width: 100%;
@@ -1817,7 +1790,7 @@ h2.stage-title {
 
 /* === Intro accordion (Learn more section) === */
 
-.qurbana-intro-button {
+.mamodisa-intro-button {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   color: #d4a017;
@@ -1836,12 +1809,12 @@ h2.stage-title {
   text-decoration: none;
 }
 
-.qurbana-intro-button:hover {
+.mamodisa-intro-button:hover {
   border-color: #d4a017;
   background: #fffbf0;
 }
 
-.qurbana-expand-arrow {
+.mamodisa-expand-arrow {
   background: none;
   border: none;
   padding: 0;
@@ -1855,11 +1828,11 @@ h2.stage-title {
   font-weight: 500;
 }
 
-.qurbana-expand-arrow:hover {
+.mamodisa-expand-arrow:hover {
   opacity: 0.7;
 }
 
-.qurbana-expand-arrow-icon {
+.mamodisa-expand-arrow-icon {
   display: inline-block;
   font-size: 0.75rem;
   margin-left: 2px;
@@ -1869,17 +1842,17 @@ h2.stage-title {
   top: 1px;
 }
 
-.qurbana-intro-heading.expanded .qurbana-expand-arrow-icon {
+.mamodisa-intro-heading.expanded .mamodisa-expand-arrow-icon {
   transform: rotate(180deg);
 }
 
-.qurbana-learn-more-arrow {
+.mamodisa-learn-more-arrow {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 10px;
 }
 
-.qurbana-learn-more-expanded {
+.mamodisa-learn-more-expanded {
   max-width: 760px;
   margin: 0 auto;
   padding: 0 20px;
@@ -1891,42 +1864,42 @@ h2.stage-title {
   gap: 16px 40px;
 }
 
-.qurbana-expanded-section:nth-child(3) {
+.mamodisa-expanded-section:nth-child(3) {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
 }
 
-.qurbana-intro-heading.expanded .qurbana-learn-more-expanded {
+.mamodisa-intro-heading.expanded .mamodisa-learn-more-expanded {
   max-height: 2000px;
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 8px;
 }
 
-.qurbana-intro-heading .qurbana-intro-button .qurbana-learn-more-arrow {
+.mamodisa-intro-heading .mamodisa-intro-button .mamodisa-learn-more-arrow {
   transform: rotate(0deg);
 }
 
-.qurbana-intro-heading.expanded .qurbana-intro-button .qurbana-learn-more-arrow {
+.mamodisa-intro-heading.expanded .mamodisa-intro-button .mamodisa-learn-more-arrow {
   transform: rotate(180deg);
 }
 
-.qurbana-expanded-section {
+.mamodisa-expanded-section {
   margin: 0;
   padding: 12px;
   border: none;
   border-radius: 6px;
 }
 
-.qurbana-expanded-section:nth-child(1) {
+.mamodisa-expanded-section:nth-child(1) {
   background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
 }
 
-.qurbana-expanded-section:nth-child(2) {
+.mamodisa-expanded-section:nth-child(2) {
   background: linear-gradient(135deg, #f5f1eb 0%, #fafaf8 100%);
 }
 
-.qurbana-expanded-title {
+.mamodisa-expanded-title {
   font-family: 'Lora', Georgia, serif;
   font-size: 1rem;
   color: #d4a017;
@@ -1936,7 +1909,7 @@ h2.stage-title {
   text-align: left;
 }
 
-.qurbana-expanded-section p {
+.mamodisa-expanded-section p {
   color: #555;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -1944,19 +1917,19 @@ h2.stage-title {
   text-align: left;
 }
 
-.qurbana-expanded-section p:last-of-type {
+.mamodisa-expanded-section p:last-of-type {
   margin-bottom: 0;
 }
 
-.qurbana-church-structure-journey {
+.mamodisa-church-structure-journey {
   display: none;
 }
 
-.qurbana-church-structure-journey.expanded {
+.mamodisa-church-structure-journey.expanded {
   display: block;
 }
 
-.qurbana-expanded-list {
+.mamodisa-expanded-list {
   color: #555;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -1966,20 +1939,20 @@ h2.stage-title {
   text-align: left;
 }
 
-.qurbana-expanded-list li {
+.mamodisa-expanded-list li {
   margin-bottom: 10px;
   padding-left: 18px;
   position: relative;
 }
 
-.qurbana-expanded-list li:before {
+.mamodisa-expanded-list li:before {
   content: "◆ ";
   color: #d4a017;
   font-size: 0.6rem;
   margin-right: 8px;
 }
 
-.qurbana-glossary {
+.mamodisa-glossary {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -2160,19 +2133,202 @@ h2.stage-title {
 
 /* Expanded content responsive */
 @media (max-width: 1024px) {
-  .qurbana-learn-more-expanded {
+  .mamodisa-learn-more-expanded {
     grid-template-columns: 1fr;
     max-width: 100%;
   }
 }
 
 @media (max-width: 800px) {
-  .qurbana-learn-more-expanded {
+  .mamodisa-learn-more-expanded {
     grid-template-columns: 1fr;
     max-width: 100%;
   }
 
-  .qurbana-expanded-section:nth-child(2) {
+  .mamodisa-expanded-section:nth-child(2) {
     background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
   }
+}
+
+/* ============================================================
+   Intro: Trinity Pillars + Sacraments Journey
+   ============================================================ */
+.mamodisa-intro-frame {
+  background: linear-gradient(180deg, #fffaf0 0%, #fff 100%);
+  border: 1px solid #e8d4a5;
+  border-radius: 10px;
+  padding: 32px 28px;
+  margin: 24px 0 8px;
+}
+.mamodisa-intro-frame-title {
+  text-align: center;
+  font-family: 'Lora', Georgia, serif;
+  color: #8B1E2D;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.mamodisa-intro-frame-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.mamodisa-intro-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  margin-bottom: 32px;
+}
+.mamodisa-intro-pillar {
+  text-align: center;
+  padding: 8px 16px;
+}
+.mamodisa-intro-pillar-num {
+  color: #d4a017;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.mamodisa-intro-pillar-label {
+  font-family: 'Lora', Georgia, serif;
+  color: #8B1E2D;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.mamodisa-intro-pillar-aka {
+  color: #b8860b;
+  font-size: 0.78rem;
+  font-style: italic;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+.mamodisa-intro-pillar-desc {
+  color: #555;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.mamodisa-intro-divider {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, #d4a017 30%, #d4a017 70%, transparent);
+}
+.mamodisa-intro-journey-label {
+  text-align: center;
+  color: #888;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 24px 0 14px;
+}
+.mamodisa-intro-journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.mamodisa-intro-journey-step {
+  background: #fff;
+  border: 2px solid #d4a017;
+  color: #8B1E2D;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: 'Lora', Georgia, serif;
+  text-align: center;
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: 240px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.mamodisa-intro-journey-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+.mamodisa-intro-journey-aka {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.75rem;
+  color: #b8860b;
+  font-style: italic;
+  font-weight: 400;
+}
+.mamodisa-intro-journey-step.current {
+  background: #8B1E2D;
+  color: #fff;
+  border-color: #8B1E2D;
+}
+.mamodisa-intro-journey-step.current .mamodisa-intro-journey-aka {
+  color: #f3d99a;
+}
+a.mamodisa-intro-journey-step {
+  cursor: pointer;
+}
+a.mamodisa-intro-journey-step:hover {
+  background: #fffaf0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(212, 160, 23, 0.25);
+}
+a.mamodisa-intro-journey-step:hover .mamodisa-intro-journey-name {
+  color: #8B1E2D;
+}
+a.mamodisa-intro-journey-step .mamodisa-intro-journey-name::after {
+  content: " ↗";
+  font-size: 0.7rem;
+  color: #d4a017;
+  font-weight: 400;
+  margin-left: 2px;
+  vertical-align: super;
+}
+.mamodisa-intro-journey-tag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  background: #d4a017;
+  color: #fff;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  align-self: center;
+}
+a.mamodisa-intro-journey-step.soon {
+  border-style: dashed;
+  border-color: #d4a017;
+  background: #fffaf0;
+}
+a.mamodisa-intro-journey-step.soon:hover {
+  background: #fff5e0;
+}
+.mamodisa-intro-journey-arrow {
+  color: #d4a017;
+  font-size: 1.2rem;
+}
+.mamodisa-intro-caption {
+  text-align: center;
+  color: #666;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 18px;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .mamodisa-intro-frame { padding: 24px 18px; }
+  .mamodisa-intro-pillars {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .mamodisa-intro-divider { display: none; }
+  .mamodisa-intro-journey { flex-direction: column; }
+  .mamodisa-intro-journey-arrow { transform: rotate(90deg); }
 }

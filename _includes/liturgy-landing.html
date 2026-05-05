@@ -1,12 +1,16 @@
 <div class="liturgy-landing" id="liturgyLanding">
   <div class="liturgy-intro-section">
     <h2>Explore Our Sacred Liturgies</h2>
-    <p>Journey through the ancient traditions and sacred rituals that form the heart of our worship</p>
+    <p>The Malankara Orthodox Syrian Church recognizes seven sacraments, known as "Holy Mysteries," which are essential rites where the Holy Spirit acts to sanctify believers and strengthen their connection with God.</p>
+    <p style="font-size: 14px; color: #999; margin-top: 8px;">Journey through the ancient traditions and sacred rituals that form the heart of our worship</p>
   </div>
 
   <div class="liturgy-grid">
     {% for liturgy in page.liturgies %}
-    <div class="liturgy-card" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
+    <div class="liturgy-card" id="{{ liturgy.id }}" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
+      {% if liturgy.status == 'coming-soon' %}
+      <div class="coming-soon-badge">Coming Soon</div>
+      {% endif %}
       <div class="liturgy-card-image">
         <picture>
           <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
@@ -24,7 +28,7 @@
         </div>
         <p class="liturgy-card-description">{{ liturgy.description }}</p>
         <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
-          Explore Journey <span aria-hidden="true">→</span>
+          Explore the Mystery <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>

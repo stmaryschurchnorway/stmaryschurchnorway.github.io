@@ -1,0 +1,1913 @@
+<div class="mamodisa-carousel" id="mamodisaCarousel">
+  <!-- Fullscreen wrapper -->
+  <div class="carousel-fullscreen-wrapper" id="carouselFullscreenWrapper">
+    <!-- Phase tabs always visible -->
+    <p class="phase-intro-statement">Celebrated in Three Parts</p>
+    <div class="phase-tabs" id="phaseTabs"><!-- Rendered by JavaScript --></div>
+
+    <!-- Visual connector from active phase to carousel -->
+    <div class="phase-connector" id="phaseConnector"></div>
+
+    <!-- Carousel card -->
+    <div class="carousel-card">
+    <!-- Carousel content -->
+    <div id="carouselContent">
+    <div class="image-placeholder" id="videoPlaceholder">
+      <div id="youtubeContainer"></div>
+      <span id="placeholderText">Video coming soon</span>
+      <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen" aria-label="Toggle fullscreen">⤢</button>
+    </div>
+    <!-- YouTube API loaded on demand by loadVideo() -->
+
+    <div class="carousel-content">
+      <div class="controls-header">
+        <button class="icon-btn" id="prevBtn" title="Previous stage" aria-label="Previous stage">←</button>
+        <div class="header-text">
+          <span class="subpart-indicator" id="subpartIndicator"></span>
+          <div class="stage-counter" id="stageCounter">INTRODUCTION</div>
+          <h2 class="stage-title" id="stageTitle">Holy Baptism (Mamodisa)</h2>
+        </div>
+        <button class="icon-btn" id="nextBtn" title="Next stage" aria-label="Next stage">→</button>
+      </div>
+
+      <div class="malayalam-section" id="malayalamSection">
+        <div class="malayalam-content">
+          <div class="malayalam-text" id="malayalamText">വിശുദ്ധ കുർബാന</div>
+          <div class="transliteration" id="transliteration">Pronunciation: Vi-shud-dha Kur-ba-na</div>
+        </div>
+        <button class="audio-button" id="audioBtn" title="Listen to pronunciation" aria-label="Listen to pronunciation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+      </div>
+
+      <p class="stage-description" id="stageDescription">
+        An interactive journey through the sacred stages of the Eucharistic service. Click the speaker icon to hear Malayalam pronunciation, or use the arrow buttons to navigate between stages.
+      </p>
+
+      <div id="sanctuaryPanel" style="margin:0 25px 15px;"><!-- Rendered by JavaScript --></div>
+      <div class="substages-panel" id="substagesPanel"><!-- Rendered by JavaScript --></div>
+
+      <div class="progress-dots" id="progressDots"></div>
+
+      <!-- Bottom navigation controls -->
+      <div class="controls-footer">
+        <button class="icon-btn" id="prevBtnFooter" title="Previous stage" aria-label="Previous stage">← Previous</button>
+        <button class="icon-btn" id="nextBtnFooter" title="Next stage" aria-label="Next stage">Next →</button>
+      </div>
+
+      <!-- hymnAudio removed: playHymn() now drives the visible <audio> inside .hymn-section -->
+    </div>
+    </div>
+  </div>
+  </div><!-- Close carousel-fullscreen-wrapper -->
+
+  <!-- Sacred Item Zoom Modal -->
+  <div class="sacred-item-modal" id="sacredItemModal">
+    <div id="sacredItemCounter" style="position:absolute;top:20px;left:20px;color:#fff;font-size:14px;font-weight:500;z-index:10002;background:rgba(0,0,0,0.6);padding:8px 12px;border-radius:6px;">Item <span id="currentItemNum">1</span> of <span id="totalItemsNum">1</span></div>
+    <button class="sacred-item-modal-close" aria-label="Close" onclick="closeSacredItemModal()">&times;</button>
+    <button id="modalPrevArrow" class="sacred-item-nav-arrow prev" onclick="navigateSacredItemModal('prev')" aria-label="Previous item">‹</button>
+    <button id="modalNextArrow" class="sacred-item-nav-arrow next" onclick="navigateSacredItemModal('next')" aria-label="Next item">›</button>
+    <div id="swipeHintTop" class="swipe-hint swipe-hint-up" aria-hidden="true">
+      <div class="swipe-arrow">↑</div>
+      <div class="swipe-text">Swipe up for next</div>
+    </div>
+    <div id="swipeHintBottom" class="swipe-hint swipe-hint-down" aria-hidden="true">
+      <div class="swipe-arrow">↓</div>
+      <div class="swipe-text">Swipe down for previous</div>
+    </div>
+    <div class="sacred-item-modal-content">
+      <div class="sacred-item-modal-image-section">
+        <img id="modalSacredItemImage" class="sacred-item-modal-image" alt="" data-front="" data-back="" data-current="front">
+        <button id="modalFlipButton" class="sacred-item-modal-flip-btn" style="display:none;" onclick="flipModalSacredItemImage()" title="Flip to see back">⇄</button>
+        <div style="text-align:center; font-size:13px; color:#666; font-weight:500; margin-top:8px;">
+          <span id="modalViewLabel">Front View</span>
+        </div>
+      </div>
+      <div class="sacred-item-modal-details-section">
+        <h3 id="modalSacredItemName" class="sacred-item-modal-name"></h3>
+        <div id="modalSacredItemMalayalam" class="sacred-item-modal-malayalam"></div>
+        <div class="sacred-item-modal-theological">
+          <strong class="sacred-item-modal-section-title">Theological Significance:</strong>
+          <div id="modalSacredItemMeaning" class="sacred-item-modal-text"></div>
+        </div>
+        <div id="modalSacredItemHistorical" class="sacred-item-modal-historical" style="display:none;">
+          <strong class="sacred-item-modal-section-title">Historical Context:</strong>
+          <div class="sacred-item-modal-text"></div>
+        </div>
+        <div id="modalSacredItemBiblical" class="sacred-item-modal-biblical" style="display:none;">
+          <strong class="sacred-item-modal-section-title">Biblical Reference:</strong>
+          <div class="sacred-item-modal-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // WebP support detection
+  var _supportsWebP = null;
+  function supportsWebP(cb) {
+    if (_supportsWebP !== null) return cb(_supportsWebP);
+    var img = new Image();
+    img.onload = function() { _supportsWebP = (img.width > 0 && img.height > 0); cb(_supportsWebP); };
+    img.onerror = function() { _supportsWebP = false; cb(false); };
+    img.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+  }
+  // Pre-detect on load
+  supportsWebP(function(){});
+
+  function toWebP(url) {
+    if (!_supportsWebP || !url) return url;
+    return url.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  }
+
+  // Lazy YouTube API loader
+  var ytApiLoaded = false;
+  var ytApiCallbacks = [];
+  function ensureYouTubeAPI(cb) {
+    if (window.YT && window.YT.Player) return cb();
+    ytApiCallbacks.push(cb);
+    if (!ytApiLoaded) {
+      ytApiLoaded = true;
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+      window.onYouTubeIframeAPIReady = function() {
+        ytApiCallbacks.forEach(function(fn) { fn(); });
+        ytApiCallbacks = [];
+      };
+    }
+  }
+
+  // Load phases directly from page data (no intro phase)
+  const phases = {{ page.phases | jsonify }};
+
+  // Flatten phases into stages array and create phaseMap
+  const stages = [];
+  const phaseMap = {};
+  phases.forEach((phase, phaseIdx) => {
+    if (phase.subparts) {
+      // Phase has subparts
+      phase.subparts.forEach((subpart, subpartIdx) => {
+        subpart.stages.forEach(stage => {
+          phaseMap[stages.length] = { phaseIdx: phaseIdx, subpartIdx: subpartIdx };
+          stages.push(stage);
+        });
+      });
+    } else {
+      // Phase has direct stages (no subparts)
+      phase.stages.forEach(stage => {
+        phaseMap[stages.length] = { phaseIdx: phaseIdx };
+        stages.push(stage);
+      });
+    }
+  });
+
+  // Build global index of all sacred items for navigation
+  function buildSacredItemsIndex() {
+    const allItems = [];
+    const seenNames = new Set();
+
+    phases.forEach((phase, phaseIdx) => {
+      const phaseName = phase.title || `Phase ${phaseIdx + 1}`;
+      const stagesInPhase = phase.subparts ?
+        phase.subparts.flatMap(s => s.stages) :
+        phase.stages;
+
+      stagesInPhase.forEach(stage => {
+        const stageName = stage.title || 'Unnamed Stage';
+
+        // Add sanctuary items
+        if (stage.sanctuary_info?.sacred_items) {
+          stage.sanctuary_info.sacred_items.forEach(item => {
+            if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+              // Ensure malayalam property exists (extract from title if needed)
+              if (!item.malayalam) {
+                const malayalamMatch = item.name.match(/\(([^\—]*)\s*—/);
+                if (malayalamMatch) {
+                  item.malayalam = malayalamMatch[1].trim();
+                }
+              }
+              allItems.push(item);
+              seenNames.add(item.name);
+            }
+          });
+        }
+
+        // Add veil item (special case - veil_info is not a sacred_items array)
+        if (stage.veil_info?.image && stage.veil_info?.title && !seenNames.has(stage.veil_info.title)) {
+          // Extract Malayalam text from title if present (format: "English (Malayalam — Transliteration)")
+          let malayalamText = '';
+          const malayalamMatch = stage.veil_info.title.match(/\(([^\—]*)\s*—/);
+          if (malayalamMatch) {
+            malayalamText = malayalamMatch[1].trim();
+          }
+
+          const veilItem = {
+            name: stage.veil_info.title,
+            image: stage.veil_info.image,
+            malayalam: malayalamText,
+            meaning: stage.veil_info.description || ''
+          };
+          allItems.push(veilItem);
+          seenNames.add(stage.veil_info.title);
+        }
+
+        // Add veil sacred items if they exist in an array
+        if (stage.veil_info?.sacred_items) {
+          stage.veil_info.sacred_items.forEach(item => {
+            if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+              allItems.push(item);
+              seenNames.add(item.name);
+            }
+          });
+        }
+
+        // Add substage items
+        if (stage.substages) {
+          stage.substages.forEach(substage => {
+            if (substage.sacred_items) {
+              substage.sacred_items.forEach(item => {
+                if (item.image && !item.name.includes('None required') && !seenNames.has(item.name)) {
+                  allItems.push(item);
+                  seenNames.add(item.name);
+                }
+              });
+            }
+          });
+        }
+      });
+    });
+
+    return allItems;
+  }
+
+  window.allSacredItems = buildSacredItemsIndex();
+  window.currentSacredItemIndex = 0;
+
+  let currentPhaseIdx = 0;
+  let currentStageIdx = 0;
+  let currentSubpartIdx = 0;
+
+  const carousel = document.getElementById('mamodisaCarousel');
+  if (!carousel) return;
+
+  const stageCounterEl = carousel.querySelector('#stageCounter');
+  const stageTitleEl = carousel.querySelector('#stageTitle');
+  const subpartIndicatorEl = carousel.querySelector('#subpartIndicator');
+  const malayalamEl = carousel.querySelector('#malayalamText');
+  const transliterationEl = carousel.querySelector('#transliteration');
+  const descriptionEl = carousel.querySelector('#stageDescription');
+  const audioBtn = carousel.querySelector('#audioBtn');
+  const prevBtn = carousel.querySelector('#prevBtn');
+  let nextBtn = carousel.querySelector('#nextBtn');
+  const fullscreenBtn = carousel.querySelector('#fullscreenBtn');
+  const dotsContainer = carousel.querySelector('#progressDots');
+  const phaseTabs = carousel.querySelector('#phaseTabs');
+  const substagesPanel = carousel.querySelector('#substagesPanel');
+  const malayalamSection = carousel.querySelector('#malayalamSection');
+
+  function hasSubparts(phaseIdx) {
+    return phases[phaseIdx].subparts && phases[phaseIdx].subparts.length > 0;
+  }
+
+  function getPhaseStartIndex(phaseIdx) {
+    let index = 0;
+    for (let i = 0; i < phaseIdx; i++) {
+      if (hasSubparts(i)) {
+        phases[i].subparts.forEach(subpart => {
+          index += subpart.stages.length;
+        });
+      } else {
+        index += phases[i].stages.length;
+      }
+    }
+    return index;
+  }
+
+  function getSubpartStartIndex(phaseIdx, subpartIdx) {
+    let index = getPhaseStartIndex(phaseIdx);
+    if (hasSubparts(phaseIdx)) {
+      for (let i = 0; i < subpartIdx; i++) {
+        index += phases[phaseIdx].subparts[i].stages.length;
+      }
+    }
+    return index;
+  }
+
+  function getStageInPhase(globalIdx) {
+    const phaseInfo = phaseMap[globalIdx];
+    if (!phaseInfo) return 1;
+    return globalIdx - getPhaseStartIndex(phaseInfo.phaseIdx) + 1;
+  }
+
+  // Task 4: Phase Tab Rendering and Switching
+  function renderPhaseTabs() {
+    while (phaseTabs.firstChild) {
+      phaseTabs.removeChild(phaseTabs.firstChild);
+    }
+    phases.forEach((phase, idx) => {
+      const tab = document.createElement('button');
+      tab.className = 'phase-card' + (idx === currentPhaseIdx ? ' active' : '');
+      tab.setAttribute('type', 'button');
+      tab.setAttribute('data-phase-idx', idx);
+
+      const num = document.createElement('div');
+      num.className = 'phase-card-num';
+      num.textContent = 'PART ' + (idx + 1);
+      tab.appendChild(num);
+
+      const title = document.createElement('div');
+      title.className = 'phase-card-title';
+      title.textContent = phase.title;
+      tab.appendChild(title);
+
+      // Add subparts as nested tabs if phase has subparts
+      if (hasSubparts(idx)) {
+        const subpartsContainer = document.createElement('div');
+        subpartsContainer.className = 'phase-card-subparts';
+
+        phase.subparts.forEach((subpart, subIdx) => {
+          const subTab = document.createElement('button');
+          subTab.className = 'phase-card-subpart' + (idx === currentPhaseIdx && subIdx === currentSubpartIdx ? ' active' : '');
+          subTab.setAttribute('type', 'button');
+          subTab.setAttribute('title', subpart.title);
+          subTab.textContent = subpart.title;
+          subTab.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Activate the phase and switch to this subpart
+            switchPhase(idx);
+            switchSubpart(subIdx);
+          });
+          subpartsContainer.appendChild(subTab);
+        });
+
+        tab.appendChild(subpartsContainer);
+      }
+
+      tab.addEventListener('click', () => switchPhase(idx));
+      phaseTabs.appendChild(tab);
+    });
+  }
+
+  function renderSubpartToggle() {
+    const container = carousel.querySelector('#subpartToggleContainer');
+    if (!container) return;
+
+    // Clear existing content
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+
+    // Only show if current phase has subparts
+    if (!hasSubparts(currentPhaseIdx)) {
+      container.style.display = 'none';
+      return;
+    }
+
+    container.style.display = 'block';
+
+    // Create pill toggle wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'subpart-pill-toggle';
+
+    const phase = phases[currentPhaseIdx];
+    phase.subparts.forEach((subpart, idx) => {
+      const pill = document.createElement('button');
+      pill.className = 'subpart-pill' + (idx === currentSubpartIdx ? ' active' : '');
+      pill.setAttribute('type', 'button');
+      pill.setAttribute('data-subpart-idx', idx);
+      pill.textContent = subpart.title;
+      pill.addEventListener('click', () => switchSubpart(idx));
+      wrapper.appendChild(pill);
+    });
+
+    container.appendChild(wrapper);
+  }
+
+  function preloadPhaseImages(phaseIdx) {
+    // Preload all images for stages in this phase
+    const phase = phases[phaseIdx];
+    if (!phase) return;
+
+    var imagesToPreload = [];
+
+    if (phase.subparts) {
+      phase.subparts.forEach(function(subpart) {
+        if (subpart.stages) {
+          subpart.stages.forEach(function(stage) {
+            if (stage.image && stage.image.trim()) {
+              imagesToPreload.push(stage.image);
+            }
+          });
+        }
+      });
+    } else if (phase.stages) {
+      phase.stages.forEach(function(stage) {
+        if (stage.image && stage.image.trim()) {
+          imagesToPreload.push(stage.image);
+        }
+      });
+    }
+
+    // Preload images in background (use WebP if supported)
+    imagesToPreload.forEach(function(imageUrl) {
+      var img = new Image();
+      img.src = toWebP(imageUrl);
+    });
+  }
+
+  const bibleBooks = {
+    'Gen': 'GEN', 'Ex': 'EXO', 'Lev': 'LEV', 'Num': 'NUM', 'Deut': 'DEU',
+    'Josh': 'JOS', 'Judg': 'JDG', 'Ruth': 'RUT', '1 Sam': '1SA', '2 Sam': '2SA',
+    '1 Kings': '1KI', '2 Kings': '2KI', '1 Chr': '1CH', '2 Chr': '2CH',
+    'Neh': 'NEH', 'Job': 'JOB', 'Psalm': 'PSA', 'Prov': 'PRO', 'Eccl': 'ECC',
+    'Isaiah': 'ISA', 'Jer': 'JER', 'Lam': 'LAM', 'Ezek': 'EZK', 'Dan': 'DAN',
+    'Hosea': 'HOS', 'Joel': 'JOL', 'Amos': 'AMO', 'Jonah': 'JON', 'Micah': 'MIC',
+    'Nahum': 'NAM', 'Hab': 'HAB', 'Zeph': 'ZEP', 'Hag': 'HAG', 'Zech': 'ZEC', 'Mal': 'MAL',
+    'Matthew': 'MAT', 'Mark': 'MRK', 'Luke': 'LUK', 'John': 'JHN', 'Acts': 'ACT',
+    'Rom': 'ROM', '1 Cor': '1CO', '2 Cor': '2CO', 'Gal': 'GAL', 'Eph': 'EPH',
+    'Phil': 'PHP', 'Col': 'COL', '1 Thess': '1TH', '2 Thess': '2TH',
+    '1 Tim': '1TI', '2 Tim': '2TI', 'Titus': 'TIT', 'Philem': 'PHM',
+    'Heb': 'HEB', 'James': 'JAS', '1 Pet': '1PE', '2 Pet': '2PE',
+    '1 John': '1JN', '2 John': '2JN', '3 John': '3JN', 'Jude': 'JUD', 'Rev': 'REV',
+    'Exodus': 'EXO', 'Genesis': 'GEN', 'Leviticus': 'LEV', 'Numbers': 'NUM',
+    'Deuteronomy': 'DEU', 'Ephesians': 'EPH', 'Philippians': 'PHP', 'Colossians': 'COL',
+    'Hebrews': 'HEB', 'Revelation': 'REV', 'Romans': 'ROM', 'Galatians': 'GAL',
+    'St. Matthew': 'MAT', 'St. Mark': 'MRK', 'St. Luke': 'LUK', 'St. John': 'JHN'
+  };
+  const biblePattern = new RegExp(
+    '\\((' + Object.keys(bibleBooks).sort((a,b) => b.length - a.length).join('|') + ')\\s+(\\d+):(\\d+(?:[–-]\\d+)?)\\)',
+    'g'
+  );
+  function linkBibleRefs(text) {
+    return text.replace(biblePattern, function(match, book, chapter, verses) {
+      const code = bibleBooks[book];
+      const v = verses.replace('–', '-');
+      const url = 'https://www.bible.com/bible/1693/' + code + '.' + chapter + '.' + v + '.MALOVBSI';
+      return '(<a href="' + url + '" target="_blank" rel="noopener" style="color:#8B1E2D;text-decoration:underline;">' + book + ' ' + chapter + ':' + verses + '</a>)';
+    });
+  }
+
+  function switchPhase(phaseIdx) {
+    // Only reset subpart index if actually changing phases
+    if (currentPhaseIdx !== phaseIdx) {
+      currentSubpartIdx = 0;  // Reset to first subpart only when switching to a different phase
+    }
+    currentPhaseIdx = phaseIdx;
+
+    // Preload images for this phase
+    preloadPhaseImages(phaseIdx);
+
+    if (hasSubparts(phaseIdx)) {
+      currentStageIdx = getSubpartStartIndex(phaseIdx, currentSubpartIdx);
+    } else {
+      currentStageIdx = getPhaseStartIndex(phaseIdx);
+    }
+    updateDisplay();
+    renderPhaseTabs();
+    updateSubpartActive();
+  }
+
+  function switchSubpart(subpartIdx) {
+    currentSubpartIdx = subpartIdx;
+    currentStageIdx = getSubpartStartIndex(currentPhaseIdx, subpartIdx);
+    createDots();  // Regenerate dots for new subpart
+    updateDisplay();
+    updateSubpartActive();
+  }
+
+  function updateSubpartActive() {
+    // Update active state on subpart buttons in phase card
+    const subpartButtons = carousel.querySelectorAll('.phase-card-subpart');
+    subpartButtons.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === currentSubpartIdx);
+    });
+  }
+
+  function updateCarouselCardBorder() {
+    const carouselCard = document.querySelector('.carousel-card');
+    const activePhaseCard = document.querySelector('.phase-card.active');
+    if (!carouselCard) return;
+
+    // Color scheme for each phase - all uniform gold
+    const phaseColors = [
+      '#e8c547', // Phase 1: gold
+      '#e8c547', // Phase 2: gold
+      '#e8c547'  // Phase 3: gold (uniform with others)
+    ];
+
+    const borderColor = phaseColors[currentPhaseIdx] || '#e8c547';
+
+    // Update carousel card borders
+    carouselCard.style.borderLeftColor = borderColor;
+    carouselCard.style.borderRightColor = borderColor;
+    carouselCard.style.borderBottomColor = borderColor;
+
+    // Update active phase card borders
+    if (activePhaseCard) {
+      activePhaseCard.style.borderLeftColor = borderColor;
+      activePhaseCard.style.borderRightColor = borderColor;
+    }
+  }
+
+  // Task 5: Phase Info Display
+  // Task 9: Update createDots (with subpart awareness)
+  function createDots() {
+    while (dotsContainer.firstChild) {
+      dotsContainer.removeChild(dotsContainer.firstChild);
+    }
+
+    const phase = phases[currentPhaseIdx];
+    let stagesForDots = [];
+    let startIdx = 0;
+
+    if (hasSubparts(currentPhaseIdx)) {
+      // Show dots only for stages in current subpart
+      stagesForDots = phase.subparts[currentSubpartIdx].stages;
+      startIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+    } else {
+      // Show dots for all stages in phase
+      stagesForDots = phase.stages;
+      startIdx = getPhaseStartIndex(currentPhaseIdx);
+    }
+
+    stagesForDots.forEach((stage, i) => {
+      const globalIdx = startIdx + i;
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (globalIdx === currentStageIdx ? ' active' : '');
+      dot.setAttribute('data-stage', globalIdx);
+      dot.setAttribute('title', stage.title);
+      dot.addEventListener('click', () => goToStage(globalIdx));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  // Task 7: Update Display Function
+  function updateDisplay() {
+    // Show carousel content
+    carouselContent.style.display = 'block';
+
+    // Update carousel card border color based on active phase
+    updateCarouselCardBorder();
+
+    const stage = stages[currentStageIdx];
+
+    let stageInPhase, totalInPhase;
+    if (hasSubparts(currentPhaseIdx)) {
+      const subpart = phases[currentPhaseIdx].subparts[currentSubpartIdx];
+      const subpartStartIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+      stageInPhase = currentStageIdx - subpartStartIdx + 1;
+      totalInPhase = subpart.stages.length;
+    } else {
+      stageInPhase = getStageInPhase(currentStageIdx);
+      totalInPhase = phases[currentPhaseIdx].stages.length;
+    }
+
+    stageCounterEl.textContent = 'STAGE ' + stageInPhase + ' OF ' + totalInPhase;
+
+    // Check if this stage has hymns in its substages
+    let hymnIcon = '';
+    if (stage.substages && stage.substages.length > 0) {
+      const hymnSubstage = stage.substages.find(sub => sub.hymn_audio);
+      if (hymnSubstage) {
+        hymnIcon = ' <span class="hymn-icon" onclick="playHymn(\'' + hymnSubstage.hymn_audio + '\', this)" title="Click to play hymn" data-play="🎵" data-stop="■">🎵</span>';
+      }
+    }
+
+    // Remove subpart name from title (everything after /)
+    const titleOnly = stage.title.split(' / ')[0];
+    stageTitleEl.innerHTML = titleOnly + hymnIcon;
+
+    // Update subpart indicator
+    let subpartName = '';
+    if (hasSubparts(currentPhaseIdx)) {
+      const subpart = phases[currentPhaseIdx].subparts[currentSubpartIdx];
+      if (subpart) {
+        subpartName = subpart.title;
+      }
+    }
+    subpartIndicatorEl.textContent = subpartName;
+
+    malayalamEl.textContent = stage.malayalam || '';
+    transliterationEl.textContent = stage.transliteration || '';
+    malayalamSection.style.display = (stage.malayalam || stage.transliteration) ? '' : 'none';
+    descriptionEl.innerHTML = linkBibleRefs(stage.description || '');
+
+    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+      const startIdx = hasSubparts(currentPhaseIdx)
+        ? getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx)
+        : getPhaseStartIndex(currentPhaseIdx);
+      dot.classList.toggle('active', i === (currentStageIdx - startIdx));
+    });
+
+    renderSubstagesPanel();
+
+    loadVideo(stage);
+
+    var fsWrapper = document.getElementById('carouselFullscreenWrapper');
+    if (fsWrapper && fsWrapper.classList.contains('custom-fullscreen')) {
+      fsWrapper.scrollTop = 0;
+    }
+  }
+
+  function renderHotspots(stage) {
+    var container = document.getElementById('youtubeContainer');
+    var existingSvg = container.querySelector('svg.hotspots-svg');
+    if (existingSvg) {
+      existingSvg.remove();
+    }
+
+    if (!stage.hotspots || stage.hotspots.length === 0) {
+      return;
+    }
+
+    // Create SVG overlay that scales with the image
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'hotspots-svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+    svg.style.position = 'absolute';
+    svg.style.top = '0';
+    svg.style.left = '0';
+    svg.style.width = '100%';
+    svg.style.height = '100%';
+    svg.style.pointerEvents = 'none';
+
+    // Add style element for animations if not already present
+    if (!document.getElementById('hotspot-styles')) {
+      var style = document.createElement('style');
+      style.id = 'hotspot-styles';
+      style.textContent = `
+        @keyframes hotspot-glow {
+          0%, 100% { filter: drop-shadow(0 0 2px rgba(232, 197, 71, 0.8)); }
+          50% { filter: drop-shadow(0 0 5px rgba(232, 197, 71, 1)); }
+        }
+        @keyframes hotspot-label-in {
+          from { opacity: 0; transform: translateY(3px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .hotspot-dot {
+          fill: #e8c547;
+          stroke: #fff;
+          stroke-width: 0.3;
+          cursor: pointer;
+          pointer-events: auto;
+          animation: hotspot-glow 2s ease-in-out infinite;
+        }
+        .hotspot-dot:hover {
+          fill: #d4a017;
+          filter: drop-shadow(0 0 4px rgba(232, 197, 71, 1));
+        }
+        .hotspot-line {
+          stroke: #fff;
+          stroke-width: 0.15;
+          opacity: 0;
+          filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.5));
+          transition: opacity 0.3s ease;
+        }
+        .hotspot-label {
+          fill: #fff;
+          font-weight: 600;
+          pointer-events: auto;
+          cursor: pointer;
+          opacity: 0;
+          filter: drop-shadow(0 0 2px rgba(0,0,0,0.7)) drop-shadow(0 0 4px rgba(0,0,0,0.4));
+          transition: opacity 0.3s ease;
+        }
+        .hotspots-svg.show-labels .hotspot-line {
+          opacity: 0.9;
+        }
+        .hotspots-svg.show-labels .hotspot-label {
+          opacity: 1;
+          animation: hotspot-label-in 0.4s ease-out;
+        }
+        .hotspot-label:hover {
+          fill: #e8c547;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    stage.hotspots.forEach(function(hotspot) {
+      var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.style.cursor = 'pointer';
+      g.style.pointerEvents = 'auto';
+
+      var cx = (hotspot.x <= 1) ? (hotspot.x * 100) : hotspot.x;
+      var cy = (hotspot.y <= 1) ? (hotspot.y * 100) : hotspot.y;
+
+      // label_x/label_y: absolute position for the label (defaults: same x, 4 units above)
+      var labelX = hotspot.label_x !== undefined ? hotspot.label_x : cx;
+      var labelY = hotspot.label_y !== undefined ? hotspot.label_y : (cy - 4);
+
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', cx);
+      line.setAttribute('y1', labelY < cy ? cy - 1 : cy + 1);
+      line.setAttribute('x2', labelX);
+      line.setAttribute('y2', labelY < cy ? labelY + 1.5 : labelY - 1);
+      line.setAttribute('class', 'hotspot-line');
+
+      var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      dot.setAttribute('cx', cx);
+      dot.setAttribute('cy', cy);
+      dot.setAttribute('r', 1);
+      dot.setAttribute('class', 'hotspot-dot');
+
+      // Anchor label left/right/middle depending on position relative to dot
+      var anchor = 'middle';
+      if (labelX > cx + 3) anchor = 'start';
+      else if (labelX < cx - 3) anchor = 'end';
+
+      var label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      label.setAttribute('x', labelX);
+      label.setAttribute('y', labelY);
+      label.setAttribute('text-anchor', anchor);
+      label.setAttribute('font-size', '2');
+      label.setAttribute('class', 'hotspot-label');
+      label.textContent = hotspot.item;
+
+      g.appendChild(line);
+      g.appendChild(dot);
+      g.appendChild(label);
+
+      g.addEventListener('click', function(e) {
+        e.stopPropagation();
+        scrollToSacredItem(hotspot.item);
+      }, { passive: false });
+
+      svg.appendChild(g);
+    });
+
+    // Show labels on hover over image container (attach only once)
+    if (!container.hasAttribute('data-hotspot-hover')) {
+      container.setAttribute('data-hotspot-hover', 'true');
+      container.addEventListener('mouseenter', function() {
+        var s = container.querySelector('.hotspots-svg');
+        if (s) s.classList.add('show-labels');
+      }, { passive: true });
+      container.addEventListener('mouseleave', function() {
+        var s = container.querySelector('.hotspots-svg');
+        if (s) s.classList.remove('show-labels');
+      }, { passive: true });
+    }
+
+    container.style.position = 'relative';
+    container.appendChild(svg);
+  }
+
+  function scrollToSacredItem(itemName) {
+    var substagesPanel = carousel.querySelector('#substagesPanel');
+    if (!substagesPanel) {
+      console.error('scrollToSacredItem: substagesPanel not found');
+      return;
+    }
+
+    var items = substagesPanel.querySelectorAll('.sacred-item');
+    var targetItem = null;
+
+    items.forEach(function(item) {
+      var nameEl = item.querySelector('.sacred-item-summary strong');
+      if (nameEl) {
+        var elText = nameEl.textContent.trim();
+        var searchText = itemName.trim();
+        if (elText === searchText) {
+          targetItem = item;
+        }
+      }
+    });
+
+    if (!targetItem) {
+      console.warn('scrollToSacredItem: No match found for "' + itemName + '"');
+      // List all found items for debugging
+      items.forEach(function(item) {
+        var nameEl = item.querySelector('.sacred-item-summary strong');
+        if (nameEl) {
+          console.log('  Found sacred-item: "' + nameEl.textContent.trim() + '"');
+        }
+      });
+      return;
+    }
+
+    // Find and expand the parent substage if needed
+    var parentSubstage = targetItem.closest('.substage-item');
+    if (parentSubstage && parentSubstage.classList.contains('collapsed')) {
+      parentSubstage.classList.remove('collapsed');
+      parentSubstage.classList.add('expanded');
+    }
+
+    // Expand the sacred item if it's collapsed
+    if (targetItem.classList.contains('collapsed')) {
+      targetItem.classList.remove('collapsed');
+      targetItem.classList.add('expanded');
+    }
+
+    document.querySelectorAll('.sacred-item').forEach(function(el) {
+      el.classList.remove('item-highlight');
+    });
+
+    targetItem.classList.add('item-highlight');
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    setTimeout(function() {
+      targetItem.classList.remove('item-highlight');
+    }, 4000);
+  }
+
+  function loadVideo(stage) {
+    var container = document.getElementById('youtubeContainer');
+    var placeholder = document.getElementById('placeholderText');
+    var imagePlaceholder = document.getElementById('videoPlaceholder');
+
+    if (stage.youtube_id && stage.youtube_id.trim()) {
+      var videoId = stage.youtube_id.trim();
+      container.innerHTML = '<div id="youtubePlayer"></div>';
+      placeholder.style.display = 'none';
+      imagePlaceholder.style.backgroundImage = 'none';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+      nextBtn.classList.remove('bounce');
+
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
+
+      ensureYouTubeAPI(function() { initializePlayer(videoId); });
+    } else if (stage.image && stage.image.trim()) {
+      // Display static image (prefer WebP)
+      var imgSrc = toWebP(stage.image);
+      container.innerHTML = '<img src="' + imgSrc + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" alt="' + (stage.title || 'Liturgy stage').replace(/"/g, '&quot;') + '">';
+      placeholder.style.display = 'none';
+      imagePlaceholder.style.backgroundImage = 'none';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+      nextBtn.classList.add('bounce');
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
+
+      // Wait for image to load before rendering hotspots
+      var img = container.querySelector('img');
+      if (img) {
+        if (img.complete) {
+          // Image already cached/loaded
+          renderHotspots(stage);
+        } else {
+          // Wait for image to load
+          img.onload = function() {
+            renderHotspots(stage);
+          };
+        }
+      }
+    } else {
+      container.innerHTML = '';
+      placeholder.style.display = 'block';
+      imagePlaceholder.style.backgroundImage = 'none';
+      imagePlaceholder.style.cursor = 'default';
+      imagePlaceholder.onclick = null;
+      nextBtn.classList.remove('bounce');
+      if (imagePlaceholder.querySelector('.intro-overlay')) {
+        imagePlaceholder.querySelector('.intro-overlay').remove();
+      }
+    }
+  }
+
+  function initializePlayer(videoId) {
+    var playerDiv = document.getElementById('youtubePlayer');
+    if (!playerDiv) return;
+
+    var player = new YT.Player('youtubePlayer', {
+      width: '100%',
+      height: '100%',
+      videoId: videoId,
+      events: {
+        'onReady': function(event) {
+          window.currentPlayer = event.target;
+        },
+        'onStateChange': function(event) {
+          if (event.data === YT.PlayerState.PLAYING) {
+            nextBtn.classList.remove('bounce');
+          } else if (event.data === YT.PlayerState.ENDED) {
+            nextBtn.classList.add('bounce');
+          }
+        }
+      },
+      playerVars: {
+        'rel': 0,
+        'modestbranding': 1,
+        'autoplay': 0,
+        'controls': 0,
+        'iv_load_policy': 3
+      }
+    });
+  }
+
+
+  // Task 6: Navigation Boundaries (with subpart awareness)
+  function goToStage(index) {
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    let phaseEndIdx;
+
+    if (hasSubparts(currentPhaseIdx)) {
+      const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+      const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+      phaseEndIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+    } else {
+      phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    }
+
+    if (index >= phaseStartIdx && index <= phaseEndIdx) {
+      console.log('[Qurbana] Navigating to stage', index);
+      stopAllAudio();
+      currentStageIdx = index;
+      // Update currentSubpartIdx if phase has subparts
+      if (hasSubparts(currentPhaseIdx)) {
+        const phaseInfo = phaseMap[index];
+        const oldSubpartIdx = currentSubpartIdx;
+        currentSubpartIdx = phaseInfo.subpartIdx || 0;
+        // If subpart changed, update the active subpart button
+        if (oldSubpartIdx !== currentSubpartIdx) {
+          updateSubpartActive();
+        }
+      }
+      updateDisplay();
+    }
+  }
+
+  function nextStage() {
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    let phaseEndIdx, subpartEndIdx;
+
+    if (hasSubparts(currentPhaseIdx)) {
+      const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+      const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+      phaseEndIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+      subpartEndIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx) + phases[currentPhaseIdx].subparts[currentSubpartIdx].stages.length - 1;
+    } else {
+      phaseEndIdx = phaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+    }
+
+    if (currentStageIdx < (subpartEndIdx !== undefined ? subpartEndIdx : phaseEndIdx)) {
+      console.log('[Qurbana] Next stage');
+      stopAllAudio();
+      currentStageIdx++;
+      updateDisplay();
+    } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx < phases[currentPhaseIdx].subparts.length - 1) {
+      // At last stage of current subpart, move to next subpart within same phase
+      currentSubpartIdx++;
+      currentStageIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+      createDots();
+      updateDisplay();
+      updateSubpartActive();
+    } else if (currentPhaseIdx < phases.length - 1) {
+      // At last stage of current phase, move to next phase
+      currentPhaseIdx++;
+      currentSubpartIdx = 0;
+      currentStageIdx = getPhaseStartIndex(currentPhaseIdx);
+      createDots();
+      updateDisplay();
+      renderPhaseTabs();
+      updateSubpartActive();
+    } else {
+      // At last stage of last phase, loop back to first phase
+      currentPhaseIdx = 0;
+      currentSubpartIdx = 0;
+      currentStageIdx = 0;
+      createDots();
+      updateDisplay();
+      renderPhaseTabs();
+      updateSubpartActive();
+    }
+  }
+
+  function prevStage() {
+    const phaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+    let subpartStartIdx;
+
+    if (hasSubparts(currentPhaseIdx)) {
+      subpartStartIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx);
+    }
+
+    if (currentStageIdx > (subpartStartIdx !== undefined ? subpartStartIdx : phaseStartIdx)) {
+      console.log('[Qurbana] Previous stage');
+      stopAllAudio();
+      currentStageIdx--;
+      updateDisplay();
+    } else if (hasSubparts(currentPhaseIdx) && currentSubpartIdx > 0) {
+      // At first stage of current subpart, move to previous subpart within same phase
+      currentSubpartIdx--;
+      const prevSubpartStages = phases[currentPhaseIdx].subparts[currentSubpartIdx].stages.length;
+      currentStageIdx = getSubpartStartIndex(currentPhaseIdx, currentSubpartIdx) + prevSubpartStages - 1;
+      createDots();
+      updateDisplay();
+      updateSubpartActive();
+    } else if (currentPhaseIdx > 0) {
+      // At first stage of current phase, move to previous phase
+      currentPhaseIdx--;
+      currentSubpartIdx = 0;
+
+      if (hasSubparts(currentPhaseIdx)) {
+        const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+        const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+        currentStageIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+        currentSubpartIdx = lastSubpartIdx;
+      } else {
+        currentStageIdx = getPhaseStartIndex(currentPhaseIdx) + phases[currentPhaseIdx].stages.length - 1;
+      }
+      createDots();
+      updateDisplay();
+      renderPhaseTabs();
+      updateSubpartActive();
+    } else {
+      // At first stage of first phase, loop back to last stage of last phase
+      currentPhaseIdx = phases.length - 1;
+      const lastPhaseStartIdx = getPhaseStartIndex(currentPhaseIdx);
+
+      if (hasSubparts(currentPhaseIdx)) {
+        const lastSubpartIdx = phases[currentPhaseIdx].subparts.length - 1;
+        const lastSubpartStages = phases[currentPhaseIdx].subparts[lastSubpartIdx].stages.length;
+        currentStageIdx = getSubpartStartIndex(currentPhaseIdx, lastSubpartIdx) + lastSubpartStages - 1;
+        currentSubpartIdx = lastSubpartIdx;
+      } else {
+        currentStageIdx = lastPhaseStartIdx + phases[currentPhaseIdx].stages.length - 1;
+      }
+      createDots();
+      updateDisplay();
+      renderPhaseTabs();
+      updateSubpartActive();
+    }
+  }
+
+  const audioMap = {
+    'വിശുദ്ധ കുർബാന': '/assets/audio/vishudha-kurbana.m4a',
+    'ഒരുക്ക ശുശ്രൂഷ': '/assets/audio/oruka-shushrusha.m4a',
+    'പരസ്യമായ ആദ്യഭാഗം': '/assets/audio/parasyam-adhya-bhagam.m4a',
+    'വേദപുസ്തകപാരായണം': '/assets/audio/vedhapusthaka-parayana.m4a',
+    'പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്': '/assets/audio/promiyon-sedra.m4a',
+    'വിശ്വാസപ്രമാണം': '/assets/audio/vishwasa-pramanam.m4a',
+    'സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം': '/assets/audio/shoshappa.m4a',
+    'സ്ഥാപന വാക്യങ്ങൾ': '/assets/audio/sthapana-vakhyangal.m4a',
+    'ഓർമ്മപ്രാർത്ഥനയും കൃതജ്ഞതയും': '/assets/audio/ormma-prarthana-krutajnyata.m4a',
+    'പരിശുദ്ധാത്മാവിന്റെ എഴുന്നള്ളത്ത്': '/assets/audio/parishuddhaathmavinte-ezunnathathu.m4a',
+    'മദ്ധ്യസ്ഥ പ്രാർത്ഥനകൾ': '/assets/audio/maddhyastha-prathanangal.m4a',
+    'ഖണ്ഡിപ്പിന്റെ ശുശ്രൂഷ': '/assets/audio/khandippu-shushrusha.m4a',
+    'മോരനായ പ്രാർത്ഥന': '/assets/audio/moranaya-prarthana.m4a',
+    'രഹസ്യങ്ങളുടെ ആഘോഷം': '/assets/audio/rahasyangalude-aghosham.m4a',
+    'കുർബാന അനുഭവം : കൃതജ്ഞത': '/assets/audio/mamodisa-anubhavam.m4a'
+  };
+
+  function playAudio() {
+    const stage = stages[currentStageIdx];
+    const audioFile = audioMap[stage.malayalam];
+
+    if (audioFile) {
+      var audio = new Audio(audioFile);
+      audio.play().catch(function(error) {
+        console.error('Audio playback error:', error);
+      });
+      return;
+    }
+
+    // Fallback to speech synthesis for other texts
+    if (!window.speechSynthesis) {
+      console.error('Speech Synthesis not supported');
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(stage.malayalam);
+    utterance.lang = 'ml';
+    utterance.rate = 0.8;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    utterance.onerror = function(event) {
+      console.error('Speech error:', event);
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function playHymnAudio(hymnName) {
+    if (!window.speechSynthesis) {
+      console.error('Speech Synthesis not supported');
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(hymnName);
+    utterance.lang = 'en';
+    utterance.rate = 0.7;
+    utterance.pitch = 1.2;
+    utterance.volume = 1;
+
+    utterance.onerror = function(event) {
+      console.error('Hymn audio error:', event);
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.playHymnAudio = playHymnAudio;
+
+  // Task 8: Sub-stages Panel Rendering
+  function renderSubstagesPanel() {
+    const stage = stages[currentStageIdx];
+
+    substagesPanel.innerHTML = '';
+    var sanctuaryPanel = document.getElementById('sanctuaryPanel');
+    if (sanctuaryPanel) sanctuaryPanel.innerHTML = '';
+
+    const hasSanctuary = stage.sanctuary_info;
+    const hasVeil = stage.veil_info;
+    const hasSubstages = stage.substages && stage.substages.length > 0;
+
+    if (!hasSanctuary && !hasVeil && !hasSubstages) {
+      substagesPanel.style.display = 'none';
+      return;
+    }
+
+    substagesPanel.style.display = 'block';
+
+    function renderInfoSection(info, container) {
+      const section = document.createElement('div');
+      section.className = 'substage-item collapsed';
+      section.style.marginBottom = '8px';
+
+      const header = document.createElement('div');
+      header.className = 'substage-header';
+      header.innerHTML = `<span>${info.title}${info.malayalam ? ` <span style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;font-weight:500;margin-left:8px;">${info.malayalam}</span>` : ''}</span><span class="substage-toggle">▼</span>`;
+
+      const body = document.createElement('div');
+      body.className = 'substage-content';
+      body.style.cssText = 'display:none;padding:0 12px 12px;';
+
+      if (info.image) {
+        const imgContainer = document.createElement('div');
+        imgContainer.style.cssText = 'position:relative;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;';
+
+        const img = document.createElement('img');
+        img.src = toWebP(info.image);
+        img.alt = info.title;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.style.cssText = 'max-width:200px;display:block;object-fit:contain;';
+        imgContainer.appendChild(img);
+
+        // Add zoom button for info images (Veil, Sanctuary, etc.)
+        if (info.title) {
+          // Extract Malayalam from title if not already in info object
+          let malayalam = info.malayalam || '';
+          if (!malayalam) {
+            const malayalamMatch = info.title.match(/\(([^\—]*)\s*—/);
+            if (malayalamMatch) {
+              malayalam = malayalamMatch[1].trim();
+            }
+          }
+
+          const zoomBtn = document.createElement('button');
+          zoomBtn.style.cssText = 'position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);';
+          zoomBtn.textContent = '⤢';
+          zoomBtn.title = 'View fullscreen';
+          zoomBtn.setAttribute('data-item-name', info.title);
+          zoomBtn.onclick = function(event) {
+            const idx = window.allSacredItems.findIndex(i => i.name === info.title);
+            if (idx !== -1) {
+              openSacredItemModal(event, info.title, malayalam, toWebP(info.image), '', info.description || '', info.historical_context || '', info.biblical_reference || '', idx);
+            }
+            event.stopPropagation();
+          };
+          imgContainer.appendChild(zoomBtn);
+
+          // Show zoom button on hover
+          imgContainer.addEventListener('mouseenter', () => { zoomBtn.style.opacity = '1'; });
+          imgContainer.addEventListener('mouseleave', () => { zoomBtn.style.opacity = '0'; });
+        }
+
+        body.appendChild(imgContainer);
+      }
+
+      const desc = document.createElement('div');
+      desc.style.cssText = 'font-size:12px;color:#555;line-height:1.6;margin-bottom:14px;';
+      desc.innerHTML = linkBibleRefs(info.description || '');
+      body.appendChild(desc);
+
+      if (info.sacred_items && info.sacred_items.length > 0) {
+        const itemsLabel = document.createElement('strong');
+        itemsLabel.style.cssText = 'display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;';
+        itemsLabel.textContent = 'Sacred Items';
+        body.appendChild(itemsLabel);
+
+        const grid = document.createElement('div');
+        grid.className = 'sacred-items-grid';
+        grid.style.cssText = 'display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;';
+        grid.innerHTML = info.sacred_items.map(item => `
+          <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
+               onclick="toggleSacredItem(this)">
+            <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
+              ${item.image ? `
+                <div style="position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:8px;width:100%;">
+                  <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;flex-shrink:0;">
+                  <button data-item-name="${item.name}" onclick="(function(btn){const idx = window.allSacredItems.findIndex(i => i.name === btn.dataset.itemName); if(idx !== -1) openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}', idx); event.stopPropagation();})(this);" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);" class="sacred-item-zoom-btn" title="View fullscreen">⤢</button>
+                </div>
+              ` : ''}
+              <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
+              ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
+            </div>
+            <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
+              <div style="font-size:11px;color:#666;line-height:1.6;">
+                <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
+                ${linkBibleRefs(item.meaning || '')}
+              </div>
+            </div>
+            <div class="sacred-item-toggle" style="margin-top:8px;font-size:12px;color:#999;transition:transform 0.3s ease;">
+              <span>▼</span>
+            </div>
+          </div>
+        `).join('');
+        body.appendChild(grid);
+      }
+
+      header.addEventListener('click', function() {
+        const isOpen = section.classList.contains('expanded');
+        section.classList.toggle('collapsed', isOpen);
+        section.classList.toggle('expanded', !isOpen);
+        body.style.display = isOpen ? 'none' : 'block';
+      });
+
+      section.appendChild(header);
+      section.appendChild(body);
+      container.appendChild(section);
+    }
+
+    if (hasSanctuary || hasVeil) {
+      const infoLabel = document.createElement('div');
+      infoLabel.className = 'substages-label';
+      infoLabel.textContent = 'Sacred Space';
+      sanctuaryPanel.appendChild(infoLabel);
+
+      if (hasSanctuary) renderInfoSection(stage.sanctuary_info, sanctuaryPanel);
+      if (hasVeil) renderInfoSection(stage.veil_info, sanctuaryPanel);
+    }
+
+    if (!hasSubstages) return;
+
+    const panelLabel = document.createElement('div');
+    panelLabel.className = 'substages-label';
+    panelLabel.textContent = 'Sub-Stages';
+    substagesPanel.appendChild(panelLabel);
+
+    const substagesContainer = document.createElement('div');
+    substagesContainer.className = 'substages-container';
+
+    stage.substages.forEach((substage, idx) => {
+      const substageItem = document.createElement('div');
+      substageItem.className = 'substage-item collapsed';
+      substageItem.setAttribute('data-substage-idx', idx);
+
+      const header = document.createElement('div');
+      header.className = 'substage-header';
+
+      const titleSpan = document.createElement('span');
+      titleSpan.textContent = substage.title;
+      header.appendChild(titleSpan);
+
+      const arrowSpan = document.createElement('span');
+      arrowSpan.className = 'substage-toggle';
+      arrowSpan.textContent = ' ▼';
+      header.appendChild(arrowSpan);
+
+      header.addEventListener('click', () => toggleSubstage(substageItem, idx));
+
+      substageItem.appendChild(header);
+
+      const content = document.createElement('div');
+      content.className = 'substage-content';
+
+      let itemsHTML = '';
+      if (substage.sacred_items && substage.sacred_items.length > 0) {
+        itemsHTML = `
+          <div style="margin-top:14px;">
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">Sacred Items Used</strong>
+            <div class="sacred-items-grid" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:flex-start;margin-top:10px;">
+              ${substage.sacred_items.map(item => {
+                return `
+                  <div class="sacred-item collapsed" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;min-width:140px;max-width:220px;padding:12px 10px;cursor:pointer;border-radius:6px;transition:all 0.3s;background:white;border:1px solid #f0f0f0;height:100%;"
+                       onclick="toggleSacredItem(this)">
+                    <div class="sacred-item-summary" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;width:100%;">
+                      ${item.image ? `
+                        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;flex-shrink:0;overflow:visible;width:100%;position:relative;justify-content:center;">
+                          <img src="${toWebP(item.image)}" alt="${item.name}" loading="lazy" decoding="async" style="max-width:160px;object-fit:contain;display:block;margin-bottom:6px;width:auto;height:auto;position:relative;" class="sacred-item-image" data-front="${toWebP(item.image)}" ${item.back_image ? `data-back="${toWebP(item.back_image)}"` : ''}>
+                          <button data-item-name="${item.name}" onclick="(function(btn){const idx = window.allSacredItems.findIndex(i => i.name === btn.dataset.itemName); if(idx !== -1) openSacredItemModal(event, '${item.name.replace(/'/g, "\\'")}', '${item.malayalam || ''}', '${toWebP(item.image)}', '${item.back_image ? toWebP(item.back_image) : ''}', '${(item.expanded_meaning || item.meaning || '').replace(/'/g, "\\'")}', '${(item.historical_context || '').replace(/'/g, "\\'")}', '${(item.biblical_reference || '').replace(/'/g, "\\'")}', idx); event.stopPropagation();})(this);" style="position:absolute;top:4px;right:4px;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:16px;line-height:1;color:#8B1E2D;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;opacity:0;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;" class="sacred-item-zoom-btn" title="View fullscreen" aria-label="View fullscreen">⤢</button>
+                          ${item.back_image ? `<button onclick="toggleSacredItemImage(event)" style="background:none;border:none;cursor:pointer;font-size:18px;line-height:1;color:#8B1E2D;padding:0;width:40px;height:40px;flex:0 0 40px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:bold;opacity:0.8;-webkit-tap-highlight-color:transparent;" title="Flip to see back" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.8';this.style.transform='scale(1)'" ontouchend="this.style.opacity='0.8';this.style.transform='scale(1)'">⇄</button>` : ''}
+                        </div>
+                      ` : ''}
+                      <div style="font-size:12px;color:#333;font-weight:600;text-align:center;"><strong>${item.name}</strong></div>
+                      ${item.malayalam ? `<div style="font-size:13px;color:#e8c547;font-family:'Meera','Noto Sans Malayalam',serif;margin-top:6px;font-weight:500;text-align:center;">${item.malayalam}</div>` : ''}
+                    </div>
+
+                    <!-- Expanded content (hidden by default) -->
+                    <div class="sacred-item-details" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e8e8e8;width:100%;text-align:left;">
+                      <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
+                        <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Theological Significance:</strong>
+                        ${item.expanded_meaning || item.meaning}
+                      </div>
+                      ${item.historical_context ? `
+                        <div style="font-size:11px;color:#666;line-height:1.6;margin-bottom:10px;">
+                          <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Historical Context:</strong>
+                          ${item.historical_context}
+                        </div>
+                      ` : ''}
+                      ${item.biblical_reference ? `
+                        <div style="font-size:11px;color:#666;line-height:1.6;">
+                          <strong style="display:block;color:#e8c547;margin-bottom:6px;font-size:11.5px;">Biblical Reference:</strong>
+                          ${item.biblical_reference}
+                        </div>
+                      ` : ''}
+                    </div>
+
+                    <!-- Expand indicator -->
+                    <div class="sacred-item-toggle" style="margin-top:8px;font-size:12px;color:#999;transition:transform 0.3s ease;">
+                      <span>▼</span>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      let hymnHTML = '';
+      if (substage.hymn) {
+        if (substage.hymn_audio) {
+          const audioType = substage.hymn_audio.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+          let secondAudioHTML = '';
+          let firstLabel = '';
+          if (substage.hymn_audio_2) {
+            const audioType2 = substage.hymn_audio_2.endsWith('.mp3') ? 'audio/mpeg' : 'audio/mp4';
+            const label1 = substage.hymn_audio_label || 'Malayalam Version';
+            const label2 = substage.hymn_audio_2_label || 'Version 2';
+            firstLabel = `<div style="margin-top:4px;font-size:12px;color:#888;font-weight:600;">${label1}</div>`;
+            secondAudioHTML = `
+              <div style="margin-top:12px;font-size:12px;color:#888;font-weight:600;">${label2}</div>
+              <audio class="hymn-audio-player" controls style="width:100%;margin-top:4px;border-radius:4px;">
+                <source src="${substage.hymn_audio_2}" type="${audioType2}">
+              </audio>
+            `;
+          }
+          hymnHTML = `
+            <div class="hymn-section" style="margin-top:14px;">
+              <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn: ${substage.hymn}</strong>
+              ${firstLabel}
+              <audio class="hymn-audio-player" controls style="width:100%;margin-top:4px;border-radius:4px;">
+                <source src="${substage.hymn_audio}" type="${audioType}">
+                Your browser does not support the audio element.
+              </audio>
+              ${secondAudioHTML}
+            </div>
+          `;
+        } else {
+          hymnHTML = `
+            <strong style="display:block;color:#333;font-weight:700;font-size:13px;margin-bottom:8px;margin-top:14px;padding-bottom:6px;border-bottom:1px solid #e8c547;letter-spacing:0.3px;">🎵 Hymn:</strong>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+              <span style="font-size:13px;color:#666;">${substage.hymn}</span>
+              <button style="background:#e8c547;color:white;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;transition:all 0.2s;"
+                      onmouseover="this.style.background='#c4920c'"
+                      onmouseout="this.style.background='#e8c547'"
+                      onclick="window.playHymnAudio('${substage.hymn.replace(/'/g, "\\'")}')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Play
+              </button>
+            </div>
+          `;
+        }
+      }
+
+      // Build sections dynamically based on available data
+      let sectionsHTML = '';
+
+      // Symbolism
+      if (substage.symbolism) {
+        sectionsHTML += `<div><strong>Symbolism:</strong> ${linkBibleRefs(substage.symbolism)}</div>`;
+      }
+
+      // Action
+      if (substage.action) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Action:</strong> ${linkBibleRefs(substage.action)}</div>`;
+      }
+
+      // Significance / Meaning and Significance
+      if (substage.significance) {
+        const significanceLabel = substage.meaning_and_significance ? 'Meaning and Significance:' : 'Significance:';
+        sectionsHTML += `<div style="margin-top:8px;"><strong>${significanceLabel}</strong> ${linkBibleRefs(substage.significance)}</div>`;
+      }
+
+      // Theological Meaning
+      if (substage.theological_meaning) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Theological Meaning:</strong> ${linkBibleRefs(substage.theological_meaning)}</div>`;
+      }
+
+      // Liturgical Context
+      if (substage.liturgical_context) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Liturgical Context:</strong> ${linkBibleRefs(substage.liturgical_context)}</div>`;
+      }
+
+      // Ritual Gesture
+      if (substage.ritual_gesture) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Ritual Gesture:</strong> ${linkBibleRefs(substage.ritual_gesture)}</div>`;
+      }
+
+      // Biblical Reference / Biblical Remembrance
+      if (substage.biblical_reference) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Reference:</strong> ${linkBibleRefs(substage.biblical_reference)}</div>`;
+      }
+      if (substage.biblical_remembrance) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Biblical Remembrance:</strong> ${linkBibleRefs(substage.biblical_remembrance)}</div>`;
+      }
+
+      // Spiritual Message
+      if (substage.spiritual_message) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Message:</strong> ${linkBibleRefs(substage.spiritual_message)}</div>`;
+      }
+
+      // Faith Response
+      if (substage.faith_response) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Faith Response:</strong> ${linkBibleRefs(substage.faith_response)}</div>`;
+      }
+
+      // Spiritual Effects
+      if (substage.spiritual_effects) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Spiritual Effects:</strong> ${linkBibleRefs(substage.spiritual_effects)}</div>`;
+      }
+
+      // Discipline and Preparation
+      if (substage.discipline_preparation) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Discipline and Preparation:</strong> ${linkBibleRefs(substage.discipline_preparation)}</div>`;
+      }
+
+      // Life Application
+      if (substage.life_application) {
+        sectionsHTML += `<div style="margin-top:8px;"><strong>Life Application:</strong> ${linkBibleRefs(substage.life_application)}</div>`;
+      }
+
+      content.innerHTML = `
+        <div class="substage-details">
+          ${sectionsHTML}
+          ${hymnHTML}
+          ${itemsHTML}
+        </div>
+      `;
+      substageItem.appendChild(content);
+
+      substagesContainer.appendChild(substageItem);
+    });
+
+    substagesPanel.appendChild(substagesContainer);
+  }
+
+  function toggleSubstage(element, idx) {
+    element.classList.toggle('collapsed');
+    element.classList.toggle('expanded');
+  }
+
+  // Toggle sacred item expansion
+  function toggleSacredItem(element) {
+    const wasExpanded = element.classList.contains('expanded');
+
+    // Collapse all other sacred items in the same container
+    const container = element.closest('.sacred-items-grid');
+    if (container) {
+      container.querySelectorAll('.sacred-item.expanded').forEach(item => {
+        if (item !== element) {
+          item.classList.remove('expanded');
+          item.classList.add('collapsed');
+        }
+      });
+    }
+
+    // Toggle current item
+    if (wasExpanded) {
+      element.classList.remove('expanded');
+      element.classList.add('collapsed');
+    } else {
+      element.classList.remove('collapsed');
+      element.classList.add('expanded');
+    }
+  }
+
+  // Make function globally accessible
+  window.toggleSacredItem = toggleSacredItem;
+
+  function toggleSacredItemImage(event) {
+    event.stopPropagation();
+    const img = event.target.closest('.sacred-item-summary').querySelector('.sacred-item-image');
+    const backImg = img.getAttribute('data-back');
+    const frontImg = img.getAttribute('data-front');
+
+    if (!backImg) return;
+
+    if (img.getAttribute('data-current') === 'back') {
+      img.src = frontImg;
+      img.setAttribute('data-current', 'front');
+    } else {
+      img.src = backImg;
+      img.setAttribute('data-current', 'back');
+    }
+  }
+  window.toggleSacredItemImage = toggleSacredItemImage;
+
+  function openSacredItemModal(event, name, malayalam, frontImage, backImage, meaning, historicalContext, biblicalReference, itemIndex) {
+    if (event) event.stopPropagation();
+
+    const modal = document.getElementById('sacredItemModal');
+    const modalImage = document.getElementById('modalSacredItemImage');
+    const modalFlipBtn = document.getElementById('modalFlipButton');
+    const modalViewLabel = document.getElementById('modalViewLabel');
+    const modalName = document.getElementById('modalSacredItemName');
+    const modalMalayalam = document.getElementById('modalSacredItemMalayalam');
+    const modalMeaning = document.getElementById('modalSacredItemMeaning');
+    const modalHistorical = document.getElementById('modalSacredItemHistorical');
+    const modalBiblical = document.getElementById('modalSacredItemBiblical');
+
+    if (!modal) return;
+
+    // Set current item index if provided
+    if (itemIndex !== undefined) {
+      window.currentSacredItemIndex = parseInt(itemIndex);
+    }
+
+    modalImage.src = frontImage;
+    modalImage.alt = name;
+    modalImage.setAttribute('data-front', frontImage);
+    modalImage.setAttribute('data-back', backImage);
+    modalImage.setAttribute('data-current', 'front');
+
+    if (backImage && backImage.trim() !== '') {
+      modalFlipBtn.style.display = 'block';
+      if (modalViewLabel) {
+        modalViewLabel.textContent = 'Front View';
+        modalViewLabel.style.display = 'block';
+      }
+    } else {
+      modalFlipBtn.style.display = 'none';
+      if (modalViewLabel) modalViewLabel.style.display = 'none';
+    }
+
+    modalName.textContent = name;
+
+    if (malayalam && malayalam.trim() !== '') {
+      modalMalayalam.textContent = malayalam;
+      modalMalayalam.style.display = 'block';
+    } else {
+      modalMalayalam.style.display = 'none';
+    }
+
+    if (typeof linkBibleRefs === 'function') {
+      modalMeaning.innerHTML = linkBibleRefs(meaning);
+    } else {
+      modalMeaning.textContent = meaning;
+    }
+
+    if (historicalContext && historicalContext.trim() !== '') {
+      modalHistorical.querySelector('.sacred-item-modal-text').textContent = historicalContext;
+      modalHistorical.style.display = 'flex';
+    } else {
+      modalHistorical.style.display = 'none';
+    }
+
+    if (biblicalReference && biblicalReference.trim() !== '') {
+      modalBiblical.querySelector('.sacred-item-modal-text').textContent = biblicalReference;
+      modalBiblical.style.display = 'flex';
+    } else {
+      modalBiblical.style.display = 'none';
+    }
+
+    updateSacredItemCounter();
+    setupSacredItemSwipeHandlers();
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSacredItemModal() {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal) return;
+
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+
+    const modalImage = document.getElementById('modalSacredItemImage');
+    const modalViewLabel = document.getElementById('modalViewLabel');
+    if (modalImage) {
+      const frontImage = modalImage.getAttribute('data-front');
+      if (frontImage) {
+        modalImage.src = frontImage;
+        modalImage.setAttribute('data-current', 'front');
+      }
+    }
+    if (modalViewLabel) modalViewLabel.textContent = 'Front View';
+  }
+
+  function flipModalSacredItemImage() {
+    const img = document.getElementById('modalSacredItemImage');
+    const modalViewLabel = document.getElementById('modalViewLabel');
+    if (!img) return;
+
+    const backImg = img.getAttribute('data-back');
+    const frontImg = img.getAttribute('data-front');
+    const current = img.getAttribute('data-current');
+
+    if (!backImg) return;
+
+    if (current === 'back') {
+      img.src = frontImg;
+      img.setAttribute('data-current', 'front');
+      if (modalViewLabel) modalViewLabel.textContent = 'Front View';
+    } else {
+      img.src = backImg;
+      img.setAttribute('data-current', 'back');
+      if (modalViewLabel) modalViewLabel.textContent = 'Back View';
+    }
+  }
+
+  function updateSacredItemCounter() {
+    const totalItems = window.allSacredItems.length;
+    const currentNum = window.currentSacredItemIndex + 1;
+    const counterNum = document.getElementById('currentItemNum');
+    const totalNum = document.getElementById('totalItemsNum');
+    if (counterNum) counterNum.textContent = currentNum;
+    if (totalNum) totalNum.textContent = totalItems;
+  }
+
+  function navigateSacredItemModal(direction) {
+    const totalItems = window.allSacredItems.length;
+    if (totalItems === 0) return;
+
+    let newIndex = window.currentSacredItemIndex;
+    if (direction === 'next') {
+      newIndex = (newIndex + 1) % totalItems;
+    } else if (direction === 'prev') {
+      newIndex = (newIndex - 1 + totalItems) % totalItems;
+    }
+
+    const item = window.allSacredItems[newIndex];
+    const backImage = item.back_image ? toWebP(item.back_image) : '';
+    openSacredItemModal(null, item.name, item.malayalam || '', toWebP(item.image), backImage, item.meaning || '', item.historical_context || '', item.biblical_reference || '', newIndex);
+  }
+
+  let touchStartY = 0;
+  let isNavigating = false;
+
+  function handleTouchStart(e) {
+    touchStartY = e.touches[0].clientY;
+  }
+
+  function handleTouchEnd(e) {
+    if (isNavigating) return;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+    const threshold = 50;
+
+    if (Math.abs(deltaY) > threshold) {
+      isNavigating = true;
+      if (deltaY > 0) {
+        navigateSacredItemModal('next');
+      } else {
+        navigateSacredItemModal('prev');
+      }
+      setTimeout(() => { isNavigating = false; }, 200);
+    }
+  }
+
+  function handleKeyboardNavigation(e) {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal || !modal.classList.contains('open')) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      navigateSacredItemModal('next');
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      navigateSacredItemModal('prev');
+    }
+  }
+
+  function setupSacredItemSwipeHandlers() {
+    const modal = document.getElementById('sacredItemModal');
+    if (!modal) return;
+    modal.removeEventListener('touchstart', handleTouchStart);
+    modal.removeEventListener('touchend', handleTouchEnd);
+    modal.addEventListener('touchstart', handleTouchStart);
+    modal.addEventListener('touchend', handleTouchEnd);
+
+    // Add keyboard navigation
+    document.removeEventListener('keydown', handleKeyboardNavigation);
+    document.addEventListener('keydown', handleKeyboardNavigation);
+
+    // Show swipe hints on mobile and hide after 3 seconds or on first swipe
+    const isDesktop = window.innerWidth > 768;
+    const swipeHintTop = document.getElementById('swipeHintTop');
+    const swipeHintBottom = document.getElementById('swipeHintBottom');
+
+    if (!isDesktop && swipeHintTop && swipeHintBottom) {
+      swipeHintTop.style.opacity = '1';
+      swipeHintBottom.style.opacity = '1';
+      swipeHintTop.style.transition = 'opacity 0.3s';
+      swipeHintBottom.style.transition = 'opacity 0.3s';
+
+      const hideHints = () => {
+        swipeHintTop.style.opacity = '0';
+        swipeHintBottom.style.opacity = '0';
+      };
+
+      // Hide after 3 seconds
+      const hintTimer = setTimeout(hideHints, 3000);
+
+      // Hide on first touch
+      const hideOnTouch = () => {
+        clearTimeout(hintTimer);
+        hideHints();
+        modal.removeEventListener('touchmove', hideOnTouch);
+      };
+      modal.addEventListener('touchmove', hideOnTouch);
+    }
+  }
+
+  window.openSacredItemModal = openSacredItemModal;
+  window.closeSacredItemModal = closeSacredItemModal;
+  window.flipModalSacredItemImage = flipModalSacredItemImage;
+  window.navigateSacredItemModal = navigateSacredItemModal;
+
+  var fullscreenParent = null;
+  var fullscreenNextSibling = null;
+
+  function toggleFullscreen() {
+    var fullscreenWrapper = document.getElementById('carouselFullscreenWrapper');
+    if (!fullscreenWrapper) return;
+
+    var isFullscreen = fullscreenWrapper.classList.contains('custom-fullscreen');
+    var html = document.documentElement;
+    var body = document.body;
+
+    if (!isFullscreen) {
+      fullscreenParent = fullscreenWrapper.parentNode;
+      fullscreenNextSibling = fullscreenWrapper.nextSibling;
+      body.appendChild(fullscreenWrapper);
+      fullscreenWrapper.classList.add('custom-fullscreen');
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+      fullscreenWrapper.scrollTop = 0;
+    } else {
+      fullscreenWrapper.classList.remove('custom-fullscreen');
+      if (fullscreenParent) {
+        fullscreenParent.insertBefore(fullscreenWrapper, fullscreenNextSibling);
+      }
+      html.style.overflow = '';
+      body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const sacredItemModal = document.getElementById('sacredItemModal');
+      if (sacredItemModal && sacredItemModal.classList.contains('open')) {
+        closeSacredItemModal();
+      } else {
+        var wrapper = document.querySelector('.carousel-fullscreen-wrapper.custom-fullscreen');
+        if (wrapper) toggleFullscreen();
+      }
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('sacredItemModal');
+    if (modal && modal.classList.contains('open')) {
+      if (e.target === modal) {
+        closeSacredItemModal();
+      }
+    }
+  });
+
+  // Setup carousel content
+  const carouselContent = document.getElementById('carouselContent');
+
+  // Get footer navigation buttons
+  const prevBtnFooter = carousel.querySelector('#prevBtnFooter');
+  const nextBtnFooter = carousel.querySelector('#nextBtnFooter');
+
+  prevBtn.addEventListener('click', prevStage);
+  nextBtn.addEventListener('click', nextStage);
+  prevBtnFooter.addEventListener('click', prevStage);
+  nextBtnFooter.addEventListener('click', nextStage);
+  fullscreenBtn.addEventListener('click', toggleFullscreen);
+  audioBtn.addEventListener('click', playAudio);
+
+  renderPhaseTabs();
+  renderSubpartToggle();
+  createDots();
+  updateDisplay();
+
+  // Preload images for the initial phase
+  preloadPhaseImages(currentPhaseIdx);
+
+  // Auto-collapse expanded sections when scrolled out of view
+  var introHeading = document.querySelector('.mamodisa-intro-heading');
+  var churchStructure = document.querySelector('.mamodisa-church-structure-journey');
+
+  window.addEventListener('scroll', function() {
+    // Collapse intro heading if scrolled past
+    if (introHeading && introHeading.classList.contains('expanded')) {
+      var rect = introHeading.getBoundingClientRect();
+      if (rect.top < -1500) {
+        introHeading.classList.remove('expanded');
+      }
+    }
+
+    // Collapse church structure if scrolled past
+    if (churchStructure && churchStructure.classList.contains('expanded')) {
+      var rect = churchStructure.getBoundingClientRect();
+      if (rect.top < -1500) {
+        churchStructure.classList.remove('expanded');
+      }
+    }
+  });
+
+  // Stop all hymn audio playback
+  function stopAllAudio() {
+    document.querySelectorAll('.hymn-audio-player, audio').forEach(function(p) {
+      if (!p.paused) { p.pause(); p.currentTime = 0; }
+    });
+    var playingIcon = document.querySelector('.hymn-icon.playing');
+    if (playingIcon) {
+      playingIcon.classList.remove('playing');
+      playingIcon.textContent = playingIcon.getAttribute('data-play');
+    }
+  }
+
+  // When any audio starts playing, pause all others
+  document.addEventListener('play', function(e) {
+    if (e.target.tagName === 'AUDIO') {
+      document.querySelectorAll('audio').forEach(function(player) {
+        if (player !== e.target && !player.paused) {
+          player.pause();
+        }
+      });
+    }
+  }, true);
+
+  window.playHymn = function(hymnUrl, iconElement) {
+    var playSymbol = iconElement.getAttribute('data-play');
+    var stopSymbol = iconElement.getAttribute('data-stop');
+
+    console.log('[Qurbana] Play hymn requested:', hymnUrl);
+
+    // Find the first hymn audio player in the substages panel
+    var player = document.querySelector('.hymn-audio-player');
+    if (!player) {
+      console.error('[Qurbana] No hymn audio player found');
+      return;
+    }
+
+    // If already playing, pause
+    if (!player.paused) {
+      player.pause();
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+      return;
+    }
+
+    // Expand the substage that contains this player
+    var parentItem = player.closest('.substage-item');
+    if (parentItem && !parentItem.classList.contains('expanded')) {
+      parentItem.classList.remove('collapsed');
+      parentItem.classList.add('expanded');
+    }
+
+    // Play
+    player.play().catch(function(error) {
+      console.error('[Qurbana] Playback error:', error.name, error.message);
+    });
+
+    iconElement.classList.add('playing');
+    iconElement.textContent = stopSymbol;
+
+    // Scroll the player into view
+    player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Keep icon in sync when audio ends or is paused via native controls
+    player.onended = function() {
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+    };
+    player.onpause = function() {
+      iconElement.classList.remove('playing');
+      iconElement.textContent = playSymbol;
+    };
+    player.onplay = function() {
+      iconElement.classList.add('playing');
+      iconElement.textContent = stopSymbol;
+    };
+  };
+})();
+</script>
