@@ -842,7 +842,7 @@
     } else if (stage.image && stage.image.trim()) {
       // Display static image (prefer WebP)
       var imgSrc = toWebP(stage.image);
-      container.innerHTML = '<img src="' + imgSrc + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" alt="' + (stage.title || 'Liturgy stage').replace(/"/g, '&quot;') + '">';
+      container.innerHTML = '<img src="' + imgSrc + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;" alt="' + (stage.title || 'Liturgy stage').replace(/"/g, '&quot;') + '">';
       placeholder.style.display = 'none';
       imagePlaceholder.style.backgroundImage = 'none';
       imagePlaceholder.style.cursor = 'default';
