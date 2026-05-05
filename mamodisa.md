@@ -19,13 +19,13 @@ phases:
     malayalam: "ശിഷ്യത്വ ശുശ്രൂഷ"
     description: "Part I: The Preparation — Transition from the 'world' to the 'Kingdom'"
     card_description: "Liturgical location: Entrance of the Nave/Narthex"
-    image: "/assets/img/catechumens-stage.png"
     stages:
       - title: "Admonition and Admission"
         malayalam: "ഉദ്ബോധനവും പ്രവേശനവും"
         transliteration: "Udbodhanavum Praveshanavum"
         description: "The formal acceptance of the candidate into the Church, and the claiming of the child for Christ's flock"
         liturgical_location: "Entrance of the Nave"
+        image: "/assets/img/catechumens-stage.png"
         substages:
           - title: "The Admission (Praveshanam)"
             malayalam: "പ്രവേശനം"
