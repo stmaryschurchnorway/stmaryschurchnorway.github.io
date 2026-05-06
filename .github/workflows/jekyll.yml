@@ -32,6 +32,7 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
