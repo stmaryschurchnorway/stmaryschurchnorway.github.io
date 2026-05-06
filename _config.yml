@@ -27,7 +27,8 @@ vicar_email: "fr.eldhosevattaparambil@live.dk"
 secretary: "Mr. Riju Cherian"
 treasurer: "Mr. Binny Mathew"
 
-google_api_key: "AIzaSyCJZJJuEzE2X3fkHMiCNDdOTSlaqrQ1nZo"
+# Google API key loaded from environment variable via _plugins/env_variables.rb
+google_api_key: ""
 google_calendar_id: "stmaryschurchnorway@gmail.com"
 youtube_channel: "@msoc_norway"
 

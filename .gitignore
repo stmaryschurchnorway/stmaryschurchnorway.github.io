@@ -9,3 +9,4 @@ Gemfile.lock
 docs/superpowers/
 .superpowers/
 /*.png
+.env.local
