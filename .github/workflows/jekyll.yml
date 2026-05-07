@@ -17,7 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,30 +28,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Diagnostic - Check Environment
-        run: |
-          echo "=== Environment Diagnostics ==="
-          echo "JEKYLL_ENV: $JEKYLL_ENV"
-          echo "GOOGLE_API_KEY set: $([ -n "$GOOGLE_API_KEY" ] && echo 'YES' || echo 'NO')"
-          echo "GOOGLE_API_KEY length: ${#GOOGLE_API_KEY}"
-          if [ -n "$GOOGLE_API_KEY" ]; then
-            echo "GOOGLE_API_KEY starts with: ${GOOGLE_API_KEY:0:10}..."
-            echo "GOOGLE_API_KEY ends with: ...${GOOGLE_API_KEY: -10}"
-          fi
-        env:
-          JEKYLL_ENV: production
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-
       - name: Build with Jekyll
-        run: |
-          echo "=== Build Debug ==="
-          echo "GOOGLE_API_KEY length: ${#GOOGLE_API_KEY}"
-          export JEKYLL_ENV=production
-          export GOOGLE_API_KEY="$GOOGLE_API_KEY"
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
