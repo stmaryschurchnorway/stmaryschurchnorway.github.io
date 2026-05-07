@@ -3,11 +3,19 @@
   <div class="container footer-inner">
     <div class="footer-nav">
       <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/the-church/' | relative_url }}">The Church</a></li>
-        <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
-        <li><a href="{{ '/events/' | relative_url }}">Events</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">Contact Us</a></li>
+        {% if page.url contains '/no/' %}
+          <li><a href="{{ '/no/' | relative_url }}">Hjem</a></li>
+          <li><a href="{{ '/no/the-church/' | relative_url }}">Kirken</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}">Galleri</a></li>
+          <li><a href="{{ '/no/events/' | relative_url }}">Arrangemer</a></li>
+          <li><a href="{{ '/no/contact/' | relative_url }}">Kontakt Oss</a></li>
+        {% else %}
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/en/the-church/' | relative_url }}">The Church</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/en/events/' | relative_url }}">Events</a></li>
+          <li><a href="{{ '/en/contact/' | relative_url }}">Contact Us</a></li>
+        {% endif %}
       </ul>
     </div>
     <div class="footer-center">
@@ -34,19 +42,19 @@
       </div>
       <p class="visitor-count" id="visitor-count"></p>
       <p class="copyright">Copyright &copy; {{ 'now' | date: '%Y' }} {{ site.title }}.</p>
-      <a href="https://msoc-europe.com/" target="_blank" rel="noopener" class="diocese-badge">Part of MSOC European Diocese</a>
+      <a href="https://msoc-europe.com/" target="_blank" rel="noopener" class="diocese-badge">{% if page.url contains '/no/' %}Del av MSOC Europeisk Diøse{% else %}Part of MSOC European Diocese{% endif %}</a>
     </div>
     <div class="footer-leadership">
       <div class="footer-person">
-        <span class="footer-role">Vicar</span>
+        <span class="footer-role">{% if page.url contains '/no/' %}Vikar{% else %}Vicar{% endif %}</span>
         <span class="footer-name">{{ site.vicar }}</span>
       </div>
       <div class="footer-person">
-        <span class="footer-role">Secretary</span>
+        <span class="footer-role">{% if page.url contains '/no/' %}Sekretær{% else %}Secretary{% endif %}</span>
         <span class="footer-name">{{ site.secretary }}</span>
       </div>
       <div class="footer-person">
-        <span class="footer-role">Treasurer</span>
+        <span class="footer-role">{% if page.url contains '/no/' %}Kasserer{% else %}Treasurer{% endif %}</span>
         <span class="footer-name">{{ site.treasurer }}</span>
       </div>
     </div>
