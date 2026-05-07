@@ -1,7 +1,8 @@
 ---
 layout: page
+lang: en
 title: The Church
-permalink: /the-church/
+permalink: /en/the-church/
 description: "Faith, history, and parish hierarchy of St. Mary's Malankara Syriac Orthodox Church, Oslo, a Malayalam-speaking Oriental Orthodox parish in Norway, part of the Universal Syriac Orthodox Church of Antioch."
 ---
 

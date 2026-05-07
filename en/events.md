@@ -1,7 +1,8 @@
 ---
 layout: page
+lang: en
 title: "Holy Qurbana Schedule & Events"
-permalink: /events/
+permalink: /en/events/
 description: "Holy Qurbana schedule, feast days (Oshana, Perunnal), and upcoming events at St. Mary's Malankara Syriac Orthodox Church, Oslo. Subscribe to our Malayalam Orthodox parish calendar."
 ---
 
