@@ -16,6 +16,8 @@ Jekyll::Hooks.register :site, :post_read do |site|
 
   if google_api_key.empty?
     Jekyll.logger.warn "⚠️  Google API Key not found. Set GOOGLE_API_KEY environment variable."
+    Jekyll.logger.warn "[DEBUG] ENV['GOOGLE_API_KEY'] class: #{ENV['GOOGLE_API_KEY'].class}"
+    Jekyll.logger.warn "[DEBUG] ENV['GOOGLE_API_KEY'] value: #{ENV['GOOGLE_API_KEY'].inspect}"
     Jekyll.logger.warn "[DEBUG] All env vars starting with G: #{ENV.select { |k,v| k.start_with?('G') }.keys.join(', ')}"
   else
     Jekyll.logger.info "✓ Google API Key loaded successfully"
