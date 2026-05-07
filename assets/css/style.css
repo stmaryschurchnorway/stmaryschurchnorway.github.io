@@ -154,7 +154,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* === Social Links === */
-.social-links { display: flex; align-items: center; gap: 10px; }
+.social-links { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 .social-link {
   display: flex;
   align-items: center;
