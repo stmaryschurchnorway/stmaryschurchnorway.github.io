@@ -231,11 +231,11 @@ layout: default
 <!-- Join Us CTA -->
 <section class="join-us">
   <div class="join-us-inner">
-    <h2>Join Us for Worship</h2>
-    <p>We celebrate the Holy Qurbana monthly at<br><strong>{{ site.address }}</strong></p>
+    <h2>{% if page.url contains '/no/' %}Bli Med Oss i Dyrking{% else %}Join Us for Worship{% endif %}</h2>
+    <p>{% if page.url contains '/no/' %}Vi feirer Hellig Qurbana månedlig hos{% else %}We celebrate the Holy Qurbana monthly at{% endif %}<br><strong>{{ site.address }}</strong></p>
     <div class="join-us-buttons">
-      <a href="{{ '/events/' | relative_url }}" class="btn btn-join">View Schedule</a>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-join-outline">Contact Us</a>
+      <a href="{% if page.url contains '/no/' %}{{ '/no/events/' | relative_url }}{% else %}{{ '/en/events/' | relative_url }}{% endif %}" class="btn btn-join">{% if page.url contains '/no/' %}Vis Tidsplan{% else %}View Schedule{% endif %}</a>
+      <a href="{% if page.url contains '/no/' %}{{ '/no/contact/' | relative_url }}{% else %}{{ '/en/contact/' | relative_url }}{% endif %}" class="btn btn-join-outline">{% if page.url contains '/no/' %}Kontakt Oss{% else %}Contact Us{% endif %}</a>
     </div>
   </div>
 </section>
