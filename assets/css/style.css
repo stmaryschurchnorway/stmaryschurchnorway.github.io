@@ -1612,6 +1612,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
   .language-switcher {
+    grid-column: 3;
+    grid-row: 2;
     margin-left: 10px;
     gap: 6px;
     font-size: 12px;
