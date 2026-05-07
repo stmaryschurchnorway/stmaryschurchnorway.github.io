@@ -1215,7 +1215,7 @@ img { max-width: 100%; height: auto; display: block; }
     height: 38px;
   }
   .logo-title {
-    grid-column: 2 / 4;
+    grid-column: 2;
     grid-row: 1;
     font-size: 0.85rem;
   }
