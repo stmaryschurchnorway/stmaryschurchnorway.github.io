@@ -18,7 +18,7 @@ description: "Besøk St. Marias Malankara Syrisk Ortodoks Kirke ved Eikeli Katol
 
 &#9742; <img src="{{ '/assets/img/phone-committee.svg' | relative_url }}" alt="Telefon" class="phone-img" style="vertical-align:middle;">
 
-## Styre {#board-of-trustees}
+## Styre {#styre}
 
 ### Ledelse
 

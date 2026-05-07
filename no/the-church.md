@@ -101,8 +101,8 @@ Generalforsamlingen skal:
 
 - Godkjenne årsberedskap og regnskap
 - Godkjenne budsjett
-- Velge *[Styre](/no/contact/#board-of-trustees)*
+- Velge *[Styre](/no/contact/#styre)*
 - Godkjenne endringer i konstitusjonen
 - Treffe hovedavgjørelser som påvirker kirken
 
-Se vårt nåværende *[Styre](/no/contact/#board-of-trustees)* for menighets ledelses kontaktinformasjon.
+Se vårt nåværende *[Styre](/no/contact/#styre)* for menighets ledelses kontaktinformasjon.
