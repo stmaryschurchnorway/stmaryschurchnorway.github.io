@@ -1613,9 +1613,12 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) {
   .language-switcher {
     grid-column: 3;
-    grid-row: 2;
-    margin-left: 10px;
-    gap: 6px;
-    font-size: 12px;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    margin-left: 0;
+    margin-top: 2px;
+    gap: 4px;
+    font-size: 11px;
   }
 }
