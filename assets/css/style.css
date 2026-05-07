@@ -1578,3 +1578,42 @@ img { max-width: 100%; height: auto; display: block; }
   .past-event-title { font-size: 0.88rem; }
   .past-event-meta { font-size: 0.72rem; white-space: normal; }
 }
+
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lang-current {
+  color: #d4a017;
+  font-weight: 700;
+}
+
+.lang-separator {
+  color: #d4a017;
+  margin: 0 2px;
+}
+
+.lang-link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.lang-link:hover {
+  color: #d4a017;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 10px;
+    gap: 6px;
+    font-size: 12px;
+  }
+}
