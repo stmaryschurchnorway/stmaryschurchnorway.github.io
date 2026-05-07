@@ -29,21 +29,21 @@ layout: default
 
 <!-- Welcome -->
 <section class="welcome">
-  <h2 class="section-title">Welcome</h2>
+  <h2 class="section-title">{% if page.url contains '/no/' %}Velkommen{% else %}Welcome{% endif %}</h2>
   <div class="welcome-content">
     <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="welcome-vicar">
       <div class="vicar-photo-wrap">
         <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="{{ site.vicar }}" loading="lazy" decoding="async">
       </div>
-      <div class="vicar-label">Vicar / President</div>
+      <div class="vicar-label">{% if page.url contains '/no/' %}Vikar / President{% else %}Vicar / President{% endif %}</div>
       <div class="vicar-name">{{ site.vicar }}</div>
     </a>
     <div class="welcome-text">
-      <p class="welcome-tagline">A Malayalam-speaking Orthodox parish in Scandinavia since 2010</p>
+      <p class="welcome-tagline">{% if page.url contains '/no/' %}En malayalisktalende ortodoks menighet i Skandinavia siden 2010{% else %}A Malayalam-speaking Orthodox parish in Scandinavia since 2010{% endif %}</p>
       <p>{{ page.welcome_text }}</p>
       <div class="welcome-buttons">
-        <a href="{{ '/liturgy/' | relative_url }}" class="btn btn-primary">Our Liturgy</a>
-        <a href="{{ '/the-church/' | relative_url }}" class="btn">Our Church</a>
+        <a href="{{ '/liturgy/' | relative_url }}" class="btn btn-primary">{% if page.url contains '/no/' %}Vår Liturgi{% else %}Our Liturgy{% endif %}</a>
+        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="btn">{% if page.url contains '/no/' %}Vår Kirke{% else %}Our Church{% endif %}</a>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ layout: default
 {% if site.posts.size > 0 %}
 <section class="news-section">
   <div class="container">
-    <h2 class="section-title">Latest News</h2>
+    <h2 class="section-title">{% if page.url contains '/no/' %}Siste Nyheter{% else %}Latest News{% endif %}</h2>
     <div class="news-grid" id="latest-news-grid" data-per-page="3">
       {% for post in site.posts %}
       <a href="{{ post.url | relative_url }}" class="news-card">

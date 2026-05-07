@@ -21,7 +21,7 @@ Parameters:
 {% assign desc_chars = include.desc_chars | default: 140 %}
 
 <section class="upcoming-events-section">
-  {% if show_heading %}<h2 class="section-title">Upcoming Events</h2>{% endif %}
+  {% if show_heading %}<h2 class="section-title">{% if page.url contains '/no/' %}Kommende Arrangemer{% else %}Upcoming Events{% endif %}</h2>{% endif %}
   <div class="events-container" id="{{ container_id }}" role="status" aria-live="polite">
     <p class="events-loading">Loading upcoming events&hellip;</p>
   </div>
