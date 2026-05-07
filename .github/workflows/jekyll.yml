@@ -45,8 +45,10 @@ jobs:
 
       - name: Build with Jekyll
         run: |
+          echo "=== Build Debug ==="
+          echo "GOOGLE_API_KEY from env: ${GOOGLE_API_KEY:0:10}..."
           export JEKYLL_ENV=production
-          export GOOGLE_API_KEY="${{ secrets.GOOGLE_API_KEY }}"
+          export GOOGLE_API_KEY="$GOOGLE_API_KEY"
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
