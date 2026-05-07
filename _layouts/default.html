@@ -95,10 +95,10 @@
         el.appendChild(label);
         el.appendChild(document.createTextNode(' ' + title + ' \u2014 ' + dateStr + '  |  '));
         var link = document.createElement('a');
-        link.href = 'https://calendar.google.com/calendar/embed?src=stmaryschurchnorway%40gmail.com&ctz=Europe%2FOslo';
+        link.href = 'https://calendar.google.com/calendar/u/0/r?cid=stmaryschurchnorway%40gmail.com';
         link.target = '_blank';
         link.rel = 'noopener';
-        link.textContent = 'View Calendar';
+        link.textContent = 'Subscribe Calendar';
         el.appendChild(link);
       } else {
         el.textContent = 'No upcoming events';
