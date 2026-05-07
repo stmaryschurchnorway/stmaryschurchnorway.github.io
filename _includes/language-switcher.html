@@ -1,0 +1,17 @@
+<!-- Language Switcher -->
+<div class="language-switcher">
+  {% if page.lang == 'en' %}
+    <span class="lang-current">EN</span>
+    <span class="lang-separator">|</span>
+    <a href="{{ page.url | replace: '/en/', '/no/' }}" class="lang-link">NO</a>
+  {% elsif page.lang == 'no' %}
+    <a href="{{ page.url | replace: '/no/', '/en/' }}" class="lang-link">EN</a>
+    <span class="lang-separator">|</span>
+    <span class="lang-current">NO</span>
+  {% else %}
+    <!-- Fallback for pages without lang variable -->
+    <span class="lang-current">EN</span>
+    <span class="lang-separator">|</span>
+    <span class="lang-link">NO</span>
+  {% endif %}
+</div>
