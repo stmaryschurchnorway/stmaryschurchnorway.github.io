@@ -36,19 +36,35 @@
   <nav class="main-nav">
     <div class="container">
       <ul class="nav-links">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li class="nav-dropdown">
-          <a href="{{ '/the-church/' | relative_url }}" {% if page.url == '/the-church/' %}class="active"{% endif %}>The Church</a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ '/the-church/' | relative_url }}#our-faith">Our Faith & Mission</a></li>
-            <li><a href="{{ '/the-church/' | relative_url }}#our-history">Our History</a></li>
-            <li><a href="{{ '/the-church/' | relative_url }}#our-hierarchy">Our Hierarchy & Governance</a></li>
-            <li><a href="{{ '/liturgy/' | relative_url }}">Our Liturgy</a></li>
-          </ul>
-        </li>
-        <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Gallery</a></li>
-        <li><a href="{{ '/events/' | relative_url }}" {% if page.url == '/events/' %}class="active"{% endif %}>Events</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact Us</a></li>
+        {% if page.url contains '/no/' %}
+          <li><a href="{{ '/no/' | relative_url }}" {% if page.url == '/no/' %}class="active"{% endif %}>Hjem</a></li>
+          <li class="nav-dropdown">
+            <a href="{{ '/no/the-church/' | relative_url }}" {% if page.url == '/no/the-church/' %}class="active"{% endif %}>Kirken</a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ '/no/the-church/' | relative_url }}#our-faith">Vår Tro & Misjon</a></li>
+              <li><a href="{{ '/no/the-church/' | relative_url }}#our-history">Vår Historie</a></li>
+              <li><a href="{{ '/no/the-church/' | relative_url }}#our-hierarchy">Vår Hierarki & Styring</a></li>
+              <li><a href="{{ '/liturgy/' | relative_url }}">Vår Liturgi</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Galleri</a></li>
+          <li><a href="{{ '/no/events/' | relative_url }}" {% if page.url == '/no/events/' %}class="active"{% endif %}>Arrangemer</a></li>
+          <li><a href="{{ '/no/contact/' | relative_url }}" {% if page.url == '/no/contact/' %}class="active"{% endif %}>Kontakt Oss</a></li>
+        {% else %}
+          <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+          <li class="nav-dropdown">
+            <a href="{{ '/en/the-church/' | relative_url }}" {% if page.url == '/en/the-church/' %}class="active"{% endif %}>The Church</a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ '/en/the-church/' | relative_url }}#our-faith">Our Faith & Mission</a></li>
+              <li><a href="{{ '/en/the-church/' | relative_url }}#our-history">Our History</a></li>
+              <li><a href="{{ '/en/the-church/' | relative_url }}#our-hierarchy">Our Hierarchy & Governance</a></li>
+              <li><a href="{{ '/liturgy/' | relative_url }}">Our Liturgy</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Gallery</a></li>
+          <li><a href="{{ '/en/events/' | relative_url }}" {% if page.url == '/en/events/' %}class="active"{% endif %}>Events</a></li>
+          <li><a href="{{ '/en/contact/' | relative_url }}" {% if page.url == '/en/contact/' %}class="active"{% endif %}>Contact Us</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>

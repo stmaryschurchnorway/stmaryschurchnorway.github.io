@@ -1,15 +1,10 @@
 <!-- Language Switcher -->
 <div class="language-switcher" aria-label="Select language">
-  {% if page.lang == 'en' %}
-    <span class="lang-current" aria-current="page">EN</span>
-    <span class="lang-separator" aria-hidden="true">|</span>
-    <a href="{{ page.url | replace: '/en/', '/no/' }}" class="lang-link" lang="no" hreflang="no">NO</a>
-  {% elsif page.lang == 'no' %}
+  {% if page.url contains '/no/' %}
     <a href="{{ page.url | replace: '/no/', '/en/' }}" class="lang-link" lang="en" hreflang="en">EN</a>
     <span class="lang-separator" aria-hidden="true">|</span>
     <span class="lang-current" aria-current="page">NO</span>
   {% else %}
-    <!-- Fallback: assume English if lang not set -->
     <span class="lang-current" aria-current="page">EN</span>
     <span class="lang-separator" aria-hidden="true">|</span>
     <a href="{{ page.url | replace: '/en/', '/no/' }}" class="lang-link" lang="no" hreflang="no">NO</a>
