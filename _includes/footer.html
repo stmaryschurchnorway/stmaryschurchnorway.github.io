@@ -7,7 +7,7 @@
           <li><a href="{{ '/no/' | relative_url }}">Hjem</a></li>
           <li><a href="{{ '/no/the-church/' | relative_url }}">Kirken</a></li>
           <li><a href="{{ '/gallery/' | relative_url }}">Galleri</a></li>
-          <li><a href="{{ '/no/events/' | relative_url }}">Arrangemer</a></li>
+          <li><a href="{{ '/no/events/' | relative_url }}">Arrangementer</a></li>
           <li><a href="{{ '/no/contact/' | relative_url }}">Kontakt Oss</a></li>
         {% else %}
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -42,7 +42,7 @@
       </div>
       <p class="visitor-count" id="visitor-count"></p>
       <p class="copyright">Copyright &copy; {{ 'now' | date: '%Y' }} {{ site.title }}.</p>
-      <a href="https://msoc-europe.com/" target="_blank" rel="noopener" class="diocese-badge">{% if page.url contains '/no/' %}Del av MSOC Europeisk Diøse{% else %}Part of MSOC European Diocese{% endif %}</a>
+      <a href="https://msoc-europe.com/" target="_blank" rel="noopener" class="diocese-badge">{% if page.url contains '/no/' %}Del av MSOCs europeiske bispedømme{% else %}Part of MSOC European Diocese{% endif %}</a>
     </div>
     <div class="footer-leadership">
       <div class="footer-person">

@@ -76,7 +76,7 @@ layout: default
         <div class="liturgy-showcase-img">
           <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
         </div>
-        <h3>{% if page.url contains '/no/' %}Hellige Qurbana{% else %}Holy Qurbana{% endif %}</h3>
+        <h3>{% if page.url contains '/no/' %}Hellig Qurbana{% else %}Holy Qurbana{% endif %}</h3>
         <p>{% if page.url contains '/no/' %}Den hellige nattverden i den syriske tradisjonen{% else %}The Holy Eucharist of the Syriac tradition{% endif %}</p>
         <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
       </a>
@@ -306,11 +306,11 @@ layout: default
 <!-- Join Us CTA -->
 <section class="join-us">
   <div class="join-us-inner">
-    <h2>{% if page.url contains '/no/' %}Bli Med Oss i Dyrking{% else %}Join Us for Worship{% endif %}</h2>
-    <p>{% if page.url contains '/no/' %}Vi feirer Hellig Qurbana månedlig hos{% else %}We celebrate the Holy Qurbana monthly at{% endif %}<br><strong>{{ site.address }}</strong></p>
+    <h2>{% if page.url contains '/no/' %}Bli med oss til gudstjeneste{% else %}Join Us for Worship{% endif %}</h2>
+    <p>{% if page.url contains '/no/' %}Vi feirer Hellig Qurbana månedlig ved{% else %}We celebrate the Holy Qurbana monthly at{% endif %}<br><strong>{{ site.address }}</strong></p>
     <div class="join-us-buttons">
-      <a href="{% if page.url contains '/no/' %}{{ '/no/events/' | relative_url }}{% else %}{{ '/en/events/' | relative_url }}{% endif %}" class="btn btn-join">{% if page.url contains '/no/' %}Vis Tidsplan{% else %}View Schedule{% endif %}</a>
-      <a href="{% if page.url contains '/no/' %}{{ '/no/contact/' | relative_url }}{% else %}{{ '/en/contact/' | relative_url }}{% endif %}" class="btn btn-join-outline">{% if page.url contains '/no/' %}Kontakt Oss{% else %}Contact Us{% endif %}</a>
+      <a href="{% if page.url contains '/no/' %}{{ '/no/events/' | relative_url }}{% else %}{{ '/en/events/' | relative_url }}{% endif %}" class="btn btn-join">{% if page.url contains '/no/' %}Se tidsplan{% else %}View Schedule{% endif %}</a>
+      <a href="{% if page.url contains '/no/' %}{{ '/no/contact/' | relative_url }}{% else %}{{ '/en/contact/' | relative_url }}{% endif %}" class="btn btn-join-outline">{% if page.url contains '/no/' %}Kontakt oss{% else %}Contact Us{% endif %}</a>
     </div>
   </div>
 </section>

@@ -17,8 +17,8 @@
       <div class="logo-text">
         <span class="logo-title">{{ site.title }}</span>
         <span class="logo-subtitle">Oslo · Est. 2010</span>
-        <span class="logo-diocese">{% if page.url contains '/no/' %}Under den Malankara Syrisk Ortodokse Kirke (MSOC) Europeiske Bispedømme{% else %}Under the Malankara Syriac Orthodox Church (MSOC) European Diocese{% endif %}</span>
-        <span class="logo-see">{% if page.url contains '/no/' %}I fellesskap med det Hellige Setet av Antiokia og hele Østen{% else %}In communion with the Holy See of Antioch and All the East{% endif %}</span>
+        <span class="logo-diocese">{% if page.url contains '/no/' %}Under den Malankara Syrisk-Ortodokse Kirkes (MSOC) europeiske bispedømme{% else %}Under the Malankara Syriac Orthodox Church (MSOC) European Diocese{% endif %}</span>
+        <span class="logo-see">{% if page.url contains '/no/' %}I fellesskap med Den hellige stol i Antiokia og hele Østen{% else %}In communion with the Holy See of Antioch and All the East{% endif %}</span>
       </div>
     </a>
     <nav class="main-nav">
@@ -27,7 +27,7 @@
           <li><a href="{{ '/no/' | relative_url }}" {% if page.url == '/no/' or page.url == '/' %}class="active"{% endif %}>Hjem</a></li>
           <li><a href="{{ '/no/the-church/' | relative_url }}" {% if page.url == '/no/the-church/' %}class="active"{% endif %}>Kirken</a></li>
           <li><a href="{{ '/liturgy/' | relative_url }}" {% if page.url == '/liturgy/' %}class="active"{% endif %}>Liturgi</a></li>
-          <li><a href="{{ '/no/events/' | relative_url }}" {% if page.url == '/no/events/' %}class="active"{% endif %}>Arrangemer</a></li>
+          <li><a href="{{ '/no/events/' | relative_url }}" {% if page.url == '/no/events/' %}class="active"{% endif %}>Arrangementer</a></li>
           <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Galleri</a></li>
           <li class="nav-contact-mobile"><a href="{{ '/no/contact/' | relative_url }}" {% if page.url == '/no/contact/' %}class="active"{% endif %}>Kontakt</a></li>
         {% else %}

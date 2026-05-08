@@ -6,7 +6,7 @@ permalink: /no/contact/
 description: "Besøk St. Marias Malankara Syrisk Ortodoks Kirke ved Eikeli Katolske Kirke, 1362 Høsle (større Oslo-område), Norge. Kart, veibeskrivelse, e-post og kirkelig kontakt."
 ---
 
-## Vår Lokasjon
+## Finn oss
 
 <div class="contact-map">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d10.6044617!3d59.9356758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416ce8729bbf47%3A0x5ed93db78c80757d!2sSt.%20Elisabeth%20kirke!5e0!3m2!1sen!4v1700000000000" allowfullscreen loading="lazy"></iframe>

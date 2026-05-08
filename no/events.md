@@ -3,11 +3,11 @@ layout: page
 lang: no
 title: "Menighetsliv & Arrangementer"
 permalink: /no/events/
-description: "Hellig Qurbana-skjema, festdager (Oshana, Perunnal), og kommende arrangementer ved St. Marias Malankara Syrisk Ortodoks Kirke, Oslo. Abonner på vår malayalisk ortodoks kirkekalender."
+description: "Hellig Qurbana-tidsplan, festdager (Oshana, Perunnal), og kommende arrangementer ved St. Marias Malankara Syrisk Ortodoks Kirke, Oslo. Abonner på vår malayalisk-ortodokse kirkekalender."
 ---
 
 <div class="events-intro">
-  <p>Bli oppdatert med vår Hellig Qurbana-skjema, festdager og samfunnssamlinger. Abonner på vår kalender for å aldri gå glipp av et arrangement.</p>
+  <p>Hold deg oppdatert med vår tidsplan for Hellig Qurbana, festdager og menighetssamlinger. Abonner på vår kalender for å aldri gå glipp av et arrangement.</p>
   <div class="calendar-actions">
     <a href="https://calendar.google.com/calendar/r?cid=stmaryschurchnorway@gmail.com" target="_blank" rel="noopener" class="btn subscribe-btn">&#128197; Abonner på Kalender</a>
   </div>
