@@ -29,9 +29,9 @@ liturgies:
     title: "Holy Mooron"
     malayalam: "മൂറോൻ"
     transliteration: "Moo-ron"
-    description: "Chrismation - Anointing with Holy Myron to receive the seal of the Holy Spirit"
+    description: "Chrismation - The seal of the Holy Spirit that completes and perfects baptism"
     image: "/assets/img/mooron-liturgy.png"
-    status: "coming-soon"
+    url: "/mooron/"
 
   - id: "holy-confession"
     title: "Holy Confession"
