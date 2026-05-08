@@ -1,39 +1,322 @@
 <div class="liturgy-landing" id="liturgyLanding">
-  <div class="liturgy-intro-section">
-    <h2>Explore Our Sacred Liturgies</h2>
-    <p>The Malankara Orthodox Syrian Church recognizes seven sacraments, known as "Holy Mysteries," which are essential rites where the Holy Spirit acts to sanctify believers and strengthen their connection with God.</p>
-    <p style="font-size: 14px; color: #999; margin-top: 8px;">Journey through the ancient traditions and sacred rituals that form the heart of our worship</p>
-  </div>
 
-  <div class="liturgy-grid">
-    {% for liturgy in page.liturgies %}
-    <div class="liturgy-card" id="{{ liturgy.id }}" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
-      {% if liturgy.status == 'coming-soon' %}
-      <div class="coming-soon-badge">Coming Soon</div>
-      {% endif %}
-      <div class="liturgy-card-image">
-        <picture>
-          <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
-          <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy" decoding="async">
-        </picture>
-      </div>
-      <div class="liturgy-card-content">
-        <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
-        <div class="liturgy-card-malayalam">
-          <div class="malayalam-content">
-            <span class="malayalam-text">{{ liturgy.malayalam }}</span>
-            <span class="transliteration">{{ liturgy.transliteration }}</span>
-          </div>
-          <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+  <!-- ENHANCED INTRO FRAME: Trinity Pillars -->
+  <div class="liturgy-intro-frame">
+    <h3 class="liturgy-intro-frame-title">The Seven Holy Mysteries</h3>
+
+    <div class="liturgy-intro-pillars">
+      <div class="liturgy-intro-pillar">
+        <div class="liturgy-intro-pillar-icon">✦</div>
+        <div class="liturgy-intro-pillar-label">Divine Mysteries</div>
+        <div class="liturgy-intro-pillar-desc">
+          Sacraments are <em>rozo</em> (ܪܳܙܐܳ) in Syriac—celebrations of hidden divine realities.
+          They are liturgical actions where the Holy Spirit acts to transform, sanctify,
+          and unite believers with Christ's saving work.
         </div>
-        <p class="liturgy-card-description">{{ liturgy.description }}</p>
-        <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
-          Explore the Mystery <span aria-hidden="true">→</span>
-        </button>
+      </div>
+
+      <div class="liturgy-intro-pillar">
+        <div class="liturgy-intro-pillar-icon">✝</div>
+        <div class="liturgy-intro-pillar-label">Biblical Foundation</div>
+        <div class="liturgy-intro-pillar-desc">
+          Rooted in St. Paul's <em>mysterion</em> (μυστήριον)—God's redemptive plan
+          "hidden for ages but now revealed." Through these mysteries, believers participate
+          in Christ's death, resurrection, and the life of the Kingdom.
+        </div>
+      </div>
+
+      <div class="liturgy-intro-pillar">
+        <div class="liturgy-intro-pillar-icon">🕊</div>
+        <div class="liturgy-intro-pillar-label">Transformative Grace</div>
+        <div class="liturgy-intro-pillar-desc">
+          Not merely symbols, but encounters with the living God.
+          Each sacrament is a divine-human meeting where visible actions
+          convey invisible grace, transforming believers into the image of Christ.
+        </div>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="liturgy-intro-statement">
+      <p>The Malankara Orthodox Church recognizes seven principal sacraments as essential
+      rites of Christian life, though Orthodox theology sees sacramentality extending
+      throughout the Church's liturgical life. These seven mysteries—Baptism, Chrismation,
+      Eucharist, Confession, Anointing of the Sick, Marriage, and Holy Orders—mark key
+      moments in the believer's journey from birth to eternity, sanctifying every stage
+      of human existence.</p>
+    </div>
   </div>
+
+  <!-- JOURNEY TIMELINE -->
+  <div class="liturgy-journey">
+    <h3 class="liturgy-journey-title">The Sacramental Journey</h3>
+    <p class="liturgy-journey-subtitle">From birth to eternity, the mysteries sanctify every stage of life</p>
+
+    <div class="liturgy-journey-timeline">
+      <div class="liturgy-journey-step available" data-category="initiation">
+        <div class="liturgy-journey-step-num">1</div>
+        <div class="liturgy-journey-step-label-en">Baptism</div>
+        <div class="liturgy-journey-step-label-ml">മാമോദീസാ</div>
+        <div class="liturgy-journey-step-desc">Gate to the Kingdom</div>
+      </div>
+
+      <div class="liturgy-journey-connector"></div>
+
+      <div class="liturgy-journey-step available" data-category="initiation">
+        <div class="liturgy-journey-step-num">2</div>
+        <div class="liturgy-journey-step-label-en">Chrismation</div>
+        <div class="liturgy-journey-step-label-ml">മൂറോൻ</div>
+        <div class="liturgy-journey-step-desc">Seal of the Spirit</div>
+      </div>
+
+      <div class="liturgy-journey-connector"></div>
+
+      <div class="liturgy-journey-step available" data-category="initiation">
+        <div class="liturgy-journey-step-num">3</div>
+        <div class="liturgy-journey-step-label-en">Eucharist</div>
+        <div class="liturgy-journey-step-label-ml">കുർബാന</div>
+        <div class="liturgy-journey-step-desc">Body & Blood</div>
+      </div>
+
+      <div class="liturgy-journey-divider">
+        <span>Life in the Church</span>
+      </div>
+
+      <div class="liturgy-journey-step soon" data-category="healing">
+        <div class="liturgy-journey-step-num">4</div>
+        <div class="liturgy-journey-step-label-en">Confession</div>
+        <div class="liturgy-journey-step-label-ml">കുമ്പസാരം</div>
+        <div class="liturgy-journey-step-desc">Reconciliation</div>
+      </div>
+
+      <div class="liturgy-journey-connector"></div>
+
+      <div class="liturgy-journey-step soon" data-category="healing">
+        <div class="liturgy-journey-step-num">5</div>
+        <div class="liturgy-journey-step-label-en">Anointing</div>
+        <div class="liturgy-journey-step-label-ml">എണ്ണ തേപ്പ്</div>
+        <div class="liturgy-journey-step-desc">Healing</div>
+      </div>
+
+      <div class="liturgy-journey-divider">
+        <span>Vocation</span>
+      </div>
+
+      <div class="liturgy-journey-step soon" data-category="vocation">
+        <div class="liturgy-journey-step-num">6</div>
+        <div class="liturgy-journey-step-label-en">Marriage</div>
+        <div class="liturgy-journey-step-label-ml">വിവാഹം</div>
+        <div class="liturgy-journey-step-desc">Holy Union</div>
+      </div>
+
+      <div class="liturgy-journey-connector-or">OR</div>
+
+      <div class="liturgy-journey-step soon" data-category="vocation">
+        <div class="liturgy-journey-step-num">7</div>
+        <div class="liturgy-journey-step-label-en">Holy Orders</div>
+        <div class="liturgy-journey-step-label-ml">പൗരോഹിത്യം</div>
+        <div class="liturgy-journey-step-desc">Priesthood</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIZED GRID -->
+  <div class="liturgy-grid-container">
+
+    <!-- INITIATION SACRAMENTS -->
+    <div class="liturgy-category-header">
+      <span class="liturgy-category-icon">✦</span>
+      <h3 class="liturgy-category-title">Sacraments of Christian Initiation</h3>
+      <p class="liturgy-category-desc">Entry into the Body of Christ through water, Spirit, and Eucharist</p>
+    </div>
+
+    <div class="liturgy-grid" data-category="initiation">
+      {% for liturgy in page.liturgies %}
+        {% if liturgy.category == 'initiation' %}
+        <div class="liturgy-card" id="{{ liturgy.id }}" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
+          {% if liturgy.status == 'coming-soon' %}
+          <div class="coming-soon-badge">Coming Soon</div>
+          {% endif %}
+          <div class="liturgy-card-image">
+            <picture>
+              <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
+              <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="liturgy-card-content">
+            <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
+            <div class="liturgy-card-malayalam">
+              <div class="malayalam-content">
+                <span class="malayalam-text">{{ liturgy.malayalam }}</span>
+                <span class="transliteration">{{ liturgy.transliteration }}</span>
+              </div>
+              <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+            </div>
+            <p class="liturgy-card-description">{{ liturgy.description }}</p>
+            <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
+              Explore the Mystery <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- HEALING SACRAMENTS -->
+    <div class="liturgy-category-header">
+      <span class="liturgy-category-icon">✝</span>
+      <h3 class="liturgy-category-title">Sacraments of Healing</h3>
+      <p class="liturgy-category-desc">Restoration and reconciliation through confession and anointing</p>
+    </div>
+
+    <div class="liturgy-grid" data-category="healing">
+      {% for liturgy in page.liturgies %}
+        {% if liturgy.category == 'healing' %}
+        <div class="liturgy-card" id="{{ liturgy.id }}" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
+          {% if liturgy.status == 'coming-soon' %}
+          <div class="coming-soon-badge">Coming Soon</div>
+          {% endif %}
+          <div class="liturgy-card-image">
+            <picture>
+              <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
+              <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="liturgy-card-content">
+            <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
+            <div class="liturgy-card-malayalam">
+              <div class="malayalam-content">
+                <span class="malayalam-text">{{ liturgy.malayalam }}</span>
+                <span class="transliteration">{{ liturgy.transliteration }}</span>
+              </div>
+              <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+            </div>
+            <p class="liturgy-card-description">{{ liturgy.description }}</p>
+            <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
+              Explore the Mystery <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- VOCATION SACRAMENTS -->
+    <div class="liturgy-category-header">
+      <span class="liturgy-category-icon">🕊</span>
+      <h3 class="liturgy-category-title">Sacraments of Vocation</h3>
+      <p class="liturgy-category-desc">Called to serve God in Marriage or Holy Orders</p>
+    </div>
+
+    <div class="liturgy-grid" data-category="vocation">
+      {% for liturgy in page.liturgies %}
+        {% if liturgy.category == 'vocation' %}
+        <div class="liturgy-card" id="{{ liturgy.id }}" {% if liturgy.url %}onclick="window.location.href='{{ liturgy.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ liturgy.id }}')"{% endif %}>
+          {% if liturgy.status == 'coming-soon' %}
+          <div class="coming-soon-badge">Coming Soon</div>
+          {% endif %}
+          <div class="liturgy-card-image">
+            <picture>
+              <source srcset="{{ liturgy.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp">
+              <img src="{{ liturgy.image | relative_url }}" alt="{{ liturgy.title }}" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="liturgy-card-content">
+            <h3 class="liturgy-card-title">{{ liturgy.title }}</h3>
+            <div class="liturgy-card-malayalam">
+              <div class="malayalam-content">
+                <span class="malayalam-text">{{ liturgy.malayalam }}</span>
+                <span class="transliteration">{{ liturgy.transliteration }}</span>
+              </div>
+              <button class="liturgy-audio-btn" onclick="event.stopPropagation(); playLiturgyAudio('{{ liturgy.malayalam }}');" title="Listen to pronunciation" aria-label="Play Malayalam pronunciation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+            </div>
+            <p class="liturgy-card-description">{{ liturgy.description }}</p>
+            <button class="liturgy-card-btn" aria-label="Explore {{ liturgy.title }}">
+              Explore the Mystery <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <!-- FOOTER SECTIONS -->
+
+  <!-- Biblical Foundation Panel -->
+  <div class="liturgy-foundation-panel">
+    <div class="liturgy-foundation-icon">📖</div>
+    <h3 class="liturgy-foundation-title">Biblical Foundation</h3>
+    <blockquote class="liturgy-foundation-quote">
+      "Now to him who is able to establish you according to my gospel and the preaching
+      of Jesus Christ, according to the revelation of the <strong>mystery</strong>
+      (μυστήριον) which has been kept secret for long ages but is now disclosed."
+      <cite>— Romans 16:25-26</cite>
+    </blockquote>
+    <p class="liturgy-foundation-text">
+      St. Paul uses <em>mysterion</em> over 20 times, revealing God's hidden plan—now
+      manifested in Christ and celebrated in the Church's sacramental life. The Hebrew
+      <em>sodh</em> (סוֹד) signifies intimate divine-human conversation, which the mysteries
+      continue through liturgical action.
+    </p>
+  </div>
+
+  <!-- How to Participate Panel -->
+  <div class="liturgy-access-panel">
+    <h3 class="liturgy-access-title">Participating in the Mysteries</h3>
+
+    <div class="liturgy-access-grid">
+      <div class="liturgy-access-item">
+        <div class="liturgy-access-item-icon">🏛</div>
+        <h4>Attend Divine Liturgy</h4>
+        <p>The Holy Qurbana is celebrated every Sunday and major feast days.
+        All baptized Orthodox Christians in good standing may receive communion.</p>
+      </div>
+
+      <div class="liturgy-access-item">
+        <div class="liturgy-access-item-icon">👶</div>
+        <h4>Christian Initiation</h4>
+        <p>Infants are baptized, chrismated, and receive first communion together.
+        Adults preparing for baptism go through catechesis before receiving the mysteries.</p>
+      </div>
+
+      <div class="liturgy-access-item">
+        <div class="liturgy-access-item-icon">🙏</div>
+        <h4>Preparation & Fasting</h4>
+        <p>Fasting before communion, regular confession, and prayer prepare the heart
+        to receive the mysteries worthily. Speak with the priest for guidance.</p>
+      </div>
+
+      <div class="liturgy-access-item">
+        <div class="liturgy-access-item-icon">☦</div>
+        <h4>Contact the Church</h4>
+        <p>For baptisms, weddings, confession, or anointing of the sick,
+        <a href="/contact/">contact the parish priest</a> to schedule.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historical Context Panel -->
+  <div class="liturgy-history-panel">
+    <h3 class="liturgy-history-title">Apostolic & Historical Continuity</h3>
+    <div class="liturgy-history-content">
+      <p>
+        The Malankara Orthodox Church's sacramental practice traces directly to the
+        <strong>Antiochene liturgical tradition</strong>, one of the oldest continuous
+        Christian liturgies. In <strong>1665</strong>, under the guidance of
+        <strong>Mar Gregorios of Jerusalem</strong>, the Church formally adopted Syrian
+        Orthodox liturgical practices, establishing the traditions observed today.
+      </p>
+      <p>
+        Our primary Eucharistic prayer, the <strong>Anaphora of St. James</strong>,
+        originates from the 5th century in Greek and was translated into Syriac,
+        maintaining unbroken apostolic succession from the first bishop of Jerusalem.
+        The seven mysteries we celebrate today are the same mysteries the early Church
+        practiced—connecting us directly to the apostles and the first Christian communities.
+      </p>
+    </div>
+  </div>
+
 </div>
 
 <script>

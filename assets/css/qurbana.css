@@ -2176,3 +2176,496 @@ h2.stage-title {
     background: linear-gradient(135deg, #fafaf8 0%, #f5f1eb 100%);
   }
 }
+
+/* ==========================================
+   LITURGY INTRO FRAME (Trinity Pillars)
+   ========================================== */
+
+.liturgy-intro-frame {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(139, 30, 45, 0.05));
+  border: 2px solid rgba(212, 160, 23, 0.3);
+  border-radius: 12px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.liturgy-intro-frame-title {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  color: #d4a017;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.liturgy-intro-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.liturgy-intro-pillars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 33.33%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(212, 160, 23, 0.3), transparent);
+}
+
+.liturgy-intro-pillars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 66.66%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(212, 160, 23, 0.3), transparent);
+}
+
+.liturgy-intro-pillar {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.liturgy-intro-pillar-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #d4a017;
+}
+
+.liturgy-intro-pillar-label {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.liturgy-intro-pillar-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.liturgy-intro-statement {
+  background: rgba(255, 255, 255, 0.6);
+  border-left: 4px solid #d4a017;
+  padding: 20px 25px;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .liturgy-intro-pillars {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .liturgy-intro-pillars::before,
+  .liturgy-intro-pillars::after {
+    display: none;
+  }
+
+  .liturgy-intro-frame {
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+
+  .liturgy-intro-frame-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+}
+
+/* ==========================================
+   LITURGY JOURNEY TIMELINE
+   ========================================== */
+
+.liturgy-journey {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.liturgy-journey-title {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.liturgy-journey-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.liturgy-journey-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.liturgy-journey-step {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  text-align: center;
+  min-width: 120px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.liturgy-journey-step.available {
+  border-color: #d4a017;
+  background: linear-gradient(135deg, #fff, rgba(212, 160, 23, 0.05));
+}
+
+.liturgy-journey-step.soon {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.liturgy-journey-step:hover.available {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.liturgy-journey-step-num {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  background: #d4a017;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.liturgy-journey-step-label-en {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.liturgy-journey-step-label-ml {
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.liturgy-journey-step-desc {
+  font-size: 11px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.liturgy-journey-connector {
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(to right, #d4a017, rgba(212, 160, 23, 0.3));
+}
+
+.liturgy-journey-connector-or {
+  font-size: 12px;
+  color: #999;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.liturgy-journey-divider {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.liturgy-journey-divider span {
+  background: #f9f9f9;
+  padding: 0 15px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.liturgy-journey-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ddd;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .liturgy-journey-timeline {
+    flex-direction: column;
+  }
+
+  .liturgy-journey-connector {
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, #d4a017, rgba(212, 160, 23, 0.3));
+  }
+
+  .liturgy-journey {
+    padding: 30px 15px;
+    margin: 40px auto;
+  }
+
+  .liturgy-journey-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .liturgy-journey-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+}
+
+/* ==========================================
+   CATEGORY HEADERS
+   ========================================== */
+
+.liturgy-category-header {
+  text-align: center;
+  margin: 60px auto 30px;
+  max-width: 700px;
+}
+
+.liturgy-category-icon {
+  font-size: 42px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.liturgy-category-title {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.liturgy-category-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .liturgy-category-header {
+    margin: 50px auto 25px;
+  }
+
+  .liturgy-category-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .liturgy-category-title {
+    font-size: 20px;
+  }
+
+  .liturgy-category-desc {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   FOOTER PANELS
+   ========================================== */
+
+.liturgy-foundation-panel {
+  background: linear-gradient(135deg, rgba(139, 30, 45, 0.05), rgba(212, 160, 23, 0.05));
+  border-radius: 12px;
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.liturgy-foundation-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.liturgy-foundation-title {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.liturgy-foundation-quote {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  border-left: 4px solid #d4a017;
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.liturgy-foundation-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #888;
+  font-style: normal;
+}
+
+.liturgy-foundation-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  text-align: left;
+}
+
+.liturgy-access-panel {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.liturgy-access-title {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.liturgy-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.liturgy-access-item {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.liturgy-access-item:hover {
+  border-color: #d4a017;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.liturgy-access-item-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.liturgy-access-item h4 {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.liturgy-access-item p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.liturgy-access-item a {
+  color: #d4a017;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.liturgy-access-item a:hover {
+  text-decoration: underline;
+}
+
+.liturgy-history-panel {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+.liturgy-history-title {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.liturgy-history-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.liturgy-history-content strong {
+  color: #d4a017;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .liturgy-access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .liturgy-foundation-panel {
+    padding: 30px 20px;
+    margin: 50px auto;
+  }
+
+  .liturgy-foundation-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .liturgy-access-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .liturgy-access-item {
+    padding: 20px;
+  }
+
+  .liturgy-history-panel {
+    padding: 30px 20px;
+    margin: 50px auto;
+  }
+
+  .liturgy-history-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
