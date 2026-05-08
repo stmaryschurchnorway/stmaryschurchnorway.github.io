@@ -13,7 +13,7 @@ liturgies:
     category: "initiation"
     malayalam: "വിശുദ്ധ കുർബാന"
     transliteration: "Vi-shud-dha Kur-ba-na"
-    description: "The Eucharist—'sacrament of sacraments'—where bread and wine become the Body and Blood of Christ through the Holy Spirit's invocation. Our participation in this mystery unites us with Christ and one another."
+    description: "The Eucharist—'sacrament of sacraments'—where bread and wine become the Body and Blood of Christ through the Holy Spirit's invocation."
     theological_significance: "The supreme sacrament; divine-human encounter where believers partake in Christ's saving work."
     image: "/assets/img/qurbana-liturgy.png"
     url: "/qurbana/"
