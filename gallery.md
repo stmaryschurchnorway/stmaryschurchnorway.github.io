@@ -60,7 +60,10 @@ description: "Videos of Holy Qurbana, Oshana (Palm Sunday), Perunnal feasts, and
     if (filtered.length === 0) return;
 
     var section = el('div', 'gallery-playlist-section');
-    section.appendChild(el('h2', 'gallery-playlist-title', title));
+    var header = el('div', 'gallery-playlist-header');
+    header.appendChild(el('span', 'events-label', 'Playlist'));
+    header.appendChild(el('h2', 'events-title gallery-playlist-title', title));
+    section.appendChild(header);
 
     var grid = el('div', 'video-gallery-grid');
     section.appendChild(grid);

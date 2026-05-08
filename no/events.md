@@ -1,7 +1,7 @@
 ---
 layout: page
 lang: no
-title: "Hellig Qurbana-skjema & Arrangementer"
+title: "Menighetsliv & Arrangementer"
 permalink: /no/events/
 description: "Hellig Qurbana-skjema, festdager (Oshana, Perunnal), og kommende arrangementer ved St. Marias Malankara Syrisk Ortodoks Kirke, Oslo. Abonner på vår malayalisk ortodoks kirkekalender."
 ---
@@ -18,7 +18,12 @@ description: "Hellig Qurbana-skjema, festdager (Oshana, Perunnal), og kommende a
 {% include past-events.html id="events-past" limit=6 window_days=90 paginate=true %}
 
 {% if site.posts.size > 0 %}
-<h2 class="section-title" style="margin-top:45px;">Siste Nyheter</h2>
+<div class="news-section-header">
+  <div>
+    <span class="events-label">Oppdateringer</span>
+    <h2 class="events-title" style="font-size:1.4rem;">Siste Nyheter</h2>
+  </div>
+</div>
 
 <div class="news-list" id="news-list" data-per-page="4">
   {% for post in site.posts %}

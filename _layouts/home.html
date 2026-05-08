@@ -6,58 +6,114 @@ layout: default
 <section class="hero-banner">
   <img src="{{ '/assets/img/community-gathering.jpg' | relative_url }}" alt="St. Mary's Church Community" class="hero-img">
   <div class="hero-overlay">
-    <h1 class="hero-title">St. Mary's Malankara Syriac Orthodox Church</h1>
-    <p class="hero-subtitle">Oslo, Norway</p>
+    <span class="hero-tagline">{% if page.url contains '/no/' %}Forankret i tradisjon. Voksende i tro.{% else %}Rooted in tradition. Growing in faith.{% endif %}</span>
+    <h1 class="hero-title">{% if page.url contains '/no/' %}En menighet for de <em>troende</em> malayaleene i Norge.{% else %}A parish for the <em>faithful</em> Malayalees of Norway.{% endif %}</h1>
   </div>
 </section>
 
-<!-- Daily Thought (rotating) -->
+<!-- Daily Thought + Next Event -->
 {% assign day = 'now' | date: '%j' | plus: 0 %}
 {% assign active_index = day | modulo: site.data.quotes.size %}
 <section class="daily-quote" id="daily-quote">
-  <span class="pause-chip" aria-hidden="true">paused · hover to resume</span>
-  <div class="slides" aria-live="polite">
-    {% for q in site.data.quotes %}
-      <div class="quote-slide{% if forloop.index0 == active_index %} is-active{% endif %}" aria-hidden="{% if forloop.index0 == active_index %}false{% else %}true{% endif %}">
-        <div class="quote-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#d4a017"><path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z"/></svg></div>
-        <blockquote lang="ml">&#8220;{{ q.text }}&#8221;</blockquote>
-        <cite lang="ml">&mdash; {{ q.author }}</cite>
+  <div class="quote-event-row">
+    <div class="quote-card">
+      <div class="quote-header">
+        <span class="quote-label">Daily Thought</span>
+        <div class="quote-lang-toggle" id="quote-lang-toggle">
+          <button type="button" class="quote-lang-btn active" data-lang="ml">മലയാളം</button>
+          <span class="quote-lang-sep">|</span>
+          <button type="button" class="quote-lang-btn" data-lang="en">English</button>
+        </div>
       </div>
-    {% endfor %}
+      <div class="slides" aria-live="polite">
+        {% for q in site.data.quotes %}
+          <div class="quote-slide{% if forloop.index0 == active_index %} is-active{% endif %}" aria-hidden="{% if forloop.index0 == active_index %}false{% else %}true{% endif %}" data-ml-text="&#8220;{{ q.text }}&#8221;" data-en-text="&#8220;{{ q.text_en }}&#8221;" data-ml-author="{{ q.author }}" data-en-author="{{ q.author_en }}">
+            <blockquote lang="ml">&#8220;{{ q.text }}&#8221;</blockquote>
+            <cite lang="ml">&mdash; {{ q.author }}</cite>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="next-event-card" id="next-event-card">
+      <span class="next-event-label">{% if page.url contains '/no/' %}Neste samling{% else %}Next Gathering{% endif %}</span>
+      <div class="next-event-loading">Loading...</div>
+    </div>
   </div>
 </section>
 
 <!-- Welcome -->
 <section class="welcome">
-  <h2 class="section-title">{% if page.url contains '/no/' %}Velkommen{% else %}Welcome{% endif %}</h2>
   <div class="welcome-content">
     <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="welcome-vicar">
       <div class="vicar-photo-wrap">
         <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="{{ site.vicar }}" loading="lazy" decoding="async">
       </div>
-      <div class="vicar-label">{% if page.url contains '/no/' %}Vikar / President{% else %}Vicar / President{% endif %}</div>
+      <div class="vicar-label">{% if page.url contains '/no/' %}Vikar{% else %}Vicar{% endif %}</div>
       <div class="vicar-name">{{ site.vicar }}</div>
+      <div class="vicar-since">{% if page.url contains '/no/' %}Tjeneste siden 2010{% else %}Serving since 2010{% endif %}</div>
     </a>
     <div class="welcome-text">
-      <p class="welcome-tagline">{% if page.url contains '/no/' %}En malayalisktalende ortodoks menighet i Skandinavia siden 2010{% else %}A Malayalam-speaking Orthodox parish in Scandinavia since 2010{% endif %}</p>
-      <p>{{ page.welcome_text }}</p>
-      <div class="welcome-buttons">
-        <a href="{{ '/liturgy/' | relative_url }}" class="btn btn-primary">{% if page.url contains '/no/' %}Vår Liturgi{% else %}Our Liturgy{% endif %}</a>
-        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="btn">{% if page.url contains '/no/' %}Vår Kirke{% else %}Our Church{% endif %}</a>
+      <span class="welcome-label">{% if page.url contains '/no/' %}Et ord fra vår vikar{% else %}A word from our vicar{% endif %}</span>
+      <h2 class="welcome-tagline">{% if page.url contains '/no/' %}Troen vokser <em>sterkere</em> sammen.{% else %}Faith grows <em>stronger</em> together.{% endif %}</h2>
+      <p>{% if page.url contains '/no/' %}Vår menighet eksisterer for å bevare den apostoliske troen i den syrisk-ortodokse tradisjonen for malayaliske familier i Norge og dele dens skjønnhet med alle som tiltrekkes av den.{% else %}Our parish exists to keep the apostolic faith of the Syriac Orthodox tradition alive for Malayalee families in Norway and to share its beauty with anyone drawn to it.{% endif %}</p>
+      <p>{% if page.url contains '/no/' %}<a href="/qurbana/" class="welcome-link">Den hellige nattverden (Qurbana)</a> er hjertet i vår tilbedelse, men vi samles også til kveldsbønn, søndagsskole, utendørsaktiviteter, veldedighet og julesang. Vi feirer også de viktige helligdagene og festene som preger vår kirkekalender.{% else %}<a href="/qurbana/" class="welcome-link">The Holy Eucharist (Qurbana)</a> is at the heart of our worship, but we also gather for evening prayer, Sunday school, outdoor activities, charity, and Christmas carols. We also celebrate the important holy days and festivals that mark our church calendar.{% endif %}</p>
+      <div class="welcome-links">
+        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-primary">{% if page.url contains '/no/' %}Les hele budskapet{% else %}Read the full message{% endif %}</a>
+        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary">{% if page.url contains '/no/' %}Om vår menighet →{% else %}About our parish →{% endif %}</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Walk Through Our Liturgy -->
+<section class="liturgy-showcase">
+  <div class="liturgy-showcase-inner">
+    <span class="liturgy-showcase-label">{% if page.url contains '/no/' %}De hellige mysteriene{% else %}The Mysteries{% endif %}</span>
+    <h2 class="liturgy-showcase-title">{% if page.url contains '/no/' %}Utforsk vår liturgi{% else %}Walk through our liturgy{% endif %}</h2>
+    <p class="liturgy-showcase-desc">{% if page.url contains '/no/' %}Hver gudstjeneste er en reise inn i den apostoliske troen. Følg med i våre kommenterte guider.{% else %}Each service is a journey into the apostolic faith. Follow along with our annotated guides.{% endif %}</p>
+    <div class="liturgy-showcase-grid">
+      <a href="{{ '/qurbana/' | relative_url }}" class="liturgy-showcase-card">
+        <div class="liturgy-showcase-img">
+          <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
+        </div>
+        <h3>{% if page.url contains '/no/' %}Hellige Qurbana{% else %}Holy Qurbana{% endif %}</h3>
+        <p>{% if page.url contains '/no/' %}Den hellige nattverden i den syriske tradisjonen{% else %}The Holy Eucharist of the Syriac tradition{% endif %}</p>
+        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
+      </a>
+      <a href="{{ '/mamodisa/' | relative_url }}" class="liturgy-showcase-card">
+        <div class="liturgy-showcase-img">
+          <img src="{{ '/assets/img/mamodisa-liturgy.png' | relative_url }}" alt="Mamodisa" loading="lazy" decoding="async">
+        </div>
+        <h3>{% if page.url contains '/no/' %}Mamodisa{% else %}Mamodisa{% endif %}</h3>
+        <p>{% if page.url contains '/no/' %}Mysteriet om den hellige dåpen{% else %}The mystery of Holy Baptism{% endif %}</p>
+        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
+      </a>
+      <a href="{{ '/qurbana/#holy-communion' | relative_url }}" class="liturgy-showcase-card">
+        <div class="liturgy-showcase-img">
+          <img src="{{ '/assets/img/holy-communion.jpg' | relative_url }}" alt="Holy Communion" loading="lazy" decoding="async">
+        </div>
+        <h3>{% if page.url contains '/no/' %}Den hellige nattverd{% else %}Holy Communion{% endif %}</h3>
+        <p>{% if page.url contains '/no/' %}Mottak av Kristi legeme og blod{% else %}Receiving the Body and Blood of Christ{% endif %}</p>
+        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Upcoming Events -->
-{% include upcoming-events.html id="home-upcoming" limit=3 link_to_all=false paginate=false %}
+{% include upcoming-events.html id="home-upcoming" limit=4 link_to_all=false paginate=false %}
 
 
 <!-- Latest News (from _posts/) -->
 {% if site.posts.size > 0 %}
 <section class="news-section">
   <div class="container">
-    <h2 class="section-title">{% if page.url contains '/no/' %}Siste Nyheter{% else %}Latest News{% endif %}</h2>
+    <div class="news-home-header">
+      <div>
+        <span class="events-label">{% if page.url contains '/no/' %}Oppdateringer{% else %}Parish Updates{% endif %}</span>
+        <h2 class="events-title" style="font-size:1.5rem;">{% if page.url contains '/no/' %}Siste Nyheter{% else %}Latest News{% endif %}</h2>
+      </div>
+    </div>
     <div class="news-grid" id="latest-news-grid" data-per-page="3">
       {% for post in site.posts %}
       <a href="{{ post.url | relative_url }}" class="news-card">
@@ -114,10 +170,15 @@ layout: default
 
 <!-- Videos -->
 <section class="gallery-section">
-  <h2 class="section-title">Lent Series 2026</h2>
+  <div class="videos-header">
+    <div>
+      <span class="events-label">{% if page.url contains '/no/' %}Fra vår kanal{% else %}From Our Channel{% endif %}</span>
+      <h2 class="events-title" style="font-size:1.5rem;">Lent Series 2026</h2>
+    </div>
+  </div>
   <div class="gallery-grid" id="home-videos"></div>
   <div style="text-align:center; margin-top:20px;">
-    <a href="{{ '/gallery/' | relative_url }}" class="btn" style="background:#fff; color:#d4a017;">View All Videos</a>
+    <a href="{{ '/gallery/' | relative_url }}" class="btn btn-videos">{% if page.url contains '/no/' %}Se alle videoer{% else %}View All Videos{% endif %}</a>
   </div>
 </section>
 
@@ -148,7 +209,7 @@ layout: default
     })
     .catch(function() {
       var p = document.createElement('p');
-      p.style.cssText = 'color:#fff;text-align:center;';
+      p.style.cssText = 'color:#999;text-align:center;';
       p.textContent = 'Unable to load videos.';
       container.appendChild(p);
     });
@@ -217,6 +278,20 @@ layout: default
     } else if (!paused) {
       start();
     }
+  });
+
+  var quoteLang = 'ml';
+  var langBtns = document.querySelectorAll('.quote-lang-btn');
+  function setQuoteLang(lang) {
+    quoteLang = lang;
+    langBtns.forEach(function(b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    slides.forEach(function(s) {
+      s.querySelector('blockquote').textContent = s.getAttribute('data-' + lang + '-text');
+      s.querySelector('cite').textContent = '— ' + s.getAttribute('data-' + lang + '-author');
+    });
+  }
+  langBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() { setQuoteLang(btn.getAttribute('data-lang')); });
   });
 
   if (root.matches(':hover')) {

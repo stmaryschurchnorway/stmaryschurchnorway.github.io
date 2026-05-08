@@ -21,17 +21,21 @@ Parameters:
 {% assign paginate = include.paginate | default: false %}
 
 <section class="past-events-section" id="{{ container_id }}-section" hidden>
-  {% if show_heading %}<h2 class="section-title" id="{{ container_id }}-heading">Past Events</h2>{% endif %}
-  <div class="past-events-container" id="{{ container_id }}" role="status" aria-live="polite">
-    <p class="events-loading">Loading past events&hellip;</p>
+  {% if show_heading %}
+  <div class="past-events-header">
+    <div>
+      <span class="past-events-label">{% if page.url contains '/no/' %}Tidligere{% else %}Looking Back{% endif %}</span>
+      <h2 class="past-events-title">{% if page.url contains '/no/' %}Tidligere samlinger{% else %}Past gatherings{% endif %}</h2>
+    </div>
+  </div>
+  {% endif %}
+  <div class="past-events-card">
+    <div class="past-events-container" id="{{ container_id }}" role="status" aria-live="polite">
+      <p class="events-loading">Loading past events&hellip;</p>
+    </div>
   </div>
   {% if paginate %}
   <div class="pagination" id="{{ container_id }}-pagination"></div>
-  {% endif %}
-  {% if link_to_all %}
-  <div class="events-footer-link">
-    <a href="{{ '/events/' | relative_url }}" class="btn">View all events &rarr;</a>
-  </div>
   {% endif %}
 </section>
 

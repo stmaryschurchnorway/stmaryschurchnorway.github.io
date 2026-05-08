@@ -1,16 +1,16 @@
 {%- comment -%}
 Reusable Upcoming Events include — fetches Google Calendar events and renders
-a list of cards. Safe-by-construction: uses DOM APIs only (no innerHTML), and
-event descriptions are stripped of HTML via DOMParser before rendering.
+a row-based list inside a card. Safe-by-construction: uses DOM APIs only
+(no innerHTML), and event descriptions are stripped of HTML via DOMParser.
 
 Parameters:
   include.limit        (int)     max events per page. Default: 5
   include.paginate     (bool)    show pagination controls. Default: false
   include.link_to_all  (bool)    show "View All Events →" footer link. Default: false
-  include.id           (string)  unique container id (needed when used twice on a page). Default: "upcoming-events"
+  include.id           (string)  unique container id. Default: "upcoming-events"
   include.window_days  (int)     forward time window in days. Default: 90
-  include.show_heading (bool)    render "Upcoming Events" <h2>. Default: true
-  include.desc_chars   (int)     max description characters after HTML-strip. Default: 140
+  include.show_heading (bool)    render heading. Default: true
+  include.desc_chars   (int)     max description characters. Default: 140
 {%- endcomment -%}
 {% assign limit = include.limit | default: 5 %}
 {% assign paginate = include.paginate | default: false %}
@@ -21,17 +21,22 @@ Parameters:
 {% assign desc_chars = include.desc_chars | default: 140 %}
 
 <section class="upcoming-events-section">
-  {% if show_heading %}<h2 class="section-title">{% if page.url contains '/no/' %}Kommende Arrangemer{% else %}Upcoming Events{% endif %}</h2>{% endif %}
-  <div class="events-container" id="{{ container_id }}" role="status" aria-live="polite">
-    <p class="events-loading">Loading upcoming events&hellip;</p>
+  {% if show_heading %}
+  <div class="events-header">
+    <div>
+      <span class="events-label">{% if page.url contains '/no/' %}Menighetens kalender{% else %}The Parish Calendar{% endif %}</span>
+      <h2 class="events-title">{% if page.url contains '/no/' %}Kommende samlinger{% else %}Upcoming gatherings{% endif %}</h2>
+    </div>
+    <a href="{% if page.url contains '/no/' %}{{ '/no/events/' | relative_url }}{% else %}{{ '/en/events/' | relative_url }}{% endif %}" class="events-see-all">{% if page.url contains '/no/' %}Se full kalender →{% else %}See full calendar →{% endif %}</a>
+  </div>
+  {% endif %}
+  <div class="events-card">
+    <div class="events-container" id="{{ container_id }}" role="status" aria-live="polite">
+      <p class="events-loading">Loading upcoming events&hellip;</p>
+    </div>
   </div>
   {% if paginate %}
   <div class="pagination" id="{{ container_id }}-pagination"></div>
-  {% endif %}
-  {% if link_to_all %}
-  <div class="events-footer-link">
-    <a href="{{ '/events/' | relative_url }}" class="btn">View All Events &rarr;</a>
-  </div>
   {% endif %}
 </section>
 
@@ -63,9 +68,6 @@ Parameters:
     return /^https?:\/\//.test(url) ? url : '#';
   }
 
-  // Convert Calendar's HTML description to safe plain text.
-  // DOMParser parses without running scripts or fetching resources. We extract
-  // textContent only — no parsed nodes are ever inserted into the live DOM.
   function htmlToPlainText(html) {
     if (!html) return '';
     var doc = new DOMParser().parseFromString(String(html), 'text/html');
@@ -86,32 +88,13 @@ Parameters:
     return cut.trim() + '…';
   }
 
-  function formatWhatsAppMessage(ev) {
-    var isAllDay = !ev.start.dateTime;
-    var startIso = ev.start.dateTime || ev.start.date;
-    var dt = new Date(startIso);
-
-    var dayName = dt.toLocaleDateString('en-US', { weekday: 'long' });
-    var dateStr = dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    var timeStr = isAllDay ? '' : dt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
-
-    var dateTime = timeStr ? dayName + ', ' + dateStr + ' at ' + timeStr : dayName + ', ' + dateStr;
-
-    var description = htmlToPlainText(ev.description);
-    description = truncate(description, 200);
-
-    var location = ev.location || '(No location specified)';
-    var calendarUrl = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(calId);
-
-    var message = '📅 ' + (ev.summary || 'Untitled Event') + '\n';
-    message += '🕐 ' + dateTime + '\n';
-    message += '📍 ' + location + '\n\n';
-    if (description) {
-      message += description + '\n\n';
-    }
-    message += '🔗 ' + calendarUrl;
-
-    return message;
+  function guessCategory(title) {
+    var t = (title || '').toLowerCase();
+    if (t.indexOf('qurbana') !== -1 || t.indexOf('liturgy') !== -1) return 'Liturgy';
+    if (t.indexOf('mamodisa') !== -1 || t.indexOf('baptism') !== -1 || t.indexOf('wedding') !== -1 || t.indexOf('mooron') !== -1) return 'Sacrament';
+    if (t.indexOf('prayer') !== -1 || t.indexOf('sandhya') !== -1) return 'Prayer';
+    if (t.indexOf('sunday school') !== -1) return 'Education';
+    return 'Community';
   }
 
   function showEmpty() {
@@ -138,51 +121,45 @@ Parameters:
     clear(paginationEl);
   }
 
-  function buildCard(ev) {
+  function buildRow(ev) {
     var isAllDay = !ev.start.dateTime;
     var startIso = ev.start.dateTime || ev.start.date;
     var dt = new Date(startIso);
-    var dayName = dt.toLocaleDateString('en-US', { weekday: 'short' });
-    var dateStr = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    var timeStr = isAllDay ? '' : dt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    var day = String(dt.getDate()).padStart(2, '0');
+    var month = dt.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+    var timeStr = isAllDay ? 'All day' : dt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 
-    var card = document.createElement('a');
-    card.className = 'event-card';
-    card.href = safeHref(ev.htmlLink);
-    card.target = '_blank';
-    card.rel = 'noopener';
+    var row = document.createElement('a');
+    row.className = 'event-row';
+    row.href = safeHref(ev.htmlLink);
+    row.target = '_blank';
+    row.rel = 'noopener';
 
-    var dateBox = el('div', 'event-date');
-    dateBox.appendChild(el('span', 'event-day', dayName));
-    dateBox.appendChild(el('span', 'event-datenum', dateStr));
-    if (timeStr) dateBox.appendChild(el('span', 'event-time', timeStr));
+    var dateCol = el('div', 'event-date-col');
+    dateCol.appendChild(el('span', 'event-day-num', day));
+    dateCol.appendChild(el('span', 'event-month', month));
 
-    var body = el('div', 'event-body');
-    body.appendChild(el('h3', 'event-title', ev.summary || 'Untitled Event'));
-    if (ev.location) body.appendChild(el('div', 'event-venue', ev.location));
+    var bodyCol = el('div', 'event-body-col');
+    bodyCol.appendChild(el('span', 'event-row-title', ev.summary || 'Untitled Event'));
     var descText = htmlToPlainText(ev.description);
-    if (descText) body.appendChild(el('p', 'event-description', truncate(descText, descChars)));
+    var location = ev.location || '';
+    var subtitle = location || (descText ? truncate(descText, 60) : '');
+    if (subtitle) bodyCol.appendChild(el('span', 'event-row-subtitle', subtitle));
 
-    var actions = el('div', 'event-actions');
-    actions.appendChild(el('span', 'event-add-cal', '+ Add to Calendar'));
-    var shareBtn = el('span', 'event-share-whatsapp', '↗ Share on WhatsApp');
-    shareBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var message = formatWhatsAppMessage(ev);
-      window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank', 'noopener');
-    });
-    actions.appendChild(shareBtn);
+    var metaCol = el('div', 'event-meta-col');
+    var category = guessCategory(ev.summary);
+    metaCol.appendChild(el('span', 'event-category', category));
+    metaCol.appendChild(el('span', 'event-row-time', timeStr));
 
-    card.appendChild(dateBox);
-    card.appendChild(body);
-    card.appendChild(actions);
-    return card;
+    row.appendChild(dateCol);
+    row.appendChild(bodyCol);
+    row.appendChild(metaCol);
+    return row;
   }
 
   function renderCards(events) {
     clear(container);
-    events.forEach(function(ev) { container.appendChild(buildCard(ev)); });
+    events.forEach(function(ev) { container.appendChild(buildRow(ev)); });
   }
 
   function renderPagination(totalPages, currentPage, onClick) {

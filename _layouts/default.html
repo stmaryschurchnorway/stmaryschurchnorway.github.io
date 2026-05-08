@@ -40,6 +40,95 @@
 </div>
 
 <script>
+  // Fetch next event from Google Calendar
+  (function() {
+    var el = document.getElementById('next-event');
+    if (!el) return;
+    var apiKey = '{{ site.google_api_key }}';
+    var calId = '{{ site.google_calendar_id }}';
+    var now = new Date().toISOString();
+    var url = 'https://www.googleapis.com/calendar/v3/calendars/' +
+      encodeURIComponent(calId) +
+      '/events?key=' + apiKey +
+      '&timeMin=' + encodeURIComponent(now) +
+      '&maxResults=1&singleEvents=true&orderBy=startTime';
+
+    fetch(url).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.items && data.items.length > 0) {
+        var ev = data.items[0];
+        var title = ev.summary || 'Event';
+        var start = ev.start.dateTime || ev.start.date;
+        var d = new Date(start);
+        var opts = { weekday: 'short', month: 'short', day: 'numeric' };
+        var dateStr = d.toLocaleDateString('en-US', opts);
+        if (ev.start.dateTime) {
+          dateStr += ' at ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        }
+        while (el.firstChild) el.removeChild(el.firstChild);
+        var label = document.createElement('span');
+        label.className = 'event-label';
+        label.textContent = 'Upcoming: ';
+        el.appendChild(label);
+        el.appendChild(document.createTextNode(title + ' — ' + dateStr));
+
+        var card = document.getElementById('next-event-card');
+        if (card) {
+          var lbl = card.querySelector('.next-event-label');
+          while (card.lastChild !== lbl) card.removeChild(card.lastChild);
+
+          var dateRow = document.createElement('div');
+          dateRow.className = 'next-event-date-row';
+          var dayEl = document.createElement('span');
+          dayEl.className = 'next-event-day';
+          dayEl.textContent = String(d.getDate()).padStart(2, '0');
+          var monthEl = document.createElement('span');
+          monthEl.className = 'next-event-month';
+          monthEl.textContent = d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+          var wdEl = document.createElement('span');
+          wdEl.className = 'next-event-weekday';
+          wdEl.textContent = d.toLocaleDateString('en-US', { weekday: 'long' });
+          dateRow.appendChild(dayEl);
+          dateRow.appendChild(monthEl);
+          dateRow.appendChild(wdEl);
+          if (ev.start.dateTime) {
+            var timeEl = document.createElement('span');
+            timeEl.className = 'next-event-time';
+            timeEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+            dateRow.appendChild(timeEl);
+          }
+          card.appendChild(dateRow);
+
+          var titleEl = document.createElement('div');
+          titleEl.className = 'next-event-title';
+          titleEl.textContent = title;
+          card.appendChild(titleEl);
+
+          var detailEl = document.createElement('div');
+          detailEl.className = 'next-event-detail';
+          if (ev.location) {
+            detailEl.textContent = ev.location;
+          } else if (!ev.start.dateTime) {
+            detailEl.textContent = 'All day';
+          }
+          card.appendChild(detailEl);
+
+          var footer = document.createElement('div');
+          footer.className = 'next-event-footer';
+          var link = document.createElement('a');
+          link.className = 'next-event-link';
+          link.href = '/en/events/';
+          link.textContent = 'See all gatherings →';
+          footer.appendChild(link);
+          card.appendChild(footer);
+        }
+      } else {
+        el.textContent = 'No upcoming events';
+      }
+    }).catch(function() {
+      el.textContent = '';
+    });
+  })();
+
   // Back to top
   (function() {
     var btn = document.querySelector('.back-to-top');
@@ -62,49 +151,6 @@
           link.textContent = email;
         }
       }
-    });
-  })();
-
-  // Fetch next event from Google Calendar
-  (function() {
-    var el = document.getElementById('next-event');
-    var apiKey = '{{ site.google_api_key }}';
-    var calId = '{{ site.google_calendar_id }}';
-    var now = new Date().toISOString();
-    var url = 'https://www.googleapis.com/calendar/v3/calendars/' +
-      encodeURIComponent(calId) +
-      '/events?key=' + apiKey +
-      '&timeMin=' + encodeURIComponent(now) +
-      '&maxResults=1&singleEvents=true&orderBy=startTime';
-
-    fetch(url).then(function(r) { return r.json(); }).then(function(data) {
-      if (data.items && data.items.length > 0) {
-        var ev = data.items[0];
-        var title = ev.summary || 'Event';
-        var start = ev.start.dateTime || ev.start.date;
-        var d = new Date(start);
-        var opts = { weekday: 'short', month: 'short', day: 'numeric' };
-        var dateStr = d.toLocaleDateString('en-US', opts);
-        if (ev.start.dateTime) {
-          dateStr += ' at ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-        }
-        while (el.firstChild) el.removeChild(el.firstChild);
-        var label = document.createElement('span');
-        label.className = 'event-label';
-        label.textContent = 'Upcoming:';
-        el.appendChild(label);
-        el.appendChild(document.createTextNode(' ' + title + ' \u2014 ' + dateStr + '  |  '));
-        var link = document.createElement('a');
-        link.href = 'https://calendar.google.com/calendar/u/0/r?cid=stmaryschurchnorway%40gmail.com';
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = 'Subscribe Calendar';
-        el.appendChild(link);
-      } else {
-        el.textContent = 'No upcoming events';
-      }
-    }).catch(function() {
-      el.textContent = 'Welcome to St. Mary\u2019s MSOC, Oslo';
     });
   })();
 
