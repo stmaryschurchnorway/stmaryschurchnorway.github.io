@@ -77,6 +77,11 @@ phases:
             malayalam: "നാൽപ്പതു സുരഭി പദാർത്ഥങ്ങൾ"
             meaning: "Spices, perfumes, and aromatic essences that rise as a sweet fragrance before God. They symbolize the manifold and diverse gifts of the Holy Spirit: wisdom, understanding, counsel, might, knowledge, godliness, and fear of the Lord. The number forty recalls the forty days of Christ's temptation, forty years of Israel's wandering, and forty days of Lent. The fragrance that rises from the Mooron is the very sweetness of Christ made perceivable"
 
+          - name: "Holy Mooron (Consecrated Chrism)"
+            malayalam: "മൂറോൻ"
+            image: "/assets/img/sacred-items/mooron.png"
+            meaning: "The final consecrated mixture of olive oil, balsam, wine, and forty aromatic substances. It is the vehicle through which the Holy Spirit seals and sanctifies the baptized faithful. The fragrance of the Mooron is the very presence of the Spirit made perceptible"
+
         priest_action_detail: "The Catholicos stands before the sacred vessels containing the oils and aromatic substances. He raises the vessels in blessing and makes three crosses over each vase, invoking the Trinity. He then pours the balsam oil slowly over the olive oil while speaking ancient prayers of consecration, calling upon the Holy Spirit to sanctify the mixture and transform it into the vehicle of the Spirit's grace. As the oils blend and the fragrance rises, a sense of divine mystery fills the sanctuary. The Mooron is then carried in solemn procession through all four cardinal directions of the church. Priests and deacons follow, chanting hymns of joy and thanksgiving"
         ritual_action: "The Catholicos blesses the oils, makes three crosses over the vase, pours the balsam over the olive oil, and prays the ancient prayer of consecration. The mixed Mooron is then carried in procession through the cardinal directions of the church"
         timing: "Holy Thursday, at the third hour, commemorating the betrayal and death of Christ"
