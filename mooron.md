@@ -56,7 +56,7 @@ phases:
         malayalam: "മൂറോന്റെ പ്രാകരണം ഏവം പരിശുദ്ധീകരണം"
         transliteration: "Mooroninte Prakaranam"
         description: "The sacred composition of the Holy Chrism and its solemn consecration by the Catholicos"
-        image: "/assets/img/stages/pouring-mooron.png"
+        image: "/assets/img/sacred-items/mooron.png"
         significance: "Each ingredient carries spiritual meaning and the consecration transforms it into the vehicle of grace"
         sacred_items:
           - name: "Olive Oil"
