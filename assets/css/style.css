@@ -1207,8 +1207,9 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) {
   .liturgy-showcase { padding: 28px 16px 32px; }
   .liturgy-showcase-title { font-size: 1.4rem; }
-  .liturgy-showcase-grid { grid-template-columns: 1fr; gap: 28px; max-width: 400px; margin: 0 auto; }
-  .liturgy-showcase-desc { margin-bottom: 30px; }
+  .liturgy-showcase-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
+  .liturgy-showcase-desc { margin-bottom: 24px; }
+  .liturgy-showcase-img { aspect-ratio: 16 / 9; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .liturgy-showcase-grid { gap: 20px; }
@@ -1602,8 +1603,10 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-banner { height: 400px; }
   .hero-title { font-size: 2.2rem; }
   .hero-btn { font-size: 0.78rem; padding: 10px 22px; }
-  .join-us { padding: 36px 16px; }
+  .join-us { padding: 32px 16px 36px; }
   .join-us h2 { font-size: 1.25rem; }
+  .join-us-buttons { flex-direction: column; align-items: center; gap: 10px; }
+  .btn-join, .btn-join-outline { width: 100%; max-width: 260px; text-align: center; }
   .top-bar-text { font-size: 0.55rem; }
   .top-bar-inner { gap: 8px; }
   .header-inner {
@@ -1631,7 +1634,8 @@ img { max-width: 100%; height: auto; display: block; }
   .hierarchy-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .hierarchy-card img { width: 100px; height: 100px; }
   .leadership-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-section { padding: 30px 16px 36px; }
+  .gallery-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
   .video-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .contact-map iframe { height: 280px; }
   .page-banner { padding: 28px 15px 24px; }
