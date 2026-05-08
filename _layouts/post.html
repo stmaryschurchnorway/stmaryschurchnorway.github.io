@@ -8,10 +8,12 @@ layout: default
 
 <article class="page-content">
   <div class="container">
+    <div class="post-back-nav">
+      <a href="{{ '/' | relative_url }}" class="post-back-btn">
+        <span aria-hidden="true">←</span> Back to Home
+      </a>
+    </div>
     <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
     {{ content }}
-    <div class="post-back">
-      <a href="{{ '/' | relative_url }}" class="btn">Back to Home</a>
-    </div>
   </div>
 </article>

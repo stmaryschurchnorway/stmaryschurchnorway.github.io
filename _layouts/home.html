@@ -74,7 +74,10 @@ layout: default
     <div class="liturgy-showcase-grid">
       <a href="{{ '/qurbana/' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
-          <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="{{ '/assets/img/qurbana-liturgy.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
+          </picture>
         </div>
         <h3>{% if page.url contains '/no/' %}Hellig Qurbana{% else %}Holy Qurbana{% endif %}</h3>
         <p>{% if page.url contains '/no/' %}Den hellige nattverden i den syriske tradisjonen{% else %}The Holy Eucharist of the Syriac tradition{% endif %}</p>
