@@ -29,12 +29,14 @@
           <li><a href="{{ '/liturgy/' | relative_url }}" {% if page.url == '/liturgy/' %}class="active"{% endif %}>Liturgi</a></li>
           <li><a href="{{ '/no/events/' | relative_url }}" {% if page.url == '/no/events/' %}class="active"{% endif %}>Arrangemer</a></li>
           <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Galleri</a></li>
+          <li class="nav-contact-mobile"><a href="{{ '/no/contact/' | relative_url }}" {% if page.url == '/no/contact/' %}class="active"{% endif %}>Kontakt</a></li>
         {% else %}
           <li><a href="{{ '/en/' | relative_url }}" {% if page.url == '/en/' or page.url == '/' %}class="active"{% endif %}>Home</a></li>
           <li><a href="{{ '/en/the-church/' | relative_url }}" {% if page.url == '/en/the-church/' %}class="active"{% endif %}>The Church</a></li>
           <li><a href="{{ '/liturgy/' | relative_url }}" {% if page.url == '/liturgy/' %}class="active"{% endif %}>Liturgy</a></li>
           <li><a href="{{ '/en/events/' | relative_url }}" {% if page.url == '/en/events/' %}class="active"{% endif %}>Events</a></li>
           <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url == '/gallery/' %}class="active"{% endif %}>Gallery</a></li>
+          <li class="nav-contact-mobile"><a href="{{ '/en/contact/' | relative_url }}" {% if page.url == '/en/contact/' %}class="active"{% endif %}>Contact</a></li>
         {% endif %}
       </ul>
     </nav>
