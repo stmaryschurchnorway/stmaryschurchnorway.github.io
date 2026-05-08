@@ -20,6 +20,7 @@ phases:
     transliteration: "Mooroninte Rahasyam"
     description: "Understanding the Holy Mooron as the fulfillment of Baptism and the gift of the Holy Spirit"
     card_description: "Theological foundation of the sealing mystery"
+    image: "/assets/img/sacred-items/mooron.png"
     stages:
       - title: "The Mooron as Fulfillment of Baptism"
         malayalam: "മാമോദീസയുടെ പൂർണതാരൂപം"
@@ -51,6 +52,7 @@ phases:
     transliteration: "Mooroninte Acharanam"
     description: "The sacred composition and ritual application of the Holy Chrism"
     card_description: "Preparation and anointing with the consecrated oil"
+    image: "/assets/img/stages/pouring-mooron.png"
     stages:
       - title: "Composition and Consecration of the Holy Myron"
         malayalam: "മൂറോന്റെ പ്രാകരണം ഏവം പരിശുദ്ധീകരണം"
