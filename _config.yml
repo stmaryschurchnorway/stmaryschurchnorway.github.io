@@ -36,6 +36,8 @@ gallery_playlists:
   - PLE4-jFq3KYtYRv9X5-K571hyPd9sfTvcs
   - PLE4-jFq3KYtaTesFKsh4DZhd5KNTsk9Hs
 
+permalink: /posts/:slug/
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
