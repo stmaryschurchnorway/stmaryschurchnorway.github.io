@@ -313,6 +313,7 @@ phases:
             transliteration: "Pronunciation: Shud-dhi-yum Saji-ka-ra-nam"
             description: "The Anaphora (Eucharistic prayer) of St. James is the heart of the Holy Qurbana. This ancient apostolic text, originating with St. James the apostle and preserved through centuries of Syrian Orthodox tradition, structures the entire Eucharistic mystery. In the Anaphora, the Church ascends from earthly worship to heavenly participation, commemorates Christ's salvific works, and invokes the Holy Spirit to transform bread and wine into the Body and Blood of Christ. The Anaphora of St. James represents the Church's most solemn action—the commemoration and mystical participation in Christ's redemptive sacrifice. It is the moment when human power ceases and divine grace becomes absolutely necessary. Before approaching these sacred mysteries, the priest engages in ritual purification and spiritual preparation. Hand-washing symbolizes the inner transformation and heart purification required to handle the holy mysteries and invoke the power of the Holy Spirit upon the gifts."
             audioPhrase: "The Anaphora of St. James"
+            image: "/assets/img/anaphora-hand-washing.png"
             image: "/assets/img/purification-hands.jpg"
             substages:
               - title: "Hand-Washing — The Ritual of Purification"
