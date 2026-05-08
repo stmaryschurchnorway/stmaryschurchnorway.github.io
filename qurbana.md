@@ -22,12 +22,18 @@ intro:
   transliteration: "Pronunciation: Vi-shud-dha Kur-ba-na"
   description: "The Holy Qurbana is the central act of worship in the Malankara Syriac Orthodox Church, also known as the Eucharist or Divine Liturgy. It is a sacred commemoration of the Last Supper and Christ's redemptive work, celebrated with deep liturgical traditions spanning centuries of the Syriac Orthodox faith."
   audioPhrase: "Holy Qurbana, the central act of worship in the Malankara Syriac Orthodox Church"
+  historical_context: |
+    The Holy Qurbana celebrated in the Malankara Orthodox Syrian Church uses the Anaphora (Eucharistic prayer) of St. James, one of the apostles of Christ. This ancient liturgy, originally composed in Greek during the 5th century, traces its roots to the Antiochene liturgical tradition and was later translated into Syriac, becoming the foundation of Syrian Orthodox worship.
+    
+    In 1665, the Malankara Orthodox Church formally adopted the liturgical practices of the Syrian Orthodox Church under the guidance of Mar Gregorios of Jerusalem. This pivotal moment established the traditions that continue to be observed today, ensuring that every celebration of the Qurbana is a continuity with the worship of the early Church and maintains unbroken apostolic succession through the Anaphora of St. James.
+  participation_theology: |
+    Through the Holy Qurbana, believers participate in the Body and Blood of Christ, entering into mystical communion with the risen Lord and with one another as members of His Church. As St. Paul writes, "Because there is one bread, we who are many are one body, for we all partake of the one bread" (1 Corinthians 10:17). The Qurbana is not merely a remembrance of the past, but a living encounter with Christ's saving grace made present through the invocation of the Holy Spirit.
 
 phases:
   - phase_id: "preparation"
     title: "The Preparation (Tuyobo)"
     malayalam: "ഒരുക്ക ശുശ്രൂഷ"
-    description: "Tuyobo (preparation) symbolizes the 30 years of our Lord's hidden life. This part is performed entirely behind the veil, within the Madbaha (sanctuary). Preparation is needed for both the priest and the faithful."
+    description: "Tuyobo (preparation) symbolizes the 30 years of our Lord's hidden life. This part is performed entirely behind the veil, within the Madbaha (sanctuary). The priest and the sacred elements are prepared in silence and holiness for the proclamation of the Anaphora of St. James and the mystery of transformation that will follow. Preparation is needed for both the priest and the faithful—an acknowledgment that approaching God requires sanctification and reverence."
     card_description: "Tuyobo — silent rites behind the curtain"
     stages:
       - title: "The Preparation (Tuyobo)"
@@ -244,7 +250,7 @@ phases:
                     image: "/assets/img/sacred-items/momsho_medium.png"
                   - name: "Thaksa (Liturgical Books)"
                     malayalam: "തക്സ"
-                    meaning: "The liturgical books used during the Qurbana. There are 80 liturgical versions written by different Holy Fathers, of which only 20 are in use. The earliest version is codified by St. James himself, taken from oral tradition into written form by the 3rd century, reaching its present form by the 4th century."
+                    meaning: "The liturgical books containing the Anaphora of St. James and other liturgical texts used during the Qurbana. There are approximately 80 different anaphoral versions written by different Holy Fathers throughout Church history, of which only about 20 are in regular use. The primary and foundational anaphora is that of St. James himself, the apostle and first bishop of Jerusalem, whose liturgical structure was taken from oral tradition and codified into written form by the 3rd century, reaching its present form by the 4th century. This apostolic lineage ensures that the Qurbana celebrated today carries the authentic worship practices of the early Church."
 
           - title: "Promiun-Sedra and Blessing of the Censor"
             malayalam: "പ്രോമിയോൻ–സേദ്രാ : ധൂപക്കുറ്റി വാഴവ്"
@@ -300,8 +306,27 @@ phases:
                     meaning: "The words that express apostolic faith and unite all Orthodox believers in doctrine"
 
       - subpart_id: "anaphora"
-        title: "Anaphora"
+        title: "Anaphora — The Eucharistic Prayer of St. James"
+        description: "The Anaphora (Eucharistic prayer) of St. James is the heart of the Holy Qurbana. This ancient apostolic text, originating with St. James the apostle and preserved through centuries of Syrian Orthodox tradition, structures the entire Eucharistic mystery. In the Anaphora, the Church ascends from earthly worship to heavenly participation, commemorates Christ's salvific works, and invokes the Holy Spirit to transform bread and wine into the Body and Blood of Christ. Through this prayer, the earthly Church enters into communion with the heavenly Church, and the isolated congregation becomes the universal Body of Christ."
+        theological_context: "The Anaphora of St. James represents the Church's most solemn action—the commemoration and mystical participation in Christ's redemptive sacrifice. It is the moment when human power ceases and divine grace becomes absolutely necessary. Every word, every gesture, every symbol in this phase points to the mystery of God's transformative grace."
         stages:
+          - title: "Purification of Heart and Hands"
+            malayalam: "ശുദ്ധിയും സജ്ജീകരണവും"
+            transliteration: "Pronunciation: Shud-dhi-yum Saji-ka-ra-nam"
+            description: "Before approaching the sacred mysteries of the Anaphora of St. James, the priest engages in ritual purification and spiritual preparation. Hand-washing symbolizes the inner transformation and heart purification required to handle the holy mysteries and invoke the power of the Holy Spirit upon the gifts."
+            audioPhrase: "Purification of heart and hands"
+            image: "/assets/img/purification-hands.jpg"
+            substages:
+              - title: "Hand-Washing — The Ritual of Purification"
+                significance: "Hand-washing symbolizes the priest's heart purification and spiritual readiness. Hands that will touch and transform the sacred mysteries must be clean not only physically but spiritually and morally. This ancient gesture acknowledges the priest's own need for God's grace and cleansing before acting in Christ's place."
+                theological_meaning: "The washing represents the interior cleansing required before approaching God's holiness. The Psalmist asks, 'Who shall ascend the hill of the Lord? He who has clean hands and a pure heart' (Psalm 24:3-4). The priest recognizes his own unworthiness and dependence upon God's mercy. This moment of purification is not self-justification but a humble acknowledgment that only God can make the unworthy worthy to handle sacred things."
+                spiritual_message: "The faithful are reminded that worship requires both outward respect and inner transformation. Just as the priest cleanses himself before touching the mysteries, so too should each believer prepare their heart before approaching the Sacrament."
+                ritual_gesture: "The priest pauses in a moment of quiet prayer. He washes his hands with water and a clean towel—a deliberate, meditative action that centers his consciousness and focus entirely on the sacred work about to unfold. This is not hurried but done with reverence and intention, a visible expression of the interior spiritual work taking place."
+                sacred_items:
+                  - name: "Water (Symbol of Purification)"
+                    malayalam: "ജലം"
+                    meaning: "Water represents cleansing from sin and unworthiness, echoing both the baptismal waters of rebirth and the priest's acknowledgment of his dependence on God's sanctifying grace. As Christ washed the disciples' feet, so the priest washes his hands, recognizing that all service in the Church flows from God's grace, not human merit."
+                    image: "/assets/img/sacred-items/water_medium.png"
           - title: "Kiss of Peace and Lifting of the Veil"
             malayalam: "സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം"
             transliteration: "Pronunciation: Sa-maa-dha-na Chum-ba-nam Sho-shap-pa A-gho-sham"
@@ -332,8 +357,8 @@ phases:
                     meaning: "When lifted, the Shushepo's removal symbolizes the rolling away of the stone from Christ's tomb (Matthew 28:2). Its gentle fluttering represents Christ rising from the dead, revealing the divine mysteries once hidden and now made accessible through the Holy Eucharist."
                     image: "/assets/img/sacred-items/shushepo_medium.png"
 
-          - title: "Introductory Dialogue"
-            description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue invites the faithful to ascend spiritually with the priest into heavenly worship, preparing for the Eucharistic prayer of thanksgiving."
+          - title: "Introductory Dialogue — Ascending Into Heavenly Worship"
+            description: "The priest and people exchange the ancient liturgical dialogue: 'Lift up your hearts' / 'We lift them up unto the Lord' / 'Let us give thanks to the Lord our God' / 'It is meet and right.' This dialogue, unchanged since the early Church, marks the crucial transition from earthly preparation into heavenly participation. Through these words, the congregation's consciousness ascends from the material to the spiritual realm, preparing to witness and participate in the supreme mystery of the transformation of bread and wine into the Body and Blood of Christ through the Anaphora of St. James."
             image: "/assets/img/introductory-dialogue.jpg"
             substages:
               - title: "The Sacred Dialogue"
@@ -388,11 +413,11 @@ phases:
                   - name: "None required"
                     meaning: "The remembrance itself is the sacred action; all of history is held in this moment"
 
-          - title: "Invocation of the Holy Spirit (Epiclesis)"
+          - title: "Invocation of the Holy Spirit (Epiclesis) — THE CENTRAL TRANSFORMATIVE MOMENT"
             malayalam: "പരിശുദ്ധാത്മാവിന്റെ എഴുന്നള്ളത്ത്"
             transliteration: "Pronunciation: Parishuddhaathmavinte Ezunnathathu"
-            description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This distinctive Orthodox feature is the pivotal moment when the Holy Spirit is called upon to sanctify and transform the bread and wine into the very Body and Blood of Christ. It represents the Church's absolute dependence on the Holy Spirit's power and grace."
-            audioPhrase: "Epiclesis, invocation of the Holy Spirit upon the gifts"
+            description: "The priest invokes the Holy Spirit with uplifted hands, crying 'Holy Father, send down Your Holy Spirit upon us and upon these gifts.' This is THE pivotal moment of the entire Qurbana—the heart and center where all previous actions converge and the most profound mystery unfolds. At the Epiclesis, the priest's words and actions cease to be merely human; they become the vehicle through which the Holy Spirit accomplishes the impossible. The bread and wine are transformed into the very Body and Blood of Christ—not gradually, not symbolically, but in real sacramental presence. This distinctive Orthodox feature represents the Church's absolute dependence on the Holy Spirit's power and grace, recognizing that no human strength or authority can accomplish this transformation. Only God can."
+            audioPhrase: "Epiclesis, the invocation of the Holy Spirit upon the gifts—the moment of transformation"
             image: "/assets/img/epiclesis-v2.jpg"
             hotspots:
               - item: "Lahmo (Sacred Bread)"
@@ -405,10 +430,13 @@ phases:
                 radius: 40
             substages:
               - title: "Epiclesis - The Invocation of the Holy Spirit"
-                significance: "The Epiclesis is the most solemn invocation of the Holy Spirit upon the offered gifts."
-                theological_meaning: "The priest stretches his hands over the bread and wine, symbolizing the descent of the Holy Spirit. The Holy Spirit sanctifies, perfects, and transforms the gifts into the Body and Blood of Christ. It reflects the work of the Spirit at creation and at Pentecost, continuing God's sanctifying presence in the Church."
-                spiritual_message: "The faithful are reminded that it is God Himself who accomplishes the mystery of the Eucharist, not human power, but divine grace."
-                ritual_gesture: "The priest stands facing the altar with both arms raised and extended over the elements in a gesture reminiscent of a dove's wings. His hands flutter slightly as he invokes the Holy Spirit. The congregation may also raise their hands in intercession and wonder at this mystery."
+                significance: "The Epiclesis is the most solemn invocation of the Holy Spirit upon the offered gifts. It is the moment when the earthly becomes heavenly, the natural becomes supernatural, and bread and wine become the living Body and Blood of Christ."
+                before_epiclesis: "Before the priest speaks the Epiclesis prayer, the bread and wine remain as offerings—the gifts prepared by human hands, representing the Church's gratitude and devotion."
+                at_epiclesis: "At the moment of Epiclesis, human power ceases. The priest becomes transparent to God's action. The words spoken are not the priest's own but the Church's invocation of the Holy Spirit's transformative power. The bread and wine undergo a change that transcends human understanding—not in appearance or substance as humans perceive it, but in their essential reality and presence."
+                after_epiclesis: "After the Epiclesis, the bread and wine have become the very Body and Blood of Christ in real sacramental presence. They are no longer ordinary food and drink but the source of eternal life and salvation. The congregation receives not symbols or memorials, but the living Christ Himself."
+                theological_meaning: "The Epiclesis reflects the work of the Holy Spirit at creation ('Let there be light'), at the Incarnation ('The Holy Spirit will come upon you'), and at Pentecost ('They were all filled with the Holy Ghost'). The Spirit continues this work of transformation and sanctification in the Church, making the impossible possible."
+                spiritual_message: "The faithful are reminded with profound humility and awe that it is God Himself—not any human being, not the priest's virtue or worthiness—who accomplishes the mystery of the Eucharist. The entire liturgy exists because of divine grace, not human power."
+                ritual_gesture: "The priest stands facing the altar with both arms raised and extended over the elements in a gesture reminiscent of a dove's wings—the symbol of the Holy Spirit. His hands may flutter slightly as he invokes the Holy Spirit with words of absolute dependence. The congregation may also raise their hands in intercession and speechless wonder at this mystery. All present recognize that they are witnessing what angels themselves desire to look into—the transformation wrought by God's eternal power."
                 sacred_items:
                   - name: "Lahmo (Sacred Bread)"
                     malayalam: "ലാഹ്മോ"
