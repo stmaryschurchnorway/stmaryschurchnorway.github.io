@@ -324,7 +324,7 @@ phases:
                   - name: "Water (Symbol of Purification)"
                     malayalam: "ജലം"
                     meaning: "Water represents cleansing from sin and unworthiness, echoing both the baptismal waters of rebirth and the priest's acknowledgment of his dependence on God's sanctifying grace. As Christ washed the disciples' feet, so the priest washes his hands, recognizing that all service in the Church flows from God's grace, not human merit."
-                    image: "/assets/img/sacred-items/water_medium.png"
+                    image: "/assets/img/sacred-items/water_medium.webp"
           - title: "Kiss of Peace and Lifting of the Veil"
             malayalam: "സമാധാന ചുംബനം : ശോശപ്പാ ആഘോഷം"
             transliteration: "Pronunciation: Sa-maa-dha-na Chum-ba-nam Sho-shap-pa A-gho-sham"
