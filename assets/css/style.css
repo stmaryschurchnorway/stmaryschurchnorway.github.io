@@ -196,8 +196,8 @@ img { max-width: 100%; height: auto; display: block; }
   padding-bottom: 4px;
 }
 .nav-links a:hover {
-  color: #b88a0e;
-  border-bottom-color: #b88a0e;
+  color: var(--color-gold-dark);
+  border-bottom-color: var(--color-gold-dark);
 }
 .nav-links a.active {
   color: var(--color-gold);
@@ -220,7 +220,7 @@ img { max-width: 100%; height: auto; display: block; }
   flex-shrink: 0;
 }
 .header-cta:hover {
-  background: #b88a0e;
+  background: var(--color-gold-dark);
   color: var(--color-white);
 }
 
@@ -331,7 +331,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-white);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 12px;
@@ -392,7 +392,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: #fff;
 }
 .hero-btn-primary:hover {
-  background: #b88a0e;
+  background: var(--color-gold-dark);
   color: #fff;
 }
 .hero-btn-outline {
@@ -550,7 +550,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   transition: background 0.3s;
 }
-.btn:hover { background: #b8860b; }
+.btn:hover { background: var(--color-gold-dark); }
 .qurbana-cta-btn {
   display: inline-block;
   background: transparent;
@@ -587,6 +587,8 @@ img { max-width: 100%; height: auto; display: block; }
 .videos-header {
   max-width: 1100px;
   margin: 0 auto 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
 }
 .btn-videos {
   background: transparent;
@@ -628,16 +630,16 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Page Banner === */
 .page-banner {
-  background: var(--color-light-bg-alt);
-  padding: 40px 20px 36px;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(139, 30, 45, 0.03));
+  padding: 50px 20px 45px;
   text-align: center;
-  border-bottom: 1px solid #e8e4de;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.2);
 }
 .page-banner h1 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-text-darker);
+  color: var(--color-gold);
   letter-spacing: 0.01em;
 }
 
@@ -691,9 +693,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .page-content h2 {
   font-family: 'Lora', Georgia, serif;
-  color: var(--color-text-darker);
-  margin: 36px 0 14px;
-  font-size: 1.3rem;
+  color: var(--color-gold);
+  margin: 40px 0 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.page-content h3 {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--color-gold);
+  margin: 28px 0 14px;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
@@ -707,7 +718,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hierarchy-card {
   text-align: center;
-  background: var(--color-white);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(212, 160, 23, 0.03));
+  border: 1px solid rgba(212, 160, 23, 0.15);
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   padding: 24px 14px;
@@ -755,6 +767,21 @@ img { max-width: 100%; height: auto; display: block; }
   25% { box-shadow: 0 0 20px 6px rgba(212, 160, 23, 0.5); }
   100% { box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
 }
+/* Church Page Sections */
+.page-content > h2 {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(139, 30, 45, 0.02));
+  padding: 16px 20px 12px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 40px;
+  padding-left: calc(20px + 20px);
+  padding-right: calc(20px + 20px);
+  border-left: 4px solid var(--color-gold);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
+  margin-bottom: 20px;
+}
+
 .hierarchy-link {
   color: inherit;
   text-decoration: none;
@@ -795,13 +822,15 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 20px 0;
 }
 .video-card {
-  background: var(--color-white);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(212, 160, 23, 0.02));
+  border: 1px solid rgba(212, 160, 23, 0.15);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .video-card:hover {
+  border-color: rgba(212, 160, 23, 0.4);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
@@ -861,10 +890,17 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 48px;
 }
 .gallery-playlist-header {
-  margin-bottom: 18px;
+  margin-bottom: 25px;
+  padding-bottom: 0;
 }
 .gallery-playlist-title {
+  font-family: 'Lora', Georgia, serif;
   font-size: 1.5rem;
+  color: var(--color-gold);
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
 }
 
 /* === Join Us CTA === */
@@ -881,7 +917,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Lora', Georgia, serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text-darker);
+  color: var(--color-gold);
   margin-bottom: 10px;
 }
 .join-us p {
@@ -909,8 +945,8 @@ img { max-width: 100%; height: auto; display: block; }
   transition: background 0.2s;
 }
 .btn-join:hover {
-  background: #b88a0e;
-  border-color: #b88a0e;
+  background: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
 }
 .btn-join-outline {
   background: transparent;
@@ -1103,7 +1139,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.02em;
 }
 .next-event-link:hover {
-  color: #b88a0e;
+  color: var(--color-gold-dark);
 }
 
 /* === Liturgy Showcase === */
@@ -1114,6 +1150,7 @@ img { max-width: 100%; height: auto; display: block; }
 .liturgy-showcase-inner {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 20px;
   text-align: center;
 }
 .liturgy-showcase-label {
@@ -1141,7 +1178,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Lora', Georgia, serif;
   font-size: 1.7rem;
   font-weight: 700;
-  color: var(--color-text-darker);
+  color: var(--color-gold);
   margin-bottom: 8px;
 }
 .liturgy-showcase-desc {
@@ -1184,7 +1221,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Lora', Georgia, serif;
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-text-darker);
+  color: var(--color-gold);
   margin-bottom: 2px;
 }
 .liturgy-showcase-card p {
@@ -1203,7 +1240,7 @@ img { max-width: 100%; height: auto; display: block; }
   transition: color 0.2s;
 }
 .liturgy-showcase-card:hover .liturgy-showcase-link {
-  color: #b88a0e;
+  color: var(--color-gold-dark);
 }
 @media (max-width: 768px) {
   .liturgy-showcase { padding: 28px 16px 32px; }
@@ -1225,6 +1262,8 @@ img { max-width: 100%; height: auto; display: block; }
 .news-home-header {
   max-width: 1100px;
   margin: 0 auto 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
 }
 .news-grid {
   display: grid;
@@ -1258,7 +1297,7 @@ img { max-width: 100%; height: auto; display: block; }
 .news-card h3 {
   font-family: 'Lora', Georgia, serif;
   font-size: 1.05rem;
-  color: #2d2d2d;
+  color: var(--color-gold);
   margin-bottom: 10px;
   line-height: 1.4;
 }
@@ -1277,7 +1316,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === News List (Events Page) === */
 .news-list {
-  max-width: 900px;
   margin: 0 auto;
 }
 .news-list-item {
@@ -1297,7 +1335,7 @@ img { max-width: 100%; height: auto; display: block; }
 .news-list-item h3 {
   font-family: 'Lora', Georgia, serif;
   font-size: 1.05rem;
-  color: #2d2d2d;
+  color: var(--color-gold);
   margin-bottom: 8px;
   line-height: 1.4;
 }
@@ -1345,8 +1383,8 @@ img { max-width: 100%; height: auto; display: block; }
 .post-back-btn {
   display: inline-block;
   background: transparent;
-  color: #999;
-  border: 1px solid #ddd;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
   padding: 5px 12px;
   border-radius: 16px;
   font-size: 0.7rem;
@@ -1357,9 +1395,8 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
 }
 .post-back-btn:hover {
-  color: var(--color-gold);
-  border-color: var(--color-gold);
-  background: rgba(212, 160, 23, 0.05);
+  background: rgba(212, 160, 23, 0.1);
+  transform: translateY(-2px);
 }
 .post-back-btn:active {
   transform: scale(0.98);
@@ -1373,8 +1410,14 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 24px;
 }
 .page-content article h2,
-.page-content .container h2 {
+.page-content .container > h2 {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--color-gold);
+  margin: 28px 0 14px;
   font-size: 1.3rem;
+  font-weight: 700;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.5);
 }
 
 /* === Diocese Badge === */
@@ -1444,17 +1487,33 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Events Intro === */
 .news-section-header {
-  max-width: 1100px;
-  margin: 10px auto 16px;
-  padding: 0 20px;
+  margin: 40px 0 25px;
+  padding: 0;
+  border-bottom: 2px solid var(--color-gold);
+}
+.news-section-header h2 {
+  color: var(--color-gold);
+  margin: 0 !important;
+  padding: 16px 20px !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: none !important;
+  line-height: 1.2;
 }
 
-.events-intro {
+.events-intro,
+.gallery-intro {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 10px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 8px;
 }
-.events-intro p {
+.events-intro p,
+.gallery-intro p {
   font-size: 0.93rem;
   color: #4a4a4a;
   line-height: 1.7;
@@ -1540,7 +1599,7 @@ img { max-width: 100%; height: auto; display: block; }
   opacity: 1;
   transform: translateY(0);
 }
-.back-to-top:hover { background: #b8860b; }
+.back-to-top:hover { background: var(--color-gold-dark); }
 
 /* === Footer === */
 .site-footer {
@@ -1730,6 +1789,8 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
 }
 .events-label {
   display: inline-block;
@@ -1754,7 +1815,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Lora', Georgia, serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: var(--color-gold);
   line-height: 1.2;
 }
 .events-see-all {
@@ -1914,6 +1975,15 @@ img { max-width: 100%; height: auto; display: block; }
   transform: translateY(0);
   pointer-events: auto;
 }
+.quote-cite-link {
+  color: #8B1E2D;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.quote-cite-link:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
 .pause-chip {
   position: absolute;
   top: 8px;
@@ -1947,6 +2017,8 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gold);
 }
 .past-events-label {
   display: inline-block;
@@ -1969,9 +2041,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .past-events-title {
   font-family: 'Lora', Georgia, serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #999;
+  color: var(--color-gold);
   line-height: 1.2;
 }
 .past-events-card {

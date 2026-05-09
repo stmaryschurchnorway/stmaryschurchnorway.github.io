@@ -27,9 +27,9 @@ layout: default
       </div>
       <div class="slides" aria-live="polite">
         {% for q in site.data.quotes %}
-          <div class="quote-slide{% if forloop.index0 == active_index %} is-active{% endif %}" aria-hidden="{% if forloop.index0 == active_index %}false{% else %}true{% endif %}" data-ml-text="&#8220;{{ q.text }}&#8221;" data-en-text="&#8220;{{ q.text_en }}&#8221;" data-ml-author="{{ q.author }}" data-en-author="{{ q.author_en }}">
+          <div class="quote-slide{% if forloop.index0 == active_index %} is-active{% endif %}" aria-hidden="{% if forloop.index0 == active_index %}false{% else %}true{% endif %}" data-ml-text="&#8220;{{ q.text }}&#8221;" data-en-text="&#8220;{{ q.text_en }}&#8221;" data-ml-author="{{ q.author }}" data-en-author="{{ q.author_en }}" data-bible-url="{{ q.bible_url }}">
             <blockquote lang="ml">&#8220;{{ q.text }}&#8221;</blockquote>
-            <cite lang="ml">&mdash; {{ q.author }}</cite>
+            <a href="{{ q.bible_url }}" target="_blank" rel="noopener" class="quote-cite-link"><cite lang="ml">&mdash; {{ q.author }}</cite></a>
           </div>
         {% endfor %}
       </div>
@@ -112,10 +112,7 @@ layout: default
 <section class="news-section">
   <div class="container">
     <div class="news-home-header">
-      <div>
-        <span class="events-label">{% if page.url contains '/no/' %}Oppdateringer{% else %}Parish Updates{% endif %}</span>
-        <h2 class="events-title" style="font-size:1.5rem;">{% if page.url contains '/no/' %}Siste Nyheter{% else %}Latest News{% endif %}</h2>
-      </div>
+      <h2 class="events-title">{% if page.url contains '/no/' %}Siste Nyheter{% else %}Latest News{% endif %}</h2>
     </div>
     <div class="news-grid" id="latest-news-grid" data-per-page="3">
       {% for post in site.posts %}
@@ -173,15 +170,14 @@ layout: default
 
 <!-- Videos -->
 <section class="gallery-section">
-  <div class="videos-header">
-    <div>
-      <span class="events-label">{% if page.url contains '/no/' %}Fra vår kanal{% else %}From Our Channel{% endif %}</span>
-      <h2 class="events-title" style="font-size:1.5rem;">Lent Series 2026</h2>
+  <div class="container">
+    <div class="videos-header">
+      <h2 class="events-title">Lent Series 2026</h2>
     </div>
-  </div>
-  <div class="gallery-grid" id="home-videos"></div>
-  <div style="text-align:center; margin-top:20px;">
-    <a href="{{ '/gallery/' | relative_url }}" class="btn btn-videos">{% if page.url contains '/no/' %}Se alle videoer{% else %}View All Videos{% endif %}</a>
+    <div class="gallery-grid" id="home-videos"></div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="{{ '/gallery/' | relative_url }}" class="btn btn-videos">{% if page.url contains '/no/' %}Se alle videoer{% else %}View All Videos{% endif %}</a>
+    </div>
   </div>
 </section>
 
@@ -219,72 +215,22 @@ layout: default
 })();
 </script>
 
-<!-- Rotating daily quote -->
+<!-- Daily quote: random on each page load -->
 <script>
 (function() {
   var root = document.getElementById('daily-quote');
   if (!root) return;
   var slides = Array.prototype.slice.call(root.querySelectorAll('.quote-slide'));
-  if (slides.length < 2) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (slides.length === 0) return;
 
-  var INTERVAL = 10000;
-  var current = 0;
-  for (var i = 0; i < slides.length; i++) {
-    if (slides[i].classList.contains('is-active')) { current = i; break; }
-  }
-
-  var timer = null;
-  var paused = false;
-
-  function advance() {
-    slides[current].classList.remove('is-active');
-    slides[current].setAttribute('aria-hidden', 'true');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('is-active');
-    slides[current].setAttribute('aria-hidden', 'false');
-  }
-
-  function start() {
-    stop();
-    timer = setInterval(advance, INTERVAL);
-  }
-
-  function stop() {
-    if (timer) { clearInterval(timer); timer = null; }
-  }
-
-  function pause() {
-    if (paused) return;
-    paused = true;
-    root.classList.add('paused');
-    stop();
-  }
-
-  function resume() {
-    if (!paused) return;
-    paused = false;
-    root.classList.remove('paused');
-    start();
-  }
-
-  root.addEventListener('mouseenter', pause);
-  root.addEventListener('mouseleave', resume);
-  root.addEventListener('focusin', pause);
-  root.addEventListener('focusout', function(e) {
-    if (!e.relatedTarget || !root.contains(e.relatedTarget)) resume();
-  });
-
-  document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-      stop();
-    } else if (!paused) {
-      start();
-    }
+  var pick = Math.floor(Math.random() * slides.length);
+  slides.forEach(function(s, i) {
+    s.classList.toggle('is-active', i === pick);
+    s.setAttribute('aria-hidden', i === pick ? 'false' : 'true');
   });
 
   var quoteLang = 'ml';
-  var langBtns = document.querySelectorAll('.quote-lang-btn');
+  var langBtns = root.querySelectorAll('.quote-lang-btn');
   function setQuoteLang(lang) {
     quoteLang = lang;
     langBtns.forEach(function(b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
@@ -296,13 +242,6 @@ layout: default
   langBtns.forEach(function(btn) {
     btn.addEventListener('click', function() { setQuoteLang(btn.getAttribute('data-lang')); });
   });
-
-  if (root.matches(':hover')) {
-    paused = true;
-    root.classList.add('paused');
-  } else {
-    start();
-  }
 })();
 </script>
 

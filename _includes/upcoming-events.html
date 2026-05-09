@@ -23,10 +23,7 @@ Parameters:
 <section class="upcoming-events-section">
   {% if show_heading %}
   <div class="events-header">
-    <div>
-      <span class="events-label">{% if page.url contains '/no/' %}Menighetens kalender{% else %}The Parish Calendar{% endif %}</span>
-      <h2 class="events-title">{% if page.url contains '/no/' %}Kommende samlinger{% else %}Upcoming gatherings{% endif %}</h2>
-    </div>
+    <h2 class="events-title">{% if page.url contains '/no/' %}Kommende samlinger{% else %}Upcoming gatherings{% endif %}</h2>
     <a href="{% if page.url contains '/no/' %}{{ '/no/events/' | relative_url }}{% else %}{{ '/en/events/' | relative_url }}{% endif %}" class="events-see-all">{% if page.url contains '/no/' %}Se full kalender →{% else %}See full calendar →{% endif %}</a>
   </div>
   {% endif %}

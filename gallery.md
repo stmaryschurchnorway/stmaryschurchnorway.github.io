@@ -5,6 +5,10 @@ permalink: /gallery/
 description: "Videos of Holy Qurbana, Oshana (Palm Sunday), Perunnal feasts, and parish life at St. Mary's Malankara Syriac Orthodox Church, Oslo. Watch our services and celebrations."
 ---
 
+<div class="gallery-intro">
+  <p>Explore videos of our sacred liturgies, feast celebrations, and parish life. Watch Holy Qurbana services, Oshana (Palm Sunday), Perunnal feasts, and community gatherings from our Malayalam-speaking Orthodox community in Oslo.</p>
+</div>
+
 <div id="video-gallery">
   <p class="gallery-loading">Loading videos&hellip;</p>
 </div>
@@ -61,8 +65,7 @@ description: "Videos of Holy Qurbana, Oshana (Palm Sunday), Perunnal feasts, and
 
     var section = el('div', 'gallery-playlist-section');
     var header = el('div', 'gallery-playlist-header');
-    header.appendChild(el('span', 'events-label', 'Playlist'));
-    header.appendChild(el('h2', 'events-title gallery-playlist-title', title));
+    header.appendChild(el('h2', 'gallery-playlist-title', title));
     section.appendChild(header);
 
     var grid = el('div', 'video-gallery-grid');
