@@ -56,7 +56,7 @@ liturgies:
     description: "Holy Unction—prayers and anointing with blessed oil for healing and comfort of those suffering in body, mind, or spirit."
     theological_significance: "Physical and spiritual healing; Christ the Physician present in suffering."
     image: "/assets/img/anointing-sick-liturgy.png"
-    status: "coming-soon"
+    url: "/anointing/"
 
   - id: "holy-matrimony"
     title: "Holy Matrimony"
