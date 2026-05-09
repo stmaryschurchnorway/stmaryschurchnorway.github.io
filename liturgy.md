@@ -66,7 +66,7 @@ liturgies:
     description: "Marriage—holy union blessed by the Church as an icon of Christ and the Church, sanctifying the couple's life together."
     theological_significance: "Icon of Christ's union with His Church; vocation of mutual sanctification."
     image: "/assets/img/matrimony-liturgy.png"
-    status: "coming-soon"
+    url: "/matrimony/"
 
   - id: "holy-orders"
     title: "Holy Orders"
