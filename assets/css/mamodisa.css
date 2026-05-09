@@ -1593,33 +1593,37 @@ h2.stage-title {
   }
 
   .phase-tabs {
-    gap: 6px;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 8px 0;
   }
 
   .phase-card {
-    padding: 8px 4px;
+    padding: 10px 5px;
+    min-width: fit-content;
+    flex-shrink: 0;
   }
 
   .phase-card-num {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1px;
   }
 
   .phase-card-title {
-    font-size: 11px;
-    margin: 2px 0;
+    font-size: 12px;
+    margin: 3px 0;
     word-break: break-word;
   }
 
   .phase-card-subparts {
     flex-direction: column;
-    gap: 4px;
-    padding: 4px 4px 0 4px;
+    gap: 5px;
+    padding: 5px 4px 0 4px;
   }
 
   .phase-card-subpart {
-    font-size: 8px;
-    padding: 2px 0;
+    font-size: 9px;
+    padding: 3px 0;
   }
 
   .controls-header {
@@ -2339,4 +2343,60 @@ a.mamodisa-intro-journey-step.soon:hover {
   .mamodisa-intro-divider { display: none; }
   .mamodisa-intro-journey { flex-direction: column; }
   .mamodisa-intro-journey-arrow { transform: rotate(90deg); }
+}
+
+@media (max-width: 360px) {
+  .carousel-intro-heading {
+    margin: 12px auto;
+    padding: 0 10px;
+  }
+
+  .carousel-intro-heading h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .carousel-intro-description {
+    font-size: 13px;
+  }
+
+  .phase-tabs {
+    gap: 6px;
+    padding: 6px 0;
+  }
+
+  .phase-card {
+    padding: 8px 4px;
+    min-width: 50px;
+  }
+
+  .phase-card-num {
+    font-size: 9px;
+  }
+
+  .phase-card-title {
+    font-size: 10px;
+  }
+
+  .phase-card-subpart {
+    font-size: 8px;
+    padding: 2px 0;
+  }
+
+  .carousel-card-content-text {
+    font-size: 13px;
+  }
+
+  h2.stage-title {
+    font-size: 13px;
+  }
+
+  .mamodisa-intro-frame {
+    padding: 18px 12px;
+  }
+
+  .mamodisa-intro-journey-step {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
 }
