@@ -76,7 +76,7 @@ liturgies:
     description: "Priesthood—ordination to serve the Church in apostolic succession, continuing Christ's ministry of word and sacrament."
     theological_significance: "Apostolic succession; sacramental priesthood serving the royal priesthood of all believers."
     image: "/assets/img/orders-liturgy.png"
-    status: "coming-soon"
+    url: "/holy-orders/"
 ---
 
 {% include liturgy-landing.html %}
