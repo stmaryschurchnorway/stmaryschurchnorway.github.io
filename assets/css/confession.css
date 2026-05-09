@@ -338,24 +338,185 @@
   }
 }
 
+@media (max-width: 600px) {
+  .confession-section-title {
+    font-size: 1.15rem;
+  }
+
+  .confession-scripture-link {
+    padding: 15px 18px;
+  }
+
+  .confession-scripture-link blockquote {
+    font-size: 0.9rem;
+  }
+
+  .confession-baptism-panel {
+    padding: 20px;
+  }
+
+  .confession-baptism-title {
+    font-size: 1.15rem;
+  }
+
+  .confession-seal-panel {
+    padding: 16px;
+  }
+
+  .confession-seal-panel p {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 480px) {
   .confession-page {
-    padding: 0 15px 30px;
+    padding: 0 12px 30px;
+  }
+
+  .confession-section-title {
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    padding-bottom: 6px;
+  }
+
+  .confession-section-subtitle {
+    font-size: 0.82rem;
+    margin: 0 0 15px;
   }
 
   .confession-step {
-    gap: 12px;
-    padding: 14px 0;
+    gap: 10px;
+    padding: 12px 0;
   }
 
   .confession-step-number {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.75rem;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .confession-step-title {
+    font-size: 0.95rem;
+    margin: 0 0 2px;
+  }
+
+  .confession-step-malayalam {
+    font-size: 0.75rem;
+    margin: 0 0 4px;
+  }
+
+  .confession-step-content p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .confession-prep-grid {
+    gap: 12px;
+  }
+
+  .confession-prep-card {
+    padding: 15px;
+  }
+
+  .confession-prep-card h3 {
+    font-size: 0.9rem;
+    margin: 0 0 8px;
+  }
+
+  .confession-prep-card ul {
+    padding-left: 14px;
+  }
+
+  .confession-prep-card li {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .confession-prep-card p {
     font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .confession-baptism-panel {
+    padding: 18px;
+    margin-bottom: 25px;
+  }
+
+  .confession-baptism-title {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+  }
+
+  .confession-baptism-panel p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+
+  .confession-baptism-connection {
+    gap: 6px;
+    padding: 12px 0 2px;
+  }
+
+  .confession-baptism-item {
+    padding: 8px 12px;
+  }
+
+  .confession-baptism-item strong {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+
+  .confession-baptism-item span {
+    font-size: 0.65rem;
   }
 
   .confession-cta {
-    padding: 25px 18px;
+    padding: 22px 16px;
+    margin-top: 30px;
+  }
+
+  .confession-cta h2 {
+    font-size: 1.15rem;
+    margin: 0 0 6px;
+  }
+
+  .confession-cta p {
+    font-size: 0.82rem;
+    margin: 0 0 12px;
+  }
+
+  .confession-cta-btn {
+    padding: 9px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .confession-page {
+    padding: 0 8px 25px;
+  }
+
+  .confession-section-title {
+    font-size: 1rem;
+  }
+
+  .confession-step-number {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    font-size: 0.7rem;
+  }
+
+  .confession-step-content p {
+    font-size: 0.78rem;
+  }
+
+  .confession-prep-card {
+    padding: 12px;
   }
 }
