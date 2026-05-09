@@ -1754,10 +1754,15 @@ h2.stage-title {
   .intro-panel-card {
     padding: 20px 15px;
     min-height: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .intro-content-card {
     max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .intro-image-card {
@@ -1792,11 +1797,17 @@ h2.stage-title {
   .intro-description-card {
     font-size: 14px;
     margin: 20px 0 25px 0;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .intro-journey-info-card {
     padding: 15px;
-    margin: 25px 0;
+    margin: 25px auto;
+    max-width: calc(100% - 30px);
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .intro-journey-info-card p {
@@ -1817,15 +1828,20 @@ h2.stage-title {
   .carousel-card {
     max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .controls-footer {
     padding: 10px 12px;
     gap: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .progress-dots {
     padding: 0 15px 15px 15px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -2434,5 +2450,66 @@ a.mamodisa-intro-journey-step.soon:hover {
   .mamodisa-intro-journey-step {
     padding: 12px 16px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mamodisa-carousel {
+    max-width: 100%;
+    padding: 0 10px;
+    margin: 5px auto 20px;
+    box-sizing: border-box;
+  }
+
+  .intro-panel-card {
+    padding: 15px 10px;
+  }
+
+  .carousel-card {
+    overflow-x: hidden;
+  }
+
+  .phase-tabs {
+    gap: 6px;
+  }
+
+  .phase-card {
+    padding: 8px 4px;
+    min-width: fit-content;
+  }
+
+  .phase-card-num {
+    font-size: 9px;
+  }
+
+  .phase-card-title {
+    font-size: 10px;
+  }
+
+  .malayalam-section {
+    padding: 8px 10px;
+    margin: 12px auto;
+    max-width: calc(100% - 20px);
+  }
+
+  .stage-description {
+    margin: 0 auto 12px auto;
+    padding: 12px 10px;
+    max-width: calc(100% - 20px);
+    font-size: 13px;
+  }
+
+  .progress-dots {
+    padding: 0 12px 12px 12px;
+  }
+
+  .intro-content-card {
+    padding: 0;
+  }
+
+  .intro-journey-info-card {
+    padding: 12px;
+    margin: 20px auto;
+    max-width: calc(100% - 24px);
   }
 }
