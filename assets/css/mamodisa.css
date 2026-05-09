@@ -272,6 +272,13 @@
   .liturgy-card-title {
     font-size: 0.95rem;
   }
+
+  .mamodisa-carousel {
+    max-width: 100%;
+    padding: 0 12px;
+    margin: 5px auto 20px;
+    box-sizing: border-box;
+  }
 }
 
 .mamodisa-intro-heading {
@@ -1515,6 +1522,13 @@ h2.stage-title {
     padding: 0 15px;
   }
 
+  .mamodisa-carousel {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 5px auto 20px;
+    box-sizing: border-box;
+  }
+
   .mamodisa-intro-heading h2 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -1674,7 +1688,9 @@ h2.stage-title {
   .malayalam-section {
     padding: 10px 12px;
     gap: 10px;
-    margin: 15px 20px;
+    margin: 15px auto;
+    max-width: calc(100% - 30px);
+    box-sizing: border-box;
   }
 
   .audio-button {
@@ -1685,8 +1701,10 @@ h2.stage-title {
 
   .stage-description {
     font-size: 14px;
-    margin: 0 15px 15px 15px;
-    padding: 14px 16px;
+    margin: 0 auto 15px auto;
+    padding: 14px 15px;
+    max-width: calc(100% - 30px);
+    box-sizing: border-box;
   }
 
   .progress-dots {
@@ -1696,6 +1714,8 @@ h2.stage-title {
   /* Phase info on mobile */
   .phase-info {
     padding: 10px 12px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .phase-info-label {
@@ -1712,7 +1732,9 @@ h2.stage-title {
 
   /* Sub-stages on mobile */
   .substages-panel {
-    padding: 12px 20px;
+    padding: 12px 15px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .substages-label {
@@ -1790,6 +1812,20 @@ h2.stage-title {
   .intro-start-btn-card {
     padding: 12px 20px;
     font-size: 14px;
+  }
+
+  .carousel-card {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .controls-footer {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .progress-dots {
+    padding: 0 15px 15px 15px;
   }
 }
 
