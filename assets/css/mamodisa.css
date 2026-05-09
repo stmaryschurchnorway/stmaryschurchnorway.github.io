@@ -1,5 +1,13 @@
 /* Qurbana Carousel */
 
+/* === Page Wrapper (mobile overflow containment) === */
+.mamodisa-page-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 /* === Liturgy Landing View === */
 .liturgy-landing {
   max-width: 1100px;
