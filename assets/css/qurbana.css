@@ -299,6 +299,17 @@
   .liturgy-card-title {
     font-size: 0.95rem;
   }
+
+  .qurbana-carousel {
+    max-width: 100vw;
+    margin: 5px 0 20px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .carousel-card {
+    padding: 0 12px;
+  }
 }
 
 .qurbana-intro-heading {
@@ -1534,6 +1545,13 @@ h2.stage-title {
     padding: 0 15px;
   }
 
+  .qurbana-carousel {
+    max-width: 100vw;
+    margin: 5px 0 20px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
   .qurbana-intro-heading h2 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -1609,6 +1627,11 @@ h2.stage-title {
   .glossary-def {
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .carousel-card {
+    padding: 0 15px;
+    overflow: hidden;
   }
 
   .phase-tabs {
@@ -3058,5 +3081,16 @@ h2.stage-title {
 
   .liturgy-access-item {
     padding: 15px;
+  }
+
+  .qurbana-carousel {
+    max-width: 100vw;
+    margin: 5px 0 20px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .carousel-card {
+    padding: 0 10px;
   }
 }
