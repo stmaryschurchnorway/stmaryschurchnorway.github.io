@@ -2232,6 +2232,142 @@ h2.stage-title {
 }
 
 /* ==========================================
+   FOUNDATIONAL UNDERSTANDING - 3 VERTICAL CARDS
+   ========================================== */
+
+.liturgy-foundation-wrapper {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.liturgy-foundation-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.liturgy-foundation-card {
+  background: white;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.liturgy-foundation-card:hover {
+  border-color: #d4a017;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.liturgy-foundation-card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.liturgy-foundation-card-title {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: #333;
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+
+.liturgy-foundation-card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+.liturgy-foundation-connection-card {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(139, 30, 45, 0.05));
+  border-left: 4px solid #d4a017;
+  border-radius: 6px;
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.liturgy-foundation-connection-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+  font-weight: 500;
+}
+
+.liturgy-connection-statement {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(139, 30, 45, 0.05));
+  border-left: 4px solid #d4a017;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.liturgy-connection-statement p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .liturgy-foundation-trio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .liturgy-foundation-wrapper {
+    padding: 0 15px;
+  }
+
+  .liturgy-foundation-trio {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .liturgy-foundation-card {
+    padding: 25px 20px;
+  }
+
+  .liturgy-foundation-card-title {
+    font-size: 18px;
+  }
+
+  .liturgy-foundation-card-text {
+    font-size: 13px;
+  }
+
+  .liturgy-foundation-connection-card {
+    padding: 20px 20px;
+  }
+
+  .liturgy-foundation-connection-card p {
+    font-size: 14px;
+  }
+
+  .liturgy-connection-statement {
+    margin: 30px 15px;
+    padding: 20px 20px;
+  }
+
+  .liturgy-connection-statement p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
    LITURGY INTRO FRAME (Trinity Pillars)
    ========================================== */
 

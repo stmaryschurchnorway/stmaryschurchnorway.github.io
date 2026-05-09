@@ -26,6 +26,8 @@ intro:
     The Holy Qurbana celebrated in the Malankara Orthodox Syrian Church uses the Anaphora (Eucharistic prayer) of St. James, one of the apostles of Christ. This ancient liturgy, originally composed in Greek during the 5th century, traces its roots to the Antiochene liturgical tradition and was later translated into Syriac, becoming the foundation of Syrian Orthodox worship.
     
     In 1665, the Malankara Orthodox Church formally adopted the liturgical practices of the Syrian Orthodox Church under the guidance of Mar Gregorios of Jerusalem. This pivotal moment established the traditions that continue to be observed today, ensuring that every celebration of the Qurbana is a continuity with the worship of the early Church and maintains unbroken apostolic succession through the Anaphora of St. James.
+    
+    Our primary Eucharistic prayer, the Anaphora of St. James, originates from the 5th century in Greek and was translated into Syriac, maintaining unbroken apostolic succession from the first bishop of Jerusalem and connecting us directly to the apostles and the early Church.
   participation_theology: |
     Through the Holy Qurbana, believers participate in the Body and Blood of Christ, entering into mystical communion with the risen Lord and with one another as members of His Church. As St. Paul writes, "Because there is one bread, we who are many are one body, for we all partake of the one bread" (1 Corinthians 10:17). The Qurbana is not merely a remembrance of the past, but a living encounter with Christ's saving grace made present through the invocation of the Holy Spirit.
 
