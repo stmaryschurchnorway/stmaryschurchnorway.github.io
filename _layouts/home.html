@@ -60,6 +60,7 @@ layout: default
       <div class="welcome-links">
         <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-primary">{% if page.url contains '/no/' %}Les hele budskapet{% else %}Read the full message{% endif %}</a>
         <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary">{% if page.url contains '/no/' %}Om vår menighet →{% else %}About our parish →{% endif %}</a>
+        <a href="{{ '/liturgy/' | relative_url }}" class="welcome-link-secondary">{% if page.url contains '/no/' %}Vår liturgi →{% else %}Our Liturgy →{% endif %}</a>
       </div>
     </div>
   </div>
