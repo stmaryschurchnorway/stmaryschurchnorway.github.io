@@ -43,10 +43,10 @@ liturgies:
     category: "healing"
     malayalam: "കുമ്പസാരം"
     transliteration: "Kum-pa-sa-ram"
-    description: "Penance—the process of repentance and reconciliation with God through the Church, restoring the baptismal garment stained by sin."
+    description: "The sacrament of repentance and reconciliation — where we return to God, receive His forgiveness, and are restored. The Church Fathers called it a 'second baptism.'"
     theological_significance: "Healing and restoration; second baptism for the repentant soul."
     image: "/assets/img/confession-liturgy.png"
-    status: "coming-soon"
+    url: "/confession/"
 
   - id: "anointing-sick"
     title: "Anointing of the Sick"
