@@ -645,7 +645,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Page Content === */
 .page-content {
-  padding: 45px 20px;
+  padding: 45px 0;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1730,7 +1730,7 @@ img { max-width: 100%; height: auto; display: block; }
   .contact-map iframe { height: 280px; }
   .page-banner { padding: 28px 15px 24px; }
   .page-banner h1 { font-size: 1.4rem; }
-  .page-content { padding: 28px 15px; }
+  .page-content { padding: 28px 0; }
   .daily-quote { padding: 20px 12px; }
   .quote-event-row { flex-direction: column; gap: 14px; }
   .quote-card { padding: 18px 18px 14px; }
@@ -1795,7 +1795,7 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links a { padding: 7px 8px; font-size: 0.7rem; }
   .section-title { font-size: 1.05rem; }
   .page-banner h1 { font-size: 1.25rem; }
-  .page-content { padding: 20px 10px; }
+  .page-content { padding: 20px 0; }
   .news-card { padding: 16px; }
   .hierarchy-card img { width: 70px; height: 70px; }
   .hierarchy-card h3 { font-size: 0.7rem; }
