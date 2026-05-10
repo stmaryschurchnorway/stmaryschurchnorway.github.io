@@ -1956,7 +1956,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: #2d2d2d;
 }
 @media (max-width: 768px) {
-  .upcoming-events-section { padding: 15px 16px 30px; }
+  .upcoming-events-section { padding: 15px 20px 30px; }
   .events-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .events-title { font-size: 1.4rem; }
   .events-card { border-radius: 10px; }
@@ -1967,7 +1967,7 @@ img { max-width: 100%; height: auto; display: block; }
   .event-meta-col { width: 100%; padding-left: 82px; margin-top: 6px; }
 }
 @media (max-width: 480px) {
-  .upcoming-events-section { padding: 15px 12px 25px; max-width: 100%; }
+  .upcoming-events-section { padding: 15px 20px 25px; max-width: 100%; }
   .events-title { font-size: 1.25rem; }
   .event-row { padding: 14px 14px; flex-wrap: wrap; }
   .event-date-col { flex: 0 0 55px; }
