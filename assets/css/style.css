@@ -1766,6 +1766,7 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links { gap: 2px; flex-wrap: nowrap; overflow-x: auto; }
   .nav-links a { padding: 6px 7px; font-size: 0.7rem; min-height: 40px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; }
   .section-title { font-size: 1.1rem; }
+  .hierarchy-grid { grid-template-columns: 1fr; gap: 12px; max-width: 340px; margin: 25px auto; }
   .hierarchy-card img { width: 85px; height: 85px; }
   .hierarchy-card h3 { font-size: 0.75rem; }
   .hierarchy-card p { font-size: 0.78rem; }
