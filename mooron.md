@@ -10,6 +10,7 @@ intro:
   title: "Holy Mooron"
   malayalam: "മൂറോൻ"
   transliteration: "Pronunciation: Moo-ron"
+  audio: "/assets/audio/mooron.m4a"
   description: "The Holy Mooron is the Sacrament of the Holy Spirit through which the baptized faithful are sealed with the gift of the Spirit and made partakers of the divine nature. It is the fulfillment of Baptism. While Baptism incorporates believers into Christ's risen life, Chrismation makes them partakers of His Spirit. The Mooron is a consecrated mixture of olive oil, balsam, wine, and forty aromatic substances, symbolizing the fullness of grace and the sweetness of the Christian life."
   audioPhrase: "Holy Mooron, the sacrament of the Holy Spirit"
 

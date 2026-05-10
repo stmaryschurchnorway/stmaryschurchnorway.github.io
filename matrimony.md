@@ -11,6 +11,7 @@ extra_css:
 <!-- INTRO -->
 <div class="liturgy-intro-section">
   <h1>Holy Matrimony</h1>
+  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">വിവാഹം</span><span class="liturgy-page-transliteration">Vi-va-ham</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('/assets/audio/vivaham.m4a')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
   <p>Marriage is not merely a legal contract between two people, but a sacred covenant established by God. In this holy sacrament, a man and woman are united before God and the Church, crowned as king and queen of a newly established family, and blessed to build together a "domestic church", a home where Christ is the center and love is the foundation.</p>
 </div>
 

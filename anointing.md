@@ -11,6 +11,7 @@ extra_css:
 <!-- INTRO -->
 <div class="liturgy-intro-section">
   <h1>Anointing of the Sick (Holy Unction)</h1>
+  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">തൈലാഭിഷേകം</span><span class="liturgy-page-transliteration">Thai-la-bhi-she-kam</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('/assets/audio/anointing-sick.m4a')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
   <p>The sacrament of healing, where God the Divine Physician meets the suffering believer with oil, prayer, and the promise of restoration. This sacred mystery addresses both body and spirit, for sickness touches the whole person. Through this rite, the Church stands with those who suffer, reminding them that no pain is beyond God's compassion.</p>
 </div>
 

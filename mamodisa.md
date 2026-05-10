@@ -10,6 +10,7 @@ intro:
   title: "Holy Baptism"
   malayalam: "മാമോദീസാ"
   transliteration: "Pronunciation: Ma-mo-dee-sa"
+  audio: "/assets/audio/mamodisa.m4a"
   description: "The Holy Baptism (Mamodisa) is the foundational sacrament through which individuals become members of Christ's mystical body and are incorporated into the Malankara Orthodox Syrian Church. It is the sacrament of regeneration by water, accomplishing the remission of all sin and effecting spiritual transformation: illumination (enlightenment through faith), adoption (becoming God's child), and regeneration (spiritual rebirth in Christ)."
   audioPhrase: "Holy Baptism, the foundational sacrament of Christian initiation"
 

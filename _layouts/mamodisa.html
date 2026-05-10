@@ -10,9 +10,20 @@ layout: default
       <span aria-hidden="true">←</span> Back to Liturgies
     </a>
   </div>
-  {{ content }}
+  <h1>{{ page.intro.title }}</h1>
+  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">{{ page.intro.malayalam }}</span><span class="liturgy-page-transliteration">{{ page.intro.transliteration | remove: "Pronunciation: " }}</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('{{ page.intro.audio }}')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
+  <p>{{ page.intro.description }}</p>
 </div>
 
 {% include mamodisa-carousel.html %}
 
 </div>
+
+<script>
+var _pageAudio;
+function playPageAudio(src) {
+  if (_pageAudio) { _pageAudio.pause(); _pageAudio.currentTime = 0; }
+  _pageAudio = new Audio(src);
+  _pageAudio.play().catch(function(e) { console.error('Audio error:', e); });
+}
+</script>

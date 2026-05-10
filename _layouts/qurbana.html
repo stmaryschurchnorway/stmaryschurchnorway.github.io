@@ -5,3 +5,12 @@ layout: default
 <div class="container">
   {{ content }}
 </div>
+
+<script>
+var _pageAudio;
+function playPageAudio(src) {
+  if (_pageAudio) { _pageAudio.pause(); _pageAudio.currentTime = 0; }
+  _pageAudio = new Audio(src);
+  _pageAudio.play().catch(function(e) { console.error('Audio error:', e); });
+}
+</script>

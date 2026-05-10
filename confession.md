@@ -11,6 +11,7 @@ extra_css:
 <!-- INTRO -->
 <div class="liturgy-intro-section">
   <h1>Holy Confession (Kumbasaram)</h1>
+  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">കുമ്പസാരം</span><span class="liturgy-page-transliteration">Kum-pa-sa-ram</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('/assets/audio/kumbasaram.m4a')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
   <p>The sacrament of repentance and reconciliation, where we return to God, receive His forgiveness, and are made whole again. The Church Fathers called it a <em>"second baptism,"</em> because it restores the grace we received at our baptism.</p>
 </div>
 
