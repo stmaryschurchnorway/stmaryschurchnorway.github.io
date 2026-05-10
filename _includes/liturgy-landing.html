@@ -1,80 +1,25 @@
 <div class="liturgy-landing" id="liturgyLanding">
 
-  <div class="carousel-back-nav">
-    <a href="{{ '/' | relative_url }}" class="back-to-liturgies-btn">
-      <span aria-hidden="true">←</span> Back to Home
-    </a>
-  </div>
-
   <!-- PAGE HEADING SECTION - MAIN -->
   <div class="liturgy-page-heading">
-    <h1 class="liturgy-page-heading-title">Explore Our Sacred Liturgies</h1>
-  </div>
-
-  <!-- FOUNDATIONAL UNDERSTANDING - 3 CARDS + CONNECTION -->
-  <div class="liturgy-foundation-wrapper">
-
-    <!-- Top Row: 3 Cards -->
-    <div class="liturgy-foundation-trio">
-
-      <!-- Card 1: What is Liturgy? -->
-      <div class="liturgy-foundation-card collapsed" onclick="this.classList.toggle('collapsed')">
-        <div class="liturgy-foundation-card-header">
-          <div class="liturgy-foundation-card-icon">†</div>
-          <h3 class="liturgy-foundation-card-title">What is Liturgy?</h3>
-          <span class="liturgy-foundation-card-toggle" aria-hidden="true">▼</span>
-        </div>
-        <p class="liturgy-foundation-card-text">
-          <strong>Liturgy</strong> means "the work of the people." It is <strong>our prayer and worship life shared together</strong>—how we gather as a community to praise God, remember Christ's works, and meet His presence. The <strong>Holy Qurbana</strong> (Divine Liturgy) is our central liturgy, the heart of all worship where we receive the Body and Blood of Christ.
-        </p>
-      </div>
-
-      <!-- Card 2: What Are Sacraments? -->
-      <div class="liturgy-foundation-card collapsed" onclick="this.classList.toggle('collapsed')">
-        <div class="liturgy-foundation-card-header">
-          <div class="liturgy-foundation-card-icon">◆</div>
-          <h3 class="liturgy-foundation-card-title">What Are Sacraments?</h3>
-          <span class="liturgy-foundation-card-toggle" aria-hidden="true">▼</span>
-        </div>
-        <p class="liturgy-foundation-card-text">
-          Sacraments are <strong>special celebrations where God meets us</strong>. In Syriac, they are <em>rozo</em>—a <strong>hidden mystery God reveals</strong>. They're real moments when God's love and power work in our lives and change our hearts. We have <strong>seven mysteries</strong>: baptism, chrismation, eucharist, confession, anointing, marriage, and priesthood. Each marks an important moment on life's journey.
-        </p>
-      </div>
-
-      <!-- Card 3: Apostolic & Historical Continuity -->
-      <div class="liturgy-foundation-card collapsed" onclick="this.classList.toggle('collapsed')">
-        <div class="liturgy-foundation-card-header">
-          <div class="liturgy-foundation-card-icon">✚</div>
-          <h3 class="liturgy-foundation-card-title">Apostolic & Historical Continuity</h3>
-          <span class="liturgy-foundation-card-toggle" aria-hidden="true">▼</span>
-        </div>
-        <p class="liturgy-foundation-card-text">
-          The <strong>Malankara Orthodox Church's</strong> sacramental practice traces directly to the <strong>Antiochene liturgical tradition</strong>, one of the oldest continuous Christian liturgies. In <strong>1665</strong>, under the guidance of <strong>Mar Gregorios of Jerusalem</strong>, the Church formally adopted Syrian Orthodox liturgical practices, establishing these sacred traditions observed today.
-        </p>
-      </div>
-
+    <div class="carousel-back-nav">
+      <a href="{{ '/' | relative_url }}" class="back-to-liturgies-btn">
+        <span aria-hidden="true">←</span> Back to Home
+      </a>
     </div>
-
-    <!-- Bottom Row: Connection Statement -->
-    <div class="liturgy-foundation-connection-card">
-      <p>Every sacrament is celebrated through <strong>liturgy</strong>—the structured prayers, sacred actions, and community worship that form the foundation of our faith. You cannot separate them. Sacraments ARE liturgical celebrations. They are the moments when our common worship becomes visible and tangible in our lives.</p>
-    </div>
-
+    <h1 class="liturgy-page-heading-title">The Seven Holy Mysteries</h1>
+    <p class="liturgy-page-heading-subtitle">From birth to eternity, the sacraments sanctify every stage of life</p>
   </div>
 
   <!-- FULL SACRAMENTAL JOURNEY - All Cards Numbered 1-7 -->
   <div class="liturgy-journey">
-    <h3 class="liturgy-journey-title">The Sacramental Journey</h3>
-    <p class="liturgy-journey-subtitle">From birth to eternity, the mysteries sanctify every stage of life</p>
-
     <div class="liturgy-journey-cards">
       <!-- Card 1: Holy Baptism -->
       {% assign card = page.liturgies | where: "id", "holy-baptism" | first %}
       {% if card %}
       <div class="liturgy-journey-card-wrapper" data-step="1">
         <div class="liturgy-journey-card-number">1</div>
-        <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-          {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+        <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
           <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
           <div class="liturgy-card-content">
             <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -91,8 +36,7 @@
       {% if card %}
       <div class="liturgy-journey-card-wrapper" data-step="2">
         <div class="liturgy-journey-card-number">2</div>
-        <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-          {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+        <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
           <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
           <div class="liturgy-card-content">
             <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -109,8 +53,7 @@
       {% if card %}
       <div class="liturgy-journey-card-wrapper" data-step="3">
         <div class="liturgy-journey-card-number">3</div>
-        <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-          {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+        <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
           <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
           <div class="liturgy-card-content">
             <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -134,8 +77,7 @@
       {% if card %}
       <div class="liturgy-journey-card-wrapper" data-step="4">
         <div class="liturgy-journey-card-number">4</div>
-        <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-          {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+        <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
           <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
           <div class="liturgy-card-content">
             <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -152,8 +94,7 @@
       {% if card %}
       <div class="liturgy-journey-card-wrapper" data-step="5">
         <div class="liturgy-journey-card-number">5</div>
-        <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-          {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+        <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
           <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
           <div class="liturgy-card-content">
             <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -179,8 +120,7 @@
         {% if card %}
         <div class="liturgy-journey-card-wrapper" data-step="6">
           <div class="liturgy-journey-card-number">6</div>
-          <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-            {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+          <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
             <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
             <div class="liturgy-card-content">
               <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -192,18 +132,12 @@
         </div>
         {% endif %}
 
-        <!-- OR Divider (Vertical) -->
-        <div class="liturgy-journey-or-divider-vertical">
-          <span>OR</span>
-        </div>
-
         <!-- Card 7: Holy Orders -->
         {% assign card = page.liturgies | where: "id", "holy-orders" | first %}
         {% if card %}
         <div class="liturgy-journey-card-wrapper" data-step="7">
           <div class="liturgy-journey-card-number">7</div>
-          <div class="liturgy-card" id="{{ card.id }}" {% if card.url %}onclick="window.location.href='{{ card.url | relative_url }}'"{% else %}onclick="showLiturgy('{{ card.id }}')"{% endif %}>
-            {% if card.status == 'coming-soon' %}<div class="coming-soon-badge">Coming Soon</div>{% endif %}
+          <div class="liturgy-card" id="{{ card.id }}" onclick="window.location.href='{{ card.url | relative_url }}'">
             <div class="liturgy-card-image"><picture><source srcset="{{ card.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | relative_url }}" type="image/webp"><img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy" decoding="async"></picture></div>
             <div class="liturgy-card-content">
               <h3 class="liturgy-card-title">{{ card.title }}</h3>
@@ -218,7 +152,33 @@
     </div>
   </div>
 
-
+  <!-- FOUNDATIONAL UNDERSTANDING - Below the Journey -->
+  <div class="liturgy-foundation-wrapper">
+    <div class="liturgy-foundation-card collapsed" onclick="this.classList.toggle('collapsed')">
+      <div class="liturgy-foundation-card-header">
+        <div class="liturgy-foundation-card-icon">☦</div>
+        <h3 class="liturgy-foundation-card-title">Understanding Liturgy & Sacraments</h3>
+        <svg class="liturgy-foundation-card-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="liturgy-foundation-card-body">
+        <div class="liturgy-foundation-section">
+          <h4 class="liturgy-foundation-section-title">† What is Liturgy?</h4>
+          <p><strong>Liturgy</strong> means "the work of the people." It is <strong>our prayer and worship life shared together</strong>—how we gather as a community to praise God, remember Christ's works, and meet His presence. The <strong>Holy Qurbana</strong> (Divine Liturgy) is our central liturgy, the heart of all worship where we receive the Body and Blood of Christ.</p>
+        </div>
+        <div class="liturgy-foundation-section">
+          <h4 class="liturgy-foundation-section-title">◆ What Are Sacraments?</h4>
+          <p>Sacraments are <strong>special celebrations where God meets us</strong>. In Syriac, they are <em>rozo</em>—a <strong>hidden mystery God reveals</strong>. They're real moments when God's love and power work in our lives and change our hearts. We have <strong>seven mysteries</strong>: baptism, chrismation, eucharist, confession, anointing, marriage, and priesthood. Each marks an important moment on life's journey.</p>
+        </div>
+        <div class="liturgy-foundation-section">
+          <h4 class="liturgy-foundation-section-title">✚ Apostolic & Historical Continuity</h4>
+          <p>The <strong>Malankara Orthodox Church's</strong> sacramental practice traces directly to the <strong>Antiochene liturgical tradition</strong>, one of the oldest continuous Christian liturgies. In <strong>1665</strong>, under the guidance of <strong>Mar Gregorios of Jerusalem</strong>, the Church formally adopted Syrian Orthodox liturgical practices, establishing these sacred traditions observed today.</p>
+        </div>
+        <div class="liturgy-foundation-connection">
+          <p>Every sacrament is celebrated through <strong>liturgy</strong>—the structured prayers, sacred actions, and community worship that form the foundation of our faith. You cannot separate them. Sacraments ARE liturgical celebrations. They are the moments when our common worship becomes visible and tangible in our lives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 

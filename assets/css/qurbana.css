@@ -61,20 +61,6 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.coming-soon-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #d4a017;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  z-index: 10;
-}
-
 .liturgy-card {
   position: relative;
 }
@@ -2211,24 +2197,30 @@ h2.stage-title {
 .liturgy-page-heading {
   text-align: center;
   max-width: 900px;
-  margin: 30px auto 35px;
+  margin: 20px auto 10px;
   padding: 0 20px;
+}
+
+.liturgy-page-heading .carousel-back-nav {
+  text-align: left;
+  margin: 0 0 12px 0;
+  padding: 0;
 }
 
 .liturgy-page-heading-title {
   font-family: 'Lora', serif;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   color: #d4a017;
-  margin: 0 0 25px 0;
+  margin: 0 0 8px 0;
   letter-spacing: 0.5px;
 }
 
 .liturgy-page-heading-subtitle {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
 }
 
 .liturgy-page-heading-tagline {
@@ -2241,20 +2233,20 @@ h2.stage-title {
 
 @media (max-width: 768px) {
   .liturgy-page-heading {
-    margin: 50px auto 40px;
+    margin: 15px auto 8px;
   }
 
   .liturgy-page-heading-title {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 6px;
   }
 
   .liturgy-page-heading-subtitle {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .liturgy-page-heading-tagline {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -2263,33 +2255,34 @@ h2.stage-title {
    ========================================== */
 
 .liturgy-foundation-wrapper {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 50px auto;
   padding: 0 20px;
-}
-
-.liturgy-foundation-trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
 }
 
 .liturgy-foundation-card {
   background: white;
   border: 2px solid #e8e8e8;
   border-radius: 12px;
-  padding: 30px 25px;
-  text-align: center;
+  padding: 30px 30px;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
 }
 
+.liturgy-foundation-card.collapsed {
+  padding: 14px 20px;
+  border-color: rgba(212, 160, 23, 0.25);
+  border-left: 3px solid #d4a017;
+}
+
 .liturgy-foundation-card:hover {
   border-color: #d4a017;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 160, 23, 0.12);
+}
+
+.liturgy-foundation-card.collapsed:hover {
+  background: rgba(212, 160, 23, 0.03);
 }
 
 .liturgy-foundation-card-header {
@@ -2300,8 +2293,15 @@ h2.stage-title {
 }
 
 .liturgy-foundation-card-icon {
-  font-size: 28px;
+  font-size: 24px;
   flex-shrink: 0;
+  color: #d4a017;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .liturgy-foundation-card-title {
@@ -2315,51 +2315,79 @@ h2.stage-title {
 }
 
 .liturgy-foundation-card-toggle {
-  font-size: 12px;
-  color: #999;
-  transition: transform 0.3s ease;
+  color: #d4a017;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
 .liturgy-foundation-card.collapsed .liturgy-foundation-card-toggle {
   transform: rotate(0deg);
+  animation: toggle-pulse 2s ease-in-out infinite;
 }
 
 .liturgy-foundation-card:not(.collapsed) .liturgy-foundation-card-toggle {
   transform: rotate(180deg);
+  animation: none;
 }
 
-.liturgy-foundation-card-text {
+@keyframes toggle-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.liturgy-foundation-card-body {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.liturgy-foundation-card.collapsed .liturgy-foundation-card-body {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.liturgy-foundation-section {
+  margin-bottom: 20px;
+}
+
+.liturgy-foundation-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.liturgy-foundation-section-title {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d4a017;
+  margin: 0 0 8px 0;
+}
+
+.liturgy-foundation-section p {
   font-size: 14px;
   line-height: 1.7;
   color: #666;
-  margin: 15px 0 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
-  max-height: 500px;
-  opacity: 1;
-}
-
-.liturgy-foundation-card.collapsed .liturgy-foundation-card-text {
-  max-height: 0;
-  opacity: 0;
   margin: 0;
+  text-align: left;
 }
 
-.liturgy-foundation-connection-card {
+.liturgy-foundation-connection {
   background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(139, 30, 45, 0.05));
   border-left: 4px solid #d4a017;
   border-radius: 6px;
-  padding: 25px 30px;
-  text-align: center;
+  padding: 18px 22px;
+  margin-top: 20px;
 }
 
-.liturgy-foundation-connection-card p {
-  font-size: 15px;
-  line-height: 1.8;
+.liturgy-foundation-connection p {
+  font-size: 14px;
+  line-height: 1.7;
   color: #555;
   margin: 0;
   font-weight: 500;
+  text-align: left;
 }
 
 .liturgy-connection-statement {
@@ -2380,45 +2408,35 @@ h2.stage-title {
   font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-  .liturgy-foundation-trio {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .liturgy-foundation-wrapper {
     padding: 0 15px;
-  }
-
-  .liturgy-foundation-trio {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-bottom: 25px;
   }
 
   .liturgy-foundation-card {
     padding: 25px 20px;
   }
 
+  .liturgy-foundation-card.collapsed {
+    padding: 12px 16px;
+  }
+
   .liturgy-foundation-card-title {
     font-size: 16px;
   }
 
-  .liturgy-foundation-card-text {
-    font-size: 13px;
-  }
-
   .liturgy-foundation-card-icon {
-    font-size: 24px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
   }
 
-  .liturgy-foundation-connection-card {
-    padding: 20px 20px;
+  .liturgy-foundation-section-title {
+    font-size: 15px;
   }
 
-  .liturgy-foundation-connection-card p {
-    font-size: 14px;
+  .liturgy-foundation-section p {
+    font-size: 13px;
   }
 
   .liturgy-connection-statement {
@@ -2577,8 +2595,8 @@ h2.stage-title {
 
 .liturgy-journey {
   max-width: 1200px;
-  margin: 50px auto;
-  padding: 40px 20px;
+  margin: 20px auto 50px;
+  padding: 30px 20px;
   background: #f9f9f9;
   border-radius: 12px;
 }
