@@ -53,6 +53,7 @@ phases:
         malayalam: "ഞാൻ ശാത്താനെ ത്യജിക്കുന്നു"
         transliteration: "Njan Shathane tyajikkunnu"
         description: "A formal, public renunciation of evil and all its manifestations, turning away from darkness"
+        image: "/assets/img/stages/exorcism.png"
         significance: "A formal, public renunciation of evil and all its manifestations, turning away from darkness"
         priest_action_detail: "The Priest turns to face the West (Padhinjaru — darkness) toward the child and makes nine signs of the Cross in the air, commanding the evil spirit to depart. He speaks prayers of exorcism, drawing each cross with power and invoking the Names of the Holy Trinity, ordering: 'Depart, unclean spirit, and be uprooted and dispersed!' His voice is firm and authoritative, claiming the child for Christ and driving back all demonic resistance. The Priest's gestures are vigorous and deliberate — the sign of the Cross becoming a weapon of spiritual warfare"
         ritual_action: "The Godparent holds the child's left hand, turning toward the Padhinjaru (West, representing darkness). The Priest commands the 'unclean spirit' to depart. The Godparent then repeats the vow three times, spitting symbolically after each recitation. The whole parish watches and hears this public renunciation, witnessing the candidate's conversion from the domain of darkness"
