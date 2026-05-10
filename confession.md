@@ -11,13 +11,13 @@ extra_css:
 <!-- INTRO -->
 <div class="liturgy-intro-section">
   <h1>Holy Confession (Kumbasaram)</h1>
-  <p>The sacrament of repentance and reconciliation — where we return to God, receive His forgiveness, and are made whole again. The Church Fathers called it a <em>"second baptism,"</em> because it restores the grace we received at our baptism.</p>
+  <p>The sacrament of repentance and reconciliation, where we return to God, receive His forgiveness, and are made whole again. The Church Fathers called it a <em>"second baptism,"</em> because it restores the grace we received at our baptism.</p>
 </div>
 
 <!-- SECOND BAPTISM -->
 <div class="confession-baptism-panel">
   <h2 class="confession-baptism-title">The "Second Baptism"</h2>
-  <p>The Church Fathers call confession a <strong>"second baptism"</strong> — not because it repeats baptism (which can only happen once), but because it <strong>restores what baptism originally gave us</strong>. At baptism, we were washed clean and made children of God. Confession is how that garment is washed again.</p>
+  <p>The Church Fathers call confession a <strong>"second baptism"</strong>, not because it repeats baptism (which can only happen once), but because it <strong>restores what baptism originally gave us</strong>. At baptism, we were washed clean and made children of God. Confession is how that garment is washed again.</p>
 
   <div class="confession-baptism-connection">
     <a href="{{ '/mamodisa/' | relative_url }}" class="confession-baptism-item">
@@ -60,7 +60,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">Retrospection</h3>
         <p class="confession-step-malayalam">ആത്മപരിശോധന</p>
-        <p>Look inward. Examine your conscience — your actions, words, and thoughts. Where did you fall short? Reflect on the Penitential Psalms (Psalms 6, 32, 38, 51, 102, 130, 143) and the Nicene Creed to prepare your heart.</p>
+        <p>Look inward. Examine your conscience: your actions, words, and thoughts. Where did you fall short? Reflect on the Penitential Psalms (Psalms 6, 32, 38, 51, 102, 130, 143) and the Nicene Creed to prepare your heart.</p>
       </div>
     </div>
 
@@ -69,7 +69,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">Repentance</h3>
         <p class="confession-step-malayalam">പശ്ചാത്താപം</p>
-        <p>Feel genuine sorrow — not just fear of punishment, but awareness that your sin has harmed your relationship with God and others.</p>
+        <p>Feel genuine sorrow, not just fear of punishment, but awareness that your sin has harmed your relationship with God and others.</p>
       </div>
     </div>
 
@@ -78,7 +78,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">Resolve</h3>
         <p class="confession-step-malayalam">പ്രതിജ്ഞ</p>
-        <p>Vow not to commit those sins again — an honest, firm intention to change your life.</p>
+        <p>Vow not to commit those sins again. An honest, firm intention to change your life.</p>
       </div>
     </div>
 
@@ -87,7 +87,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">Verbal Confession</h3>
         <p class="confession-step-malayalam">കുമ്പസാരം</p>
-        <p>Kneel before the priest and recite the <strong>Mawdyonutho</strong> (മൗദ്യാനൂത്തോ) — the confession prayer affirming the faith of the three Ecumenical Councils and acknowledging sins in word, deed, and thought. Then confess your sins one by one, clearly and completely. The priest is a witness and guide, not a judge.</p>
+        <p>Kneel before the priest and recite the <strong>Mawdyonutho</strong> (മൗദ്യാനൂത്തോ), the confession prayer affirming the faith of the three Ecumenical Councils and acknowledging sins in word, deed, and thought. Then confess your sins one by one, clearly and completely. The priest is a witness and guide, not a judge.</p>
       </div>
     </div>
 
@@ -96,7 +96,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">Absolution</h3>
         <p class="confession-step-malayalam">പാപമോചനം</p>
-        <p>The priest places his right hand on your head and prays the prayer of absolution, drawing the sign of the cross on your forehead three times — for the Father, Son, and Holy Spirit. You respond "Amen" each time.</p>
+        <p>The priest places his right hand on your head and prays the prayer of absolution, drawing the sign of the cross on your forehead three times, for the Father, Son, and Holy Spirit. You respond "Amen" each time.</p>
       </div>
     </div>
 
@@ -143,7 +143,7 @@ extra_css:
         <li>Complete any penance the priest has given</li>
         <li>Receive Holy Communion at the earliest opportunity</li>
         <li>Continue with prayer, fasting, and acts of charity</li>
-        <li>If you fall again, do not despair — come back</li>
+        <li>If you fall again, do not despair; come back</li>
       </ul>
     </div>
 
@@ -158,7 +158,7 @@ extra_css:
 <div class="confession-section" id="seal">
   <h2 class="confession-section-title">The Seal of Confession</h2>
   <div class="confession-seal-panel">
-    <p>Everything you say in confession is kept in <strong>absolute secrecy</strong>. The priest must never reveal what anyone has confessed — not to anyone, for any reason, ever. This protection exists so the faithful can confess freely, without fear.</p>
+    <p>Everything you say in confession is kept in <strong>absolute secrecy</strong>. The priest must never reveal what anyone has confessed, not to anyone, for any reason, ever. This protection exists so the faithful can confess freely, without fear.</p>
   </div>
 </div>
 

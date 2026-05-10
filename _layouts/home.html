@@ -5,8 +5,9 @@ layout: default
 <!-- Hero Banner -->
 <section class="hero-banner">
   <img src="{{ '/assets/img/community-gathering.jpg' | relative_url }}" alt="St. Mary's Church Community" class="hero-img">
+  <canvas class="hero-particles" id="heroParticles"></canvas>
   <div class="hero-overlay">
-    <span class="hero-tagline">{% if page.url contains '/no/' %}Forankret i tradisjon. Voksende i tro.{% else %}Rooted in tradition. Growing in faith.{% endif %}</span>
+    <span class="hero-tagline">{% if page.url contains '/no/' %}Forankret i tradisjon. <span class="hero-tagline-glow">Voksende i tro.</span>{% else %}Rooted in tradition. <span class="hero-tagline-glow">Growing in faith.</span>{% endif %}</span>
     <h1 class="hero-title">{% if page.url contains '/no/' %}En menighet for de <em>troende</em> malayaleene i Norge.{% else %}A parish for the <em>faithful</em> Malayalees of Norway.{% endif %}</h1>
   </div>
 </section>
@@ -58,9 +59,12 @@ layout: default
       <p>{% if page.url contains '/no/' %}Vår menighet eksisterer for å bevare den apostoliske troen i den syrisk-ortodokse tradisjonen for malayaliske familier i Norge og dele dens skjønnhet med alle som tiltrekkes av den.{% else %}Our parish exists to keep the apostolic faith of the Syriac Orthodox tradition alive for Malayalee families in Norway and to share its beauty with anyone drawn to it.{% endif %}</p>
       <p>{% if page.url contains '/no/' %}<a href="/qurbana/" class="welcome-link">Den hellige nattverden (Qurbana)</a> er hjertet i vår tilbedelse, men vi samles også til kveldsbønn, søndagsskole, utendørsaktiviteter, veldedighet og julesang. Vi feirer også de viktige helligdagene og festene som preger vår kirkekalender.{% else %}<a href="/qurbana/" class="welcome-link">The Holy Eucharist (Qurbana)</a> is at the heart of our worship, but we also gather for evening prayer, Sunday school, outdoor activities, charity, and Christmas carols. We also celebrate the important holy days and festivals that mark our church calendar.{% endif %}</p>
       <div class="welcome-links">
-        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-primary">{% if page.url contains '/no/' %}Lytt til hele budskapet{% else %}Listen to the full message{% endif %}</a>
-        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary">{% if page.url contains '/no/' %}Om vår menighet →{% else %}About our parish →{% endif %}</a>
-        <a href="{{ '/liturgy/' | relative_url }}" class="welcome-link-secondary">{% if page.url contains '/no/' %}Vår liturgi →{% else %}Our Liturgy →{% endif %}</a>
+        <button type="button" class="welcome-play-btn" onclick="openVicarVideo()">
+          <svg class="welcome-play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          {% if page.url contains '/no/' %}Se hele budskapet{% else %}Watch the full message{% endif %}
+        </button>
+        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>{% if page.url contains '/no/' %}Hvem vi er{% else %}Who we are{% endif %}</a>
+        <a href="{{ '/liturgy/' | relative_url }}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M12 2v1"/></svg>{% if page.url contains '/no/' %}Slik tilber vi{% else %}How we worship{% endif %}</a>
       </div>
     </div>
   </div>
@@ -71,7 +75,7 @@ layout: default
   <div class="liturgy-showcase-inner">
     <span class="liturgy-showcase-label">{% if page.url contains '/no/' %}De hellige mysteriene{% else %}The Mysteries{% endif %}</span>
     <h2 class="liturgy-showcase-title">{% if page.url contains '/no/' %}Utforsk vår liturgi{% else %}Walk through our liturgy{% endif %}</h2>
-    <p class="liturgy-showcase-desc">{% if page.url contains '/no/' %}Hver gudstjeneste er en reise inn i den apostoliske troen. Følg med i våre kommenterte guider.{% else %}Each service is a journey into the apostolic faith. Follow along with our annotated guides.{% endif %}</p>
+    <p class="liturgy-showcase-desc">{% if page.url contains '/no/' %}Hver gudstjeneste er en reise inn i den apostoliske troen, fra alter til hjerte. Opplev bønnene, hymnene og de hellige mysterienes skjønnhet gjennom våre visuelle, steg-for-steg guider.{% else %}Each service is a journey into the apostolic faith, from altar to heart. Experience the prayers, hymns, and beauty of the holy mysteries through our visual, step-by-step guides.{% endif %}</p>
     <div class="liturgy-showcase-grid">
       <a href="{{ '/qurbana/' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
@@ -79,26 +83,26 @@ layout: default
             <source srcset="{{ '/assets/img/qurbana-liturgy.webp' | relative_url }}" type="image/webp">
             <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
           </picture>
+          <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
         <h3>{% if page.url contains '/no/' %}Hellig Qurbana{% else %}Holy Qurbana{% endif %}</h3>
         <p>{% if page.url contains '/no/' %}Den hellige nattverden i den syriske tradisjonen{% else %}The Holy Eucharist of the Syriac tradition{% endif %}</p>
-        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
       </a>
       <a href="{{ '/mamodisa/' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
           <img src="{{ '/assets/img/mamodisa-liturgy.png' | relative_url }}" alt="Mamodisa" loading="lazy" decoding="async">
+          <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
         <h3>{% if page.url contains '/no/' %}Mamodisa{% else %}Mamodisa{% endif %}</h3>
         <p>{% if page.url contains '/no/' %}Mysteriet om den hellige dåpen{% else %}The mystery of Holy Baptism{% endif %}</p>
-        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
       </a>
       <a href="{{ '/qurbana/#holy-communion' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
           <img src="{{ '/assets/img/holy-communion.jpg' | relative_url }}" alt="Holy Communion" loading="lazy" decoding="async">
+          <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
         <h3>{% if page.url contains '/no/' %}Den hellige nattverd{% else %}Holy Communion{% endif %}</h3>
         <p>{% if page.url contains '/no/' %}Mottak av Kristi legeme og blod{% else %}Receiving the Body and Blood of Christ{% endif %}</p>
-        <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
       </a>
     </div>
   </div>
@@ -257,5 +261,115 @@ layout: default
     </div>
   </div>
 </section>
+
+<!-- Vicar Video Modal -->
+<div class="vicar-modal-overlay" id="vicarModal" onclick="closeVicarVideo(event)">
+  <div class="vicar-modal">
+    <button type="button" class="vicar-modal-close" onclick="closeVicarVideo(event)" aria-label="Close">&times;</button>
+    <div class="vicar-modal-header">
+      <h3>{% if page.url contains '/no/' %}Et ord fra vår vikar{% else %}A word from our vicar{% endif %}</h3>
+      <div class="vicar-lang-toggle">
+        <button type="button" class="vicar-lang-btn active" data-lang="en" onclick="switchVicarLang('en')">English</button>
+        <button type="button" class="vicar-lang-btn" data-lang="ml" onclick="switchVicarLang('ml')">മലയാളം</button>
+      </div>
+    </div>
+    <div class="vicar-modal-video">
+      <iframe id="vicarVideoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var videoIds = { en: 'ENGLISH_VIDEO_ID', ml: 'MALAYALAM_VIDEO_ID' };
+  var currentLang = 'en';
+
+  window.openVicarVideo = function() {
+    var modal = document.getElementById('vicarModal');
+    var frame = document.getElementById('vicarVideoFrame');
+    frame.src = 'https://www.youtube.com/embed/' + videoIds[currentLang] + '?rel=0&modestbranding=1&autoplay=1';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeVicarVideo = function(e) {
+    if (e.target !== e.currentTarget && !e.target.classList.contains('vicar-modal-close')) return;
+    var modal = document.getElementById('vicarModal');
+    var frame = document.getElementById('vicarVideoFrame');
+    frame.src = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.switchVicarLang = function(lang) {
+    currentLang = lang;
+    var btns = document.querySelectorAll('.vicar-lang-btn');
+    btns.forEach(function(b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    var frame = document.getElementById('vicarVideoFrame');
+    frame.src = 'https://www.youtube.com/embed/' + videoIds[lang] + '?rel=0&modestbranding=1&autoplay=1';
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var modal = document.getElementById('vicarModal');
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.getElementById('vicarVideoFrame').src = '';
+        document.body.style.overflow = '';
+      }
+    }
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var count = 25;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function spawn() {
+    return {
+      x: Math.random() * canvas.width,
+      y: canvas.height + 4,
+      r: Math.random() * 1.8 + 0.6,
+      speed: Math.random() * 0.4 + 0.15,
+      drift: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.4 + 0.1
+    };
+  }
+
+  for (var i = 0; i < count; i++) {
+    var p = spawn();
+    p.y = Math.random() * canvas.height;
+    particles.push(p);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      p.y -= p.speed;
+      p.x += p.drift;
+      if (p.y < -10) { particles[i] = spawn(); continue; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(245, 214, 120, ' + p.opacity + ')';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 
 {{ content }}

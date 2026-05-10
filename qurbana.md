@@ -49,7 +49,7 @@ phases:
             x: 62
             y: 58
             radius: 10
-            label_x: 50
+            label_x: 65
             label_y: 48
         sanctuary_info:
           title: "The Sanctuary (മദ്ബഹാ — Madbaha)"

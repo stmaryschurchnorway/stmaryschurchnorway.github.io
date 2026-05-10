@@ -17,11 +17,11 @@ extra_css:
 <!-- PRIESTHOOD AS SACRAMENT -->
 <div class="confession-baptism-panel">
   <h2 class="confession-baptism-title">A Sacrament of Apostolic Succession</h2>
-  <p>Holy Orders is a <strong>sacrament</strong> — a visible and tangible sign of God's invisible grace. Just as baptism initiates a believer into Christ's Body, and marriage unites a couple in God's sight, ordination sets apart a man to serve Christ and His Church in a special way. Through this sacrament, <strong>the gifts and functions once given to the Apostles are transmitted to ordained ministers</strong> through an unbroken chain of laying on of hands stretching back to Christ Himself.</p>
+  <p>Holy Orders is a <strong>sacrament</strong>, a visible and tangible sign of God's invisible grace. Just as baptism initiates a believer into Christ's Body, and marriage unites a couple in God's sight, ordination sets apart a man to serve Christ and His Church in a special way. Through this sacrament, <strong>the gifts and functions once given to the Apostles are transmitted to ordained ministers</strong> through an unbroken chain of laying on of hands stretching back to Christ Himself.</p>
 
-  <p>This is <strong>apostolic succession</strong> — the very lifeblood of the Orthodox Church's authority and authenticity. When a bishop lays his hands on a candidate for ordination, he does not do so on his own authority, but as the successor of the Apostles, passing on what the Apostles received from Christ. Our Church traces this unbroken succession back to <strong>St. Thomas the Apostle</strong>, who came to India in 52 A.D., converted many, and ordained the first presbyters and bishops from among the faithful.</p>
+  <p>This is <strong>apostolic succession</strong>, the very lifeblood of the Orthodox Church's authority and authenticity. When a bishop lays his hands on a candidate for ordination, he does not do so on his own authority, but as the successor of the Apostles, passing on what the Apostles received from Christ. Our Church traces this unbroken succession back to <strong>St. Thomas the Apostle</strong>, who came to India in 52 A.D., converted many, and ordained the first presbyters and bishops from among the faithful.</p>
 
-  <p>Because priesthood is a sacrament, <strong>ordination is irreversible</strong>. The character imprinted upon the priest through ordination is indelible — it marks him forever as one set apart for the service of God's people. This character does not depend on the priest's personal worthiness; rather, those who receive the sacraments from a priest's hands with good intention and true faith will receive spiritual strength, regardless of the priest's human failings.</p>
+  <p>Because priesthood is a sacrament, <strong>ordination is irreversible</strong>. The character imprinted upon the priest through ordination is indelible. It marks him forever as one set apart for the service of God's people. This character does not depend on the priest's personal worthiness; rather, those who receive the sacraments from a priest's hands with good intention and true faith will receive spiritual strength, regardless of the priest's human failings.</p>
 </div>
 
 <!-- SCRIPTURE -->
@@ -61,7 +61,7 @@ extra_css:
       <div class="confession-step-content">
         <h3 class="confession-step-title">The Bishop (Diocesan Metropolitan)</h3>
         <p class="confession-step-malayalam">മെത്രാപ്പോലിത്ത</p>
-        <p>The bishop is the chief shepherd and administrator of a diocesan church. A bishop has all the powers of a priest, plus the exclusive authority to ordain other bishops, priests, and deacons. The bishop is the successor of the Apostles and presides over the sacraments, pastors his flock, and ensures the faith is correctly taught and preserved. <strong>Only unmarried men may become bishops</strong> — a practice established in the sixth century to allow the bishop to devote himself entirely to the care of his diocese and the spiritual welfare of all his people. Bishops are selected from the celibate clergy (monks or unmarried priests who have vowed celibacy).</p>
+        <p>The bishop is the chief shepherd and administrator of a diocesan church. A bishop has all the powers of a priest, plus the exclusive authority to ordain other bishops, priests, and deacons. The bishop is the successor of the Apostles and presides over the sacraments, pastors his flock, and ensures the faith is correctly taught and preserved. <strong>Only unmarried men may become bishops</strong>, a practice established in the sixth century to allow the bishop to devote himself entirely to the care of his diocese and the spiritual welfare of all his people. Bishops are selected from the celibate clergy (monks or unmarried priests who have vowed celibacy).</p>
       </div>
     </div>
 
@@ -73,11 +73,11 @@ extra_css:
   <h2 class="confession-section-title">Apostolic Succession: An Unbroken Chain</h2>
   
   <div class="confession-seal-panel">
-    <p><strong>The history of our Church begins with St. Thomas the Apostle.</strong> In 52 A.D., St. Thomas came to India and established the Church in Kerala. He converted many believers, including members of the Four Ancient Families (Pakalomattam, Sankarapuri, Kalli, and Kaliankal), and ordained presbyters and bishops from among these faithful. The Church he established has never ceased to exist — for nearly two thousand years, an unbroken chain of apostolic succession has been maintained.</p>
+    <p><strong>The history of our Church begins with St. Thomas the Apostle.</strong> In 52 A.D., St. Thomas came to India and established the Church in Kerala. He converted many believers, including members of the Four Ancient Families (Pakalomattam, Sankarapuri, Kalli, and Kaliankal), and ordained presbyters and bishops from among these faithful. The Church he established has never ceased to exist. For nearly two thousand years, an unbroken chain of apostolic succession has been maintained.</p>
     
     <p><strong>What is apostolic succession?</strong> It is the principle that the authority to ordain, teach, and govern the Church passes directly from the Apostles through their successors (bishops) down to the present day. This is not a matter of ideas or traditions passed down through writings alone, but of <strong>living authority transmitted through the laying on of hands</strong>. When our Metropolitan ordains a priest, he does so not on his own authority, but as a successor of St. Thomas, who received authority from Christ Himself.</p>
     
-    <p><strong>Why does this matter?</strong> Because it guarantees that the Church today is the same Church that the Apostles founded and that Christ established. Our bishop is not a self-appointed preacher or a CEO hired by a board — he is the successor of the Apostles, ordained through an unbroken chain stretching back two thousand years to Christ. When we receive a sacrament from a priest's hands, we receive it from hands that are part of this apostolic chain. This gives us confidence that what we receive is authentic, that it comes with the authority of Christ Himself.</p>
+    <p><strong>Why does this matter?</strong> Because it guarantees that the Church today is the same Church that the Apostles founded and that Christ established. Our bishop is not a self-appointed preacher or a CEO hired by a board. He is the successor of the Apostles, ordained through an unbroken chain stretching back two thousand years to Christ. When we receive a sacrament from a priest's hands, we receive it from hands that are part of this apostolic chain. This gives us confidence that what we receive is authentic, that it comes with the authority of Christ Himself.</p>
   </div>
 </div>
 
@@ -89,13 +89,13 @@ extra_css:
     <div class="confession-prep-card">
       <h3>The Laying On of Hands</h3>
       <p>The central action of ordination is <strong>the laying on of hands</strong> accompanied by prayers of the bishop. The bishop places his hands (or stretches them) over the head of the candidate, invoking the Holy Spirit to impart the grace necessary for the ministry. This gesture echoes the practice of the Apostles themselves, who ordained their successors through the laying on of hands.</p>
-      <p>The bishop does not ordain based on personal preference or political considerations — he must be convinced that the candidate has been called by God, has studied theology, has demonstrated moral character, and is ready to serve sacrificially.</p>
+      <p>The bishop does not ordain based on personal preference or political considerations. He must be convinced that the candidate has been called by God, has studied theology, has demonstrated moral character, and is ready to serve sacrificially.</p>
     </div>
 
     <div class="confession-prep-card">
       <h3>The Prayers of Ordination</h3>
       <p>As the bishop lays his hands on the candidate, the assembled clergy and people pray, asking God to bestow the gifts of the Holy Spirit upon the one being ordained. These prayers invoke the grace needed for priesthood: wisdom, discernment, compassion, faithfulness, and courage.</p>
-      <p>The prayers acknowledge that the candidate is human, weak, and prone to sin — but that God's grace is sufficient to sustain him in his ministry. The priest being ordained prays: <em>"I am unworthy, but by Your grace, I am made worthy to serve."</em></p>
+      <p>The prayers acknowledge that the candidate is human, weak, and prone to sin, but that God's grace is sufficient to sustain him in his ministry. The priest being ordained prays: <em>"I am unworthy, but by Your grace, I am made worthy to serve."</em></p>
     </div>
 
     <div class="confession-prep-card">
@@ -105,7 +105,7 @@ extra_css:
 
     <div class="confession-prep-card">
       <h3>Reception of Authority</h3>
-      <p>Through ordination, the priest receives sacramental authority — the power to celebrate the Eucharist, hear confessions, and administer sacraments. This authority does not come from education, charisma, or popular vote, but from <strong>apostolic succession</strong>. Even a priest who is personally unworthy can validly administer the sacraments — God's grace operates independently of human unworthiness.</p>
+      <p>Through ordination, the priest receives sacramental authority: the power to celebrate the Eucharist, hear confessions, and administer sacraments. This authority does not come from education, charisma, or popular vote, but from <strong>apostolic succession</strong>. Even a priest who is personally unworthy can validly administer the sacraments. God's grace operates independently of human unworthiness.</p>
     </div>
   </div>
 </div>
@@ -150,7 +150,7 @@ extra_css:
 
     <div class="confession-prep-card confession-prep-highlight">
       <h3>Marriage and Celibacy</h3>
-      <p><strong>Priests may marry, but only before ordination.</strong> A man may be ordained as a priest if he is married or unmarried. However, <strong>once ordained, a priest cannot marry.</strong> Only men who are unmarried (or widowed) can become bishops — this has been the practice since the sixth century. A priest who feels called to higher ministry may take vows of celibacy and eventually be consecrated as a bishop.</p>
+      <p><strong>Priests may marry, but only before ordination.</strong> A man may be ordained as a priest if he is married or unmarried. However, <strong>once ordained, a priest cannot marry.</strong> Only men who are unmarried (or widowed) can become bishops; this has been the practice since the sixth century. A priest who feels called to higher ministry may take vows of celibacy and eventually be consecrated as a bishop.</p>
     </div>
   </div>
 </div>
@@ -160,19 +160,19 @@ extra_css:
   <h2 class="confession-section-title">The Priest's Role and Responsibilities</h2>
   
   <div class="confession-seal-panel">
-    <p><strong>The priest is a guide, making earthly beings heavenly beings.</strong> This is the Orthodox understanding of priesthood. The priest does not come to lord it over his flock or to impose rules arbitrarily. Rather, he comes as a servant, following the example of Christ who washed His disciples' feet and called Himself "the Son of Man" — emphasizing His solidarity with humanity.</p>
+    <p><strong>The priest is a guide, making earthly beings heavenly beings.</strong> This is the Orthodox understanding of priesthood. The priest does not come to lord it over his flock or to impose rules arbitrarily. Rather, he comes as a servant, following the example of Christ who washed His disciples' feet and called Himself "the Son of Man", emphasizing His solidarity with humanity.</p>
     
     <p><strong>The priest celebrates the Eucharist.</strong> This is the central act of his priesthood. At the altar, standing in the person of Christ, the priest leads the Church in the great mystery of redemption. He lifts up bread and wine, and through the invocation of the Holy Spirit, they become the Body and Blood of Christ. The faithful commune with Christ through the priest's ministry.</p>
     
-    <p><strong>The priest hears confessions and pronounces absolution.</strong> When someone confesses their sins to a priest, they are confessing to Christ. The priest does not judge — he forgives in Christ's name, assuring the penitent that their sins are forgiven. This sacrament of healing is essential to Orthodox life.</p>
+    <p><strong>The priest hears confessions and pronounces absolution.</strong> When someone confesses their sins to a priest, they are confessing to Christ. The priest does not judge; he forgives in Christ's name, assuring the penitent that their sins are forgiven. This sacrament of healing is essential to Orthodox life.</p>
     
-    <p><strong>The priest administers the sacraments.</strong> From baptism to anointing of the sick, the priest is the minister of the Church's sacraments. He brings God's grace to people at every major moment in their lives — birth, maturity, marriage, sickness, death.</p>
+    <p><strong>The priest administers the sacraments.</strong> From baptism to anointing of the sick, the priest is the minister of the Church's sacraments. He brings God's grace to people at every major moment in their lives: birth, maturity, marriage, sickness, death.</p>
     
     <p><strong>The priest is a pastor and spiritual father.</strong> The priest knows his congregation, cares for them, prays for them by name, visits the sick, counsels the troubled, and guides the young. He is accountable to God for the spiritual welfare of every soul entrusted to his care.</p>
     
     <p><strong>The priest teaches and preaches.</strong> Through sermons and catechesis, the priest explains the faith, helps people understand Scripture and Tradition, and calls them to deeper conversion and holiness.</p>
     
-    <p><strong>And yet, the priest remains a sinner.</strong> This is crucial. The priest is not a man who has "arrived" spiritually or who is morally perfect. He too struggles with temptation, with doubt, with weakness. He too comes to confession. He too relies on God's grace. The power of the sacraments does not depend on the priest's personal virtue — it depends on Christ. A sacrament validly administered conveys grace even if the priest administering it is morally unworthy. This is a cornerstone of Orthodox theology: the Church's authority and holiness do not rest on human perfection, but on Christ.</p>
+    <p><strong>And yet, the priest remains a sinner.</strong> This is crucial. The priest is not a man who has "arrived" spiritually or who is morally perfect. He too struggles with temptation, with doubt, with weakness. He too comes to confession. He too relies on God's grace. The power of the sacraments does not depend on the priest's personal virtue; it depends on Christ. A sacrament validly administered conveys grace even if the priest administering it is morally unworthy. This is a cornerstone of Orthodox theology: the Church's authority and holiness do not rest on human perfection, but on Christ.</p>
   </div>
 </div>
 
@@ -181,13 +181,13 @@ extra_css:
   <h2 class="confession-section-title">The Sacrifices and Joys of Priesthood</h2>
   
   <div class="confession-seal-panel">
-    <p><strong>Priesthood is a calling, not a career.</strong> It brings deep joys — the joy of serving Christ, of shepherding souls, of celebrating the mysteries, of witnessing God's grace at work in people's lives. But it also brings sacrifices. The priest's time is not his own; he is available to his flock at all hours. The burdens of people's sins and sufferings weigh upon him. He carries in prayer the spiritual struggles of his congregation.</p>
+    <p><strong>Priesthood is a calling, not a career.</strong> It brings deep joys: the joy of serving Christ, of shepherding souls, of celebrating the mysteries, of witnessing God's grace at work in people's lives. But it also brings sacrifices. The priest's time is not his own; he is available to his flock at all hours. The burdens of people's sins and sufferings weigh upon him. He carries in prayer the spiritual struggles of his congregation.</p>
     
     <p><strong>The Orthodox Church does not idealize celibacy.</strong> Whether a priest is married or celibate, he is called to the same holiness and sacrifice. A married priest must balance his obligations to his family with his obligations to his parish. A celibate priest or bishop gives up the blessing of family life in order to devote himself entirely to the Church. Both paths are sacred; both require grace.</p>
     
     <p><strong>The priest must grow in holiness constantly.</strong> He cannot settle into comfort. He must be the first to repent, the first to confess, the first to pray. He must study Scripture and the Fathers not just to teach others, but to deepen his own faith. He must confront his own sins and weaknesses so that he can truly accompany others in their spiritual struggles.</p>
     
-    <p><strong>And the priest is not alone.</strong> He stands within the apostolic succession — connected to all the priests who have gone before him, strengthened by the prayers of his congregation, upheld by the grace of the sacraments he celebrates. When he is weak, God is strong. When he despairs, the Church prays for him. This is the mystery of Holy Orders: that broken, sinful men are made instruments of God's infinite grace.</p>
+    <p><strong>And the priest is not alone.</strong> He stands within the apostolic succession, connected to all the priests who have gone before him, strengthened by the prayers of his congregation, upheld by the grace of the sacraments he celebrates. When he is weak, God is strong. When he despairs, the Church prays for him. This is the mystery of Holy Orders: that broken, sinful men are made instruments of God's infinite grace.</p>
   </div>
 </div>
 

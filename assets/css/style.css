@@ -101,15 +101,28 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.02em;
 }
 .top-event .event-label {
-  opacity: 0.85;
-  font-weight: 400;
+  opacity: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .top-subscribe {
+  display: inline-block;
+  background: var(--color-gold);
   color: var(--color-white);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-size: 0.72rem;
   font-weight: 600;
+  padding: 4px 14px;
+  border: 1px solid var(--color-white);
+  border-radius: 20px;
+  letter-spacing: 0.02em;
   white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.top-subscribe:hover {
+  background: var(--color-gold-dark);
+  color: var(--color-white);
 }
 
 /* === Header === */
@@ -316,9 +329,18 @@ img { max-width: 100%; height: auto; display: block; }
   object-fit: cover;
   object-position: center 80%;
 }
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(to top, rgba(20, 10, 5, 0.7) 0%, rgba(20, 10, 5, 0.35) 40%, transparent 65%);
   display: flex;
   flex-direction: column;
@@ -350,9 +372,16 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-block;
   animation: starPulse 2.5s ease-in-out 1.2s infinite;
 }
+.hero-tagline-glow {
+  animation: textGlow 3s ease-in-out 1.5s infinite;
+}
 @keyframes starPulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.3); }
+}
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
+  50% { text-shadow: 0 0 12px rgba(245, 214, 120, 0.7), 0 0 24px rgba(245, 214, 120, 0.3); }
 }
 @keyframes taglineFadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -519,24 +548,160 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   margin-top: 24px;
 }
-.welcome-link-primary {
+.welcome-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2d2d2d;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
-}
-.welcome-link-primary:hover {
   color: var(--color-gold);
+  transition: color 0.2s;
+}
+.welcome-play-btn:hover {
+  color: var(--color-gold-dark);
+}
+.welcome-play-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  padding: 4px 3px 4px 5px;
+  box-sizing: border-box;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.welcome-play-btn:hover .welcome-play-icon {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+}
+
+/* --- Vicar Video Modal --- */
+.vicar-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+.vicar-modal-overlay.active {
+  display: flex;
+}
+.vicar-modal {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 640px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.vicar-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.vicar-modal-close:hover {
+  color: #fff;
+}
+.vicar-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #333;
+}
+.vicar-modal-header h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  color: #eee;
+  margin: 0;
+  font-weight: 600;
+}
+.vicar-lang-toggle {
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #444;
+}
+.vicar-lang-btn {
+  background: transparent;
+  color: #999;
+  border: none;
+  padding: 5px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vicar-lang-btn.active {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+.vicar-lang-btn:not(.active):hover {
+  color: #ddd;
+}
+.vicar-modal-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.vicar-modal-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 480px) {
+  .vicar-modal {
+    width: 95%;
+    border-radius: 8px;
+  }
+  .vicar-modal-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 14px;
+  }
+  .welcome-play-btn {
+    font-size: 0.8rem;
+    padding: 9px 18px;
+  }
 }
 .welcome-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.9rem;
-  color: #666;
+  font-weight: 600;
+  color: var(--color-gold);
   text-decoration: none;
+  transition: color 0.2s;
 }
 .welcome-link-secondary:hover {
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
+}
+.welcome-link-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .btn {
   display: inline-block;
@@ -1197,15 +1362,29 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: left;
   display: block;
   color: inherit;
-  transition: transform 0.3s;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .liturgy-showcase-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.liturgy-showcase-card h3,
+.liturgy-showcase-card p,
+.liturgy-showcase-link {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.liturgy-showcase-link {
+  padding-bottom: 16px;
 }
 .liturgy-showcase-img {
-  border-radius: 10px;
+  position: relative;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   aspect-ratio: 4 / 3;
 }
 .liturgy-showcase-img img {
@@ -1231,16 +1410,24 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 6px;
 }
 .liturgy-showcase-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-gold);
-  transition: color 0.2s;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 5px 12px;
+  border-radius: 16px;
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .liturgy-showcase-card:hover .liturgy-showcase-link {
-  color: var(--color-gold-dark);
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .liturgy-showcase { padding: 28px 16px 32px; }
