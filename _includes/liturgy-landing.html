@@ -151,34 +151,26 @@
 </div>
 
 <script>
+  var liturgyAudioMap = {
+    'വിശുദ്ധ കുർബാന': '/assets/audio/vishudha-kurbana.m4a',
+    'മാമോദീസാ': '/assets/audio/mamodisa.m4a',
+    'മൂറോൻ': '/assets/audio/mooron.m4a',
+    'കുമ്പസാരം': '/assets/audio/kumbasaram.m4a',
+    'തൈലാഭിഷേകം': '/assets/audio/anointing-sick.m4a',
+    'വിവാഹം': '/assets/audio/vivaham.m4a',
+    'പൗരോഹിത്യം': '/assets/audio/paurohithyam.m4a'
+  };
+  var currentLiturgyAudio = null;
+
   function playLiturgyAudio(malayalamText) {
-    // Use actual audio file for Holy Qurbana
-    if (malayalamText === 'വിശുദ്ധ കുർബാന') {
-      const audio = new Audio('/assets/audio/vishudha-kurbana.m4a');
-      audio.play().catch(error => {
-        console.error('Audio playback error:', error);
-      });
-      return;
+    if (currentLiturgyAudio) {
+      currentLiturgyAudio.pause();
+      currentLiturgyAudio.currentTime = 0;
     }
-
-    // Fallback to speech synthesis for other texts
-    if (!window.speechSynthesis) {
-      console.error('Speech Synthesis not supported');
-      return;
-    }
-
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(malayalamText);
-    utterance.lang = 'ml';
-    utterance.rate = 0.8;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-
-    utterance.onerror = function(event) {
-      console.error('Audio playback error:', event);
-    };
-
-    window.speechSynthesis.speak(utterance);
+    var src = liturgyAudioMap[malayalamText];
+    if (!src) return;
+    currentLiturgyAudio = new Audio(src);
+    currentLiturgyAudio.play().catch(function(e) { console.error('Audio error:', e); });
   }
 
   window.playLiturgyAudio = playLiturgyAudio;

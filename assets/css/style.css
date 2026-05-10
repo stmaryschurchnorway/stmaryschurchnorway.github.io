@@ -779,7 +779,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Page Content === */
 .page-content {
-  padding: 45px 0;
+  padding: 25px 0;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1643,7 +1643,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Events Intro === */
 .news-section-header {
-  margin: 40px 0 25px;
+  margin: 15px 0 20px;
   padding: 0;
   border-bottom: 2px solid var(--color-gold);
 }
@@ -1661,8 +1661,8 @@ img { max-width: 100%; height: auto; display: block; }
 .gallery-intro {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 30px;
-  padding: 25px;
+  margin: 0 auto 15px;
+  padding: 20px;
   background: linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(255, 255, 255, 0.6));
   border: 1px solid rgba(212, 160, 23, 0.15);
   border-left: 3px solid var(--color-gold);
@@ -1962,14 +1962,14 @@ img { max-width: 100%; height: auto; display: block; }
 .upcoming-events-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 15px 20px 30px;
+  padding: 5px 20px 15px;
 }
 .events-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
   border-bottom: 2px solid var(--color-gold);
 }
 .events-label {
@@ -2112,7 +2112,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: #2d2d2d;
 }
 @media (max-width: 768px) {
-  .upcoming-events-section { padding: 15px 20px 30px; }
+  .upcoming-events-section { padding: 5px 20px 15px; }
   .events-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .events-title { font-size: 1.4rem; }
   .events-card { border-radius: 10px; }
@@ -2123,7 +2123,7 @@ img { max-width: 100%; height: auto; display: block; }
   .event-meta-col { width: 100%; padding-left: 82px; margin-top: 6px; }
 }
 @media (max-width: 480px) {
-  .upcoming-events-section { padding: 15px 20px 25px; max-width: 100%; }
+  .upcoming-events-section { padding: 5px 20px 15px; max-width: 100%; }
   .events-title { font-size: 1.25rem; }
   .event-row { padding: 14px 14px; flex-wrap: wrap; }
   .event-date-col { flex: 0 0 55px; }
@@ -2194,15 +2194,15 @@ img { max-width: 100%; height: auto; display: block; }
 .past-events-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 10px 20px 30px;
+  padding: 5px 20px 15px;
 }
 .past-events-section[hidden] { display: none; }
 .past-events-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
   border-bottom: 2px solid var(--color-gold);
 }
 .past-events-label {

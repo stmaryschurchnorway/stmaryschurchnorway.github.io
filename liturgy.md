@@ -51,8 +51,8 @@ liturgies:
   - id: "anointing-sick"
     title: "Anointing of the Sick"
 
-    malayalam: "എണ്ണ തേച്ചു പ്രാർത്ഥിക്കൽ"
-    transliteration: "En-na the-chu prar-thi-kal"
+    malayalam: "തൈലാഭിഷേകം"
+    transliteration: "Thai-la-bhi-she-kam"
     description: "Holy Unction—prayers and anointing with blessed oil for healing and comfort of those suffering in body, mind, or spirit."
 
     image: "/assets/img/anointing-sick-liturgy.png"
