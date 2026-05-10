@@ -6,6 +6,12 @@
   padding: 0 20px 40px;
 }
 
+.confession-page .carousel-back-nav {
+  margin: 8px 0 5px;
+  padding: 0;
+  max-width: none;
+}
+
 /* --- Section Titles --- */
 .confession-section {
   margin-bottom: 35px;
@@ -17,7 +23,7 @@
   color: #333;
   margin: 0 0 8px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #d4a017;
+  border-bottom: 1px solid #d4a017;
 }
 
 .confession-section-subtitle {
@@ -256,7 +262,7 @@
 /* --- Seal Panel --- */
 .confession-seal-panel {
   background: #fafaf8;
-  border-left: 3px solid #8B1E2D;
+  border-left: 1px solid #8B1E2D;
   border-radius: 6px;
   padding: 20px;
 }

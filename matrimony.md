@@ -180,21 +180,6 @@ extra_css:
   </div>
 </div>
 
-<!-- CHALLENGES AND GRACE -->
-<div class="confession-section" id="challenges">
-  <h2 class="confession-section-title">When Marriage Is Difficult</h2>
-  
-  <div class="confession-seal-panel">
-    <p><strong>The Church does not pretend that marriage is easy.</strong> The Malankara Orthodox tradition recognizes that married life involves struggle, suffering, and the daily choice to love when love is difficult. This is why the sacrament is not given once and forgotten — it is renewed through the ongoing life of the Church, through prayer, through confession, through the grace available at the altar.</p>
-    
-    <p><strong>When conflicts arise,</strong> the couple is encouraged to speak with their priest. The priest does not judge but helps the couple recover the vision of their marriage as a sacrament — a means of grace, not merely a means of personal fulfillment. Through prayer and the sacraments, couples find the strength to forgive, to communicate, to rebuild broken trust.</p>
-    
-    <p><strong>The Church's stance on divorce</strong> differs from secular culture. While the Church recognizes that some marriages cannot continue due to serious circumstances, she approaches divorce with pastoral sensitivity rather than condemnation. Those whose marriages have failed are not cast out but are welcomed back into the Church's embrace, offered healing through confession, and in some cases, may remarry with the Church's blessing — receiving a prayer of healing rather than a renewal of the original betrothal.</p>
-    
-    <p><strong>What matters most</strong> is that married couples remember: you are crowned as king and queen, but you are crowned together, under the cross, in submission to Christ the King. Your marriage is a sacrament — a visible sign of Christ's invisible grace. When you falter, return to the sacraments. When you struggle, pray. When you feel alone, remember: Christ is the Head of your marriage, and the whole Church stands with you.</p>
-  </div>
-</div>
-
 <!-- CTA -->
 <div class="confession-cta">
   <h2>Preparing to Be Crowned</h2>
