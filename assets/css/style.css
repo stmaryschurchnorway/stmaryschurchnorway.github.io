@@ -700,12 +700,9 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-gold-dark);
 }
 .welcome-link-icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
 }
 .btn {
   display: inline-block;

@@ -63,8 +63,8 @@ layout: default
           <svg class="welcome-play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           {% if page.url contains '/no/' %}Se hele budskapet{% else %}Watch the full message{% endif %}
         </button>
-        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>{% if page.url contains '/no/' %}Hvem vi er{% else %}Who we are{% endif %}</a>
-        <a href="{{ '/liturgy/' | relative_url }}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M12 2v1"/></svg>{% if page.url contains '/no/' %}Slik tilber vi{% else %}How we worship{% endif %}</a>
+        <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>{% if page.url contains '/no/' %}Hvem vi er{% else %}Who we are{% endif %}</a>
+        <a href="{{ '/liturgy/' | relative_url }}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>{% if page.url contains '/no/' %}Slik tilber vi{% else %}How we worship{% endif %}</a>
       </div>
     </div>
   </div>
