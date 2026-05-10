@@ -2292,24 +2292,57 @@ h2.stage-title {
   transform: translateY(-2px);
 }
 
+.liturgy-foundation-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
 .liturgy-foundation-card-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-  display: block;
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
 .liturgy-foundation-card-title {
   font-family: 'Lora', serif;
   font-size: 20px;
   color: #333;
-  margin: 0 0 15px;
+  margin: 0;
   font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.liturgy-foundation-card-toggle {
+  font-size: 12px;
+  color: #999;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.liturgy-foundation-card.collapsed .liturgy-foundation-card-toggle {
+  transform: rotate(0deg);
+}
+
+.liturgy-foundation-card:not(.collapsed) .liturgy-foundation-card-toggle {
+  transform: rotate(180deg);
 }
 
 .liturgy-foundation-card-text {
   font-size: 14px;
   line-height: 1.7;
   color: #666;
+  margin: 15px 0 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.liturgy-foundation-card.collapsed .liturgy-foundation-card-text {
+  max-height: 0;
+  opacity: 0;
   margin: 0;
 }
 
@@ -2369,11 +2402,15 @@ h2.stage-title {
   }
 
   .liturgy-foundation-card-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .liturgy-foundation-card-text {
     font-size: 13px;
+  }
+
+  .liturgy-foundation-card-icon {
+    font-size: 24px;
   }
 
   .liturgy-foundation-connection-card {
