@@ -581,7 +581,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Gallery Section === */
 .gallery-section {
-  padding: 40px 20px 44px;
+  padding: 40px 0 44px;
   background: var(--color-white);
 }
 .videos-header {
@@ -1145,7 +1145,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* === Liturgy Showcase === */
 .liturgy-showcase {
   background: var(--color-light-bg-alt);
-  padding: 36px 20px 40px;
+  padding: 36px 0 40px;
 }
 .liturgy-showcase-inner {
   max-width: 1100px;
@@ -1256,7 +1256,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === News Section === */
 .news-section {
-  padding: 20px 20px 30px;
+  padding: 20px 0 30px;
   background: #fafafa;
 }
 .news-home-header {
@@ -1724,7 +1724,7 @@ img { max-width: 100%; height: auto; display: block; }
   .hierarchy-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .hierarchy-card img { width: 100px; height: 100px; }
   .leadership-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .gallery-section { padding: 30px 16px 36px; }
+  .gallery-section { padding: 30px 0 36px; }
   .gallery-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
   .video-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .contact-map iframe { height: 280px; }
