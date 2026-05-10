@@ -59,8 +59,8 @@ layout: default
       <p>{% if page.url contains '/no/' %}Vår menighet eksisterer for å bevare den apostoliske troen i den syrisk-ortodokse tradisjonen for malayaliske familier i Norge og dele dens skjønnhet med alle som tiltrekkes av den.{% else %}Our parish exists to keep the apostolic faith of the Syriac Orthodox tradition alive for Malayalee families in Norway and to share its beauty with anyone drawn to it.{% endif %}</p>
       <p>{% if page.url contains '/no/' %}<a href="/qurbana/" class="welcome-link">Den hellige nattverden (Qurbana)</a> er hjertet i vår tilbedelse, men vi samles også til kveldsbønn, søndagsskole, utendørsaktiviteter, veldedighet og julesang. Vi feirer også de viktige helligdagene og festene som preger vår kirkekalender.{% else %}<a href="/qurbana/" class="welcome-link">The Holy Eucharist (Qurbana)</a> is at the heart of our worship, but we also gather for evening prayer, Sunday school, outdoor activities, charity, and Christmas carols. We also celebrate the important holy days and festivals that mark our church calendar.{% endif %}</p>
       <div class="welcome-links">
-        <button type="button" class="welcome-play-btn" onclick="openVicarVideo()">
-          <svg class="welcome-play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <button type="button" class="welcome-link-secondary" onclick="openVicarVideo()">
+          <svg class="welcome-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           {% if page.url contains '/no/' %}Se hele budskapet{% else %}Watch the full message{% endif %}
         </button>
         <a href="{% if page.url contains '/no/' %}{{ '/no/the-church/' | relative_url }}{% else %}{{ '/en/the-church/' | relative_url }}{% endif %}" class="welcome-link-secondary"><svg class="welcome-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>{% if page.url contains '/no/' %}Hvem vi er{% else %}Who we are{% endif %}</a>
