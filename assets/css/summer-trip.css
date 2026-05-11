@@ -68,7 +68,9 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(175deg, #061a33 0%, #0b2545 20%, #13497b 50%, #1d6fb8 70%, #f4845f 92%, #f0c050 100%);
+  background-size: cover;
+  background-position: center;
+  background-color: #0b2545;
 }
 .st-hero::before {
   content: '';
