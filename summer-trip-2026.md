@@ -128,7 +128,7 @@ extra_css:
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">18:00</div>
           <div class="st-timeline-title">Arrival &amp; Dinner Preparation</div>
-          <div class="st-timeline-desc">Settle in, unpack, and help get dinner ready together.</div>
+          <div class="st-timeline-desc">Settle in, unpack, and help get dinner ready together.<br><strong>Cabin:</strong> <a href="https://maps.app.goo.gl/Fu9NeMfYw5fKUzHP8" target="_blank" rel="noopener" style="color: #1d6fb8; text-decoration: underline;">Lifjellvegen 886, 3804 Bø</a></div>
         </div>
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
