@@ -152,7 +152,7 @@ extra_css:
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">08:30</div>
           <div class="st-timeline-title">Holy Qurbana</div>
-          <div class="st-timeline-desc">The Divine Liturgy &mdash; the heart of our day together.</div>
+          <div class="st-timeline-desc">The Divine Liturgy &mdash; the heart of our day together.<br><strong>Location:</strong> <a href="https://maps.app.goo.gl/bQZ2pCDBRTrXRVCg6" target="_blank" rel="noopener" style="color: var(--st-ocean); text-decoration: underline;">JØNNBU FJELLKYRKJE, Lifjellvegen 966, 3804 Bø i Telemark</a></div>
         </div>
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
