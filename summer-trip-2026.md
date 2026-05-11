@@ -22,16 +22,12 @@ extra_css:
     </svg>
   </div>
   <div class="st-hero-content">
-    <span class="st-hero-label">St. Mary's MSOC &middot; Summer Trip 2026</span>
+    <span class="st-hero-label"><a href="{{ '/en/' | relative_url }}" style="color: inherit; text-decoration: none;">St. Mary's MSOC</a> &middot; Summer Trip 2026</span>
     <h1 class="st-hero-title">Walking on Water<br><em>Faith Over Fear</em></h1>
     <p class="st-hero-verse">&ldquo;Take courage! It is I. Don&rsquo;t be afraid.&rdquo;</p>
     <span class="st-hero-verse-ref">&mdash; Matthew 14:27</span>
     <p class="st-hero-dates">22 &ndash; 24 May 2026</p>
     <p class="st-hero-tagline">Step out in faith. Walk beyond fear.</p>
-    <div class="st-hero-ctas">
-      <a href="#schedule" class="st-btn st-btn-primary">View Schedule</a>
-      <a href="#teams" class="st-btn st-btn-outline">View Teams Info</a>
-    </div>
   </div>
 </section>
 
@@ -133,7 +129,7 @@ extra_css:
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">19:00</div>
-          <div class="st-timeline-title">Team Allocation &amp; Welcome</div>
+          <div class="st-timeline-title">Welcome &amp; Team Allocation</div>
           <div class="st-timeline-desc">Brief about the weekend schedule, announcement of the theme &amp; team contest.</div>
         </div>
         <div class="st-timeline-item">
@@ -141,6 +137,12 @@ extra_css:
           <div class="st-timeline-time">19:30</div>
           <div class="st-timeline-title">Sandhya Prarthana</div>
           <div class="st-timeline-desc">Evening prayer to begin our journey in God's presence.</div>
+        </div>
+        <div class="st-timeline-item">
+          <div class="st-timeline-dot"></div>
+          <div class="st-timeline-time">19:45</div>
+          <div class="st-timeline-title">Dinner</div>
+          <div class="st-timeline-desc">Evening meal together. <a href="#menu" style="color: var(--st-sky); text-decoration: underline;">View Menu</a></div>
         </div>
       </div>
     </div>
@@ -150,7 +152,7 @@ extra_css:
       <div class="st-timeline">
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
-          <div class="st-timeline-time">08:30</div>
+          <div class="st-timeline-time">08:00</div>
           <div class="st-timeline-title">Holy Qurbana</div>
           <div class="st-timeline-desc">The Divine Liturgy &mdash; the heart of our day together.<br><strong>Location:</strong> <a href="https://maps.app.goo.gl/bQZ2pCDBRTrXRVCg6" target="_blank" rel="noopener" style="color: #1d6fb8; text-decoration: underline;">JØNNBU FJELLKYRKJE, Lifjellvegen 966, 3804 Bø i Telemark</a></div>
         </div>
@@ -158,7 +160,7 @@ extra_css:
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">10:30 &ndash; 11:30</div>
           <div class="st-timeline-title">Brunch</div>
-          <div class="st-timeline-desc">Fellowship around the table after the Liturgy.</div>
+          <div class="st-timeline-desc">Fellowship around the table after the Liturgy. <a href="#menu" style="color: var(--st-sky); text-decoration: underline;">View Menu</a></div>
         </div>
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
@@ -182,7 +184,7 @@ extra_css:
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">16:30 &ndash; 18:30</div>
           <div class="st-timeline-title">Grilling &amp; Dinner</div>
-          <div class="st-timeline-desc">Fire up the grill &mdash; cook, eat, and enjoy the evening.</div>
+          <div class="st-timeline-desc">Fire up the grill &mdash; cook, eat, and enjoy the evening. <a href="#menu" style="color: var(--st-sky); text-decoration: underline;">View Menu</a></div>
         </div>
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
@@ -218,7 +220,7 @@ extra_css:
           <div class="st-timeline-dot"></div>
           <div class="st-timeline-time">09:00</div>
           <div class="st-timeline-title">Breakfast</div>
-          <div class="st-timeline-desc">A final morning meal together.</div>
+          <div class="st-timeline-desc">A final morning meal together. <a href="#menu" style="color: var(--st-sky); text-decoration: underline;">View Menu</a></div>
         </div>
         <div class="st-timeline-item">
           <div class="st-timeline-dot"></div>
@@ -254,7 +256,7 @@ extra_css:
         <span class="st-activity-icon">&#127819;</span>
         <h3>Outdoor Games</h3>
         <p>Lemon & Spoon races and fun challenges in the fresh air.</p>
-        <span class="st-activity-badge">All Welcome</span>
+        <span class="st-activity-badge">Team Event</span>
       </div>
       <div class="st-activity-card">
         <span class="st-activity-icon">&#129504;</span>
@@ -270,7 +272,7 @@ extra_css:
       </div>
       <div class="st-activity-card">
         <span class="st-activity-icon">&#127912;</span>
-        <h3>Team Photo Story</h3>
+        <h3><a href="{{ '/summer-trip-photo-contest/' | relative_url }}" style="color: inherit; text-decoration: none;">Photo Contest</a></h3>
         <p>Create a photo story showing faith over fear with your team.</p>
         <span class="st-activity-badge">Team Event</span>
       </div>
@@ -280,6 +282,108 @@ extra_css:
         <p>Grilling, eating together, and enjoying camp life as a community.</p>
         <span class="st-activity-badge">All Welcome</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MENU ═══════════ -->
+<section class="st-section st-section-white st-reveal" id="menu">
+  <div class="st-section-inner">
+    <span class="st-section-label">Food Schedule</span>
+    <h2 class="st-section-title">Meals of Faith</h2>
+    <p class="st-section-desc">Delicious meals crafted with care. Here's what to expect and how we're preparing it.</p>
+    
+    <div class="st-menu-grid">
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">🌙</span>
+          <div>
+            <h3>Friday Night</h3>
+            <p class="st-menu-time">19:45</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/friday-dinner.png' | relative_url }}" alt="Friday Dinner" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Menu:</strong> Kanji, Cherupayar, Achar, Chammanthi
+        </div>
+        <div class="st-menu-prep">
+          <strong>Prep:</strong> Rice made at Hytte; Sides brought from home
+        </div>
+      </div>
+
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">🌅</span>
+          <div>
+            <h3>Saturday Brunch</h3>
+            <p class="st-menu-time">10:30</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/kappa-beef-curry.png' | relative_url }}" alt="Kappa and Beef Curry" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Menu:</strong> Kappa & Beef Curry<br>
+          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Bread & Jam</span>
+        </div>
+        <div class="st-menu-prep">
+          <strong>Prep:</strong> Beef and Kappa made at hytte
+        </div>
+      </div>
+
+
+
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">☕</span>
+          <div>
+            <h3>Saturday Tea</h3>
+            <p class="st-menu-time">16:00</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/saturday-tea.png' | relative_url }}" alt="Saturday Tea" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Menu:</strong> Pazhampuri, Vada, Cake, Tea
+        </div>
+        <div class="st-menu-prep">
+          <strong>Prep:</strong> Heated at Hytte & Cake pre-purchased
+        </div>
+      </div>
+
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">🔥</span>
+          <div>
+            <h3>Saturday Dinner</h3>
+            <p class="st-menu-time">16:30 – 18:30</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/saturday-dinner.png' | relative_url }}" alt="Saturday Dinner" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Menu:</strong> Grill: Chicken, Fish, Pork + Rice with Moru Curry<br>
+          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Polse & Corn</span>
+        </div>
+        <div class="st-menu-prep">
+          <strong>Prep:</strong> Marination at Hytte; Grilling in evening; Moru curry brought from home
+        </div>
+      </div>
+
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">🥞</span>
+          <div>
+            <h3>Sunday Breakfast</h3>
+            <p class="st-menu-time">09:00</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/sunday-breakfast.png' | relative_url }}" alt="Sunday Breakfast" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Menu:</strong> Egg & Bread<br>
+          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Waffles</span>
+        </div>
+        <div class="st-menu-prep">
+          <strong>Prep:</strong> Waffle stations
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -371,7 +475,7 @@ extra_css:
     </p>
 
     <div style="text-align: center; margin-top: 32px;">
-      <a href="#" class="st-btn st-btn-ocean">View Sign-Up Sheet</a>
+      <a href="https://docs.google.com/spreadsheets/d/1SjEWAOw1GQfuAMKCJBt2ZT0LVqCJDLR_f2AOtKtALLk/edit?gid=1142861410#gid=1142861410" target="_blank" rel="noopener" class="st-btn st-btn-ocean">View Sign-Up Sheet</a>
     </div>
 
     <div class="st-food-note" style="margin-top: 28px;">
