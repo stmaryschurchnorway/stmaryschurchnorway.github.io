@@ -251,9 +251,9 @@ extra_css:
         <span class="st-activity-badge">Team Event</span>
       </div>
       <div class="st-activity-card">
-        <span class="st-activity-icon">&#9917;</span>
+        <span class="st-activity-icon">&#127819;</span>
         <h3>Outdoor Games</h3>
-        <p>Football, relay races, and fun challenges in the fresh air.</p>
+        <p>Lemon & Spoon races and fun challenges in the fresh air.</p>
         <span class="st-activity-badge">All Welcome</span>
       </div>
       <div class="st-activity-card">
