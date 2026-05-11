@@ -513,13 +513,13 @@
 .st-activities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
+  gap: 14px;
+  margin-top: 28px;
 }
 .st-activity-card {
   background: var(--st-white);
   border-radius: var(--st-radius);
-  padding: 28px 24px;
+  padding: 18px 16px;
   text-align: center;
   border: 1px solid rgba(11, 37, 69, 0.06);
   transition: all 0.3s ease;
@@ -544,7 +544,7 @@
 .st-activity-card:hover::before { opacity: 1; }
 .st-activity-icon {
   font-size: 2rem;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   display: block;
 }
 .st-activity-card h3 {
@@ -552,13 +552,14 @@
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--st-deep);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .st-activity-card p {
   font-family: 'Inter', sans-serif;
   font-size: 0.78rem;
   color: var(--st-text-soft);
-  line-height: 1.6;
+  line-height: 1.5;
+  margin-bottom: 6px;
 }
 .st-activity-badge {
   display: inline-block;
@@ -569,7 +570,7 @@
   background: var(--st-foam);
   padding: 3px 10px;
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 4px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1177,6 +1178,75 @@
 }
 
 /* --- Responsive --- */
+/* --- Menu Section --- */
+.st-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+.st-menu-card {
+  background: linear-gradient(135deg, rgba(29, 111, 184, 0.06), rgba(244, 132, 95, 0.06));
+  border: 1px solid rgba(29, 111, 184, 0.15);
+  border-radius: var(--st-radius);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.st-menu-card:hover {
+  border-color: rgba(29, 111, 184, 0.3);
+  box-shadow: 0 8px 24px rgba(29, 111, 184, 0.1);
+  transform: translateY(-2px);
+}
+.st-menu-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.st-menu-icon {
+  font-size: 2.4rem;
+  display: block;
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+.st-menu-header h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--st-deep);
+  margin: 0 0 4px 0;
+}
+.st-menu-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--st-text-soft);
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.st-menu-items {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--st-text);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.st-menu-prep {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--st-text-soft);
+  line-height: 1.5;
+  font-style: italic;
+}
+.st-menu-image {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
 @media (max-width: 900px) {
   .st-about-grid { grid-template-columns: 1fr; gap: 24px; }
   .st-activities-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1221,4 +1291,8 @@
   .st-ideas-grid { grid-template-columns: 1fr; }
   .st-scoring-grid { grid-template-columns: 1fr; }
   .st-avoid-grid { grid-template-columns: 1fr; }
+  .st-menu-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+  .st-menu-card { padding: 14px; }
+  .st-menu-icon { font-size: 2rem; }
+  .st-menu-header h3 { font-size: 0.95rem; }
 }
