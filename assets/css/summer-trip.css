@@ -1,5 +1,9 @@
 /* === Summer Trip 2026 — "Walking on Water: Faith Over Fear" === */
 
+/* Hide church header and top bar for summer trip pages */
+.top-bar { display: none !important; }
+.site-header { display: none !important; }
+
 /* --- Ocean-themed palette --- */
 :root {
   --st-deep: #0b2545;
@@ -333,6 +337,7 @@
 .st-section-inner {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 .st-section-label {
   display: inline-block;
