@@ -6,7 +6,7 @@ extra_css:
 ---
 
 <!-- ═══════════ HERO ═══════════ -->
-<section class="st-hero" id="top" style="background-image: url('{{ '/assets/img/summer-trip-hero.webp' | relative_url }}'); background-size: cover; background-position: 75% center; background-attachment: fixed;">
+<section class="st-hero" id="top" style="background-image: url('{{ '/assets/img/summer-trip-hero.png' | relative_url }}'); background-size: cover; background-position: 75% center; background-attachment: fixed;">
   <div class="st-hero-particles">
     <span class="st-particle"></span><span class="st-particle"></span>
     <span class="st-particle"></span><span class="st-particle"></span>
