@@ -1210,8 +1210,8 @@
   .st-btn { width: 100%; justify-content: center; max-width: 280px; }
   .st-nav a { padding: 10px 8px; font-size: 0.58rem; }
   .st-nav-inner { padding: 0 10px; }
-  .st-schedule-days { gap: 4px; margin: 24px 0 20px; }
-  .st-day-tab { padding: 8px 12px; font-size: 0.65rem; }
+  .st-schedule-days { gap: 3px; margin: 20px 0 20px; flex-wrap: nowrap; }
+  .st-day-tab { padding: 7px 10px; font-size: 0.6rem; white-space: nowrap; flex: 1; }
   .st-props-grid { grid-template-columns: 1fr; }
   .st-ideas-grid { grid-template-columns: 1fr; }
   .st-scoring-grid { grid-template-columns: 1fr; }
