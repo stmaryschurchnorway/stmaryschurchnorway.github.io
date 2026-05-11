@@ -416,34 +416,11 @@ extra_css:
     </div>
   </div>
 </section>
-
-<!-- ═══════════ REGISTRATION ═══════════ -->
-<section class="st-section st-section-foam st-reveal" id="register">
+<!-- ═══════════ CONTACT NOTE ═══════════ -->
+<section class="st-section st-section-white st-reveal" style="text-align: center;">
   <div class="st-section-inner">
-    <span class="st-section-label">Get in Touch</span>
-    <h2 class="st-section-title">Contact</h2>
-    <div class="st-register-box">
-      <h3>Questions? Reach Out</h3>
-      <p>For any questions about the trip, feel free to get in touch.</p>
-      <div class="st-contact-grid">
-        <div class="st-contact-item">
-          <span>Vicar</span>
-          <strong>Rev Fr. Eldhose Vattaparambil</strong>
-        </div>
-        <div class="st-contact-item">
-          <span>Secretary</span>
-          <strong>Mr. Riju Cherian</strong>
-        </div>
-        <div class="st-contact-item">
-          <span>Email</span>
-          <strong>stmaryschurchnorway@gmail.com</strong>
-        </div>
-        <div class="st-contact-item">
-          <span>More Info</span>
-          <strong>Anu, Vijin &amp; Seeba</strong>
-        </div>
-      </div>
-    </div>
+    <h3 style="font-size: 1.2rem; margin-bottom: 12px;">Questions? Reach Out</h3>
+    <p style="font-size: 0.95rem; color: var(--st-text-soft); max-width: 600px; margin: 0 auto;">For any questions about the trip, feel free to get in touch.</p>
   </div>
 </section>
 
