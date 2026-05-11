@@ -304,7 +304,7 @@ extra_css:
         </div>
         <img src="{{ '/assets/img/meals/friday-dinner.png' | relative_url }}" alt="Friday Dinner" class="st-menu-image">
         <div class="st-menu-items">
-          <strong>Menu:</strong> Kanji, Cherupayar, Achar, Chammanthi
+          <strong>Menu:</strong> Kanji, Cherupayar, Achar, Chammanthi, Pappadam
         </div>
         <div class="st-menu-prep">
           <strong>Prep:</strong> Rice made at Hytte; Sides brought from home
@@ -322,7 +322,7 @@ extra_css:
         <img src="{{ '/assets/img/meals/kappa-beef-curry.png' | relative_url }}" alt="Kappa and Beef Curry" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Kappa & Beef Curry<br>
-          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Bread & Jam</span>
+          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Bread & Jam/Butter</span>
         </div>
         <div class="st-menu-prep">
           <strong>Prep:</strong> Beef and Kappa made at hytte
@@ -381,6 +381,23 @@ extra_css:
         </div>
         <div class="st-menu-prep">
           <strong>Prep:</strong> Waffle stations
+        </div>
+      </div>
+
+      <div class="st-menu-card">
+        <div class="st-menu-header">
+          <span class="st-menu-icon">🍭</span>
+          <div>
+            <h3>Kids&rsquo; Treat Corner</h3>
+            <p class="st-menu-time">Anytime they&rsquo;re hungry!</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/img/meals/kids-snacks.png' | relative_url }}" alt="Kids Snacks" class="st-menu-image">
+        <div class="st-menu-items">
+          <strong>Snacks:</strong> Fresh fruits, ice cream, juice &amp; soft drinks
+        </div>
+        <div class="st-menu-prep">
+          <strong>Note:</strong> Available throughout the trip for little ones
         </div>
       </div>
 
