@@ -276,7 +276,7 @@ extra_css:
       </div>
       <div class="st-activity-card">
         <span class="st-activity-icon">&#128293;</span>
-        <h3>Camp Fire & Dinner</h3>
+        <h3>Barbecue & Dinner</h3>
         <p>Grilling, eating together, and enjoying camp life as a community.</p>
         <span class="st-activity-badge">All Welcome</span>
       </div>
