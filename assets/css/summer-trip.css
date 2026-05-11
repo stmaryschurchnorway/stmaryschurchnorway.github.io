@@ -1204,7 +1204,8 @@
   .st-gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
   .st-hero-ctas { flex-direction: column; align-items: center; }
   .st-btn { width: 100%; justify-content: center; max-width: 280px; }
-  .st-nav a { padding: 12px 14px; font-size: 0.68rem; }
+  .st-nav a { padding: 12px 10px; font-size: 0.62rem; }
+  .st-nav-inner { padding: 0 12px; }
   .st-schedule-days { gap: 6px; }
   .st-day-tab { padding: 8px 16px; font-size: 0.72rem; }
   .st-props-grid { grid-template-columns: 1fr; }
