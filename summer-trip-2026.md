@@ -480,6 +480,7 @@ extra_css:
         <p>The champion team will be announced during the Saturday evening session.</p>
       </div>
     </div>
+
   </div>
 </section>
 
