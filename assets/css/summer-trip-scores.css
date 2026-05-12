@@ -49,15 +49,15 @@
 /* --- Podium Cards --- */
 .sc-podium {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   margin-bottom: 16px;
 }
 .sc-podium-card {
   background: #f8fafc;
   border: 2px solid rgba(11, 37, 69, 0.08);
   border-radius: var(--st-radius);
-  padding: 16px 12px;
+  padding: 14px 8px;
   transition: all 0.3s ease;
 }
 .sc-podium-first {
@@ -253,8 +253,8 @@ body.sc-fullscreen-active .sc-fullscreen-btn:hover {
   .sc-section-desc { font-size: 0.75rem; margin-bottom: 14px; }
 
   .sc-podium {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
   .sc-podium-card { padding: 12px 10px; }
   .sc-podium-rank { width: 32px; height: 32px; font-size: 0.95rem; margin-bottom: 6px; }

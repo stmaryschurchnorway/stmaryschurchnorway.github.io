@@ -72,9 +72,9 @@ extra_css:
   // REPLACE with your published Google Sheet CSV URL
   var SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTI7H-c8oUB9fFUSlorzRUURwjuTJsnx6uV4lS4EG6iM7KmAqgxPRZmyj4w39GZwvqLyaxev5iRe6VY/pub?gid=0&single=true&output=csv';
 
-  var TEAM_MEDALS = ['🥇', '🥈', '🥉', ''];
-  var TEAM_BG    = ['#ffd700', '#c0c0c0', '#cd7f32', '#e0f0ff'];
-  var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#ffffff', '#1a2a3a'];
+  var TEAM_MEDALS = ['🥇', '🥈', '🥉', '', ''];
+  var TEAM_BG    = ['#ffd700', '#c0c0c0', '#cd7f32', '#e0f0ff', '#e0f0ff'];
+  var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#ffffff', '#1a2a3a', '#1a2a3a'];
 
   var DEMO_DATA = [
     { team: 'Team Alpha',   scores: [85, 72, 90, 78], total: 325 },
@@ -173,7 +173,7 @@ extra_css:
   }
 
   fetchScores();
-  setInterval(fetchScores, 30000);
+  setInterval(fetchScores, 10000);
 
   // Fullscreen toggle
   var fsBtn = document.getElementById('fullscreen-btn');
