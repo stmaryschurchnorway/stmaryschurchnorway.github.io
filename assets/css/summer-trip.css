@@ -1283,8 +1283,8 @@
   .st-hero-tagline { margin-bottom: 20px; }
   .st-hero-ctas { flex-direction: column; align-items: center; gap: 10px; }
   .st-btn { width: 100%; justify-content: center; max-width: 280px; }
-  .st-nav a { padding: 10px 8px; font-size: 0.58rem; }
-  .st-nav-inner { padding: 0 10px; }
+  .st-nav a { padding: 10px 6px; font-size: 0.55rem; letter-spacing: 0.02em; }
+  .st-nav-inner { padding: 0 6px; gap: 0; }
   .st-schedule-days { gap: 3px; margin: 20px 0 20px; flex-wrap: nowrap; }
   .st-day-tab { padding: 7px 10px; font-size: 0.6rem; white-space: nowrap; flex: 1; }
   .st-props-grid { grid-template-columns: 1fr; }

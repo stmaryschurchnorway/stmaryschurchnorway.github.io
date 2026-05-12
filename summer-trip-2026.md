@@ -56,10 +56,11 @@ extra_css:
   <div class="st-nav-inner">
     <a href="#about" class="active">About</a>
     <a href="#schedule">Schedule</a>
-    <a href="#competitions">Competitions</a>
+    <a href="#menu">Menu</a>
+    <a href="#competitions">Compete</a>
     <a href="#teams">Teams</a>
+    <a href="#food">Sign Up</a>
     <a href="#packing">Packing</a>
-    <a href="#register">Contact</a>
   </div>
 </nav>
 
