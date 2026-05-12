@@ -360,7 +360,7 @@ extra_css:
         <img src="{{ '/assets/img/meals/saturday-dinner.png' | relative_url }}" alt="Saturday Dinner" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Grill: Chicken, Fish, Pork + Rice with Moru Curry<br>
-          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Polse & Corn</span>
+          <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Polse, Corn, Grilled Paprika, Marshmallows, Mushrooms</span>
         </div>
         <div class="st-menu-prep">
           <strong>Prep:</strong> Marination at Hytte; Grilling in evening; Moru curry brought from home
