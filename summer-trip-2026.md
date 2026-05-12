@@ -321,7 +321,7 @@ extra_css:
         </div>
         <img src="{{ '/assets/img/meals/kappa-beef-curry.png' | relative_url }}" alt="Kappa and Beef Curry" class="st-menu-image">
         <div class="st-menu-items">
-          <strong>Menu:</strong> Kappa & Beef Curry<br>
+          <strong>Menu:</strong> Kappa & Beef Curry, Ghee Rice, Tea<br>
           <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Bread & Jam/Butter</span>
         </div>
         <div class="st-menu-prep">
