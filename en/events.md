@@ -9,7 +9,8 @@ description: "Holy Qurbana schedule, feast days (Oshana, Perunnal), and upcoming
 <div class="events-intro">
   <p>Stay updated with our Holy Qurbana schedule, feast days, and community gatherings. Subscribe to our calendar to never miss an event.</p>
   <div class="calendar-actions">
-    <a href="https://calendar.google.com/calendar/r?cid=stmaryschurchnorway@gmail.com" target="_blank" rel="noopener" class="btn subscribe-btn">&#128197; Subscribe to Calendar</a>
+    <a href="#" class="btn subscribe-btn cal-subscribe" data-cal="c3RtYXJ5c2NodXJjaG5vcndheUBnbWFpbC5jb20=" target="_blank" rel="noopener">&#128197; Subscribe to Calendar</a>
+    <script>document.querySelector('.cal-subscribe').addEventListener('click',function(e){e.preventDefault();this.href='https://calendar.google.com/calendar/r?cid='+atob(this.getAttribute('data-cal'));window.open(this.href,'_blank');});</script>
   </div>
 </div>
 

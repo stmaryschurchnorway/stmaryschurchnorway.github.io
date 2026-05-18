@@ -9,7 +9,8 @@ description: "Hellig Qurbana-tidsplan, festdager (Oshana, Perunnal), og kommende
 <div class="events-intro">
   <p>Hold deg oppdatert med vår tidsplan for Hellig Qurbana, festdager og menighetssamlinger. Abonner på vår kalender for å aldri gå glipp av et arrangement.</p>
   <div class="calendar-actions">
-    <a href="https://calendar.google.com/calendar/r?cid=stmaryschurchnorway@gmail.com" target="_blank" rel="noopener" class="btn subscribe-btn">&#128197; Abonner på Kalender</a>
+    <a href="#" class="btn subscribe-btn cal-subscribe" data-cal="c3RtYXJ5c2NodXJjaG5vcndheUBnbWFpbC5jb20=" target="_blank" rel="noopener">&#128197; Abonner på Kalender</a>
+    <script>document.querySelector('.cal-subscribe').addEventListener('click',function(e){e.preventDefault();this.href='https://calendar.google.com/calendar/r?cid='+atob(this.getAttribute('data-cal'));window.open(this.href,'_blank');});</script>
   </div>
 </div>
 
