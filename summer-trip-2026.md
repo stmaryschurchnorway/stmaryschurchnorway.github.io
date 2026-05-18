@@ -303,7 +303,7 @@ extra_css:
             <p class="st-menu-time">19:45</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/friday-dinner.png' | relative_url }}" alt="Friday Dinner" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/friday-dinner.webp' | relative_url }}" alt="Friday Dinner" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Kanji, Cherupayar, Achar, Chammanthi, Pappadam
         </div>
@@ -320,7 +320,7 @@ extra_css:
             <p class="st-menu-time">10:30</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/kappa-beef-curry.png' | relative_url }}" alt="Kappa and Beef Curry" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/kappa-beef-curry.webp' | relative_url }}" alt="Kappa and Beef Curry" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Kappa & Beef Curry, Ghee Rice, Tea<br>
           <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Bread & Jam/Butter</span>
@@ -340,7 +340,7 @@ extra_css:
             <p class="st-menu-time">16:00</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/saturday-tea.png' | relative_url }}" alt="Saturday Tea" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/saturday-tea.webp' | relative_url }}" alt="Saturday Tea" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Pazhampuri, Vada, Cake, Tea
         </div>
@@ -357,7 +357,7 @@ extra_css:
             <p class="st-menu-time">16:30 – 18:30</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/saturday-dinner.png' | relative_url }}" alt="Saturday Dinner" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/saturday-dinner.webp' | relative_url }}" alt="Saturday Dinner" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Grill: Chicken, Fish, Pork + Rice with Moru Curry<br>
           <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Polse, Corn, Grilled Paprika, Marshmallows, Mushrooms</span>
@@ -375,7 +375,7 @@ extra_css:
             <p class="st-menu-time">09:00</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/sunday-breakfast.png' | relative_url }}" alt="Sunday Breakfast" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/sunday-breakfast.webp' | relative_url }}" alt="Sunday Breakfast" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Menu:</strong> Egg & Bread<br>
           <span style="font-size: 0.85rem; color: var(--st-text-soft);"><strong>Kids:</strong> Waffles</span>
@@ -393,7 +393,7 @@ extra_css:
             <p class="st-menu-time">Anytime they&rsquo;re hungry!</p>
           </div>
         </div>
-        <img src="{{ '/assets/img/meals/kids-snacks.png' | relative_url }}" alt="Kids Snacks" class="st-menu-image">
+        <img src="{{ '/assets/img/meals/kids-snacks.webp' | relative_url }}" alt="Kids Snacks" class="st-menu-image">
         <div class="st-menu-items">
           <strong>Snacks:</strong> Fresh fruits, ice cream, juice &amp; soft drinks
         </div>
