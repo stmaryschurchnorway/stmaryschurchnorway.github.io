@@ -138,7 +138,8 @@ extra_css:
     var podium = document.getElementById('podium');
     clearChildren(podium);
     teams.forEach(function(t, i) {
-      var card = el('div', 'sc-podium-card' + (i === 0 ? ' sc-podium-first' : ''));
+      var cls = 'sc-podium-card' + (i === 0 ? ' sc-podium-first' : '') + (t.winner ? ' sc-podium-winner' : '');
+      var card = el('div', cls);
 
       var rank = el('div', 'sc-podium-rank', TEAM_MEDALS[i] || '#' + (i + 1));
       rank.style.background = TEAM_BG[i] || TEAM_BG[3];
@@ -156,7 +157,7 @@ extra_css:
     var tbody = document.querySelector('#score-table tbody');
     clearChildren(tbody);
     teams.forEach(function(t, i) {
-      var tr = el('tr', i === 0 ? 'sc-row-leader' : '');
+      var tr = el('tr', (i === 0 ? 'sc-row-leader' : '') + (t.winner ? ' sc-row-winner' : ''));
       tr.appendChild(el('td', 'sc-rank-cell', String(i + 1)));
       tr.appendChild(el('td', 'sc-team-cell', t.team));
       t.scores.forEach(function(s) {
