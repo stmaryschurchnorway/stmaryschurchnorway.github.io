@@ -43,16 +43,8 @@ extra_css:
 
     <div class="sc-table-wrap">
       <table class="sc-table" id="score-table">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Team</th>
-            <th class="sc-activity-col">Treasure Hunt</th>
-            <th class="sc-activity-col">Quiz</th>
-            <th class="sc-activity-col">Photo Contest</th>
-            <th class="sc-activity-col">Presentation</th>
-            <th class="sc-total-col">Total</th>
-          </tr>
+        <thead id="score-thead">
+          <!-- JS fills this -->
         </thead>
         <tbody>
           <!-- JS fills this -->
@@ -98,7 +90,20 @@ extra_css:
 
   function parseCSV(text) {
     var lines = text.trim().split('\n');
-    if (lines.length < 2) return [];
+    if (lines.length < 2) return { headers: [], teams: [] };
+    var headerCols = lines[0].split(',');
+    var activityHeaders = [];
+    var activityIndexes = [];
+    var winnerIndex = -1;
+    for (var h = 1; h < headerCols.length; h++) {
+      var name = headerCols[h].trim();
+      if (name.toUpperCase() === 'WINNER') {
+        winnerIndex = h;
+      } else if (name !== '') {
+        activityHeaders.push(name);
+        activityIndexes.push(h);
+      }
+    }
     var teams = [];
     for (var i = 1; i < lines.length; i++) {
       var cols = lines[i].split(',');
@@ -106,20 +111,15 @@ extra_css:
       var teamName = cols[0].trim();
       var scores = [];
       var total = 0;
-      var isWinner = false;
-      for (var j = 1; j < cols.length; j++) {
-        var raw = cols[j].trim().toUpperCase();
-        if (raw === 'YES') {
-          isWinner = true;
-        } else {
-          var val = parseInt(raw) || 0;
-          scores.push(val);
-          total += val;
-        }
+      var isWinner = winnerIndex >= 0 && cols[winnerIndex] && cols[winnerIndex].trim().toUpperCase() === 'YES';
+      for (var k = 0; k < activityIndexes.length; k++) {
+        var val = parseInt((cols[activityIndexes[k]] || '').trim()) || 0;
+        scores.push(val);
+        total += val;
       }
       teams.push({ team: teamName, scores: scores, total: total, winner: isWinner });
     }
-    return teams;
+    return { headers: activityHeaders, teams: teams };
   }
 
   function clearChildren(el) {
@@ -152,7 +152,16 @@ extra_css:
     });
   }
 
-  function renderTable(teams) {
+  function renderTable(headers, teams) {
+    var thead = document.getElementById('score-thead');
+    clearChildren(thead);
+    var hr = el('tr');
+    hr.appendChild(el('th', '', '#'));
+    hr.appendChild(el('th', '', 'Team'));
+    headers.forEach(function(h) { hr.appendChild(el('th', 'sc-activity-col', h)); });
+    hr.appendChild(el('th', 'sc-total-col', 'Total'));
+    thead.appendChild(hr);
+
     var tbody = document.querySelector('#score-table tbody');
     clearChildren(tbody);
     teams.forEach(function(t, i) {
@@ -263,7 +272,11 @@ extra_css:
     }, 15500);
   }
 
-  function render(teams) {
+  var DEMO_HEADERS = ['Treasure Hunt', 'Quiz', 'Photo Contest', 'Presentation'];
+
+  function render(data) {
+    var headers = data.headers || DEMO_HEADERS;
+    var teams = data.teams || data;
     var noData = document.getElementById('no-data');
     if (!teams || teams.length === 0) {
       noData.style.display = 'block';
@@ -271,7 +284,7 @@ extra_css:
     }
     noData.style.display = 'none';
     renderPodium(teams);
-    renderTable(teams);
+    renderTable(headers, teams);
     document.getElementById('last-updated').textContent =
       new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
@@ -287,13 +300,13 @@ extra_css:
 
   function fetchScores() {
     if (!SHEET_URL) {
-      render(DEMO_DATA);
+      render({ headers: DEMO_HEADERS, teams: DEMO_DATA });
       return;
     }
     fetch(SHEET_URL + '&_t=' + Date.now(), { cache: 'no-store' })
       .then(function(r) { return r.text(); })
       .then(function(csv) { render(parseCSV(csv)); })
-      .catch(function() { render(DEMO_DATA); });
+      .catch(function() { render({ headers: DEMO_HEADERS, teams: DEMO_DATA }); });
   }
 
   fetchScores();
