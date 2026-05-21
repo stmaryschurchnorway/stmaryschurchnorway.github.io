@@ -283,3 +283,130 @@ body.sc-fullscreen-active .sc-fullscreen-btn:hover {
   .sc-table { font-size: 0.6rem; }
   .sc-table th, .sc-table td { padding: 6px 4px; }
 }
+
+/* ═══════════ Winner Reveal Animation ═══════════ */
+.sc-winner-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease;
+}
+.sc-winner-overlay.sc-winner-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.sc-winner-overlay.sc-winner-fadeout {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.sc-confetti-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sc-winner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sc-winner-prelude {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(240, 192, 80, 0.8);
+  letter-spacing: 0.15em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.sc-winner-prelude.sc-winner-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sc-winner-line {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f0c050, transparent);
+  margin: 20px 0;
+  transition: width 1s ease;
+}
+.sc-winner-line.sc-winner-show {
+  width: 200px;
+}
+
+.sc-winner-trophy {
+  font-size: 4rem;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sc-winner-trophy.sc-winner-show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sc-winner-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(240, 192, 80, 0.5), 0 0 80px rgba(240, 192, 80, 0.2);
+  margin-top: 16px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sc-winner-name.sc-winner-show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sc-winner-points {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f0c050;
+  margin-top: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.sc-winner-points.sc-winner-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sc-winner-points-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.sc-winner-points-label.sc-winner-show {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .sc-winner-prelude { font-size: 1rem; }
+  .sc-winner-trophy { font-size: 3rem; }
+  .sc-winner-name { font-size: 2rem; }
+  .sc-winner-points { font-size: 2.5rem; }
+}
