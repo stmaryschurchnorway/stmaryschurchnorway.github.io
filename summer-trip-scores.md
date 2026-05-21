@@ -84,9 +84,8 @@ extra_css:
 (function() {
   var SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTI7H-c8oUB9fFUSlorzRUURwjuTJsnx6uV4lS4EG6iM7KmAqgxPRZmyj4w39GZwvqLyaxev5iRe6VY/pub?gid=0&single=true&output=csv';
 
-  var TEAM_MEDALS = ['🥇', '🥈', '🥉', '', ''];
-  var TEAM_BG    = ['#ffd700', '#c0c0c0', '#cd7f32', '#e0f0ff', '#e0f0ff'];
-  var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#ffffff', '#1a2a3a', '#1a2a3a'];
+  var TEAM_BG    = ['#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff'];
+  var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a'];
 
   var DEMO_DATA = [
     { team: 'Team Alpha',   scores: [85, 72, 90, 78], total: 325, winner: false },
@@ -138,10 +137,10 @@ extra_css:
     var podium = document.getElementById('podium');
     clearChildren(podium);
     teams.forEach(function(t, i) {
-      var cls = 'sc-podium-card' + (i === 0 ? ' sc-podium-first' : '') + (t.winner ? ' sc-podium-winner' : '');
+      var cls = 'sc-podium-card' + (t.winner ? ' sc-podium-winner' : '');
       var card = el('div', cls);
 
-      var rank = el('div', 'sc-podium-rank', TEAM_MEDALS[i] || '#' + (i + 1));
+      var rank = el('div', 'sc-podium-rank', '#' + (i + 1));
       rank.style.background = TEAM_BG[i] || TEAM_BG[3];
       rank.style.color = TEAM_FG[i] || TEAM_FG[3];
       card.appendChild(rank);
@@ -157,7 +156,7 @@ extra_css:
     var tbody = document.querySelector('#score-table tbody');
     clearChildren(tbody);
     teams.forEach(function(t, i) {
-      var tr = el('tr', (i === 0 ? 'sc-row-leader' : '') + (t.winner ? ' sc-row-winner' : ''));
+      var tr = el('tr', t.winner ? 'sc-row-winner' : '');
       tr.appendChild(el('td', 'sc-rank-cell', String(i + 1)));
       tr.appendChild(el('td', 'sc-team-cell', t.team));
       t.scores.forEach(function(s) {
