@@ -74,7 +74,7 @@ extra_css:
 <!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
 (function() {
-  var SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTI7H-c8oUB9fFUSlorzRUURwjuTJsnx6uV4lS4EG6iM7KmAqgxPRZmyj4w39GZwvqLyaxev5iRe6VY/pub?gid=0&single=true&output=csv';
+  var SHEET_URL = 'https://docs.google.com/spreadsheets/d/1kI7udSAsyWDNcB2PtAFREZkbGeRc__VMXkiE55Og5KI/gviz/tq?tqx=out:csv&gid=0';
 
   var TEAM_BG    = ['#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff'];
   var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a'];
@@ -88,6 +88,12 @@ extra_css:
 
   var winnerAnimationPlayed = false;
 
+  function unquote(s) {
+    s = s.trim();
+    if (s.length >= 2 && s.charAt(0) === '"' && s.charAt(s.length - 1) === '"') s = s.slice(1, -1);
+    return s.trim();
+  }
+
   function parseCSV(text) {
     var lines = text.trim().split('\n');
     if (lines.length < 2) return { headers: [], teams: [] };
@@ -96,7 +102,7 @@ extra_css:
     var activityIndexes = [];
     var winnerIndex = -1;
     for (var h = 1; h < headerCols.length; h++) {
-      var name = headerCols[h].trim();
+      var name = unquote(headerCols[h]);
       if (name.toUpperCase() === 'WINNER') {
         winnerIndex = h;
       } else if (name !== '') {
@@ -108,12 +114,12 @@ extra_css:
     for (var i = 1; i < lines.length; i++) {
       var cols = lines[i].split(',');
       if (cols.length < 2) continue;
-      var teamName = cols[0].trim();
+      var teamName = unquote(cols[0]);
       var scores = [];
       var total = 0;
-      var isWinner = winnerIndex >= 0 && cols[winnerIndex] && cols[winnerIndex].trim().toUpperCase() === 'YES';
+      var isWinner = winnerIndex >= 0 && cols[winnerIndex] && unquote(cols[winnerIndex]).toUpperCase() === 'YES';
       for (var k = 0; k < activityIndexes.length; k++) {
-        var val = parseInt((cols[activityIndexes[k]] || '').trim()) || 0;
+        var val = parseInt(unquote(cols[activityIndexes[k]] || '')) || 0;
         scores.push(val);
         total += val;
       }
