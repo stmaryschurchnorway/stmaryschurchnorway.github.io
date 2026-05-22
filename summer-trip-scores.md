@@ -76,8 +76,6 @@ extra_css:
 (function() {
   var SHEET_URL = 'https://docs.google.com/spreadsheets/d/1kI7udSAsyWDNcB2PtAFREZkbGeRc__VMXkiE55Og5KI/gviz/tq?tqx=out:csv&gid=0';
 
-  var TEAM_BG    = ['#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff', '#e0f0ff'];
-  var TEAM_FG    = ['#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a', '#1a2a3a'];
 
   var DEMO_DATA = [
     { team: 'Team Alpha',   scores: [85, 72, 90, 78], total: 325, winner: false },
@@ -147,8 +145,6 @@ extra_css:
       var card = el('div', cls);
 
       var rank = el('div', 'sc-podium-rank', '#' + (i + 1));
-      rank.style.background = TEAM_BG[i] || TEAM_BG[3];
-      rank.style.color = TEAM_FG[i] || TEAM_FG[3];
       card.appendChild(rank);
 
       card.appendChild(el('div', 'sc-podium-name', t.team));
