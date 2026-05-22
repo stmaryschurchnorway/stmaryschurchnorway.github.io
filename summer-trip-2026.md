@@ -411,8 +411,18 @@ extra_css:
   <div class="st-section-inner">
     <span class="st-section-label">Competitions</span>
     <h2 class="st-section-title">Rise to the Challenge</h2>
-    <p class="st-section-desc">Three competitions that celebrate knowledge, creativity, and faith.</p>
+    <p class="st-section-desc">Four competitions that celebrate knowledge, creativity, and faith.</p>
     <div class="st-competitions-grid">
+      <div class="st-comp-card">
+        <span class="st-comp-icon">&#129517;</span>
+        <h3>Treasure Hunt</h3>
+        <p>Walking on Water: Faith Over Fear &mdash; a journey of faith, teamwork &amp; fun! Follow clues station by station to find the final treasure.</p>
+        <ul class="st-comp-details">
+          <li>7 clue cards across multiple stations</li>
+          <li>Complete the challenge, receive the next clue</li>
+          <li>All clue cards must be handed in at the end</li>
+        </ul>
+      </div>
       <div class="st-comp-card">
         <span class="st-comp-icon">&#129504;</span>
         <h3>Quiz Competition</h3>
