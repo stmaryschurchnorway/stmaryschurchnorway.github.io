@@ -405,9 +405,28 @@ body.sc-fullscreen-active footer {
   opacity: 1;
 }
 
+.sc-winner-photo {
+  max-width: 500px;
+  max-height: 50vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid rgba(240, 192, 80, 0.6);
+  box-shadow: 0 8px 40px rgba(240, 192, 80, 0.3);
+  margin-top: 24px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.sc-winner-photo.sc-winner-show {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media (max-width: 600px) {
   .sc-winner-prelude { font-size: 1rem; }
   .sc-winner-trophy { font-size: 3rem; }
   .sc-winner-name { font-size: 2rem; }
   .sc-winner-points { font-size: 2.5rem; }
+  .sc-winner-photo { max-width: 90vw; }
 }

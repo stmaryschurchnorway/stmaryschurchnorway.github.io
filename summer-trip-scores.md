@@ -68,6 +68,7 @@ extra_css:
     <div class="sc-winner-name" id="winner-name"></div>
     <div class="sc-winner-points" id="winner-points"></div>
     <div class="sc-winner-points-label" id="winner-points-label">points</div>
+    <img class="sc-winner-photo" id="winner-photo" src="" alt="Winning team">
   </div>
 </div>
 
@@ -76,6 +77,7 @@ extra_css:
 (function() {
   var SHEET_URL = 'https://docs.google.com/spreadsheets/d/1kI7udSAsyWDNcB2PtAFREZkbGeRc__VMXkiE55Og5KI/gviz/tq?tqx=out:csv&gid=0';
 
+  var TEAM_PHOTOS = {};
 
   var DEMO_DATA = [
     { team: 'Team Alpha',   scores: [85, 72, 90, 78], total: 325, winner: false },
@@ -121,7 +123,7 @@ extra_css:
         scores.push(val);
         total += val;
       }
-      teams.push({ team: teamName, scores: scores, total: total, winner: isWinner });
+      teams.push({ team: teamName, scores: scores, total: total, winner: isWinner, photo: '/assets/img/teams/team-' + i + '.jpg' });
     }
     return { headers: activityHeaders, teams: teams };
   }
@@ -241,10 +243,12 @@ extra_css:
     var nameEl = document.getElementById('winner-name');
     var pointsEl = document.getElementById('winner-points');
     var pointsLabel = document.getElementById('winner-points-label');
+    var photoEl = document.getElementById('winner-photo');
     var canvas = document.getElementById('confetti-canvas');
 
     nameEl.textContent = team.team;
     pointsEl.textContent = String(team.total);
+    if (team.photo) photoEl.src = team.photo;
 
     overlay.classList.add('sc-winner-visible');
 
@@ -257,21 +261,28 @@ extra_css:
     setTimeout(function() {
       pointsEl.classList.add('sc-winner-show');
       pointsLabel.classList.add('sc-winner-show');
-      startConfetti(canvas, 8000);
+      startConfetti(canvas, 12000);
     }, 7500);
 
+    // Show team photo after confetti starts
     setTimeout(function() {
-      overlay.classList.add('sc-winner-fadeout');
-    }, 14000);
-    setTimeout(function() {
-      overlay.classList.remove('sc-winner-visible', 'sc-winner-fadeout');
       prelude.classList.remove('sc-winner-show');
       line.classList.remove('sc-winner-show');
       trophy.classList.remove('sc-winner-show');
       nameEl.classList.remove('sc-winner-show');
       pointsEl.classList.remove('sc-winner-show');
       pointsLabel.classList.remove('sc-winner-show');
-    }, 15500);
+      photoEl.classList.add('sc-winner-show');
+    }, 12000);
+
+    // Fade out overlay
+    setTimeout(function() {
+      overlay.classList.add('sc-winner-fadeout');
+    }, 18000);
+    setTimeout(function() {
+      overlay.classList.remove('sc-winner-visible', 'sc-winner-fadeout');
+      photoEl.classList.remove('sc-winner-show');
+    }, 19500);
   }
 
   var DEMO_HEADERS = ['Treasure Hunt', 'Quiz', 'Photo Contest', 'Presentation'];
