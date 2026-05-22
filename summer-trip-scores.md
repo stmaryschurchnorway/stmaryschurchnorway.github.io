@@ -143,7 +143,7 @@ extra_css:
     var podium = document.getElementById('podium');
     clearChildren(podium);
     teams.forEach(function(t, i) {
-      var cls = 'sc-podium-card' + (t.winner ? ' sc-podium-winner' : '');
+      var cls = 'sc-podium-card' + (t.winner && winnerAnimationPlayed ? ' sc-podium-winner' : '');
       var card = el('div', cls);
 
       var rank = el('div', 'sc-podium-rank', '#' + (i + 1));
@@ -169,7 +169,7 @@ extra_css:
     var tbody = document.querySelector('#score-table tbody');
     clearChildren(tbody);
     teams.forEach(function(t, i) {
-      var tr = el('tr', t.winner ? 'sc-row-winner' : '');
+      var tr = el('tr', t.winner && winnerAnimationPlayed ? 'sc-row-winner' : '');
       tr.appendChild(el('td', 'sc-rank-cell', String(i + 1)));
       tr.appendChild(el('td', 'sc-team-cell', t.team));
       t.scores.forEach(function(s) {
@@ -282,6 +282,7 @@ extra_css:
     setTimeout(function() {
       overlay.classList.remove('sc-winner-visible', 'sc-winner-fadeout');
       photoEl.classList.remove('sc-winner-show');
+      fetchScores();
     }, 19500);
   }
 
