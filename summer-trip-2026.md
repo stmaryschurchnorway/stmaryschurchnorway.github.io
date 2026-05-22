@@ -529,17 +529,15 @@ extra_css:
           <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Pillow Covers</li>
           <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Towels</li>
           <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Toiletries</li>
+          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Comfortable outdoor clothing</li>
+          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Personal medications</li>
         </ul>
       </div>
       <div class="st-checklist-group">
         <h3>&#127775; Recommended</h3>
         <ul class="st-checklist" id="checklist-recommended">
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Comfortable outdoor clothing</li>
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Bible / Prayer book</li>
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Water bottle</li>
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Personal medications</li>
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Flashlight</li>
-          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Extra pair of shoes</li>
+          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Rain jacket and hat</li>
+          <li><span class="st-check" tabindex="0" role="checkbox" aria-checked="false"></span>Outdoor hiking shoes</li>
         </ul>
       </div>
     </div>
