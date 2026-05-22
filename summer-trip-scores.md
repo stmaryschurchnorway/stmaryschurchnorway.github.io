@@ -319,9 +319,13 @@ extra_css:
   fsBtn.addEventListener('click', function() {
     var active = document.body.classList.toggle('sc-fullscreen-active');
     fsBtn.textContent = active ? '✕ Exit Fullscreen' : '⛶ Fullscreen';
-    if (active && document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen().catch(function() {});
-    } else if (!active && document.exitFullscreen) {
+    if (active) {
+      winnerAnimationPlayed = false;
+      fetchScores();
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(function() {});
+      }
+    } else if (document.exitFullscreen) {
       document.exitFullscreen().catch(function() {});
     }
   });
