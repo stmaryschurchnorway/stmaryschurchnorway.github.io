@@ -435,12 +435,12 @@ extra_css:
       </div>
       <div class="st-comp-card">
         <span class="st-comp-icon">&#128247;</span>
-        <h3>Photo Contest</h3>
-        <p>Capture a &ldquo;Faith Over Fear&rdquo; moment during the trip. The best photo wins recognition.</p>
+        <h3>Photo Story Challenge</h3>
+        <p>Create a photo story that creatively reflects the theme &ldquo;Walking on Water &mdash; Faith Over Fear.&rdquo;</p>
         <ul class="st-comp-details">
-          <li>Theme: &ldquo;Faith Over Fear Moments&rdquo;</li>
+          <li>Up to 6 photos telling one connected story</li>
+          <li>All team members must appear</li>
           <li>Deadline: Saturday 17:00</li>
-          <li>Creativity &amp; storytelling valued</li>
         </ul>
         <a href="{{ '/summer-trip-photo-contest/' | relative_url }}" class="st-btn st-btn-ocean" style="margin-top: 16px; font-size: 0.75rem; padding: 10px 22px;">View Full Rules</a>
       </div>

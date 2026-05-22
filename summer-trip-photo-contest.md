@@ -37,33 +37,38 @@ extra_css:
     
     <div style="margin: 32px 0; padding: 24px; background: linear-gradient(135deg, rgba(29, 111, 184, 0.08), rgba(244, 132, 95, 0.08)); border-radius: 12px; border-left: 4px solid var(--st-sky);">
       <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--st-ocean); font-weight: 600; line-height: 1.6; margin: 0;">
-        &ldquo;Every picture tells a story of faith.&rdquo;
+        &ldquo;Then Peter got down out of the boat, walked on the water and came toward Jesus.&rdquo;
       </p>
       <p style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--st-text-soft); line-height: 1.6; margin: 12px 0 0 0;">
-        Capture not just images, but moments that inspire others to walk in faith over fear.
+        &mdash; Matthew 14:29
       </p>
     </div>
 
-    <div class="st-photo-formats">
-      <div class="st-photo-format-card">
-        <span class="st-photo-format-icon">&#128248;</span>
-        <h3>Single Photo</h3>
-        <p>One powerful, meaningful image that captures the theme.</p>
+    <div class="st-scoring-grid" style="margin-top: 32px;">
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>Each team may submit up to 6 photos</span>
       </div>
-      <div class="st-photo-format-card">
-        <span class="st-photo-format-icon">&#127910;</span>
-        <h3>Photo Sequence</h3>
-        <p>Up to 6 photos that tell a visual story from start to finish.</p>
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>All team members must appear in at least one photo</span>
       </div>
-      <div class="st-photo-format-card">
-        <span class="st-photo-format-icon">&#128444;</span>
-        <h3>Collage / Merged</h3>
-        <p>A creative collage or merged photo story combining multiple moments.</p>
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>Photos should tell one connected story</span>
       </div>
-    </div>
-
-    <div class="st-photo-note">
-      <p>Creativity matters more than professional editing.</p>
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>Photos can be funny, serious, dramatic, or creative</span>
+      </div>
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>Basic editing is allowed</span>
+      </div>
+      <div class="st-score-item">
+        <span class="st-score-star">&#9989;</span>
+        <span>No inappropriate or unsafe actions</span>
+      </div>
     </div>
   </div>
 </section>
@@ -77,14 +82,16 @@ extra_css:
     <p class="st-section-desc">Feel free to use anything that helps bring your story to life.</p>
 
     <div class="st-props-grid">
-      <div class="st-prop-item">&#9748; Umbrellas</div>
-      <div class="st-prop-item">&#128214; Bibles</div>
-      <div class="st-prop-item">&#129681; Chairs as a &ldquo;boat&rdquo;</div>
-      <div class="st-prop-item">&#127754; Blankets as waves</div>
-      <div class="st-prop-item">&#128294; Flashlights / Lanterns</div>
+      <div class="st-prop-item">&#9748; Umbrella</div>
       <div class="st-prop-item">&#129526; Rope</div>
-      <div class="st-prop-item">&#9973; Paper boats</div>
-      <div class="st-prop-item">&#128220; Signs with &ldquo;Faith,&rdquo; &ldquo;Fear,&rdquo; &ldquo;Trust,&rdquo; &ldquo;Hope&rdquo;</div>
+      <div class="st-prop-item">&#128294; Flashlight / Lamp</div>
+      <div class="st-prop-item">&#128214; Bible</div>
+      <div class="st-prop-item">&#9973; Paper Boat</div>
+      <div class="st-prop-item">&#127754; White Cloth / Bedsheet (Waves)</div>
+      <div class="st-prop-item">&#129681; Chairs (to make a &ldquo;boat&rdquo;)</div>
+      <div class="st-prop-item">&#128167; Water Bottle / Spray for Rain Effect</div>
+      <div class="st-prop-item">&#129507; Scarves or Shawls</div>
+      <div class="st-prop-item">&#128526; Torch Light for Dramatic Lighting</div>
     </div>
   </div>
 </section>
@@ -93,29 +100,34 @@ extra_css:
 <section class="st-section st-section-sand st-reveal" id="ideas">
   <div class="st-section-inner">
     <span class="st-section-label">Inspiration</span>
-    <h2 class="st-section-title">Creative Ideas</h2>
+    <h2 class="st-section-title">Your Photos Can Show</h2>
     <p class="st-section-desc">Here are some themes you can explore in your photo story.</p>
 
     <div class="st-ideas-grid">
       <div class="st-idea-card">
-        <span class="st-idea-icon">&#128168;</span>
-        <h3>Fear to Courage</h3>
-        <p>Show the moment when fear turns into bravery.</p>
+        <span class="st-idea-icon">&#128591;</span>
+        <h3>Trusting God During Fear</h3>
+        <p>Show moments of placing trust in God when things feel uncertain.</p>
+      </div>
+      <div class="st-idea-card">
+        <span class="st-idea-icon">&#128099;</span>
+        <h3>Stepping Out in Faith</h3>
+        <p>Capture the courage it takes to step into the unknown.</p>
       </div>
       <div class="st-idea-card">
         <span class="st-idea-icon">&#129309;</span>
-        <h3>Team Together</h3>
-        <p>People helping and supporting each other.</p>
+        <h3>Encouraging One Another</h3>
+        <p>People helping, supporting, and lifting each other up.</p>
       </div>
       <div class="st-idea-card">
-        <span class="st-idea-icon">&#127763;</span>
-        <h3>Dark to Light</h3>
-        <p>Show contrast between shadows and bright light.</p>
+        <span class="st-idea-icon">&#9889;</span>
+        <h3>Overcoming Doubt</h3>
+        <p>The moment when doubt gives way to determination and belief.</p>
       </div>
       <div class="st-idea-card">
-        <span class="st-idea-icon">&#9968;</span>
-        <h3>Looking Forward</h3>
-        <p>Faces turned toward sky, mountains, or horizon &mdash; hope and trust.</p>
+        <span class="st-idea-icon">&#10013;</span>
+        <h3>Focusing on Jesus</h3>
+        <p>Looking toward Jesus instead of the storm &mdash; faith over fear.</p>
       </div>
     </div>
   </div>
@@ -156,7 +168,7 @@ extra_css:
 <section class="st-section st-section-white st-reveal" id="closing">
   <div class="st-section-inner" style="text-align: center;">
     <div class="st-photo-final" style="margin: 0 auto; max-width: 500px;">
-      <p>Keep it safe, inclusive, and story-driven. Most importantly &mdash; have fun, be creative, and let your story speak louder than words!</p>
+      <p>Let your creativity tell a story of faith, trust &amp; courage!</p>
     </div>
 
     <div style="margin-top: 36px;">
