@@ -14,7 +14,7 @@ description: "Holy Qurbana schedule, feast days (Oshana, Perunnal), and upcoming
   </div>
 </div>
 
-{% include upcoming-events.html id="events-upcoming" limit=5 paginate=true %}
+{% include upcoming-events.html id="events-upcoming" limit=5 window_days=365 paginate=true %}
 
 {% include past-events.html id="events-past" limit=6 window_days=90 paginate=true %}
 
