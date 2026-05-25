@@ -464,8 +464,8 @@ extra_css:
     <span class="st-section-label">Team Contest</span>
     <h2 class="st-section-title">Every Moment Counts</h2>
     <p class="st-section-desc">Points are awarded across every activity. Work together, earn together, and celebrate together.</p>
-    <div class="st-photo-note" style="margin-bottom: 36px;">
-      <p>&#127881; Teams will be revealed on Day 1! Your allocation is a surprise &mdash; come ready for anything. Teams will be announced on Friday evening at the welcome session.</p>
+    <div style="text-align: center; margin-bottom: 36px;">
+      <a href="{{ '/summer-trip-scores/' | relative_url }}" class="st-btn st-btn-ocean">View Live Scores</a>
     </div>
 
     <div class="st-team-features">
@@ -504,7 +504,7 @@ extra_css:
     </p>
 
     <div style="text-align: center; margin-top: 32px;">
-      <a href="https://docs.google.com/spreadsheets/d/1SjEWAOw1GQfuAMKCJBt2ZT0LVqCJDLR_f2AOtKtALLk/edit?gid=1142861410#gid=1142861410" target="_blank" rel="noopener" class="st-btn st-btn-ocean">View Sign-Up Sheet</a>
+      <span class="st-btn st-btn-ocean" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">Sign-Up Closed</span>
     </div>
 
     <div class="st-food-note" style="margin-top: 28px;">
