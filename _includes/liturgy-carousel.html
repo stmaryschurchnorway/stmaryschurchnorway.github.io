@@ -1,0 +1,130 @@
+{% comment %}
+  Shared carousel shell for all interactive liturgy pages.
+  Parameters (passed via include):
+    data — name of the _data/*.yml file (e.g. "qurbana", "mamodisa", "mooron")
+  The header (title, Malayalam, pronunciation, intro, cross-link) is rendered by
+  _includes/liturgy-header.html from the page's front-matter `intro:` block.
+{% endcomment %}
+
+<div class="qurbana-wrap">
+  <div class="lit-topbar">
+    <a href="{{ '/liturgy/' | relative_url }}" class="back-to-liturgies-btn"><span class="kick-arrow" aria-hidden="true">←</span> Liturgy</a>
+    <button class="kids-switch" id="kidsToggle" role="switch" aria-checked="false" aria-label="Kids mode">
+      <span class="ks-label">🧒 Kids mode</span>
+      <span class="ks-track"><span class="ks-knob"></span></span>
+    </button>
+  </div>
+  {% include liturgy-header.html %}
+
+  <div class="carousel-stage">
+  <div class="carousel-label">
+    <span class="cl-title">{{ page.intro.title }}</span>
+    <span class="cl-sub">{{ page.intro.subtitle | default: page.intro.title }}</span>
+  </div>
+  <div class="phase-tabs" id="phaseTabs"></div>
+  <div class="phase-progress" id="phaseProgress" role="progressbar" aria-label="Progress">
+    <div class="phase-progress-fill" id="progressFill"></div>
+  </div>
+
+  <div class="carousel-card">
+    <div class="reading-header" id="readingHeader"></div>
+    <div class="media" id="media"></div>
+    <div class="media-note" id="sceneNote"></div>
+    <div class="hunt-bar" id="huntBar" hidden></div>
+    <button class="reading-exit" id="readingExit" aria-label="Exit reading view"><span aria-hidden="true">✕</span> Close</button>
+    <div class="card-scroll" id="cardScroll">
+    <div class="controls-header">
+      <button class="icon-btn" id="prev" aria-label="Previous stage">←</button>
+      <div class="header-text">
+        <span class="subpart-indicator" id="subpartInd"></span>
+        <div class="stage-counter" id="counter">STAGE 1 OF 1</div>
+        <h2 class="stage-title" id="title">—</h2>
+      </div>
+      <button class="icon-btn" id="next" aria-label="Next stage">→</button>
+    </div>
+    <div class="malayalam-section" id="mlSection">
+      <div class="malayalam-content">
+        <div class="malayalam-text" id="mlText"></div>
+        <div class="transliteration" id="trText"></div>
+      </div>
+      <button class="audio-button" aria-label="Hear pronunciation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+      </button>
+    </div>
+    <div class="read-toggle" id="readToggle" role="group" aria-label="Reading level">
+      <span class="rt-label">Reading</span>
+      <div class="rt-seg">
+        <button class="rt-btn" data-mode="simple">Simple</button>
+        <button class="rt-btn" data-mode="full">Full</button>
+      </div>
+    </div>
+    <p class="stage-description" id="desc"></p>
+    <div class="dyk" id="dyk" hidden>
+      <button class="dyk-head" id="dykHead"><span class="dyk-badge">?</span><span class="dyk-q" id="dykQ"></span><span class="dyk-caret">▾</span></button>
+      <div class="dyk-a" id="dykA"></div>
+    </div>
+    <div class="substages-panel" id="panel"></div>
+    <div class="simple-hint" id="simpleHint" hidden>There's much more to explore here — <button id="goFull">switch to Full</button> for the prayers, sacred objects, and hymns.</div>
+    <div class="dots-caption" id="overallPos"></div>
+    <div class="progress-dots" id="dots"></div>
+    <div class="done-banner" id="doneBanner" hidden><button class="db-close" id="doneClose" aria-label="Dismiss">&times;</button><div class="db-title">🎉 You explored the whole journey!</div><div class="db-sub">All stages visited — well done.</div></div>
+    <div class="quiz" id="quiz" hidden></div>
+    <div class="quiz quiz-final" id="finalQuiz" hidden></div>
+    <div class="controls-footer">
+      <button class="foot-btn" id="prevF"><span aria-hidden="true">←</span> Previous</button>
+      <button class="foot-btn primary" id="nextF">Next <span aria-hidden="true">→</span></button>
+    </div>
+    </div><!-- /card-scroll -->
+  </div>
+  </div><!-- /carousel-stage -->
+</div>
+
+<!-- SHLOMO THE DOVE -->
+<div class="mascot" id="mascot" hidden>
+  <div class="mascot-bubble" id="mascotBubble" hidden>
+    <button class="mb-close" id="mascotClose" aria-label="Hide">&times;</button>
+    <span class="mb-name" id="mascotName">Shlomo</span>
+    <span class="mb-text" id="mascotText"></span>
+    <button class="mb-more" id="mascotMore" hidden>💡 Did you know?</button>
+  </div>
+  <button class="mascot-dove" id="mascotDove" aria-label="Talk to Shlomo the dove">🕊️<span class="mascot-ping" id="mascotPing"></span></button>
+</div>
+
+<!-- GLOSSARY POPOVER -->
+<div class="gloss-pop" id="glossPop" hidden>
+  <button class="gloss-pop-close" id="glossClose" aria-label="Close">&times;</button>
+  <div class="gloss-pop-term" id="glossTerm"></div>
+  <div class="gloss-pop-def" id="glossDef"></div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div class="q-lightbox" id="qLightbox" role="dialog" aria-modal="true" aria-label="Stage illustration">
+  <button class="q-lightbox-close" id="qlbClose" aria-label="Close">&times;</button>
+  <img class="q-lightbox-img" id="qlbImg" alt="">
+  <div class="q-lightbox-cap" id="qlbCap"></div>
+</div>
+
+<!-- SACRED ITEM MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-counter">Item <span id="mCur">1</span> of <span id="mTot">1</span></div>
+  <button class="modal-close" id="mClose" aria-label="Close">&times;</button>
+  <button class="modal-arrow prev" id="mPrev" aria-label="Previous item">‹</button>
+  <button class="modal-arrow next" id="mNext" aria-label="Next item">›</button>
+  <div class="modal-card" id="mCard">
+    <div class="modal-media">
+      <span class="modal-view-label" id="mViewLabel"></span>
+      <img id="mImg" alt="">
+      <button class="modal-flip" id="mFlip" style="display:none;">⇄ Flip to back</button>
+    </div>
+    <div class="modal-details">
+      <h3 class="modal-name" id="mName"></h3>
+      <div class="modal-ml ml" id="mMl"></div>
+      <div class="modal-block" id="mMeaningBlock"><span class="modal-block-title">Theological Significance</span><p id="mMeaning"></p></div>
+      <div class="modal-block" id="mHistBlock" style="display:none;"><span class="modal-block-title">Historical Context</span><p id="mHist"></p></div>
+      <div class="modal-block" id="mBibBlock" style="display:none;"><span class="modal-block-title">Biblical Reference</span><p id="mBib"></p></div>
+    </div>
+  </div>
+</div>
+
+<script>window.QDATA={{ site.data[include.data] | jsonify }};</script>
+<script src="{{ '/assets/js/qurbana-new.js' | relative_url }}"></script>
