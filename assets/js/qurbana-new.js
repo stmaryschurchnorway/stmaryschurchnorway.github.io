@@ -94,12 +94,20 @@ function linkBibleRefs(text){
 
 const glossLC={};Object.keys(glossary).forEach(k=>glossLC[k.toLowerCase()]={term:k,def:glossary[k]});
 function escRe(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+// Link each glossary term only on its FIRST occurrence within the current scope.
+// Scope is reset per stage render (and separately for the item modal) via glossReset().
+let glossSeen=null;
+function glossReset(){glossSeen=new Set();}
 function glossify(html){
   const termSrc=Object.keys(glossary).sort((a,b)=>b.length-a.length).map(escRe).join('|');
   const re=new RegExp('\\b('+termSrc+')\\b','gi');
   return html.replace(/(<[^>]+>)|([^<]+)/g,function(seg,tag,text){
     if(tag)return tag;
-    return text.replace(re,function(w){return '<button class="gloss-term" data-term="'+w.toLowerCase()+'">'+w+'</button>';});
+    return text.replace(re,function(w){
+      const key=w.toLowerCase();
+      if(glossSeen){if(glossSeen.has(key))return w;glossSeen.add(key);}
+      return '<button class="gloss-term" data-term="'+key+'">'+w+'</button>';
+    });
   });
 }
 const _origLinkBibleRefs=linkBibleRefs;
@@ -646,6 +654,7 @@ function buildSceneNote(){
 
 function render(){
  const st=stages[idx];
+ glossReset();   // glossary terms link only on first occurrence per stage (desc + substages + Shlomo note)
  visited.add(idx);saveVisited();
  let m;
  if(st.video){
@@ -732,6 +741,7 @@ let mIndex=0,mFace='front';
 function openModal(name){const i=allItems.findIndex(x=>x.name===name);if(i<0)return;mIndex=i;showItem();modal.classList.add('open');}
 function showItem(){
  const it=allItems[mIndex];mFace='front';
+ glossReset();   // the item modal is its own glossary scope
  var _mm=document.querySelector('.modal-media');if(_mm){_mm.classList.remove('ph-fallback');_mm.removeAttribute('data-letter');}
  mImg.style.display='';mImg.src=it.img;mImg.alt=it.name;
  mImg.onerror=function(){this.style.display='none';var mm=document.querySelector('.modal-media');if(mm){mm.classList.add('ph-fallback');mm.setAttribute('data-letter',(it.name||'?').trim().charAt(0).toUpperCase());}};
