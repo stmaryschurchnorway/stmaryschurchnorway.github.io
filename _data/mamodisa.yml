@@ -1,0 +1,495 @@
+# Holy Baptism (Mamodisa) — content data for the shared carousel engine.
+# Rendered by qurbana.js via window.QDATA.
+# stage `img` is relative to /assets/img/ ; item `img` is a full path from the page.
+
+title: "Holy Baptism"
+ns: "mamodisa"        # localStorage namespace — keeps progress separate from other pages
+# no subPhase — Mamodisa has no sub-parts
+
+phaseTitles:
+  - "Office of the Catechumens"
+  - "Office of Baptism"
+  - "Concluding Rites"
+
+phaseNums:
+  - "PART 1"
+  - "PART 2"
+  - "PART 3"
+
+subNames: []
+
+stages:
+  # ===== PART 1 — OFFICE OF THE CATECHUMENS =====
+  - p: 0
+    s: null
+    title: "Making of a Catechumen"
+    ml: "ശിഷ്യാദ്ബോധന പ്രാർത്ഥന"
+    tr: "Shishya-adhbodana Prarthana"
+    img: "stages/catechumen-prayer.webp"
+    flat: true
+    desc: "At the entrance of the nave, the Church receives the child into the order of catechumens. The Priest breathes upon the child's face three times in the sign of the Cross, invoking the Holy Spirit."
+    subs:
+      - title: ""
+        significance: "The formal prayer by which the Church receives the candidate into the order of catechumens, invoking divine protection and the indwelling of the Holy Spirit."
+        ritual: "The child is brought to the entrance of the nave. The Priest recites the prayer for the making of a catechumen, then breathes upon the child's face three times in the sign of the Cross, invoking the Trinity with each breath — the child has now formally entered the order of catechumens."
+        theology: "The insufflation (breathing) recalls the ‘breath of life’ God breathed into Adam (Genesis 2:7) and the Spirit breathed by the Risen Christ upon His disciples (John 20:22). What was given to Adam at creation, and to the apostles at Pentecost, is now given to this child."
+        biblical: "‘The Lord God... breathed into his nostrils the breath of life; and man became a living soul’ (Genesis 2:7). ‘He breathed on them, and saith unto them, Receive ye the Holy Spirit’ (John 20:22). ‘Suffer the little children to come unto Me’ (Matthew 19:14)."
+        spiritual: "The catechumenate marks the beginning of the journey to new life. The child is no longer alone but claimed by the Church and sealed by the Holy Spirit's presence."
+
+  - p: 0
+    s: null
+    title: "The First Cross — Sealing of the Father"
+    ml: "ആദ്യ കുരിശടയാളം"
+    tr: "Aadya Kurish-Adayalam"
+    img: "stages/first-cross.webp"
+    flat: true
+    desc: "The first of three Trinitarian cross-markings on the forehead — made without oil, for the invisible Father. The candidate is claimed and sealed as a member of Christ's flock."
+    subs:
+      - title: ""
+        ritual: "The Priest makes the sign of the Cross on the child's forehead — without any oil — invoking the Father. This is the first of three forehead crosses; the second (with the Oil of Catechumens) follows before immersion, and the third (with Holy Mooron) seals the candidate after baptism."
+        theology: "The first marking represents the invisible Father, the Godhead. Without any visible oil, it acknowledges that the Father is unseen — yet the candidate is claimed and sealed for Him."
+        biblical: "The marking echoes the blood on the doorposts at Passover (Exodus 12:23) and the mark on the foreheads of the faithful (Ezekiel 9:4). ‘The Lord knows those who are His’ (2 Timothy 2:19); ‘I saw the servants of our God sealed on their foreheads’ (Revelation 7:3)."
+
+  - p: 0
+    s: null
+    title: "The Rejection of Satan"
+    ml: "ഞാൻ ശാത്താനെ ത്യജിക്കുന്നു"
+    tr: "Njan Shathane Tyajikkunnu"
+    img: "stages/exorcism.webp"
+    flat: true
+    desc: "Facing West — the direction of darkness — the candidate publicly renounces Satan, his pride, and all worldly pleasures. The Priest makes nine signs of the Cross, commanding the unclean spirit to depart."
+    subs:
+      - title: ""
+        significance: "A formal, public renunciation of evil and all its manifestations — turning away from darkness before turning toward the light."
+        ritual: "The Godparent holds the child's left hand, turning toward the West (darkness). The Priest commands the ‘unclean spirit’ to depart with nine signs of the Cross. The Godparent repeats the vow three times: ‘I renounce thee, Satan, and all thy angels, and all thy pride, and all thy worldly pleasures.’"
+        theology: "Complete dissociation from evil — from the fallen angel and all his works. The exorcism is not a gentle prayer but a forceful command, affirming that Christ has already conquered Satan at the Cross, and every baptized believer shares in that victory."
+        biblical: "‘Resist the devil, and he will flee from you’ (James 4:7). ‘Be sober, be vigilant; because your adversary the devil walks about as a roaring lion’ (1 Peter 5:8). ‘Choose this day whom ye will serve’ (Joshua 24:15)."
+        spiritual: "Before light can be received, darkness must be renounced. The Christian life begins with a decisive ‘No’ to evil before any ‘Yes’ to Christ has weight."
+
+  - p: 0
+    s: null
+    title: "Acceptance of Christ & the Creed"
+    ml: "വിശ്വാസ പ്രമാണം"
+    tr: "Viswasa Pramanam"
+    img: "stages/creed.webp"
+    flat: true
+    desc: "Now turning East — toward Light and Christ — the candidate professes the Nicene Creed, entering the faith of the ancient Church and uniting with every generation of believers."
+    subs:
+      - title: ""
+        ritual: "The Godparent and child turn to face East (Light and Christ), and the Godparent holds the child's right hand. The Nicene Creed is recited on the candidate's behalf: ‘We believe in one God, the Father Almighty, Maker of heaven and earth...’"
+        theology: "By professing the Creed — formulated at Nicaea (325) and Constantinople (381) — the candidate inherits the faith of every generation before them. The East is the direction of Paradise (Genesis 2:8) and of Christ's coming again (Matthew 24:27)."
+        biblical: "‘If you confess with your mouth the Lord Jesus and believe in your heart that God has raised Him from the dead, you will be saved’ (Romans 10:9). ‘For us there is one God, the Father... and one Lord Jesus Christ’ (1 Corinthians 8:6)."
+
+  - p: 0
+    s: null
+    title: "The Scripture Readings"
+    ml: "വേദവായന"
+    tr: "Vedavaayana"
+    img: "stages/scripture-readings.webp"
+    flat: true
+    desc: "The Word of God is proclaimed over the candidate — the Epistle revealing what baptism accomplishes, the Gospel revealing who accomplishes it: Christ Himself."
+    subs:
+      - title: ""
+        significance: "The Word of God is proclaimed over the candidate, grounding the sacrament in Scripture and revealing its meaning through apostolic teaching and the words of Christ."
+        theology: "The Epistle (Romans 6) reveals what baptism accomplishes — death to sin and resurrection in Christ. The Gospel (Luke 3) reveals who accomplishes it — not the Priest, but Christ, who baptizes with the Holy Spirit and fire."
+        biblical: "‘All of us who have been baptized into Christ Jesus were baptized into His death... so that we too might walk in newness of life’ (Romans 6:3-4). ‘He who is mightier than I is coming... He will baptize you with the Holy Spirit and with fire’ (Luke 3:16). ‘The Lord is my shepherd... He leads me beside still waters’ (Psalms 23:1-2)."
+
+  # ===== PART 2 — OFFICE OF BAPTISM =====
+  - p: 1
+    s: null
+    title: "The Blessing of the Water"
+    ml: "ജലത്തിന്റെ ആശീർവാദം"
+    tr: "Jalathinte Aasheervaadam"
+    img: "stages/blessing-water.webp"
+    flat: true
+    desc: "At the font (Mamodisa Thotti), hot and cold water are mingled — recalling the water and blood from Christ's side. The Priest breathes on the water in the sign of the Cross, calling down the Holy Spirit, transforming it into the very Jordan."
+    subs:
+      - title: ""
+        ritual: "Hot and cold water are mingled in the font (recalling John 19:34). The Priest breathes upon the water three times in the sign of the Cross, then stirs it crosswise, invoking: ‘Come, O Holy Spirit, sanctify this water that it may be for the divine washing of rebirth.’"
+        theology: "Through the Spirit's invocation, ordinary water becomes the Jordan — the river in which Christ Himself was baptized — and a vehicle of redemption. The same power that at Creation hovered over the waters now makes them the place of new creation."
+        biblical: "‘The Spirit of God hovered over the face of the waters’ (Genesis 1:2). ‘The voice of the Lord is upon the waters’ (Psalms 29:3). ‘I will sprinkle clean water upon you, and ye shall be clean’ (Ezekiel 36:25)."
+        hymn:
+          name: "The Stirring"
+        spiritual: "What seems to be ordinary water is, by the Spirit, made the gateway to eternal life. God uses created things to convey uncreated grace."
+        items:
+          - name: "Mamodisa Thotti (Baptismal Font)"
+            ml: "മാമോദീസാ തൊട്ടി"
+            img: "/assets/img/sacred-items/baptismal-font.webp"
+            meaning: "Typically stone or metal, near the entrance of the nave. It is at once the Tomb of Christ (in which the old self is buried) and the Womb of the Church (from which the new creation is born). ‘In the self-same moment you die and are born; the water of salvation is at once your grave and your mother.’ — St. Cyril of Jerusalem"
+            bib: "(John 19:34)"
+
+  - p: 1
+    s: null
+    title: "Pouring the Mooron into the Water"
+    ml: "മൂറോൻ ജലത്തിലേക്ക് പകരൽ"
+    tr: "Mooron Jalathilekku Pakaral"
+    img: "stages/pouring-mooron.webp"
+    flat: true
+    desc: "A distinctive moment of the Malankara rite: the Holy Mooron — the seal of the Holy Spirit — is poured into the baptismal waters in the form of a Cross, uniting the gift of the Spirit with the cleansing of water."
+    subs:
+      - title: ""
+        ritual: "The Priest raises the vessel of Holy Mooron, moves it crosswise above the waters three times, then pours it into the font in the sign of the Cross: ‘We pour the Holy Mooron into this water of baptism, that the old person be regenerated, in the name of the Father, and of the Son, and of the living and Holy Spirit, unto life everlasting.’"
+        theology: "The mingling of oil and water — two substances that naturally repel each other — becomes a sign of the divine miracle: the infinite God united with finite humanity. Water and Spirit are joined, fulfilling ‘Unless one is born of water and the Spirit, he cannot enter the Kingdom of God’ (John 3:5)."
+        biblical: "‘O God, the waters saw Thee; the waters saw Thee, and were afraid’ (Psalms 77:16). ‘There came a voice from heaven, saying, This is My beloved Son’ (Matthew 3:17)."
+        items:
+          - name: "Holy Mooron (Chrism)"
+            ml: "മൂറോൻ"
+            img: "/assets/img/sacred-items/mooron.webp"
+            meaning: "Balsam oil poured over olive oil — symbolizing divinity poured upon humanity. Consecrated by the Catholicos on the Thursday of Mysteries, roughly once a decade. Poured into the water in a cross-formation to sanctify it, then later applied to the baptized as the seal of the Holy Spirit."
+
+  - p: 1
+    s: null
+    title: "The Second Cross — Rushmo"
+    ml: "എണ്ണ അഭിഷേകം · റുഷ്മോ"
+    tr: "Enna Abhishekam · Rushmo"
+    img: "stages/anointing-oil.webp"
+    flat: true
+    desc: "The second forehead-cross, made with the Oil of Catechumens — the Rushmo, ‘the mark.’ The candidate is anointed head to toe as ‘an athlete for Christ,’ the body itself consecrated before the waters."
+    subs:
+      - title: ""
+        significance: "The second of the three Trinitarian forehead-crosses, made with the Oil of Catechumens (Mesh'ho / Elaion). It signifies the Son who became flesh, anointing the candidate to share in His death and resurrection."
+        ritual: "After the Mooron has been poured into the water but before immersion, the Priest signs the cross on the forehead with the Oil of Catechumens, then anoints from head to toe — preparing the body for the waters."
+        theology: "By being anointed with the Oil of Catechumens, the candidate is identified with the Anointed One (Christ), prepared in body and soul to enter the baptismal waters."
+        biblical: "‘...as the precious oil upon the head, that ran down upon the beard, even Aaron's beard’ (Psalms 133:1-2). ‘Samuel took the horn of oil, and anointed him... and the Spirit of the Lord came upon David’ (1 Samuel 16:13). ‘You have an anointing from the Holy One’ (1 John 2:20)."
+        spiritual: "Before being immersed in death and rising in life, the body itself is consecrated. Nothing of the candidate is left untouched by grace."
+        items:
+          - name: "Oil of Catechumens (Elaion)"
+            ml: "എണ്ണ"
+            img: "/assets/img/sacred-items/elaion.webp"
+            meaning: "Pure olive oil consecrated by the bishop, used to anoint candidates before immersion. It heals the fallen nature, strengthens the candidate as ‘an athlete for Christ,’ and prepares the body for the sacramental death and resurrection."
+
+  - p: 1
+    s: null
+    title: "The Immersion"
+    ml: "മാമോദീസാ മുഴുക്കൽ"
+    tr: "Mamodisa Muzhukkal"
+    img: "stages/immersion.webp"
+    flat: true
+    pivot: true
+    desc: "The apex of the sacrament. Facing East toward the risen Christ, the candidate is immersed three times — at the Name of the Father, the Son, and the Holy Spirit — dying and rising with Christ. ‘The child of Adam has become the child of God!’"
+    subs:
+      - title: ""
+        ritual: "The Priest holds the candidate facing East and immerses (or pours water) three times — once each at the invocation of the Father, the Son, and the Holy Spirit — representing Christ's three days in the tomb and the fullness of the Trinity. Formula: ‘N. is baptized for the remission of sins, in the name of the Father (Amen), and of the Son (Amen), and of the living and Holy Spirit (Amen).’"
+        theology: "The candidate dies with Christ in the waters, is buried with Him, and rises to new life. The old self — the child of Adam — is destroyed, and a new creation emerges: a child of God, marked for eternity. The Priest does not create this transformation but calls it forth through the ancient words and the Spirit working in the waters."
+        biblical: "‘All of us who have been baptized into Christ Jesus were baptized into His death. We were buried therefore with Him by baptism into death... that we too might walk in newness of life’ (Romans 6:3-4). ‘You were buried with Him in baptism, in which you were also raised with Him through faith’ (Colossians 2:12)."
+        spiritual: "The font is at once a tomb and a womb. In the same moment one dies and is born; the water of salvation is at once the grave of the old self and the mother of the new."
+        items:
+          - name: "Mamodisa Thotti (Baptismal Font)"
+            ml: "മാമോദീസാ തൊട്ടി"
+            img: "/assets/img/sacred-items/baptismal-font.webp"
+            meaning: "The sacred basin holding the consecrated waters — at once the Tomb of Christ, in which the old self is buried, and the Womb of the Church, from which the new creation is born."
+
+  - p: 1
+    s: null
+    title: "Chrismation — The Third Cross"
+    ml: "അഭിഷേകം · ഹത്മാ"
+    tr: "Abhishekam · Hatma"
+    img: "stages/chrismation.webp"
+    flat: true
+    desc: "Drawn from the waters and clothed in white, the child is sealed with Holy Mooron — the third and final cross. The Spirit poured out on the whole Church at Pentecost is now given personally to this one child, from crown to sole."
+    subs:
+      - title: ""
+        significance: "The third and final Trinitarian cross-marking, made with Holy Mooron — the seal of the Holy Spirit, called Hatma, ‘the seal.’ It is the personalization of Pentecost for this one person."
+        ritual: "The Priest dips his thumb into the Holy Mooron and signs the cross on the forehead: ‘By the Holy Mooron, the sweet fragrance of Christ, the sign and seal of the true faith, and the perfection of the gift of the Holy Spirit, [Name] is sealed, in the Name of the Father, and of the Son, and of the living and Holy Spirit.’ He then anoints the eyes, ears, nostrils and lips, and continues from head to toe in the pattern of the Cross."
+        theology: "Chrismation is the very fulfillment of Baptism. While Baptism incorporates us into Christ's risen life, Chrismation makes us partakers of His Spirit. Anointed with Mooron, we are marked forever as the sheep and soldiers of Christ — a single, eternal seal that cannot be repeated."
+        biblical: "‘God anointed Jesus of Nazareth with the Holy Spirit and with power’ (Acts 10:38). ‘He... has anointed us... and given us the Spirit in our hearts as a guarantee’ (2 Corinthians 1:21-22). ‘In Him you also were sealed with the Holy Spirit of promise’ (Ephesians 1:13-14)."
+        hymn:
+          name: "The Seal (Hatma)"
+        spiritual: "What was given to the apostles at Pentecost — the seal of the Holy Spirit — is given personally to each baptized believer. The fragrance of the Mooron is the anointing of the Spirit made tangible."
+        items:
+          - name: "Holy Mooron (Chrism)"
+            ml: "മൂറോൻ"
+            img: "/assets/img/sacred-items/mooron.webp"
+            meaning: "The fragrance of Christ and the visible tabernacle of the Holy Spirit. Once a person has been sealed with Mooron, that seal can never be repeated — it is eternal and irrevocable."
+
+  # ===== PART 3 — CONCLUDING RITES =====
+  - p: 2
+    s: null
+    title: "The White Robe (Vellakuppayam)"
+    ml: "വെള്ളക്കുപ്പായം"
+    tr: "Vellakuppayam"
+    img: "stages/white-robe.webp"
+    flat: true
+    desc: "The newly baptized is clothed in the garment of light — the visible sign of the new creation. Once a child of Adam in shame, now a child of God in glory, radiant with divine light."
+    subs:
+      - title: ""
+        ritual: "The candidate is dressed in new white clothes. In the early Church, the newly baptized wore this white robe for the entire week following baptism, dazzling like the snow."
+        theology: "Clothed in righteousness, the white robe represents the restoration of the image of God in humanity — the ‘garment of light’ restored by Christ. White is the colour of royalty, resurrection, and the saints in heaven."
+        biblical: "‘He has clothed me with the garments of salvation, He has covered me with the robe of righteousness’ (Isaiah 61:10). ‘As many of you as were baptized into Christ have put on Christ’ (Galatians 3:27). ‘They shall walk with Me in white, for they are worthy’ (Revelation 3:4)."
+        spiritual: "The robe is the outward sign of the inward grace — a reminder that the baptized have already put on Christ, and that this dazzling whiteness is a foretaste of the glory of the saints."
+        items:
+          - name: "Vellakuppayam (White Robe)"
+            ml: "വെള്ളക്കുപ്പായം"
+            img: "/assets/img/sacred-items/baptismal-robe.webp"
+            meaning: "The ‘garment of light’ restored by Christ, signifying regeneration, newness, kingship, and future immortality. It reminds the baptized to remain faithful to the baptismal pledge."
+
+  - p: 2
+    s: null
+    title: "The Crowning (Kireedam)"
+    ml: "കിരീടം"
+    tr: "Kireedam"
+    img: "stages/crowning.webp"
+    flat: true
+    desc: "Led to the sanctuary, the newly baptized is crowned — designated a ‘king/queen and priest’ in the Kingdom of God. The crown is kept for seven days, the home itself becoming a sanctuary during that week."
+    subs:
+      - title: ""
+        ritual: "The Priest leads the baptized to the sanctuary, blesses the crown, and places it upon the child: ‘O Lord, crown this Thy servant with splendour and glory.’ The crown is kept for seven days, then removed with a special prayer."
+        theology: "The child enters the royal priesthood of all believers, crowned with the promise of eternal life. The crown anticipates the unfading crown of glory promised to all who keep faith with Christ."
+        biblical: "‘You have made them kings and priests to our God’ (Revelation 5:10). ‘You are a chosen race, a royal priesthood, a holy nation’ (1 Peter 2:9). ‘Be faithful unto death, and I will give you the crown of life’ (Revelation 2:10)."
+        spiritual: "Every baptized believer is crowned — not for personal glory, but to reign with Christ in holiness."
+        items:
+          - name: "Kireedam (Crown)"
+            ml: "കിരീടം"
+            img: "/assets/img/sacred-items/baptismal-crown.webp"
+            meaning: "The liturgical crown symbolizing the royal priesthood of all believers (1 Peter 2:9). Placed upon the child's head, it marks their designation as king and priest in the Kingdom of God, and is kept for seven days as a visible sign of their sacred status."
+
+  - p: 2
+    s: null
+    title: "The Procession (Kukilion)"
+    ml: "കുകിലിയോൻ"
+    tr: "Kukilion"
+    img: "stages/final-blessing.webp"
+    flat: true
+    desc: "A joyful chanted procession: the Priest, the Godparent carrying the baby, and the family circle the altar three times with hymns of joy — the child's full incorporation into the communion of saints."
+    subs:
+      - title: ""
+        ritual: "The Priest, the Godparent carrying the baby, and the family circle the altar (Madbaha) three times, singing the Kukilion from Psalm 103: ‘As a father has compassion on his children, so the Lord has compassion on those who fear Him.’"
+        theology: "The community celebrates the new birth in Christ with joy and thanksgiving. The procession around the altar marks the child's entrance into the eternal communion of saints — circling, with all the angels and saints, the throne of the Lamb. The three circuits echo Christ's three days in the tomb."
+        hymn:
+          name: "Kukilion (Psalm 103)"
+        biblical: "‘Sing ye to the Lord, for He hath triumphed gloriously’ (Exodus 15:20-21). ‘I will go about Thine altar, O Lord, that I may publish with the voice of thanksgiving’ (Psalms 26:6-7)."
+
+  - p: 2
+    s: null
+    title: "Holy Communion (Qurbana)"
+    ml: "കുർബാന സ്വീകരണം"
+    tr: "Qurbana Sweekaranam"
+    img: "stages/catechumen-creed.webp"
+    flat: true
+    desc: "The rite concludes at the altar steps: the newly baptized — even an infant — receives First Holy Communion. Baptism, Chrismation, and Eucharist together complete the Sacraments of Christian Initiation."
+    subs:
+      - title: ""
+        ritual: "The Priest administers a drop of the Holy Qurbana — the Body and Blood of Christ — using a small spoon (Tharvodo), at the Madbaha (altar) steps. The Malankara rite affirms that initiation is complete only when the baptized partakes of the Eucharist — even on the very day of baptism."
+        theology: "The Mamodisa completes the transformation, making the ‘child of Adam’ a ‘child of God,’ fully partaking in the life of the Church. Baptism, Chrismation, and Eucharist together constitute the complete Sacraments of Christian Initiation."
+        biblical: "‘Unless you eat the flesh of the Son of Man and drink His blood, you have no life in you’ (John 6:53). ‘The bread which we break, is it not a participation in the body of Christ?’ (1 Corinthians 10:16). ‘Suffer the little children to come unto Me’ (Mark 10:14)."
+        spiritual: "Baptism without Eucharist is incomplete. The new life given in the font is fed and sustained at the altar — and so the rite that opens the Christian life ends, fittingly, at the Lord's Table."
+
+  - p: 2
+    s: null
+    title: "The Final Blessing (Samapanam)"
+    ml: "സമാപന അനുഗ്രഹം"
+    tr: "Samapanam Anugraha"
+    img: "stages/final-blessing.webp"
+    flat: true
+    desc: "Thanksgiving prayers and final blessings send the newly baptized and family forth in peace — not as an ending but as a beginning, the child now a full member of Christ's Body and heir to all God's promises."
+    subs:
+      - title: ""
+        ritual: "The Priest raises his hand in blessing over the newly baptized and Godparent, reciting prayers of thanksgiving: ‘The grace of our Lord Jesus Christ, the love of God the Father, and the communion of the Holy Spirit be with you all. Amen.’"
+        theology: "The sacrament is now complete and sealed. The blessing dismisses the family not as an ending but as a beginning — the child is now a full member of the Church and heir to all the promises of God."
+        biblical: "‘The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Spirit be with you all’ (2 Corinthians 13:14). ‘The Lord bless you and keep you; the Lord make His face to shine upon you...’ (Numbers 6:24-26)."
+        spiritual: "With peace and grace, the Church sends forth the newly baptized as a child of God, sealed with the Holy Spirit and marked for eternal life."
+
+# ---- Hotspots: kids-mode seek points on stage illustrations ----
+hotspots:
+  "The Immersion":
+    - item: "Mamodisa Thotti (Baptismal Font)"
+      x: 50
+      y: 62
+      label: "baptismal font"
+
+# ---- Kid-friendly glossary ----
+glossary:
+  Mamodisa: "The Malayalam word for Holy Baptism — being born again in water, washing away sin and joining us to Christ."
+  Baptism: "The sacrament of new birth in water, by which we become children of God and members of the Church."
+  catechumen: "Someone preparing to be baptized — a ‘learner’ being received into the Church."
+  Godparent: "A sponsor who holds the child, speaks the vows for them, and helps guide their faith for life."
+  font: "The special basin (Mamodisa Thotti) that holds the holy baptismal water — like a tomb and a womb at once."
+  Mooron: "Sweet holy oil — olive oil, balsam, wine and forty spices — used to seal us with the Holy Spirit."
+  Chrismation: "Being sealed with the Holy Spirit using Holy Mooron, right after the water of Baptism."
+  Hatma: "A Syriac word meaning ‘the seal’ — the mark that we belong to God forever."
+  Creed: "The ancient statement of what Christians believe about God the Father, Son, and Holy Spirit."
+  Trinity: "The one God in three Persons: the Father, the Son, and the Holy Spirit."
+  Eucharist: "The Holy Qurbana — receiving the Body and Blood of Christ."
+  Catholicos: "The chief bishop who consecrates the Holy Mooron for the whole Church."
+
+# ---- Per-stage simplified text + “Did you know?” (Shlomo, kids mode) ----
+stageExtras:
+  "Making of a Catechumen":
+    simple: "Baptism starts at the church door! The priest gently breathes on the baby three times — like God breathing life into us — to welcome the Holy Spirit."
+    dyk:
+      q: "Why does the priest breathe on the child?"
+      a: "It remembers how God breathed life into Adam, and how Jesus breathed the Holy Spirit on His friends!"
+  "The First Cross — Sealing of the Father":
+    simple: "The priest draws a little cross on the forehead for God the Father. There's no oil yet — because we can't see the Father, but He sees and loves us."
+    dyk:
+      q: "How many crosses are drawn on the forehead?"
+      a: "Three! One for the Father, one for the Son, and one for the Holy Spirit."
+  "The Rejection of Satan":
+    simple: "Facing west (the dark side), we say ‘No!’ to all bad things three times. Then we're ready to turn toward Jesus, the Light."
+    dyk:
+      q: "Which way do we face to say ‘no’ to evil?"
+      a: "West — toward the darkness. Then we turn East, toward the light of Christ!"
+  "Acceptance of Christ & the Creed":
+    simple: "Now we turn east toward the light and say what we believe — that God is our Father, Jesus is Lord, and the Holy Spirit is God too."
+    dyk:
+      q: "Why do we face East?"
+      a: "East is where the sun rises — a picture of Jesus rising from the dead, and of Paradise!"
+  "The Scripture Readings":
+    simple: "The Bible is read aloud over the child. It tells us that in Baptism we go down with Jesus and come up to a brand-new life."
+    dyk:
+      q: "Who really does the baptizing?"
+      a: "Jesus Himself! The priest's hands move, but Christ baptizes with the Holy Spirit."
+  "The Blessing of the Water":
+    simple: "The priest breathes on the water and asks the Holy Spirit to make it holy — turning ordinary water into the holy river Jordan!"
+    dyk:
+      q: "What river does the water become like?"
+      a: "The Jordan — the very river where Jesus was baptized!"
+  "Pouring the Mooron into the Water":
+    simple: "The priest pours sweet holy oil (Mooron) into the water in the shape of a cross. Now the water smells like heaven and is full of the Spirit."
+    dyk:
+      q: "What happens when oil meets water?"
+      a: "They usually don't mix — but here it's a sign of a miracle: God joining with us!"
+  "The Second Cross — Rushmo":
+    simple: "The child is rubbed with holy oil from head to toe — like a little athlete getting ready for a big race for Jesus!"
+    dyk:
+      q: "What does the oil make the child?"
+      a: "‘An athlete for Christ’ — strong and ready for the new life ahead."
+  "The Immersion":
+    simple: "Three times the child goes into the water — Father, Son, and Holy Spirit! The old self is washed away and a child of God comes up new."
+    dyk:
+      q: "Why three times in the water?"
+      a: "For the three days Jesus was in the tomb — and for the three Persons of the Trinity!"
+  "Chrismation — The Third Cross":
+    simple: "Now the sweet Mooron seals the child with the Holy Spirit — on the forehead, eyes, ears, hands and feet. God says, ‘You are Mine forever!’"
+    dyk:
+      q: "Can this seal ever come off?"
+      a: "Never! It's forever — that's why Chrismation happens only once."
+  "The White Robe (Vellakuppayam)":
+    simple: "The child is dressed in a beautiful white robe — a sign of being clean, new, and shining like the saints in heaven."
+    dyk:
+      q: "What does the white robe mean?"
+      a: "That we've ‘put on Christ’ — clean and bright as snow, like a little saint!"
+  "The Crowning (Kireedam)":
+    simple: "A crown is placed on the child's head! In God's Kingdom every baptized person is a little king or queen — and a priest too."
+    dyk:
+      q: "How long is the crown kept?"
+      a: "Seven days! The whole home becomes a little church during that week."
+  "The Procession (Kukilion)":
+    simple: "Everyone walks around the altar three times singing happy songs — welcoming the new little Christian into God's big family!"
+    dyk:
+      q: "How many times do they circle the altar?"
+      a: "Three times — with joyful hymns, like a birthday parade for the new child of God!"
+  "Holy Communion (Qurbana)":
+    simple: "Finally, even the tiny baby receives Holy Communion — a drop of Jesus' Body and Blood. Now the child is fully part of the Church!"
+    dyk:
+      q: "Does the baby receive Communion too?"
+      a: "Yes! In our Church, even infants receive Holy Qurbana on their baptism day."
+  "The Final Blessing (Samapanam)":
+    simple: "The priest blesses the happy family and sends them home in peace. The baby is now a full child of God — sealed, crowned, and loved forever!"
+    dyk:
+      q: "Is the blessing an ending?"
+      a: "No — it's a beginning! A whole new life with God starts now."
+
+# ---- Hymn metadata (demo player) ----
+hymnInfo:
+  "The Stirring":
+    dur: 80
+    lyrics:
+      - tr: "The voice of God thundered from the heavens —"
+        en: "this is the way that clears the path for those who knew it not."
+      - note: "Sung as the Priest stirs the water crosswise, calling down the Holy Spirit."
+  "The Seal (Hatma)":
+    dur: 95
+    lyrics:
+      - tr: "By the Holy Mooron, the fragrance of Christ,"
+        en: "the seal of true faith and the completion of the gift of the Holy Spirit. Hallelujah."
+      - note: "Sung as the newly baptized is sealed with the sign of the Cross."
+  "Kukilion (Psalm 103)":
+    dur: 110
+    lyrics:
+      - tr: "As a father has compassion on his children,"
+        en: "so the Lord has compassion on those who fear Him. (Psalm 103:13)"
+      - note: "Chanted as the family circles the altar three times in joy."
+
+# ---- Quizzes (Kids mode — one per part) ----
+quizzes:
+  - questions:
+      - q: "Where does the baptism service begin?"
+        opts: ["At the entrance of the church", "On the roof", "In the garden"]
+        a: 0
+        why: "It begins at the entrance of the nave, where the child is received as a catechumen."
+      - q: "What does the priest do to welcome the Holy Spirit?"
+        opts: ["Rings a bell", "Breathes on the child three times", "Claps"]
+        a: 1
+        why: "He breathes on the child's face three times in the sign of the Cross — like God breathing life into Adam."
+      - q: "To renounce Satan, which way do we face first?"
+        opts: ["East", "West (darkness)", "Up"]
+        a: 1
+        why: "We face West to say ‘No’ to evil, then turn East toward the light of Christ."
+      - q: "What do we recite facing East?"
+        opts: ["The Creed", "A poem", "Nothing"]
+        a: 0
+        why: "Facing East toward the Light, we profess the Nicene Creed — the faith of the ancient Church."
+  - questions:
+      - q: "What does the blessed water become like?"
+        opts: ["The river Jordan", "Lemonade", "The sea"]
+        a: 0
+        why: "By the Holy Spirit, the water becomes the Jordan — where Christ Himself was baptized."
+      - q: "How many times is the child immersed?"
+        opts: ["Once", "Three times", "Ten times"]
+        a: 1
+        why: "Three times — for the Father, the Son, and the Holy Spirit, and Christ's three days in the tomb."
+      - q: "What seals the child with the Holy Spirit after the water?"
+        opts: ["Holy Mooron", "Plain water", "A sticker"]
+        a: 0
+        why: "The sweet Holy Mooron seals the newly baptized — the gift of the Spirit, the ‘Hatma.’"
+      - q: "Which way does the child face during immersion?"
+        opts: ["East, toward the risen Christ", "Down", "Backwards"]
+        a: 0
+        why: "Facing East — toward the rising sun and the Resurrection."
+  - questions:
+      - q: "What is the child dressed in after baptism?"
+        opts: ["A white robe", "A raincoat", "Pajamas"]
+        a: 0
+        why: "The white robe — the ‘garment of light,’ a sign of the new creation in Christ."
+      - q: "What is placed on the child's head?"
+        opts: ["A crown", "A hat", "A book"]
+        a: 0
+        why: "A crown (Kireedam) — every baptized person is a king/queen and priest in God's Kingdom."
+      - q: "How does the family celebrate the new birth?"
+        opts: ["Circle the altar three times singing", "Take a nap", "Go home quietly"]
+        a: 0
+        why: "They process around the altar three times with joyful hymns (the Kukilion)."
+      - q: "How does the rite finally end?"
+        opts: ["With Holy Communion", "With a snack", "With homework"]
+        a: 0
+        why: "Even the infant receives First Holy Communion — completing Christian initiation."
+
+finalQuiz:
+  questions:
+    - q: "What does the word ‘Mamodisa’ mean?"
+      opts: ["Holy Baptism", "A festival", "A hymn"]
+      a: 0
+      why: "Mamodisa is the Malayalam word for Holy Baptism."
+    - q: "How many cross-markings are made on the forehead in the rite?"
+      opts: ["Three (Father, Son, Holy Spirit)", "One", "Ten"]
+      a: 0
+      why: "Three Trinitarian crosses: the Father (no oil), the Son (Oil of Catechumens), the Spirit (Holy Mooron)."
+    - q: "In the font, the child dies and rises with…"
+      opts: ["Christ", "no one", "the priest"]
+      a: 0
+      why: "Baptism unites us to Christ's death and resurrection — the old self is buried, a child of God rises."
+    - q: "What three sacraments complete Christian Initiation?"
+      opts: ["Baptism, Chrismation, Eucharist", "Just Baptism", "Confession and Matrimony"]
+      a: 0
+      why: "Baptism, Chrismation (Mooron), and Holy Communion together complete initiation."
+    - q: "After baptism, every Christian is called a…"
+      opts: ["Child of God", "Stranger", "Visitor"]
+      a: 0
+      why: "‘The child of Adam has become the child of God!’ — fully a member of Christ's Body."
+
+# ---- Shlomo the dove guide (kids mode) ----
+mascot:
+  name: "Shlomo"
+  intro: "Shlomo! That means ‘Peace!’ 🕊️ I'm a little dove — like the Holy Spirit who came down when Jesus was baptized. Want to see how a child becomes a child of God?"
+  done: "You followed the whole baptism — from the church door all the way to the altar! 🌟 Now you know how God washes us, seals us, crowns us, and welcomes us into His family. Peace be with you!"

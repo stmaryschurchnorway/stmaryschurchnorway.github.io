@@ -1,0 +1,176 @@
+/* =========================================================================
+   liturgy-enhanced.css
+   An ADDITIVE upgrade layer for the static sacrament pages
+   (Confession, Anointing, Matrimony, Holy Orders).
+   Loaded AFTER style.css + qurbana.css + confession.css — overrides only.
+   Per-sacrament accent set via <body data-sacrament="...">.
+   ========================================================================= */
+
+:root{
+  --lit-gold:#d4a017; --lit-gold-deep:#9c7407; --lit-gold-soft:#e7c976;
+  --lit-maroon:#8B1E2D; --lit-maroon-soft:#a13442;
+  --lit-ink:#2a2622; --lit-ink-soft:#5a534a; --lit-ink-faint:#8a8170;
+  --lit-paper:#fffdf8; --lit-parchment:#faf4e8; --lit-parchment2:#f3ead6;
+  --lit-line:#e7dcc6; --lit-line-strong:#d8c8a6;
+  --accent:#8B1E2D;            /* default, overridden per page */
+  --accent-soft:#a13442;
+  --accent-tint:rgba(139,30,45,.06);
+}
+/* All four sacraments share the Qurbana identity: maroon + gold.
+   Per-sacrament distinction comes from the emblem + Roman numeral, NOT hue,
+   so the whole site reads as one family. */
+body[data-sacrament="confession"],.confession-page[data-sacrament="confession"],
+body[data-sacrament="anointing"],.confession-page[data-sacrament="anointing"],
+body[data-sacrament="matrimony"],.confession-page[data-sacrament="matrimony"],
+body[data-sacrament="orders"],.confession-page[data-sacrament="orders"]{
+  --accent:#8B1E2D;--accent-soft:#a13442;--accent-tint:rgba(139,30,45,.06);}
+
+/* ---- page canvas ---- */
+.confession-page{background:
+   radial-gradient(1100px 520px at 50% -260px, var(--accent-tint), transparent 70%),
+   linear-gradient(180deg,var(--lit-paper),#fbf7ef 60%,var(--lit-parchment));
+  padding-bottom:0;}
+.confession-page>*{position:relative;}
+
+
+/* hero photo band */
+.lit-photo{max-width:880px;margin:30px auto 0;padding:0 22px;}
+.lit-photo-frame{position:relative;border-radius:18px;overflow:hidden;
+  height:clamp(210px,36vw,344px);background:var(--lit-parchment);
+  box-shadow:0 18px 46px rgba(120,80,20,.18);}
+.lit-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 36%;display:block;}
+.lit-photo-frame::after{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;
+  box-shadow:inset 0 0 0 1px var(--accent), inset 0 0 0 5px rgba(255,253,248,.55);
+  background:linear-gradient(180deg,transparent 58%,rgba(40,18,12,.22));}
+.lit-photo-cap{margin:12px auto 0;text-align:center;font-family:'Lora',serif;font-style:italic;
+  font-size:.92rem;color:var(--lit-ink-faint);}
+@media(max-width:640px){.lit-photo{padding:0 14px;}}
+
+/* ===== SECTION TITLES ================================================== */
+.confession-section{max-width:880px;margin:0 auto;padding:46px 22px 0;}
+.confession-section-title{position:relative;text-align:center;font-family:'Lora',serif;font-weight:700;
+  font-size:1.7rem;color:var(--lit-ink);margin:0 0 30px;}
+.confession-section-title::after{content:"";display:block;width:54px;height:3px;border-radius:3px;margin:14px auto 0;
+  background:linear-gradient(90deg,var(--lit-gold),var(--accent));}
+
+/* ===== BAPTISM / EXPLAINER PANEL ====================================== */
+.confession-baptism-panel{max-width:820px;margin:40px auto 0;padding:32px 32px 30px;
+  background:linear-gradient(180deg,#fff,var(--lit-parchment));
+  border:1px solid var(--lit-line-strong);border-radius:18px;border-top:none;position:relative;overflow:hidden;
+  box-shadow:0 10px 34px rgba(120,80,20,.07);}
+.confession-baptism-panel::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;
+  background:linear-gradient(90deg,var(--lit-gold),var(--accent));}
+.confession-baptism-title{font-family:'Lora',serif;font-weight:700;font-size:1.4rem;color:var(--accent);
+  margin:6px 0 16px;text-align:center;}
+.confession-baptism-panel p{font-size:1rem;line-height:1.72;color:var(--lit-ink-soft);margin:0 0 14px;}
+.confession-baptism-panel p:last-child{margin-bottom:0;}
+.confession-baptism-panel strong{color:var(--lit-ink);}
+
+/* the baptism→confession→eucharist connection row */
+.confession-baptism-connection{display:flex;align-items:stretch;justify-content:center;gap:10px;
+  flex-wrap:wrap;margin-top:24px;}
+.confession-baptism-item{flex:1;min-width:150px;text-decoration:none;text-align:center;
+  padding:16px 14px;border-radius:13px;background:var(--lit-paper);border:1px solid var(--lit-line-strong);
+  display:flex;flex-direction:column;gap:4px;transition:.16s;}
+.confession-baptism-item:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 20px rgba(120,80,20,.1);}
+.confession-baptism-item strong{font-family:'Lora',serif;font-size:1.05rem;color:var(--accent);}
+.confession-baptism-item span{font-size:.86rem;color:var(--lit-ink-faint);}
+.confession-baptism-arrow{display:flex;align-items:center;color:var(--lit-gold);}
+
+/* ===== SCRIPTURE BANNER (illuminated quote) =========================== */
+.confession-scripture-banner{max-width:760px;margin:40px auto 0;padding:0 22px;}
+.confession-scripture-link{display:block;position:relative;text-decoration:none;text-align:center;
+  padding:38px 36px 32px;border-radius:18px;color:#f6ecd6;
+  background:
+    radial-gradient(140% 120% at 50% 0%, rgba(212,160,23,.18), transparent 60%),
+    linear-gradient(160deg,#3a1118,#6d1626 70%,#7c1a2a);
+  box-shadow:0 16px 40px rgba(80,16,28,.28);overflow:hidden;}
+.confession-scripture-link::before{content:"\201C";position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+  font-family:'Lora',serif;font-size:9rem;line-height:1;color:rgba(231,201,118,.16);pointer-events:none;}
+.confession-scripture-ref{position:relative;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--lit-gold-soft);margin-bottom:14px;}
+.confession-scripture-banner blockquote{position:relative;margin:0;font-family:'Lora',serif;font-style:italic;
+  font-size:1.28rem;line-height:1.6;color:#f8efda;text-wrap:pretty;}
+.confession-scripture-link:hover blockquote{color:#fff;}
+
+/* ===== THE RITE: STEPPER =============================================== */
+.confession-steps{position:relative;max-width:760px;margin:0 auto;padding-left:8px;}
+.confession-steps::before{content:"";position:absolute;left:26px;top:18px;bottom:18px;width:2px;
+  background:linear-gradient(180deg,var(--lit-gold),var(--accent));opacity:.4;}
+.confession-step{position:relative;display:flex;gap:22px;padding:16px 0;}
+.confession-step-number{flex-shrink:0;width:54px;height:54px;border-radius:50%;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Lora',serif;font-weight:700;font-size:1.3rem;color:#fff;
+  background:radial-gradient(circle at 50% 35%,var(--accent-soft),var(--accent));
+  border:3px solid var(--lit-paper);
+  box-shadow:0 4px 14px rgba(120,40,40,.22), 0 0 0 1px var(--lit-line-strong);}
+.confession-step-content{flex:1;padding:4px 0 18px;border-bottom:1px solid var(--lit-line);}
+.confession-step:last-child .confession-step-content{border-bottom:none;}
+.confession-step-title{font-family:'Lora',serif;font-weight:700;font-size:1.24rem;color:var(--lit-ink);margin:6px 0 2px;}
+.confession-step-malayalam{font-family:'Noto Sans Malayalam',sans-serif;font-size:.95rem;color:var(--accent);
+  margin:0 0 10px;font-weight:500;}
+.confession-step-content>p{font-size:.99rem;line-height:1.7;color:var(--lit-ink-soft);margin:0;}
+.confession-step-content strong{color:var(--lit-ink);}
+.confession-step-content em{color:var(--accent);font-style:italic;}
+
+/* ===== PREP / SYMBOLISM CARDS ========================================= */
+.confession-prep-grid{max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+@media(max-width:640px){.confession-prep-grid{grid-template-columns:1fr;}}
+.confession-prep-card{background:var(--lit-paper);border:1px solid var(--lit-line-strong);border-radius:15px;
+  padding:24px 22px;position:relative;transition:.16s;box-shadow:0 3px 12px rgba(120,80,20,.05);}
+.confession-prep-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(120,80,20,.1);border-color:var(--lit-line-strong);}
+.confession-prep-card h3{font-family:'Lora',serif;font-weight:700;font-size:1.16rem;color:var(--accent);
+  margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--lit-line);
+  display:flex;align-items:center;gap:9px;}
+.confession-prep-card h3::before{content:"";width:8px;height:8px;border-radius:2px;transform:rotate(45deg);
+  background:var(--lit-gold);flex-shrink:0;}
+.confession-prep-card p{font-size:.96rem;line-height:1.68;color:var(--lit-ink-soft);margin:0 0 10px;}
+.confession-prep-card p:last-child{margin-bottom:0;}
+.confession-prep-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+.confession-prep-card li{position:relative;padding-left:24px;font-size:.95rem;line-height:1.55;color:var(--lit-ink-soft);}
+.confession-prep-card li::before{content:"";position:absolute;left:4px;top:8px;width:7px;height:7px;border-radius:50%;
+  background:var(--lit-gold);box-shadow:0 0 0 3px var(--accent-tint);}
+.confession-prep-card strong{color:var(--lit-ink);}
+
+/* highlight card */
+.confession-prep-highlight{background:linear-gradient(180deg,#fffaf0,var(--lit-parchment2));
+  border-color:var(--lit-gold-soft);grid-column:1/-1;}
+.confession-prep-highlight h3{color:var(--lit-gold-deep);}
+.confession-prep-highlight h3::before{background:var(--accent);}
+
+/* ===== PROSE / SEAL PANELS ============================================ */
+.confession-seal-panel{max-width:800px;margin:0 auto;padding:30px 34px;
+  background:linear-gradient(180deg,#fff,var(--lit-parchment));border:1px solid var(--lit-line-strong);
+  border-radius:16px;border-left:4px solid var(--accent);box-shadow:0 8px 26px rgba(120,80,20,.06);}
+.confession-seal-panel p{font-size:1rem;line-height:1.74;color:var(--lit-ink-soft);margin:0 0 15px;}
+.confession-seal-panel p:last-child{margin-bottom:0;}
+.confession-seal-panel strong{color:var(--lit-ink);}
+.confession-seal-panel em{color:var(--accent);font-style:italic;}
+
+/* ===== CTA ============================================================ */
+.confession-cta{max-width:760px;margin:56px auto 0;padding:46px 32px 50px;text-align:center;position:relative;
+  color:#f6ecd6;overflow:hidden;border-radius:20px 20px 0 0;
+  background:radial-gradient(120% 130% at 50% 0%, rgba(212,160,23,.2), transparent 55%),
+    linear-gradient(160deg,#3a1118,#6d1626 70%,var(--accent));}
+.confession-cta h2{font-family:'Lora',serif;font-weight:700;font-size:1.7rem;color:#fff;margin:0 0 12px;}
+.confession-cta p{font-size:1.02rem;line-height:1.65;color:#f0e2c8;max-width:520px;margin:0 auto 24px;}
+.confession-cta-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.98rem;color:#3a1118;
+  background:linear-gradient(180deg,var(--lit-gold-soft),var(--lit-gold));
+  padding:14px 30px;border-radius:30px;transition:.16s;box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.confession-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.28);}
+
+/* ===== BACK NAV ======================================================= */
+.carousel-back-nav{max-width:880px;margin:0 auto;padding:18px 22px 0;}
+.back-to-liturgies-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--lit-ink-soft);
+  padding:9px 16px;border:1px solid var(--lit-line-strong);border-radius:22px;background:var(--lit-paper);transition:.15s;}
+.back-to-liturgies-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+@media(max-width:640px){
+  .confession-baptism-panel,.confession-seal-panel{padding:24px 20px;}
+  .confession-step{gap:15px;}
+  .confession-step-number{width:46px;height:46px;font-size:1.1rem;}
+  .confession-steps::before{left:22px;}
+  .confession-scripture-banner blockquote{font-size:1.12rem;}
+}

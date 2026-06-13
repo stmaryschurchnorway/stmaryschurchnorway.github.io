@@ -3,16 +3,29 @@ layout: confession
 title: "Holy Orders"
 permalink: /holy-orders/
 description: "Holy Orders (Priesthood) — the sacrament of ordained ministry. Bishop, Priest, and Deacon called to serve the Church through apostolic succession in the Malankara Orthodox Syrian Church."
+sacrament: orders
 extra_css:
   - /assets/css/qurbana.css
   - /assets/css/confession.css
+  - /assets/css/liturgy-enhanced.css
+intro:
+  numeral: "VII"
+  title: "Holy Orders"
+  subtitle: "A Sacred Calling"
+  malayalam: "പൗരോഹിത്യം"
+  transliteration: "Pou-ro-hi-thyam"
+  audio: "/assets/audio/paurohithyam.m4a"
+  lead: "Priesthood is not a career or a social position, but a sacred calling and a sacrament."
+  detail: "Through the laying on of hands and the prayers of the Church, men are set apart to serve as shepherds of God's flock, ambassadors of Christ, and stewards of the holy mysteries."
 ---
 
-<!-- INTRO -->
-<div class="liturgy-intro-section">
-  <h1>Holy Orders (Priesthood)</h1>
-  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">പൗരോഹിത്യം</span><span class="liturgy-page-transliteration">Pou-ro-hi-thyam</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('/assets/audio/paurohithyam.m4a')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-  <p>In the Malankara Orthodox Church, priesthood is not a career or a social position, but a sacred calling and a sacrament. Through the laying on of hands and the prayers of the Church, men are set apart to serve as shepherds of God's flock, ambassadors of Christ, and stewards of the holy mysteries. The priesthood exists to guide believers toward heaven and to make earthly beings heavenly through the sacraments and pastoral care.</p>
+{% include liturgy-header.html %}
+
+<div class="lit-photo">
+  <div class="lit-photo-frame">
+    <img src="{{ '/assets/img/orders-liturgy.webp' | relative_url }}" alt="A bishop ordains through the laying on of hands" style="object-position:center 26%">
+  </div>
+  <p class="lit-photo-cap">A bishop ordains through the laying on of hands — apostolic succession unbroken since St. Thomas.</p>
 </div>
 
 <!-- PRIESTHOOD AS SACRAMENT -->

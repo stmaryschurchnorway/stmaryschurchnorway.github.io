@@ -3,16 +3,29 @@ layout: confession
 title: "Anointing of the Sick"
 permalink: /anointing/
 description: "Anointing of the Sick (Holy Unction) — the sacrament of healing for body and spirit. Divine consolation and restoration through prayers and blessed oil in the Malankara Orthodox Syrian Church."
+sacrament: anointing
 extra_css:
   - /assets/css/qurbana.css
   - /assets/css/confession.css
+  - /assets/css/liturgy-enhanced.css
+intro:
+  numeral: "V"
+  title: "Anointing of the Sick"
+  subtitle: "Healing for Body & Soul"
+  malayalam: "തൈലാഭിഷേകം"
+  transliteration: "Thai-la-bhi-she-kam"
+  audio: "/assets/audio/anointing-sick.m4a"
+  lead: "The sacrament of healing — where God the Divine Physician meets the suffering believer with oil, prayer, and the promise of restoration."
+  detail: "This sacred mystery addresses both body and spirit, for sickness touches the whole person; through it the Church stands with those who suffer, that no pain is beyond God's compassion."
 ---
 
-<!-- INTRO -->
-<div class="liturgy-intro-section">
-  <h1>Anointing of the Sick (Holy Unction)</h1>
-  <div class="liturgy-page-malayalam"><span class="liturgy-page-malayalam-text">തൈലാഭിഷേകം</span><span class="liturgy-page-transliteration">Thai-la-bhi-she-kam</span><button class="liturgy-page-audio-btn" onclick="playPageAudio('/assets/audio/anointing-sick.m4a')" title="Listen to pronunciation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-  <p>The sacrament of healing, where God the Divine Physician meets the suffering believer with oil, prayer, and the promise of restoration. This sacred mystery addresses both body and spirit, for sickness touches the whole person. Through this rite, the Church stands with those who suffer, reminding them that no pain is beyond God's compassion.</p>
+{% include liturgy-header.html %}
+
+<div class="lit-photo">
+  <div class="lit-photo-frame">
+    <img src="{{ '/assets/img/anointing-sick-liturgy.webp' | relative_url }}" alt="The priest anoints the sick" style="object-position:center 50%">
+  </div>
+  <p class="lit-photo-cap">The priest anoints the sick with blessed oil — the touch of the Divine Physician.</p>
 </div>
 
 <!-- WHAT IS ANOINTING -->

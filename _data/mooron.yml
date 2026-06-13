@@ -1,0 +1,280 @@
+# Holy Mooron (Chrismation) — content data for the shared carousel engine.
+# Rendered by qurbana.js via window.QDATA. Image paths: stage `img` is relative
+# to /assets/img/ ; item `img` is a full path from the page.
+
+title: "Holy Mooron"
+ns: "mooron"          # localStorage namespace — keeps progress separate from Qurbana
+# no subPhase — Mooron has no sub-parts
+
+phaseTitles:
+  - "The Mystery of Chrismation"
+  - "The Sacred Oil & the Ritual"
+  - "Living in the Seal"
+
+phaseNums:
+  - "PART 1"
+  - "PART 2"
+  - "PART 3"
+
+subNames: []
+
+stages:
+  # ===== PART 1 — THE MYSTERY =====
+  - p: 0
+    s: null
+    title: "The Fulfillment of Baptism"
+    ml: "മാമോദീസയുടെ പൂർണത"
+    tr: "Mamodisayude Poornatha"
+    img: "stages/immersion.webp"
+    flat: true
+    desc: "The Holy Mooron is the Sacrament of the Holy Spirit. While Baptism unites us to Christ's death and resurrection, Chrismation seals us with His Spirit — completing what the waters begin."
+    subs:
+      - title: ""
+        significance: "While Baptism incorporates us into Christ's resurrection, Chrismation makes us partakers of His Spirit. The two mysteries are inseparable — one is incomplete without the other."
+        theology: "Baptism is death and resurrection with Christ; Chrismation is the living of that resurrection through the power of the Holy Spirit. Baptism washes away sin and brings us into the life of Christ; Chrismation empowers us to live that life by the indwelling of the Spirit."
+        biblical: "‘Do you not know that so many of us as were baptized into Jesus Christ were baptized into His death?’ (Romans 6:3). ‘The same Spirit which raised Jesus from the dead dwells in you’ (Romans 8:11). ‘You received the mark of ownership, the Holy Spirit of the promise’ (Ephesians 1:13-14)."
+        spiritual: "What begins in the waters of baptism is perfected in the anointing with the Holy Spirit. The baptized do not stand alone but are strengthened by the very presence of the Holy Ghost."
+
+  - p: 0
+    s: null
+    title: "Scriptural Roots — Baptism & Pentecost"
+    ml: "വേദപരമായ അടിത്തറ"
+    tr: "Vedaparamaaya Adittara"
+    img: "stages/creed.webp"
+    flat: true
+    desc: "What happened to Christ at the Jordan, and to the Church at Pentecost, happens to each believer in Chrismation — the descent of the Holy Spirit, made personal."
+    subs:
+      - title: ""
+        theology: "Christ Himself was anointed at His baptism: ‘The Spirit of God descended upon Him’ (Matthew 3:16). At Pentecost the Spirit was poured out upon the whole Church — ‘They were all filled with the Holy Ghost’ (Acts 2:4). Chrismation personalizes this Pentecost for each individual believer."
+        biblical: "‘Jesus, being baptized, and praying, the heaven was opened, and the Holy Ghost descended in a bodily shape like a dove upon Him’ (Luke 3:21-22). ‘I send the promise of my Father upon you... until ye be endued with power from on high’ (Luke 24:49)."
+        spiritual: "Just as the Spirit descended upon Christ and upon the Church at Pentecost, so the Spirit descends upon each of the faithful through the seal of the Holy Mooron — the meeting of heaven and earth."
+
+  - p: 0
+    s: null
+    title: "The Seal — Identity & Protection"
+    ml: "ഹത്മാ — അടയാളവും സംരക്ഷണവും"
+    tr: "Hatma — Seal and Protection"
+    img: "stages/chrismation.webp"
+    flat: true
+    pivot: true
+    desc: "‘Mooron’ comes from the Greek muron, ‘fragrance’; in Syriac the anointing is the Hatma, ‘the seal.’ This seal is eternal and cannot be repeated — it marks the baptized forever as Christ's own."
+    subs:
+      - title: ""
+        theology: "Once a believer is sealed with the Holy Mooron, that seal remains forever, marking them as belonging to Christ and members of His body. The seal is also a sign of divine protection: ‘In Him you also were sealed with the Holy Spirit of promise, which is the guarantee of our inheritance’ (Ephesians 1:13)."
+        biblical: "‘Set me as a seal upon thy heart, as a seal upon thine arm; for love is strong as death’ (Song of Songs 8:6). ‘You have an anointing from the Holy One, and you know all things’ (1 John 2:20). ‘The Lord knows those who are His’ (2 Timothy 2:19)."
+        spiritual: "The seal marks the baptized forever as children of God. Once sealed, no power of evil can claim them — they belong to Christ and are protected by the Almighty."
+
+  # ===== PART 2 — THE SACRED OIL & RITUAL =====
+  - p: 1
+    s: null
+    title: "The Holy Myron — Sacred Composition"
+    ml: "മൂറോന്റെ പ്രാകരണം"
+    tr: "Mooroninte Prakaranam"
+    img: "stages/pouring-mooron.webp"
+    flat: true
+    desc: "The Mooron is a consecrated mixture of olive oil, balsam, wine, and forty aromatic substances — each ingredient carrying spiritual meaning. It is newly consecrated by the Catholicos roughly once a decade (most recently 2009 and 2018)."
+    subs:
+      - title: "The Four Sacred Ingredients"
+        significance: "Olive oil — the base, symbolizing our rootedness in the True Olive Tree (Christ), light-bearing and life-giving. Balsam — poured over the oil, the divine nature poured upon human nature, the sweetness and healing balm of the Spirit. Wine — joy, covenant, and the sacrificial blood of Christ. Forty aromatic substances — the manifold gifts of the Spirit, rising as a sweet fragrance before God; the number forty recalling Christ's temptation, Israel's wandering, and Lent."
+        theology: "Olive oil and balsam blend together to represent the union of the divine and human natures in Christ, and the union of God and the baptized through the Spirit. This mingling of oils is itself a sign that what seems impossible in nature becomes possible in grace."
+        ritual: "The Catholicos raises the sacred vessels, makes three crosses over each vase invoking the Trinity, and slowly pours the balsam over the olive oil while praying the ancient prayer of consecration. The Mooron is then carried in solemn procession through the four cardinal directions of the church."
+        biblical: "‘His name is Myron poured out’ (Song of Songs 1:3). ‘The anointing which you received from Him abides in you’ (1 John 2:27)."
+
+  - p: 1
+    s: null
+    title: "The Anointing Ceremony"
+    ml: "അഭിഷേക ശുശ്രൂഷ"
+    tr: "Abhisheka Shushroosha"
+    img: "stages/anointing-oil.webp"
+    flat: true
+    desc: "The newly baptized child, dried and clothed in white, is sealed on the forehead with the sign of the Cross — then anointed from crown to sole, consecrating the whole person to God."
+    subs:
+      - title: "Sealing the Whole Person"
+        ritual: "The Priest dips his right thumb in the Holy Mooron and signs the cross on the forehead: ‘…the sign and seal of the true faith, and the perfection of the gift of the Holy Spirit, [Name] is sealed, in the Name of the Father, and of the Son, and of the living and Holy Spirit. Amen.’ He then anoints the organs of sense — eyes, ears, nostrils, mouth — then the heart, shoulders and chest, the hands, and the feet, proceeding from crown to sole in the sign of the Cross."
+        theology: "The anointing marks the entire person as belonging to God — no part left untouched by grace. The senses are consecrated to perceive divine truth, the hands for righteous works, the feet to walk in holiness, the heart as the seat of faith and love. The whole person becomes the temple of the Holy Spirit."
+        biblical: "‘God anointed Jesus of Nazareth with the Holy Spirit and with power’ (Acts 10:38). ‘How beautiful are the feet of them that preach the gospel of peace’ (Romans 10:15)."
+        hymn:
+          name: "The Seal (Hatma)"
+        spiritual: "From crown to sole, the baptized are marked with the fragrance of Christ. The Mooron that touches the skin becomes a living reminder that the Spirit dwells within."
+
+  # ===== PART 3 — LIVING IN THE SEAL =====
+  - p: 2
+    s: null
+    title: "A Personal Pentecost"
+    ml: "വ്യക്തിഗത പെന്തക്കോസ്ത്"
+    tr: "Vyaktigatha Pentecost"
+    img: "stages/creed.webp"
+    flat: true
+    desc: "What the Spirit did for the whole Church at Pentecost, He now does for each believer personally. The Spirit is no longer a distant gift but the very life dwelling within."
+    subs:
+      - title: ""
+        theology: "At Pentecost the apostles heard a mighty rushing wind, and tongues of fire rested on each of them; from that moment they were empowered as witnesses to Christ. Chrismation is the Church saying: ‘What the Spirit did then for the whole community, He does now for you personally.’"
+        biblical: "‘And when the day of Pentecost was fully come, they were all with one accord in one place. And suddenly there came a sound from heaven as of a rushing mighty wind’ (Acts 2:1-3). ‘Thou anointest my head with oil; my cup runneth over’ (Psalms 23:5)."
+        spiritual: "Every baptized believer is granted a Pentecost of their own — the pouring out of the Holy Spirit, personalized and permanent. The fragrance of the Mooron is that same wind and fire, made tangible."
+
+  - p: 2
+    s: null
+    title: "The Permanence of the Seal"
+    ml: "ഹത്മയുടെ ശാശ്വതത"
+    tr: "Hatmayude Shaswathatha"
+    img: "stages/chrismation.webp"
+    flat: true
+    desc: "Unlike Confession or Holy Qurbana, Chrismation is performed only once. The seal of the Mooron can never be undone — it is God's promise that the baptized belong to Him eternally."
+    subs:
+      - title: ""
+        theology: "Once a person has been sealed with the Holy Mooron, that seal remains forever. It cannot be undone, even by sin or apostasy (though sin may require penance and reconciliation). The seal is a one-time gift that echoes throughout the person's entire life."
+        biblical: "‘Grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption’ (Ephesians 4:30). ‘In Him you also were sealed with the Holy Spirit of promise, which is the guarantee of our inheritance’ (Ephesians 1:13-14)."
+        spiritual: "Once sealed, always sealed. No power, no circumstance, no failing of faith can erase what God has sealed."
+
+  - p: 2
+    s: null
+    title: "Living as the Anointed"
+    ml: "അഭിഷിക്തരായി വാഴുക"
+    tr: "Abhishiktaraayi Vaazhuka"
+    img: "stages/anointing-oil.webp"
+    flat: true
+    desc: "To be anointed is not merely to receive a sacrament but to enter a new way of living — called as ‘soldiers of Christ,’ armed with the fullness of the Spirit's gifts."
+    subs:
+      - title: ""
+        theology: "The anointed are called to resist evil, grow in holiness, bear witness to Christ, and live as His faithful servants. The anointing is both an achievement and a beginning — it completes the initiation begun at baptism, yet opens the door to a lifetime of growth in grace."
+        biblical: "‘Be filled with the Spirit; speaking to yourselves in psalms and hymns and spiritual songs’ (Ephesians 5:18-19). ‘For we are His workmanship, created in Christ Jesus for good works’ (Ephesians 2:10)."
+        spiritual: "To be anointed is to be set apart — not for pride or privilege, but for humble, faithful service in the Kingdom of God."
+
+# ---- Hotspots: none for Mooron (kept Qurbana-only) ----
+hotspots: {}
+
+# ---- Kid-friendly glossary (tap any term for a quick definition) ----
+glossary:
+  Chrismation: "The sacrament of being sealed with the Holy Spirit, right after Baptism. Also called Holy Mooron."
+  Mooron: "Holy oil — a sweet-smelling mix of olive oil, balsam, wine and forty spices — used to seal us with the Holy Spirit."
+  Hatma: "A Syriac word meaning ‘the seal.’ The anointing marks us as belonging to God forever."
+  balsam: "A fragrant, healing tree-sap mixed into the Holy Mooron for its sweet smell."
+  Pentecost: "The day the Holy Spirit came down on the apostles like tongues of fire, fifty days after Easter."
+  Catholicos: "The chief bishop who consecrates the Holy Mooron for the whole Church."
+  Baptism: "The sacrament of being born again in water — washing away sin and joining us to Christ."
+  Apostles: "The twelve closest followers Jesus chose to lead His Church."
+
+# ---- Per-stage simplified text + “Did you know?” (Shlomo, kids mode) ----
+stageExtras:
+  "The Fulfillment of Baptism":
+    simple: "Baptism makes us part of God's family. Holy Mooron is the very next step — God gives us His Holy Spirit to help us live as His children."
+    dyk:
+      q: "Do Baptism and Mooron go together?"
+      a: "Yes! They happen one right after the other — first the water of Baptism, then the sweet oil of Mooron."
+  "Scriptural Roots — Baptism & Pentecost":
+    simple: "When Jesus was baptized, the Holy Spirit came down like a dove. The same Spirit comes to us through the Holy Mooron."
+    dyk:
+      q: "What came down at Pentecost?"
+      a: "Little flames of fire rested on each apostle, and they were filled with the Holy Spirit!"
+  "The Seal — Identity & Protection":
+    simple: "The Mooron is like God's special stamp on us. It says, ‘This one is Mine!’ — and it never washes off."
+    dyk:
+      q: "Can the seal of Mooron ever come off?"
+      a: "Never! It's forever. That's why Mooron is only done once in your whole life."
+  "The Holy Myron — Sacred Composition":
+    simple: "The Holy Mooron is made from olive oil, sweet balsam, wine, and forty kinds of spices — so it smells beautiful, like heaven."
+    dyk:
+      q: "How often is new Mooron made?"
+      a: "Only about once every ten years — and the whole Church gathers with the Catholicos to bless it!"
+  "The Anointing Ceremony":
+    simple: "The priest dips his thumb in the holy oil and makes little crosses — on the forehead, eyes, ears, hands and feet — blessing every part of you."
+    dyk:
+      q: "Where does the priest anoint?"
+      a: "From head to toe! Eyes to see good, ears to hear God, hands to do kind things, and feet to walk the right way."
+  "A Personal Pentecost":
+    simple: "Pentecost was a big day for the whole Church. Mooron is like your very own Pentecost — the Holy Spirit comes just for you."
+    dyk:
+      q: "Is Mooron my own Pentecost?"
+      a: "Yes! The same Holy Spirit who came to the apostles comes to you in the Holy Mooron."
+  "The Permanence of the Seal":
+    simple: "Some things we do again and again, like Holy Communion. But Mooron happens just once — because God's seal lasts forever."
+    dyk:
+      q: "Why is Mooron done only once?"
+      a: "Because God's seal never wears out! Once you're marked as His, you're His for always."
+  "Living as the Anointed":
+    simple: "Being anointed means God chose you for something good. We say ‘thank you’ by being kind, brave, and close to Him every day."
+    dyk:
+      q: "What does it mean to be ‘anointed’?"
+      a: "It means you're a little soldier for Jesus — chosen to do good and share His love!"
+
+# ---- Hymn metadata (demo player) ----
+hymnInfo:
+  "The Seal (Hatma)":
+    dur: 95
+    lyrics:
+      - tr: "By the Holy Mooron, the fragrance of Christ,"
+        en: "the sign and seal of the true faith,"
+      - tr: "and the completion of the gift of the Holy Spirit."
+        en: "As you are sealed with the Spirit, may you shine with the light of Christ."
+      - note: "Sung as the priest seals the newly baptized with the sign of the Cross."
+
+# ---- Quizzes (Kids mode — one per part, at the end of each part) ----
+quizzes:
+  - questions:
+      - q: "What does the Holy Mooron give us?"
+        opts: ["The gift of the Holy Spirit", "A new name", "A loaf of bread"]
+        a: 0
+        why: "Mooron is the Sacrament of the Holy Spirit — it seals us with God's Spirit."
+      - q: "Baptism and Chrismation are…"
+        opts: ["Completely separate", "Two mysteries that go together", "The same thing"]
+        a: 1
+        why: "Baptism joins us to Christ; Mooron seals us with His Spirit. They belong together."
+      - q: "What does the Syriac word ‘Hatma’ mean?"
+        opts: ["Fire", "The seal", "Water"]
+        a: 1
+        why: "‘Hatma’ means ‘the seal’ — the mark that we belong to God forever."
+  - questions:
+      - q: "What is the Holy Mooron made from?"
+        opts: ["Just water", "Olive oil, balsam, wine and forty spices", "Milk and honey"]
+        a: 1
+        why: "It's a fragrant mix of olive oil, balsam, wine, and forty aromatic substances."
+      - q: "Who consecrates the Holy Mooron?"
+        opts: ["The Catholicos", "Any child", "The choir"]
+        a: 0
+        why: "The Catholicos, the chief bishop, blesses the Mooron for the whole Church."
+      - q: "How much of the body does the priest anoint?"
+        opts: ["Only the hands", "From the forehead to the feet", "Only the forehead"]
+        a: 1
+        why: "Every part — forehead, senses, heart, hands and feet — is consecrated to God."
+  - questions:
+      - q: "How many times in your life do you receive Holy Mooron?"
+        opts: ["Once", "Every Sunday", "Every year"]
+        a: 0
+        why: "Only once — because God's seal lasts forever and is never repeated."
+      - q: "Mooron is like a personal…"
+        opts: ["Pentecost", "Birthday party", "Holiday"]
+        a: 0
+        why: "The same Spirit who came at Pentecost comes to each person through the Mooron."
+      - q: "Being ‘anointed’ means we are called to…"
+        opts: ["Do whatever we want", "Live for God and serve others", "Stay quiet"]
+        a: 1
+        why: "The anointed are set apart for holy, faithful, loving service."
+
+finalQuiz:
+  questions:
+    - q: "Which sacrament seals us with the Holy Spirit?"
+      opts: ["Holy Mooron", "Confession", "Matrimony"]
+      a: 0
+      why: "Holy Mooron (Chrismation) is the Sacrament of the Holy Spirit."
+    - q: "What completes the new life begun in Baptism?"
+      opts: ["Chrismation", "A feast", "Nothing"]
+      a: 0
+      why: "Chrismation completes and perfects what Baptism begins."
+    - q: "What does the seal of the Mooron tell us?"
+      opts: ["That we belong to God forever", "That we are tall", "Nothing"]
+      a: 0
+      why: "The eternal seal marks us as God's own children, forever."
+    - q: "The Mooron's sweet fragrance is a sign of…"
+      opts: ["The presence of the Holy Spirit", "Dinner", "A flower shop"]
+      a: 0
+      why: "Its fragrance is the very presence of the Spirit, made perceivable."
+    - q: "How is the Holy Mooron applied to the body?"
+      opts: ["From the forehead to the feet", "Only on shoes", "It isn't"]
+      a: 0
+      why: "The whole person is anointed, crown to sole, in the sign of the Cross."
+
+# ---- Shlomo the dove guide (kids mode) ----
+mascot:
+  name: "Shlomo"
+  intro: "Shlomo! That means ‘Peace!’ 🕊️ I'm a little dove — just like the Holy Spirit who comes in the Mooron. Want to learn how God seals us as His own?"
+  done: "You learned all about the Holy Mooron! 🌟 Now you know how God seals us with His Spirit and makes us His forever. Peace be with you!"
