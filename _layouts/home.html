@@ -4,7 +4,10 @@ layout: default
 
 <!-- Hero Banner -->
 <section class="hero-banner">
-  <img src="{{ '/assets/img/community-gathering.jpg' | relative_url }}" alt="St. Mary's Church Community" class="hero-img">
+  <picture>
+    <source srcset="{{ '/assets/img/community-gathering.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/img/community-gathering.jpg' | relative_url }}" alt="St. Mary's Church Community" class="hero-img" width="2000" height="988" fetchpriority="high">
+  </picture>
   <canvas class="hero-particles" id="heroParticles"></canvas>
   <div class="hero-overlay">
     <span class="hero-tagline">{% if page.url contains '/no/' %}Forankret i tradisjon. <span class="hero-tagline-glow">Voksende i tro.</span>{% else %}Rooted in tradition. <span class="hero-tagline-glow">Growing in faith.</span>{% endif %}</span>
@@ -37,7 +40,11 @@ layout: default
     </div>
     <div class="next-event-card" id="next-event-card">
       <span class="next-event-label">{% if page.url contains '/no/' %}Neste samling{% else %}Next Gathering{% endif %}</span>
-      <div class="next-event-loading">Loading...</div>
+      <div class="next-event-title">{% if page.url contains '/no/' %}Hellig Qurbana{% else %}Holy Qurbana{% endif %}</div>
+      <div class="next-event-detail">{{ site.address }}</div>
+      <div class="next-event-footer">
+        <a class="next-event-link" href="{% if page.url contains '/no/' %}/no/events/{% else %}/en/events/{% endif %}">{% if page.url contains '/no/' %}Se alle samlinger →{% else %}See all gatherings →{% endif %}</a>
+      </div>
     </div>
   </div>
 </section>
@@ -47,7 +54,10 @@ layout: default
   <div class="welcome-content">
     <a href="https://www.instagram.com/fathereldhose/" target="_blank" rel="noopener" class="welcome-vicar">
       <div class="vicar-photo-wrap">
-        <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="{{ site.vicar }}" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="{{ '/assets/img/vicar.webp' | relative_url }}" type="image/webp">
+          <img src="{{ '/assets/img/vicar.png' | relative_url }}" alt="{{ site.vicar }}" loading="lazy" decoding="async" width="222" height="333">
+        </picture>
       </div>
       <div class="vicar-label">{% if page.url contains '/no/' %}Vikar{% else %}Vicar{% endif %}</div>
       <div class="vicar-name">{{ site.vicar }}</div>
@@ -81,7 +91,7 @@ layout: default
         <div class="liturgy-showcase-img">
           <picture>
             <source srcset="{{ '/assets/img/qurbana-liturgy.webp' | relative_url }}" type="image/webp">
-            <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async">
+            <img src="{{ '/assets/img/qurbana-liturgy.png' | relative_url }}" alt="Holy Qurbana" loading="lazy" decoding="async" width="2730" height="1536">
           </picture>
           <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
@@ -90,7 +100,10 @@ layout: default
       </a>
       <a href="{{ '/mamodisa/' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
-          <img src="{{ '/assets/img/mamodisa-liturgy.png' | relative_url }}" alt="Mamodisa" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="{{ '/assets/img/mamodisa-liturgy.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/img/mamodisa-liturgy.png' | relative_url }}" alt="Mamodisa" loading="lazy" decoding="async" width="800" height="395">
+          </picture>
           <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
         <h3>{% if page.url contains '/no/' %}Mamodisa{% else %}Mamodisa{% endif %}</h3>
@@ -98,7 +111,10 @@ layout: default
       </a>
       <a href="{{ '/liturgy/' | relative_url }}" class="liturgy-showcase-card">
         <div class="liturgy-showcase-img">
-          <img src="{{ '/assets/img/holy-communion.jpg' | relative_url }}" alt="The Holy Mysteries" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="{{ '/assets/img/holy-communion.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/img/holy-communion.jpg' | relative_url }}" alt="The Holy Mysteries" loading="lazy" decoding="async" width="1400" height="782">
+          </picture>
           <span class="liturgy-showcase-link">{% if page.url contains '/no/' %}Utforsk →{% else %}Explore →{% endif %}</span>
         </div>
         <h3>{% if page.url contains '/no/' %}De hellige mysterier{% else %}The Holy Mysteries{% endif %}</h3>
@@ -324,6 +340,7 @@ layout: default
 
 <script>
 (function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var canvas = document.getElementById('heroParticles');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');

@@ -6,6 +6,7 @@
   --color-gold-dark: #b8860b;
   --color-gold-darker: #a58117;
   --color-maroon: #8B1E2D;
+  --color-gold-ink: #856208;
 
   /* Neutral Colors */
   --color-white: #ffffff;
@@ -161,7 +162,7 @@ img { max-width: 100%; height: auto; display: block; }
 .logo-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  color: #c9a430;
+  color: var(--color-gold-ink);
   line-height: 1.3;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -171,18 +172,18 @@ img { max-width: 100%; height: auto; display: block; }
   display: block;
   font-family: 'Lora', Georgia, serif;
   font-size: 0.6rem;
-  color: #b08a10;
+  color: var(--color-maroon);
   line-height: 1.3;
   margin-top: 2px;
-  opacity: 0.65;
+  opacity: 1;
 }
 .logo-see {
   display: block;
   font-family: 'Lora', Georgia, serif;
   font-size: 0.6rem;
-  color: #b08a10;
+  color: var(--color-maroon);
   line-height: 1.3;
-  opacity: 0.65;
+  opacity: 1;
 }
 
 /* === Navigation Bar === */
@@ -202,7 +203,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 4px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #444;
+  color: #333;
   letter-spacing: 0.01em;
   transition: color 0.2s;
   text-decoration: none;
@@ -656,7 +657,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   text-decoration: none;
   background: none;
   border: none;
@@ -689,7 +690,7 @@ img { max-width: 100%; height: auto; display: block; }
 .qurbana-cta-btn {
   display: inline-block;
   background: transparent;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   padding: 2px 8px;
   border: 1px solid var(--color-gold);
   border-radius: 10px;
@@ -706,12 +707,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .btn-secondary {
   background: #f5f1e8;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   border: 2px solid var(--color-gold);
 }
 .btn-secondary:hover {
   background: #efe3c3;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
 }
 
 /* === Gallery Section === */
@@ -727,7 +728,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .btn-videos {
   background: transparent;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   border: 1.5px solid var(--color-gold);
   font-size: 0.75rem;
   font-weight: 600;
@@ -930,7 +931,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-block;
   margin-top: 8px;
   font-size: 0.72rem;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1154,7 +1155,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.02em;
 }
 .quote-lang-btn.active {
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   font-weight: 600;
 }
 .quote-lang-btn:hover {
@@ -1173,7 +1174,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Noto Sans Malayalam', 'Inter', sans-serif;
   font-style: normal;
   font-size: 0.82rem;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   font-weight: 600;
   letter-spacing: 0.02em;
   display: block;
@@ -1270,7 +1271,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   letter-spacing: 0.02em;
 }
 .next-event-link:hover {
@@ -1446,7 +1447,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
@@ -1467,7 +1468,7 @@ img { max-width: 100%; height: auto; display: block; }
 .news-read-more {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   letter-spacing: 0.02em;
 }
 
@@ -1624,7 +1625,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .contact-detail {
   font-size: 0.78rem;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   margin: 4px 0 0;
   text-align: center;
 }
@@ -2110,7 +2111,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: 'Lora', Georgia, serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: var(--color-gold-ink);
 }
 @media (max-width: 768px) {
   .upcoming-events-section { padding: 5px 20px 15px; }
@@ -2363,4 +2364,19 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 8px;
     font-size: 0.6rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-particles { display: none; }
+  .hero-tagline,
+  .hero-tagline-glow,
+  .hero-title { animation: none !important; }
 }
