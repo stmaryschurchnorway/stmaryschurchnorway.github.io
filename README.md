@@ -10,7 +10,6 @@ St. Mary's MSOC Norway is a Malankara Syriac Orthodox parish serving the Malayal
 
 - **Vicar:** Rev Fr. Eldhose Vattaparambil
 - **Diocese:** Malankara Syriac Orthodox Church — European Diocese
-- **Contact:** stmaryschurchnorway@gmail.com
 
 ## Tech Stack
 
