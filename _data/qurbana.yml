@@ -1014,6 +1014,34 @@ finalQuiz:
         - "Nothing changes"
       a: 0
       why: "Through the Holy Spirit the gifts become, in real sacrament, the Body and Blood of Christ."
+    - q: "What does the word 'Qurbana' mean in Syriac?"
+      opts:
+        - "An offering or sacrifice"
+        - "A party or celebration"
+        - "A goodbye"
+      a: 0
+      why: "'Qurbana' comes from Syriac roots meaning 'offering' and 'sacrifice' — we offer ourselves and our prayers to God."
+    - q: "In Orthodox churches, which direction do priest and people face during the Qurbana?"
+      opts:
+        - "East, toward the sunrise and Jesus' promised return"
+        - "West, toward the setting sun"
+        - "Any direction that feels comfortable"
+      a: 0
+      why: "We face East because Jesus said His return would come 'like the lightning from the east' (Matthew 24:27)."
+    - q: "What Syriac word means 'Lord, have mercy'?"
+      opts:
+        - "Kurielaison"
+        - "Halelujaih"
+        - "Amen"
+      a: 0
+      why: "'Kurielaison' — a prayer that has echoed through 2,000 years of our Orthodox Church worship."
+    - q: "Which Syriac word means 'So be it'?"
+      opts:
+        - "Amen"
+        - "Barek mor"
+        - "Hoosoyo"
+      a: 0
+      why: "'Amen' — when we say it, we're saying 'Yes' to God with our whole hearts and souls."
 
 # Shlomo the dove — friendly guide shown in Kids mode. One line per stage (keyed by title).
 mascot:
@@ -1030,20 +1058,20 @@ mascot:
     - "Not quite — look carefully!"
   huntDone: "You found every treasure on this page! You're amazing! ⭐"
   lines:
-    "The Preparation (Tuyobo)": "Shh… the priest is getting ready behind the curtain, just like Jesus spent 30 quiet years before His work began."
-    "Procession & Opening Prayers": "Here we go! We walk around the altar to begin — can you smell the sweet incense?"
-    "Reading of the Scriptures": "Now we listen to God's own words from the Bible. Open your ears!"
-    "Promiun-Sedra & Blessing of the Censer": "Watch the smoke float up, up, up — that's a picture of our prayers rising to God!"
-    "The Nicene Creed": "Everyone says this together to tell God, 'We believe in You!' Say it loud!"
-    "The Anaphora of St. James": "This is the great prayer at the very heart of the Qurbana. The priest washes his hands to be pure and ready."
-    "Kiss of Peace & Lifting of the Veil": "We share peace with one another — friends again, hearts ready. Then the veil lifts!"
-    "Introductory Dialogue": "The priest and the people answer back and forth, getting our hearts lifted up to heaven."
-    "Words of Institution": "Listen closely — the priest says the very words Jesus said: 'This is my Body… this is my Blood.'"
-    "Anamnesis": "We remember everything Jesus did for us — His cross, and how He rose again!"
-    "Epiclesis — Invocation of the Holy Spirit": "Now the most amazing moment — we ask the Holy Spirit to come down. That's me family! 🕊️"
-    "Intercessions (Tubden)": "We pray for everyone — our family, our friends, the whole world, and those in heaven."
-    "Fraction": "The holy bread is broken, just as Jesus' body was given for us. A quiet, holy moment."
-    "The Lord's Prayer": "Now we pray the prayer Jesus taught us: 'Our Father, who art in heaven…' Do you know it?"
-    "Holy Things to the Holy": "The priest lifts up the holy gifts high for everyone to see. Holy things, for holy people!"
-    "Holy Communion": "Everyone who is ready comes to receive Jesus. This is the greatest gift of all! 💛"
-    "Post-Communion Service": "We say thank you and get a blessing. Now go and shine like a little light for Jesus! 🌟"
+    "The Preparation (Tuyobo)": "Shh… the priest is getting ready behind the curtain, just like Jesus spent 30 quiet years before His work began. 🤫 Did you know? 'Tuyobo' means preparation — it's a hidden time of spiritual getting-ready!"
+    "Procession & Opening Prayers": "Here we go! We walk around the altar to begin — can you smell the sweet incense? Did you know? We always face East, toward where the sun rises, because that's where Jesus promised to come again. ☀️"
+    "Reading of the Scriptures": "Now we listen to God's own words from the Bible. Open your ears! Did you know? The word 'Qurbana' comes from two Syriac roots meaning 'offering' — we're offering our hearts and voices to God."
+    "Promiun-Sedra & Blessing of the Censer": "Watch the smoke float up, up, up — that's a picture of our prayers rising to God! Did you know? In Syriac, 'Kurielaison' means 'Lord, have mercy' — a prayer that echoes through 2,000 years of our church!"
+    "The Nicene Creed": "Everyone says this together to tell God, 'We believe in You!' Say it loud! Did you know? 'Amen' means 'So be it' — when we say it, we're saying Yes to God with our whole hearts."
+    "The Anaphora of St. James": "This is the great prayer at the very heart of the Qurbana. The priest washes his hands to be pure and ready. Did you know? 'Barek mor' means 'Bless me, Lord' — the priest is asking for strength to serve."
+    "Kiss of Peace & Lifting of the Veil": "We share peace with one another — friends again, hearts ready. Then the veil lifts! Did you know? 'Hoosoyo' means absolution or forgiveness — we make peace before we meet Jesus at the altar."
+    "Introductory Dialogue": "The priest and the people answer back and forth, getting our hearts lifted up to heaven. Did you know? 'Halelujaih' means 'Praise God' — it comes from Hebrew and has been sung in churches for thousands of years!"
+    "Words of Institution": "Listen closely — the priest says the very words Jesus said: 'This is my Body… this is my Blood.' Did you know? 'Qurbana' also means sacrifice — just as Jesus offered Himself for us on the cross."
+    "Anamnesis": "We remember everything Jesus did for us — His cross, and how He rose again! Did you know? 'Morio Rahemelain' means 'Lord, have mercy upon us and help us' — it's a prayer that connects us to the whole church across the world."
+    "Epiclesis — Invocation of the Holy Spirit": "Now the most amazing moment — we ask the Holy Spirit to come down. That's me family! 🕊️ Did you know? 'Subho labolabra valrooho kadiso' means 'Glory be to the Father, Son, and Holy Spirit' — praising the Holy Trinity together!"
+    "Intercessions (Tubden)": "We pray for everyone — our family, our friends, the whole world, and those in heaven. Did you know? 'Kareb' means 'offering' in Syriac — every prayer we pray is an offering to God."
+    "Fraction": "The holy bread is broken, just as Jesus' body was given for us. A quiet, holy moment. Did you know? 'Dhaivathinu Nalkapettathu' means 'offered to God' — the whole Qurbana is an offering to our Father in heaven."
+    "The Lord's Prayer": "Now we pray the prayer Jesus taught us: 'Our Father, who art in heaven…' Do you know it? Did you know? 'Men olam vadamo la olam olmin' means 'Now and always and for ever and ever' — we're praying with the whole church through all time!"
+    "Holy Things to the Holy": "The priest lifts up the holy gifts high for everyone to see. Holy things, for holy people! Did you know? 'Hoso vabkoolsuban olmin' also means 'Now and always and forever and ever' — God's love is forever, just like this prayer!"
+    "Holy Communion": "Everyone who is ready comes to receive Jesus. This is the greatest gift of all! 💛 Did you know? The Eucharist is also called the 'Sacrament of Sacraments' — it's the holiest mystery of our church."
+    "Post-Communion Service": "We say thank you and get a blessing. Now go and shine like a little light for Jesus! 🌟 Did you know? The Holy Qurbana was started by Jesus Himself on the night before He died — it's been the heart of the church for 2,000 years!"
