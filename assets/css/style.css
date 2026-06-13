@@ -2359,6 +2359,17 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-white);
 }
 
+/* Mystery prev/next navigation */
+.mystery-nav { display: flex; justify-content: space-between; gap: 16px; margin: 36px 0 0; padding: 24px 0; border-top: 1px solid var(--color-border); }
+.mystery-nav-link { text-decoration: none; display: flex; flex-direction: column; gap: 2px; }
+.mystery-nav-prev { align-items: flex-start; }
+.mystery-nav-next { align-items: flex-end; margin-left: auto; }
+.mystery-nav-dir { font-size: 0.78rem; font-weight: 600; color: var(--color-gold-ink, #856208); }
+.mystery-nav-label { font-family: 'Lora', Georgia, serif; font-size: 0.95rem; font-weight: 700; color: var(--color-text-dark); }
+.mystery-nav-link:hover .mystery-nav-label { color: var(--color-gold-dark); }
+/* Footer social icons inherit gold via currentColor */
+.footer-social { color: var(--color-gold); }
+
 @media (max-width: 768px) {
   .language-switcher {
     gap: 8px;

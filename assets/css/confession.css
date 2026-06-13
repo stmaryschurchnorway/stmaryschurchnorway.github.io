@@ -4,6 +4,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px 40px;
+  background: #fff;
 }
 
 .confession-page .carousel-back-nav {
@@ -40,146 +41,35 @@
 
 .confession-scripture-link {
   display: block;
-  background: linear-gradient(135deg, rgba(212, 160, 23, 0.06), rgba(139, 30, 45, 0.04));
-  border: 2px solid rgba(212, 160, 23, 0.25);
-  border-radius: 10px;
-  padding: 20px 25px;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(139, 30, 45, 0.03));
+  border: none;
+  border-left: 3px solid var(--color-gold, #d4a017);
+  border-radius: 8px;
+  padding: 18px 24px;
   text-decoration: none;
   transition: all 0.3s;
-  text-align: center;
+  text-align: left;
 }
 
 .confession-scripture-link:hover {
-  border-color: #d4a017;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .confession-scripture-ref {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #d4a017;
-  margin-bottom: 8px;
-}
-
-.confession-scripture-link blockquote {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-  margin: 0;
-  font-style: italic;
-}
-
-/* --- Six Steps --- */
-.confession-steps {
-  display: flex;
-  flex-direction: column;
-}
-
-.confession-step {
-  display: flex;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.confession-step:last-child {
-  border-bottom: none;
-}
-
-.confession-step-number {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  background: #d4a017;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.72rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  margin-top: 2px;
-}
-
-.confession-step-content {
-  flex: 1;
-}
-
-.confession-step-title {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.05rem;
-  color: #333;
-  margin: 0 0 3px;
-  font-weight: 600;
-}
-
-.confession-step-malayalam {
-  font-family: 'Meera', 'Noto Sans Malayalam', serif;
-  font-size: 0.8rem;
-  color: #a85555;
-  margin: 0 0 6px;
-}
-
-.confession-step-content p:last-child {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #555;
-  margin: 0;
-}
-
-.confession-step-content em {
-  color: #8B1E2D;
-}
-
-/* --- Preparation Grid --- */
-.confession-prep-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.confession-prep-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.confession-prep-card.confession-prep-highlight {
-  grid-column: 1 / -1;
-  background: rgba(212, 160, 23, 0.06);
-  border-color: rgba(212, 160, 23, 0.25);
-}
-
-.confession-prep-card h3 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 0.95rem;
-  color: #333;
-  margin: 0 0 10px;
-  font-weight: 600;
-}
-
-.confession-prep-card ul {
-  margin: 0;
-  padding-left: 16px;
-}
-
-.confession-prep-card li {
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-maroon, #8B1E2D);
   margin-bottom: 6px;
 }
 
-.confession-prep-card li:last-child {
-  margin-bottom: 0;
-}
-
-.confession-prep-card p {
-  font-size: 0.85rem;
+.confession-scripture-link blockquote {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--color-text-dark, #2d2d2d);
   margin: 0;
 }
 
@@ -281,55 +171,49 @@
 /* --- CTA --- */
 .confession-cta {
   text-align: center;
-  background: linear-gradient(135deg, #8B1E2D, #6b1623);
-  color: white;
-  border-radius: 12px;
-  padding: 30px 25px;
+  background: var(--color-light-bg-alt, #faf7f0);
+  border: 1px solid #e8e4de;
+  border-radius: 14px;
+  padding: 32px 25px;
   margin-top: 35px;
 }
 
 .confession-cta h2 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 0 0 8px;
-  color: white;
+  color: var(--color-gold, #d4a017);
 }
 
 .confession-cta p {
-  font-size: 0.88rem;
-  opacity: 0.9;
-  margin: 0 0 16px;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  color: var(--color-text-medium, #4a4a4a);
+  margin: 0 0 18px;
+  line-height: 1.6;
 }
 
 .confession-cta-btn {
   display: inline-block;
-  background: #d4a017;
+  background: var(--color-gold, #d4a017);
   color: white;
-  padding: 10px 28px;
-  border-radius: 6px;
+  padding: 12px 32px;
+  border-radius: 24px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   transition: all 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .confession-cta-btn:hover {
-  background: #c4920c;
+  background: var(--color-gold-dark, #b8860b);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .confession-prep-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .confession-prep-card.confession-prep-highlight {
-    grid-column: auto;
-  }
-
   .confession-baptism-connection {
     flex-direction: column;
     gap: 8px;
@@ -388,63 +272,6 @@
   .confession-section-subtitle {
     font-size: 0.82rem;
     margin: 0 0 15px;
-  }
-
-  .confession-step {
-    gap: 10px;
-    padding: 12px 0;
-  }
-
-  .confession-step-number {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    font-size: 0.75rem;
-    margin-top: 1px;
-    flex-shrink: 0;
-  }
-
-  .confession-step-title {
-    font-size: 0.95rem;
-    margin: 0 0 2px;
-  }
-
-  .confession-step-malayalam {
-    font-size: 0.75rem;
-    margin: 0 0 4px;
-  }
-
-  .confession-step-content p {
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .confession-prep-grid {
-    gap: 12px;
-  }
-
-  .confession-prep-card {
-    padding: 15px;
-  }
-
-  .confession-prep-card h3 {
-    font-size: 0.9rem;
-    margin: 0 0 8px;
-  }
-
-  .confession-prep-card ul {
-    padding-left: 14px;
-  }
-
-  .confession-prep-card li {
-    font-size: 0.78rem;
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
-
-  .confession-prep-card p {
-    font-size: 0.8rem;
-    line-height: 1.5;
   }
 
   .confession-baptism-panel {
@@ -511,19 +338,5 @@
     font-size: 1rem;
   }
 
-  .confession-step-number {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    font-size: 0.7rem;
-  }
-
-  .confession-step-content p {
-    font-size: 0.78rem;
-  }
-
-  .confession-prep-card {
-    padding: 12px;
-  }
 }
 

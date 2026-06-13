@@ -3,10 +3,8 @@ layout: default
 ---
 
 <div class="confession-page" data-sacrament="{{ page.sacrament }}">
-  <div class="carousel-back-nav" id="backToLiturgies">
-    <a href="{{ '/liturgy/' | relative_url }}" class="back-to-liturgies-btn">
-      <span aria-hidden="true">←</span> Back to Liturgies
-    </a>
+  <div class="lit-topbar">
+    <a href="{{ '/liturgy/' | relative_url }}" class="back-to-liturgies-btn"><span class="kick-arrow" aria-hidden="true">←</span> Liturgy</a>
   </div>
 
   {{ content }}
@@ -20,3 +18,4 @@ function playPageAudio(src) {
   _pageAudio.play().catch(function(e) { console.error('Audio error:', e); });
 }
 </script>
+<script src="{{ '/assets/js/rite.js' | relative_url }}" defer></script>

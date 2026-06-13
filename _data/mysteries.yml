@@ -1,0 +1,75 @@
+# The Seven Holy Mysteries — ordered 1-7.
+# Used by _includes/liturgy-landing.html and prev/next nav on rite pages.
+
+- id: holy-baptism
+  numeral: "I"
+  title: "Holy Baptism"
+  malayalam: "മാമോദീസാ"
+  transliteration: "Ma-mo-dee-sa"
+  blurb: "The Gate to the Kingdom — washing away original sin and incorporating the believer into Christ's death and resurrection through water and the Holy Spirit."
+  image: "/assets/img/mamodisa-liturgy.webp"
+  url: "/mamodisa/"
+  group: "Initiation"
+  interactive: true
+
+- id: holy-mooron
+  numeral: "II"
+  title: "Holy Mooron"
+  malayalam: "മൂറോൻ"
+  transliteration: "Moo-ron"
+  blurb: "Chrismation — the seal of the Holy Spirit that completes baptism, anointing the believer as priest, prophet, and king in God's Kingdom."
+  image: "/assets/img/mooron-liturgy.webp"
+  url: "/mooron/"
+  group: "Initiation"
+  interactive: true
+
+- id: holy-qurbana
+  numeral: "III"
+  title: "Holy Qurbana"
+  malayalam: "വിശുദ്ധ കുർബാന"
+  transliteration: "Vi-shud-dha Kur-ba-na"
+  blurb: "The Eucharist — 'sacrament of sacraments' — where bread and wine become the Body and Blood of Christ through the Holy Spirit's invocation."
+  image: "/assets/img/qurbana-liturgy.webp"
+  url: "/qurbana/"
+  group: "Initiation"
+  interactive: true
+
+- id: holy-confession
+  numeral: "IV"
+  title: "Holy Confession"
+  malayalam: "കുമ്പസാരം"
+  transliteration: "Kum-pa-sa-ram"
+  blurb: "The sacrament of repentance and reconciliation — where we return to God, receive His forgiveness, and are restored. The Church Fathers called it a 'second baptism.'"
+  image: "/assets/img/confession-liturgy.webp"
+  url: "/confession/"
+  group: "Life in the Church"
+
+- id: anointing-sick
+  numeral: "V"
+  title: "Anointing of the Sick"
+  malayalam: "തൈലാഭിഷേകം"
+  transliteration: "Thai-la-bhi-she-kam"
+  blurb: "Holy Unction — prayers and anointing with blessed oil for healing and comfort of those suffering in body, mind, or spirit."
+  image: "/assets/img/anointing-sick-liturgy.webp"
+  url: "/anointing/"
+  group: "Life in the Church"
+
+- id: holy-matrimony
+  numeral: "VI"
+  title: "Holy Matrimony"
+  malayalam: "വിവാഹം"
+  transliteration: "Vi-va-ham"
+  blurb: "Marriage — holy union blessed by the Church as an icon of Christ and the Church, sanctifying the couple's life together."
+  image: "/assets/img/matrimony-liturgy.webp"
+  url: "/matrimony/"
+  group: "Vocation"
+
+- id: holy-orders
+  numeral: "VII"
+  title: "Holy Orders"
+  malayalam: "പൗരോഹിത്യം"
+  transliteration: "Pou-ro-hi-thyam"
+  blurb: "Priesthood — ordination to serve the Church in apostolic succession, continuing Christ's ministry of word and sacrament."
+  image: "/assets/img/orders-liturgy.webp"
+  url: "/holy-orders/"
+  group: "Vocation"
