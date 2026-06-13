@@ -656,6 +656,14 @@
 .quiz-final { border-color: #d9b24a; background: linear-gradient(180deg, #fffaf0, #f7ead0); box-shadow: 0 4px 18px rgba(139,30,45,.07); }
 .quiz-final .quiz-badge, .quiz-final .qs-go { background: #7a1622; }
 .quiz-final .qs-go:hover { background: var(--maroon); }
+@media (max-width: 480px) {
+  .quiz { margin: 14px 14px 0; padding: 14px 14px 16px; }
+  .quiz-start { flex-wrap: wrap; gap: 8px; }
+  .quiz-start .qs-text { flex-basis: calc(100% - 42px); }
+  .quiz-start .qs-go { width: 100%; text-align: center; }
+  .quiz-q { font-size: 1.05rem; }
+  .quiz-opt { font-size: 13.5px; padding: 11px 13px; }
+}
 
 /* ============================================================
    CHURCH STRUCTURE PAGE
