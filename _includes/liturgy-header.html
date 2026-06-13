@@ -1,0 +1,40 @@
+{% comment %}
+  Shared header for all seven liturgy pages (carousel + rite pages).
+  Reads from the page's front matter `intro:` block:
+    numeral, title, malayalam, transliteration, audio (optional),
+    lead, more (optional list of paragraphs) / detail (optional single paragraph),
+    crosslink_url (optional), crosslink_text
+  Progressive disclosure: only `lead` shows by default; every `more`/`detail`
+  paragraph AND the cross-link stay behind a single "More" button.
+{% endcomment %}
+<header class="lit-header">
+  {% comment %} Carousel pages (layout: qurbana) drop the kicker and move the subtitle
+     into the carousel box as .carousel-label; rite pages keep both here. {% endcomment %}
+  {% unless page.layout == 'qurbana' %}<div class="lh-kicker">The Seven Holy Mysteries <span class="num">&middot; {{ page.intro.numeral }}</span></div>{% endunless %}
+  <h1>{{ page.intro.title }}</h1>
+  {% if page.intro.subtitle and page.layout != 'qurbana' %}<div class="lit-subtitle">{{ page.intro.subtitle }}</div>{% endif %}
+
+  <div class="lit-ml-line">
+    <span class="lit-ml">{{ page.intro.malayalam }}</span>
+    <span class="lit-tr">{{ page.intro.transliteration | remove: "Pronunciation: " }}</span>
+    {% if page.intro.audio %}<button class="lit-audio" aria-label="Hear pronunciation" onclick="playPageAudio('{{ page.intro.audio }}')">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>{% endif %}
+  </div>
+
+  <div class="lh-rule"></div>
+
+  <div class="lit-intro">
+    <span class="lead">{{ page.intro.lead }}</span>
+    {% if page.intro.more %}{% for p in page.intro.more %}<span class="detail">{{ p }}</span>{% endfor %}{% endif %}
+    {% if page.intro.detail %}<span class="detail">{{ page.intro.detail }}</span>{% endif %}
+    {% if page.intro.crosslink_url %}
+    <div class="lit-crosslink">
+      <a href="{{ page.intro.crosslink_url | relative_url }}">{{ page.intro.crosslink_text }}</a>
+    </div>
+    {% endif %}
+    {% if page.intro.more or page.intro.detail or page.intro.crosslink_url %}
+    <button type="button" class="intro-more" onclick="this.closest('.lit-intro').classList.add('expanded');">More <span aria-hidden="true">⌄</span></button>
+    {% endif %}
+  </div>
+</header>
