@@ -5,7 +5,7 @@ date: 2026-10-25
 excerpt: "From 23rd to 25th October, our parish welcomed H.E. Mor Dr. Kuriakose Theophilose on his first visit to Norway."
 ---
 
-![H.E. Mor Dr. Kuriakose Theophilose](https://msoc-europe.com/admin/uploads/banner/xWhatsApp_Image_2026-01-31_at_16_05_39.jpeg.pagespeed.ic.qPky1aLRYS.webp)
+![First visit of H.E. Dr. Mor Theophilose Kuriakose Metropolitan to Norway]({{ '/assets/img/posts/theophilose-visit-banner.jpg' | relative_url }})
 
 From **23rd to 25th October**, St. Mary's Malankara Syriac Orthodox Church, Oslo, had the joy of welcoming **H.E. Mor Dr. Kuriakose Theophilose** on his first visit to Norway. It was a special and historic weekend for our parish.
 
