@@ -17,7 +17,7 @@ Thirumeni arrived at Oslo Gardermoen Airport on Friday evening. Members of the p
 
 On Saturday morning, the parish gathered at church to receive Thirumeni, with traditional red and gold umbrellas at the door.
 
-![Thirumeni is received at the church door]({{ '/assets/img/posts/theophilose-visit-reception.jpg' | relative_url }})
+![Thirumeni is received at the church door]({{ '/assets/img/posts/theophilose-visit-reception-v2.jpg' | relative_url }})
 *Thirumeni is welcomed at the church door.*
 
 The day began with morning prayer (Namaskaram), followed by the Holy Qurbana led by Thirumeni.
