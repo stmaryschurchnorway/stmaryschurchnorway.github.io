@@ -34,7 +34,7 @@ Kirken ble startet med bare tre familier, men nå har vi rundt femten familier s
 
 Menigheten står nå under *MSOC Europas stift* og <a href="#hierarchy-patriarchal-vicar" class="hierarchy-link"><em>H. G. Dr. Kuriakose Mor Theophilose</em></a> er *Patriarkalvikaren for Europas stift*.
 
-Kirken gjennomfører *søndagsskole*, *Vanitha Samajam*, bedemøter to ganger i uken og julesang. Menigheten organiserer årlig sommertur, underviser i malayalisk liturgi og støtter utdanning av barn i Kerala.
+Kirken gjennomfører <a href="https://sundayschool.msoc-europe.com" target="_blank" rel="noopener"><em>søndagsskole</em></a>, *Vanitha Samajam*, bedemøter to ganger i uken og julesang. Menigheten organiserer årlig sommertur, underviser i malayalisk liturgi og støtter utdanning av barn i Kerala.
 
 Kirken feirer sin *grunnleggelsesdag (perunnal)* på *23. januar* hvert år og feirer også *Marias opptakelse* (*Vangippu Perunnal*) på *15. august* med en Rasa.
 

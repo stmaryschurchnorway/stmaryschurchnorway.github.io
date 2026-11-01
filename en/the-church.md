@@ -34,7 +34,7 @@ The church was started with just three families, but now we have around fifteen 
 
 The congregation is now under the *MSOC European diocese* and <a href="#hierarchy-patriarchal-vicar" class="hierarchy-link"><em>H. G. Dr. Kuriakose Mor Theophilose</em></a> is the *Patriarchal Vicar of the European diocese*.
 
-The church conducts *Sunday School*, *Vanitha Samajam*, bi-weekly prayer meetings, and Christmas caroling. The congregation organizes annual summer trips, teaches Malayalam liturgy, and supports education for children in Kerala.
+The church conducts <a href="https://sundayschool.msoc-europe.com" target="_blank" rel="noopener"><em>Sunday School</em></a>, *Vanitha Samajam*, bi-weekly prayer meetings, and Christmas caroling. The congregation organizes annual summer trips, teaches Malayalam liturgy, and supports education for children in Kerala.
 
 The Church celebrates its *foundation day perunnal* on *23rd January* every year and it also celebrates the *Feast of Assumption* (*Vangippu Perunnal*) on *15th August* with a Rasa.
 
